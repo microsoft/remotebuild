@@ -33,4 +33,9 @@
     <Exec Command="gulp prep" WorkingDirectory="$(GulpRoot)" />
     <Exec Command="gulp" WorkingDirectory="$(GulpRoot)" />
   </Target>
+
+  <Target Name="Clean">
+    <Exec Command="gulp clean" WorkingDirectory="$(GulpRoot)" />
+  </Target>
+
 </Project>
