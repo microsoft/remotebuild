@@ -7,10 +7,14 @@
     <StartupFile>$(TACO_ROOT)\build\bin\taco-cli\bin\taco</StartupFile>
     <Name>taco-cli</Name>
   </PropertyGroup>
+  
   <ItemGroup>
     <Content Include="$(ProjectHome)\**\*.*" />
-    <Content Include="$(TACO_ROOT)\src\typings\**\*.*" />
+    <Content Include="$(TACO_ROOT)\src\typings\**\*.*" >
+      <Link>typings\(Filename)%(Extension)</Link>
+    </Content>
   </ItemGroup>
+  
   <ItemGroup>
     <Folder Include="bin\" />
     <Folder Include="cli\" />
@@ -25,17 +29,27 @@
     <Folder Include="test\resources\certs\" />
     <Folder Include="test\utils\" />
   </ItemGroup>
+  
   <Import Project="taco.targets" />
+
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
-  <Target Name="Build" DependsOnTargets="CoreCompile" />
+
+  <!-- CoreCompile target is needed to ensure we have Build > Build Project enabled in VS-->
   <Target Name="CoreCompile">
     <Exec Command="gulp prep" WorkingDirectory="$(GulpRoot)" />
     <Exec Command="gulp" WorkingDirectory="$(GulpRoot)" />
   </Target>
 
+  <!--Enables Build Project scenario  in VS-->
+  <Target Name="Build" DependsOnTargets="CoreCompile" />
+  
+  <!--Enables Clean Project scenario  in VS-->
   <Target Name="Clean">
     <Exec Command="gulp clean" WorkingDirectory="$(GulpRoot)" />
   </Target>
+
+  <!--Enables Rebuild Project scenario in VS -->
+  <Target Name="Rebuild" DependsOnTargets="Clean;Build" />
 
 </Project>
