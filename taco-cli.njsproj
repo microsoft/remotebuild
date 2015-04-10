@@ -2,12 +2,13 @@
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectGuid>{00f9af67-c8f0-4efa-a6ee-6dbeea4adde4}</ProjectGuid>
-    <ProjectHome>..\taco\src\taco-cli\</ProjectHome>
+    <ProjectHome>$(TACO_ROOT)\src\taco-cli\</ProjectHome>
     <StartupFile>$(TACO_ROOT)\build\bin\taco-cli\bin\taco</StartupFile>
     <Name>taco-cli</Name>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="$(ProjectHome)\**\*.*" />
+    <Content Include="$(TACO_ROOT)\src\typings\**\*.*" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />

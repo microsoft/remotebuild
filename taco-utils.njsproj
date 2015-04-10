@@ -7,6 +7,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="$(ProjectHome)\**\*.*" />
+    <Content Include="$(TACO_ROOT)\src\typings\**\*.*" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="resources" />
