@@ -2,6 +2,7 @@
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectGuid>{00f9af67-c8f0-4efa-a6ee-6dbeea4adde4}</ProjectGuid>
+    <GulpRoot>$(TACO_ROOT)\src\</GulpRoot>
     <ProjectHome>$(TACO_ROOT)\src\taco-cli\</ProjectHome>
     <StartupFile>$(TACO_ROOT)\build\bin\taco-cli\bin\taco</StartupFile>
     <Name>taco-cli</Name>
@@ -29,7 +30,7 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <Target Name="Build" DependsOnTargets="CoreCompile" />
   <Target Name="CoreCompile">
-    <Exec Command="gulp prep" WorkingDirectory="$(ProjectHome)\..\" />
-    <Exec Command="gulp" WorkingDirectory="$(ProjectHome)\..\" />
+    <Exec Command="gulp prep" WorkingDirectory="$(GulpRoot)" />
+    <Exec Command="gulp" WorkingDirectory="$(GulpRoot)" />
   </Target>
 </Project>
