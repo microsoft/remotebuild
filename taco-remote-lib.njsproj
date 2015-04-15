@@ -7,7 +7,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="$(ProjectHome)\**\*.*" />
-    <Content Include="$(TACO_ROOT)\src\typings\**\*.*" >
+    <Content Include="$(TACO_ROOT)\src\typings\**\*.*">
       <Link>typings\(Filename)%(Extension)</Link>
     </Content>
   </ItemGroup>
@@ -19,6 +19,7 @@
     <Folder Include="test\" />
     <Folder Include="test\resources\" />
     <Folder Include="test\resources\plist\" />
+    <Folder Include="typings\" />
   </ItemGroup>
   <Import Project="taco.targets" />
 </Project>

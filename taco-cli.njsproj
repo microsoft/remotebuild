@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectGuid>{00f9af67-c8f0-4efa-a6ee-6dbeea4adde4}</ProjectGuid>
@@ -7,14 +7,13 @@
     <StartupFile>$(TACO_ROOT)\build\bin\taco-cli\bin\taco</StartupFile>
     <Name>taco-cli</Name>
   </PropertyGroup>
-  
+  <Import Project="taco.targets" />
   <ItemGroup>
     <Content Include="$(ProjectHome)\**\*.*" />
-    <Content Include="$(TACO_ROOT)\src\typings\**\*.*" >
+    <Content Include="$(TACO_ROOT)\src\typings\**\*.*">
       <Link>typings\(Filename)%(Extension)</Link>
     </Content>
   </ItemGroup>
-  
   <ItemGroup>
     <Folder Include="bin\" />
     <Folder Include="cli\" />
@@ -27,29 +26,27 @@
     <Folder Include="test\" />
     <Folder Include="test\resources\" />
     <Folder Include="test\resources\certs\" />
+    <Folder Include="test\resources\templates\" />
+    <Folder Include="test\resources\templates\testKit\" />
+    <Folder Include="test\resources\templates\testKit\testTemplate\" />
+    <Folder Include="test\resources\templates\testKit\testTemplate\folder1\" />
     <Folder Include="test\utils\" />
+    <Folder Include="typings\" />
   </ItemGroup>
-  
-  <Import Project="taco.targets" />
-
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
-
   <!-- CoreCompile target is needed to ensure we have Build > Build Project enabled in VS-->
   <Target Name="CoreCompile">
     <Exec Command="gulp prep" WorkingDirectory="$(GulpRoot)" />
     <Exec Command="gulp" WorkingDirectory="$(GulpRoot)" />
   </Target>
-
   <!--Enables Build Project scenario  in VS-->
   <Target Name="Build" DependsOnTargets="CoreCompile" />
-  
   <!--Enables Clean Project scenario  in VS-->
   <Target Name="Clean">
     <Exec Command="gulp clean" WorkingDirectory="$(GulpRoot)" />
   </Target>
-
   <!--Enables Rebuild Project scenario in VS -->
   <Target Name="Rebuild" DependsOnTargets="Clean;Build" />
-
 </Project>
