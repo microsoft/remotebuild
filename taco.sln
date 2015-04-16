@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.22720.0
+VisualStudioVersion = 14.0.22809.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "taco-utils", "taco-utils.njsproj", "{C738A1C0-721E-4123-8863-267D7290ED05}"
 EndProject
@@ -9,24 +9,25 @@ Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "taco-cli", "taco-cli.njspro
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "taco-remote-lib", "taco-remote-lib.njsproj", "{F6AF468E-ED24-4D4D-BCFA-53D7D2134FC7}"
 EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "remotebuild", "remotebuild.njsproj", "{27C17FE7-829B-4614-8D2F-2C0C14B8F2DE}"
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "taco-remote", "taco-remote.njsproj", "{FDF3B750-2758-4520-9200-FCCF923BB71E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{C738A1C0-721E-4123-8863-267D7290ED05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C738A1C0-721E-4123-8863-267D7290ED05}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C738A1C0-721E-4123-8863-267D7290ED05}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C738A1C0-721E-4123-8863-267D7290ED05}.Release|Any CPU.Build.0 = Release|Any CPU
 		{00F9AF67-C8F0-4EFA-A6EE-6DBEEA4ADDE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{00F9AF67-C8F0-4EFA-A6EE-6DBEEA4ADDE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{00F9AF67-C8F0-4EFA-A6EE-6DBEEA4ADDE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{00F9AF67-C8F0-4EFA-A6EE-6DBEEA4ADDE4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F6AF468E-ED24-4D4D-BCFA-53D7D2134FC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F6AF468E-ED24-4D4D-BCFA-53D7D2134FC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F6AF468E-ED24-4D4D-BCFA-53D7D2134FC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F6AF468E-ED24-4D4D-BCFA-53D7D2134FC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27C17FE7-829B-4614-8D2F-2C0C14B8F2DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27C17FE7-829B-4614-8D2F-2C0C14B8F2DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDF3B750-2758-4520-9200-FCCF923BB71E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDF3B750-2758-4520-9200-FCCF923BB71E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

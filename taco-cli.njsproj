@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectGuid>{00f9af67-c8f0-4efa-a6ee-6dbeea4adde4}</ProjectGuid>
-    <GulpRoot>$(TACO_ROOT)\src\</GulpRoot>
-    <ProjectHome>$(TACO_ROOT)\src\taco-cli\</ProjectHome>
-    <StartupFile>$(TACO_ROOT)\build\bin\taco-cli\bin\taco</StartupFile>
-    <Name>taco-cli</Name>
+    <ProjectHome>$(TACO_ROOT)\src\$(MSBuildProjectName)\</ProjectHome>
+    <StartupModule>bin\taco</StartupModule>
   </PropertyGroup>
   <Import Project="taco.targets" />
   <ItemGroup>
@@ -34,19 +32,5 @@
     <Folder Include="typings\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
-  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
-  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
-  <!-- CoreCompile target is needed to ensure we have Build > Build Project enabled in VS-->
-  <Target Name="CoreCompile">
-    <Exec Command="gulp prep" WorkingDirectory="$(GulpRoot)" />
-    <Exec Command="gulp" WorkingDirectory="$(GulpRoot)" />
-  </Target>
-  <!--Enables Build Project scenario  in VS-->
-  <Target Name="Build" DependsOnTargets="CoreCompile" />
-  <!--Enables Clean Project scenario  in VS-->
-  <Target Name="Clean">
-    <Exec Command="gulp clean" WorkingDirectory="$(GulpRoot)" />
-  </Target>
-  <!--Enables Rebuild Project scenario in VS -->
-  <Target Name="Rebuild" DependsOnTargets="Clean;Build" />
+  <Import Project="taco-cli-project.targets" />
 </Project>

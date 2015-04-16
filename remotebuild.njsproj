@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <ProjectGuid>{f6af468e-ed24-4d4d-bcfa-53d7d2134fc7}</ProjectGuid>
+    <ProjectGuid>{27C17FE7-829B-4614-8D2F-2C0C14B8F2DE}</ProjectGuid>
     <ProjectHome>$(TACO_ROOT)\src\$(MSBuildProjectName)\</ProjectHome>
+    <StartupModule>bin\remotebuild</StartupModule>
   </PropertyGroup>
 
   <Import Project="taco.targets" />
@@ -15,13 +16,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ios\" />
-    <Folder Include="ios\templates\" />
+    <Folder Include="bin\" />
+    <Folder Include="examples\" />
+    <Folder Include="lib\" />
+    <Folder Include="lib\darwin\" />
+    <Folder Include="lib\win32\" />
     <Folder Include="resources\" />
     <Folder Include="resources\en\" />
     <Folder Include="test\" />
-    <Folder Include="test\resources\" />
-    <Folder Include="test\resources\plist\" />
     <Folder Include="typings\" />
   </ItemGroup>
+
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <Import Project="taco-cli-project.targets" />
+
 </Project>

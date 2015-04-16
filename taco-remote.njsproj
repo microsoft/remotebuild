@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{FDF3B750-2758-4520-9200-FCCF923BB71E}</ProjectGuid>
+    <ProjectHome>$(TACO_ROOT)\src\$(MSBuildProjectName)\</ProjectHome>
+  </PropertyGroup>
+
+  <Import Project="taco.targets" />
+
+  <ItemGroup>
+    <Content Include="$(ProjectHome)\**\*.*" />
+    <Content Include="$(TACO_ROOT)\src\typings\**\*.*">
+      <Link>typings\(Filename)%(Extension)</Link>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="examples\" />
+    <Folder Include="examples\cordovaApp\" />
+    <Folder Include="examples\cordovaApp\helloCordova\" />
+    <Folder Include="examples\cordovaApp\helloCordova\hooks\" />
+    <Folder Include="examples\cordovaApp\helloCordova\plugins\" />
+    <Folder Include="examples\cordovaApp\helloCordova\res\" />
+    <Folder Include="examples\cordovaApp\helloCordova\res\icons\" />
+    <Folder Include="examples\cordovaApp\helloCordova\res\icons\ios\" />
+    <Folder Include="examples\cordovaApp\helloCordova\res\screens\" />
+    <Folder Include="examples\cordovaApp\helloCordova\res\screens\ios\" />
+    <Folder Include="examples\cordovaApp\helloCordova\www\" />
+    <Folder Include="examples\cordovaApp\helloCordova\www\css\" />
+    <Folder Include="examples\cordovaApp\helloCordova\www\img\" />
+    <Folder Include="examples\cordovaApp\helloCordova\www\js\" />
+    <Folder Include="lib\" />
+    <Folder Include="lib\darwin\" />
+    <Folder Include="lib\win32\" />
+    <Folder Include="resources\" />
+    <Folder Include="resources\en\" />
+    <Folder Include="test\" />
+    <Folder Include="typings\" />
+  </ItemGroup>
+
+</Project>
