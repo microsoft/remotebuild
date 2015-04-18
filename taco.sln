@@ -13,8 +13,8 @@ Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "remotebuild", "remotebuild.
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "taco-remote", "taco-remote.njsproj", "{FDF3B750-2758-4520-9200-FCCF923BB71E}"
 EndProject
-Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "gulp", "gulp.njsproj", "{8A69DCFC-B4B2-4B09-9977-180E22B12254}"
-EndProject
+#Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "gulp", "gulp.njsproj", "{8A69DCFC-B4B2-4B09-9977-180E22B12254}"
+#EndProject
 
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,8 +31,8 @@ Global
 		{27C17FE7-829B-4614-8D2F-2C0C14B8F2DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDF3B750-2758-4520-9200-FCCF923BB71E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FDF3B750-2758-4520-9200-FCCF923BB71E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8A69DCFC-B4B2-4B09-9977-180E22B12254}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8A69DCFC-B4B2-4B09-9977-180E22B12254}.Debug|Any CPU.Build.0 = Debug|Any CPU
+#		{8A69DCFC-B4B2-4B09-9977-180E22B12254}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+#		{8A69DCFC-B4B2-4B09-9977-180E22B12254}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
