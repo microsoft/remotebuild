@@ -2,7 +2,7 @@
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
   <PropertyGroup>
-    <StartupFile>$(TACO_ROOT)\build\bin\$(MSBuildProjectName)\$(StartupModule)</StartupFile>
+    <StartupFile>$(TACO_ROOT)\build\src\$(MSBuildProjectName)\$(StartupModule)</StartupFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
@@ -10,12 +10,12 @@
   <!--Enables Build Project scenario  in VS-->
   <Target Name="Build" >
     <Exec Command="gulp prep" WorkingDirectory="$(GulpRoot)" />
-    <Exec Command="gulp" WorkingDirectory="$(GulpRoot)" />
+    <Exec Command="gulp --module $(MSBuildProjectName)" WorkingDirectory="$(GulpRoot)" />
   </Target>
 
   <!--Enables Clean Project scenario  in VS-->
   <Target Name="Clean">
-    <Exec Command="gulp clean" WorkingDirectory="$(GulpRoot)" />
+    <Exec Command="gulp clean --module $(MSBuildProjectName)" WorkingDirectory="$(GulpRoot)" />
   </Target>
 
   <!--Enables Rebuild Project scenario in VS -->

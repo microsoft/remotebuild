@@ -24,4 +24,7 @@
     <Folder Include="test\resources\plist\" />
     <Folder Include="typings\" />
   </ItemGroup>
+
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <Import Project="taco-cli-project.targets" />
 </Project>
