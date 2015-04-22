@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectGuid>{00f9af67-c8f0-4efa-a6ee-6dbeea4adde4}</ProjectGuid>
@@ -18,7 +18,6 @@
     <Folder Include="cli\remoteBuild\" />
     <Folder Include="cli\remoteBuild\win32\" />
     <Folder Include="cli\utils\" />
-    <Folder Include="compile\" />
     <Folder Include="resources\" />
     <Folder Include="resources\en\" />
     <Folder Include="test\" />
