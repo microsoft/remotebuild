@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <ProjectGuid>{00f9af67-c8f0-4efa-a6ee-6dbeea4adde4}</ProjectGuid>
+    <ProjectGuid>{BE8A7712-5551-4E7B-9629-03D4DFAFE99B}</ProjectGuid>
     <ProjectHome>$(TACO_ROOT)\src\$(MSBuildProjectName)\</ProjectHome>
     <StartupModule>bin\taco</StartupModule>
   </PropertyGroup>
@@ -13,22 +13,8 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="bin\" />
-    <Folder Include="cli\" />
-    <Folder Include="cli\remoteBuild\" />
-    <Folder Include="cli\remoteBuild\win32\" />
-    <Folder Include="cli\utils\" />
-    <Folder Include="compile\" />
     <Folder Include="resources\" />
     <Folder Include="resources\en\" />
-    <Folder Include="test\" />
-    <Folder Include="test\resources\" />
-    <Folder Include="test\resources\certs\" />
-    <Folder Include="test\resources\templates\" />
-    <Folder Include="test\resources\templates\testKit\" />
-    <Folder Include="test\resources\templates\testKit\testTemplate\" />
-    <Folder Include="test\resources\templates\testKit\testTemplate\folder1\" />
-    <Folder Include="test\utils\" />
     <Folder Include="typings\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
