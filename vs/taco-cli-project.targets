@@ -10,12 +10,12 @@
   <!--Enables Build Project scenario  in VS-->
   <Target Name="Build" >
     <Exec Command="gulp prep" WorkingDirectory="$(GulpRoot)" />
-    <Exec Command="gulp --module $(MSBuildProjectName)" WorkingDirectory="$(GulpRoot)" />
+    <Exec Command="gulp --moduleFilter $(MSBuildProjectName)" WorkingDirectory="$(GulpRoot)" />
   </Target>
 
   <!--Enables Clean Project scenario  in VS-->
   <Target Name="Clean">
-    <Exec Command="gulp clean --module $(MSBuildProjectName)" WorkingDirectory="$(GulpRoot)" />
+    <Exec Command="gulp clean --moduleFilter $(MSBuildProjectName)" WorkingDirectory="$(GulpRoot)" />
   </Target>
 
   <!--Enables Rebuild Project scenario in VS -->
