@@ -2,7 +2,7 @@
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectGuid>{f6af468e-ed24-4d4d-bcfa-53d7d2134fc7}</ProjectGuid>
-    <ProjectHome>$(TACO_ROOT)\src\$(MSBuildProjectName)\</ProjectHome>
+    <ProjectHome>$(TACO_ROOT)\src\$(MSBuildProjectName)</ProjectHome>
   </PropertyGroup>
 
   <Import Project="taco.targets" />

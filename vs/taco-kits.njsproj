@@ -1,8 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectGuid>{BE8A7712-5551-4E7B-9629-03D4DFAFE99B}</ProjectGuid>
-    <ProjectHome>$(TACO_ROOT)\src\$(MSBuildProjectName)\</ProjectHome>
+    <ProjectHome>$(TACO_ROOT)\src\$(MSBuildProjectName)</ProjectHome>
     <StartupModule>bin\taco</StartupModule>
   </PropertyGroup>
   <Import Project="taco.targets" />
@@ -15,6 +15,8 @@
   <ItemGroup>
     <Folder Include="resources\" />
     <Folder Include="resources\en\" />
+    <Folder Include="test\" />
+    <Folder Include="test\test-data\" />
     <Folder Include="typings\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
