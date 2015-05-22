@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<lbaPlugins>
+  <plugin id="CopyLba">
+    <parameter name="source" />
+    <parameter name="target" />
+    <parameter name="overwrite">
+      <value>none</value>
+      <value>older</value>
+      <value>all</value>
+    </parameter>
+    <parameter name="removeReadOnly">
+      <valueTypeRef id="bool" />
+    </parameter>
+    <parameter name="IncludeProjectFile">
+      <valueTypeRef id="bool" />
+    </parameter>
+    <parameter name="LimitToActiveCulturesAndProjects">
+      <valueTypeRef id="bool" />
+    </parameter>
+    <parameter name="Mirror">
+      <valueTypeRef id="bool" />
+    </parameter>
+    <parameter name="SubFoldersToInclude">
+    </parameter>
+  </plugin>
+  <plugin id="CustomScript">
+    <parameter name="path" />
+    <parameter name="executionMode">
+      <value>Once</value>
+      <value>PerCulture</value>
+      <value>PerProject</value>
+    </parameter>
+    <parameter name="timeout" />
+    <parameter name="arguments" />
+    <parameter name="AllowMultiThread">
+      <valueTypeRef id="bool" />
+    </parameter>
+  </plugin>
+  <plugin id="MlpWebService">
+    <parameter name="service" hidden="true">
+      <value>CreateBranch</value>
+      <value>CreateBuild</value>
+      <value>InitiateBuild</value>
+      <value>UpdateBuild</value>
+      <value>UpdateTransaction</value>
+    </parameter>
+    <parameter name="FinalizeStatus">
+      <valueTypeRef id="bool"/>
+    </parameter>
+    <parameter name="BuildContainsHandoff" >
+      <valueTypeRef id="bool"/>
+    </parameter>
+    <parameter name="HandoffType" >
+      <value>Preview</value>
+      <value>Normal</value>
+    </parameter>
+    <parameter name="AllowMultipleBuildHandoffs">
+      <valueTypeRef id="bool" />
+    </parameter>
+    <parameter name="BuildType">
+      <value>Content</value>
+      <value>Software</value>
+    </parameter>
+  </plugin>
+  <plugin id="ResourceWebServicePlugin">
+    <parameter name="resourceType">
+      <value>source</value>
+      <value>target</value>
+      <value>both</value>
+    </parameter>
+  </plugin>
+  <plugin id="SourceDepot">
+    <parameter name="Operation">
+      <value>CreateChangelist</value>
+      <value>CheckinFiles</value>
+      <value>SubmitChangelist</value>
+    </parameter>
+    <parameter name="IncludeProjectFile">
+      <valueTypeRef id="bool" />
+    </parameter>
+    <parameter name="SubFoldersToInclude" />
+  </plugin>
+  <plugin id="Policheck">
+    <parameter name="ResultType">
+      <value>Txt</value>
+      <value>Xml</value>
+      <value>Xls</value>
+    </parameter>
+    <parameter name="ScanMode" />
+  </plugin>
+
+  <plugin id="Bin2Lcx">
+    <parameter name="parameterList" />
+    <parameterRef name="HandleResxConversion" />
+    <parameterRef name="IncludeResxInFileName" />
+    <parameterRef name="UseCommentsForGeneration" />
+    <parameterRef name="UseValidationForGeneration" />
+    <parameterRef name="SuppressWarnings" />
+  </plugin>
+  <plugin id="BuildEdb">
+    <parameter name="parameterList" />
+    <parameterRef name="HandleResxConversion" />
+    <parameterRef name="IncludeResxInFileName" />
+    <parameterRef name="GlossaryFolderUsage" />
+    <parameterRef name="PerformEdbAnalysis" />
+    <parameterRef name="PerformEdbValidation" />
+    <parameterRef name="FailOnEdbAnalysisErrors" />
+    <parameterRef name="FailOnEdbValidationErrors" />
+    <parameterRef name="PerformEdbAutoTranslation" />
+    <parameterRef name="FailOnEdbAutoTranslationErrors" />
+    <parameterRef name="ImportSourceLocks" />
+    <parameterRef name="PerformEdbLanguageCheck" />
+  </plugin>
+  <plugin id="Edb2Bin">
+    <parameter name="parameterList" />
+    <parameterRef name="HandleResxConversion" />
+    <parameterRef name="IncludeResxInFileName" />
+    <parameterRef name="PerformEdbValidation" />
+    <parameterRef name="FailOnEdbValidationErrors" />
+    <parameterRef name="PerformEdbLanguageCheck" />
+    <parameterRef name="PseudoLocMode" />
+    <parameterRef name="UseCommentsForGeneration" />
+    <parameterRef name="UseValidationForGeneration" />
+    <parameterRef name="SuppressWarnings" />
+    <parameterRef name="GenerationMode" />
+    <parameterRef name="UseExistingLclForGeneration" />
+  </plugin>
+  <plugin id="Edb2Lcl">
+    <parameter name="parameterList" />
+    <parameterRef name="PerformEdbValidation" />
+    <parameterRef name="UseValidationForGeneration" />
+    <parameterRef name="FailOnEdbValidationErrors" />
+    <parameterRef name="PerformEdbLanguageCheck" />
+    <parameterRef name="SuppressWarnings" />
+  </plugin>
+  <plugin id="LSTask">
+    <parameter name="parameterList" />
+    <parameter name="task">
+      <value>CreateEdb</value>
+      <value>SyncEdb</value>
+      <value>UpdateEdb</value>
+      <value>AutoTransEdb</value>
+      <value>ConfigEdb</value>
+      <value>AnalyzeEdb</value>
+      <value>ValidateEdb</value>
+      <value>BldGloss</value>
+      <value>Edb2Bin</value>
+      <value>Edb2Lcl</value>
+      <value>Bin2Lcx</value>
+      <value>Resx2Xml</value>
+      <value>Xml2Resx</value>
+      <value>CommentEdb</value>
+      <value>CheckEdb</value>
+    </parameter>
+    <parameterRef name="HandleResxConversion" />
+    <parameterRef name="IncludeResxInFileName" />
+    <parameterRef name="GlossaryFolderUsage" />
+    <parameterRef name="PerformEdbAnalysis" />
+    <parameterRef name="PerformEdbValidation" />
+    <parameterRef name="FailOnEdbAnalysisErrors" />
+    <parameterRef name="FailOnEdbValidationErrors" />
+    <parameterRef name="PerformEdbAutoTranslation" />
+    <parameterRef name="FailOnEdbAutoTranslationErrors" />
+    <parameterRef name="ImportSourceLocks" />
+    <parameterRef name="PerformEdbLanguageCheck" />
+    <parameterRef name="UseCommentsForGeneration" />
+    <parameterRef name="UseValidationForGeneration" />
+    <parameterRef name="SuppressWarnings" />
+    <parameterRef name="PseudoLocMode" />
+    <parameterRef name="GenerationMode" />
+    <parameterRef name="UseExistingLclForGeneration" />
+  </plugin>
+  
+  <plugin id="BuildZip">
+  </plugin>
+  <plugin id="ExtractZip">
+    <parameter name="parameterList" />
+    <parameter name="PerformZipValidation">
+      <valueTypeRef id="bool" />
+    </parameter>
+  </plugin>
+  
+  <valueType id="bool" >
+    <value>true</value>
+    <value>false</value>
+  </valueType>
+  <parameter name="ImportSourceLocks">
+    <valueTypeRef id="bool" />
+  </parameter>
+  <parameter name="FailOnEdbAnalysisErrors">
+    <valueTypeRef id="bool" />
+  </parameter>
+  <parameter name="FailOnEdbValidationErrors">
+    <valueTypeRef id="bool" />
+  </parameter>
+  <parameter name="FailOnEdbAutoTranslationErrors">
+    <valueTypeRef id="bool" />
+  </parameter>
+  <parameter name="HandleResxConversion" hidden="true">
+    <valueTypeRef id="bool" />
+  </parameter>
+  <parameter name="PerformEdbValidation">
+    <valueTypeRef id="bool" />
+  </parameter>
+  <parameter name="PerformEdbAnalysis">
+    <valueTypeRef id="bool" />
+  </parameter>
+  <parameter name="PerformEdbLanguageCheck">
+    <valueTypeRef id="bool" />
+  </parameter>
+  <parameter name="PseudoLocMode">
+    <value>Full</value>
+    <value>Mixed</value>
+    <value>None</value>
+  </parameter>
+  <parameter name="UseCommentsForGeneration">
+    <valueTypeRef id="bool" />
+  </parameter>
+  <parameter name="GlossaryFolderUsage">
+    <value>None</value>
+    <value>First</value>
+    <value>All</value>
+  </parameter>
+  <parameter name="PerformEdbAutotranslation">
+    <valueTypeRef id="bool" />
+  </parameter>
+  <parameter name="UseValidationForGeneration">
+    <valueTypeRef id="bool" />
+  </parameter>
+  <parameter name="SuppressWarnings">
+    <valueTypeRef id="bool" />
+  </parameter>
+  <parameter name="IncludeResxInFilename">
+    <valueTypeRef id="bool" />
+  </parameter>
+  <parameter name="GenerationMode">
+    <value>Normal</value>
+    <value>FailSafe</value>
+  </parameter>
+  <parameter name="UseExistingLclForGeneration">
+    <valueTypeRef id="bool" />
+  </parameter>
+  <parameter name="IgnoreUpdatedStringsForPseudoLoc">
+    <valueTypeRef id="bool" />
+  </parameter>
+  <parameter name="IgnoreUpdatedStringsForLoc">
+    <valueTypeRef id="bool" />
+  </parameter>
+
+	<!-- Helium command parameters-->
+	<parameter name="heliumTask" hidden="true">
+		<value>PrepHE</value>
+		<value>RebuildGlossaryHE</value>
+		<value>SetTermHE</value>
+		<value>ArchiveHE</value>
+		<value>UpdateHE</value>
+		<value>TransRptHE</value>
+		<value>StatsRptHE</value>
+		<value>AutoTransHE</value>
+		<value>TermRptHE</value>
+		<value>ValidationRptHE</value>
+		<value>ExportGlossaryHE</value>
+		<value>CleanUpHE</value>
+	</parameter>
+	<parameter name="NewTermState">
+		<value>Review</value>
+		<value>Reviewed</value>
+		<value>Legacy</value>
+	</parameter>
+	<parameter name="TermStateFilter" />
+	<parameter name="MatchThreshold" />
+	<parameter name="PriorityLevel" />
+	<parameter name="NewLsgFolder">
+		<valueTypeRef id="bool" />
+	</parameter>
+	<parameter name="IncRepeatsFile">
+		<valueTypeRef id="bool" />
+	</parameter>
+
+	<!-- Resource Manager command parameters-->
+	<plugin id="ResourceManager">
+		<parameter name="StatisticsTask">
+			<value>LocStatistics</value>
+			<value>BuildStatistics</value>
+		</parameter>
+	</plugin>
+</lbaPlugins>

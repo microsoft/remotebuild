@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LCX SchemaVersion="6.0" Name="resources.json" PsrId="306" FileType="1" SrcCul="en-US" Desc="Commenting file created by LCXAdmin. For more information, please visit http://localizability/longhorn/LcxAdmin.asp" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
+  <OwnedComments>
+    <Cmt Name="LcxAdmin" />
+  </OwnedComments>
+  <Item ItemId=";String Table" ItemType="0" PsrId="306" Leaf="false">
+    <Disp Icon="Expand" Expand="true" Disp="true" LocTbl="false" />
+    <Item ItemId=";Strings" ItemType="0" PsrId="306" Leaf="false">
+      <Disp Icon="Str" Disp="true" LocTbl="false" />
+      <Item ItemId=";CertExpirationInvalid" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[certExpirationdays {0} would result in expired certs. Default cert expiration {1} days will be used instead.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="certExpirationdays"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";NoServerModulesSelected" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Warning: No server modules selected. Defaulting to configuration "modules": {"taco-remote": { "mountPath": "cordova"} }]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="\"modules\": {\"taco-remote\": { \"mountPath\": \"cordova\"} }"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";OSXCertSetupInformation[8]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Alternately, use 'taco setup remote <platform>' to configure the taco CLI to use this build server for the chosen platform, specifying]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="taco setup remote"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";RemoteBuildConfConfig" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Path to server configuration json file with any of these settings (defaults to $TACO_HOME/RemoteBuild.config if not specified)]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="$TACO_HOME/RemoteBuild.config"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";RemoteBuildConfLang" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Language to use for console output (deafults to the language given by $LANG if not specified)]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="$LANG"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";RemoteBuildConfServerDir" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Root directory for server (defaults to $TACO_HOME/remote-builds if not specified)]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="$TACO_HOME/remote-builds"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";RunningAsRootError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[****** remotebuild should not be run as root. Shutting down.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="remotebuild"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UnableToLoadModule" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: Unable to load module {0}. Try running 'npm install {0}' or specifying the full path to the package]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="npm install"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UsageInformation1[0]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[remotebuild Remote build server]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="remotebuild"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UsageInformation1[12]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[   --h[elp]5D; [module]5D;         Show this help text and exit, or show help about a specified sub-module]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="--h[elp]5D;"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UsageInformation1[13]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[   --v[ersion]5D;               Show version information and exit]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="--v[ersion]5D;"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UsageInformation1[15]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Options (All options other than --config can be specified via a configuration file)]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="--config"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UsageInformation1[3]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[remotebuild command [options]5D;]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="remotebuild"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UsageInformation1[6]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[   start                     Starts the server]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="start"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UsageInformation1[7]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[   resetServerCert           Resets server SSL certificates]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="resetServerCert"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UsageInformation1[8]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[   generateClientCert        Generate a new client certificate for configuring a new secure connection]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="generateClientCert"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UsageInformation1[9]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[   help                      Print this help, or help about a particular module]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="help"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UsageInformation2[14]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Start the server with all defaults (secure server with serverDir $TACO_HOME/remote-builds, port 3000)]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="$TACO_HOME/remote-builds"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UsageInformation2[15]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[remotebuild]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="remotebuild"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UsageInformation2[18]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[remotebuild --serverDir ~/other-builds --port 4000 --secure false]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="remotebuild --serverDir ~/other-builds --port 4000 --secure false"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UsageInformation2[1]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Usage for starting server: remotebuild --serverDir [directory]5D; --port [num]5D; --secure [true|false]5D; --pinTimeout [num]5D; --config [path_to_config_file]5D;]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="remotebuild"} {Locked="--serverDir"} {Locked="--port"} {Locked="--secure"} {Locked="--pinTimeout"} {Locked="--config"} {Locked="true"} {Locked="false"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UsageInformation2[21]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[remotebuild resetServerCert --certExpirationDays 365]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="remotebuild resetServerCert --certExpirationDays 365"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UsageInformation2[24]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[remotebuild generateClientCert --certExpirationDays 365]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="remotebuild generateClientCert --certExpirationDays 365"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UsageInformation2[5]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Usage for resetServerCert: remotebuild resetServerCert --serverDir [directory]5D; --certExpirationDays [num]5D;]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="remotebuild resetServerCert --serverDir"} {Locked="--certExpirationDays"} {Locked="resetServerCert"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UsageInformation2[7]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Usage for generateClientCert: remotebuild generateClientCert --serverDir [directory]5D; --certExpirationDays [num]5D;]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="remotebuild generateClientCert --serverDir"} {Locked="--certExpirationDays"} {Locked="generateClientCert"}]]></Cmt>
+        </Cmts>
+      </Item>
+    </Item>
+  </Item>
+</LCX>

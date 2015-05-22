@@ -1,0 +1,2901 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<jobTypeTemplates xmlns="http://msn.com/mlp" version="2.0">
+
+  <!-- EDB JOB TEMPLATES (w/ Environment Variables) -->
+
+  <jobType id="DailyBuildLocalizationCustomEdbEnv">
+    <commandList>
+      <command id="Edb2Bin"
+               plugin="Edb2Bin"
+               position="10"
+               executionLevel="Project"
+               parameterListId="Edb2BinParameterList"
+               timeout="60"
+               />
+      <command id="PostEdb2BinAction"
+               plugin="CustomScript"
+               position="20"
+               executionLevel="Project"
+               parameterListId="PostEdb2BinActionParameterList"
+               timeout="120"
+               />
+    </commandList>
+    <parameterList id="Edb2BinParameterList">
+      <parameter name="HandleResxConversion" value="true"/>
+      <parameter name="IncludeResxInFilename" value="true"/>
+      <parameter name="PerformEdbValidation" value="false"/>
+      <parameter name="FailOnEdbValidationErrors" value="false"/>
+      <parameter name="UseValidationForGeneration" value="true"/>
+      <parameter name="GenerationMode" value="FailSafe"/>
+      <parameter name="PerformEdbLanguageCheck" value="false"/>
+      <parameter name="PseudoLocMode" value="Mixed"/>
+      <parameter name="SuppressWarnings" value="true"/>
+      <parameter name="UseExistingLclForGeneration" value="true"/>
+      <parameter name="IgnoreUpdatedStringsForLoc" value="false"/>
+      <parameter name="IgnoreUpdatedStringsForPseudoLoc" value="true"/>
+      <parameter name="EdbValidationActions" value="All"/>
+      <parameter name="EdbValidationErrorActions" value="All"/>
+      <parameter name="GenerateTranslationFiles" value="false" />
+    </parameterList>
+    <parameterList id="PostEdb2BinActionParameterList">
+      <parameter name="path" value="%LBA_DAILYBUILDPOSTEDB2BIN%"/>
+      <parameter name="AllowMultithread" value="false"/>
+    </parameterList>
+  </jobType>
+
+  <jobType id="MlpHandbackEdbEnv">
+    <commandList>
+      <command id="UpdateMlpForStart"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForStartParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="Edb2Bin"
+               plugin="Edb2Bin"
+               position="20"
+               executionLevel="Project"
+               parameterListId="Edb2BinParameterList"
+               timeout="60"
+               />
+      <command id="PostEdb2BinAction"
+               plugin="CustomScript"
+               position="30"
+               executionLevel="Project"
+               parameterListId="PostEdb2BinActionParameterList"
+               timeout="120"
+               />
+      <command id="CopyResultsToMlpFileServer"
+               plugin="CopyLba"
+               position="40"
+               executionLevel="%LBA_COPYLBA_EXECUTIONLEVEL%"
+               parameterListId="CopyResultsToMlpFileServerParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="UpdateMlpForFinish"
+               plugin="MlpWebService"
+               position="50"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForFinishParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+    </commandList>
+    <parameterList id="UpdateMlpForStartParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+    </parameterList>
+    <parameterList id="PostEdb2BinActionParameterList">
+      <parameter name="path" value="%LBA_HANDBACKPOSTEDB2BIN%"/>
+      <parameter name="AllowMultithread" value="false"/>
+    </parameterList>
+    <parameterList id="Edb2BinParameterList">
+      <parameter name="HandleResxConversion" value="true"/>
+      <parameter name="IncludeResxInFilename" value="true"/>
+      <parameter name="PerformEdbValidation" value="true"/>
+      <parameter name="FailOnEdbValidationErrors" value="true"/>
+      <parameter name="UseValidationForGeneration" value="true"/>
+      <parameter name="GenerationMode" value="Normal"/>
+      <parameter name="PerformEdbLanguageCheck" value="true"/>
+      <parameter name="PseudoLocMode" value="None"/>
+      <parameter name="SuppressWarnings" value="false"/>
+      <parameter name="UseExistingLclForGeneration" value="false"/>
+      <parameter name="IgnoreUpdatedStringsForLoc" value="false"/>
+      <parameter name="IgnoreUpdatedStringsForPseudoLoc" value="true"/>
+      <parameter name="EdbValidationActions" value="All"/>
+      <parameter name="EdbValidationErrorActions" value="All"/>
+      <parameter name="GenerateTranslationFiles" value="false" />
+    </parameterList>
+    <parameterList id="CopyResultsToMlpFileServerParameterList" >
+      <parameter name="source" value="$LbaConfigInfo.WorkspaceLbaRoot$"/>
+      <parameter name="target" value="$LbaConfigInfo.MlpTransactionRoot$\handbackbuild\lba"/>
+      <parameter name="overwrite" value="all"/>
+      <parameter name="IncludeProjectFile" value="false"/>
+      <parameter name="LimitToActiveCulturesAndProjects" value="true"/>
+      <parameter name="SubFoldersToInclude" value="buildfiles | locstudio.target"/>
+      <parameter name="Mirror" value="true" />
+    </parameterList>
+    <parameterList id="UpdateMlpForFinishParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+      <parameter name="finalizeStatus" value="true"/>
+    </parameterList>
+  </jobType>
+
+  <jobType id="MlpHandbackRemoteEdb1Env">
+    <commandList>
+      <command id="UpdateMlpForStart"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForStartParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="Edb2Bin"
+               plugin="Edb2Bin"
+               position="20"
+               executionLevel="Project"
+               parameterListId="Edb2BinParameterList"
+               timeout="60"
+               />
+      <command id="PostEdb2BinAction"
+               plugin="CustomScript"
+               position="30"
+               executionLevel="Project"
+               parameterListId="PostEdb2BinActionParameterList"
+               timeout="120"
+               />
+      <command id="CopyResultsToMlpFileServer"
+               plugin="CopyLba"
+               position="40"
+               executionLevel="%LBA_COPYLBA_EXECUTIONLEVEL%"
+               parameterListId="CopyResultsToMlpFileServerParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+    </commandList>
+    <errorCommandList>
+      <command id="UpdateMlpForError"
+                 plugin="MlpWebService"
+                 position="10"
+                 executionLevel="Root"
+                 parameterListId="UpdateMlpForErrorParameterList"
+                 timeout="30"
+                 runInLocalMode="false"
+                 />
+    </errorCommandList>
+    <parameterList id="UpdateMlpForStartParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+    </parameterList>
+    <parameterList id="Edb2BinParameterList">
+      <parameter name="HandleResxConversion" value="true"/>
+      <parameter name="IncludeResxInFilename" value="true"/>
+      <parameter name="PerformEdbValidation" value="true"/>
+      <parameter name="FailOnEdbValidationErrors" value="true"/>
+      <parameter name="UseValidationForGeneration" value="true"/>
+      <parameter name="GenerationMode" value="Normal"/>
+      <parameter name="PerformEdbLanguageCheck" value="true"/>
+      <parameter name="PseudoLocMode" value="None"/>
+      <parameter name="SuppressWarnings" value="false"/>
+      <parameter name="UseExistingLclForGeneration" value="false"/>
+      <parameter name="IgnoreUpdatedStringsForLoc" value="false"/>
+      <parameter name="IgnoreUpdatedStringsForPseudoLoc" value="true"/>
+      <parameter name="EdbValidationActions" value="All"/>
+      <parameter name="EdbValidationErrorActions" value="All"/>
+      <parameter name="GenerateTranslationFiles" value="false" />
+    </parameterList>
+    <parameterList id="PostEdb2BinActionParameterList">
+      <parameter name="path" value="%LBA_HANDBACKPOSTEDB2BIN%"/>
+      <parameter name="AllowMultithread" value="false"/>
+    </parameterList>
+    <parameterList id="CopyResultsToMlpFileServerParameterList">
+      <parameter name="source" value="$LbaConfigInfo.WorkspaceLbaRoot$"/>
+      <parameter name="target" value="$LbaConfigInfo.MlpTransactionRoot$\handbackbuild\lba"/>
+      <parameter name="overwrite" value="all"/>
+      <parameter name="IncludeProjectFile" value="false"/>
+      <parameter name="LimitToActiveCulturesAndProjects" value="false"/>
+      <parameter name="SubFoldersToInclude" value="buildfiles | locstudio.target | buildtools | miscfiles"/>
+      <parameter name="Mirror" value="true" />
+    </parameterList>
+    <parameterList id="UpdateMlpForFinishParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+      <parameter name="finalizeStatus" value="true"/>
+    </parameterList>
+    <parameterList id="UpdateMlpForErrorParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+    </parameterList>
+  </jobType>
+
+  <jobType id="MlpCheckinCustomEdbEnv">
+    <commandList>
+      <command id="UpdateMlpForStart"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForStartParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="Edb2Lcl"
+               plugin="Edb2Lcl"
+               position="20"
+               executionLevel="Project"
+               parameterListId="Edb2LclParameterList"
+               timeout="30"
+               />
+      <command id="CustomCheckinScript"
+               plugin="CustomScript"
+               position="30"
+               executionLevel="Project"
+               parameterListId="CustomCheckinScriptParameterList"
+               timeout="120"
+               />
+      <command id="UpdateMlpForFinish"
+               plugin="MlpWebService"
+               position="50"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForFinishParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+    </commandList>
+    <parameterList id="UpdateMlpForStartParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+    </parameterList>
+    <parameterList id="Edb2LclParameterList">
+      <parameter name="PerformEdbValidation" value="false"/>
+      <parameter name="FailOnEdbValidationErrors" value="false"/>
+      <parameter name="PerformEdbLanguageCheck" value="false"/>
+      <parameter name="SuppressWarnings" value="false"/>
+      <parameter name="EdbValidationActions" value="All"/>
+      <parameter name="EdbValidationErrorActions" value="All"/>
+    </parameterList>
+    <parameterList id="CustomCheckinScriptParameterList">
+      <parameter name="path" value="%LBA_CUSTOMCHECKIN%"/>
+      <parameter name="AllowMultithread" value="false"/>
+    </parameterList>
+    <parameterList id="UpdateMlpForFinishParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+      <parameter name="finalizeStatus" value="true"/>
+    </parameterList>
+  </jobType>
+
+
+  <!-- EDB JOB TEMPLATES (with full paths) -->
+
+  <jobType id="DailyBuildLocalizationEdb">
+    <commandList>
+      <command id="Edb2Bin"
+               plugin="Edb2Bin"
+               position="10"
+               executionLevel="Project"
+               parameterListId="Edb2BinParameterList"
+               timeout="60"
+               />
+    </commandList>
+    <parameterList id="Edb2BinParameterList">
+      <parameter name="HandleResxConversion" value="true"/>
+      <parameter name="IncludeResxInFilename" value="true"/>
+      <parameter name="PerformEdbValidation" value="false"/>
+      <parameter name="FailOnEdbValidationErrors" value="false"/>
+      <parameter name="UseValidationForGeneration" value="true"/>
+      <parameter name="GenerationMode" value="FailSafe"/>
+      <parameter name="PerformEdbLanguageCheck" value="false"/>
+      <parameter name="PseudoLocMode" value="Mixed"/>
+      <parameter name="SuppressWarnings" value="true"/>
+      <parameter name="UseExistingLclForGeneration" value="true"/>
+      <parameter name="EdbValidationActions" value="All"/>
+      <parameter name="EdbValidationErrorActions" value="All"/>
+      <parameter name="GenerateTranslationFiles" value="false" />
+    </parameterList>
+  </jobType>
+
+  <jobType id="DailyBuildLocalizationCustomEdb">
+    <commandList>
+      <command id="Edb2Bin"
+               plugin="Edb2Bin"
+               position="10"
+               executionLevel="Project"
+               parameterListId="Edb2BinParameterList"
+               timeout="60"
+               />
+      <command id="PostEdb2BinAction"
+               plugin="CustomScript"
+               position="20"
+               executionLevel="Project"
+               parameterListId="PostEdb2BinActionParameterList"
+               timeout="120"
+               />
+    </commandList>
+    <parameterList id="Edb2BinParameterList">
+      <parameter name="HandleResxConversion" value="true"/>
+      <parameter name="IncludeResxInFilename" value="true"/>
+      <parameter name="PerformEdbValidation" value="false"/>
+      <parameter name="FailOnEdbValidationErrors" value="false"/>
+      <parameter name="UseValidationForGeneration" value="true"/>
+      <parameter name="GenerationMode" value="FailSafe"/>
+      <parameter name="PerformEdbLanguageCheck" value="false"/>
+      <parameter name="PseudoLocMode" value="Mixed"/>
+      <parameter name="SuppressWarnings" value="true"/>
+      <parameter name="UseExistingLclForGeneration" value="true"/>
+      <parameter name="IgnoreUpdatedStringsForLoc" value="false"/>
+      <parameter name="IgnoreUpdatedStringsForPseudoLoc" value="true"/>
+      <parameter name="EdbValidationActions" value="All"/>
+      <parameter name="EdbValidationErrorActions" value="All"/>
+      <parameter name="GenerateTranslationFiles" value="false" />
+    </parameterList>
+    <parameterList id="PostEdb2BinActionParameterList">
+      <parameter name="path" value="%INETROOT%\tools\loctools\lba\scripts\DailyBuildPostEdb2Bin.cmd"/>
+      <parameter name="AllowMultithread" value="false"/>
+    </parameterList>
+  </jobType>
+
+  <jobType id="MlpRegisterBuildEdb">
+    <commandList>
+      <command id="Bin2Lcx"
+               plugin="Bin2Lcx"
+               position="5"
+               executionLevel="Project"
+               parameterListId="Bin2LcxParameterList"
+               timeout="30"
+               />
+      <command id="CreateMlpBuild"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="CreateMlpBuildParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               />
+      <command id="CopyResultsToMlpFileServer"
+               plugin="CopyLba"
+               position="20"
+               executionLevel="%LBA_COPYLBA_EXECUTIONLEVEL%"
+               parameterListId="CopyResultsToMlpFileServerParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               />
+    </commandList>
+    <parameterList id="Bin2LcxParameterList">
+      <parameter name="HandleResxConversion" value="true" />
+      <parameter name="IncludeResxInFilename" value="true"/>
+      <parameter name="UseValidationForGeneration" value="true"/>
+      <parameter name="SuppressWarnings" value="false"/>
+    </parameterList>
+    <parameterList id="CreateMlpBuildParameterList">
+      <parameter name="service" value="CreateBuild"/>
+      <parameter name="AllowMultipleBuildHandoffs" value="false" />
+      <parameter name="BuildType" value="Software" />
+      <parameter name="BuildContainsHandoff" value="false"/>
+      <parameter name="BuildHandoffType" value="Normal" />
+    </parameterList>
+    <parameterList id="CopyResultsToMlpFileServerParameterList">
+      <parameter name="source" value="$LbaConfigInfo.WorkspaceLbaRoot$"/>
+      <parameter name="target" value="$LbaConfigInfo.MlpBuildRoot$\build\lba"/>
+      <parameter name="overwrite" value="all"/>
+      <parameter name="IncludeProjectFile" value="false"/>
+      <parameter name="LimitToActiveCulturesAndProjects" value="false"/>
+      <parameter name="SubFoldersToInclude" value="locstudio.source | miscfiles | handoff.extra | lce | lci | resx.comments | locstudio.reference"/>
+      <parameter name="Mirror" value="true" />
+    </parameterList>
+  </jobType>
+
+  <jobType id="MlpRegisterBuildEdbMultipleHandoff">
+    <commandList>
+      <command id="Bin2Lcx"
+               plugin="Bin2Lcx"
+               position="5"
+               executionLevel="Project"
+               parameterListId="Bin2LcxParameterList"
+               timeout="30"
+               />
+      <command id="CreateMlpBuild"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="CreateMlpBuildParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               />
+      <command id="CopyResultsToMlpFileServer"
+               plugin="CopyLba"
+               position="20"
+               executionLevel="%LBA_COPYLBA_EXECUTIONLEVEL%"
+               parameterListId="CopyResultsToMlpFileServerParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               />
+    </commandList>
+    <parameterList id="Bin2LcxParameterList">
+      <parameter name="HandleResxConversion" value="true" />
+      <parameter name="IncludeResxInFilename" value="true"/>
+      <parameter name="UseValidationForGeneration" value="true"/>
+      <parameter name="SuppressWarnings" value="false"/>
+    </parameterList>
+    <parameterList id="CreateMlpBuildParameterList">
+      <parameter name="service" value="CreateBuild"/>
+      <parameter name="AllowMultipleBuildHandoffs" value="true" />
+      <parameter name="BuildType" value="Software" />
+      <parameter name="BuildHandoffType" value="Normal"/>
+      <parameter name="BuildContainsHandoff" value="false"/>
+    </parameterList>
+    <parameterList id="CopyResultsToMlpFileServerParameterList">
+      <parameter name="source" value="$LbaConfigInfo.WorkspaceLbaRoot$"/>
+      <parameter name="target" value="$LbaConfigInfo.MlpBuildRoot$\build\lba"/>
+      <parameter name="overwrite" value="all"/>
+      <parameter name="IncludeProjectFile" value="false"/>
+      <parameter name="LimitToActiveCulturesAndProjects" value="false"/>
+      <parameter name="SubFoldersToInclude" value="locstudio.source | miscfiles | handoff.extra | lce | lci | resx.comments | locstudio.reference"/>
+      <parameter name="Mirror" value="true" />
+    </parameterList>
+  </jobType>
+
+  <jobType id="MlpCreateBuildEdb">
+    <commandList>
+      <command id="UpdateMlpForStart"
+               plugin="MlpWebService"
+               position="1"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForStartParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="Bin2Lcx"
+               plugin="Bin2Lcx"
+               position="5"
+               executionLevel="Project"
+               parameterListId="Bin2LcxParameterList"
+               timeout="30"
+               />
+      <command id="CreateMlpBuild"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="CreateMlpBuildParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               />
+      <command id="CopyResultsToMlpFileServer"
+               plugin="CopyLba"
+               position="20"
+               executionLevel="%LBA_COPYLBA_EXECUTIONLEVEL%"
+               parameterListId="CopyResultsToMlpFileServerParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               />
+      <command id="UpdateMlpForFinish"
+               plugin="MlpWebService"
+               position="30"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForFinishParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+    </commandList>
+    <parameterList id="UpdateMlpForStartParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+    </parameterList>
+    <parameterList id="Bin2LcxParameterList">
+      <parameter name="HandleResxConversion" value="true" />
+      <parameter name="IncludeResxInFilename" value="true"/>
+      <parameter name="UseValidationForGeneration" value="true"/>
+      <parameter name="SuppressWarnings" value="false"/>
+    </parameterList>
+    <parameterList id="CreateMlpBuildParameterList">
+      <parameter name="service" value="CreateBuild"/>
+      <parameter name="BuildContainsHandoff" value="false"/>
+      <parameter name="BuildHandoffType" value="Normal" />
+    </parameterList>
+    <parameterList id="CopyResultsToMlpFileServerParameterList">
+      <parameter name="source" value="$LbaConfigInfo.WorkspaceLbaRoot$"/>
+      <parameter name="target" value="$LbaConfigInfo.MlpBuildRoot$\build\lba"/>
+      <parameter name="overwrite" value="all"/>
+      <parameter name="IncludeProjectFile" value="false"/>
+      <parameter name="LimitToActiveCulturesAndProjects" value="false"/>
+      <parameter name="SubFoldersToInclude" value="locstudio.source | miscfiles | handoff.extra | lce | lci | resx.comments | locstudio.reference"/>
+      <parameter name="Mirror" value="true" />
+    </parameterList>
+    <parameterList id="UpdateMlpForFinishParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+      <parameter name="finalizeStatus" value="true"/>
+    </parameterList>
+  </jobType>
+
+  <jobType id="MlpPrepHandoffEdb">
+    <commandList>
+      <command id="UpdateMlpForStart"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForStartParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="BuildEdb"
+               plugin="BuildEdb"
+               position="20"
+               executionLevel="Project"
+               parameterListId="BuildEdbParameterList"
+               timeout="60"
+               />
+      <command id="Edb2Lcl"
+               plugin="Edb2Lcl"
+               position="30"
+               executionLevel="Project"
+               parameterListId="Edb2LclParameterList"
+               timeout="30"
+               ignoreError="true"
+               runInLocalMode="true"
+               />
+      <command id="CopyResultsToMlpFileServer"
+               plugin="CopyLba"
+               position="40"
+               executionLevel="%LBA_COPYLBA_EXECUTIONLEVEL%"
+               parameterListId="CopyResultsToMlpFileServerParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="UpdateMlpForFinish"
+               plugin="MlpWebService"
+               position="70"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForFinishParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+    </commandList>
+    <parameterList id="UpdateMlpForStartParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+    </parameterList>
+    <parameterList id="BuildEdbParameterList">
+      <parameter name="HandleResxConversion" value="true"/>
+      <parameter name="IncludeResxInFilename" value="true"/>
+      <parameter name="GlossaryFolderUsage" value="First"/>
+      <parameter name="PerformEdbAutotranslation" value="true" />
+      <parameter name="FailOnEdbAutoTranslationErrors" value="true"/>
+      <parameter name="PerformEdbAnalysis" value="true"/>
+      <parameter name="FailOnEdbAnalysisErrors" value="true"/>
+      <parameter name="PerformEdbValidation" value="true"/>
+      <parameter name="FailOnEdbValidationErrors" value="false"/>
+      <parameter name="ImportSourceLocks" value="false"/>
+      <parameter name="PerformEdbLanguageCheck" value="true"/>
+      <parameter name="EdbValidationActions" value="All"/>
+      <parameter name="EdbValidationErrorActions" value="All"/>
+    </parameterList>
+    <parameterList id="CopyResultsToMlpFileServerParameterList">
+      <parameter name="source" value="$LbaConfigInfo.WorkspaceLbaRoot$"/>
+      <parameter name="target" value="$LbaConfigInfo.MlpBuildRoot$\handoffbuild\lba"/>
+      <parameter name="overwrite" value="all"/>
+      <parameter name="IncludeProjectFile" value="true"/>
+      <parameter name="LimitToActiveCulturesAndProjects" value="true"/>
+      <parameter name="Mirror" value="true" />
+      <parameter name="SubFoldersToInclude" value=""/>
+    </parameterList>
+    <parameterList id="Edb2LclParameterList">
+      <parameter name="PerformEdbValidation" value="false"/>
+      <parameter name="FailOnEdbValidationErrors" value="false"/>
+      <parameter name="PerformEdbLanguageCheck" value="false"/>
+      <parameter name="SuppressWarnings" value="false"/>
+      <parameter name="EdbValidationActions" value="All"/>
+      <parameter name="EdbValidationErrorActions" value="All"/>
+    </parameterList>
+    <parameterList id="UpdateMlpForFinishParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+      <parameter name="finalizeStatus" value="true"/>
+    </parameterList>
+  </jobType>
+
+  <jobType id="MlpHandbackEdb">
+    <commandList>
+      <command id="UpdateMlpForStart"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForStartParameterList"
+               timeout="30"
+               runInLocalMode="false"
+                alwaysExecute="true"
+               />
+      <command id="Edb2Bin"
+               plugin="Edb2Bin"
+               position="20"
+               executionLevel="Project"
+               parameterListId="Edb2BinParameterList"
+               timeout="60"
+               />
+      <command id="PostEdb2BinAction"
+               plugin="CustomScript"
+               position="30"
+               executionLevel="Project"
+               parameterListId="PostEdb2BinActionParameterList"
+               timeout="120"
+               />
+      <command id="CopyResultsToMlpFileServer"
+               plugin="CopyLba"
+               position="40"
+               executionLevel="%LBA_COPYLBA_EXECUTIONLEVEL%"
+               parameterListId="CopyResultsToMlpFileServerParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="UpdateMlpForFinish"
+               plugin="MlpWebService"
+               position="50"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForFinishParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+    </commandList>
+    <parameterList id="UpdateMlpForStartParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+    </parameterList>
+    <parameterList id="PostEdb2BinActionParameterList">
+      <parameter name="path" value="%INETROOT%\tools\loctools\lba\scripts\HandbackPostEdb2Bin.cmd"/>
+      <parameter name="AllowMultithread" value="false"/>
+    </parameterList>
+    <parameterList id="Edb2BinParameterList">
+      <parameter name="HandleResxConversion" value="true"/>
+      <parameter name="IncludeResxInFilename" value="true"/>
+      <parameter name="PerformEdbValidation" value="true"/>
+      <parameter name="FailOnEdbValidationErrors" value="true"/>
+      <parameter name="UseValidationForGeneration" value="true"/>
+      <parameter name="GenerationMode" value="Normal"/>
+      <parameter name="PerformEdbLanguageCheck" value="true"/>
+      <parameter name="PseudoLocMode" value="None"/>
+      <parameter name="SuppressWarnings" value="false"/>
+      <parameter name="UseExistingLclForGeneration" value="false"/>
+      <parameter name="IgnoreUpdatedStringsForLoc" value="false"/>
+      <parameter name="IgnoreUpdatedStringsForPseudoLoc" value="true"/>
+      <parameter name="EdbValidationActions" value="All"/>
+      <parameter name="EdbValidationErrorActions" value="All"/>
+      <parameter name="GenerateTranslationFiles" value="false" />
+    </parameterList>
+    <parameterList id="CopyResultsToMlpFileServerParameterList" >
+      <parameter name="source" value="$LbaConfigInfo.WorkspaceLbaRoot$"/>
+      <parameter name="target" value="$LbaConfigInfo.MlpTransactionRoot$\handbackbuild\lba"/>
+      <parameter name="overwrite" value="all"/>
+      <parameter name="IncludeProjectFile" value="false"/>
+      <parameter name="LimitToActiveCulturesAndProjects" value="true"/>
+      <parameter name="SubFoldersToInclude" value="buildfiles | locstudio.target"/>
+      <parameter name="Mirror" value="true" />
+    </parameterList>
+    <parameterList id="UpdateMlpForFinishParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+      <parameter name="finalizeStatus" value="true"/>
+    </parameterList>
+  </jobType>
+
+  <jobType id="MlpHandbackRemoteEdb1">
+    <commandList>
+      <command id="UpdateMlpForStart"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForStartParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="Edb2Bin"
+               plugin="Edb2Bin"
+               position="20"
+               executionLevel="Project"
+               parameterListId="Edb2BinParameterList"
+               timeout="60"
+               />
+      <command id="PostEdb2BinAction"
+              plugin="CustomScript"
+              position="30"
+              executionLevel="Project"
+              parameterListId="PostEdb2BinActionParameterList"
+              timeout="120"
+               />
+      <command id="CopyResultsToMlpFileServer"
+               plugin="CopyLba"
+               position="40"
+               executionLevel="%LBA_COPYLBA_EXECUTIONLEVEL%"
+               parameterListId="CopyResultsToMlpFileServerParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+    </commandList>
+    <errorCommandList>
+      <command id="UpdateMlpForError"
+                 plugin="MlpWebService"
+                 position="10"
+                 executionLevel="Root"
+                 parameterListId="UpdateMlpForErrorParameterList"
+                 timeout="30"
+                 runInLocalMode="false"
+                 />
+    </errorCommandList>
+    <parameterList id="UpdateMlpForStartParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+    </parameterList>
+    <parameterList id="Edb2BinParameterList">
+      <parameter name="HandleResxConversion" value="true"/>
+      <parameter name="IncludeResxInFilename" value="true"/>
+      <parameter name="PerformEdbValidation" value="true"/>
+      <parameter name="FailOnEdbValidationErrors" value="true"/>
+      <parameter name="UseValidationForGeneration" value="true"/>
+      <parameter name="GenerationMode" value="Normal"/>
+      <parameter name="PerformEdbLanguageCheck" value="true"/>
+      <parameter name="PseudoLocMode" value="None"/>
+      <parameter name="SuppressWarnings" value="false"/>
+      <parameter name="UseExistingLclForGeneration" value="false"/>
+      <parameter name="IgnoreUpdatedStringsForLoc" value="false"/>
+      <parameter name="IgnoreUpdatedStringsForPseudoLoc" value="true"/>
+      <parameter name="EdbValidationActions" value="All"/>
+      <parameter name="EdbValidationErrorActions" value="All"/>
+      <parameter name="GenerateTranslationFiles" value="false" />
+    </parameterList>
+    <parameterList id="PostEdb2BinActionParameterList">
+      <parameter name="path" value="%INETROOT%\tools\loctools\lba\scripts\HandbackPostEdb2Bin.cmd"/>
+      <parameter name="AllowMultithread" value="false"/>
+    </parameterList>
+    <parameterList id="CopyResultsToMlpFileServerParameterList">
+      <parameter name="source" value="$LbaConfigInfo.WorkspaceLbaRoot$"/>
+      <parameter name="target" value="$LbaConfigInfo.MlpTransactionRoot$\handbackbuild\lba"/>
+      <parameter name="overwrite" value="all"/>
+      <parameter name="IncludeProjectFile" value="false"/>
+      <parameter name="LimitToActiveCulturesAndProjects" value="false"/>
+      <parameter name="SubFoldersToInclude" value="buildfiles | locstudio.target | buildtools | miscfiles"/>
+      <parameter name="Mirror" value="true" />
+    </parameterList>
+    <parameterList id="UpdateMlpForErrorParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+    </parameterList>
+  </jobType>
+
+  <jobType id="MlpHandbackRemoteEdb2">
+    <commandList>
+      <command id="CustomCopyScript"
+               plugin="CustomScript"
+               position="10"
+               executionLevel="Culture"
+               parameterListId="CustomCopyScriptParameterList"
+               timeout="120"
+               ignoreError="true"
+               />
+      <command id="UpdateMlpForFinish"
+               plugin="MlpWebService"
+               position="20"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForFinishParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+                />
+    </commandList>
+    <parameterList id="CustomCopyScriptParameterList">
+      <parameter name="path" value="$LbaConfigInfo.WorkspaceLbaRoot$\default\buildtools\CustomRemoteCopy.cmd"/>
+      <parameter name="AllowMultithread" value="false"/>
+    </parameterList>
+    <parameterList id="UpdateMlpForFinishParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+      <parameter name="finalizeStatus" value="true"/>
+    </parameterList>
+  </jobType>
+
+  <jobType id="MlpCheckinEdb">
+    <commandList>
+      <command id="UpdateMlpForStart"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForStartParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="SDCreateChangeList"
+               plugin="SourceDepot"
+               position="11"
+               executionLevel="Root"
+               parameterListId="SDCreateChangelistParameterList"
+               timeout="30"
+               />
+      <command id="Edb2Lcl"
+               plugin="Edb2Lcl"
+               position="20"
+               executionLevel="Project"
+               parameterListId="Edb2LclParameterList"
+               timeout="30"
+               />
+      <command id="SDCheckin"
+               plugin="SourceDepot"
+               position="30"
+               executionLevel="Culture"
+               parameterListId="SDCheckinParameterList"
+               timeout="60"
+               />
+      <command id="SDSubmitChangelist"
+               plugin="SourceDepot"
+               position="49"
+               executionLevel="Root"
+               parameterListId="SDSubmitChangelistParameterList"
+               timeout="30"
+               />
+      <command id="UpdateMlpForFinish"
+               plugin="MlpWebService"
+               position="50"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForFinishParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+    </commandList>
+    <parameterList id="UpdateMlpForStartParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+    </parameterList>
+    <parameterList id="SDCreateChangelistParameterList">
+      <parameter name="Operation" value="CreateChangelist" />
+    </parameterList>
+    <parameterList id="Edb2LclParameterList">
+      <parameter name="PerformEdbValidation" value="false"/>
+      <parameter name="FailOnEdbValidationErrors" value="false"/>
+      <parameter name="PerformEdbLanguageCheck" value="false"/>
+      <parameter name="SuppressWarnings" value="false"/>
+      <parameter name="EdbValidationActions" value="All"/>
+      <parameter name="EdbValidationErrorActions" value="All"/>
+    </parameterList>
+    <parameterList id="SDCheckinParameterList">
+      <parameter name="operation" value="CheckinFiles"/>
+      <parameter name="IncludeProjectFile" value="true"/>
+      <parameter name="SubFoldersToInclude" value="handback.extra | lcl" />
+    </parameterList>
+    <parameterList id="SDSubmitChangelistParameterList">
+      <parameter name="Operation" value="SubmitChangelist" />
+    </parameterList>
+    <parameterList id="UpdateMlpForFinishParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+      <parameter name="finalizeStatus" value="true"/>
+    </parameterList>
+  </jobType>
+
+  <jobType id="MlpCheckinEdbTfs">
+    <commandList>
+      <command id="UpdateMlpForStart"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForStartParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="Edb2Lcl"
+               plugin="Edb2Lcl"
+               position="20"
+               executionLevel="Project"
+               parameterListId="Edb2LclParameterList"
+               timeout="30"
+               />
+      <command id="TfsCheckin"
+               plugin="Tfs"
+               position="40"
+               executionLevel="Culture"
+               parameterListId="TfsCheckinParameterList"
+               timeout="60"
+               />
+      <command id="TfsSubmitFiles"
+               plugin="Tfs"
+               position="50"
+               executionLevel="Root"
+               parameterListId="TfsSubmitFilesParameterList"
+               timeout="30"
+               />
+      <command id="UpdateMlpForFinish"
+               plugin="MlpWebService"
+               position="60"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForFinishParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+    </commandList>
+    <parameterList id="UpdateMlpForStartParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+    </parameterList>
+    <parameterList id="Edb2LclParameterList">
+      <parameter name="PerformEdbValidation" value="false"/>
+      <parameter name="FailOnEdbValidationErrors" value="false"/>
+      <parameter name="PerformEdbLanguageCheck" value="false"/>
+      <parameter name="SuppressWarnings" value="false"/>
+      <parameter name="EdbValidationActions" value="All"/>
+      <parameter name="EdbValidationErrorActions" value="All"/>
+    </parameterList>
+    <parameterList id="TfsCheckinParameterList">
+      <parameter name="Operation" value="CheckinFiles"/>
+      <parameter name="IncludeProjectFile" value="true"/>
+      <parameter name="SubFoldersToInclude" value="handback.extra | lcl" />
+    </parameterList>
+    <parameterList id="TfsSubmitFilesParameterList">
+      <parameter name="Operation" value="SubmitFiles" />
+      <parameter name="OverridePolicyFailure" value="true" />
+      <parameter name="OverrideReasonText" value="Automatically checked in by LBA." />
+      <parameter name="CheckinNotesText" value="Code reviewer=N/A;Security reviewer=N/A;Performance reviewer=N/A" />
+    </parameterList>
+    <parameterList id="UpdateMlpForFinishParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+      <parameter name="finalizeStatus" value="true"/>
+    </parameterList>
+  </jobType>
+
+  <jobType id="MlpCheckinCustomEdb">
+    <commandList>
+      <command id="UpdateMlpForStart"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForStartParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="Edb2Lcl"
+               plugin="Edb2Lcl"
+               position="20"
+               executionLevel="Project"
+               parameterListId="Edb2LclParameterList"
+               timeout="30"
+               />
+      <command id="CustomCheckinScript"
+               plugin="CustomScript"
+               position="30"
+               executionLevel="Project"
+               parameterListId="CustomCheckinScriptParameterList"
+               timeout="120"
+               />
+      <command id="UpdateMlpForFinish"
+               plugin="MlpWebService"
+               position="50"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForFinishParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+    </commandList>
+    <parameterList id="UpdateMlpForStartParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+    </parameterList>
+    <parameterList id="Edb2LclParameterList">
+      <parameter name="PerformEdbValidation" value="false"/>
+      <parameter name="FailOnEdbValidationErrors" value="false"/>
+      <parameter name="PerformEdbLanguageCheck" value="false"/>
+      <parameter name="SuppressWarnings" value="false"/>
+      <parameter name="EdbValidationActions" value="All"/>
+      <parameter name="EdbValidationErrorActions" value="All"/>
+    </parameterList>
+    <parameterList id="CustomCheckinScriptParameterList">
+      <parameter name="path" value="%INETROOT%\tools\loctools\lba\scripts\CustomCheckin.cmd"/>
+      <parameter name="AllowMultithread" value="false"/>
+    </parameterList>
+    <parameterList id="UpdateMlpForFinishParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+      <parameter name="finalizeStatus" value="true"/>
+    </parameterList>
+  </jobType>
+
+  <jobType id="ValidateEdb">
+    <commandList>
+      <command id="ValidateLanguage"
+               plugin="LSTask"
+               position="10"
+               executionLevel="Project"
+               parameterListId="ValidateLanguageParameterList"
+               timeout="30"
+               />
+      <command id="ValidateEdb"
+               plugin="LSTask"
+               position="20"
+               executionLevel="Project"
+               parameterListId="ValidateEdbParameterList"
+               timeout="30"
+               />
+    </commandList>
+    <parameterList id="ValidateLanguageParameterList">
+      <parameter name="Task" value="CheckEdb"/>
+      <parameter name="PerformEdbLanguageCheck" value="true"/>
+    </parameterList>
+    <parameterList id="ValidateEdbParameterList">
+      <parameter name="Task" value="ValidateEdb"/>
+      <parameter name="PerformEdbValidation" value="true"/>
+      <parameter name="FailOnEdbValidationErrors" value="true"/>
+      <parameter name="EdbValidationActions" value="All"/>
+      <parameter name="EdbValidationErrorActions" value="All"/>
+    </parameterList>
+  </jobType>
+
+  <jobType id="PolicheckEdb">
+    <commandList>
+      <command id="PolicheckScan"
+               plugin="Policheck"
+               position="10"
+               executionLevel="Project"
+               parameterListId="PolicheckScanParameterList"
+               timeout="60"
+               />
+    </commandList>
+    <parameterList id="PolicheckScanParameterList">
+      <parameter name="ScanMode" value="Edb | Source"/>
+      <parameter name="ResultFileType" value="Xls"/>
+    </parameterList>
+  </jobType>
+
+  <jobType id="CheckinLcl">
+    <commandList>
+      <command id="SDCreateChangeList"
+               plugin="SourceDepot"
+               position="1"
+               executionLevel="Root"
+               parameterListId="SDCreateChangelistParameterList"
+               timeout="30"
+               />
+      <command id="Edb2Lcl"
+              plugin="Edb2Lcl"
+              position="10"
+              executionLevel="Project"
+              parameterListId="Edb2LclParameterList"
+              timeout="30"
+               />
+      <command id="SDCheckin"
+               plugin="SourceDepot"
+               position="20"
+               executionLevel="Project"
+               parameterListId="SDCheckinParameterList"
+               timeout="60"
+               />
+      <command id="SDSubmitChangelist"
+               plugin="SourceDepot"
+               position="30"
+               executionLevel="Root"
+               parameterListId="SDSubmitChangelistParameterList"
+               timeout="30"
+               />
+    </commandList>
+    <parameterList id="SDCreateChangelistParameterList">
+      <parameter name="Operation" value="CreateChangelist" />
+    </parameterList>
+    <parameterList id="Edb2LclParameterList">
+      <parameter name="PerformEdbValidation" value="false"/>
+      <parameter name="FailOnEdbValidationErrors" value="false"/>
+      <parameter name="PerformEdbLanguageCheck" value="false"/>
+      <parameter name="SuppressWarnings" value="false"/>
+      <parameter name="EdbValidationActions" value="All"/>
+      <parameter name="EdbValidationErrorActions" value="All"/>
+    </parameterList>
+    <parameterList id="SDCheckinParameterList">
+      <parameter name="Operation" value="CheckinFiles"/>
+      <parameter name="IncludeProjectFile" value="false"/>
+      <parameter name="SubFoldersToInclude" value="lcl" />
+    </parameterList>
+    <parameterList id="SDSubmitChangelistParameterList">
+      <parameter name="Operation" value="SubmitChangelist" />
+    </parameterList>
+  </jobType>
+
+  <jobType id="MlpRegisterBranchContent">
+    <commandList>
+      <command id="RegisterBranch"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="RegisterBranchParameterList"
+               timeout="30"
+               />
+    </commandList>
+    <parameterList id="RegisterBranchParameterList">
+      <parameter name="service" value="CreateBranch"/>
+      <parameter name="BuildType" value="Content" />
+      <parameter name="AllowMultipleBuildHandoffs" value="false"/>
+    </parameterList>
+  </jobType>
+
+
+  <!-- HELIUM JOB TEMPLATES -->
+
+  <jobType id="MlpRegisterBuildHelium">
+    <commandList>
+      <command id="CreateMlpBuild"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="CreateMlpHeliumBuildParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               />
+      <command id="CopyResultsToMlpFileServer"
+               plugin="CopyLba"
+               position="20"
+               executionLevel="%LBA_COPYLBA_EXECUTIONLEVEL%"
+               parameterListId="CopyResultsToMlpFileServerParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               />
+    </commandList>
+    <parameterList id="CreateMlpHeliumBuildParameterList">
+      <parameter name="service" value="CreateBuild"/>
+      <parameter name="AllowMultipleBuildHandoffs" value="true" />
+      <parameter name="BuildType" value="Software" />
+      <parameter name="BuildContainsHandoff" value="false"/>
+      <parameter name="BuildHandoffType" value="Normal" />
+    </parameterList>
+    <parameterList id="CopyResultsToMlpFileServerParameterList">
+      <parameter name="source" value="$LbaConfigInfo.WorkspaceLbaRoot$"/>
+      <parameter name="target" value="$LbaConfigInfo.MlpBuildRoot$\build\lba"/>
+      <parameter name="overwrite" value="all"/>
+      <parameter name="IncludeProjectFile" value="false"/>
+      <parameter name="LimitToActiveCulturesAndProjects" value="false"/>
+      <parameter name="SubFoldersToInclude" value="helium.newsource | handoff.extra "/>
+      <parameter name="Mirror" value="true" />
+    </parameterList>
+  </jobType>
+
+  <jobType id="MlpCreateBuildHelium">
+    <commandList>
+      <command id="UpdateMlpForStart"
+               plugin="MlpWebService"
+               position="1"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForStartParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="CreateMlpBuild"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="CreateMlpHeliumBuildParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               />
+      <command id="CopyResultsToMlpFileServer"
+               plugin="CopyLba"
+               position="20"
+               executionLevel="%LBA_COPYLBA_EXECUTIONLEVEL%"
+               parameterListId="CopyResultsToMlpFileServerParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               />
+      <command id="UpdateMlpForFinish"
+               plugin="MlpWebService"
+               position="30"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForFinishParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+    </commandList>
+    <parameterList id="UpdateMlpForStartParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+    </parameterList>
+    <parameterList id="CreateMlpHeliumBuildParameterList">
+      <parameter name="service" value="CreateBuild"/>
+      <parameter name="BuildContainsHandoff" value="false"/>
+      <parameter name="BuildHandoffType" value="Normal" />
+    </parameterList>
+    <parameterList id="CopyResultsToMlpFileServerParameterList">
+      <parameter name="source" value="$LbaConfigInfo.WorkspaceLbaRoot$"/>
+      <parameter name="target" value="$LbaConfigInfo.MlpBuildRoot$\build\lba"/>
+      <parameter name="overwrite" value="all"/>
+      <parameter name="IncludeProjectFile" value="false"/>
+      <parameter name="LimitToActiveCulturesAndProjects" value="false"/>
+      <parameter name="SubFoldersToInclude" value="helium.newsource | handoff.extra "/>
+      <parameter name="Mirror" value="true" />
+    </parameterList>
+    <parameterList id="UpdateMlpForFinishParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+      <parameter name="finalizeStatus" value="true"/>
+    </parameterList>
+  </jobType>
+
+  <jobType id="MlpPrepHandoffHelium">
+    <commandList>
+      <command id="UpdateMlpForStart"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForStartParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="PrepHE"
+               plugin="Helium"
+               position="20"
+               executionLevel="Project"
+               parameterListId="PrepHEParameterList"
+               ignoreError="false"
+               timeout="60"
+               />
+      <command id="RebuildGlossaryHE"
+               plugin="Helium"
+               position="30"
+               executionLevel="Project"
+               parameterListId="RebuildGlossaryHEParameterList"
+               ignoreError="false"
+               enabled="true"
+               timeout="5"
+               />
+      <command id="SetTermHE"
+               plugin="Helium"
+               position="40"
+               executionLevel="Project"
+               parameterListId="SetTermHEParameterList"
+               timeout="60"
+               ignoreError="false"
+               />
+      <command id="ArchiveHE"
+               plugin="Helium"
+               position="50"
+               executionLevel="Project"
+               parameterListId="ArchiveHEParameterList"
+               ignoreError="false"
+               timeout="60"
+               />
+      <command id="UpdateHE"
+               plugin="Helium"
+               position="60"
+               executionLevel="Project"
+               parameterListId="UpdateHEParameterList"
+               timeout="60"
+               ignoreError="false"
+               />
+      <command id="CreateTransRpt"
+               plugin="Helium"
+               position="70"
+               executionLevel="Project"
+               parameterListId="CreateTransRptParameterList"
+               timeout="60"
+               ignoreError="false"
+               />
+      <command id="CreateStatsRpt"
+               plugin="Helium"
+               position="80"
+               executionLevel="Project"
+               parameterListId="CreateStatsRptParameterList"
+               timeout="60"
+               ignoreError="false"
+               />
+      <command id="AutoTransHE"
+               plugin="Helium"
+               position="90"
+               executionLevel="Project"
+               parameterListId="AutoTransHEParameterList"
+               timeout="60"
+               enabled="true"
+               ignoreError="false"
+               />
+      <command id="CreateTermRpt"
+               plugin="Helium"
+               position="100"
+               executionLevel="Project"
+               parameterListId="CreateTermRptParameterList"
+               timeout="60"
+               ignoreError="false"
+               enabled="false"
+               />
+      <command id="CopyResultsToMlpFileServer"
+               plugin="CopyLba"
+               position="110"
+               executionLevel="%LBA_COPYLBA_EXECUTIONLEVEL%"
+               parameterListId="CopyResultsToMlpFileServerParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="UpdateMlpForFinish"
+               plugin="MlpWebService"
+               position="120"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForFinishParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+    </commandList>
+    <parameterList id="UpdateMlpForStartParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+    </parameterList>
+    <parameterList id="PrepHEParameterList">
+      <parameter name="heliumTask" value="PrepHE"/>
+    </parameterList>
+    <parameterList id="RebuildGlossaryHEParameterList">
+      <parameter name="heliumTask" value="RebuildGlossaryHE"/>
+    </parameterList>
+    <parameterList id="SetTermHEParameterList">
+      <parameter name="heliumTask" value="SetTermHE"/>
+      <parameter name="NewTermState" value="Reviewed"/>
+      <parameter name="TermStateFilter" value="Review|Edited|NonEdited"/>
+    </parameterList>
+    <parameterList id="ArchiveHEParameterList">
+      <parameter name="heliumTask" value="ArchiveHE"/>
+    </parameterList>
+    <parameterList id="UpdateHEParameterList">
+      <parameter name="heliumTask" value="UpdateHE"/>
+    </parameterList>
+    <parameterList id="CreateTransRptParameterList">
+      <parameter name="heliumTask" value="TransRptHE"/>
+      <parameter name="MatchThreshold" value="100"/>
+    </parameterList>
+    <parameterList id="CreateStatsRptParameterList">
+      <parameter name="heliumTask" value="StatsRptHE"/>
+    </parameterList>
+    <parameterList id="AutoTransHEParameterList">
+      <parameter name="heliumTask" value="AutoTransHE"/>
+      <parameter name="MatchThreshold" value="100"/>
+    </parameterList>
+    <parameterList id="CreateTermRptParameterList">
+      <parameter name="heliumTask" value="TermRptHE"/>
+      <parameter name="PriorityLevel" value="5"/>
+    </parameterList>
+    <parameterList id="CopyResultsToMlpFileServerParameterList">
+      <parameter name="source" value="$LbaConfigInfo.WorkspaceLbaRoot$"/>
+      <parameter name="target" value="$LbaConfigInfo.MlpBuildRoot$\handoffbuild\lba"/>
+      <parameter name="RemoveReadOnly" value="true"/>
+      <parameter name="overwrite" value="all"/>
+      <parameter name="IncludeProjectFile" value="true"/>
+      <parameter name="LimitToActiveCulturesAndProjects" value="true"/>
+      <parameter name="Mirror" value="true" />
+      <parameter name="SubFoldersToInclude" value="handoff.extra | helium.source | helium.working | helium.target | helium.support | reports | lsg"/>
+    </parameterList>
+    <parameterList id="UpdateMlpForFinishParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+      <parameter name="finalizeStatus" value="true"/>
+    </parameterList>
+  </jobType>
+
+  <jobType id="MlpHandbackHelium">
+    <commandList>
+      <command id="UpdateMlpForStart"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForStartParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="RebuildGlossaryHE"
+               plugin="Helium"
+               position="20"
+               executionLevel="Project"
+               parameterListId="RebuildGlossaryHEParameterList"
+               ignoreError="false"
+               timeout="60"
+               />
+      <command id="ValidationReport"
+               plugin="Helium"
+               position="30"
+               executionLevel="Project"
+               parameterListId="ValidationRptParameterList"
+               timeout="60"
+               ignoreError="false"
+               />
+      <command id="CopyResultsToMlpFileServer"
+               plugin="CopyLba"
+               position="40"
+               executionLevel="%LBA_COPYLBA_EXECUTIONLEVEL%"
+               parameterListId="CopyResultsToMlpFileServerParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="CustomCopyAction"
+               plugin="CustomScript"
+               position="45"
+               executionLevel="Project"
+               parameterListId="CustomCopyActionParameterList"
+               timeout="120"
+               enabled="false"
+               />
+      <command id="UpdateMlpForFinish"
+               plugin="MlpWebService"
+               position="50"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForFinishParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+    </commandList>
+    <parameterList id="UpdateMlpForStartParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+    </parameterList>
+    <parameterList id="RebuildGlossaryHEParameterList">
+      <parameter name="heliumTask" value="RebuildGlossaryHE"/>
+    </parameterList>
+    <parameterList id="ValidationRptParameterList">
+      <parameter name="heliumTask" value="ValidationRptHE"/>
+      <parameter name="IncRepeatsFile" value="false"/>
+    </parameterList>
+    <parameterList id="CopyResultsToMlpFileServerParameterList" >
+      <parameter name="source" value="$LbaConfigInfo.WorkspaceLbaRoot$"/>
+      <parameter name="target" value="$LbaConfigInfo.MlpTransactionRoot$\handbackbuild\lba"/>
+      <parameter name="overwrite" value="all"/>
+      <parameter name="IncludeProjectFile" value="false"/>
+      <parameter name="LimitToActiveCulturesAndProjects" value="true"/>
+      <parameter name="SubFoldersToInclude" value="reports"/>
+      <parameter name="Mirror" value="true" />
+    </parameterList>
+    <parameterList id="CustomCopyActionParameterList">
+      <parameter name="path" value="%LBA_HELIUMCUSTOMCOPY%"/>
+      <parameter name="AllowMultithread" value="false"/>
+    </parameterList>
+    <parameterList id="UpdateMlpForFinishParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+      <parameter name="finalizeStatus" value="true"/>
+    </parameterList>
+  </jobType>
+
+  <jobType id="MlpCheckinHelium">
+    <commandList>
+      <command id="UpdateMlpForStart"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForStartParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="SDCreateChangeList"
+               plugin="SourceDepot"
+               position="20"
+               executionLevel="Root"
+               parameterListId="SDCreateChangelistParameterList"
+               timeout="30"
+               />
+      <command id="ExportGlossary"
+               plugin="Helium"
+               position="30"
+               executionLevel="Project"
+               parameterListId="ExportGlossaryParameterList"
+               timeout="60"
+               ignoreError="true"
+               />
+      <command id="SDCheckin"
+               plugin="SourceDepot"
+               position="40"
+               executionLevel="Culture"
+               parameterListId="SDCheckinParameterList"
+               timeout="60"
+               />
+      <command id="SDSubmitChangelist"
+               plugin="SourceDepot"
+               position="50"
+               executionLevel="Root"
+               parameterListId="SDSubmitChangelistParameterList"
+               timeout="30"
+               />
+      <command id="UpdateMlpForFinish"
+               plugin="MlpWebService"
+               position="60"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForFinishParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+    </commandList>
+    <parameterList id="UpdateMlpForStartParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+    </parameterList>
+    <parameterList id="SDCreateChangelistParameterList">
+      <parameter name="Operation" value="CreateChangelist" />
+    </parameterList>
+    <parameterList id="ExportGlossaryParameterList">
+      <parameter name="heliumTask" value="ExportGlossaryHE"/>
+      <parameter name="NewLsgFolder" value="false" />
+    </parameterList>
+    <parameterList id="SDCheckinParameterList">
+      <parameter name="Operation" value="CheckinFiles"/>
+      <parameter name="IncludeProjectFile" value="true"/>
+      <parameter name="SubFoldersToInclude" value="helium.source | helium.working | helium.target | lsg | lsg.target | handback.extra" />
+      <parameter name="Mirror" value="true"/>
+    </parameterList>
+    <parameterList id="SDSubmitChangelistParameterList">
+      <parameter name="Operation" value="SubmitChangelist" />
+    </parameterList>
+    <parameterList id="UpdateMlpForFinishParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+      <parameter name="finalizeStatus" value="true"/>
+    </parameterList>
+  </jobType>
+
+  <jobType id="MlpCheckinHeliumTfs">
+    <commandList>
+      <command id="UpdateMlpForStart"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForStartParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="ExportGlossary"
+               plugin="Helium"
+               position="30"
+               executionLevel="Project"
+               parameterListId="ExportGlossaryParameterList"
+               timeout="60"
+               ignoreError="true"
+               />
+      <command id="TfsCheckin"
+               plugin="Tfs"
+               position="40"
+               executionLevel="Culture"
+               parameterListId="TfsCheckinParameterList"
+               timeout="60"
+               />
+      <command id="TfsSubmitFiles"
+               plugin="Tfs"
+               position="50"
+               executionLevel="Root"
+               parameterListId="TfsSubmitFilesParameterList"
+               timeout="30"
+               />
+      <command id="UpdateMlpForFinish"
+               plugin="MlpWebService"
+               position="60"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForFinishParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+    </commandList>
+    <parameterList id="UpdateMlpForStartParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+    </parameterList>
+    <parameterList id="ExportGlossaryParameterList">
+      <parameter name="heliumTask" value="ExportGlossaryHE"/>
+      <parameter name="NewLsgFolder" value="false" />
+    </parameterList>
+    <parameterList id="TfsCheckinParameterList">
+      <parameter name="Operation" value="CheckinFiles"/>
+      <parameter name="IncludeProjectFile" value="true"/>
+      <parameter name="SubFoldersToInclude" value="helium.source | helium.working | helium.target | lsg | lsg.target | handback.extra" />
+      <parameter name="Mirror" value="true"/>
+    </parameterList>
+    <parameterList id="TfsSubmitFilesParameterList">
+      <parameter name="Operation" value="SubmitFiles" />
+      <parameter name="OverridePolicyFailure" value="true" />
+      <parameter name="OverrideReasonText" value="Automatically checked in by LBA." />
+      <parameter name="CheckinNotesText" value="Code reviewer=N/A;Security reviewer=N/A;Performance reviewer=N/A" />
+    </parameterList>
+    <parameterList id="UpdateMlpForFinishParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+      <parameter name="finalizeStatus" value="true"/>
+    </parameterList>
+  </jobType>
+
+  <!--LSPKG JOB TEMPLATES (w/ Environment Variables) -->
+
+  <jobType id="DailyBuildLocalizationCustomLspkgEnv">
+    <commandList>
+      <command id="Lspkg2Bin"
+               plugin="Lspkg"
+               position="10"
+               executionLevel="Project"
+               parameterListId="Lspkg2BinParameterList"
+               timeout="60"
+               />
+      <command id="PostBinAction"
+               plugin="CustomScript"
+               position="20"
+               executionLevel="Project"
+               parameterListId="PostBinActionParameterList"
+               timeout="120"
+               />
+    </commandList>
+    <parameterList id="Lspkg2BinParameterList">
+      <parameter name="Action" value="Lspkg2Bin" />
+      <parameter name="HandleResxConversion" value="false"/>
+      <parameter name="IncludeResxInFilename" value="true"/>
+      <parameter name="PerformValidation" value="false"/>
+      <parameter name="FailOnValidationErrors" value="false"/>
+      <parameter name="UseValidationForGeneration" value="true"/>
+      <parameter name="GenerationMode" value="FailSafe"/>
+      <parameter name="PerformLanguageCheck" value="false"/>
+      <parameter name="PseudoLocMode" value="Mixed"/>
+      <parameter name="SuppressWarnings" value="true"/>
+      <parameter name="UseExistingLclForGeneration" value="true"/>
+      <parameter name="IgnoreUpdatedStringsForLoc" value="false"/>
+      <parameter name="IgnoreUpdatedStringsForPseudoLoc" value="true"/>
+      <parameter name="GenerateTranslationFiles" value="false" />
+      <parameter name="RunSettingsFileExtensions" value="true" />
+    </parameterList>
+    <parameterList id="PostBinActionParameterList">
+      <parameter name="path" value="%LBA_DAILYBUILDPOSTBIN%"/>
+      <parameter name="AllowMultithread" value="false"/>
+    </parameterList>
+  </jobType>
+
+  <jobType id="MlpHandbackLspkgEnv">
+    <commandList>
+      <command id="UpdateMlpForStart"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForStartParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="Lspkg2Bin"
+               plugin="Lspkg"
+               position="20"
+               executionLevel="Project"
+               parameterListId="Lspkg2BinParameterList"
+               timeout="60"
+               />
+      <command id="PostBinAction"
+               plugin="CustomScript"
+               position="30"
+               executionLevel="Project"
+               parameterListId="PostBinActionParameterList"
+               timeout="120"
+               />
+      <command id="CopyResultsToMlpFileServer"
+               plugin="CopyLba"
+               position="40"
+               executionLevel="%LBA_COPYLBA_EXECUTIONLEVEL%"
+               parameterListId="CopyResultsToMlpFileServerParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="UpdateMlpForFinish"
+               plugin="MlpWebService"
+               position="50"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForFinishParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+    </commandList>
+    <parameterList id="UpdateMlpForStartParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+    </parameterList>
+    <parameterList id="PostBinActionParameterList">
+      <parameter name="path" value="%LBA_HANDBACKPOSTBIN%"/>
+      <parameter name="AllowMultithread" value="false"/>
+    </parameterList>
+    <parameterList id="Lspkg2BinParameterList">
+      <parameter name="Action" value="Lspkg2Bin" />
+      <parameter name="HandleResxConversion" value="false"/>
+      <parameter name="IncludeResxInFilename" value="true"/>
+      <parameter name="PerformValidation" value="true"/>
+      <parameter name="FailOnValidationErrors" value="true"/>
+      <parameter name="UseValidationForGeneration" value="true"/>
+      <parameter name="GenerationMode" value="Normal"/>
+      <parameter name="PerformLanguageCheck" value="true"/>
+      <parameter name="PseudoLocMode" value="None"/>
+      <parameter name="SuppressWarnings" value="false"/>
+      <parameter name="UseExistingLclForGeneration" value="false"/>
+      <parameter name="IgnoreUpdatedStringsForLoc" value="false"/>
+      <parameter name="IgnoreUpdatedStringsForPseudoLoc" value="true"/>
+      <parameter name="GenerateTranslationFiles" value="false" />
+      <parameter name="PerformBuildNumberCheck" value="true" />
+    </parameterList>
+    <parameterList id="CopyResultsToMlpFileServerParameterList" >
+      <parameter name="source" value="$LbaConfigInfo.WorkspaceLbaRoot$"/>
+      <parameter name="target" value="$LbaConfigInfo.MlpTransactionRoot$\handbackbuild\lba"/>
+      <parameter name="overwrite" value="all"/>
+      <parameter name="IncludeProjectFile" value="false"/>
+      <parameter name="LimitToActiveCulturesAndProjects" value="true"/>
+      <parameter name="SubFoldersToInclude" value="buildfiles | locstudio.target"/>
+      <parameter name="Mirror" value="true" />
+    </parameterList>
+    <parameterList id="UpdateMlpForFinishParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+      <parameter name="finalizeStatus" value="true"/>
+    </parameterList>
+  </jobType>
+
+  <jobType id="MlpHandbackRemoteLspkg1Env">
+    <commandList>
+      <command id="UpdateMlpForStart"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForStartParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="Lspkg2Bin"
+               plugin="Lspkg"
+               position="20"
+               executionLevel="Project"
+               parameterListId="Lspkg2BinParameterList"
+               timeout="60"
+               />
+      <command id="PostBinAction"
+               plugin="CustomScript"
+               position="30"
+               executionLevel="Project"
+               parameterListId="PostBinActionParameterList"
+               timeout="120"
+               />
+      <command id="CopyResultsToMlpFileServer"
+               plugin="CopyLba"
+               position="40"
+               executionLevel="%LBA_COPYLBA_EXECUTIONLEVEL%"
+               parameterListId="CopyResultsToMlpFileServerParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+    </commandList>
+    <errorCommandList>
+      <command id="UpdateMlpForError"
+                 plugin="MlpWebService"
+                 position="10"
+                 executionLevel="Root"
+                 parameterListId="UpdateMlpForErrorParameterList"
+                 timeout="30"
+                 runInLocalMode="false"
+                 />
+    </errorCommandList>
+    <parameterList id="UpdateMlpForStartParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+    </parameterList>
+    <parameterList id="Lspkg2BinParameterList">
+      <parameter name="Action" value="Lspkg2Bin" />
+      <parameter name="HandleResxConversion" value="false"/>
+      <parameter name="IncludeResxInFilename" value="true"/>
+      <parameter name="PerformValidation" value="true"/>
+      <parameter name="FailOnValidationErrors" value="true"/>
+      <parameter name="UseValidationForGeneration" value="true"/>
+      <parameter name="GenerationMode" value="Normal"/>
+      <parameter name="PerformLanguageCheck" value="true"/>
+      <parameter name="PseudoLocMode" value="None"/>
+      <parameter name="SuppressWarnings" value="false"/>
+      <parameter name="UseExistingLclForGeneration" value="false"/>
+      <parameter name="IgnoreUpdatedStringsForLoc" value="false"/>
+      <parameter name="IgnoreUpdatedStringsForPseudoLoc" value="true"/>
+      <parameter name="GenerateTranslationFiles" value="false" />
+      <parameter name="PerformBuildNumberCheck" value="true" />
+    </parameterList>
+    <parameterList id="PostBinActionParameterList">
+      <parameter name="path" value="%LBA_HANDBACKPOSTBIN%"/>
+      <parameter name="AllowMultithread" value="false"/>
+    </parameterList>
+    <parameterList id="CopyResultsToMlpFileServerParameterList">
+      <parameter name="source" value="$LbaConfigInfo.WorkspaceLbaRoot$"/>
+      <parameter name="target" value="$LbaConfigInfo.MlpTransactionRoot$\handbackbuild\lba"/>
+      <parameter name="overwrite" value="all"/>
+      <parameter name="IncludeProjectFile" value="false"/>
+      <parameter name="LimitToActiveCulturesAndProjects" value="false"/>
+      <parameter name="SubFoldersToInclude" value="buildfiles | locstudio.target | buildtools | miscfiles"/>
+      <parameter name="Mirror" value="true" />
+    </parameterList>
+    <parameterList id="UpdateMlpForFinishParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+      <parameter name="finalizeStatus" value="true"/>
+    </parameterList>
+    <parameterList id="UpdateMlpForErrorParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+    </parameterList>
+  </jobType>
+
+  <jobType id="MlpCheckinCustomLspkgEnv">
+    <commandList>
+      <command id="UpdateMlpForStart"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForStartParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="Lspkg2Lcl"
+               plugin="Lspkg"
+               position="20"
+               executionLevel="Project"
+               parameterListId="Lspkg2LclParameterList"
+               timeout="30"
+               />
+      <command id="CustomCheckinScript"
+               plugin="CustomScript"
+               position="30"
+               executionLevel="Project"
+               parameterListId="CustomCheckinScriptParameterList"
+               timeout="120"
+               />
+      <command id="UpdateMlpForFinish"
+               plugin="MlpWebService"
+               position="50"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForFinishParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+    </commandList>
+    <parameterList id="UpdateMlpForStartParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+    </parameterList>
+    <parameterList id="Lspkg2LclParameterList">
+      <parameter name="Action" value="Lspkg2Lcl" />
+      <parameter name="PerformValidation" value="false"/>
+      <parameter name="FailOnValidationErrors" value="false"/>
+      <parameter name="PerformLanguageCheck" value="false"/>
+      <parameter name="SuppressWarnings" value="false"/>
+    </parameterList>
+    <parameterList id="CustomCheckinScriptParameterList">
+      <parameter name="path" value="%LBA_CUSTOMCHECKIN%"/>
+      <parameter name="AllowMultithread" value="false"/>
+    </parameterList>
+    <parameterList id="UpdateMlpForFinishParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+      <parameter name="finalizeStatus" value="true"/>
+    </parameterList>
+  </jobType>
+
+
+  <!-- LSPKG JOB TEMPLATES (with full paths) -->
+
+  <jobType id="MlpRegisterBuildLspkg">
+    <commandList>
+      <command id="Bin2Lcx"
+               plugin="Lspkg"
+               position="5"
+               executionLevel="Project"
+               parameterListId="Bin2LcxParameterList"
+               timeout="30"
+               />
+      <command id="CreateMlpBuild"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="CreateMlpBuildParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               />
+      <command id="CopyResultsToMlpFileServer"
+               plugin="CopyLba"
+               position="20"
+               executionLevel="%LBA_COPYLBA_EXECUTIONLEVEL%"
+               parameterListId="CopyResultsToMlpFileServerParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               />
+    </commandList>
+    <parameterList id="Bin2LcxParameterList">
+      <parameter name="Action" value="Bin2Lcx" />
+      <parameter name="HandleResxConversion" value="false" />
+      <parameter name="IncludeResxInFilename" value="true"/>
+      <parameter name="UseValidationForGeneration" value="true"/>
+      <parameter name="SuppressWarnings" value="false"/>
+    </parameterList>
+    <parameterList id="CreateMlpBuildParameterList">
+      <parameter name="service" value="CreateBuild"/>
+      <parameter name="AllowMultipleBuildHandoffs" value="false" />
+      <parameter name="BuildType" value="Software" />
+      <parameter name="BuildContainsHandoff" value="false"/>
+      <parameter name="BuildHandoffType" value="Normal" />
+    </parameterList>
+    <parameterList id="CopyResultsToMlpFileServerParameterList">
+      <parameter name="source" value="$LbaConfigInfo.WorkspaceLbaRoot$"/>
+      <parameter name="target" value="$LbaConfigInfo.MlpBuildRoot$\build\lba"/>
+      <parameter name="overwrite" value="all"/>
+      <parameter name="IncludeProjectFile" value="false"/>
+      <parameter name="LimitToActiveCulturesAndProjects" value="false"/>
+      <parameter name="SubFoldersToInclude" value="locstudio.source | miscfiles | handoff.extra | lce | lci | lcg | resx.comments | locstudio.reference"/>
+      <parameter name="Mirror" value="true" />
+    </parameterList>
+  </jobType>
+  <jobType id="MlpCreateBuildLspkg">
+    <commandList>
+      <command id="UpdateMlpForStart"
+               plugin="MlpWebService"
+               position="1"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForStartParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="Bin2Lcx"
+               plugin="Lspkg"
+               position="5"
+               executionLevel="Project"
+               parameterListId="Bin2LcxParameterList"
+               timeout="30"
+               />
+      <command id="CreateMlpBuild"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="CreateMlpBuildParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               />
+      <command id="CopyResultsToMlpFileServer"
+               plugin="CopyLba"
+               position="20"
+               executionLevel="%LBA_COPYLBA_EXECUTIONLEVEL%"
+               parameterListId="CopyResultsToMlpFileServerParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               />
+      <command id="UpdateMlpForFinish"
+               plugin="MlpWebService"
+               position="30"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForFinishParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+    </commandList>
+    <parameterList id="UpdateMlpForStartParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+    </parameterList>
+    <parameterList id="Bin2LcxParameterList">
+      <parameter name="Action" value="Bin2Lcx" />
+      <parameter name="HandleResxConversion" value="false" />
+      <parameter name="IncludeResxInFilename" value="true"/>
+      <parameter name="UseValidationForGeneration" value="true"/>
+      <parameter name="SuppressWarnings" value="false"/>
+    </parameterList>
+    <parameterList id="CreateMlpBuildParameterList">
+      <parameter name="service" value="CreateBuild"/>
+      <parameter name="BuildContainsHandoff" value="false"/>
+      <parameter name="BuildHandoffType" value="Normal" />
+    </parameterList>
+    <parameterList id="CopyResultsToMlpFileServerParameterList">
+      <parameter name="source" value="$LbaConfigInfo.WorkspaceLbaRoot$"/>
+      <parameter name="target" value="$LbaConfigInfo.MlpBuildRoot$\build\lba"/>
+      <parameter name="overwrite" value="all"/>
+      <parameter name="IncludeProjectFile" value="false"/>
+      <parameter name="LimitToActiveCulturesAndProjects" value="false"/>
+      <parameter name="SubFoldersToInclude" value="locstudio.source | miscfiles | handoff.extra | lce | lci | lcg | resx.comments | locstudio.reference"/>
+      <parameter name="Mirror" value="true" />
+    </parameterList>
+    <parameterList id="UpdateMlpForFinishParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+      <parameter name="finalizeStatus" value="true"/>
+    </parameterList>
+  </jobType>
+  <jobType id="MlpPrepHandoffLspkg">
+    <commandList>
+      <command id="UpdateMlpForStart"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForStartParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="CreateLspkg"
+               plugin="Lspkg"
+               position="20"
+               executionLevel="Project"
+               parameterListId="CreateLspkgParameterList"
+               timeout="60"
+               />
+      <command id="CopyResultsToMlpFileServer"
+               plugin="CopyLba"
+               position="40"
+               executionLevel="%LBA_COPYLBA_EXECUTIONLEVEL%"
+               parameterListId="CopyResultsToMlpFileServerParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="UpdateMlpForFinish"
+               plugin="MlpWebService"
+               position="70"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForFinishParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+    </commandList>
+    <parameterList id="UpdateMlpForStartParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+    </parameterList>
+    <parameterList id="CreateLspkgParameterList">
+      <parameter name="Action" value="CreateLspkg" />
+      <parameter name="HandleResxConversion" value="false"/>
+      <parameter name="IncludeResxInFilename" value="true"/>
+      <parameter name="GlossaryFolderUsage" value="First"/>
+      <parameter name="PerformAutotranslation" value="true" />
+      <parameter name="FailOnAutoTranslationErrors" value="true"/>
+      <parameter name="GlossaryGenerationThreadTimeout" value="5"/>
+      <parameter name="PerformLanguageCheck" value="true"/>
+      <parameter name="ResolveValidationErrors" value="true"/>
+      <parameter name="ResolveMode" value="Ignore"/>
+      <parameter name="SuppressWarnings" value="false"/>
+      <parameter name="InjectBuildNumber" value="true"/>
+    </parameterList>
+    <parameterList id="CopyResultsToMlpFileServerParameterList">
+      <parameter name="source" value="$LbaConfigInfo.WorkspaceLbaRoot$"/>
+      <parameter name="target" value="$LbaConfigInfo.MlpBuildRoot$\handoffbuild\lba"/>
+      <parameter name="overwrite" value="all"/>
+      <parameter name="IncludeProjectFile" value="true"/>
+      <parameter name="LimitToActiveCulturesAndProjects" value="true"/>
+      <parameter name="Mirror" value="true" />
+      <parameter name="SubFoldersToInclude" value=""/>
+    </parameterList>
+    <parameterList id="UpdateMlpForFinishParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+      <parameter name="finalizeStatus" value="true"/>
+    </parameterList>
+  </jobType>
+
+  <jobType id="MlpHandbackRemoteLspkg2">
+    <commandList>
+      <command id="CustomCopyScript"
+               plugin="CustomScript"
+               position="10"
+               executionLevel="Culture"
+               parameterListId="CustomCopyScriptParameterList"
+               timeout="120"
+               ignoreError="true"
+               />
+      <command id="UpdateMlpForFinish"
+               plugin="MlpWebService"
+               position="20"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForFinishParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+                />
+    </commandList>
+    <parameterList id="CustomCopyScriptParameterList">
+      <parameter name="path" value="$LbaConfigInfo.WorkspaceLbaRoot$\default\buildtools\CustomRemoteCopy.cmd"/>
+      <parameter name="AllowMultithread" value="false"/>
+    </parameterList>
+    <parameterList id="UpdateMlpForFinishParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+      <parameter name="finalizeStatus" value="true"/>
+    </parameterList>
+  </jobType>
+
+  <jobType id="MlpCheckinLspkg">
+    <commandList>
+      <command id="UpdateMlpForStart"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForStartParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="SDCreateChangeList"
+               plugin="SourceDepot"
+               position="11"
+               executionLevel="Root"
+               parameterListId="SDCreateChangelistParameterList"
+               timeout="30"
+               />
+      <command id="Lspkg2Lcl"
+               plugin="Lspkg"
+               position="20"
+               executionLevel="Project"
+               parameterListId="Lspkg2LclParameterList"
+               timeout="30"
+               />
+      <command id="SDCheckin"
+               plugin="SourceDepot"
+               position="30"
+               executionLevel="Culture"
+               parameterListId="SDCheckinParameterList"
+               timeout="60"
+               />
+      <command id="SDSubmitChangelist"
+               plugin="SourceDepot"
+               position="49"
+               executionLevel="Root"
+               parameterListId="SDSubmitChangelistParameterList"
+               timeout="60"
+               />
+      <command id="UpdateMlpForFinish"
+               plugin="MlpWebService"
+               position="50"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForFinishParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+    </commandList>
+    <parameterList id="UpdateMlpForStartParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+    </parameterList>
+    <parameterList id="SDCreateChangelistParameterList">
+      <parameter name="Operation" value="CreateChangelist" />
+    </parameterList>
+    <parameterList id="Lspkg2LclParameterList">
+      <parameter name="Action" value="Lspkg2Lcl" />
+      <parameter name="PerformValidation" value="false"/>
+      <parameter name="FailOnValidationErrors" value="false"/>
+      <parameter name="PerformLanguageCheck" value="false"/>
+      <parameter name="SuppressWarnings" value="false"/>
+    </parameterList>
+    <parameterList id="SDCheckinParameterList">
+      <parameter name="operation" value="CheckinFiles"/>
+      <parameter name="IncludeProjectFile" value="true"/>
+      <parameter name="SubFoldersToInclude" value="handback.extra | lcl" />
+    </parameterList>
+    <parameterList id="SDSubmitChangelistParameterList">
+      <parameter name="Operation" value="SubmitChangelist" />
+    </parameterList>
+    <parameterList id="UpdateMlpForFinishParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+      <parameter name="finalizeStatus" value="true"/>
+    </parameterList>
+  </jobType>
+
+  <jobType id="MlpCheckinLspkgTfs">
+    <commandList>
+      <command id="UpdateMlpForStart"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForStartParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="Lspkg2Lcl"
+               plugin="Lspkg"
+               position="30"
+               executionLevel="Project"
+               parameterListId="Lspkg2LclParameterList"
+               timeout="30"
+               />
+      <command id="TfsCheckin"
+               plugin="Tfs"
+               position="40"
+               executionLevel="Culture"
+               parameterListId="TfsCheckinParameterList"
+               timeout="60"
+               />
+      <command id="TfsSubmitFiles"
+               plugin="Tfs"
+               position="50"
+               executionLevel="Root"
+               parameterListId="TfsSubmitFilesParameterList"
+               timeout="30"
+               />
+      <command id="UpdateMlpForFinish"
+               plugin="MlpWebService"
+               position="60"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForFinishParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+    </commandList>
+    <parameterList id="UpdateMlpForStartParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+    </parameterList>
+    <parameterList id="Lspkg2LclParameterList">
+      <parameter name="Action" value="Lspkg2Lcl" />
+      <parameter name="PerformValidation" value="false"/>
+      <parameter name="FailOnValidationErrors" value="false"/>
+      <parameter name="PerformLanguageCheck" value="false"/>
+      <parameter name="SuppressWarnings" value="false"/>
+    </parameterList>
+    <parameterList id="TfsCheckinParameterList">
+      <parameter name="Operation" value="CheckinFiles"/>
+      <parameter name="IncludeProjectFile" value="true"/>
+      <parameter name="SubFoldersToInclude" value="handback.extra | lcl" />
+    </parameterList>
+    <parameterList id="TfsSubmitFilesParameterList">
+      <parameter name="Operation" value="SubmitFiles" />
+      <parameter name="OverridePolicyFailure" value="true" />
+      <parameter name="OverrideReasonText" value="Automatically checked in by LBA." />
+      <parameter name="CheckinNotesText" value="Code reviewer=N/A;Security reviewer=N/A;Performance reviewer=N/A" />
+    </parameterList>
+    <parameterList id="UpdateMlpForFinishParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+      <parameter name="finalizeStatus" value="true"/>
+    </parameterList>
+  </jobType>
+
+  <jobType id="ValidateLspkg">
+    <commandList>
+      <command id="ValidateLcl"
+               plugin="Lspkg"
+               position="10"
+               executionLevel="Project"
+               parameterListId="ValidateLclParameterList"
+               timeout="30"
+               />
+    </commandList>
+    <parameterList id="ValidateLclParameterList">
+      <parameter name="Action" value="Lspkg2Lcl" />
+      <parameter name="PerformValidation" value="true"/>
+      <parameter name="FailOnValidationErrors" value="true"/>
+      <parameter name="PerformLanguageCheck" value="true"/>
+      <parameter name="SuppressWarnings" value="false"/>
+    </parameterList>
+  </jobType>
+
+  <jobType id="PolicheckLspkg">
+    <commandList>
+      <command id="Lspkg2Lcl"
+               plugin="Lspkg"
+               position="10"
+               executionLevel="Project"
+               parameterListId="Lspkg2LclParameterList"
+               timeout="30"
+               />
+      <command id="PolicheckScan"
+               plugin="Policheck"
+               position="20"
+               executionLevel="Project"
+               parameterListId="PolicheckScanParameterList"
+               timeout="60"
+               />
+    </commandList>
+    <parameterList id="Lspkg2LclParameterList">
+      <parameter name="Action" value="Lspkg2Lcl" />
+      <parameter name="PerformValidation" value="false"/>
+      <parameter name="FailOnValidationErrors" value="false"/>
+      <parameter name="PerformLanguageCheck" value="false"/>
+      <parameter name="SuppressWarnings" value="false"/>
+    </parameterList>
+    <parameterList id="PolicheckScanParameterList">
+      <parameter name="ScanMode" value="Lcl | Source"/>
+      <parameter name="ResultFileType" value="Xls"/>
+      <parameter name="Severity" value="1|2" />
+    </parameterList>
+  </jobType>
+
+  <jobType id="CheckinLspkgLcl">
+    <commandList>
+      <command id="SDCreateChangeList"
+               plugin="SourceDepot"
+               position="1"
+               executionLevel="Root"
+               parameterListId="SDCreateChangelistParameterList"
+               timeout="30"
+               />
+      <command id="Lspkg2Lcl"
+              plugin="Lspkg"
+              position="10"
+              executionLevel="Project"
+              parameterListId="Lspkg2LclParameterList"
+              timeout="30"
+               />
+      <command id="SDCheckin"
+               plugin="SourceDepot"
+               position="20"
+               executionLevel="Project"
+               parameterListId="SDCheckinParameterList"
+               timeout="60"
+               />
+      <command id="SDSubmitChangelist"
+               plugin="SourceDepot"
+               position="30"
+               executionLevel="Root"
+               parameterListId="SDSubmitChangelistParameterList"
+               timeout="30"
+               />
+    </commandList>
+    <parameterList id="SDCreateChangelistParameterList">
+      <parameter name="Operation" value="CreateChangelist" />
+    </parameterList>
+    <parameterList id="Lspkg2LclParameterList">
+      <parameter name="Action" value="Lspkg2Lcl" />
+      <parameter name="PerformValidation" value="false"/>
+      <parameter name="FailOnValidationErrors" value="false"/>
+      <parameter name="PerformLanguageCheck" value="false"/>
+      <parameter name="SuppressWarnings" value="false"/>
+    </parameterList>
+    <parameterList id="SDCheckinParameterList">
+      <parameter name="Operation" value="CheckinFiles"/>
+      <parameter name="IncludeProjectFile" value="false"/>
+      <parameter name="SubFoldersToInclude" value="lcl" />
+    </parameterList>
+    <parameterList id="SDSubmitChangelistParameterList">
+      <parameter name="Operation" value="SubmitChangelist" />
+    </parameterList>
+  </jobType>
+
+
+  <!-- ZIP JOB TEMPLATES -->
+
+  <jobType id="MlpRegisterBuildZip">
+    <commandList>
+      <command id="CreateMlpBuild"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="CreateMlpBuildParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               />
+      <command id="CopyResultsToMlpFileServer"
+               plugin="CopyLba"
+               position="20"
+               executionLevel="%LBA_COPYLBA_EXECUTIONLEVEL%"
+               parameterListId="CopyResultsToMlpFileServerParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               />
+    </commandList>
+    <parameterList id="CreateMlpBuildParameterList">
+      <parameter name="service" value="CreateBuild"/>
+      <parameter name="AllowMultipleBuildHandoffs" value="false" />
+      <parameter name="BuildType" value="Software" />
+      <parameter name="BuildContainsHandoff" value="false"/>
+      <parameter name="BuildHandoffType" value="Normal" />
+    </parameterList>
+    <parameterList id="CopyResultsToMlpFileServerParameterList">
+      <parameter name="source" value="$LbaConfigInfo.WorkspaceLbaRoot$"/>
+      <parameter name="target" value="$LbaConfigInfo.MlpBuildRoot$\build\lba"/>
+      <parameter name="overwrite" value="all"/>
+      <parameter name="IncludeProjectFile" value="false"/>
+      <parameter name="LimitToActiveCulturesAndProjects" value="false"/>
+      <parameter name="SubFoldersToInclude" value="zip.source | miscfiles | handoff.extra"/>
+      <parameter name="Mirror" value="true" />
+    </parameterList>
+  </jobType>
+
+  <jobType id="MlpCreateBuildZip">
+    <commandList>
+      <command id="UpdateMlpForStart"
+               plugin="MlpWebService"
+               position="1"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForStartParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="CreateMlpBuild"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="CreateMlpBuildParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               />
+      <command id="CopyResultsToMlpFileServer"
+               plugin="CopyLba"
+               position="20"
+               executionLevel="%LBA_COPYLBA_EXECUTIONLEVEL%"
+               parameterListId="CopyResultsToMlpFileServerParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               />
+      <command id="UpdateMlpForFinish"
+               plugin="MlpWebService"
+               position="30"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForFinishParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+    </commandList>
+    <parameterList id="UpdateMlpForStartParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+    </parameterList>
+    <parameterList id="CreateMlpBuildParameterList">
+      <parameter name="service" value="CreateBuild"/>
+      <parameter name="BuildContainsHandoff" value="false"/>
+      <parameter name="BuildHandoffType" value="Normal" />
+    </parameterList>
+    <parameterList id="CopyResultsToMlpFileServerParameterList">
+      <parameter name="source" value="$LbaConfigInfo.WorkspaceLbaRoot$"/>
+      <parameter name="target" value="$LbaConfigInfo.MlpBuildRoot$\build\lba"/>
+      <parameter name="overwrite" value="all"/>
+      <parameter name="IncludeProjectFile" value="false"/>
+      <parameter name="LimitToActiveCulturesAndProjects" value="false"/>
+      <parameter name="SubFoldersToInclude" value="zip.source | miscfiles | handoff.extra"/>
+      <parameter name="Mirror" value="true" />
+    </parameterList>
+    <parameterList id="UpdateMlpForFinishParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+      <parameter name="finalizeStatus" value="true"/>
+    </parameterList>
+  </jobType>
+  <jobType id="MlpPrepHandoffZip" >
+    <commandList>
+      <command id="UpdateMlpForStart"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForStartParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="BuildZip"
+               plugin="BuildZip"
+               position="20"
+               executionLevel="Project"
+               timeout="60"
+               />
+      <command id="CopyResultsToMlpFileServer"
+               plugin="CopyLba"
+               position="30"
+               executionLevel="%LBA_COPYLBA_EXECUTIONLEVEL%"
+               parameterListId="CopyResultsToMlpFileServerParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="UpdateMlpForFinish"
+               plugin="MlpWebService"
+               position="40"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForFinishParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+    </commandList>
+    <parameterList id="UpdateMlpForStartParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+    </parameterList>
+    <parameterList id="CopyResultsToMlpFileServerParameterList">
+      <parameter name="source" value="$LbaConfigInfo.WorkspaceLbaRoot$"/>
+      <parameter name="target" value="$LbaConfigInfo.MlpBuildRoot$\handoffbuild\lba"/>
+      <parameter name="overwrite" value="all"/>
+      <parameter name="IncludeProjectFile" value="true"/>
+      <parameter name="LimitToActiveCulturesAndProjects" value="false"/>
+      <parameter name="Mirror" value="true" />
+      <parameter name="SubFoldersToInclude" value=""/>
+    </parameterList>
+    <parameterList id="UpdateMlpForFinishParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+      <parameter name="finalizeStatus" value="true"/>
+    </parameterList>
+  </jobType>
+  <jobType id="MlpHandbackZip" >
+    <commandList>
+      <command id="UpdateMlpForStart"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForStartParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="ExtractZip"
+               plugin="ExtractZip"
+               position="20"
+               executionLevel="Project"
+               parameterListId="ExtractZipParameterList"
+               timeout="60"
+               />
+      <command id="CopyResultsToMlpFileServer"
+               plugin="CopyLba"
+               position="30"
+               executionLevel="%LBA_COPYLBA_EXECUTIONLEVEL%"
+               parameterListId="CopyResultsToMlpFileServerParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="UpdateMlpForFinish"
+               plugin="MlpWebService"
+               position="40"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForFinishParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+    </commandList>
+    <parameterList id="UpdateMlpForStartParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+    </parameterList>
+    <parameterList id="ExtractZipParameterList">
+      <parameter name="PerformZipValidation" value="true" />
+      <parameter name="ZipValidationMode" value="Full" />
+    </parameterList>
+    <parameterList id="CopyResultsToMlpFileServerParameterList" >
+      <parameter name="source" value="$LbaConfigInfo.WorkspaceLbaRoot$"/>
+      <parameter name="target" value="$LbaConfigInfo.MlpTransactionRoot$\handbackbuild\lba"/>
+      <parameter name="overwrite" value="all"/>
+      <parameter name="IncludeProjectFile" value="false"/>
+      <parameter name="LimitToActiveCulturesAndProjects" value="true"/>
+      <parameter name="SubFoldersToInclude" value="buildfiles"/>
+      <parameter name="Mirror" value="true" />
+    </parameterList>
+    <parameterList id="UpdateMlpForFinishParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+      <parameter name="finalizeStatus" value="true"/>
+    </parameterList>
+  </jobType>
+  <jobType id="MlpCheckinZip">
+    <commandList>
+      <command id="UpdateMlpForStart"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForStartParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="SDCreateChangeList"
+               plugin="SourceDepot"
+               position="20"
+               executionLevel="Root"
+               parameterListId="SDCreateChangelistParameterList"
+               timeout="30"
+               />
+      <command id="ExtractZip"
+               plugin="ExtractZip"
+               position="30"
+               executionLevel="Project"
+               parameterListId="ExtractZipParameterList"
+               timeout="60"
+               />
+      <command id="SDCheckin"
+               plugin="SourceDepot"
+               position="40"
+               executionLevel="Culture"
+               parameterListId="SDCheckinParameterList"
+               timeout="60"
+               />
+      <command id="SDSubmitChangelist"
+               plugin="SourceDepot"
+               position="50"
+               executionLevel="Root"
+               parameterListId="SDSubmitChangelistParameterList"
+               timeout="30"
+               />
+      <command id="UpdateMlpForFinish"
+               plugin="MlpWebService"
+               position="60"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForFinishParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+    </commandList>
+    <parameterList id="UpdateMlpForStartParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+    </parameterList>
+    <parameterList id="SDCreateChangelistParameterList">
+      <parameter name="Operation" value="CreateChangelist" />
+    </parameterList>
+    <parameterList id="ExtractZipParameterList">
+      <parameter name="PerformZipValidation" value="false" />
+      <parameter name="ZipValidationMode" value="Full" />
+    </parameterList>
+    <parameterList id="SDCheckinParameterList">
+      <parameter name="operation" value="CheckinFiles"/>
+      <parameter name="IncludeProjectFile" value="false"/>
+      <parameter name="SubFoldersToInclude" value="zip.target" />
+    </parameterList>
+    <parameterList id="SDSubmitChangelistParameterList">
+      <parameter name="Operation" value="SubmitChangelist" />
+    </parameterList>
+    <parameterList id="UpdateMlpForFinishParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+      <parameter name="finalizeStatus" value="true"/>
+    </parameterList>
+  </jobType>
+
+  <jobType id="MlpCheckinZipTfs">
+    <commandList>
+      <command id="UpdateMlpForStart"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForStartParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="ExtractZip"
+               plugin="ExtractZip"
+               position="30"
+               executionLevel="Project"
+               parameterListId="ExtractZipParameterList"
+               timeout="60"
+               />
+      <command id="TfsCheckin"
+               plugin="Tfs"
+               position="40"
+               executionLevel="Culture"
+               parameterListId="TfsCheckinParameterList"
+               timeout="60"
+               />
+      <command id="TfsSubmitFiles"
+               plugin="Tfs"
+               position="50"
+               executionLevel="Root"
+               parameterListId="TfsSubmitFilesParameterList"
+               timeout="30"
+               />
+      <command id="UpdateMlpForFinish"
+               plugin="MlpWebService"
+               position="60"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForFinishParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+    </commandList>
+    <parameterList id="UpdateMlpForStartParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+    </parameterList>
+    <parameterList id="ExtractZipParameterList">
+      <parameter name="PerformZipValidation" value="false" />
+      <parameter name="ZipValidationMode" value="Full" />
+    </parameterList>
+    <parameterList id="TfsCheckinParameterList">
+      <parameter name="Operation" value="CheckinFiles"/>
+      <parameter name="IncludeProjectFile" value="false"/>
+      <parameter name="SubFoldersToInclude" value="zip.target" />
+    </parameterList>
+    <parameterList id="TfsSubmitFilesParameterList">
+      <parameter name="Operation" value="SubmitFiles" />
+      <parameter name="OverridePolicyFailure" value="true" />
+      <parameter name="OverrideReasonText" value="Automatically checked in by LBA." />
+      <parameter name="CheckinNotesText" value="Code reviewer=N/A;Security reviewer=N/A;Performance reviewer=N/A" />
+    </parameterList>
+    <parameterList id="UpdateMlpForFinishParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+      <parameter name="finalizeStatus" value="true"/>
+    </parameterList>
+  </jobType>
+
+  <!-- RESOURCE JOB TEMPLATES-->
+
+  <jobType id="PrepareBuildResourcesStart">
+    <commandList>
+      <command id="UpdateMlpTransactionStatus"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="UpdateMlpTransactionStatusParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+    </commandList>
+    <parameterList id="UpdateMlpTransactionStatusParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+    </parameterList>
+  </jobType>
+
+  <jobType id="PrepareBuildResourcesFinish">
+    <commandList>
+      <command id="CreateBuildStatistics"
+               plugin="ResourceManager"
+               position="10"
+               executionLevel="Root"
+               parameterListId="CreateStatisticsParameterList"
+               timeout="30"
+               />
+      <command id="CopyStatisticsToMlpFileServer"
+               plugin="CopyLba"
+               position="20"
+               executionLevel="Root"
+               parameterListId="CopyStatisticsParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               />
+      <command id="ImportBuildStatistics"
+               plugin="ResourceWebService"
+               position="40"
+               executionLevel="Root"
+               parameterListId="ImportStatisticsParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               />
+      <command id="UpdateMlpTransactionStatus"
+               plugin="MlpWebService"
+               position="50"
+               executionLevel="Root"
+               parameterListId="UpdateMlpTransactionStatusParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+    </commandList>
+    <parameterList id="CreateStatisticsParameterList">
+      <parameter name="StatisticsTask" value="BuildStatistics"/>
+    </parameterList>
+    <parameterList id="CopyStatisticsParameterList" >
+      <parameter name="source" value="$LbaConfigInfo.WorkspaceLbaRoot$"/>
+      <parameter name="target" value="$LbaConfigInfo.MlpTransactionRoot$\Resource\Lba"/>
+      <parameter name="overwrite" value="all"/>
+      <parameter name="IncludeProjectFile" value="false"/>
+      <parameter name="LimitToActiveCulturesAndProjects" value="false"/>
+      <parameter name="SubFoldersToInclude" value="buildstatistics | lcg"/>
+      <parameter name="Mirror" value="true" />
+    </parameterList>
+    <parameterList id="ImportStatisticsParameterList">
+      <parameter name="Service" value="ImportStatistics"/>
+    </parameterList>
+    <parameterList id="UpdateMlpTransactionStatusParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+      <parameter name="finalizeStatus" value="true"/>
+    </parameterList>
+  </jobType>
+
+  <jobType id="PrepareLocResources">
+    <commandList>
+      <command id="UpdateMlpForStart"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForStartParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+      <command id="Edb2Lcl"
+               plugin="Edb2Lcl"
+               position="20"
+               executionLevel="Project"
+               parameterListId="Edb2LclParameterList"
+               timeout="60"
+               />
+      <command id="Lspkg2Lcl"
+               plugin="Lspkg"
+               position="30"
+               executionLevel="Project"
+               parameterListId="Lspkg2LclParameterList"
+               timeout="30"
+               />
+      <command id="CreateLocStatistics"
+               plugin="ResourceManager"
+               position="40"
+               executionLevel="Project"
+               parameterListId="CreateStatisticsParameterList"
+               timeout="30"
+               />
+      <command id="CopyStatisticsToMlpFileServer"
+               plugin="CopyLba"
+               position="50"
+               executionLevel="Root"
+               parameterListId="CopyStatisticsParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               />
+      <command id="ImportLocStatistics"
+               plugin="ResourceWebService"
+               position="60"
+               executionLevel="Root"
+               parameterListId="ImportStatisticsParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               />
+      <command id="UpdateMlpForFinish"
+               plugin="MlpWebService"
+               position="70"
+               executionLevel="Root"
+               parameterListId="UpdateMlpForFinishParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               alwaysExecute="true"
+               />
+    </commandList>
+    <parameterList id="UpdateMlpForStartParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+    </parameterList>
+    <parameterList id="Edb2LclParameterList">
+      <parameter name="PerformEdbValidation" value="false"/>
+      <parameter name="FailOnEdbValidationErrors" value="false"/>
+      <parameter name="PerformEdbLanguageCheck" value="false"/>
+      <parameter name="SuppressWarnings" value="false"/>
+      <parameter name="EdbValidationActions" value="All"/>
+      <parameter name="EdbValidationErrorActions" value="All"/>
+    </parameterList>
+    <parameterList id="Lspkg2LclParameterList">
+      <parameter name="Action" value="Lspkg2Lcl" />
+      <parameter name="PerformValidation" value="false"/>
+      <parameter name="FailOnValidationErrors" value="false"/>
+      <parameter name="PerformLanguageCheck" value="false"/>
+      <parameter name="SuppressWarnings" value="false"/>
+    </parameterList>
+    <parameterList id="CreateStatisticsParameterList">
+      <parameter name="StatisticsTask" value="LocStatistics"/>
+    </parameterList>
+    <parameterList id="CopyStatisticsParameterList" >
+      <parameter name="source" value="$LbaConfigInfo.WorkspaceLbaRoot$"/>
+      <parameter name="target" value="$LbaConfigInfo.MlpTransactionRoot$\Resource\Lba"/>
+      <parameter name="overwrite" value="all"/>
+      <parameter name="IncludeProjectFile" value="false"/>
+      <parameter name="LimitToActiveCulturesAndProjects" value="false"/>
+      <parameter name="SubFoldersToInclude" value="locstatistics | lcl"/>
+      <parameter name="Mirror" value="true" />
+    </parameterList>
+    <parameterList id="ImportStatisticsParameterList">
+      <parameter name="Service" value="ImportStatistics"/>
+    </parameterList>
+    <parameterList id="UpdateMlpForFinishParameterList">
+      <parameter name="Service" value="UpdateTransaction"/>
+      <parameter name="finalizeStatus" value="true"/>
+    </parameterList>
+  </jobType>
+
+  <!--CreateBuild Transaction job types (for drop job)-->
+  <jobType id="MlpInitiateBuild">
+    <commandList>
+      <command id="InitiateBuild"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="InitiateBuildParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               />
+    </commandList>
+    <parameterList id="InitiateBuildParameterList">
+      <parameter name="service" value="InitiateBuild"/>
+      <parameter name="AllowMultipleBuildHandoffs" value="false" />
+      <parameter name="BuildType" value="Software" />
+      <parameter name="BuildContainsHandoff" value="false"/>
+      <parameter name="BuildHandoffType" value="Normal" />
+      <parameter name="BuildDropLbaPath" value="%BuildTracker.BuildShareGroup.DropShare%\%BuildTracker.Build.Number%\%LBA_RELDROPPATH%" />
+      <parameter name="HandoffFileFormat" value="%MLP_HANDOFFFILEFORMAT%" />
+    </parameterList>
+  </jobType>
+
+  <jobType id="MlpInitiateBuildMultipleHandoff">
+    <commandList>
+      <command id="InitiateBuild"
+               plugin="MlpWebService"
+               position="10"
+               executionLevel="Root"
+               parameterListId="InitiateBuildParameterList"
+               timeout="30"
+               runInLocalMode="false"
+               />
+    </commandList>
+    <parameterList id="InitiateBuildParameterList">
+      <parameter name="service" value="InitiateBuild"/>
+      <parameter name="AllowMultipleBuildHandoffs" value="true" />
+      <parameter name="BuildType" value="Software" />
+      <parameter name="BuildContainsHandoff" value="false"/>
+      <parameter name="BuildHandoffType" value="Normal" />
+      <parameter name="BuildDropLbaPath" value="%BuildTracker.BuildShareGroup.DropShare%\%BuildTracker.Build.Number%\%LBA_RELDROPPATH%" />
+    </parameterList>
+  </jobType>
+
+</jobTypeTemplates>

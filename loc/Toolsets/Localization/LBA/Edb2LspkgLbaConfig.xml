@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<lbaConfig xmlns="http://msn.com/mlp" version="2.0">
+    <jobList>
+        <job id="UpgradeLbaConfig" jobType="UpgradeLbaConfig"/>
+        <job id="CreateLspkg" jobType="Lcl2Lspkg" />
+        <job id="Edb2Lcl6" jobType="Edb2Lcl6" />
+    </jobList>
+    <customJobTypes>
+        <jobType id="UpgradeLbaConfig">
+            <commandList>
+                <command id="UpgradeLbaConfigScript"
+                       plugin="CustomScript"
+                       position="20"
+                       executionLevel="root"
+                       parameterListId="UpgradeLbaConfigScriptParameterList"
+                       timeout="10"
+        />
+            </commandList>
+            <parameterList id="UpgradeLbaConfigScriptParameterList">
+                <parameter name="path" value="$LbaConfigInfo.WorkspaceLbaRoot$\default\UpgradeLbaConfig\UpgradeLbaConfig.cmd"/>
+            </parameterList>
+        </jobType>
+        <jobType id="Lcl2Lspkg">
+            <commandList>
+                <command id="Edb2LspkgProcess"
+                         plugin="Lspkg"
+                         position="10"
+                         executionLevel="Project"
+                         ignoreError="false"
+                         parameterListId="Lcl2LspkgParameterList" />
+            </commandList>
+            <parameterList id="Lcl2LspkgParameterList">
+                <parameter name="Action" value="Lcl2Lspkg"/>
+                <parameter name="UseSourceFolderForLclFileList" value="false" />
+            </parameterList>
+        </jobType>
+        <jobType id="Edb2Lcl6">
+            <commandList>
+                <command id="Edb2Lcl6Process"
+                         plugin="Lspkg"
+                         position="10"
+                         executionLevel="Project"
+                         ignoreError="false"
+                         parameterListId="Edb2Lcl6ParameterList" />
+            </commandList>
+            <parameterList id="Edb2Lcl6ParameterList">
+                <parameter name="Action" value="SingleTask"/>
+                <parameter name="Task" value="Edb2Lcl6"/>
+            </parameterList>
+        </jobType>
+    </customJobTypes>
+</lbaConfig>

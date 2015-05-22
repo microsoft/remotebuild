@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<!-- 
+    Exact
+         The string, binary, and the normalized id must match for all items.
+   	Target resource group: total number of Resource items (TR)
+   	Target resource group: total number of Localized items (TL)
+   	Target resource group: total number of Matched Localized items with Strong ID match (TMLS)
+   	Target resource group: total number of Matched Localized items without Strong ID match (TML)
+   	Matched resource group: total number of Resource items (MR)
+   	Matched resource group: total number of Localized items (ML)
+   	Matched resource group: total number of Matched Resource items with Strong ID match (MMRS)
+   	Matched resource group: total number of Matched Resource items without Strong ID match (MMR)
+   	Matched resource group: total number of Matched Localized items (MML)
+   	Source Similarity with Strong ID match (SSS) = MMRS / TR
+       	Source Similarity Threshold with Strong ID match (SSTS)
+       	Minimum Number of Matched Resource items with Strong ID match (MNMRS)
+   	Source Similarity without Strong ID match (SS) = MMR / TR
+        Source Similarity Threshold without Strong ID match (SST)
+        Minimum Number of Matched Resource items without Strong ID match (MNMR)
+        
+
+    Target resource group: Localization Level with Strong ID match (TLLS) = TMLS / MMRS 
+        Target resource group: Localization Level Threshold with Strong ID match (TLLTS)
+    Target resource group: Localization Level without Strong ID match (TLL) = TML / MMR 
+        Target resource group: Localization Level Threshold with Strong ID match (TLLT)
+    Matched resource group: Localization Level with Strong ID match (MLLS) = MMLS / MMRS 
+        Matched resource group: Localization Level Threshold with Strong ID match (MLLTS)
+    Matched resource group: Localization Level with Strong ID match (MLL) = MML / MMR 
+        Matched resource group: Localization Level Threshold with Strong ID match (MLLT)
+-->
+
+<!--
+    Available MetaData.
+            String: String value with StringCategory.
+            Binary: Binary value with BinId
+            TermNote: Term notes
+            Instruction: Instruction, the instruction is defined as multiple comments in Lcx file.
+            Property: PropertyBags
+            StringLocStatus: String LocStatus
+            BinaryLocStatus: Binary LocStatus
+            StringTransOrigin: String TransOrigin
+            BinaryTransOrigin: Binary TransOrigin
+            StringApprovalStatus: String ApprovalStatus
+            BinaryApprovalStatus: Binary ApprovalStatus
+            StringTransLocked: String TransLocked
+            BinaryTransLocked: Binary TransLocked
+            StringAutoApproved: String AutoApproved
+            BinaryAutoApproved: Binary AutoApproved
+            ConfidenceLevel: ConfidenceLevel (can be applied only for string)
+            Custom1
+            Custom2
+            Custom3
+            Custom4
+            Custom5
+            Custom6
+            
+    Action:
+        Copy: Copy the value from the matched resource to the target resource.
+        Set: Set the value using the Value="" attribute.
+        
+    Note:
+        If String copy is false, all string related meta data (StringLocStatus, StringTransOrigin, StringApprovalStatus,
+        StringApprovalStatus, StringUserSrcLock, StringTransLock, and ConfidenceLevel) will be ignored even though its action is Copy or Set.
+
+        If Binary copy is false, all binary related meta data (BinaryLocStatus, BinaryTransOrigin, BinaryApprovalStatus,
+        BinaryApprovalStatus, BinaryUserSrcLock, and BinaryTransLock) will be ignored even though its action is Copy or Set.
+
+-->
+<AutoTranslationConfig>
+
+    <!--
+        FileScope setting is for how many files and what kind of files are used for the recycling.
+        SameFileDepth: to control the number of files of the same file to look up. If the same file has multiple revisions, the last (X) number of files will be used based on the value.
+               If depth is 2, the last two files of the same file (same project, same branch, and same relative path) are used to search.
+        OtherFileDepth: to control the number of files to look up. If the other files have multiple revisions, the last (X) number of files will be used based on the value.
+               If depth is 2, the last two files of the other files are used to search.
+        PrivateDataPriority: to decide to use the private data (imported from the private source depot) or not.
+               High: Use it as higher priority than the regular files.
+               Medium: Use it as the same priorty with the regular files.
+               Low: Use it as lower priority than the regular files.
+               None: Do not use.
+    -->
+    <FileScope SameFileDepth="5" OtherFileDepth="2" PrivateDataPriority="High" />
+
+    <!--
+        CultureMapping:
+            default: Use default definition for non-specified cultures
+            none: Do not auto translate for the non-specified cultures
+    -->
+    <StringExactMatchSetting Execute="false" CultureMapping="default" ModifiedByPrefix="StringExactMatch">
+        <!--
+            Penalty system
+            If ParserIdPenalty is 10, and the matched item has different parser id, the match score is decreased by 10.
+            Max match score is 100 and the match score is decided by the penalty system.
+        -->
+        <Culture Name="default" ParserIdPenalty="10" StrCategoryPenalty="10" StrongMatchIdPenalty="10">
+            <MetaData Type="String" Action="Copy" Value="None" />
+            <MetaData Type="StringLocStatus" Action="Set" Value="Localized" />
+            <MetaData Type="StringTransOrigin" Action="Set" Value="Auto" />
+            <MetaData Type="StringApprovalStatus" Action="Set" Value="NotReady" />
+            <MetaData Type="ConfidenceLevel" Action="Set" Value="100" />
+        </Culture>
+        <!--
+        Override the settings per culture using separated <Culture> setting.
+        If Inherit is true, the default value is automatically inherited.
+        <Culture Name="ja-jp" Inherit="true" />
+         -->
+    </StringExactMatchSetting>
+
+    <!--
+        CultureMapping:
+            default: Use default definition for non-specified cultures
+            none: Do not auto translate for the non-specified cultures
+    -->
+    <FuzzyMatchSetting Execute="true" CultureMapping="default" ModifiedByPrefix="FuzzyMatch">
+        <!--
+            ApprovalStatus:       Approved, PreApproved, NotReady, Failed, ForResearch, NotApplicable, Postponed, WontFix   // pipe ("|") delimited (i.e. Approved|PreApproved|NotReady); empty means ignore this setting 
+            Threshold:            50-100%
+            CaseSensitive:        true, false 
+            MatchHotkey:          true, false
+            SkipMultiSuggestion:  true, false
+            MatchStringCategory:  true, false
+            MatchWholeString:     true, false (accelerator and terminator) 
+            SkipNumberOnlyString: true, false
+            MinWordCountToApply:  the minimum word count to apply non-100% fuzzy matches. (100% fuzzy matches will be applied regardless of word count)
+            MinCharCountToApply:  the minimum character count to apply even for the 100% fuzzy matches.
+        -->
+        <Culture Name="default" ApprovalStatus="" Threshold="90" CaseSensitive="false" MatchHotkey="false" SkipMultiSuggestion="false"
+                 MatchStringCategory="false" MatchWholeString="false" SkipNumberOnlyString="true" MinWordCountToApply="4" MinCharCountToApply="2" CopyFuzzySourceToPrevSource="true">
+            <MetaData Type="String" Action="Copy" Value="None" />
+            <MetaData Type="StringLocStatus" Action="Set" Value="Localized" />
+            <MetaData Type="StringTransOrigin" Action="Set" Value="Auto" />
+            <MetaData Type="StringApprovalStatus" Action="Set" Value="NotReady" />
+            <Exclusions>
+                <Exclusion Type="StrCategory" Value="Property" />
+            </Exclusions>
+
+            <DataProcessors>
+                <DataProcessor Name="RemoveZWSP" />
+            </DataProcessors>
+        </Culture>
+        <!--
+        Override the settings per culture using separated <Culture> setting.
+        If Inherit is true, the default value is automatically inherited.
+        <Culture Name="ja-jp" Inherit="true" />
+        -->
+    </FuzzyMatchSetting>
+
+    <MachineTranslationSetting Execute="false" CultureMapping="default">
+    </MachineTranslationSetting>
+
+    <ContextMatchSetting Execute="true" ModifiedByPrefix="ContextMatch">
+        <Thresholds>
+            <Threshold Name="SSTS" Value="70" />
+            <Threshold Name="MNMRS" Value="10" />
+            <Threshold Name="TLLTS" Value="70" />
+
+            <Threshold Name="SST" Value="70" />
+            <Threshold Name="MNMR" Value="10" />
+            <Threshold Name="TLLT" Value="70" />
+        </Thresholds>
+        <MetaDataCopy>
+            <Similarity Type="Highest">
+                <MetaData Type="String" Action="Copy" Value="None" />
+                <MetaData Type="Binary" Action="Copy" Value="None" />
+                <MetaData Type="TermNote" Action="Copy" Value="None" />
+                <MetaData Type="Instruction" Action="Copy" Value="None" />
+                <MetaData Type="StringLocStatus" Action="Copy" Value="None" />
+                <MetaData Type="BinaryLocStatus" Action="Copy" Value="None" />
+                <MetaData Type="StringTransOrigin" Action="Copy" Value="None" />
+                <MetaData Type="BinaryTransOrigin" Action="Copy" Value="None" />
+                <MetaData Type="StringApprovalStatus" Action="Copy" Value="None" />
+                <MetaData Type="BinaryApprovalStatus" Action="Copy" Value="None" />
+                <MetaData Type="StringUserLocked" Action="Copy" Value="None" />
+                <MetaData Type="BinaryUserLocked" Action="Copy" Value="None" />
+                <MetaData Type="StringTransLocked" Action="Copy" Value="None" />
+                <MetaData Type="BinaryTransLocked" Action="Copy" Value="None" />
+                <MetaData Type="StringAutoApproved" Action="Copy" Value="None" />
+                <MetaData Type="BinaryAutoApproved" Action="Copy" Value="None" />
+                <MetaData Type="ConfidenceLevel" Action="Copy" Value="None" />
+                <MetaData Type="Custom1" Action="None" Value="None" />
+                <MetaData Type="Custom2" Action="None" Value="None" />
+                <MetaData Type="Custom3" Action="Copy" Value="None" />
+                <MetaData Type="Custom4" Action="None" Value="None" />
+                <MetaData Type="Custom5" Action="None" Value="None" />
+                <MetaData Type="Custom6" Action="None" Value="None" />
+            </Similarity>
+            <Similarity Type="High">
+                <MetaData Type="String" Action="Copy" Value="None" />
+                <MetaData Type="Binary" Action="Copy" Value="None" />
+                <MetaData Type="TermNote" Action="Copy" Value="None" />
+                <MetaData Type="Instruction" Action="Copy" Value="None" />
+                <MetaData Type="StringLocStatus" Action="Copy" Value="None" />
+                <MetaData Type="BinaryLocStatus" Action="Copy" Value="None" />
+                <MetaData Type="StringTransOrigin" Action="Copy" Value="None" />
+                <MetaData Type="BinaryTransOrigin" Action="Copy" Value="None" />
+                <MetaData Type="StringApprovalStatus" Action="Copy" Value="None" />
+                <MetaData Type="BinaryApprovalStatus" Action="Copy" Value="None" />
+                <MetaData Type="StringUserLocked" Action="None" Value="None" />
+                <MetaData Type="BinaryUserLocked" Action="None" Value="None" />
+                <MetaData Type="StringTransLocked" Action="Copy" Value="None" />
+                <MetaData Type="BinaryTransLocked" Action="Copy" Value="None" />
+                <MetaData Type="StringAutoApproved" Action="Copy" Value="None" />
+                <MetaData Type="BinaryAutoApproved" Action="Copy" Value="None" />
+                <MetaData Type="ConfidenceLevel" Action="Copy" Value="None" />
+                <MetaData Type="Custom1" Action="None" Value="None" />
+                <MetaData Type="Custom2" Action="None" Value="None" />
+                <MetaData Type="Custom3" Action="Copy" Value="None" />
+                <MetaData Type="Custom4" Action="None" Value="None" />
+                <MetaData Type="Custom5" Action="None" Value="None" />
+                <MetaData Type="Custom6" Action="None" Value="None" />
+            </Similarity>
+        </MetaDataCopy>
+
+        <DataProcessors>
+            <Similarity Type="Medium">
+                <DataProcessor Name="RemoveZWSP" />
+            </Similarity>
+            <Similarity Type="Low">
+                <DataProcessor Name="RemoveZWSP" />
+            </Similarity>
+        </DataProcessors>
+        
+        <!-- Win32 resources. ParserId is 3 -->
+        <Resource ParserId="3" File="Win32Config.xml" />
+
+        <!-- MCP resources. ParserId is 211 -->
+        <Resource ParserId="211"  File="ManagedConfig.xml" />
+
+        <!-- PomXML resources. ParserId is 210 -->
+        <Resource ParserId="210" File="PomXmlConfig.xml" />
+
+        <!-- PomHTML resources. ParserId is 22 -->
+        <Resource ParserId="22" File="PomHtmlConfig.xml" />
+
+        <!-- INF resources. ParserId is 7 -->
+        <Resource ParserId="7" File="InfConfig.xml" />
+
+        <!-- PowerShell resources. ParserId is 303 -->
+        <Resource ParserId="303" File="PowerShellConfig.xml" />
+
+        <!-- INI or MUI Sub resources. ParserId is 4 -->
+        <Resource ParserId="4" File="IniConfig.xml" />
+
+        <!-- MSI resources. ParserId is 83 -->
+        <Resource ParserId="83" File="MsiConfig.xml" />
+
+        <!-- Win32 Mfl resources. ParserId is 230 -->
+        <Resource ParserId="230" File="Win32MflConfig.xml" />
+
+        <!-- Mac/iOS resources. ParserId is 17 -->
+        <Resource ParserId="17" File="MacConfig.xml" />
+    </ContextMatchSetting>
+</AutoTranslationConfig>

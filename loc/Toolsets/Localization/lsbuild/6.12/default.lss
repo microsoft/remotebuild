@@ -1,0 +1,1510 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LS_SETTINGS_FILE>
+  <LS_SETTINGS_DESCRIPTION>
+  </LS_SETTINGS_DESCRIPTION>
+  <optionSet id="LSOptions">
+    <optionSet id="Defaults" displayName="Option Defaults">
+      <optionSet id="Espresso" displayName="Espresso" />
+      <optionSet id="Parsers" displayName="Parsers" />
+    </optionSet>
+    <optionSet id="User" displayName="User Overrides">
+      <optionSet id="Espresso" displayName="Espresso">
+        <optionSet id="FileOperations" displayName="General" helpText="Settings which apply to File operations such as Update, Generate, and editing resources.">
+          <option id="ClearUtilityTab" displayName="Clear Output window after extensions run" helpText="To clear the Output window after extensions run, select On. This setting applies to all extensions listed in the Add-ins menu.">
+            <boolean defaultValue="1" currentValue="0"/>
+          </option>
+        </optionSet>
+      </optionSet>
+      <optionSet id="Parsers" displayName="Parsers" />
+    </optionSet>
+    <optionSet id="Project" displayName="Project Overrides">
+      <optionSet id="Espresso" displayName="Espresso" >
+        <optionSet id="TranslationPlatform" displayName="Translation Platform" helpText="Settings for the Translation Platform">
+          <optionSet id="General TP Custom LocAgent Settings" displayName="General TP Custom LocAgent Settings" helpText="Use these settings to control the TP Custom LocAgent.">
+            <option id="\TPCustomLocAgent\TPCustomLocAgent\Enabled" displayName="Enabled" helpText="Use these settings to enable or disable the TP Custom LocAgent.">
+              <boolean defaultValue="1" currentValue="1" />
+            </option>
+          </optionSet>
+          <optionSet id="Localization Directive (LocRule) Settings" displayName="Localization Directive (LocRule) Settings" helpText="Use these settings to control how Localization Directives are handled for specific resources.">
+            <optionSet id="Adaptation Rule" displayName="Adaptation Rule" helpText="Use the Adaptation rule settings to identify and correctly localize strings based on content in the map file. Do not change these settings without the help of the LocStudio team.">
+              <optionSet id="Font Settings" displayName="Font Settings" helpText="Use these settings to locate strings with a string category of FontName and correctly localize the strings using content in the Map file with the ID of Fonts.">
+                <option id="\LocRuleAgent\AdaptationRule\AdaptationRule01\Enabled" displayName="Enabled" helpText="To validate strings per this rule, select On. To stop validation with this rule, select Off.">
+                  <boolean defaultValue="1" currentValue="0" />
+                </option>
+              </optionSet>
+            </optionSet>
+            <optionSet id="Special Characters Rule" displayName="Special Characters Rule" helpText="Use these settings to prevent special characters from being in the target when they are not in the source. Do not change these settings without help from the LocStudio team.">
+              <optionSet id="Match Null Settings" displayName="Match Null Settings" helpText="Use these settings to locate resources that contain null characters in the source, but do not contain an equal number of null characters in the target.">
+                <option id="\LocRuleAgent\SpecialCharsRule\SpecialCharsRule02\Enabled" displayName="Enabled" helpText="To validate strings per this rule, select On. To stop validation with this rule, select Off.">
+                  <boolean defaultValue="0" currentValue="1" />
+                </option>
+                <option id="\LocRuleAgent\SpecialCharsRule\SpecialCharsRule02\DocumentType" displayName="Document Type" helpText="Enter the parser IDs this rule will affect. If left blank, files parsed by any parser are affected by this rule.">
+                  <stringList>
+                    <defaultList />
+                    <currentList>
+                      <item string="4" itemID="0" />
+                    </currentList>
+                  </stringList>
+                </option>
+              </optionSet>
+              <optionSet id="Match Carriage Return Settings" displayName="Match Carriage Return Settings" helpText="Use these settings to locate resources that contain carriage returns in the source, but do not contain an equal number of carriage returns in the target.">
+                <option id="\LocRuleAgent\SpecialCharsRule\SpecialCharsRule04\Enabled" displayName="Enabled" helpText="To validate strings per this rule, select On. To stop validation with this rule, select Off.">
+                  <boolean defaultValue="0" currentValue="1" />
+                </option>
+                <option id="\LocRuleAgent\SpecialCharsRule\SpecialCharsRule04\DocumentType" displayName="Document Type" helpText="Enter the parser IDs this rule will affect. If left blank, files parsed by any parser are affected by this rule.">
+                  <stringList>
+                    <defaultList />
+                    <currentList>
+                      <item string="4" itemID="0" />
+                    </currentList>
+                  </stringList>
+                </option>
+              </optionSet>
+              <optionSet id="Match Line Feed Settings" displayName="Match Line Feed Settings" helpText="Use these settings to locate resources that contain line feeds in the source, but do not contain an equal number of line feeds in the target.">
+                <option id="\LocRuleAgent\SpecialCharsRule\SpecialCharsRule03\Enabled" displayName="Enabled" helpText="To validate strings per this rule, select On. To stop validation with this rule, select Off.">
+                  <boolean defaultValue="0" currentValue="1" />
+                </option>
+                <option id="\LocRuleAgent\SpecialCharsRule\SpecialCharsRule03\DocumentType" displayName="Document Type" helpText="Enter the parser IDs this rule will affect. If left blank, files parsed by any parser are affected by this rule.">
+                  <stringList>
+                    <defaultList />
+                    <currentList>
+                      <item string="4" itemID="0" />
+                    </currentList>
+                  </stringList>
+                </option>
+              </optionSet>
+            </optionSet>
+            <optionSet id="HTML and XML Tag Rule" displayName="HTML and XML Tag Rule" helpText="Use these settings to detect and appropriately translate HTML and XML tags. Do not change these settings without help from the LocStudio team.">
+              <optionSet id="Legacy HTML and XML Tag Settings" displayName="Legacy HTML and XML Tag Settings" helpText="Use these settings to detect any text that appears to be an HTML or XML tag. Possible tags do not have to be valid to match this rule's criteria.">
+                <option id="\LocRuleAgent\HtmlTagRule\HtmlTagRule01\StringCategory" displayName="String Category" helpText="Enter the string categories this rule will affect. If left blank, all string categories are affected by this rule.">
+                  <stringList>
+                    <defaultList>
+                      <item string="HTML Text" itemID="0" />
+                      <item string="HTX" itemID="1" />
+                      <item string="HTML Title" itemID="2" />
+                      <item string="HTT" itemID="3" />
+                      <item string="AppData" itemID="4" />
+                      <item string="APD" itemID="5" />
+                    </defaultList>
+                    <currentList>
+                      <item string="HTML Text" itemID="0" />
+                      <item string="HTX" itemID="1" />
+                      <item string="HTML Title" itemID="2" />
+                      <item string="HTT" itemID="3" />
+                    </currentList>
+                  </stringList>
+                </option>
+                <option id="\LocRuleAgent\HtmlTagRule\HtmlTagRule01\Enabled" displayName="Enabled" helpText="To validate strings per this rule, select On. To stop validation with this rule, select Off.">
+                  <boolean defaultValue="0" currentValue="1" />
+                </option>
+              </optionSet>
+              <optionSet id="Non-escaped HTML and XML Tag Settings" displayName="Non-escaped HTML and XML Tag Settings" helpText="Use these settings to detect valid HTML and XML tags that are not escaped.">
+                <option id="\LocRuleAgent\HtmlTagRule\HtmlTagRule02\Enabled" displayName="Enabled" helpText="To validate strings per this rule, select On. To stop validation with this rule, select Off.">
+                  <boolean defaultValue="0" currentValue="1" />
+                </option>
+              </optionSet>
+              <optionSet id="Escaped Tags Settings" displayName="Escaped Tags Settings" helpText="Use these settings to detect valid HTML and XML tags that are escaped.">
+                <option id="\LocRuleAgent\HtmlTagRule\HtmlTagRule03\Enabled" displayName="Enabled" helpText="To validate strings per this rule, select On. To stop validation with this rule, select Off.">
+                  <boolean defaultValue="0" currentValue="1" />
+                </option>
+              </optionSet>
+             <optionSet id="HTML and XML Tag Rule Placeholder 09" displayName="HTML and XML Tag Rule Placeholder 09" helpText="Use these settings to create additional instances of the HTML and XML Tag rule.">
+                <option id="\LocRuleAgent\HtmlTagRule\HtmlTagRule09\FileExtension" displayName="File Extension" helpText="Enter the file extensions of the file types this rule will affect. If left blank, all file types are affected by this rule.">
+                  <stringList>
+                    <defaultList />
+                    <currentList>
+                      <item string=".asp" itemID="0" />
+                    </currentList>
+                  </stringList>
+                </option>
+                <option id="\LocRuleAgent\HtmlTagRule\HtmlTagRule09\StringCategory" displayName="String Category" helpText="Enter the string categories this rule will affect. If left blank, all string categories are affected by this rule.">
+                  <stringList>
+                    <defaultList />
+                    <currentList>
+                      <item string="HTML Text" itemID="0" />
+                      <item string="HTX" itemID="1" />
+                      <item string="HTML Title" itemID="2" />
+                      <item string="HTT" itemID="3" />
+                    </currentList>
+                  </stringList>
+                </option>
+                <option id="\LocRuleAgent\HtmlTagRule\HtmlTagRule09\RegEx" displayName="Regular Expression" helpText="If you are creating a new version of a rule using a placeholder, enter a regular expression to identify information or characters in the string. Otherwise, do not change this setting.">
+                  <string defaultValue="" currentValue="&lt;([^&lt;&gt;%]||&lt;%|%&gt;)+&gt;" />
+                </option>
+                <option id="\LocRuleAgent\HtmlTagRule\HtmlTagRule09\Enabled" displayName="Enabled" helpText="To validate strings per this rule, select On. To stop validation with this rule, select Off.">
+                  <boolean defaultValue="0" currentValue="1" />
+                </option>
+                <option id="\LocRuleAgent\HtmlTagRule\HtmlTagRule09\Description" displayName="Description" helpText="If you are creating a new version of a rule using a placeholder, enter a short description of your new rule. Otherwise, do not change this setting.">
+                  <string defaultValue="Setting to allow the addition of more HTML and XML Tag rule" currentValue="This matches ASP code chunks embedded in HTML tags, which may choke the default regex." />
+                </option>
+              </optionSet>
+              <optionSet id="HTML and XML Tag Rule Placeholder 10" displayName="HTML and XML Tag Rule Placeholder 10" helpText="Use these settings to create additional instances of the HTML and XML Tag rule.">
+                <option id="\LocRuleAgent\HtmlTagRule\HtmlTagRule10\StringCategory" displayName="String Category" helpText="Enter the string categories this rule will affect. If left blank, all string categories are affected by this rule.">
+                  <stringList>
+                    <defaultList />
+                    <currentList>
+                      <item string="HTML Text" itemID="0" />
+                      <item string="HTX" itemID="1" />
+                      <item string="HTML Title" itemID="2" />
+                      <item string="HTT" itemID="3" />
+                      <item string="AppData" itemID="4" />
+                      <item string="APD" itemID="5" />
+                    </currentList>
+                  </stringList>
+                </option>
+                <option id="\LocRuleAgent\HtmlTagRule\HtmlTagRule10\RegEx" displayName="Regular Expression" helpText="If you are creating a new version of a rule using a placeholder, enter a regular expression to identify information or characters in the string. Otherwise, do not change this setting.">
+                  <string defaultValue="" currentValue="&amp;[a-zA-Z0-9]+;" />
+                </option>
+                <option id="\LocRuleAgent\HtmlTagRule\HtmlTagRule10\Enabled" displayName="Enabled" helpText="To validate strings per this rule, select On. To stop validation with this rule, select Off.">
+                  <boolean defaultValue="0" currentValue="1" />
+                </option>
+                <option id="\LocRuleAgent\HtmlTagRule\HtmlTagRule10\Description" displayName="Description" helpText="If you are creating a new version of a rule using a placeholder, enter a short description of your new rule. Otherwise, do not change this setting.">
+                  <string defaultValue="Setting to allow the addition of more HTML and XML Tag rule" currentValue="Detection of XML type of entities" />
+                </option>
+              </optionSet>
+            </optionSet>
+            <optionSet id="Software Markups Rule" displayName="Software Markups Rule" helpText="Use these settings to determine how and when software markups, such as accelerators and terminators, are localized. Do not change these settings without help from the LocStudio team.">
+              <optionSet id="Terminator and Accelerator Settings" displayName="Terminator and Accelerator Settings" helpText="Use these settings to determine how and when accelerators and terminators are localized.">
+                <option id="\LocRuleAgent\SoftwareMarkupsRule\SoftwareMarkupsRule01\Enabled" displayName="Enabled" helpText="To validate strings per this rule, select On. To stop validation with this rule, select Off.">
+                  <boolean defaultValue="1" currentValue="0" />
+                </option>
+                <option id="\LocRuleAgent\SoftwareMarkupsRule\SoftwareMarkupsRule01\Terminators" displayName="Terminators" helpText="Enter valid terminators.">
+                  <stringList>
+                    <defaultList>
+                      <item string="..." itemID="0" />
+                      <item string="…" itemID="1" />
+                      <item string=":" itemID="2" />
+                      <item string="-&gt;" itemID="3" />
+                      <item string="&gt;&gt;" itemID="4" />
+                      <item string="&gt;" itemID="5" />
+                      <item string="-" itemID="6" />
+                    </defaultList>
+                    <currentList>
+                      <item string=" " itemID="0" />
+                    </currentList>
+                  </stringList>
+                </option>
+              </optionSet>
+            </optionSet>
+            <optionSet id="Placeholder Rule" displayName="Placeholder Rule" helpText="Use these settings to mark placeholder text that must exist in the target when it exits in the source. Do not change these settings without help from the LocStudio team.">
+              <optionSet id="PrintF Variable Settings" displayName="PrintF Variable Settings" helpText="Use these settings to set up placeholders when using PrintF variables with the Win32 parser.">
+                <option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule01\RegEx" displayName="RegEx" helpText="If you are creating a new version of a rule using a placeholder, enter a regular expression to identify information or characters in the string. Otherwise, do not change this setting.">
+                  <string defaultValue="%[-+]?[0-9]*\.?[0-9]*(h|l|I|I32|I64)?[cCdiouxXeEfgGnpsS]" currentValue="%([-+]?#?\d*\.?\d*(h|l|ll|I|w|I32|I64)?[cCdiouxXeEfgGnpsSZ])" />
+                </option>
+                <option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule01\AlwaysPlaceEscapeChars" displayName="Always Place Escape Chars" helpText="Select On to place an invalid character constraint even if no placeholder is found, and to be notified when escape characters are not used.">
+                  <boolean defaultValue="1" currentValue="0" />
+                </option>
+              </optionSet>
+              <optionSet id="Win32 Message Table Settings" displayName="Win32 Message Table Settings" helpText="Use these settings to set up placeholders when using message table settings with the Win32 parser.">
+                <option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule02\RegEx" displayName="RegEx" helpText="If you are creating a new version of a rule using a placeholder, enter a regular expression to identify information or characters in the string. Otherwise, do not change this setting.">
+                  <string defaultValue="%[0-9][0-9]?(![-+0 #]?\d*\.?\d*(h|l|I|I32|I64)?[\dcCdiouxXeEfgGnpsS]!)?" currentValue="%(([1-9][0-9]?(!([-+]?#?(\d+|\*)?\.?(\d+|\*)?(h|l|ll|I|w|I32|I64)?[cCdiouxXGnpsSZ])!)?)|0|n| |\.|!|r|t)" />
+                </option>
+                <option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule02\AlwaysPlaceEscapeChars" displayName="Always Place Escape Chars" helpText="Select On to place an invalid character constraint even if no placeholder is found, and to be notified when escape characters are not used.">
+                  <boolean defaultValue="1" currentValue="0" />
+                </option>
+              </optionSet>
+              <optionSet id="Managed Code Variable Settings" displayName="Managed Code Variable Settings" helpText="Use these settings to set up placeholders when using the MCP parser.">
+								<option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule03\EscapeChars" displayName="EscapeChars" helpText="Enter characters that are not valid and their escape sequences.">
+									<stringList>
+										<defaultList>
+											<item string="{ = {{" itemID="0"/>
+											<item string="} = }}" itemID="1"/>
+										</defaultList>
+										<currentList/>
+									</stringList>
+								</option>
+							</optionSet>
+							<optionSet id="MSI Variable Settings" displayName="MSI Variable Settings" helpText="Use these settings to set up placeholders when using the MSI parser.">
+								<option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule04\AlwaysPlaceEscapeChars" displayName="Always Place Escape Chars" helpText="Select On to place an invalid character constraint even if no placeholder is found, and to be notified when escape characters are not used.">
+									<boolean defaultValue="1" currentValue="0"/>
+								</option>
+							</optionSet>
+              <optionSet id="Placeholder Rule Placeholder 05" displayName="Placeholder Rule Placeholder 05" helpText="Use these settings to create additional instances of the Placeholder rule.">
+								<option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule05\PlaceholderType" displayName="Placeholder Type" helpText="Select the type of enforcement on the placeholder. To enforce the same number of placeholders in the source and target, select Traditional. To enforce the same order and number of placeholders, select Positional. To enforce the same positions, but not the number of placeholders, select Indexed.">
+									<pick defaultValue="2" currentValue="0">
+										<defaultList>
+											<item string="Traditional" itemID="0"/>
+											<item string="Positional" itemID="1"/>
+											<item string="Indexed" itemID="2"/>
+										</defaultList>
+										<currentList>
+											<item string="Traditional" itemID="0"/>
+											<item string="Positional" itemID="1"/>
+											<item string="Indexed" itemID="2"/>
+										</currentList>
+									</pick>
+								</option>
+								<option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule05\EquivInstruction" displayName="Equivalent Instruction" helpText="If you are creating a new version of a rule using a placeholder, enter a short name for the rule. This name will display in localization tools outside of LocStudio, such as LCXAdmin. Otherwise, do not change this setting.">
+									<string defaultValue="" currentValue="FixedPlaceholder"/>
+								</option>
+								<option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule05\RegEx" displayName="RegEx" helpText="If you are creating a new version of a rule using a placeholder, enter a regular expression to identify information or characters in the string. Otherwise, do not change this setting.">
+									<string defaultValue="" currentValue="%\$[\w]{1,2}"/>
+								</option>
+								<option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule05\Enabled" displayName="Enabled" helpText="To validate strings per this rule, select On. To stop validation with this rule, select Off.">
+									<boolean defaultValue="0" currentValue="1"/>
+								</option>
+								<option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule05\Description" displayName="Description" helpText="If you are creating a new version of a rule using a placeholder, enter a short description of your new rule. Otherwise, do not change this setting.">
+									<string defaultValue="Placeholder for more instances of the Placeholder rule" currentValue="Detects %$?? place holders"/>
+								</option>
+							</optionSet>
+							<optionSet id="Placeholder Rule Placeholder 06" displayName="Placeholder Rule Placeholder 06" helpText="Use these settings to create additional instances of the Placeholder rule.">
+								<option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule06\PlaceholderType" displayName="Placeholder Type" helpText="Select the type of enforcement on the placeholder. To enforce the same number of placeholders in the source and target, select Traditional. To enforce the same order and number of placeholders, select Positional. To enforce the same positions, but not the number of placeholders, select Indexed.">
+									<pick defaultValue="2" currentValue="0">
+										<defaultList>
+											<item string="Traditional" itemID="0"/>
+											<item string="Positional" itemID="1"/>
+											<item string="Indexed" itemID="2"/>
+										</defaultList>
+										<currentList>
+											<item string="Traditional" itemID="0"/>
+											<item string="Positional" itemID="1"/>
+											<item string="Indexed" itemID="2"/>
+										</currentList>
+									</pick>
+								</option>
+								<option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule06\EquivInstruction" displayName="Equivalent Instruction" helpText="If you are creating a new version of a rule using a placeholder, enter a short name for the rule. This name will display in localization tools outside of LocStudio, such as LCXAdmin. Otherwise, do not change this setting.">
+									<string defaultValue="" currentValue="FixedPlaceholder"/>
+								</option>
+								<option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule06\RegEx" displayName="RegEx" helpText="If you are creating a new version of a rule using a placeholder, enter a regular expression to identify information or characters in the string. Otherwise, do not change this setting.">
+									<string defaultValue="" currentValue="TODO(:?)"/>
+								</option>
+								<option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule06\Enabled" displayName="Enabled" helpText="To validate strings per this rule, select On. To stop validation with this rule, select Off.">
+									<boolean defaultValue="0" currentValue="1"/>
+								</option>
+								<option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule06\Description" displayName="Description" helpText="If you are creating a new version of a rule using a placeholder, enter a short description of your new rule. Otherwise, do not change this setting.">
+									<string defaultValue="Placeholder for more instances of the Placeholder rule" currentValue="Detects TODO Keyword"/>
+								</option>
+							</optionSet>
+              <optionSet id="Placeholder Rule Placeholder 07" displayName="Placeholder Rule Placeholder 07" helpText="Use these settings to create additional instances of the Placeholder rule.">
+                <option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule07\FileExtension" displayName="File Extension" helpText="Enter the file extensions of the file types this rule will affect. If left blank, all file types are affected by this rule.">
+                  <stringList>
+                    <defaultList />
+                    <currentList>
+                      <item string=".plaxml" itemID="0" />
+                      <item string=".psd1" itemID="0" />
+                      <item string=".ps1" itemID="0" />
+                    </currentList>
+                  </stringList>
+                </option>
+                <option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule07\PlaceholderType" displayName="Placeholder Type" helpText="Select the type of enforcement on the placeholder. To enforce the same number of placeholders in the source and target, select Traditional. To enforce the same order and number of placeholders, select Positional. To enforce the same positions, but not the number of placeholders, select Indexed.">
+                  <pick defaultValue="2" currentValue="0">
+                    <defaultList>
+                      <item string="Traditional" itemID="0" />
+                      <item string="Positional" itemID="1" />
+                      <item string="Indexed" itemID="2" />
+                    </defaultList>
+                    <currentList>
+                      <item string="Traditional" itemID="0" />
+                      <item string="Positional" itemID="1" />
+                      <item string="Indexed" itemID="2" />
+                    </currentList>
+                  </pick>
+                </option>
+                <option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule07\RegEx" displayName="RegEx" helpText="If you are creating a new version of a rule using a placeholder, enter a regular expression to identify information or characters in the string. Otherwise, do not change this setting.">
+                  <string defaultValue="" currentValue="(?&lt;!{)({[^{}]+})" />
+                </option>
+                <option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule07\Enabled" displayName="Enabled" helpText="To validate strings per this rule, select On. To stop validation with this rule, select Off.">
+                  <boolean defaultValue="0" currentValue="1" />
+                </option>
+              </optionSet>
+              <optionSet id="Placeholder Rule Placeholder 08" displayName="Placeholder Rule Placeholder 08" helpText="Use these settings to create additional instances of the Placeholder rule.">
+                <option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule08\EscapeChars" displayName="EscapeChars" helpText="Enter characters that are not valid and their escape sequences.">
+                  <stringList>
+                    <defaultList />
+                    <currentList>
+                      <item string="\ = \\" itemID="0" />
+                      <item string="&quot; = \&quot;" itemID="1" />
+                    </currentList>
+                  </stringList>
+                </option>
+                <option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule08\Enabled" displayName="Enabled" helpText="To validate strings per this rule, select On. To stop validation with this rule, select Off.">
+                  <boolean defaultValue="0" currentValue="1" />
+                </option>
+                <option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule08\DocumentType" displayName="Document Type" helpText="Enter the parser IDs this rule will affect. If left blank, files parsed by any parser are affected by this rule.">
+                  <stringList>
+                    <defaultList />
+                    <currentList>
+                      <item string="230" itemID="0" />
+                    </currentList>
+                  </stringList>
+                </option>
+              </optionSet>
+              <optionSet id="Placeholder Rule Placeholder 09" displayName="Placeholder Rule Placeholder 09" helpText="Use these settings to create additional instances of the Placeholder rule.">
+                <option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule09\RegEx" displayName="RegEx" helpText="If you are creating a new version of a rule using a placeholder, enter a regular expression to identify information or characters in the string. Otherwise, do not change this setting.">
+                  <string defaultValue="" currentValue="%[0-9](![a-z]+!)?" />
+                </option>
+                <option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule09\Enabled" displayName="Enabled" helpText="To validate strings per this rule, select On. To stop validation with this rule, select Off.">
+                  <boolean defaultValue="0" currentValue="1" />
+                </option>
+                <option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule09\DocumentType" displayName="Document Type" helpText="Enter the parser IDs this rule will affect. If left blank, files parsed by any parser are affected by this rule.">
+                  <stringList>
+                    <defaultList />
+                    <currentList>
+                      <item string="4" itemID="0" />
+                      <item string="3" itemID="1" />
+                    </currentList>
+                  </stringList>
+                </option>
+              </optionSet>
+              <optionSet id="Placeholder Rule Placeholder 10" displayName="Placeholder Rule Placeholder 10" helpText="Use these settings to create additional instances of the Placeholder rule.">
+								  <option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule10\PlaceholderType" displayName="Placeholder Type" helpText="Select the type of enforcement on the placeholder. To enforce the same number of placeholders in the source and target, select Traditional. To enforce the same order and number of placeholders, select Positional. To enforce the same positions, but not the number of placeholders, select Indexed.">
+									  <pick defaultValue="2" currentValue="0">
+										  <defaultList>
+											  <item string="Traditional" itemID="0"/>
+											  <item string="Positional" itemID="1"/>
+											  <item string="Indexed" itemID="2"/>
+										  </defaultList>
+										  <currentList>
+											  <item string="Traditional" itemID="0"/>
+											  <item string="Positional" itemID="1"/>
+											  <item string="Indexed" itemID="2"/>
+										  </currentList>
+									  </pick>
+								  </option>
+								  <option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule10\EquivInstruction" displayName="Equivalent Instruction" helpText="If you are creating a new version of a rule using a placeholder, enter a short name for the rule. This name will display in localization tools outside of LocStudio, such as LCXAdmin. Otherwise, do not change this setting.">
+									  <string defaultValue="" currentValue="FixedPlaceholder"/>
+								  </option>
+								  <option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule10\RegEx" displayName="RegEx" helpText="If you are creating a new version of a rule using a placeholder, enter a regular expression to identify information or characters in the string. Otherwise, do not change this setting.">
+									  <string defaultValue="" currentValue="\|[\d]"/>
+								  </option>
+								  <option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule10\Enabled" displayName="Enabled" helpText="To validate strings per this rule, select On. To stop validation with this rule, select Off.">
+									  <boolean defaultValue="0" currentValue="1"/>
+								  </option>
+								  <option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule10\Description" displayName="Description" helpText="If you are creating a new version of a rule using a placeholder, enter a short description of your new rule. Otherwise, do not change this setting.">
+									  <string defaultValue="Placeholder for more instances of the Placeholder rule" currentValue="Detects Pipe '|' place holders"/>
+								  </option>
+							  </optionSet>
+            </optionSet>
+
+            <optionSet id="Placeholder Rule Placeholder 12" displayName="Placeholder Rule Placeholder 12" helpText="Use these settings to create additional instances of the Placeholder rule.">
+              <option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule12\StringCategory" displayName="String Category" helpText="Enter the string  categories this rule will affect. If left blank, all string categories are affected by this rule.">
+                <stringList>
+                  <defaultList />
+                  <currentList>
+                    <item string="HTML Text" itemID="0" />
+                    <item string="HTX" itemID="1" />
+                    <item string="HTML Title" itemID="2" />
+                    <item string="HTT" itemID="3" />
+                    <item string="AppData" itemID="4" />
+                    <item string="APD" itemID="5" />
+                  </currentList>
+                </stringList>
+              </option>
+              <option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule12\EquivInstruction" displayName="Equivalent Instruction" helpText="If you are creating a new version of a rule using a placeholder, enter a short name for the rule. This name will display in localization tools outside of LocStudio, such as LCXAdmin. Otherwise, do not change this setting.">
+                <string defaultValue="" currentValue="NumberedPlaceholder"/>
+              </option>
+              <option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule12\EscapeChars" displayName="EscapeChars" helpText="Enter characters that are not valid and their escape sequences.">
+                <stringList>
+                  <defaultList />
+                  <currentList>
+                    <item string="{ = {{" itemID="0" />
+                  </currentList>
+                </stringList>
+              </option>
+              <option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule12\PlaceholderType" displayName="Placeholder Type" helpText="Select the type of enforcement on the placeholder. To enforce the same number of placeholders in the source and target, select Traditional. To enforce the same order and number of placeholders, select Positional. To enforce the same positions, but not the number of placeholders, select Indexed.">
+                <pick defaultValue="2" currentValue="0">
+                  <defaultList>
+                    <item string="Traditional" itemID="0" />
+                    <item string="Positional" itemID="1" />
+                    <item string="Indexed" itemID="2" />
+                  </defaultList>
+                  <currentList>
+                    <item string="Traditional" itemID="0" />
+                    <item string="Positional" itemID="1" />
+                    <item string="Indexed" itemID="2" />
+                  </currentList>
+                </pick>
+              </option>
+              <option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule12\RegEx" displayName="RegEx" helpText="If you are creating a new version of a rule using a placeholder, enter a regular expression to identify information or characters in the string. Otherwise, do not change this setting.">
+                <string defaultValue="" currentValue="(?&lt;!{)({[^{}\r\n]+})" />
+              </option>
+              <option id="\LocRuleAgent\PlaceholderRule\PlaceholderRule12\Enabled" displayName="Enabled" helpText="To validate strings per this rule, select On. To stop validation with this rule, select Off.">
+                <boolean defaultValue="0" currentValue="1" />
+              </option>
+            </optionSet>
+            <optionSet id="Lock String Rule" displayName="Lock String Rule" helpText="Use these settings to determine how and when an entire string is locked. Do not change these settings without the help of the LocStudio team.">
+							<optionSet id="Lock String Rule Placeholder 07" displayName="String ID Contains Settings" helpText="Use these settings to lock strings based on a String ID that contains specific text. In String ID, replace CONTAIN with the text in the String ID of the string you want to lock.">
+								<option id="\LocRuleAgent\LockStringRule\LockStringRule07\Enabled" displayName="Enabled" helpText="To validate strings per this rule, select On. To stop validation with this rule, select Off.">
+									<boolean defaultValue="0" currentValue="1"/>
+								</option>
+								<option id="\LocRuleAgent\LockStringRule\LockStringRule07\StringID" displayName="String ID" helpText="Enter a regular expression to match against the string part of the item ID contained in the Resource ID. If left blank, all item IDs are affected by this rule.">
+									<string defaultValue="CONTAINS" currentValue="(?i)_NOLOC_"/>
+								</option>
+							</optionSet>
+              <optionSet id="Lock String Rule Placeholder 08" displayName="Lock String Rule" helpText="Use these settings to determine how and when an entire string is locked. Do not change these settings without the help of the LocStudio team.">
+                <option id="\LocRuleAgent\LockStringRule\LockStringRule08\StringCategory" displayName="String Category" helpText="Enter the string  categories this rule will affect. If left blank, all string categories are affected by this rule.">
+                  <stringList>
+                    <defaultList />
+                    <currentList>
+                      <item string="Number" itemID="0" />
+                    </currentList>
+                  </stringList>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule51\Conditions\StringID">
+                  <string defaultValue="" currentValue="Style:Sheet" />
+                </option>
+                <option id="\LocRuleAgent\LockStringRule\LockStringRule08\RegEx" displayName="RegEx" helpText="If you are creating a new version of a rule using a placeholder, enter a regular expression to identify information or characters in the string. Otherwise, do not change this setting.">
+                  <string defaultValue="[a-z]" currentValue="auto|inherit"/>
+                </option>
+                <option id="\LocRuleAgent\LockStringRule\LockStringRule08\Enabled" displayName="Enabled" helpText="To validate strings per this rule, select On. To stop validation with this rule, select Off.">
+                  <boolean defaultValue="0" currentValue="1"/>
+                </option>
+                <option id="\LocRuleAgent\LockStringRule\LockStringRule08\Description" displayName="Description" helpText="If you are creating a new version of a rule using a placeholder, enter a short description of your new rule. Otherwise, do not change this setting.">
+                  <string defaultValue="Placeholder for extra Lock String rules" currentValue="Lock string that has values auto ou inherit on a CSS style sheet"/>
+                </option>
+              </optionSet>
+              <optionSet id="Lock String Rule Placeholder 09" displayName="Lock String Rule Placeholder 09" helpText="Use these settings to create additional instances of the Lock String rule.">
+                <option id="\LocRuleAgent\LockStringRule\LockStringRule09\RegEx" displayName="RegEx" helpText="If you are creating a new version of a rule using a placeholder, enter a regular expression to identify information or characters in the string. Otherwise, do not change this setting.">
+                  <string defaultValue="[a-z]" currentValue="^\d+(\.\d+){2,}$"/>
+                </option>
+                <option id="\LocRuleAgent\LockStringRule\LockStringRule09\Enabled" displayName="Enabled" helpText="To validate strings per this rule, select On. To stop validation with this rule, select Off.">
+                  <boolean defaultValue="0" currentValue="1"/>
+                </option>
+                <option id="\LocRuleAgent\LockStringRule\LockStringRule09\Description" displayName="Description" helpText="If you are creating a new version of a rule using a placeholder, enter a short description of your new rule. Otherwise, do not change this setting.">
+                  <string defaultValue="Placeholder for extra Lock String rules" currentValue="Lock string that looks like a version number e.g. x.y.z..."/>
+                </option>
+              </optionSet>
+              <optionSet id="Lock String Rule Placeholder 10" displayName="Lock String Rule Placeholder 10" helpText="Use these settings to create additional instances of the Lock String rule.">
+                <option id="\LocRuleAgent\LockStringRule\LockStringRule10\StringCategory" displayName="String Category" helpText="Enter the string categories this rule will affect. If left blank, all string categories are affected by this rule.">
+                  <stringList>
+                    <defaultList/>
+                    <currentList>
+                      <item string="Custom Control" itemID="0"/>
+                      <item string="Group Box" itemID="1"/>
+                      <item string="Slider Bar" itemID="2"/>
+                      <item string="Check Box" itemID="3"/>
+                      <item string="Progress Bar" itemID="4"/>
+                      <item string="Tab Control" itemID="5"/>
+                      <item string="Button" itemID="6"/>
+                    </currentList>
+                  </stringList>
+                </option>
+                <option id="\LocRuleAgent\LockStringRule\LockStringRule10\RegEx" displayName="RegEx" helpText="If you are creating a new version of a rule using a placeholder, enter a regular expression to identify information or characters in the string. Otherwise, do not change this setting.">
+                  <string defaultValue="[a-z]" currentValue="^[a-zA-Z]+\d+$"/>
+                </option>
+                <option id="\LocRuleAgent\LockStringRule\LockStringRule10\Enabled" displayName="Enabled" helpText="To validate strings per this rule, select On. To stop validation with this rule, select Off.">
+                  <boolean defaultValue="0" currentValue="1"/>
+                </option>
+                <option id="\LocRuleAgent\LockStringRule\LockStringRule10\DocumentType" displayName="Document Type" helpText="Enter the parser IDs this rule will affect. If left blank, files parsed by any parser are affected by this rule.">
+                  <stringList>
+                    <defaultList/>
+                    <currentList>
+                      <item string="3" itemID="0"/>
+                    </currentList>
+                  </stringList>
+                </option>
+                <option id="\LocRuleAgent\LockStringRule\LockStringRule10\Description" displayName="Description" helpText="If you are creating a new version of a rule using a placeholder, enter a short description of your new rule. Otherwise, do not change this setting.">
+                  <string defaultValue="Placeholder for extra Lock String rules" currentValue="Lock Custom control names"/>
+                </option>
+              </optionSet>
+              <optionSet id="Lock String Rule Placeholder 11" displayName="Lock String Rule Placeholder 11" helpText="Use these settings to create additional instances of the Lock String rule.">
+                <option id="\LocRuleAgent\LockStringRule\LockStringRule11\RegEx" displayName="RegEx" helpText="If you are creating a new version of a rule using a placeholder, enter a regular expression to identify information or characters in the string. Otherwise, do not change this setting.">
+                  <string defaultValue="[a-z]" currentValue="^(List|Spin|Tree|Progress|Animate|Generic|Tab|BitMap|DateTimePicker|Slider|Button|Check|Custom)\d+$"/>
+                </option>
+                <option id="\LocRuleAgent\LockStringRule\LockStringRule11\Enabled" displayName="Enabled" helpText="To validate strings per this rule, select On. To stop validation with this rule, select Off.">
+                  <boolean defaultValue="0" currentValue="0"/>
+                </option>
+              </optionSet>
+            </optionSet>
+            <optionSet id="Lock Substring Rule" displayName="Lock Substring Rule" helpText="Use these settings to determine how and when part of the text in a string is locked. Do not change these settings without the help of the LocStudio team.">
+              <optionSet id="Lock Substring Rule Placeholder 07" displayName="Lock Substring Rule Placeholder 08" helpText="Use these settings to create additional instances of the Lock Substring rule.">
+                <option id="\LocRuleAgent\LockSubstringRule\LockSubstringRule07\StringCategory" displayName="String Category" helpText="Enter the string  categories this rule will affect. If left blank, all string categories are affected by this rule.">
+                  <stringList>
+                    <defaultList />
+                    <currentList>
+                      <item string="HTML Text" itemID="0" />
+                      <item string="HTX" itemID="1" />
+                      <item string="HTM Title" itemID="2" />
+                      <item string="HTT" itemID="3" />
+                    </currentList>
+                  </stringList>
+                </option>
+                <option id="\LocRuleAgent\LockSubstringRule\LockSubstringRule07\RegEx" displayName="RegEx" helpText="If you are creating a new version of a rule using a placeholder, enter a regular expression to identify information or characters in the string. Otherwise, do not change this setting.">
+                  <string defaultValue="" currentValue="&lt;(\!?(?'Lead'[%\?\-])[\S\s]*?\k'Lead'&gt;|(/?%?\d?/?)(?i:\d+[a-z]\d*|AREA|FIELDSET|LINK|IFRAME|BASE|MENU|SECTION|ARTICLE|SUMMARY|ASIDE|HGROUP|HEADER|FOOTER|NAV|FIGURE|FIGCAPTION|VIDEO|AUDIO|SOURCE|EMBED|MARK|PROGRESS|METER|TIME|RUBY|RT|RP|CANVAS|COMMAND|DATALIST|DETAILS|KEYGEN|OUTPUT)/?(&gt;|[:\s]+[^&gt;]*&gt;))" />
+                </option>
+                <option id="\LocRuleAgent\LockSubstringRule\LockSubstringRule07\Enabled" displayName="Enabled" helpText="To validate strings per this rule, select On. To stop validation with this rule, select Off.">
+                  <boolean defaultValue="0" currentValue="1" />
+                </option>
+              </optionSet>              
+              <optionSet id="Lock Substring Rule Placeholder 08" displayName="Lock Substring Rule Placeholder 08" helpText="Use these settings to create additional instances of the Lock Substring rule.">
+                <option id="\LocRuleAgent\LockSubstringRule\LockSubstringRule08\RegEx" displayName="RegEx" helpText="If you are creating a new version of a rule using a placeholder, enter a regular expression to identify information or characters in the string. Otherwise, do not change this setting.">
+                  <string defaultValue="" currentValue="&lt;(\!?(?'Lead'[%\?\-])[\S\s]*?\k'Lead'&gt;|(/?%?\d?/?)(?i:\d+[a-z]\d*|BODY|BUTTON|BR|B|CENTER|\!DOCTYPE|DIV|DT|DD|FRAMESET|FRAME|FONT|H\d|HR|HEAD|HTML|IMG|I|INPUT|LI|LEFT|META|NOBR|OBJECT|OL|PRE|P|RIGHT|SPAN|SCRIPT|STYLE|STRONG|TD|THEAD|TH|TITLE|TR|UL|U|V|XSL)/?(&gt;|[:\s]+[^&gt;]*&gt;))" />
+                </option>
+                <option id="\LocRuleAgent\LockSubstringRule\LockSubstringRule08\Enabled" displayName="Enabled" helpText="To validate strings per this rule, select On. To stop validation with this rule, select Off.">
+                  <boolean defaultValue="0" currentValue="1" />
+                </option>
+              </optionSet>
+              <optionSet id="Lock Substring Rule Placeholder 09" displayName="Lock Substring Rule Placeholder 09" helpText="Use these settings to create additional instances of the Lock Substring rule.">
+                <option id="\LocRuleAgent\LockSubstringRule\LockSubstringRule09\RegEx" displayName="RegEx" helpText="If you are creating a new version of a rule using a placeholder, enter a regular expression to identify information or characters in the string. Otherwise, do not change this setting.">
+                  <string defaultValue="" currentValue="%0" />
+                </option>
+                <option id="\LocRuleAgent\LockSubstringRule\LockSubstringRule09\Enabled" displayName="Enabled" helpText="To validate strings per this rule, select On. To stop validation with this rule, select Off.">
+                  <boolean defaultValue="0" currentValue="1" />
+                </option>
+              </optionSet>
+            	<optionSet id="Lock Substring Rule Placeholder 10" displayName="Lock Substring Rule Placeholder 10" helpText="Use these settings to create additional instances of the Lock Substring rule.">
+								<option id="\LocRuleAgent\LockSubstringRule\LockSubstringRule10\RegEx" displayName="RegEx" helpText="If you are creating a new version of a rule using a placeholder, enter a regular expression to identify information or characters in the string. Otherwise, do not change this setting.">
+									<string defaultValue="" currentValue="(?i:http://go\.microsoft\.com/fwlink/\?LinkId=)\d+"/>
+								</option>
+								<option id="\LocRuleAgent\LockSubstringRule\LockSubstringRule10\Enabled" displayName="Enabled" helpText="To validate strings per this rule, select On. To stop validation with this rule, select Off.">
+									<boolean defaultValue="0" currentValue="1"/>
+								</option>
+								<option id="\LocRuleAgent\LockSubstringRule\LockSubstringRule10\Description" displayName="Description" helpText="If you are creating a new version of a rule using a placeholder, enter a short description of your new rule. Otherwise, do not change this setting.">
+									<string defaultValue="Placeholder for extra instances of the Lock Substring Rule" currentValue="HTTP fwlinks"/>
+								</option>
+							</optionSet>
+            </optionSet>
+          </optionSet>
+          <optionSet id="Localization Verification (LocVer) Settings" displayName="Localization Verification (LocVer) Settings" helpText="Use these settings to control how Localization Verification (LocVer) is handled.">
+            <optionSet id="Logging Settings" displayName="Logging Settings" helpText="Use these settings to set logging options when running LocVer extension.">
+              <option id="\TPLocVer\Logging\OutputLog" displayName="Output to log file" helpText="Select On to log LocVer messages.">
+                <boolean defaultValue="0" currentValue="1"/>
+              </option>
+              <option id="\TPLocVer\Logging\IncludeItem" displayName="Include Item Information" helpText="If set to 'On', includes Resource Id, Source, Target and Instructions in LocVer XML report for items with notes, warnings and errors.">
+                <boolean defaultValue="0" currentValue="1"/>
+              </option>
+            </optionSet>
+            <optionSet id="Set Values Settings" displayName="Set Values Settings" helpText="Use these settings to allow or restrict LocVer from setting field values.">
+              <option id="\TPLocVer\SetValues\RemoveUserSrc" displayName="Remove User Src Lock" helpText="If set to 'On' allows LocVer to remove User Src Lock. If set to 'Off' stops LocVer from removing User Src Lock. If set to 'Warn' enforces LocVer to issue a warning instead of removing User Src Lock.">
+                <pick defaultValue="2" currentValue="0">
+                  <defaultList>
+                    <item string="On" itemID="0"/>
+                    <item string="Off" itemID="1"/>
+                    <item string="Warn" itemID="2"/>
+                  </defaultList>
+                  <currentList>
+                    <item string="On" itemID="0"/>
+                    <item string="Off" itemID="1"/>
+                    <item string="Warn" itemID="2"/>
+                  </currentList>
+                </pick>
+              </option>
+            </optionSet>
+            <optionSet id="Zero-Effort Commenting Settings" displayName="Zero-Effort Commenting Settings" helpText="Use these settings to apply automatic LocVer instructions. Do not change these settings without the help of the LocStudio team.">
+
+              <optionSet id="AutoRule10" displayName="LCID 1033" helpText="Decimal LCID">
+                <option id="\LocVer\AutoCommenting\AutoRule10\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off.">
+                  <boolean defaultValue="0" currentValue="1"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule10\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue=""/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule10\RegEx" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="^1033$" />
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule10\Instruction" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="{ValidStrings=@LCID@}" />
+                </option>
+              </optionSet>
+              <optionSet id="AutoRule11" displayName="LCID 409" helpText="Hex LCID">
+                <option id="\LocVer\AutoCommenting\AutoRule11\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off.">
+                  <boolean defaultValue="0" currentValue="1"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule11\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue=""/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule11\RegEx" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="^409$" />
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule11\Instruction" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="{ValidStrings=@hlcid@}" />
+                </option>
+              </optionSet>
+              <optionSet id="AutoRule12" displayName="LCID 0409" helpText="Full Hex LCID">
+                <option id="\LocVer\AutoCommenting\AutoRule12\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off.">
+                  <boolean defaultValue="0" currentValue="1"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule12\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue=""/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule12\RegEx" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="^0409$" />
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule12\Instruction" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="{ValidStrings=@hlcid@}" />
+                </option>
+              </optionSet>
+              <optionSet id="AutoRule13" displayName="LCID en-US" helpText="en-US LCID">
+                <option id="\LocVer\AutoCommenting\AutoRule13\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off.">
+                  <boolean defaultValue="0" currentValue="1"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule13\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue=""/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule13\RegEx" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="^(en-us|EN-US|en-US)$" />
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule13\Instruction" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="{ValidStrings=@rfc3066@,@RFC3066@,@Rfc3066@}" />
+                </option>
+              </optionSet>
+              <optionSet id="AutoRule15" displayName="LCID en/EN" helpText="en LCID">
+                <option id="\LocVer\AutoCommenting\AutoRule15\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off.">
+                  <boolean defaultValue="0" currentValue="1"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule15\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue=""/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule15\RegEx" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="(?i)^en$" />
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule15\Instruction" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="{ValidStrings=!zh-Hans,!zh-Hant,!pt-BR,!pt-PT;@iso639_1@,@ISO639_1@}" />
+                </option>
+              </optionSet>
+              <optionSet id="AutoRule16" displayName="AutoRule 16" helpText="Use these settings to specify an automatic LocVer instruction.">
+                <optionSet id="Conditions" displayName="Conditions" helpText="Use these settings to specify additional conditions for the automatic LocVer instruction.">
+                  <option id="\LocVer\AutoCommenting\AutoRule16\Conditions\StringCategory" displayName="String Category" helpText="Enter the string categories this rule will affect. If left blank, all string categories are affected by this instruction.">
+                    <stringList>
+                      <defaultList/>
+                      <currentList>
+                        <item string="HTML Text" itemID="0"/>
+                        <item string="HTML Title" itemID="1"/>
+                        <item string="Property" itemID="2"/>
+                      </currentList>
+                    </stringList>
+                  </option>
+                  <option id="\LocVer\AutoCommenting\AutoRule16\Conditions\DocumentType" displayName="Document Type" helpText="Enter the parser IDs this instruction will affect. If left blank, files parsed by any parser are affected by this instruction.">
+                    <stringList>
+                      <defaultList/>
+                      <currentList/>
+                    </stringList>
+                  </option>
+                </optionSet>
+                <option id="\LocVer\AutoCommenting\AutoRule16\Instruction" displayName="Instruction" helpText="Enter the instruction that will be automatically applied if all conditions are met. Backreferences from the 'Expression' setting are replaced in the instruction.">
+                  <string defaultValue="" currentValue="^(?i:ltr)$"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule16\RegEx" displayName="Expression" helpText="Enter a regular expression to identify information or characters in the string.">
+                  <string defaultValue="" currentValue="ltr"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule16\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off.">
+                  <boolean defaultValue="0" currentValue="1"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule16\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue="Automatically set the ‘direction’ property exposed in WWA CSS and HTML resources"/>
+                </option>
+              </optionSet>
+              <optionSet id="AutoRule17" displayName="File Filter NULL" helpText="File filter string using NULL">
+                <option id="\LocVer\AutoCommenting\AutoRule11\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off.">
+                  <boolean defaultValue="0" currentValue="0"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule11\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue="Reserved for lsbuildPseudoSettings.lss for preventing CDSKeys from being pseudo localized at build time for wwintl.lsproj."/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule11\RegEx" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="^[^\0]*\0[ ]*\*[^\0]*\0*[ ]*(\0[^\0]*\0[ ]*\*[^\0]*\0*[ ]*)*$" />
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule11\Instruction" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="{@FileFilter@=&quot;\0&quot;}" />
+                </option>
+              </optionSet>
+              <optionSet id="AutoRule18" displayName="File Filter |" helpText="File filter string using pipe">
+                <option id="\LocVer\AutoCommenting\AutoRule18\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off.">
+                  <boolean defaultValue="0" currentValue="0"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule18\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue="Reserved for lsbuildPseudoSettings.lss for preventing CDSKeys from being pseudo localized at build time for wwintl.lsproj."/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule18\RegEx" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="^[^\|]*\|[ ]*\*[^\|]*\|*[ ]*(\|[^\|]*\|[ ]*\*[^\|]*\|*[ ]*)*$" />
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule18\Instruction" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="{@FileFilter@=&quot;|&quot;}" />
+                </option>
+              </optionSet>
+              <optionSet id="AutoRule19" displayName="File Filter #" helpText="File filter string using pound sign">
+                <option id="\LocVer\AutoCommenting\AutoRule19\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off.">
+                  <boolean defaultValue="0" currentValue="0"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule19\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue="Reserved for lsbuildPseudoSettings.lss for preventing CDSKeys from being pseudo localized at build time for wwintl.lsproj."/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule19\RegEx" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="^[^#]*#[ ]*\*[^#]*#*[ ]*(#[^#]*#[ ]*\*[^#]*#*[ ]*)*$" />
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule19\Instruction" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="{@FileFilter@=&quot;#&quot;}" />
+                </option>
+              </optionSet>
+              <optionSet id="AutoRule20" displayName="Numbers" helpText="Apply protection for string marked with StringCategory=Number covering postfix scenario">
+                <option id="\LocVer\AutoCommenting\AutoRule20\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off.">
+                  <boolean defaultValue="0" currentValue="1"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule20\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue="Extend protection for Number"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule20\RegEx" displayName="String pattern" helpText="Have to specify full match due to font is sometime small, smaller, x-small that need to be Locked">
+                  <string defaultValue="" currentValue="^([-+]?(\d+(\.\d+)?|(\.\d+)))[ ]*\%$" />
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule20\Instruction" displayName="" helpText="">
+                  <string defaultValue="" currentValue="{SubString=&quot;$1&quot;}{DataType=s'*',&quot;xsd:float&quot;}" />
+                </option>
+                <optionSet id="Conditions" displayName="Conditions" helpText="Use these settings to specify additional conditions for the automatic LocVer instruction.">
+                  <option id="\LocVer\AutoCommenting\AutoRule20\Conditions\StringCategory" displayName="String Category" helpText="Enter the string categories this rule will affect. If left blank, all string categories are affected by this instruction.">
+                    <stringList>
+                      <defaultList/>
+                      <currentList>
+                        <item string="Number" itemID="0"/>
+                      </currentList>
+                    </stringList>
+                  </option>
+                </optionSet>
+              </optionSet>
+              <optionSet id="AutoRule21" displayName="Numbers" helpText="Apply protection for string marked with StringCategory=Number covering postfix scenario">
+                <option id="\LocVer\AutoCommenting\AutoRule21\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off.">
+                  <boolean defaultValue="0" currentValue="1"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule21\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue="Extend protection for Number"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule21\RegEx" displayName="String pattern" helpText="Have to specify full match due to font is sometime small, smaller, x-small that need to be Locked">
+                  <string defaultValue="" currentValue="^([-+]?(\d+(\.\d+)?))[ ]*(em|px|pt|in)?$" />
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule21\Instruction" displayName="" helpText="">
+                  <string defaultValue="" currentValue="{SubString=&quot;$1&quot;}{DataType=s'*',&quot;xsd:float&quot;}" />
+                </option>
+                <optionSet id="Conditions" displayName="Conditions" helpText="Use these settings to specify additional conditions for the automatic LocVer instruction.">
+                  <option id="\LocVer\AutoCommenting\AutoRule21\Conditions\StringCategory" displayName="String Category" helpText="Enter the string categories this rule will affect. If left blank, all string categories are affected by this instruction.">
+                    <stringList>
+                      <defaultList/>
+                      <currentList>
+                        <item string="Number" itemID="0"/>
+                        <item string="File Size" itemID="1"/>
+                        <item string="General" itemID="2"/>
+                        <item string="INI File Key" itemID="3"/>
+                        <item string="INI File Value" itemID="4"/>
+                        <item string="Registry Value" itemID="5"/>
+                        <item string="ComponentID" itemID="6"/>
+                        <item string="File version" itemID="7"/>
+                      </currentList>
+                    </stringList>
+                  </option>
+                </optionSet>
+              </optionSet>
+              <optionSet id="AutoRule22" displayName="Numbers" helpText="Apply protection for string marked with StringCategory=Number covering Hex">
+                <option id="\LocVer\AutoCommenting\AutoRule22\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off.">
+                  <boolean defaultValue="0" currentValue="1"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule22\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue="Extend protection for Number"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule22\RegEx" displayName="String pattern" helpText="Have to specify full match due to font is sometime small, smaller, x-small that need to be Locked">
+                  <string defaultValue="" currentValue="^0x([0-9A-Fa-f])+$" />
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule22\Instruction" displayName="" helpText="">
+                  <string defaultValue="" currentValue="{RegEx=&quot;^0x[a-fA-F0-9]+$&quot;}" />
+                </option>
+                <optionSet id="Conditions" displayName="Conditions" helpText="Use these settings to specify additional conditions for the automatic LocVer instruction.">
+                  <option id="\LocVer\AutoCommenting\AutoRule22\Conditions\StringCategory" displayName="String Category" helpText="Enter the string categories this rule will affect. If left blank, all string categories are affected by this instruction.">
+                    <stringList>
+                      <defaultList/>
+                      <currentList>
+                        <item string="Number" itemID="0"/>
+                      </currentList>
+                    </stringList>
+                  </option>
+                </optionSet>
+              </optionSet>
+              <optionSet id="AutoRule23" displayName="UI Font Face" helpText="Apply UI Font Face for string with strcat=Font Name">
+                <option id="\LocVer\AutoCommenting\AutoRule23\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off.">
+                  <boolean defaultValue="0" currentValue="0"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule23\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue="Used for migration from AutoAdaptation with Str='Font Name' to new macro"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule23\RegEx" displayName="String pattern" helpText="Have to specify full match due to font is sometime small, smaller, x-small that need to be Locked">
+                  <string defaultValue="" currentValue="(?i)^(Consolas|Calibri|Verdana|Franklin Gothic|Helvetica|Georgia|Comic Sans( MS)?|Lucida Sans Unicode|MS PGothic|Tahoma|Arial( Unicode MS)?|Courier( New)?|Lucida Console|Marlett|MS Reference Specialty|MS Reference Sans Serif|Symbol|Times|Wingdings|Bookshelf symbol 7|Segoe( UI| Print| Script| Media Center)?|MS Shell Dlg( 2)?|Wingdings|Trebuchet|Courier New|Times New Roman|Marlett|FORTEZZA|(Microsoft |MS )?(Sans Serif|Gothic)|sans-serif|Trebuchet MS|Palatino( Linotype)?|Corbel|Constantia|Book Antiqua|Bookman( Old Style)?|(Century|Franklin)( Gothic| Schoolbook)?|Monotype( Corsiva| Sorts)?|AvantGarde|NewCenturySchlbk|Zapf(Chancery|Dingbats))$" />
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule23\Instruction" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="{@FontFamily@=s'*','$0'}" />
+                </option>
+                <optionSet id="Conditions" displayName="Conditions" helpText="Use these settings to specify additional conditions for the automatic LocVer instruction.">
+                  <option id="\LocVer\AutoCommenting\AutoRule23\Conditions\StringCategory" displayName="String Category" helpText="Enter the string categories this rule will affect. If left blank, all string categories are affected by this instruction.">
+                    <stringList>
+                      <defaultList/>
+                      <currentList>
+                        <item string="Font Name" itemID="0"/>
+                      </currentList>
+                    </stringList>
+                  </option>
+                  <option id="\LocVer\AutoCommenting\AutoRule23\Conditions\StringType">
+                    <string defaultValue="" currentValue=":(face|font-family)$" />
+                  </option>
+                </optionSet>
+              </optionSet>
+              <optionSet id="AutoRule24" displayName="UI Font Face" helpText="Apply UI Font Face for string with strcat=Font Name">
+                <option id="\LocVer\AutoCommenting\AutoRule24\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off.">
+                  <boolean defaultValue="0" currentValue="0"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule24\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue="Used for migration from AutoAdaptation with Str='Font Name' to new macro"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule24\RegEx" displayName="String pattern" helpText="Have to specify full match due to font is sometime small, smaller, x-small that need to be Locked">
+                  <string defaultValue="" currentValue="(?i)^(Consolas|Calibri|Verdana|Franklin Gothic|Helvetica|Georgia|Comic Sans( MS)?|Lucida Sans Unicode|MS PGothic|Tahoma|Arial( Unicode MS)?|Courier( New)?|Lucida Console|Marlett|MS Reference Specialty|MS Reference Sans Serif|Symbol|Times|Wingdings|Bookshelf symbol 7|Segoe( UI| Print| Script| Media Center)?|MS Shell Dlg( 2)?|Wingdings|Trebuchet|Courier New|Times New Roman|Marlett|FORTEZZA|(Microsoft |MS )?(Sans Serif|Gothic)|sans-serif|Trebuchet MS|Palatino( Linotype)?|Corbel|Constantia|Book Antiqua|Bookman( Old Style)?|(Century|Franklin)( Gothic| Schoolbook)?|Monotype( Corsiva| Sorts)?|AvantGarde|NewCenturySchlbk|Zapf(Chancery|Dingbats))$" />
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule24\Instruction" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="{@FontFace@=s'*'}" />
+                </option>
+                <optionSet id="Conditions" displayName="Conditions" helpText="Use these settings to specify additional conditions for the automatic LocVer instruction.">
+                  <option id="\LocVer\AutoCommenting\AutoRule24\Conditions\StringCategory" displayName="String Category" helpText="Enter the string categories this rule will affect. If left blank, all string categories are affected by this instruction.">
+                    <stringList>
+                      <defaultList/>
+                      <currentList>
+                        <item string="Font Name" itemID="0"/>
+                      </currentList>
+                    </stringList>
+                  </option>
+                  <option id="\LocVer\AutoCommenting\AutoRule24\Conditions\StringType">
+                    <string defaultValue="" currentValue="(?&lt;!:(face|font-family))$" />
+                  </option>
+                </optionSet>
+              </optionSet>
+              <optionSet id="AutoRule25" displayName="Font Family" helpText="Append localized font to the begining of the list of fonts">
+                <option id="\LocVer\AutoCommenting\AutoRule25\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off.">
+                  <boolean defaultValue="0" currentValue="0"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule25\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue="Reserved for lsbuildPseudoSettings.lss for preventing CDSKeys from being pseudo localized at build time for wwintl.lsproj."/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule25\RegEx" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="(?i)((^|[;,])[ ]*['&quot;]?(Consolas|Calibri|Verdana|Franklin Gothic|Helvetica|Georgia|Comic Sans( MS)?|Lucida Sans Unicode|MS PGothic|Tahoma|Arial( Unicode MS)?|Courier( New)?|Lucida Console|Marlett|MS Reference Specialty|MS Reference Sans Serif|Symbol|Times|Wingdings|Bookshelf symbol 7|Segoe( UI| Print| Script| Media Center)?|MS Shell Dlg( 2)?|Wingdings|Trebuchet|Courier New|Times New Roman|Marlett|FORTEZZA|(Microsoft |MS )?(Sans Serif|Gothic)|sans-serif|Trebuchet MS|Palatino( Linotype)?|Corbel|Constantia|Book Antiqua|Bookman( Old Style)?|(Century|Franklin)( Gothic| Schoolbook)?|Monotype( Corsiva| Sorts)?|AvantGarde|NewCenturySchlbk|Zapf(Chancery|Dingbats))[&quot;']?[ ]*){2,}$" />
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule25\Instruction" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="{@FontFamily@=s'*','$0'}" />
+                </option>
+                <optionSet id="Conditions" displayName="Conditions" helpText="Use these settings to specify additional conditions for the automatic LocVer instruction.">
+                  <option id="\LocVer\AutoCommenting\AutoRule25\Conditions\StringCategory" displayName="String Category" helpText="Enter the string categories this rule will affect. If left blank, all string categories are affected by this instruction.">
+                    <stringList>
+                      <defaultList/>
+                      <currentList>
+                        <item string="Font Name" itemID="0"/>
+                      </currentList>
+                    </stringList>
+                  </option>
+                </optionSet>
+              </optionSet>
+              <optionSet id="AutoRule26" displayName="Locked Font Category" helpText="Lock font name that are not localizable, icon, menu, messagebox, caption, small-caps">
+                <option id="\LocVer\AutoCommenting\AutoRule26\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off.">
+                  <boolean defaultValue="0" currentValue="0"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule26\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue="Complement for migration from AutoAdaptation with Str='Font Name' to new macro"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule26\RegEx" displayName="String pattern" helpText="Have to specify full match due to font is sometime small, smaller, x-small that need to be Locked">
+                  <string defaultValue="" currentValue="(?i)^[\('&quot;]?(expression|icon|caption|menu|(x-)?small(-caps|er)?|messagebox|NA)" />
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule26\Instruction" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="{Locked}" />
+                </option>
+                <optionSet id="Conditions" displayName="Conditions" helpText="Use these settings to specify additional conditions for the automatic LocVer instruction.">
+                  <option id="\LocVer\AutoCommenting\AutoRule26\Conditions\StringCategory" displayName="String Category" helpText="Enter the string categories this rule will affect. If left blank, all string categories are affected by this instruction.">
+                    <stringList>
+                      <defaultList/>
+                      <currentList>
+                        <item string="Font Name" itemID="0"/>
+                      </currentList>
+                    </stringList>
+                  </option>
+                </optionSet>
+              </optionSet>
+              <optionSet id="AutoRule27" displayName="Placeholder for System Center server variables" helpText="System Center server variables">
+                <option id="\LocVer\AutoCommenting\AutoRule27\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off.">
+                  <boolean defaultValue="0" currentValue="1"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule27\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue="System Center server variables"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule27\RegEx" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="\%[a-zA-Z]{2,}\;" />
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule27\Instruction" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="{NumberedPlaceholder=r'\%[a-zA-Z]{2,}\;'}" />
+                </option>
+              </optionSet>
+              <optionSet id="AutoRule28" displayName="Lock Version Internal" helpText="Moving string locking from LocRule to AutorRule to work around Usr Src Lock issue">
+                <option id="\LocVer\AutoCommenting\AutoRule28\Enabled" displayName="Enabled" helpText="Moving string locking from LocRule to AutorRule to work around Usr Src Lock issue">
+                  <boolean defaultValue="0" currentValue="1"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule28\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue="Version Internal Lock"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule28\RegEx" displayName="List Box sorting" helpText="Only list box elements that contain 2 $">
+                  <string defaultValue="" currentValue="." />
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule28\Instruction" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="{Locked}" />
+                </option>
+                <optionSet id="Conditions" displayName="Conditions" helpText="Use these settings to specify additional conditions for the automatic LocVer instruction.">
+                  <option id="\LocVer\AutoCommenting\AutoRule28\Conditions\StringCategory" displayName="String Category" helpText="Enter the string categories this rule will affect. If left blank, all string categories are affected by this instruction.">
+                    <stringList>
+                      <defaultList/>
+                      <currentList>
+                        <item string="Version" itemID="0"/>
+                      </currentList>
+                    </stringList>
+                  </option>
+                  <option id="\LocVer\AutoCommenting\AutoRule28\Conditions\StringID">
+                    <string defaultValue="" currentValue="(InternalName|OriginalFilename)" />
+                  </option>
+                </optionSet>
+              </optionSet>
+              <optionSet id="AutoRule30" displayName="FWLink locking" helpText="Automatically lock FWLink and protocol res and mshelp, except when lcid is detected">
+                <option id="\LocVer\AutoCommenting\AutoRule30\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off.">
+                  <boolean defaultValue="0" currentValue="1"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule30\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue=""/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule30\RegEx" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="^(?i)(?=(https?://go.microsoft.com/fwlink|(res|mshelp)://))(?!.*=(1033|(0x)?409))" />
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule30\Instruction" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="{Locked}" />
+                </option>
+              </optionSet>
+              <optionSet id="AutoRule31" displayName="Event Viewer Provider name" helpText="Automatically lock FWLink">
+                <option id="\LocVer\AutoCommenting\AutoRule31\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off.">
+                  <boolean defaultValue="0" currentValue="1"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule31\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue=""/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule31\RegEx" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="^Microsoft-Windows-[^/]+$" />
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule31\Instruction" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="{Locked=qps-plocm}{Split=qps-ploc;'Microsoft-Windows-'}{Locked=qps-ploc;s'0'}{StrBegins=qps-ploc;s'1',r'..'}" />
+                </option>
+              </optionSet>
+              <optionSet id="AutoRule32" displayName="Event Viewer Channel name" helpText="Automatically lock FWLink">
+                <option id="\LocVer\AutoCommenting\AutoRule32\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off.">
+                  <boolean defaultValue="0" currentValue="1"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule32\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue=""/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule32\RegEx" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="^Microsoft-Windows-[^/]+/[^/]+$" />
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule32\Instruction" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="{Locked=qps-plocm}{Split=qps-ploc;'Microsoft-Windows-','/'}{Locked=qps-ploc;s'0'}{InvalidChars=qps-ploc;s'*','/'}{StrBegins=qps-ploc;s'1',r'..'}" />
+                </option>
+              </optionSet>
+              <optionSet id="AutoRule33" displayName="Lock Version Company Name" helpText="Lock company name for BiDi Bug 578628">
+                <option id="\LocVer\AutoCommenting\AutoRule33\Enabled" displayName="Enabled" helpText="">
+                  <boolean defaultValue="0" currentValue="1"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule33\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue="Autocomment Version Company Name"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule33\RegEx" displayName="" helpText="">
+                  <string defaultValue="" currentValue="." />
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule33\Instruction" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="{@Version_CompanyName@}" />
+                </option>
+                <optionSet id="Conditions" displayName="Conditions" helpText="Use these settings to specify additional conditions for the automatic LocVer instruction.">
+                  <option id="\LocVer\AutoCommenting\AutoRule33\Conditions\StringCategory" displayName="String Category" helpText="Enter the string categories this rule will affect. If left blank, all string categories are affected by this instruction.">
+                    <stringList>
+                      <defaultList/>
+                      <currentList>
+                        <item string="Version" itemID="0"/>
+                      </currentList>
+                    </stringList>
+                  </option>
+                  <option id="\LocVer\AutoCommenting\AutoRule33\Conditions\StringID">
+                    <string defaultValue="" currentValue="(CompanyName)" />
+                  </option>
+                </optionSet>
+              </optionSet>
+              <optionSet id="AutoRule34" displayName="ValidStrings rule for Date and Time." helpText="Use these settings to specify an automatic LocVer instruction.">
+                <option id="\LocVer\AutoCommenting\AutoRule34\Instruction" displayName="Instruction" helpText="Enter the instruction that will be automatically applied if all conditions are met. Backreferences from the 'Expression' setting are replaced in the instruction.">
+                  <string defaultValue="" currentValue="{ValidStrings=HH:ss:mm, mm:HH:ss, mm:ss:HH, ss:mm:HH, ss:HH:mm, HH:mm:ss}"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule34\RegEx" displayName="Expression" helpText="Enter a regular expression to identify information or characters in the string.">
+                  <string defaultValue="" currentValue="^HH:mm:ss$"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule34\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off.">
+                  <boolean defaultValue="0" currentValue="1"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule34\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue="ValidStrings rule for Date and Time."/>
+                </option>
+              </optionSet>
+              <optionSet id="AutoRule35" displayName="ValidStrings rule for TFS and MSBUild Error messages" helpText="Use these settings to specify an automatic LocVer instruction.">
+                <option id="\LocVer\AutoCommenting\AutoRule35\Instruction" displayName="Instruction" helpText="Enter the instruction that will be automatically applied if all conditions are met. Backreferences from the 'Expression' setting are replaced in the instruction.">
+                  <string defaultValue="" currentValue="{StrBegins=r&quot;TF[0-9]*: |MSB[0-9]*: |MSBUILD : error MSB[0-9]*: &quot;}"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule35\RegEx" displayName="Expression" helpText="Enter a regular expression to identify information or characters in the string.">
+                  <string defaultValue="" currentValue="^TF[0-9]*: |^MSB[0-9]*:|^MSBUILD : error MSB[0-9]*: "/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule35\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off.">
+                  <boolean defaultValue="0" currentValue="1"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule35\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue="ValidStrings rule for TFS and MSBUild Error messages."/>
+                </option>
+              </optionSet>
+              <optionSet id="AutoRule36" displayName="StrEnd rule for file filters strings to avoid Ploc or overlocalization" helpText="Use these settings to specify an automatic LocVer instruction.">
+                <option id="\LocVer\AutoCommenting\AutoRule36\Instruction" displayName="Instruction" helpText="Enter the instruction that will be automatically applied if all conditions are met. Backreferences from the 'Expression' setting are replaced in the instruction.">
+                  <string defaultValue="" currentValue="{StrEnd=r&quot;((\||\s|;|,)\*\.(\*\||\*|\w\w*))|(\*\.(\w*\n\n|\w*\n|\*\n|\*\n\n))$&quot;}"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule36\RegEx" displayName="Expression" helpText="Enter a regular expression to identify information or characters in the string.">
+                  <string defaultValue="" currentValue="(\||\s|;|,)\*\.(\*\||\*|\w\w*)$"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule36\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off.">
+                  <boolean defaultValue="0" currentValue="1"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule36\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue="StrEnd rule for file filters strings to avoid Ploc or overlocalization issue '*.* or *.*|, (\*\.(\w*\n\n|\w*\n|\*\n|\*\n\n) has been added to avoid false positives for strings with \n"/>
+                </option>
+              </optionSet>
+              <optionSet id="AutoRule37" displayName="Lock file name, something like aspnet_merge.exe, Microsoft.Data.Entity.Build.Tasks.dll" helpText="Use these settings to specify an automatic LocVer instruction.">
+                <option id="\LocVer\AutoCommenting\AutoRule37\Instruction" displayName="Instruction" helpText="Enter the instruction that will be automatically applied if all conditions are met. Backreferences from the 'Expression' setting are replaced in the instruction.">
+                  <string defaultValue="" currentValue="{L}"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule37\RegEx" displayName="Expression" helpText="Enter a regular expression to identify information or characters in the string.">
+                  <string defaultValue="" currentValue="^[a-zA-Z0-9\.]+\.[a-z]+$"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule37\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off.">
+                  <boolean defaultValue="0" currentValue="1"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule37\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue="Lock file name, something like aspnet_merge.exe, Microsoft.Data.Entity.Build.Tasks.dll"/>
+                </option>
+              </optionSet>
+              <optionSet id="AutoRule38" displayName="Lock Microsoft Corporation except for RUS" helpText="Use these settings to specify an automatic LocVer instruction.">
+                <option id="\LocVer\AutoCommenting\AutoRule38\Instruction" displayName="Instruction" helpText="Enter the instruction that will be automatically applied if all conditions are met. Backreferences from the 'Expression' setting are replaced in the instruction.">
+                  <string defaultValue="" currentValue="{Locked=!ru,!uk,!be,!kk,!ky,!mn,!mr,!rw,!tt,!uz-Latn-UZ,!xh,!zu}"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule38\RegEx" displayName="Expression" helpText="Enter a regular expression to identify information or characters in the string.">
+                  <string defaultValue="" currentValue="^Microsoft Corporation$"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule38\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off.">
+                  <boolean defaultValue="0" currentValue="1"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule38\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue="Lock Microsoft Corporation except for RUS"/>
+                </option>
+              </optionSet>
+              <optionSet id="AutoRule39" displayName="String contains a phrase starts from #" helpText="Use these settings to specify an automatic LocVer instruction.">
+                <option id="\LocVer\AutoCommenting\AutoRule39\Instruction" displayName="Instruction" helpText="Enter the instruction that will be automatically applied if all conditions are met. Backreferences from the 'Expression' setting are replaced in the instruction.">
+                  <string defaultValue="" currentValue="{NumberedPlaceholder=r&quot;#[a-zA-Z]+&quot;}"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule39\RegEx" displayName="Expression" helpText="Enter a regular expression to identify information or characters in the string.">
+                  <string defaultValue="" currentValue=" #[a-zA-Z]+ "/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule39\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off.">
+                  <boolean defaultValue="0" currentValue="1"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule39\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue="String contains a phrase starts from #"/>
+                </option>
+              </optionSet>
+              <optionSet id="AutoRule40" displayName="StrEnd rule for file filters strings to avoid Ploc or overlocalization issue '\n or \n\n'" helpText="Use these settings to specify an automatic LocVer instruction.">
+                <option id="\LocVer\AutoCommenting\AutoRule40\Instruction" displayName="Instruction" helpText="Enter the instruction that will be automatically applied if all conditions are met. Backreferences from the 'Expression' setting are replaced in the instruction.">
+                  <string defaultValue="" currentValue="{StrEnd=r&quot;(\*\.(\w*\n\n|\w*\n|\*\n|\*\n\n)|(\w*\n\n|\w*\n|\*\n|\*\n\n))$&quot;}"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule40\RegEx" displayName="Expression" helpText="Enter a regular expression to identify information or characters in the string.">
+                  <string defaultValue="" currentValue="\n\*\.(\w*\n\n|\w*\n|\*\n|\*\n\n)$"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule40\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off.">
+                  <boolean defaultValue="0" currentValue="1"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule40\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue="StrEnd rule for file filters strings to avoid Ploc or overlocalization issue '\n or \n\n'"/>
+                </option>
+              </optionSet>
+              <optionSet id="AutoRule41" displayName="Lock Registry key, something like Software\\Netscape\\Netscape" helpText="Use these settings to specify an automatic LocVer instruction.">
+                <option id="\LocVer\AutoCommenting\AutoRule41\Instruction" displayName="Instruction" helpText="Enter the instruction that will be automatically applied if all conditions are met. Backreferences from the 'Expression' setting are replaced in the instruction.">
+                  <string defaultValue="" currentValue="{L}"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule41\RegEx" displayName="Expression" helpText="Enter a regular expression to identify information or characters in the string.">
+                  <string defaultValue="" currentValue="^[a-zA-Z][a-zA-Z]*\\\\\S\S*$"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule41\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off.">
+                  <boolean defaultValue="0" currentValue="1"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule41\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue="Lock Registry key, something like Software\\Netscape\\Netscape"/>
+                </option>
+              </optionSet>
+              <optionSet id="AutoRule42" displayName="Placeholder VC parameter: such %2$I64u, %3$ls, %2$d" helpText="Use these settings to specify an automatic LocVer instruction.">
+                <option id="\LocVer\AutoCommenting\AutoRule42\Instruction" displayName="Instruction" helpText="Enter the instruction that will be automatically applied if all conditions are met. Backreferences from the 'Expression' setting are replaced in the instruction.">
+                  <string defaultValue="" currentValue="{NumberedPlaceholder=r&quot;%\d\$\w+&quot;}"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule42\RegEx" displayName="Expression" helpText="Enter a regular expression to identify information or characters in the string.">
+                  <string defaultValue="" currentValue="%\d\$\w+"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule42\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off.">
+                  <boolean defaultValue="0" currentValue="1"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule42\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue="Placeholder VC parameter: such %2$I64u, %3$ls, %2$d"/>
+                </option>
+              </optionSet>
+              <optionSet id="AutoRule43" displayName="ValidStrings rule for intellitrace err msg" helpText="Use these settings to specify an automatic LocVer instruction.">
+                <option id="\LocVer\AutoCommenting\AutoRule43\Instruction" displayName="Instruction" helpText="Enter the instruction that will be automatically applied if all conditions are met. Backreferences from the 'Expression' setting are replaced in the instruction.">
+                  <string defaultValue="" currentValue="{StrBegins=r&quot;VSLG[0-9]*&quot;}"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule43\RegEx" displayName="Expression" helpText="Enter a regular expression to identify information or characters in the string.">
+                  <string defaultValue="" currentValue="^VSLG[0-9]*"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule43\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off.">
+                  <boolean defaultValue="0" currentValue="1"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule43\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue="ValidStrings rule for intellitrace err msg"/>
+                </option>
+              </optionSet>
+              <optionSet id="AutoRule44" displayName="Lock ... in translation" helpText="Use these settings to specify an automatic LocVer instruction.">
+                <option id="\LocVer\AutoCommenting\AutoRule44\Instruction" displayName="Instruction" helpText="Enter the instruction that will be automatically applied if all conditions are met. Backreferences from the 'Expression' setting are replaced in the instruction.">
+                  <string defaultValue="" currentValue="{L}"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule44\RegEx" displayName="Expression" helpText="Enter a regular expression to identify information or characters in the string.">
+                  <string defaultValue="" currentValue="^\.\.\.$"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule44\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off.">
+                  <boolean defaultValue="0" currentValue="1"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule44\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue="Lock ... in translation"/>
+                </option>
+              </optionSet>
+              <optionSet id="AutoRule45" displayName="Lock Version Copyright" helpText="Lock copyright for BiDi Bug 578628">
+                <option id="\LocVer\AutoCommenting\AutoRule45\Enabled" displayName="Enabled" helpText="">
+                  <boolean defaultValue="0" currentValue="1"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule45\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue="Autocomment Version Copyright"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule45\RegEx" displayName="" helpText="">
+                  <string defaultValue="" currentValue="." />
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule45\Instruction" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="{@Version_Copyright@}" />
+                </option>
+                <optionSet id="Conditions" displayName="Conditions" helpText="Use these settings to specify additional conditions for the automatic LocVer instruction.">
+                  <option id="\LocVer\AutoCommenting\AutoRule45\Conditions\StringCategory" displayName="String Category" helpText="Enter the string categories this rule will affect. If left blank, all string categories are affected by this instruction.">
+                    <stringList>
+                      <defaultList/>
+                      <currentList>
+                        <item string="Version" itemID="0"/>
+                      </currentList>
+                    </stringList>
+                  </option>
+                  <option id="\LocVer\AutoCommenting\AutoRule45\Conditions\StringID">
+                    <string defaultValue="" currentValue="(LegalCopyright)" />
+                  </option>
+                </optionSet>
+              </optionSet>
+              <optionSet id="AutoRule46" displayName="Lock Version Product Name" helpText="Lock product name for BiDi Bug 578628">
+                <option id="\LocVer\AutoCommenting\AutoRule46\Enabled" displayName="Enabled" helpText="">
+                  <boolean defaultValue="0" currentValue="1"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule46\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue="Autocomment Version Product Name"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule46\RegEx" displayName="" helpText="">
+                  <string defaultValue="" currentValue="." />
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule46\Instruction" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="{@Version_ProductName@}" />
+                </option>
+                <optionSet id="Conditions" displayName="Conditions" helpText="Use these settings to specify additional conditions for the automatic LocVer instruction.">
+                  <option id="\LocVer\AutoCommenting\AutoRule46\Conditions\StringCategory" displayName="String Category" helpText="Enter the string categories this rule will affect. If left blank, all string categories are affected by this instruction.">
+                    <stringList>
+                      <defaultList/>
+                      <currentList>
+                        <item string="Version" itemID="0"/>
+                      </currentList>
+                    </stringList>
+                  </option>
+                  <option id="\LocVer\AutoCommenting\AutoRule46\Conditions\StringID">
+                    <string defaultValue="" currentValue="(ProductName)" />
+                  </option>
+                </optionSet>
+              </optionSet>
+              <optionSet id="AutoRule48" displayName="Locking FWLink in middle of plain text or within double escaped entity" helpText="Automatically lock FWLink in middle of plain text or within double escaped enity (not regular html tags)">
+                <option id="\LocVer\AutoCommenting\AutoRule48\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off.">
+                  <boolean defaultValue="0" currentValue="1"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule48\Conditions\StringCategory" displayName="String Category" helpText="Enter the string categories this rule will affect. If left blank, all string categories are affected by this rule.">
+                  <stringList>
+                    <defaultList />
+                    <currentList>
+                      <item string="HTML Text" itemID="0" />
+                      <item string="Text" itemID="1" />
+                      <item string="Message" itemID="2" />
+                      <item string="AppData" itemID="3" />
+                      <item string="APD" itemID="4" />
+                    </currentList>
+                  </stringList>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule48\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue=""/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule48\RegEx" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="(?i)(?&lt;=.)(?&lt;!\&lt;a\shref=[&quot;\'])(?:https?://go.microsoft.com/fwlink/\?LinkID=\d+)" />
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule48\Instruction" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="{Locked=r'(?i)((?i:https?://\S*?/fwlink[/.*]?/\?LinkId=\d+)|(?i)(?i:https?://\S*?/fwlink[/.*]?/\?LinkId=\d+)(?=[^\d\n]))|(&amp;lt;((([A-Za-z_:])*(\s+([A-Za-z])*\s*=\s*(&quot;|\')*\s*/?)([A-Za-z_:/.\?=\d]*.?&amp;gt;))))|(&amp;lt;/[aA]&amp;gt;)'}{Log:Ignore=3021}{Log:Ignore=3005}{Log:Ignore=3471}" />
+                </option>
+              </optionSet>
+              <optionSet id="AutoRule49" displayName="Protects VBS strings" helpText="Apply automatic commenting to VBS string">
+                <option id="\LocVer\AutoCommenting\AutoRule49\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off.">
+                  <boolean defaultValue="0" currentValue="1"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule49\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue="Protects against insert or bad chars in vbs strings"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule49\RegEx" displayName="String pattern" helpText="Any non-blank string">
+                  <string defaultValue="" currentValue="." />
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule49\Instruction" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="{EscapeChars=&quot;\&quot;=\&quot;\&quot;&quot;}{InvalidChars=r&quot;\r\n&quot;}" />
+                </option>
+                <optionSet id="Conditions" displayName="Conditions" helpText="Use these settings to specify additional conditions for the automatic LocVer instruction.">
+                  <option id="\LocVer\AutoCommenting\AutoRule49\Conditions\StringType">
+                    <string defaultValue="" currentValue="^VBS$" />
+                  </option>
+                </optionSet>
+              </optionSet>
+              <optionSet id="AutoRule50" displayName="Lock command switches" helpText="Lock command switches">
+                <option id="\LocVer\AutoCommenting\AutoRule50\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off. This is turned off for W7">
+                  <boolean defaultValue="0" currentValue="0"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule50\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue="Lock command switch with Str='Command'"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule50\RegEx" displayName="String pattern" helpText="Locate switches that start with / or -">
+                  <string defaultValue="" currentValue="(?&lt;!\w)[-/][a-zA-Z0-9?]+" />
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule50\Instruction" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="{@LockCommandSwitches@}" />
+                </option>
+                <optionSet id="Conditions" displayName="Conditions" helpText="Use these settings to specify additional conditions for the automatic LocVer instruction.">
+                  <option id="\LocVer\AutoCommenting\AutoRule50\Conditions\StringCategory" displayName="String Category" helpText="Enter the string categories this rule will affect. If left blank, all string categories are affected by this instruction.">
+                    <stringList>
+                      <defaultList/>
+                      <currentList>
+                        <item string="Command" itemID="0"/>
+                      </currentList>
+                    </stringList>
+                  </option>
+                </optionSet>
+              </optionSet>
+              <optionSet id="AutoRule51" displayName="Performance counter" helpText="Lock performance counter for ar and he">
+                <option id="\LocVer\AutoCommenting\AutoRule51\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off.">
+                  <boolean defaultValue="0" currentValue="1"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule51\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue=""/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule51\RegEx" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="." />
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule51\Instruction" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="{@WindowsPerfCounterName@}" />
+                </option>
+                <optionSet id="Conditions" displayName="Conditions" helpText="Use these settings to specify additional conditions for the automatic LocVer instruction.">
+                  <option id="\LocVer\AutoCommenting\AutoRule51\Conditions\StringID">
+                    <string defaultValue="" currentValue="\$\$\$_NAME" />
+                  </option>
+                </optionSet>
+              </optionSet>
+              <optionSet id="AutoRule52" displayName="Copyright in str table" helpText="Protect 'Microsoft Corporation and year in copyright resource in the str table">
+                <option id="\LocVer\AutoCommenting\AutoRule52\Enabled" displayName="Enabled" helpText="To validate strings according to this automatic instruction, select On. To stop validation with this instruction, select Off.">
+                  <boolean defaultValue="0" currentValue="1"/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule52\Description" displayName="Description" helpText="Enter a short description of the automatic instruction.">
+                  <string defaultValue="" currentValue=""/>
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule52\RegEx" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="((?:\b(?:19|20)\d\d\s*-\s*)?\b(?:19|20)\d\d)\s+((?i:microsoft\s+corp[^\s.,;)\]\\]*))" />
+                </option>
+                <option id="\LocVer\AutoCommenting\AutoRule52\Instruction" displayName="String pattern" helpText="">
+                  <string defaultValue="" currentValue="{StrContains='$1'}{StrContains=!ru,!uk,!be,!kk,!ky,!mn,!mr,!rw,!tt,!uz-Latn-UZ,!xh,!zu;'$2'}" />
+                </option>
+              </optionSet>
+
+            </optionSet>
+            <optionSet id="Message Settings" displayName="Message Settings" helpText="Settings for messages reported by LocVer.">
+              <option id="\LocVer\Messages\Ignore" displayName="Ignore Messages" helpText="Ignore any messages with the same ID as listed in this setting.">
+                <stringList>
+                  <defaultList/>
+                  <currentList>
+                  	<item string="2001" itemID="0"/>
+										<item string="2002" itemID="0"/>
+										<item string="2003" itemID="0"/>
+										<item string="2005" itemID="0"/>
+										<item string="2006" itemID="0"/>
+										<item string="2007" itemID="1"/>
+										<item string="2021" itemID="0"/>
+										<item string="2050" itemID="1"/>
+										<item string="3020" itemID="1"/>
+										<item string="3021" itemID="1"/>
+                    <item string="3024" itemID="1"/>
+										<item string="3026" itemID="1"/>
+                  </currentList>
+                </stringList>
+              </option>
+            </optionSet>
+            <optionSet id="Instruction Settings" displayName="Instruction Settings" helpText="Settings to control which instructions should be processed.">
+              <option id="\LocVer\Processing\Exclude From Tags" displayName="Exclude Instructions In Tags" helpText="Exclude any instructions within the list of tags.">
+                <stringList>
+                  <defaultList/>
+                  <currentList>
+                    <item string="Goldmine" itemID="0"/>
+                    <item string="goldmine" itemID="1"/>
+                    <item string="GoldMine" itemID="2"/>
+                  </currentList>
+                </stringList>
+              </option>
+              <option id="\LocVer\Processing\Custom Field" displayName="Include Instructions From Custom Field" helpText="Specifies a custom field that instructions should be added from. Valid values are 0 to 6. If the value is 0, no instructions are added from a custom field.">
+                <int defaultValue="0" currentValue="4"/>
+              </option>
+            </optionSet>
+            <optionSet id="Rule Settings" displayName="Rule Settings" helpText="Settings to control which localization rules (LocVer rules) should be processed.">
+              <option id="\LocVer\Rules\{ Map }" displayName="{ Map }" helpText="Rule { Map = &lt;(sub)string&gt; } verifies that a &lt;(sub)string&gt; is translated according to translation found in a map file.">
+                <boolean defaultValue="1" currentValue="1"/>
+              </option>
+              <option id="\LocVer\Rules\{ Adaptation }" displayName="{ Adaptation }" helpText="Rule { Adaptation = &lt;(sub)string&gt; } verifies that a &lt;(sub)string&gt; is translated according to translation found in a map file.">
+                <boolean defaultValue="1" currentValue="1"/>
+              </option>
+              <option id="\LocVer\Rules\{ TabOrder }" displayName="{ TabOrder }" helpText="Rule { TabOrder } is used to maintain TabOrder information per language.">
+                <boolean defaultValue="1" currentValue="1"/>
+              </option>
+            </optionSet>
+            <optionSet id="Macro Settings" displayName="Macro Settings" helpText="Settings for macros used by LocVer.">
+              <option id="\LocVer\Macros\Macro File" displayName="Macro File" helpText="Configuration file containing macros for LocVer.">
+                <string defaultValue="" currentValue="CE_LocVerMacros.xml"/>
+              </option>
+            </optionSet>
+          </optionSet>
+        </optionSet>
+      </optionSet>
+      <optionSet id="Parsers" displayName="Parsers">
+        <optionSet id="Parser 210" displayName="POMXML Parser options" helpText="View file locXML.xml for details.">
+          <option id="IncTermNoResId" displayName="Include Terms that have no Resource Identifier" helpText="With this option turned off, only those terms with user defined resource id will be exposed.">
+            <boolean defaultValue="1" currentValue="0"/>
+          </option>
+          <option id="POMXMLUpdateLocCommentsOnly" displayName="Update Loc Instructions (_locComment) only" helpText="With this option turned ON and the Update Instructions option turned ON only Loc Instructions (_locComment) will be imported into the instruction field. If a localizable item does not have an explicit _locComment then the instruction field will be left blank.">
+            <boolean defaultValue="0" currentValue="1"/>
+          </option>
+        </optionSet>
+        <optionSet id="Parser 211" displayName="Managed Resource Parser" helpText="Managed Resource Formats (*.dll *.exe *.resources *.resx)">
+          <option id="GENERATE_CULTURE_NEUTRAL" displayName="Generate culture-neutral target" helpText="If this option is on, the parser will generate target files in the culture-neutral variant of the target language.">
+            <boolean defaultValue="0" currentValue="1"/>
+          </option>
+          <option id="INCLUDE_STRINGS_INTO_TARGET" displayName="Include these string types when generating target files" helpText="Sets additional string types included in the target file. Localized strings are always included. To include updated strings, select Localized and updated. To include updated strings and string that are not localized, select All (excluding locked strings) or All (including locked strings).">
+            <pick defaultValue="0" currentValue="3">
+              <defaultList>
+                <item string="Localized" itemID="0"/>
+                <item string="Localized and updated" itemID="1"/>
+                <item string="All (excluding locked strings)" itemID="2"/>
+                <item string="All (including locked strings)" itemID="3"/>
+              </defaultList>
+              <currentList>
+                <item string="Localized" itemID="0"/>
+                <item string="Localized and updated" itemID="1"/>
+                <item string="All (excluding locked strings)" itemID="2"/>
+                <item string="All (including locked strings)" itemID="3"/>
+              </currentList>
+            </pick>
+          </option>
+          <option id="SUBPARSER_EXCLUSION_LIST" displayName="File extensions to exclude during sub-parsing" helpText="Enter the file extensions of files that you do not want to sub-parse.">
+            <stringList>
+              <defaultList>
+                <item string="" itemID="0"/>
+              </defaultList>
+              <currentList>
+                <item string="config" itemID="0"/>
+                <item string="ent" itemID="1"/>
+              </currentList>
+            </stringList>
+          </option>
+          <option id="IMAGE_EXTENSION_LIST" displayName="Image file extensions the manged parser should handle" helpText="Enter the file extensions of image files that you want the parser to handle.">
+            <stringList>
+              <defaultList>
+                <item string="" itemID="0"/>
+              </defaultList>
+              <currentList>
+                <item string="bmp" itemID="0"/>
+                <item string="dib" itemID="2"/>
+                <item string="png" itemID="1"/>
+                <item string="jpeg" itemID="2"/>
+                <item string="jpg" itemID="2"/>
+                <item string="jpe" itemID="2"/>
+                <item string="tif" itemID="3"/>
+                <item string="tiff" itemID="3"/>
+                <item string="gif" itemID="4"/>
+                <item string="ico" itemID="5"/>
+                <item string="cur" itemID="6"/>
+              </currentList>
+            </stringList>
+          </option>
+        </optionSet>
+
+        <optionSet id="Parser 223" displayName="Baml Pom Parser" helpText="Avalon Baml files (*.baml)" >
+          <option id="REFERENCED_ASSEMBLIES_DIRECTORY"
+                displayName="Path to referenced assemblies"
+                helpText="Specify a directory for the parser to load assemblies referenced in Baml. The referenced assemblies are required in order to parse Baml elements defined in them. If the assemblies are not found in the specified directory, the parser will try to load them from the same directory as the baml binaries.">
+            <string defaultValue="" currentValue="%_NTTREE%\WPFDependencies"/>
+          </option>
+        </optionSet>
+
+        <optionSet id="Parser 22" displayName="POMHTML Parser options" helpText="POMHTML Parser options for Localization Studio.">
+          <option id="IncTermNoResId" displayName="Include Terms which have no Resource Identifier" helpText="Include Terms which have no Resource Identifier. Terms without Resource Identifiers cannot be Updated or Uploaded if they change. .">
+            <boolean defaultValue="0" currentValue="1"/>
+          </option>
+          <option id="DisableRILU" displayName="Enable Checksum-Based Resource Identifiers" helpText="Enable Checksum-Based Resource Identifiers for terms which have no Resource Identifiers. You should set this option before localization work starts as any existing translations will be lost.">
+            <boolean defaultValue="0" currentValue="1"/>
+          </option>
+          <option id="GenerateInstructions" displayName="Update Instructions" helpText="With this option turned off the instruction field will be left blank for new items, and it will be left untouched for updated items.">
+            <boolean defaultValue="1" currentValue="0"/>
+          </option>
+          <option id="FileEncoding" displayName="Generated File Encoding Type" helpText="Choose the Encoding Type for the Generated Files. Note: Internet Explorer 3.0x does not support Unicode or UTF-8.">
+            <pick defaultValue="0" currentValue="0">
+              <defaultList>
+                <item string="Use Source File Encoding" itemID="0"/>
+                <item string="ANSI" itemID="1"/>
+                <item string="UTF-8" itemID="2"/>
+                <item string="Unicode" itemID="3"/>
+              </defaultList>
+              <currentList>
+                <item string="Use Source File Encoding" itemID="0"/>
+                <item string="ANSI" itemID="1"/>
+                <item string="UTF-8" itemID="2"/>
+                <item string="Unicode" itemID="3"/>
+              </currentList>
+            </pick>
+          </option>
+          <option id="LoomConfiguration" displayName="LOOM Configuration to use" helpText="Choose from the list of LOOM configurations.">
+            <pick defaultValue="0" currentValue="1">
+              <defaultList>
+                <item string="Factory Settings" itemID="0"/>
+                <item string="alt" itemID="1"/>
+                <item string="html" itemID="2"/>
+                <item string="quoted" itemID="3"/>
+                <item string="CommentOnly" itemID="4"/>
+                <item string="CommentAndUI" itemID="5"/>
+              </defaultList>
+              <currentList>
+                <item string="Factory Settings" itemID="0"/>
+                <item string="CommentOnly" itemID="1"/>
+                <item string="CommentAndUI" itemID="2"/>
+              </currentList>
+            </pick>
+          </option>
+          <option id="UsePOMXMLParser" displayName="Use POMXML parser for XML content" helpText="This option controls whether the parser processes XML content natively or passes it to the POMXML parser for processing. Switch to Off if you want native XML content processing by LOOM. Switch this option On if you have a project containing XML which was updated with a previous version of POMHTML.">
+            <boolean defaultValue="1" currentValue="1"/>
+          </option>
+          <option id="FilterNonLocTermMessages" displayName="No validation messages for non localizable terms" helpText="This option controls whether validation messages will be output for non localizable terms. Switch this option to Off if you do not want to see validation messages for non localizable terms. Switch to On if you want to see validation messages for non localizable terms.">
+            <boolean defaultValue="0" currentValue="1"/>
+          </option>
+        </optionSet>
+      </optionSet>
+    </optionSet>
+  </optionSet>
+</LS_SETTINGS_FILE>

@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Action types
+        Convert: Convert existing element. The element must exist.
+        Create: Create if not exist. If exists, same as Convert.
+        CreateOnResx2Xml: Create if not exist and if Resx2Xml. if exists, same as Convert.
+        Remove: Remove the element.
+        
+    Note: the defaultValue in the Job element is used for the default id when creating.
+-->
+<LbaJobs>
+    <!--
+        "MlpRegisterBuildEdb" | "MlpRegisterBuildEdbMultipleHandoff" : Rename to "MlpRegisterBuildLspkg"
+    -->
+    <Job action="Convert" edbJobType="MlpRegisterBuildEdb|MlpRegisterBuildEdbMultipleHandoff" lskpgJobType="MlpRegisterBuildLspkg">
+        <ParameterList action="CreateOnResx2Xml" edbName="Bin2LcxParameterList" lskpgName="Bin2LcxParameterList">
+            <Parameter action="CreateOnResx2Xml" edbName="HandleResxConversion" lskpgName="HandleResxConversion" defaultValue="true"/>
+        </ParameterList>
+    </Job>
+
+    <!--
+        "DailyBuildLocalizationEdb" | "DailyBuildLocalizationCustomEdbEnv" | "DailyBuildLocalizationCustomEdb" : Rename to "DailyBuildLocalizationCustomLspkgEnv"
+    -->
+    <Job action="Convert" edbJobType="DailyBuildLocalizationEdb|DailyBuildLocalizationCustomEdbEnv|DailyBuildLocalizationCustomEdb" lskpgJobType="DailyBuildLocalizationCustomLspkgEnv" customScriptWarning="true" >
+        <CommandList action="Convert">
+          <Command action="Convert" edbName="Edb2Bin" lskpgName="Lspkg2Bin" edbPlugin="Edb2Bin" lspkgPlugin="Lspkg" edbParameterListId="Edb2BinParameterList" lspkgParameterListId="Lspkg2BinParameterList"></Command>
+          <Command action="Convert" edbName="PostEdb2BinAction" lskpgName="PostBinAction" edbPlugin="CustomScript" lspkgPlugin="CustomScript" edbParameterListId="PostEdb2BinActionParameterList" lspkgParameterListId="PostBinActionParameterList"></Command>
+        </CommandList>
+        <ParameterList action="CreateOnResx2Xml" edbName="Edb2BinParameterList" lskpgName="Lspkg2BinParameterList">
+            <Parameter action="CreateOnResx2Xml" edbName="HandleResxConversion" lskpgName="HandleResxConversion" defaultValue="true"/>
+            <Parameter action="Remove" edbName="PerformEdbAnalysis"/>
+            <Parameter action="Remove" edbName="FailOnEdbAnalysisErrors"/>
+            <Parameter action="Remove" edbName="EdbValidationActions"/>
+            <Parameter action="Remove" edbName="EdbValidationErrorActions"/>
+            <Parameter action="Remove" edbName="UseCommentsForGeneration"/>
+            <Parameter action="Convert" edbName="PerformEdbValidation" lskpgName="PerformValidation"/>
+            <Parameter action="Convert" edbName="FailOnEdbValidationErrors" lskpgName="FailOnValidationErrors"/>
+            <Parameter action="Convert" edbName="PerformEdbLanguageCheck" lskpgName="PerformLanguageCheck"/>
+        </ParameterList>
+        <ParameterList action="Import" edbName="PostEdb2BinActionParameterList" lskpgName="PostBinActionParameterList">
+          <Parameter action="Import" edbName="path" lskpgName="path" defaultValue=""/>
+          <Parameter action="Import" edbName="AllowMultithread" lskpgName="AllowMultithread" defaultValue="false"/>
+        </ParameterList>
+      <CustomScriptWarning edbJobType="DailyBuildLocalizationCustomEdbEnv|DailyBuildLocalizationCustomEdb">
+        <![CDATA[Warning: edb2lspkg migrated the custom script setting for the LocBuild job. Please check the custom script to make sure that it works with LocStudio 6.x.]]>
+        </CustomScriptWarning>
+    </Job>
+
+    <!--
+        "MlpPrepHandoffEdb" : Rename to "MlpPrepHandoffLspkg"
+    -->
+    <Job action="Convert" edbJobType="MlpPrepHandoffEdb" lskpgJobType="MlpPrepHandoffLspkg">
+        <CommandList action="Convert">
+          <Command action="Convert" edbName="BuildEdb" lskpgName="BuildLspkg" edbPlugin="BuildEdb" lspkgPlugin="BuildLspkg" edbParameterListId="BuildEdbParameterList" lspkgParameterListId="BuildLspkgParameterList"></Command>
+          <Command action="Remove" edbName="Edb2Lcl"></Command>
+        </CommandList>
+        <ParameterList action="CreateOnResx2Xml" edbName="BuildEdbParameterList" lskpgName="CreateLspkgParameterList">
+            <Parameter action="Convert" edbName="PerformEdbAutoTranslation" lskpgName="PerformAutoTranslation"/>
+            <Parameter action="Convert" edbName="FailOnEdbAutoTranslationErrors" lskpgName="FailOnAutoTranslationErrors"/>
+            <Parameter action="Remove" edbName="PerformEdbAnalysis"/>
+            <Parameter action="Remove" edbName="FailOnEdbAnalysisErrors"/>
+            <Parameter action="Remove" edbName="PerformEdbValidation"/>
+            <Parameter action="Remove" edbName="FailOnEdbValidationErrors"/>
+            <Parameter action="Remove" edbName="EdbValidationActions"/>
+            <Parameter action="Remove" edbName="EdbValidationErrorActions"/>
+            <Parameter action="Convert" edbName="PerformEdbLanguageCheck" lskpgName="PerformLanguageCheck"/>
+            <Parameter action="CreateOnResx2Xml" edbName="HandleResxConversion" lskpgName="HandleResxConversion" defaultValue="true"/>
+            <Parameter action="Remove" edbName="ImportSourceLocks"/>
+        </ParameterList>
+        <ParameterList action="Remove" edbName="Edb2LclParameterList" />
+    </Job>
+    
+    <!--
+        "MlpHandbackEdb" | "MlpHandbackEdbEnv" : Rename to "MlpHandbackLspkgEnv"
+    -->
+    <Job action="Convert" edbJobType="MlpHandbackEdb|MlpHandbackEdbEnv" lskpgJobType="MlpHandbackLspkgEnv" customScriptWarning="true" >
+        <CommandList action="Convert">
+          <Command action="Convert" edbName="Edb2Bin" lskpgName="Lspkg2Bin" edbPlugin="Edb2Bin" lspkgPlugin="Lspkg" edbParameterListId="Edb2BinParameterList" lspkgParameterListId="Lspkg2BinParameterList"></Command>
+          <Command action="Convert" edbName="PostEdb2BinAction" lskpgName="PostBinAction" edbPlugin="CustomScript" lspkgPlugin="CustomScript" edbParameterListId="PostEdb2BinActionParameterList" lspkgParameterListId="PostBinActionParameterList"></Command>
+        </CommandList>
+        <ParameterList action="CreateOnResx2Xml" edbName="Edb2BinParameterList" lskpgName="Lspkg2BinParameterList">
+            <Parameter action="CreateOnResx2Xml" edbName="HandleResxConversion" lskpgName="HandleResxConversion" defaultValue="true"/>
+            <Parameter action="Remove" edbName="PerformEdbAnalysis"/>
+            <Parameter action="Remove" edbName="FailOnEdbAnalysisErrors"/>
+            <Parameter action="Remove" edbName="EdbValidationActions"/>
+            <Parameter action="Remove" edbName="EdbValidationErrorActions"/>
+            <Parameter action="Remove" edbName="UseCommentsForGeneration"/>
+            <Parameter action="Convert" edbName="PerformEdbValidation" lskpgName="PerformValidation"/>
+            <Parameter action="Convert" edbName="FailOnEdbValidationErrors" lskpgName="FailOnValidationErrors"/>
+            <Parameter action="Convert" edbName="PerformEdbLanguageCheck" lskpgName="PerformLanguageCheck"/>
+        </ParameterList>
+      <ParameterList action="Import" edbName="PostEdb2BinActionParameterList" lskpgName="PostBinActionParameterList">
+        <Parameter action="Import" edbName="path" lskpgName="path" defaultValue=""/>
+        <Parameter action="Import" edbName="AllowMultithread" lskpgName="AllowMultithread" defaultValue="false"/>
+      </ParameterList>
+        <CustomScriptWarning edbJobType="MlpHandbackEdb|MlpHandbackEdbEnv">
+          <![CDATA[Warning: edb2lspkg migrated the custom script setting for the Handback job. Please check the custom script to make sure that it works with LocStudio 6.x.]]>
+        </CustomScriptWarning>
+    </Job>
+
+    <!--
+        "MlpHandbackRemoteEdb1" | "MlpHandbackRemoteEdb1Env" : Rename to "MlpHandbackRemoteLspkg1Env"
+    -->
+    <Job action="Convert" edbJobType="MlpHandbackRemoteEdb1|MlpHandbackRemoteEdb1Env" lskpgJobType="MlpHandbackRemoteLspkg1Env" customScriptWarning="true">
+        <CommandList action="Convert">
+          <Command action="Convert" edbName="Edb2Bin" lskpgName="Lspkg2Bin" edbPlugin="Edb2Bin" lspkgPlugin="Lspkg" edbParameterListId="Edb2BinParameterList" lspkgParameterListId="Lspkg2BinParameterList"></Command>
+          <Command action="Convert" edbName="PostEdb2BinAction" lskpgName="PostBinAction" edbPlugin="CustomScript" lspkgPlugin="CustomScript" edbParameterListId="PostEdb2BinActionParameterList" lspkgParameterListId="PostBinActionParameterList"></Command>
+        </CommandList>
+        <ParameterList action="CreateOnResx2Xml" edbName="Edb2BinParameterList" lskpgName="Lspkg2BinParameterList">
+            <Parameter action="CreateOnResx2Xml" edbName="HandleResxConversion" lskpgName="HandleResxConversion" defaultValue="true"/>
+            <Parameter action="Remove" edbName="PerformEdbAnalysis"/>
+            <Parameter action="Remove" edbName="FailOnEdbAnalysisErrors"/>
+            <Parameter action="Remove" edbName="EdbValidationActions"/>
+            <Parameter action="Remove" edbName="EdbValidationErrorActions"/>
+            <Parameter action="Remove" edbName="UseCommentsForGeneration"/>
+            <Parameter action="Convert" edbName="PerformEdbValidation" lskpgName="PerformValidation"/>
+            <Parameter action="Convert" edbName="FailOnEdbValidationErrors" lskpgName="FailOnValidationErrors"/>
+            <Parameter action="Convert" edbName="PerformEdbLanguageCheck" lskpgName="PerformLanguageCheck"/>
+        </ParameterList>
+        <ParameterList action="Import" edbName="PostEdb2BinActionParameterList" lskpgName="PostBinActionParameterList">
+          <Parameter action="Import" edbName="path" lskpgName="path" defaultValue=""/>
+          <Parameter action="Import" edbName="AllowMultithread" lskpgName="AllowMultithread" defaultValue="false"/>
+        </ParameterList>
+        <CustomScriptWarning edbJobType="MlpHandbackRemoteEdb1|MlpHandbackRemoteEdb1Env">
+          <![CDATA[Warning: edb2lspkg migrated the custom script setting for the HandbackRemote1 job. Please check the custom script to make sure that it works with LocStudio 6.x.]]>
+        </CustomScriptWarning>
+    </Job>
+    
+    <!--
+        "MlpHandbackRemoteEdb2" : Rename to "MlpHandbackRemoteLspkg2"
+    -->
+    <Job action="Convert" edbJobType="MlpHandbackRemoteEdb2" lskpgJobType="MlpHandbackRemoteLspkg2"/>
+
+    <!--
+          "MlpCheckinEdb" | "MlpCheckinCustomEdb" | "MlpCheckinCustomEdbEnv | MlpCheckinEdbTfs" : Rename to "MlpCheckinLspkg|MlpCheckinCustomLspkg|MlpCheckinCustomLspkgEnv|MlpCheckinLspkgTfs"
+      -->
+    <Job action="Convert" edbJobType="MlpCheckinEdb|MlpCheckinCustomEdb|MlpCheckinCustomEdbEnv|MlpCheckinEdbTfs" lskpgJobType="MlpCheckinLspkg|MlpCheckinCustomLspkgEnv|MlpCheckinCustomLspkgEnv|MlpCheckinLspkgTfs" customScriptWarning="true">
+      <CommandList action="Convert">
+        <Command action="Convert" edbName="Edb2Bin" lskpgName="Lspkg2Bin" edbPlugin="Edb2Bin" lspkgPlugin="Lspkg" edbParameterListId="Edb2BinParameterList" lspkgParameterListId="Lspkg2BinParameterList"></Command>
+        <Command action="Convert" edbName="Edb2Lcl" lskpgName="Lspkg2Lcl" edbPlugin="Edb2Lcl" lspkgPlugin="Lspkg" edbParameterListId="Edb2LclParameterList" lspkgParameterListId="Lspkg2LclParameterList"></Command>
+      </CommandList>
+      <ParameterList action="Convert" edbName="Edb2BinParameterList" lskpgName="Lspkg2BinParameterList">
+        <Parameter action="Remove" edbName="PerformEdbAnalysis"/>
+        <Parameter action="Remove" edbName="FailOnEdbAnalysisErrors"/>
+        <Parameter action="Convert" edbName="PerformEdbValidation" lskpgName="PerformValidation"/>
+        <Parameter action="Convert" edbName="FailOnEdbValidationErrors" lskpgName="FailOnValidationErrors"/>
+        <Parameter action="Remove" edbName="EdbValidationActions"/>
+        <Parameter action="Remove" edbName="EdbValidationErrorActions"/>
+        <Parameter action="Convert" edbName="PerformEdbLanguageCheck" lskpgName="PerformLanguageCheck"/>
+        <Parameter action="Remove" edbName="UseCommentsForGeneration"/>
+        <Parameter action="Create" edbName="Action" lskpgName="Action" defaultValue="Lspkg2Bin"/>
+      </ParameterList>
+      <ParameterList action="Convert" edbName="Edb2LclParameterList" lskpgName="Lspkg2LclParameterList">
+        <Parameter action="Convert" edbName="PerformEdbValidation" lskpgName="PerformValidation"/>
+        <Parameter action="Convert" edbName="FailOnEdbValidationErrors" lskpgName="FailOnValidationErrors"/>
+        <Parameter action="Remove" edbName="EdbValidationActions"/>
+        <Parameter action="Remove" edbName="EdbValidationErrorActions"/>
+        <Parameter action="Convert" edbName="PerformEdbLanguageCheck" lskpgName="PerformLanguageCheck"/>
+      </ParameterList>
+      <ParameterList action="Import" edbName="CustomCheckinScriptParameterList" lskpgName="CustomCheckinScriptParameterList">
+        <Parameter action="Import" edbName="path" lskpgName="path" defaultValue=""/>
+        <Parameter action="Import" edbName="AllowMultithread" lskpgName="AllowMultithread" defaultValue="false"/>
+      </ParameterList>
+      <CustomScriptWarning edbJobType="MlpCheckinCustomEdbEnv">
+        <![CDATA[Warning: edb2lspkg migrated the custom script setting for the Checkin job. Please check the custom script to make sure that it works with LocStudio 6.x.]]>
+      </CustomScriptWarning>
+    </Job>
+    
+    <!--
+        "CheckinLcl" : Rename to "CheckinLspkgLcl"
+    -->
+    <Job action="Convert" edbJobType="CheckinLcl" lskpgJobType="CheckinLspkgLcl">
+        <CommandList action="Remove">
+          <Command action="Remove" edbName="SDCreateChangeList"></Command>
+          <Command action="Remove" edbName="Edb2Lcl"></Command>
+          <Command action="Remove" edbName="SDCheckin"></Command>
+          <Command action="Remove" edbName="SDSubmitChangelist"></Command>
+        </CommandList>
+        <ParameterList action="Remove" edbName="SDCreateChangelistParameterList" />
+        <ParameterList action="Remove" edbName="Edb2LclParameterList" />
+        <ParameterList action="Remove" edbName="SDCheckinParameterList" />
+        <ParameterList action="Remove" edbName="SDSubmitChangelistParameterList" />
+    </Job>
+    
+    <!--
+        "PolicheckEdb" : Rename to "PolicheckLspkg"
+    -->
+    <Job action="Convert" edbJobType="PolicheckEdb" lskpgJobType="PolicheckLspkg">
+        <ParameterList action="Remove" edbName="PolicheckScanParameterList" />
+    </Job>
+    
+    <!--
+          "MlpRegisterBranchContent" : Just remove
+      -->
+    <Job action="Remove" edbJobType="MlpRegisterBranchContent" lskpgJobType="MlpRegisterBranchContent"/>
+
+    <!--
+        ValidateEdb : Convert
+    -->
+    <Job action="Convert" edbJobType="ValidateEdb" lskpgJobType="ValidateLspkg" newID="ValidateLspkg">
+      <CommandList action="Remove"></CommandList>
+      <ParameterList action="Remove" edbName="ValidateLanguageParameterList" />
+      <ParameterList action="Remove" edbName="ValidateEdbParameterList" />
+    </Job>
+    
+    <PluginPropertyList action="Convert">
+      <Property action="Remove" edbName="ProductName"/>
+      <Property action="Remove" edbName="EdbVersion"/>
+    </PluginPropertyList>
+
+</LbaJobs>

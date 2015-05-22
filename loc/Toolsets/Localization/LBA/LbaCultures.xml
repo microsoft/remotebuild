@@ -1,0 +1,1010 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<lbaCultureList xmlns="http://msn.com/mlp">
+
+  <!-- Afrikaans -->
+  <lbaCulture id="af" lcid="0x0036" language="af" ansiCodePage="1252" oemCodePage="850" tmLanguage="54" hubbleCultureName="af-ZA" sqlLanguage="0">
+    <lbaCulture id="af-ZA" lcid="0x0436" country="ZA" />
+  </lbaCulture>
+
+  <!-- Amharic -->
+  <lbaCulture id="am" lcid="0x005E" language="am" ansiCodePage="0" oemCodePage="1" tmLanguage="94" hubbleCultureName="am-ET" sqlLanguage="0">
+    <lbaCulture id="am-ET" lcid="0x045E" country="ET" />
+  </lbaCulture>
+
+  <!-- Arabic -->
+  <lbaCulture id="ar" lcid="0x0001" language="ar" ansiCodePage="1256" oemCodePage="720" mtLanguage="ar" tmLanguage="1025" hubbleCultureName="ar-SA" sqlLanguage="1025">
+    <lbaCulture id="ar-AE" lcid="0x3801" country="AE" />
+    <lbaCulture id="ar-BH" lcid="0x3C01" country="BH" />
+    <lbaCulture id="ar-DZ" lcid="0x1401" country="DZ" />
+    <lbaCulture id="ar-EG" lcid="0x0C01" country="EG" />
+    <lbaCulture id="ar-IQ" lcid="0x0801" country="IQ" />
+    <lbaCulture id="ar-JO" lcid="0x2C01" country="JO" />
+    <lbaCulture id="ar-KW" lcid="0x3401" country="KW" />
+    <lbaCulture id="ar-LB" lcid="0x3001" country="LB" />
+    <lbaCulture id="ar-LY" lcid="0x1001" country="LY" />
+    <lbaCulture id="ar-MA" lcid="0x1801" country="MA" />
+    <lbaCulture id="ar-OM" lcid="0x2001" country="OM" />
+    <lbaCulture id="ar-QA" lcid="0x4001" country="QA" />
+    <lbaCulture id="ar-SA" lcid="0x0401" country="SA" />
+    <!-- Pseudo (Mirror) -->
+    <lbaCulture id="qps-plocm" lcid="0x09FF" country="plocm" enablePseudoLoc="true" isoStandard="false" />
+    <!-- Legacy Bidi Pseduo -->
+    <lbaCulture id="ar-SA-PSLOC" lcid="0x0401" country="SA-PSLOC" enablePseudoLoc="true" isoStandard="false" />
+    <lbaCulture id="ar-SY" lcid="0x2801" country="SY" />
+    <lbaCulture id="ar-TN" lcid="0x1C01" country="TN" />
+    <!-- Arabic X-Arabia -->
+    <lbaCulture id="ar-XA" lcid="0x0401" country="XA" isoStandard="false" />
+    <lbaCulture id="ar-YE" lcid="0x2401" country="YE" />
+  </lbaCulture>
+
+  <!-- New Bidi Pseduo -->
+  <lbaCulture id="ar-ploc" lcid="0x0001" language="ar-ploc" ansiCodePage="1256" oemCodePage="720" enablePseudoLoc="true" isoStandard="false">
+    <lbaCulture id="ar-ploc-SA" lcid="0x0401" country="SA" enablePseudoLoc="true" isoStandard="false" hubbleCultureName="ar-sa" />
+  </lbaCulture>
+
+  <!-- Mapudungun -->
+  <lbaCulture id="arn" lcid="0x007A" language="arn" ansiCodePage="1252" oemCodePage="850" tmLanguage="122" sqlLanguage="0">
+    <lbaCulture id="arn-CL" lcid="0x047A" country="CL" />
+  </lbaCulture>
+
+  <!-- Assamese -->
+  <lbaCulture id="as" lcid="0x004D" language="as" ansiCodePage="0" oemCodePage="1" tmLanguage="77" hubbleCultureName="as-IN" sqlLanguage="0">
+    <lbaCulture id="as-IN" lcid="0x044D" country="IN" />
+  </lbaCulture>
+
+  <!-- Azeri -->
+  <lbaCulture id="az" lcid="0x002C" language="az" ansiCodePage="1254" oemCodePage="857" tmLanguage="44" sqlLanguage="0">
+    <!-- Azeri Cyrillic -->
+    <lbaCulture id="az-Cyrl" lcid="0x742C" language="az-Cyrl" ansiCodePage="1251" oemCodePage="855" tmLanguage="29740" sqlLanguage="0">
+      <lbaCulture id="az-Cyrl-AZ" lcid="0x082C" language="az-Cyrl" country="AZ" />
+      <lbaCulture id="az-AZ-Cyrl" lcid="0x082C" language="az-Cyrl" country="AZ" isoStandard="false" />
+    </lbaCulture>
+    <!-- Azeri Latin -->
+    <!-- LCID hack for WL -->
+    <lbaCulture id="az-Latn" lcid="0x042C" language="az-Latn" ansiCodePage="1252" oemCodePage="850" tmLanguage="30764" hubbleCultureName="az-Latn-AZ" sqlLanguage="0">
+      <lbaCulture id="az-Latn-AZ" lcid="0x042C" language="az-Latn" country="AZ" />
+      <lbaCulture id="az-AZ-Latn" lcid="0x042C" language="az-Latn" country="AZ" isoStandard="false" />
+    </lbaCulture>
+  </lbaCulture>
+
+  <!-- Bashkir -->
+  <lbaCulture id="ba" lcid="0x006D" language="ba" ansiCodePage="1251" oemCodePage="866" tmLanguage="109" sqlLanguage="0">
+    <lbaCulture id="ba-RU" lcid="0x046D" country="RU" />
+  </lbaCulture>
+
+  <!-- Belarusian -->
+  <lbaCulture id="be" lcid="0x0023" language="be" ansiCodePage="1251" oemCodePage="866" tmLanguage="35" sqlLanguage="0" hubbleCultureName="be-by">
+    <lbaCulture id="be-BY" lcid="0x0423" country="BY" />
+  </lbaCulture>
+
+  <!-- Bulgarian -->
+  <lbaCulture id="bg" lcid="0x0002" language="bg" ansiCodePage="1251" oemCodePage="866" tmLanguage="1026" hubbleCultureName="bg-BG" sqlLanguage="1026">
+    <lbaCulture id="bg-BG" lcid="0x0402" country="BG" />
+  </lbaCulture>
+
+  <!-- Bini -->
+  <lbaCulture id="bin" lcid="0x0466" language="bin" ansiCodePage="0" oemCodePage="1" tmLanguage="1126" sqlLanguage="0" isoStandard="false">
+    <lbaCulture id="bin-NG" lcid="0x0466" country="NG" isoStandard="true" />
+  </lbaCulture>
+
+  <!-- Bengali -->
+  <lbaCulture id="bn" lcid="0x0045" language="bn" ansiCodePage="0" oemCodePage="1" tmLanguage="1093" sqlLanguage="1093">
+    <lbaCulture id="bn-BD" lcid="0x0845" country="BD" />
+    <lbaCulture id="bn-IN" lcid="0x0445" country="IN" />
+  </lbaCulture>
+
+  <!-- Tibetan -->
+  <lbaCulture id="bo" lcid="0x0051" language="bo" ansiCodePage="0" oemCodePage="1" tmLanguage="81" sqlLanguage="0">
+    <lbaCulture id="bo-BT" lcid="0x0851" country="BT" />
+    <lbaCulture id="bo-CN" lcid="0x0451" country="CN" />
+  </lbaCulture>
+
+  <!-- Breton -->
+  <lbaCulture id="br" lcid="0x007E" language="br" ansiCodePage="1252" oemCodePage="850" tmLanguage="126" sqlLanguage="0">
+    <lbaCulture id="br-FR" lcid="0x047E" country="FR" />
+  </lbaCulture>
+
+  <!-- Bosnian -->
+  <lbaCulture id="bs" lcid="0x781A" language="bs" ansiCodePage="1250" oemCodePage="852" tmLanguage="30746" hubbleCultureName="bs-Latn-BA" sqlLanguage="0">
+    <!-- Bosnian Cyrillic -->
+    <!-- LCID hack for WL -->
+    <lbaCulture id="bs-Cyrl" lcid="0x201A" language="bs-Cyrl" ansiCodePage="1251" oemCodePage="855" tmLanguage="25626" hubbleCultureName="bs-Cyrl-BA" sqlLanguage="0">
+      <lbaCulture id="bs-Cyrl-BA" lcid="0x201A" language="bs-Cyrl" country="BA" />
+    </lbaCulture>
+    <!-- Bosnian Latin -->
+    <lbaCulture id="bs-Latn" lcid="0x681A" language="bs-Latn" ansiCodePage="1252" oemCodePage="850" tmLanguage="26650" sqlLanguage="0">
+      <lbaCulture id="bs-Latn-BA" lcid="0x141A" language="bs-Latn" country="BA" />
+    </lbaCulture>
+  </lbaCulture>
+
+  <!-- Catalan -->
+  <lbaCulture id="ca" lcid="0x0003" language="ca" ansiCodePage="1252" oemCodePage="850" tmLanguage="1027" hubbleCultureName="ca-ES" sqlLanguage="1027">
+    <lbaCulture id="ca-ES" lcid="0x0403" country="ES" />
+    <lbaCulture id="ca-ES-valencia" lcid="0x0803" country="ES" hubbleCultureName="ca-ES-x" windowsCultureName="ca-ES-valencia" />
+  </lbaCulture>
+
+  <!-- Cherokee -->
+  <lbaCulture id="chr" lcid="0x005C" language="chr" ansiCodePage="0" oemCodePage="1" tmLanguage="92" sqlLanguage="0">    
+    <lbaCulture id="chr-US" lcid="0x045C" country="US" />
+  </lbaCulture>  
+  <lbaCulture id="chr-Cher" lcid="0x005C" language="chr-Cher" ansiCodePage="0" oemCodePage="1" tmLanguage="92" sqlLanguage="0" hubbleCultureName="chr-Cher-x" windowsCultureName="chr-Cher-US">
+      <lbaCulture id="chr-Cher-US" lcid="0x045C" country="US" />
+  </lbaCulture>
+
+  <!-- Corsican -->
+  <lbaCulture id="co" lcid="0x0083" language="co" ansiCodePage="1252" oemCodePage="850" tmLanguage="131" sqlLanguage="0">
+    <lbaCulture id="co-FR" lcid="0x0483" country="FR" />
+  </lbaCulture>
+
+  <!-- Czech -->
+  <lbaCulture id="cs" lcid="0x0005" language="cs" ansiCodePage="1250" oemCodePage="852" mtLanguage="cs" tmLanguage="5" hubbleCultureName="cs-CZ" sqlLanguage="0">
+    <lbaCulture id="cs-CZ" lcid="0x0405" country="CZ" />
+  </lbaCulture>
+
+  <!-- Welsh -->
+  <lbaCulture id="cy" lcid="0x0052" language="cy" ansiCodePage="1252" oemCodePage="850" tmLanguage="82" hubbleCultureName="cy-GB" sqlLanguage="0">
+    <lbaCulture id="cy-GB" lcid="0x0452" country="GB" />
+  </lbaCulture>
+
+  <!-- Danish -->
+  <lbaCulture id="da" lcid="0x0006" language="da" ansiCodePage="1252" oemCodePage="850" mtLanguage="da" tmLanguage="1030" hubbleCultureName="da-DK" sqlLanguage="1030">
+    <lbaCulture id="da-DK" lcid="0x0406" country="DK" />
+  </lbaCulture>
+
+  <!-- German -->
+  <lbaCulture id="de" lcid="0x0007" language="de" ansiCodePage="1252" oemCodePage="850" mtLanguage="de" tmLanguage="1031" hubbleCultureName="de-DE" sqlLanguage="1031">
+    <lbaCulture id="de-AT" lcid="0x0C07" country="AT" />
+    <lbaCulture id="de-CH" lcid="0x0807" country="CH" />
+    <lbaCulture id="de-DE" lcid="0x0407" country="DE" />
+    <lbaCulture id="de-LI" lcid="0x1407" country="LI" />
+    <lbaCulture id="de-LU" lcid="0x1007" country="LU" />
+    <lbaCulture id="de-ploc-DE" lcid="0x0407" country="DE" enablePseudoLoc="true" isoStandard="false" />
+  </lbaCulture>
+
+  <!-- Dhivehi -->
+  <lbaCulture id="div" lcid="0x0065" language="div" ansiCodePage="0" oemCodePage="1" tmLanguage="101" sqlLanguage="0" isoStandard="false">
+    <lbaCulture id="div-MV" lcid="0x0465" country="MV" isoStandard="false" />
+  </lbaCulture>
+
+  <!-- Divehi -->
+  <lbaCulture id="dv" lcid="0x0065" language="dv" ansiCodePage="0" oemCodePage="1" tmLanguage="101" sqlLanguage="0">
+    <lbaCulture id="dv-MV" lcid="0x0465" country="MV" />
+  </lbaCulture>
+
+  <!-- Greek -->
+  <lbaCulture id="el" lcid="0x0008" language="el" ansiCodePage="1253" oemCodePage="737" mtLanguage="el" tmLanguage="8" hubbleCultureName="el-GR" sqlLanguage="0">
+    <!-- Greek (Greece) -->
+    <lbaCulture id="el-GR" lcid="0x0408" country="GR" ansiCodePage="1253" oemCodePage="737" />
+    <!-- Greek 2 (Greece) -->
+    <lbaCulture id="el-GR-2" lcid="0x2008" country="GR" ansiCodePage="1253" oemCodePage="869" />
+  </lbaCulture>
+
+  <!-- English -->
+  <lbaCulture id="en" lcid="0x0009" language="en" ansiCodePage="1252" oemCodePage="437" mtLanguage="en" tmLanguage="1033" hubbleCultureName="en-us" sqlLanguage="1033">
+    <lbaCulture id="en-029" lcid="0x2409" country="029" ansiCodePage="1252" oemCodePage="850" />
+    <lbaCulture id="en-AU" lcid="0x0C09" country="AU" ansiCodePage="1252" oemCodePage="850" />
+    <lbaCulture id="en-BZ" lcid="0x2809" country="BZ" ansiCodePage="1252" oemCodePage="850" />
+    <lbaCulture id="en-CA" lcid="0x1009" country="CA" ansiCodePage="1252" oemCodePage="850" />
+    <lbaCulture id="en-GB" lcid="0x0809" country="GB" ansiCodePage="1252" oemCodePage="850" tmLanguage="2057" hubbleCultureName="en-GB" sqlLanguage="2057" />
+    <lbaCulture id="en-HK" lcid="0x3C09" country="HK" ansiCodePage="1252" oemCodePage="850" />
+    <lbaCulture id="en-ID" lcid="0x3809" country="ID" ansiCodePage="1252" oemCodePage="850" />
+    <lbaCulture id="en-IE" lcid="0x1809" country="IE" ansiCodePage="1252" oemCodePage="850" />
+    <lbaCulture id="en-IN" lcid="0x4009" country="IN" ansiCodePage="1252" oemCodePage="437" />
+    <lbaCulture id="en-JM" lcid="0x2009" country="JM" ansiCodePage="1252" oemCodePage="850" />
+    <lbaCulture id="en-MY" lcid="0x4409" country="MY" ansiCodePage="1252" oemCodePage="437" />
+    <lbaCulture id="en-NZ" lcid="0x1409" country="NZ" ansiCodePage="1252" oemCodePage="850" />
+    <lbaCulture id="en-PH" lcid="0x3409" country="PH" ansiCodePage="1252" oemCodePage="437" />
+    <lbaCulture id="en-SG" lcid="0x4809" country="SG" ansiCodePage="1252" oemCodePage="437" />
+    <lbaCulture id="en-TT" lcid="0x2C09" country="TT" ansiCodePage="1252" oemCodePage="850" />
+    <lbaCulture id="en-US" lcid="0x0409" country="US" ansiCodePage="1252" oemCodePage="437" />
+    <lbaCulture id="en-WW" lcid="0x0409" country="WW" ansiCodePage="1252" oemCodePage="850" isoStandard="false" />
+    <!-- English X-Arabia -->
+    <lbaCulture id="en-XA" lcid="0x0409" country="XA" ansiCodePage="1252" oemCodePage="850" isoStandard="false" />
+    <lbaCulture id="en-ZA" lcid="0x1C09" country="ZA" ansiCodePage="1252" oemCodePage="437" />
+    <lbaCulture id="en-ZW" lcid="0x3009" country="ZW" ansiCodePage="1252" oemCodePage="437" />
+    <!-- Pseudo Language (Pseudo Country) -->
+    <lbaCulture id="qps-ploc" lcid="0x0501" country="ploc" ansiCodePage="1250" oemCodePage="852" enablePseudoLoc="true" isoStandard="false" />
+    <!-- en-private is LBA internal purpose only. Do not use it for your own project. -->
+    <lbaCulture id="en-private" lcid="0x0409" country="US" ansiCodePage="1252" oemCodePage="437" hubbleCultureName="en-private" windowsCultureName="en-private"  />
+  </lbaCulture>
+
+  <!-- Quint Surrogate -->
+  <lbaCulture id="en-locr-us" lcid="0x0409" language="en-locr-us" ansiCodePage="1252" oemCodePage="437" mtLanguage="en" tmLanguage="1033" sqlLanguage="1033" isoStandard="false" hubbleCultureName="en-us" />
+
+  <!-- Spanish -->
+  <lbaCulture id="es" lcid="0x000A" language="es" ansiCodePage="1252" oemCodePage="850" mtLanguage="es" tmLanguage="3082" hubbleCultureName="es-ES" sqlLanguage="3082">
+    <lbaCulture id="es-AR" lcid="0x2C0A" country="AR" />
+    <lbaCulture id="es-BO" lcid="0x400A" country="BO" />
+    <lbaCulture id="es-CL" lcid="0x340A" country="CL" />
+    <lbaCulture id="es-CO" lcid="0x240A" country="CO" />
+    <lbaCulture id="es-CR" lcid="0x140A" country="CR" />
+    <lbaCulture id="es-DO" lcid="0x1C0A" country="DO" />
+    <lbaCulture id="es-EC" lcid="0x300A" country="EC" />
+    <!-- Spanish International Sort -->
+    <lbaCulture id="es-ES" lcid="0x0C0A" country="ES" />
+    <!-- Spanish Tranditional Sort -->
+    <lbaCulture id="es-ES_tradnl" lcid="0x040A" country="ES" />
+    <lbaCulture id="es-GT" lcid="0x100A" country="GT" />
+    <lbaCulture id="es-HN" lcid="0x480A" country="HN" />
+    <lbaCulture id="es-LA" lcid="0x0C0A" country="LA" />
+    <lbaCulture id="es-MX" lcid="0x080A" country="MX" />
+    <lbaCulture id="es-NI" lcid="0x4C0A" country="NI" />
+    <lbaCulture id="es-PA" lcid="0x180A" country="PA" />
+    <lbaCulture id="es-PE" lcid="0x280A" country="PE" />
+    <lbaCulture id="es-PR" lcid="0x500A" country="PR" />
+    <lbaCulture id="es-PY" lcid="0x3C0A" country="PY" />
+    <lbaCulture id="es-SV" lcid="0x440A" country="SV" />
+    <lbaCulture id="es-US" lcid="0x540A" country="US" />
+    <lbaCulture id="es-UY" lcid="0x380A" country="UY" />
+    <lbaCulture id="es-VE" lcid="0x200A" country="VE" />
+    <lbaCulture id="es-WW" lcid="0x0C0A" country="WW" isoStandard="false" />
+    <!-- Spanish Latin America -->
+    <lbaCulture id="es-XL" lcid="0x580A" country="XL" isoStandard="false" />
+    <lbaCulture id="es-419" lcid="0x580A" language="es-419" country="419" />
+  </lbaCulture>
+
+  <!-- Estonian -->
+  <lbaCulture id="et" lcid="0x0025" language="et" ansiCodePage="1257" oemCodePage="775" tmLanguage="37" hubbleCultureName="et-EE" sqlLanguage="0">
+    <lbaCulture id="et-EE" lcid="0x0425" country="EE" />
+  </lbaCulture>
+
+  <!-- Basque -->
+  <lbaCulture id="eu" lcid="0x002D" language="eu" ansiCodePage="1252" oemCodePage="850" tmLanguage="45" hubbleCultureName="eu-ES" sqlLanguage="0">
+    <lbaCulture id="eu-ES" lcid="0x042D" country="ES" />
+  </lbaCulture>
+
+  <!-- Persian -->
+  <lbaCulture id="fa" lcid="0x0029" language="fa" ansiCodePage="1256" oemCodePage="720" tmLanguage="41" hubbleCultureName="fa-IR" sqlLanguage="0">
+    <lbaCulture id="fa-IR" lcid="0x0429" country="IR" />
+  </lbaCulture>
+
+  <!-- Finnish -->
+  <lbaCulture id="fi" lcid="0x000B" language="fi" ansiCodePage="1252" oemCodePage="850" mtLanguage="fi" tmLanguage="11" hubbleCultureName="fi-FI" sqlLanguage="0">
+    <lbaCulture id="fi-FI" lcid="0x040B" country="FI" />
+  </lbaCulture>
+
+  <!-- Filipino -->
+  <lbaCulture id="fil" lcid="0x0064" language="fil" ansiCodePage="1252" oemCodePage="437" tmLanguage="100" sqlLanguage="0">
+    <lbaCulture id="fil-PH" lcid="0x0464" country="PH" />
+  </lbaCulture>
+
+  <!-- Culture hack for WL -->
+  <lbaCulture id="fil-Latn" lcid="0x0464" language="fil-Latn" ansiCodePage="1252" oemCodePage="437" tmLanguage="100" hubbleCultureName="fil-PH" sqlLanguage="0" />
+
+  <!-- Faroese -->
+  <lbaCulture id="fo" lcid="0x0038" language="fo" ansiCodePage="1252" oemCodePage="850" tmLanguage="56" sqlLanguage="0">
+    <lbaCulture id="fo-FO" lcid="0x0438" country="FO" />
+  </lbaCulture>
+
+  <!-- French -->
+  <lbaCulture id="fr" lcid="0x000C" language="fr" ansiCodePage="1252" oemCodePage="850" mtLanguage="fr" tmLanguage="1036" hubbleCultureName="fr-FR" sqlLanguage="1036">
+    <!-- French North Africa -->
+    <lbaCulture id="fr-015" lcid="0xE40C" country="015" />
+    <lbaCulture id="fr-BE" lcid="0x080C" country="BE" />
+    <lbaCulture id="fr-CA" lcid="0x0C0C" country="CA" />
+    <lbaCulture id="fr-CD" lcid="0x240C" country="CD" />
+    <!-- French	Democratic Republic of Congo -->
+    <lbaCulture id="fr-CG" lcid="0x240C" country="CG" />
+    <lbaCulture id="fr-CH" lcid="0x100C" country="CH" />
+    <lbaCulture id="fr-CI" lcid="0x300C" country="CI" />
+    <lbaCulture id="fr-CM" lcid="0x2C0C" country="CM" />
+    <lbaCulture id="fr-FR" lcid="0x040C" country="FR" />
+    <lbaCulture id="fr-HT" lcid="0x3C0C" country="HT" />
+    <lbaCulture id="fr-LU" lcid="0x140C" country="LU" />
+    <lbaCulture id="fr-MA" lcid="0x380C" country="MA" />
+    <lbaCulture id="fr-MC" lcid="0x180C" country="MC" />
+    <lbaCulture id="fr-ML" lcid="0x340C" country="ML" />
+    <lbaCulture id="fr-RE" lcid="0x200C" country="RE" />
+    <lbaCulture id="fr-SN" lcid="0x280C" country="SN" />
+    <!-- French	West Indies -->
+    <lbaCulture id="fr-x-windies" lcid="0x1C0C" country="x-windies" ansiCodePage="0" oemCodePage="1" />
+  </lbaCulture>
+
+  <!-- Frisian -->
+  <lbaCulture id="fy" lcid="0x0062" language="fy" ansiCodePage="1252" oemCodePage="850" tmLanguage="98" sqlLanguage="0">
+    <lbaCulture id="fy-NL" lcid="0x0462" country="NL" />
+  </lbaCulture>
+
+  <!-- Fulfulde Nigeria -->
+  <lbaCulture id="fuv" lcid="0x0467" language="fuv" ansiCodePage="0" oemCodePage="1" tmLanguage="1127" sqlLanguage="0" isoStandard="false">
+    <lbaCulture id="fuv-NG" lcid="0x0467" country="NG" isoStandard="true" />
+  </lbaCulture>
+
+  <!-- Irish -->
+  <lbaCulture id="ga" lcid="0x003C" language="ga" ansiCodePage="1252" oemCodePage="850" tmLanguage="60" hubbleCultureName="ga-IE" sqlLanguage="0">
+    <!-- Gaelic (Scotland) -->
+    <lbaCulture id="ga-GB" lcid="0x043C" country="GB" />
+    <!-- Irish (Ireland) -->
+    <lbaCulture id="ga-IE" lcid="0x083C" country="IE" />
+  </lbaCulture>
+
+  <!-- Oromo Ethiopia -->
+  <lbaCulture id="gaz" lcid="0x0472" language="gaz" ansiCodePage="0" oemCodePage="1" tmLanguage="1138" sqlLanguage="0" isoStandard="false">
+    <lbaCulture id="gaz-ET" lcid="0x0472" country="ET" isoStandard="true" />
+  </lbaCulture>
+
+  <!-- Scottish Gaelic -->
+  <lbaCulture id="gd" lcid="0x0091" language="gd" ansiCodePage="1252" oemCodePage="850" tmLanguage="145" sqlLanguage="0" hubbleCultureName="gd-GB">    
+    <lbaCulture id="gd-GB" lcid="0x0491" country="GB" />
+  </lbaCulture>
+  <!-- Culture hack for WL -->
+  <lbaCulture id="gd-Latn" lcid="0x0091" language="gd-Latn" ansiCodePage="1252" oemCodePage="850" tmLanguage="145" sqlLanguage="0" hubbleCultureName="gd-GB" />
+
+  <!-- Central Kurdish -->
+  <lbaCulture id="ku-Arab" lcid="0x7C92" language="ku-Arab" ansiCodePage="1256" oemCodePage="720" tmLanguage="146" sqlLanguage="0" hubbleCultureName="ku-Arab-IQ">
+    <lbaCulture id="ku-Arab-IQ" lcid="0x0492" country="IQ" />
+  </lbaCulture>
+
+  <!-- Galician -->
+  <lbaCulture id="gl" lcid="0x0056" language="gl" ansiCodePage="1252" oemCodePage="850" tmLanguage="86" hubbleCultureName="gl-ES">
+    <lbaCulture id="gl-ES" lcid="0x0456" country="ES" />
+  </lbaCulture>
+
+  <!-- Guarani Paraguay -->
+  <lbaCulture id="gn" lcid="0x0474" language="gn" ansiCodePage="0" oemCodePage="1" tmLanguage="1140" sqlLanguage="0" isoStandard="false">
+    <lbaCulture id="gn-PY" lcid="0x0474" country="PY" isoStandard="true" />
+  </lbaCulture>
+
+  <!-- Gujarati -->
+  <lbaCulture id="gu" lcid="0x0047" language="gu" ansiCodePage="0" oemCodePage="1" tmLanguage="1095" hubbleCultureName="gu-IN" sqlLanguage="1095">
+    <lbaCulture id="gu-IN" lcid="0x0447" country="IN" />
+  </lbaCulture>
+
+  <!-- Alsatian -->
+  <lbaCulture id="gsw" lcid="0x0084" language="gsw" ansiCodePage="1252" oemCodePage="850" tmLanguage="132" sqlLanguage="0">
+    <lbaCulture id="gsw-FR" lcid="0x0484" country="FR" />
+  </lbaCulture>
+
+  <!-- Hausa -->
+  <lbaCulture id="ha" lcid="0x0068" language="ha" ansiCodePage="1252" oemCodePage="437" tmLanguage="104" sqlLanguage="0">
+    <!-- Hausa Latin -->
+    <!-- LCID hack for WL -->
+    <lbaCulture id="ha-Latn" lcid="0x0468" language="ha-Latn" ansiCodePage="1252" oemCodePage="850" tmLanguage="31848" hubbleCultureName="ha-Latn-NG" sqlLanguage="0">
+      <lbaCulture id="ha-Latn-NG" lcid="0x0468" language="ha-Latn" country="NG" />
+    </lbaCulture>
+  </lbaCulture>
+
+  <!-- Hawaiian United States -->
+  <lbaCulture id="haw" lcid="0x0475" language="haw" ansiCodePage="0" oemCodePage="1" tmLanguage="1141" sqlLanguage="0" isoStandard="false">
+    <lbaCulture id="haw-US" lcid="0x0475" country="US" isoStandard="true" />
+  </lbaCulture>
+  <!-- Hebrew -->
+  <lbaCulture id="he" lcid="0x000D" language="he" ansiCodePage="1255" oemCodePage="862" mtLanguage="he" tmLanguage="1037" hubbleCultureName="he-IL" sqlLanguage="1037">
+    <lbaCulture id="he-IL" lcid="0x040D" country="IL" />
+  </lbaCulture>
+
+  <!-- Hindi -->
+  <lbaCulture id="hi" lcid="0x0039" language="hi" ansiCodePage="0" oemCodePage="1" mtLanguage="hi" tmLanguage="1081" hubbleCultureName="hi-IN" sqlLanguage="1081">
+    <lbaCulture id="hi-IN" lcid="0x0439" country="IN" />
+  </lbaCulture>
+
+  <!-- Croatian -->
+  <lbaCulture id="hr" lcid="0x001A" language="hr" ansiCodePage="1250" oemCodePage="852" tmLanguage="1050" hubbleCultureName="hr-HR" sqlLanguage="1050">
+    <lbaCulture id="hr-BA" lcid="0x101A" country="BA" />
+    <lbaCulture id="hr-HR" lcid="0x041A" country="HR" />
+  </lbaCulture>
+
+  <!-- Hungarian -->
+  <lbaCulture id="hu" lcid="0x000E" language="hu" ansiCodePage="1250" oemCodePage="852" mtLanguage="hu" tmLanguage="14" hubbleCultureName="hu-HU" sqlLanguage="0">
+    <lbaCulture id="hu-HU" lcid="0x040E" country="HU" />
+  </lbaCulture>
+
+  <!-- Armenian -->
+  <lbaCulture id="hy" lcid="0x002B" language="hy" ansiCodePage="0" oemCodePage="1" tmLanguage="43" hubbleCultureName="hy-AM" sqlLanguage="0">
+    <lbaCulture id="hy-AM" lcid="0x042B" country="AM" />
+  </lbaCulture>
+
+  <!-- Ibibio Nigeria -->
+  <lbaCulture id="ibb" lcid="0x0469" language="ibb" ansiCodePage="0" oemCodePage="1" tmLanguage="1129" sqlLanguage="0" isoStandard="false">
+    <lbaCulture id="ibb-NG" lcid="0x0469" country="NG" isoStandard="true" />
+  </lbaCulture>
+
+  <!-- Igbo -->
+  <lbaCulture id="ig" lcid="0x0070" language="ig" ansiCodePage="1252" oemCodePage="437" tmLanguage="112" sqlLanguage="0">
+    <lbaCulture id="ig-NG" lcid="0x0470" country="NG" />
+  </lbaCulture>
+  <!-- Culture hack for WL -->
+  <lbaCulture id="ig-Latn" lcid="0x0470" language="ig-Latn" ansiCodePage="1252" oemCodePage="437" tmLanguage="112" hubbleCultureName="ig-NG" sqlLanguage="0" />
+
+  <!-- Somali -->
+  <lbaCulture id="so" lcid="0x0077" language="so" ansiCodePage="1252" oemCodePage="850" tmLanguage="119" sqlLanguage="0">
+    <lbaCulture id="so-SO" lcid="0x0477" country="SO" />
+  </lbaCulture>
+
+  <!-- Indonesian -->
+  <lbaCulture id="id" lcid="0x0021" language="id" ansiCodePage="1252" oemCodePage="850" tmLanguage="1057" hubbleCultureName="id-ID" sqlLanguage="1057">
+    <lbaCulture id="id-ID" lcid="0x0421" country="ID" />
+  </lbaCulture>
+
+  <!-- Yi -->
+  <lbaCulture id="ii" lcid="0x0078" language="ii" ansiCodePage="0" oemCodePage="1" tmLanguage="120" sqlLanguage="0">
+    <lbaCulture id="ii-CN" lcid="0x0478" country="CN" />
+  </lbaCulture>
+
+  <!-- Icelandic -->
+  <lbaCulture id="is" lcid="0x000F" language="is" ansiCodePage="1252" oemCodePage="850" tmLanguage="1039" hubbleCultureName="is-IS" sqlLanguage="1039">
+    <lbaCulture id="is-IS" lcid="0x040F" country="IS" />
+  </lbaCulture>
+
+  <!-- Italian -->
+  <lbaCulture id="it" lcid="0x0010" language="it" ansiCodePage="1252" oemCodePage="850" mtLanguage="it" tmLanguage="1040" hubbleCultureName="it-IT" sqlLanguage="1040">
+    <lbaCulture id="it-CH" lcid="0x0810" country="CH" />
+    <lbaCulture id="it-IT" lcid="0x0410" country="IT" />
+  </lbaCulture>
+
+  <!-- Inuktitut -->
+  <lbaCulture id="iu" lcid="0x005D" language="iu" ansiCodePage="1252" oemCodePage="850" tmLanguage="93" sqlLanguage="0">
+    <!-- Inuktitut Canada -->
+    <lbaCulture id="iu-Cans" lcid="0x785D" language="iu-Cans" ansiCodePage="0" oemCodePage="1" tmLanguage="30813" sqlLanguage="0">
+      <lbaCulture id="iu-Cans-CA" lcid="0x045D" language="iu-Cans" country="CA" />
+    </lbaCulture>
+    <!-- Inuktitut Latin -->
+    <!-- LCID hack for WL -->
+    <lbaCulture id="iu-Latn" lcid="0x085D" language="iu-Latn" ansiCodePage="1252" oemCodePage="850" tmLanguage="31837" hubbleCultureName="iu-Latn-CA" sqlLanguage="0">
+      <lbaCulture id="iu-Latn-CA" lcid="0x085D" language="iu-Latn" country="CA" />
+    </lbaCulture>
+  </lbaCulture>
+
+  <!-- Japanese -->
+  <lbaCulture id="ja" lcid="0x0011" language="ja" ansiCodePage="932" oemCodePage="932" mtLanguage="ja" tmLanguage="1041" hubbleCultureName="ja-JP" sqlLanguage="1041">
+    <lbaCulture id="ja-JP" lcid="0x0411" country="JP" />
+    <!-- Legacy Japanese Pseduo -->
+    <lbaCulture id="ja-JP-PSLOC" lcid="0x0411" country="JP-PSLOC" enablePseudoLoc="true" isoStandard="false" />
+    <!-- Pseudo (Asia) -->
+    <lbaCulture id="qps-ploca" lcid="0x05FE" country="ploca" enablePseudoLoc="true" isoStandard="false" />
+  </lbaCulture>
+
+  <!-- New Japanese Pseduo -->
+  <lbaCulture id="ja-ploc" lcid="0x0011" language="ja-ploc" ansiCodePage="932" oemCodePage="932" enablePseudoLoc="true" isoStandard="false" hubbleCultureName="ja-jp">
+    <lbaCulture id="ja-ploc-JP" lcid="0x0411" country="JP" enablePseudoLoc="true" isoStandard="false" />
+  </lbaCulture>
+
+  <!-- Georgian -->
+  <lbaCulture id="ka" lcid="0x0037" language="ka" ansiCodePage="0" oemCodePage="1" tmLanguage="55" hubbleCultureName="ka-GE" sqlLanguage="0">
+    <lbaCulture id="ka-GE" lcid="0x0437" country="GE" />
+  </lbaCulture>
+
+  <!-- Kazakh -->
+  <lbaCulture id="kk" lcid="0x003F" language="kk" ansiCodePage="1251" oemCodePage="866" tmLanguage="63" hubbleCultureName="kk-KZ" sqlLanguage="0">
+    <lbaCulture id="kk-KZ" lcid="0x043F" country="KZ" />
+  </lbaCulture>
+
+  <!-- Greenlandic -->
+  <lbaCulture id="kl" lcid="0x006F" language="kl" ansiCodePage="1252" oemCodePage="850" tmLanguage="111" sqlLanguage="0">
+    <lbaCulture id="kl-GL" lcid="0x046F" country="GL" />
+  </lbaCulture>
+
+  <!-- Khmer -->
+  <lbaCulture id="km" lcid="0x0053" language="km" ansiCodePage="0" oemCodePage="1" tmLanguage="83" hubbleCultureName="km-KH" sqlLanguage="0">
+    <lbaCulture id="km-KH" lcid="0x0453" country="KH" />
+  </lbaCulture>
+
+  <!-- Kannada -->
+  <lbaCulture id="kn" lcid="0x004B" language="kn" ansiCodePage="0" oemCodePage="1" tmLanguage="1099" hubbleCultureName="kn-IN" sqlLanguage="1099">
+    <lbaCulture id="kn-IN" lcid="0x044B" country="IN" />
+  </lbaCulture>
+
+  <!-- Korean -->
+  <lbaCulture id="ko" lcid="0x0012" language="ko" ansiCodePage="949" oemCodePage="949" mtLanguage="ko" tmLanguage="1042" hubbleCultureName="ko-KR" sqlLanguage="1042">
+    <lbaCulture id="ko-KR" lcid="0x0412" country="KR" />
+  </lbaCulture>
+
+  <!-- Konkani -->
+  <lbaCulture id="kok" lcid="0x0057" language="kok" ansiCodePage="0" oemCodePage="1" tmLanguage="87" hubbleCultureName="kok-IN" sqlLanguage="0">
+    <lbaCulture id="kok-IN" lcid="0x0457" country="IN" />
+  </lbaCulture>
+  <!-- Culture hack for WL -->
+  <lbaCulture id="knn-deva" lcid="0x0457" language="knn-deva" ansiCodePage="0" oemCodePage="1" tmLanguage="87" hubbleCultureName="kok-IN" sqlLanguage="0" />
+
+  <!-- Kanuri Nigeria -->
+  <lbaCulture id="kr" lcid="0x0471" language="kr" ansiCodePage="0" oemCodePage="1" tmLanguage="1137" sqlLanguage="0" isoStandard="false">
+    <lbaCulture id="kr-NG" lcid="0x0471" country="NG" isoStandard="true" />
+  </lbaCulture>
+
+  <!-- Kyrgyz -->
+  <lbaCulture id="ky" lcid="0x0040" language="ky" ansiCodePage="1251" oemCodePage="866" tmLanguage="64" hubbleCultureName="ky-KG" sqlLanguage="0">
+    <lbaCulture id="ky-KG" lcid="0x0440" country="KG" />
+  </lbaCulture>
+  <!-- Culture hack for WL -->
+  <lbaCulture id="ky-cyrl" lcid="0x0440" language="ky-cyrl" ansiCodePage="1251" oemCodePage="866" tmLanguage="64" hubbleCultureName="ky-KG" sqlLanguage="0" />
+
+  <!-- Kashmiri -->
+  <lbaCulture id="ks" lcid="0x0860" language="ks" ansiCodePage="0" oemCodePage="1" tmLanguage="2144" sqlLanguage="0" />
+
+  <!-- Latin -->
+  <lbaCulture id="la" lcid="0x0476" language="la" ansiCodePage="0" oemCodePage="1" tmLanguage="1142" sqlLanguage="0" />
+
+  <!-- Luxembourgish -->
+  <lbaCulture id="lb" lcid="0x006E" language="lb" ansiCodePage="1252" oemCodePage="850" tmLanguage="110" hubbleCultureName="lb-LU" sqlLanguage="0">
+    <lbaCulture id="lb-LU" lcid="0x046E" country="LU" />
+  </lbaCulture>
+
+  <!-- Lao -->
+  <lbaCulture id="lo" lcid="0x0054" language="lo" ansiCodePage="0" oemCodePage="1" tmLanguage="84" sqlLanguage="0">
+    <lbaCulture id="lo-LA" lcid="0x0454" country="LA" />
+  </lbaCulture>
+
+  <!-- Lithuanian -->
+  <lbaCulture id="lt" lcid="0x0027" language="lt" ansiCodePage="1257" oemCodePage="775" tmLanguage="1063" hubbleCultureName="lt-LT" sqlLanguage="1063">
+    <lbaCulture id="lt-LT" lcid="0x0427" country="LT" />
+    <lbaCulture id="lt-LT-C" lcid="0x0827" country="LT" />
+  </lbaCulture>
+
+  <!-- Latvian -->
+  <lbaCulture id="lv" lcid="0x0026" language="lv" ansiCodePage="1257" oemCodePage="775" tmLanguage="1062" hubbleCultureName="lv-LV" sqlLanguage="1062">
+    <lbaCulture id="lv-LV" lcid="0x0426" country="LV" />
+  </lbaCulture>
+
+  <!-- Maori -->
+  <lbaCulture id="mi" lcid="0x0081" language="mi" ansiCodePage="0" oemCodePage="1" tmLanguage="129" hubbleCultureName="mi-NZ" sqlLanguage="0">
+    <lbaCulture id="mi-NZ" lcid="0x0481" language="mi" country="NZ" />
+  </lbaCulture>
+  <!-- Culture hack for WL -->
+  <lbaCulture id="mi-Latn" lcid="0x0481" language="mi-Latn" ansiCodePage="0" oemCodePage="1" tmLanguage="129" hubbleCultureName="mi-NZ" sqlLanguage="0" />
+
+  <!-- Macedonian -->
+  <lbaCulture id="mk" lcid="0x002F" language="mk" ansiCodePage="1251" oemCodePage="866" tmLanguage="47" hubbleCultureName="mk-MK" sqlLanguage="0">
+    <lbaCulture id="mk-MK" lcid="0x042F" country="MK" />
+  </lbaCulture>
+
+  <!-- Malayalam -->
+  <lbaCulture id="ml" lcid="0x004C" language="ml" ansiCodePage="0" oemCodePage="1" tmLanguage="1100" hubbleCultureName="ml-IN" sqlLanguage="1100">
+    <lbaCulture id="ml-IN" lcid="0x044C" language="ml" country="IN" />
+  </lbaCulture>
+
+  <!-- Mongolian -->
+  <lbaCulture id="mn" lcid="0x0050" language="mn" ansiCodePage="1251" oemCodePage="866" tmLanguage="1104" hubbleCultureName="mn-MN" sqlLanguage="0">
+    <lbaCulture id="mn-MN" lcid="0x0450" country="MN" ansiCodePage="1251" oemCodePage="866" />
+    <!-- Mongolian Mongolian -->
+    <lbaCulture id="mn-Mong" lcid="0x7c50" ansiCodePage="1251" oemCodePage="1" tmLanguage="31824" sqlLanguage="0">
+      <lbaCulture id="mn-Mong-CN" lcid="0x0850" country="CN" />
+    </lbaCulture>
+    <!-- Mongolian Cyrillic -->
+    <!-- LCID hack for WL -->
+    <lbaCulture id="mn-Cyrl" lcid="0x0450" language="mn-Cyrl" ansiCodePage="1251" oemCodePage="855" tmLanguage="1104" hubbleCultureName="mn-MN" sqlLanguage="0" />
+  </lbaCulture>
+
+  <!-- Mohawk -->
+  <lbaCulture id="moh" lcid="0x007C" language="moh" ansiCodePage="1252" oemCodePage="850" tmLanguage="124" sqlLanguage="0">
+    <lbaCulture id="moh-CA" lcid="0x047C" country="CA" />
+  </lbaCulture>
+
+  <!-- Manipuri -->
+  <lbaCulture id="mni" lcid="0x0458" language="mni" ansiCodePage="0" oemCodePage="1" tmLanguage="1112" sqlLanguage="0" />
+
+  <!-- Marathi -->
+  <lbaCulture id="mr" lcid="0x004E" language="mr" ansiCodePage="0" oemCodePage="1" tmLanguage="1102" hubbleCultureName="mr-IN" sqlLanguage="1102">
+    <lbaCulture id="mr-IN" lcid="0x044E" country="IN" />
+  </lbaCulture>
+
+  <!-- Malay -->
+  <lbaCulture id="ms" lcid="0x003E" language="ms" ansiCodePage="1252" oemCodePage="850" tmLanguage="1086" hubbleCultureName="ms-MY" sqlLanguage="1086">
+    <lbaCulture id="ms-BN" lcid="0x083E" country="BN" />
+    <lbaCulture id="ms-MY" lcid="0x043E" country="MY" />
+  </lbaCulture>
+
+  <!-- Maltese -->
+  <lbaCulture id="mt" lcid="0x003A" language="mt" ansiCodePage="0" oemCodePage="1" tmLanguage="58" hubbleCultureName="mt-MT" sqlLanguage="0">
+    <lbaCulture id="mt-MT" lcid="0x043A" country="MT" />
+  </lbaCulture>
+
+  <!-- Myanmar Myanmar -->
+  <lbaCulture id="my" lcid="0x0455" language="my" ansiCodePage="0" oemCodePage="1" tmLanguage="1109" sqlLanguage="0" isoStandard="false">
+    <lbaCulture id="my-MM" lcid="0x0455" country="MM" isoStandard="true" />
+  </lbaCulture>
+
+  <!-- Nepali -->
+  <lbaCulture id="ne" lcid="0x0061" language="ne" ansiCodePage="0" oemCodePage="1" tmLanguage="97" hubbleCultureName="ne-NP" sqlLanguage="0">
+    <lbaCulture id="ne-IN" lcid="0x0861" language="ne" country="IN" />
+    <lbaCulture id="ne-NP" lcid="0x0461" language="ne" country="NP" />
+  </lbaCulture>
+
+  <!-- Dutch -->
+  <lbaCulture id="nl" lcid="0x0013" language="nl" ansiCodePage="1252" oemCodePage="850" mtLanguage="nl" tmLanguage="1043" hubbleCultureName="nl-NL" sqlLanguage="1043">
+    <lbaCulture id="nl-BE" lcid="0x0813" country="BE" />
+    <lbaCulture id="nl-NL" lcid="0x0413" country="NL" />
+  </lbaCulture>
+
+  <!-- Norwegian -->
+  <!-- Need to map "no" to "nb-no" due to legacy reason -->
+  <lbaCulture id="no" lcid="0x0014" language="no" ansiCodePage="1252" oemCodePage="850" mtLanguage="no" tmLanguage="1044" hubbleCultureName="nb-NO" sqlLanguage="1044">
+    <!-- Norwegian Bokmål -->
+    <!-- LocStudio hack: correct lcid="0x7c14" -->
+    <lbaCulture id="nb" lcid="0x0414" language="nb" ansiCodePage="1252" oemCodePage="850" mtLanguage="no" tmLanguage="1044" hubbleCultureName="nb-NO" sqlLanguage="1044">
+      <lbaCulture id="nb-NO" lcid="0x0414" country="NO" />
+    </lbaCulture>
+
+    <!-- Norwegian Nynorsk -->
+    <!-- LocStudio hack: correct lcid="0x7814" -->
+    <lbaCulture id="nn" lcid="0x0814" language="nn" ansiCodePage="1252" oemCodePage="850" tmLanguage="2068" hubbleCultureName="nn-NO" sqlLanguage="0">
+      <lbaCulture id="nn-NO" lcid="0x0814" country="NO" />
+    </lbaCulture>
+  </lbaCulture>
+
+  <!-- Sesotho sa Leboa -->
+  <lbaCulture id="nso" lcid="0x006C" language="nso" ansiCodePage="1252" oemCodePage="850" tmLanguage="108" hubbleCultureName="nso-ZA" sqlLanguage="0">
+    <lbaCulture id="nso-ZA" lcid="0x046C" country="ZA" />
+  </lbaCulture>
+
+  <!-- Occitan -->
+  <lbaCulture id="oc" lcid="0x0082" language="oc" ansiCodePage="1252" oemCodePage="850" tmLanguage="130" sqlLanguage="0">
+    <lbaCulture id="oc-FR" lcid="0x0482" country="FR" />
+  </lbaCulture>
+
+  <!-- Oriya -->
+  <lbaCulture id="or" lcid="0x0048" language="or" ansiCodePage="0" oemCodePage="1" tmLanguage="72" hubbleCultureName="or-IN" sqlLanguage="0">
+    <lbaCulture id="or-IN" lcid="0x0448" country="IN" />
+  </lbaCulture>
+
+  <!-- Punjabi -->
+  <lbaCulture id="pa" lcid="0x0046" language="pa" ansiCodePage="0" oemCodePage="1" tmLanguage="1094" sqlLanguage="1094" hubbleCultureName="pa-IN">    
+    <lbaCulture id="pa-IN" lcid="0x0446" country="IN" />
+    <lbaCulture id="pa-PK" lcid="0x0846" country="PK" />
+  </lbaCulture>
+  <!-- Punjabi (Arabic) -->
+  <lbaCulture id="pa-Arab" lcid="0x0846" language="pa-Arab" ansiCodePage="1256" oemCodePage="720" tmLanguage="1094" sqlLanguage="1094" hubbleCultureName="pa-Arab-PK">
+      <lbaCulture id="pa-Arab-PK" lcid="0x0846" country="PK" />
+  </lbaCulture>
+
+  <!-- Malagasy Madagascar -->
+  <lbaCulture id="plt" lcid="0x048D" language="plt" ansiCodePage="0" oemCodePage="1" tmLanguage="1165" sqlLanguage="0" isoStandard="false">
+    <lbaCulture id="plt-MG" lcid="0x048D" country="MG" isoStandard="true" />
+  </lbaCulture>
+
+  <!-- Polish -->
+  <lbaCulture id="pl" lcid="0x0015" language="pl" ansiCodePage="1250" oemCodePage="852" mtLanguage="pl" tmLanguage="1045" hubbleCultureName="pl-PL" sqlLanguage="1045">
+    <lbaCulture id="pl-PL" lcid="0x0415" country="PL" />
+  </lbaCulture>
+
+  <!-- Papiamentu Netherlands Antilles -->
+  <lbaCulture id="pap" lcid="0x0479" language="pap" ansiCodePage="0" oemCodePage="1" tmLanguage="1145" sqlLanguage="0" isoStandard="false">
+    <lbaCulture id="pap-AN" lcid="0x0479" country="AN" isoStandard="true" />
+  </lbaCulture>
+
+  <!-- Dari Afghanistan -->
+  <lbaCulture id="prs" lcid="0x008C" language="prs" ansiCodePage="1256" oemCodePage="720" tmLanguage="140" sqlLanguage="0">
+    <lbaCulture id="prs-AF" lcid="0x048C" country="AF" />
+  </lbaCulture>
+  <!-- Cultuer hack for WL -->
+  <lbaCulture id="prs-arab" lcid="0x048C" language="prs-arab" ansiCodePage="1256" oemCodePage="720" tmLanguage="140" hubbleCultureName="prs-AF" sqlLanguage="0" />
+
+  <!-- Portuguese -->
+  <lbaCulture id="pt" lcid="0x0016" language="pt" ansiCodePage="1252" oemCodePage="850" mtLanguage="pt" tmLanguage="2070" hubbleCultureName="pt-PT" sqlLanguage="2070">
+    <!-- Brazilian -->
+    <lbaCulture id="pt-brz" lcid="0x0416" language="pt-brz" mtLanguage="pt" tmLanguage="1046" sqlLanguage="1046">
+      <lbaCulture id="pt-BR" lcid="0x0416" country="BR" mtLanguage="pt" tmLanguage="1046" sqlLanguage="1046" hubbleCultureName="pt-BR" />
+    </lbaCulture>
+    <lbaCulture id="pt-PT" lcid="0x0816" country="PT" mtLanguage="pt-pt" sqlLanguage="2070" tmLanguage="2070" />
+  </lbaCulture>
+
+  <!-- Pashto -->
+  <lbaCulture id="ps" lcid="0x0063" language="ps" ansiCodePage="1256" oemCodePage="720" tmLanguage="99" sqlLanguage="0">
+    <lbaCulture id="ps-AF" lcid="0x0463" country="AF" />
+  </lbaCulture>
+
+  <!-- K'iche -->
+  <lbaCulture id="qut" lcid="0x0086" language="qut" ansiCodePage="1252" oemCodePage="850" tmLanguage="134" sqlLanguage="0" hubbleCultureName="qut-GT">    
+    <lbaCulture id="qut-GT" lcid="0x0486" country="GT" />
+  </lbaCulture>
+  <!-- Cultuer hack for WL -->
+  <lbaCulture id="qut-Latn" lcid="0x0086" language="qut-Latn" ansiCodePage="1252" oemCodePage="850" tmLanguage="134" sqlLanguage="0" hubbleCultureName="qut-GT" />
+
+  <!-- Quechua -->
+  <lbaCulture id="quz" lcid="0x006B" language="quz" ansiCodePage="1252" oemCodePage="850" tmLanguage="107" hubbleCultureName="quz-PE" sqlLanguage="0">
+    <lbaCulture id="quz-BO" lcid="0x046B" country="BO" />
+    <lbaCulture id="quz-EC" lcid="0x086B" country="EC" />
+    <lbaCulture id="quz-PE" lcid="0x0C6B" country="PE" />
+  </lbaCulture>
+  <!-- Culture hack for WL -->
+  <lbaCulture id="qu" lcid="0x0C6B" language="qu" ansiCodePage="1252" oemCodePage="850" tmLanguage="107" hubbleCultureName="quz-PE" sqlLanguage="0" />
+
+  <!-- Romansh -->
+  <lbaCulture id="rm" lcid="0x0017" language="rm" ansiCodePage="1252" oemCodePage="850" tmLanguage="23" sqlLanguage="0">
+    <lbaCulture id="rm-CH" lcid="0x0417" country="CH" />
+  </lbaCulture>
+
+  <!-- Romanian -->
+  <lbaCulture id="ro" lcid="0x0018" language="ro" ansiCodePage="1250" oemCodePage="852" tmLanguage="1048" hubbleCultureName="ro-RO" sqlLanguage="1048">
+    <lbaCulture id="ro-MO" lcid="0x0818" country="MO" />
+    <lbaCulture id="ro-RO" lcid="0x0418" country="RO" />
+  </lbaCulture>
+
+  <!-- Russian -->
+  <lbaCulture id="ru" lcid="0x0019" language="ru" ansiCodePage="1251" oemCodePage="866" mtLanguage="ru" tmLanguage="1049" hubbleCultureName="ru-RU" sqlLanguage="1049">
+    <lbaCulture id="ru-MO" lcid="0x0819" country="MO" />
+    <lbaCulture id="ru-RU" lcid="0x0419" country="RU" />
+  </lbaCulture>
+
+  <!-- Kinyarwanda -->
+  <lbaCulture id="rw" lcid="0x0087" language="rw" ansiCodePage="1252" oemCodePage="437" tmLanguage="135" sqlLanguage="0" hubbleCultureName="rw-RW">
+    <lbaCulture id="rw-RW" lcid="0x0487" country="RW" />
+  </lbaCulture>
+
+  <!-- Sanskrit -->
+  <lbaCulture id="sa" lcid="0x004F" language="sa" ansiCodePage="0" oemCodePage="1" tmLanguage="79" sqlLanguage="0">
+    <lbaCulture id="sa-IN" lcid="0x044F" country="IN" />
+  </lbaCulture>
+
+  <!-- Yakut -->
+  <lbaCulture id="sah" lcid="0x0085" language="sah" ansiCodePage="1251" oemCodePage="866" tmLanguage="133" sqlLanguage="0">
+    <lbaCulture id="sah-RU" lcid="0x0485" country="RU" />
+  </lbaCulture>
+
+  <!-- Sindhi -->
+  <lbaCulture id="sd" lcid="0x0059" language="sd" ansiCodePage="1256" oemCodePage="720" tmLanguage="89" sqlLanguage="0">    
+    <lbaCulture id="sd-IN" lcid="0x0459" country="IN" />
+    <lbaCulture id="sd-PK" lcid="0x0859" country="PK" />
+  </lbaCulture>
+  <!-- Sindhi (Arabic) -->
+  <lbaCulture id="sd-Arab" lcid="0x0859" language="sd-Arab" ansiCodePage="1256" oemCodePage="720" tmLanguage="89" sqlLanguage="0" hubbleCultureName="sd-Arab-PK">
+      <lbaCulture id="sd-Arab-PK" lcid="0x0859" country="PK" />
+  </lbaCulture>
+
+  <!-- Sinhala -->
+  <lbaCulture id="si" lcid="0x005B" language="si" ansiCodePage="0" oemCodePage="1" tmLanguage="91" hubbleCultureName="si-LK" sqlLanguage="0">
+    <lbaCulture id="si-LK" lcid="0x045B" country="LK" />
+  </lbaCulture>
+
+  <!-- Slovak -->
+  <lbaCulture id="sk" lcid="0x001B" language="sk" ansiCodePage="1250" oemCodePage="852" tmLanguage="1051" hubbleCultureName="sk-SK" sqlLanguage="1051">
+    <lbaCulture id="sk-SK" lcid="0x041B" country="SK" />
+  </lbaCulture>
+
+  <!-- Slovenian -->
+  <lbaCulture id="sl" lcid="0x0024" language="sl" ansiCodePage="1250" oemCodePage="852" tmLanguage="1060" hubbleCultureName="sl-SI" sqlLanguage="1060">
+    <lbaCulture id="sl-SI" lcid="0x0424" country="SI" />
+  </lbaCulture>
+
+  <!-- Sami -->
+  <lbaCulture id="se" lcid="0x003B" language="se" ansiCodePage="1252" oemCodePage="850" tmLanguage="59" sqlLanguage="0">
+    <!-- Sami, Inari Finland -->
+    <lbaCulture id="smn-FI" lcid="0x243B" language="smn" country="FI" />
+    <lbaCulture id="smn" lcid="0x243B" language="smn" />
+    <!-- Sami, Lule Norway-->
+    <lbaCulture id="smj-NO" lcid="0x103B" language="smj" country="NO" />
+    <lbaCulture id="smj" lcid="0x103B" language="smj" />
+    <!-- Sami, Lule Sweden -->
+    <lbaCulture id="smj-SE" lcid="0x143B" language="smj" country="SE" />
+    <!-- Sami, Northern Finland -->
+    <lbaCulture id="se-FI" lcid="0x0c3B" language="se" country="FI" />
+    <!-- Sami, Northern Norway -->
+    <lbaCulture id="se-NO" lcid="0x043B" language="se" country="NO" />
+    <!-- Sami, Northern Sweden -->
+    <lbaCulture id="se-SE" lcid="0x083B" language="se" country="SE" />
+    <!-- Sami, Southern Norway -->
+    <lbaCulture id="sma-NO" lcid="0x183B" language="sma" country="NO" />
+    <lbaCulture id="sma" lcid="0x183B" language="sma" />
+    <!-- Sami, Southern Sweden -->
+    <lbaCulture id="sma-SE" lcid="0x1C3B" language="sma" country="SE" />
+    <!-- Sami, Skolt Finland -->
+    <lbaCulture id="sms-FI" lcid="0x203B" language="sms" country="FI" />
+    <lbaCulture id="sms" lcid="0x203B" language="sms" />
+  </lbaCulture>
+
+  <!-- Albanian -->
+  <lbaCulture id="sq" lcid="0x001C" language="sq" ansiCodePage="1250" oemCodePage="852" tmLanguage="28" hubbleCultureName="sq-AL" sqlLanguage="0">
+    <lbaCulture id="sq-AL" lcid="0x041C" language="sq-AL" />
+  </lbaCulture>
+
+  <!-- Serbian -->
+  <lbaCulture id="sr" lcid="0x7C1A" language="sr" ansiCodePage="1250" oemCodePage="855" tmLanguage="31770" hubbleCultureName="sr-Latn-CS" sqlLanguage="0">
+    <!-- Serbian Cyrillic -->
+    <!-- LCID hack for WL -->
+    <lbaCulture id="sr-Cyrl" lcid="0x1C1A" language="sr-Cyrl" ansiCodePage="1251" oemCodePage="855" tmLanguage="3098" hubbleCultureName="sr-Cyrl-CS" sqlLanguage="3098">
+      <lbaCulture id="sr-Cyrl-RS" lcid="0x281A" language="sr-Cyrl" country="RS" hubbleCultureName="sr-Cyrl-RS" />
+      <lbaCulture id="sr-Cyrl-BA" lcid="0x1C1A" language="sr-Cyrl" country="BA" hubbleCultureName="sr-Cyrl-BA" />
+      <lbaCulture id="sr-Cyrl-CS" lcid="0x0C1A" language="sr-Cyrl" country="CS" />
+      <lbaCulture id="sr-Cyrl-ME" lcid="0x301A" language="sr-Cyrl" country="ME" />
+      <lbaCulture id="sr-Cyrl-SP" lcid="0x0C1A" language="sr-Cyrl" country="SP" isoStandard="false" />
+      <lbaCulture id="sr-SP-Cyrl" lcid="0x0C1A" language="sr-Cyrl" country="SP" isoStandard="false" />
+    </lbaCulture>
+    <!-- Serbian Latin -->
+    <!-- LCID hack for WL -->
+    <lbaCulture id="sr-Latn" lcid="0x241A" language="sr-Latn" ansiCodePage="1252" oemCodePage="850" tmLanguage="2074" hubbleCultureName="sr-Latn-RS" sqlLanguage="2074">
+      <lbaCulture id="sr-Latn-RS" lcid="0x241A" language="sr-Latn" country="RS" ansiCodePage="1250" oemCodePage="852" />
+      <lbaCulture id="sr-Latn-BA" lcid="0x181A" language="sr-Latn" country="BA" />
+      <lbaCulture id="sr-Latn-CS" lcid="0x081A" language="sr-Latn" country="CS" />
+      <lbaCulture id="sr-Latn-ME" lcid="0x2C1A" language="sr-Latn" country="ME" />
+      <lbaCulture id="sr-Latn-SP" lcid="0x081A" language="sr-Latn" country="SP" isoStandard="false" />
+      <lbaCulture id="sr-SP-Latn" lcid="0x081A" language="sr-Latn" country="SP" isoStandard="false" />
+    </lbaCulture>
+  </lbaCulture>
+
+  <!-- Sutu -->
+  <lbaCulture id="st" lcid="0x0030" language="st" ansiCodePage="1252" oemCodePage="850" tmLanguage="48" sqlLanguage="0">
+    <lbaCulture id="st-ZA" lcid="0x0430" country="ZA" />
+  </lbaCulture>
+
+  <!-- Swedish -->
+  <lbaCulture id="sv" lcid="0x001D" language="sv" ansiCodePage="1252" oemCodePage="850" mtLanguage="sv" tmLanguage="1053" hubbleCultureName="sv-SE" sqlLanguage="1053">
+    <lbaCulture id="sv-FI" lcid="0x081D" country="FI" />
+    <lbaCulture id="sv-SE" lcid="0x041D" country="SE" />
+  </lbaCulture>
+
+  <!-- Swahili -->
+  <lbaCulture id="sw" lcid="0x0041" language="sw" ansiCodePage="1252" oemCodePage="437" tmLanguage="65" hubbleCultureName="sw-KE" sqlLanguage="0">
+    <lbaCulture id="sw-KE" lcid="0x0441" country="KE" />
+  </lbaCulture>
+
+  <!-- Syriac -->
+  <lbaCulture id="syr" lcid="0x005A" language="syr" ansiCodePage="0" oemCodePage="1" tmLanguage="90" sqlLanguage="0">
+    <lbaCulture id="syr-SY" lcid="0x045A" country="SY" />
+  </lbaCulture>
+
+  <!-- Tamil -->
+  <lbaCulture id="ta" lcid="0x0049" language="ta" ansiCodePage="0" oemCodePage="1" tmLanguage="1097" hubbleCultureName="ta-IN" sqlLanguage="1097">
+    <lbaCulture id="ta-IN" lcid="0x0449" country="IN" />
+  </lbaCulture>
+
+  <!-- Telugu -->
+  <lbaCulture id="te" lcid="0x004A" language="te" ansiCodePage="0" oemCodePage="1" tmLanguage="1098" hubbleCultureName="te-IN" sqlLanguage="1098">
+    <lbaCulture id="te-IN" lcid="0x044A" country="IN" />
+  </lbaCulture>
+
+  <!-- Tajik -->
+  <lbaCulture id="tg" lcid="0x0028" language="tg" ansiCodePage="1251" oemCodePage="866" tmLanguage="40" sqlLanguage="0" hubbleCultureName="tg-Cyrl-TJ">
+    <!-- Tajik Cyrillic -->
+    <lbaCulture id="tg-Cyrl" lcid="0x0028" language="tg-Cyrl" ansiCodePage="1251" oemCodePage="866" tmLanguage="40" sqlLanguage="0">
+      <lbaCulture id="tg-Cyrl-TJ" lcid="0x0428" language="tg-Cyrl" country="TJ" />
+    </lbaCulture>
+  </lbaCulture>
+
+  <!-- Thai -->
+  <lbaCulture id="th" lcid="0x001E" language="th" ansiCodePage="874" oemCodePage="874" mtLanguage="th" tmLanguage="1054" hubbleCultureName="th-TH" sqlLanguage="1054">
+    <lbaCulture id="th-TH" lcid="0x041E" country="TH" />
+  </lbaCulture>
+
+  <!-- Tigrigna -->
+  <lbaCulture id="ti" lcid="0x0073" language="ti" ansiCodePage="0" oemCodePage="1" tmLanguage="115" sqlLanguage="0" hubbleCultureName="ti-ET">
+    <lbaCulture id="ti-ER" lcid="0x0473" country="ER" />
+    <lbaCulture id="ti-ET" lcid="0x0473" country="ET" />
+  </lbaCulture>
+
+  <!-- Turkmen -->
+  <lbaCulture id="tk" lcid="0x0042" language="tk" ansiCodePage="1250" oemCodePage="852" tmLanguage="66" sqlLanguage="0">
+    <lbaCulture id="tk-TM" lcid="0x0442" country="TM" />
+  </lbaCulture>
+  <!-- Culture hack for WL -->
+  <lbaCulture id="tk-Latn" lcid="0x0442" language="tk-Latn" ansiCodePage="1250" oemCodePage="852" tmLanguage="66" hubbleCultureName="tk-TM" sqlLanguage="0" />
+
+  <!-- Setswana -->
+  <lbaCulture id="tn" lcid="0x0032" language="tn" ansiCodePage="1252" oemCodePage="850" tmLanguage="50" hubbleCultureName="tn-ZA" sqlLanguage="0">
+    <lbaCulture id="tn-ZA" lcid="0x0432" country="ZA" />
+  </lbaCulture>
+
+  <!-- Turkish -->
+  <lbaCulture id="tr" lcid="0x001F" language="tr" ansiCodePage="1254" oemCodePage="857" mtLanguage="tr" tmLanguage="1055" hubbleCultureName="tr-TR" sqlLanguage="1055">
+    <lbaCulture id="tr-TR" lcid="0x041F" country="TR" />
+  </lbaCulture>
+
+  <!-- Xitsonga South Africa -->
+  <lbaCulture id="ts" lcid="0x0431" language="ts" ansiCodePage="0" oemCodePage="1" tmLanguage="1073" sqlLanguage="0" isoStandard="false">
+    <lbaCulture id="ts-ZA" lcid="0x0431" country="ZA" isoStandard="true" />
+  </lbaCulture>
+
+  <!-- Tatar -->
+  <lbaCulture id="tt" lcid="0x0044" language="tt" ansiCodePage="1251" oemCodePage="866" tmLanguage="68" hubbleCultureName="tt-RU" sqlLanguage="0">
+    <lbaCulture id="tt-RU" lcid="0x0444" country="RU" />
+  </lbaCulture>
+  <!-- Culture hack for WL -->
+  <lbaCulture id="tt-Cyrl" lcid="0x0444" language="tt-Cyrl" ansiCodePage="1251" oemCodePage="866" tmLanguage="68" hubbleCultureName="tt-RU" sqlLanguage="0" />
+
+  <!-- Tamazight -->
+  <lbaCulture id="tzm" lcid="0x005F" language="tzm" ansiCodePage="1252" oemCodePage="850" tmLanguage="95" sqlLanguage="0">
+    <!-- Tamazight Latin -->
+    <lbaCulture id="tzm-Latn" lcid="0x085F" language="tzm-Latn" ansiCodePage="1252" oemCodePage="850" tmLanguage="2143" sqlLanguage="0">
+      <lbaCulture id="tzm-Latn-DZ" lcid="0x085F" language="tzm-Latn" country="DZ" />
+    </lbaCulture>
+  </lbaCulture>
+
+  <!-- Uighur -->
+  <lbaCulture id="ug" lcid="0x0080" language="ug" ansiCodePage="1256" oemCodePage="720" tmLanguage="128" sqlLanguage="0" hubbleCultureName="ug-CN">    
+    <lbaCulture id="ug-CN" lcid="0x0480" country="CN" />
+  </lbaCulture>
+  <!-- Culture hack for WL -->
+  <lbaCulture id="ug-Arab" lcid="0x0080" language="ug-Arab" ansiCodePage="1256" oemCodePage="720" tmLanguage="128" sqlLanguage="0" hubbleCultureName="ug-CN" />
+
+  <!-- Ukrainian -->
+  <lbaCulture id="uk" lcid="0x0022" language="uk" ansiCodePage="1251" oemCodePage="866" tmLanguage="1058" hubbleCultureName="uk-UA" sqlLanguage="1058">
+    <lbaCulture id="uk-UA" lcid="0x0422" country="UA" />
+  </lbaCulture>
+
+  <!-- Urdu -->
+  <lbaCulture id="ur" lcid="0x0020" language="ur" ansiCodePage="1256" oemCodePage="720" tmLanguage="1056" hubbleCultureName="ur-PK" sqlLanguage="1056">
+    <lbaCulture id="ur-IN" lcid="0x0820" country="IN" />
+    <lbaCulture id="ur-PK" lcid="0x0420" country="PK" />
+  </lbaCulture>
+
+  <!-- Uzbek -->
+  <lbaCulture id="uz" lcid="0x0043" language="uz" ansiCodePage="1254" oemCodePage="857" tmLanguage="67" sqlLanguage="0">
+    <!-- Uzbek Cyrillic -->
+    <lbaCulture id="uz-Cyrl" lcid="0x7843" language="uz-Cyrl" ansiCodePage="1251" oemCodePage="855" tmLanguage="30787" sqlLanguage="0">
+      <lbaCulture id="uz-Cyrl-UZ" lcid="0x0843" language="uz-Cyrl" country="UZ" />
+      <lbaCulture id="uz-UZ-Cyrl" lcid="0x0843" language="uz-Cyrl" country="UZ" isoStandard="false" />
+    </lbaCulture>
+    <!-- Uzbek Latin -->
+    <!-- Culture hack for WL -->
+    <lbaCulture id="uz-Latn" lcid="0x0443" language="uz-Latn" ansiCodePage="1252" oemCodePage="850" tmLanguage="31811" hubbleCultureName="uz-Latn-UZ" sqlLanguage="0">
+      <lbaCulture id="uz-Latn-UZ" lcid="0x0443" language="uz-Latn" country="UZ" />
+      <lbaCulture id="uz-UZ-Latn" lcid="0x0443" language="uz-Latn" country="UZ" isoStandard="false" />
+    </lbaCulture>
+  </lbaCulture>
+
+  <!-- Venda South Africa -->
+  <lbaCulture id="ven" lcid="0x0433" language="ven" ansiCodePage="0" oemCodePage="1" tmLanguage="1075" sqlLanguage="0" isoStandard="false">
+    <lbaCulture id="ven-ZA" lcid="0x0433" country="ZA" isoStandard="true" />
+  </lbaCulture>
+
+  <!-- Vietnamese -->
+  <lbaCulture id="vi" lcid="0x002A" language="vi" ansiCodePage="1258" oemCodePage="1258" tmLanguage="1066" hubbleCultureName="vi-VN" sqlLanguage="1066">
+    <lbaCulture id="vi-VN" lcid="0x042A" country="VN" />
+  </lbaCulture>
+
+  <!-- Sorbian -->
+  <lbaCulture id="wen" lcid="0x002E" language="wen" ansiCodePage="1252" oemCodePage="850" tmLanguage="46" sqlLanguage="0">
+    <!-- Lower Sorbian (Germany) -->
+    <lbaCulture id="dsb-DE" lcid="0x082E" language="dsb" country="DE" />
+    <lbaCulture id="dsb" lcid="0x082E" language="dsb" country="DE" />
+    <!-- Upper Sorbian (Germany) -->
+    <lbaCulture id="wen-DE" lcid="0x042E" language="wen" country="DE" />
+    <lbaCulture id="hsb" lcid="0x042E" language="hsb" country="DE" />
+  </lbaCulture>
+
+  <!-- Wolof -->
+  <lbaCulture id="wo" lcid="0x0088" language="wo" ansiCodePage="1252" oemCodePage="850" tmLanguage="136" sqlLanguage="0" hubbleCultureName="wo-SN">
+    <lbaCulture id="wo-SN" lcid="0x0488" country="SN" />
+  </lbaCulture>
+
+  <!-- Yoruba -->
+  <lbaCulture id="yo" lcid="0x006A" language="yo" ansiCodePage="1252" oemCodePage="437" tmLanguage="106" sqlLanguage="0">
+    <lbaCulture id="yo-NG" lcid="0x046A" country="NG" />
+  </lbaCulture>
+  <!-- Culture hack for WL -->
+  <lbaCulture id="yo-Latn" lcid="0x046A" language="yo-Latn" ansiCodePage="1252" oemCodePage="437" tmLanguage="106" hubbleCultureName="yo-NG" sqlLanguage="0" />
+
+  <!-- isiXhosa -->
+  <lbaCulture id="xh" lcid="0x0034" language="xh" ansiCodePage="1252" oemCodePage="850" tmLanguage="52" hubbleCultureName="xh-ZA" sqlLanguage="0">
+    <lbaCulture id="xh-ZA" lcid="0x0434" country="ZA" />
+  </lbaCulture>
+
+  <!-- isiZulu -->
+  <lbaCulture id="zu" lcid="0x0035" language="zu" ansiCodePage="1252" oemCodePage="850" tmLanguage="53" hubbleCultureName="zu-ZA" sqlLanguage="0">
+    <lbaCulture id="zu-ZA" lcid="0x0435" country="ZA" />
+  </lbaCulture>
+
+  <!-- Chinese -->
+  <lbaCulture id="zh" lcid="0x0004" language="zh" ansiCodePage="950" oemCodePage="950" tmLanguage="2052" sqlLanguage="2052">
+    <!-- Chinese (Traditional) -->
+    <lbaCulture id="zh-Hant" lcid="0x7C04" language="zh-Hant" ansiCodePage="950" oemCodePage="950" mtLanguage="zh-cht" tmLanguage="1028" hubbleCultureName="zh-TW" sqlLanguage="1028">
+      <!-- Chinese (Traditional) -->
+      <lbaCulture id="zh-CHT" lcid="0x7C04" language="zh-CHT" ansiCodePage="950" oemCodePage="950" hubbleCultureName="zh-TW" isoStandard="false">
+        <!-- Chinese (Taiwan) -->
+        <lbaCulture id="zh-TW" lcid="0x0404" country="TW" mtLanguage="zh-cht" tmLanguage="1028" sqlLanguage="1028" />
+        <!-- Chinese (Hong Kong S.A.R.) -->
+        <lbaCulture id="zh-HK" lcid="0x0C04" country="HK" mtLanguage="" tmLanguage="3076" sqlLanguage="3076" />
+        <!-- Chinese (Macao S.A.R.) -->
+        <lbaCulture id="zh-MO" lcid="0x1404" country="MO" mtLanguage="" tmLanguage="5124" sqlLanguage="5124" />
+      </lbaCulture>
+    </lbaCulture>
+    <!-- Chinese (Simplified) -->
+    <lbaCulture id="zh-Hans" lcid="0x0004" language="zh-Hans" ansiCodePage="936" oemCodePage="936" hubbleCultureName="zh-CN" mtLanguage="zh-chs">
+      <!-- Chinese (Simplified) -->
+      <lbaCulture id="zh-CHS" lcid="0x0004" language="zh-CHS" ansiCodePage="936" oemCodePage="936" hubbleCultureName="zh-CN" mtLanguage="zh-chs" isoStandard="false">
+        <!-- Chinese (PRC) -->
+        <lbaCulture id="zh-CN" lcid="0x0804" country="CN" mtLanguage="zh-chs" tmLanguage="2052" sqlLanguage="2052" />
+        <!-- Chinese (Singapore) -->
+        <lbaCulture id="zh-SG" lcid="0x1004" country="SG" mtLanguage="" tmLanguage="4100" sqlLanguage="4100" />
+      </lbaCulture>
+    </lbaCulture>
+  </lbaCulture>
+
+  <!-- Neutral -->
+  <lbaCulture id="neu" lcid="0x0000" language="neu" ansiCodePage="1252" oemCodePage="437" tmLanguage="0" sqlLanguage="0" isoStandard="false" />
+
+  <!-- Neutral (Default) -->
+  <lbaCulture id="ned" lcid="0x0400" language="ned" ansiCodePage="1252" oemCodePage="437" tmLanguage="1024" sqlLanguage="0" />
+
+  <!-- Neutral (Sys. Default) -->
+  <lbaCulture id="nes" lcid="0x0800" language="nes" ansiCodePage="1252" oemCodePage="437" tmLanguage="2048" sqlLanguage="0" />
+
+</lbaCultureList>

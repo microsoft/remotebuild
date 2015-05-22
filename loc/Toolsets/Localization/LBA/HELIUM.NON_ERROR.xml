@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<non_error xmlns="http://msn.com/mlp">
+	<pattern value=".*Update is complete.*" />
+</non_error>

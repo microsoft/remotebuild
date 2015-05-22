@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceTypes>
+    <ResourceType Name="Accelerator" Style="Nested" />
+    <ResourceType Name="Bitmap" Style="Single" />
+    <ResourceType Name="Compiled Binary MOF" Style="Nested" />
+    <ResourceType Name="Cursor" Style="Single" />
+    <ResourceType Name="Dialog" Style="Nested" />
+    <ResourceType Name="Gif/Jpeg" Style="Single" />
+    <ResourceType Name="Icon" Style="Nested" />
+    <ResourceType Name="Menu" Style="Nested" />
+    <ResourceType Name="Message Table" Style="Nested" />
+    <ResourceType Name="String Table" Style="Single" />
+    <ResourceType Name="Version" Style="Nested" />
+    <ResourceType Name="HTML" Style="Embedded" ParserId="22" />
+    <ResourceType Name="XML" Style="Embedded" ParserId="210" />
+    <ResourceType Name="*" Style="Single" />  <!-- Use all others for single type -->
+</ResourceTypes>
