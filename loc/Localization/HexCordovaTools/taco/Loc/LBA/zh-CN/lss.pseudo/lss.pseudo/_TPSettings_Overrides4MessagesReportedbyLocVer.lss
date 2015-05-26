@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<LS_SETTINGS_FILE>
+	<LS_SETTINGS_DESCRIPTION>
+		<![CDATA[ TP LocVer Message Settings - turns off issuing of warnings for LocVer\Messages\Report Syntax Errors e.g. {0} appearing in dev comments
+
+			]]>
+	</LS_SETTINGS_DESCRIPTION>
+	<optionSet id="LSOptions">
+		<optionSet id="Defaults" displayName="Option Defaults">
+			<optionSet id="Espresso" displayName="Espresso"/>
+			<optionSet id="Parsers" displayName="Parsers"/>
+		</optionSet>
+
+		<optionSet id="User" displayName="User Overrides">
+			<optionSet id="Espresso" displayName="Espresso"/>
+			<optionSet id="Parsers" displayName="Parsers"/>
+		</optionSet>
+
+		<optionSet id="Project" displayName="Project Overrides">
+			<optionSet id="Espresso" displayName="Espresso">
+				<optionSet id="TranslationPlatform" displayName="Translation Platform" helpText="Settings for the Translation Platform">
+					<optionSet id="Localization Verification (LocVer) Settings" displayName="Localization Verification (LocVer) Settings" helpText="Use these settings to control how Localization Verification (LocVer) is handled.">
+						<optionSet id="Message Settings" displayName="Message Settings" helpText="Settings for messages reported by LocVer.">
+							<option id="\LocVer\Messages\Report Syntax Errors" displayName="Report Syntax Errors" helpText="Issue messages when LocVer encounters errors in the syntax of instructions.">
+								<boolean defaultValue="1" currentValue="0"/>
+							</option>
+						</optionSet>
+					</optionSet>
+				</optionSet>
+			</optionSet>
+			<optionSet id="Parsers" displayName="Parsers">
+			</optionSet>
+                </optionSet>
+	</optionSet>
+</LS_SETTINGS_FILE>
