@@ -16,6 +16,96 @@
           <Cmt Name="LcxAdmin"><![CDATA[{Locked="cordova"}]]></Cmt>
         </Cmts>
       </Item>
+      <Item ItemId=";ArchivePackError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unexpected error packing archive: {0}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";BuildFailedWithError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Build failed with error {0}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";BuildNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Build {0} does not exist]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";BuildRequestUnsupportedCommand" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The requested build command {0} is not supported by this build manager.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";BuildRequestUnsupportedConfiguration" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The requested build configuration {0} is not supported by this build manager. Only debug and release are supported.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";BuildRequestUnsupportedCordovaVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The build request for cordova version {0} is not supported by the iOS build server. The server is installed with cordova version {1}.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";DoneBuilding" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Done building {0}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";DownloadInvalid" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[One or both of expected build outputs {0} and {1} are missing on file system.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";EmulateFailedWithError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error from attempting to emulate: {0}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";ErrorBuilding" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Failed to build app for buildNumber {0}: {1}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
+        </Cmts>
+      </Item>
       <Item ItemId=";IOSSimNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[****** ios-sim is not installed on path. `sudo npm install -g ios-sim` if you want this server to support emulator.]]></Val>
@@ -23,6 +113,33 @@
         <Disp Icon="Str" />
         <Cmts>
           <Cmt Name="LcxAdmin"><![CDATA[{Locked="sudo npm install -g ios-sim"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";InvalidCordovaAppBadConfigXml" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The upload is not a valid Cordova Application. Error in parsing config.xml {0}.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";InvalidCordovaAppUnsupportedAppName" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unsupported iOS app name {0} in config.xml. Check for characters that are not Printable ASCII, or that match any of the following characters: {1}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";RequireCordovaFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: Failed to acquire cordova version {0}. {1}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
         </Cmts>
       </Item>
     </Item>

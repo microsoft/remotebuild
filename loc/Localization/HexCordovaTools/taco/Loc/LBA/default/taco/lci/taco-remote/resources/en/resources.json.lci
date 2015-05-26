@@ -7,6 +7,24 @@
     <Disp Icon="Expand" Expand="true" Disp="true" LocTbl="false" />
     <Item ItemId=";Strings" ItemType="0" PsrId="306" Leaf="false">
       <Disp Icon="Str" Disp="true" LocTbl="false" />
+      <Item ItemId=";BuildDirectoryNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Build directory {0} does not exist.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";BuildManagerDirInit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Build will be executed under: {0}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+      </Item>
       <Item ItemId=";BuildManagerInit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Initialized BuildManager with baseBuildDir %s; maxBuildsInQueue %d; deleteBuildsOnShutdown %s; allowsEmulate %s; nextBuildNumber %d]]></Val>
@@ -16,7 +34,34 @@
           <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="%s"} {Placeholder="%d"}]]></Cmt>
         </Cmts>
       </Item>
-      <Item ItemId=";BuildRetentionDelete" ItemType="0" PsrId="306" Leaf="true">
+      <Item ItemId=";BuildNotCompleted" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Requested build is not yet ready. Status: {0}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";BuildNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Build {0} does not exist]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";BuildQueueFull" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Build request rejected. The build queue is full. Limit is {0} queued builds.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";BuildRetentionDelete" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Deleting build %d from %s]]></Val>
         </Str>
@@ -43,16 +88,115 @@
           <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="%d"}]]></Cmt>
         </Cmts>
       </Item>
-      <Item ItemId=";HomebrewPackageVerificationFailed" ItemType="0" PsrId="306" Leaf="true">
+      <Item ItemId=";CordovaAcquisitionFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Failed to load cordova {0}: {1}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";ErrorSavingTgz" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[An error occurred in saving the uploaded tgz file to {0}: {1}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";ExceededMaxPings" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Exceeded max # of pings: {0}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";FailedCreateDirectory" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to create extract directory {0}: {1}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";HomebrewInstallationDeclined" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[If you want to enable deploying to devices or debugging apps on devices or the simulator, delete {0} to be asked again.]A;]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";HomebrewInstallationFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error installing homebrew packages:]A;{0}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";HomebrewPackageVerificationFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error verifying homebrew packages:]A;{0}]A;Consider "brew reinstall libimobiledevice ios-webkit-debug-proxy ideviceinstaller" and trying again.]]></Val>
         </Str>
         <Disp Icon="Str" />
         <Cmts>
-          <Cmt Name="LcxAdmin"><![CDATA[{Locked="brew reinstall libimobiledevice ios-webkit-debug-proxy ideviceinstaller"}]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="brew reinstall libimobiledevice ios-webkit-debug-proxy ideviceinstaller"} {Placeholder="{0}"}]]></Cmt>
         </Cmts>
       </Item>
-      <Item ItemId=";TacoRemoteHelp[0]" ItemType="0" PsrId="306" Leaf="true">
+      <Item ItemId=";LogFileReadError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error from reading build log file {0}:]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";NewBuildQueued" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A build is currently building. Queuing up {0}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";NewBuildStarted" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Taking {0} as current build]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";NoResourcesForLanguage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[No resources defined for language {0}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";NoTgzFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Build tgz file no longer exists on file system at {0}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";TacoRemoteHelp[0]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[taco-remote enables building Apache Cordova projects remotely.]]></Val>
         </Str>
@@ -61,7 +205,7 @@
           <Cmt Name="LcxAdmin"><![CDATA[{Locked="taco-remote"}]]></Cmt>
         </Cmts>
       </Item>
-      <Item ItemId=";TacoRemoteHelp[1]" ItemType="0" PsrId="306" Leaf="true">
+      <Item ItemId=";TacoRemoteHelp[1]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[More documentation for configuring taco remote build can be found at http://go.microsoft.com/fwlink/?LinkId=613345]]></Val>
         </Str>
@@ -70,13 +214,49 @@
           <Cmt Name="LcxAdmin"><![CDATA[{Locked="http://go.microsoft.com/fwlink/?LinkId=613345"}]]></Cmt>
         </Cmts>
       </Item>
-      <Item ItemId=";TacoRemoteHelp[3]" ItemType="0" PsrId="306" Leaf="true">
+      <Item ItemId=";TacoRemoteHelp[3]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Options that may be specified in the config file (under { 'modules': { 'taco-remote': { } } )]]></Val>
         </Str>
         <Disp Icon="Str" />
         <Cmts>
           <Cmt Name="LcxAdmin"><![CDATA[{Locked="{ \'modules\': { \'taco-remote\': { } }"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";TgzExtractError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[An error occurred in extracting contents from {0}: {1}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UploadExtractedSuccessfully" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Extracted app contents from uploaded build request to {0}. Requesting build.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UploadSavedSuccessfully" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Saved upload to {0}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UploadSaving" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Saving build request payload to : {0}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
         </Cmts>
       </Item>
     </Item>
