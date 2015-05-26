@@ -44,7 +44,7 @@ goto :EOF
 @echo  copy source files into LBA source folders
 
 rem tf get -r %INETROOT%\*.*
-robocopy /s "%SrcPath%" "%LBA_SDPATH%\default\%LBAProject%\locstudio.source" /XD test /XF *.ts /XF *.js /XF *.md /XF *.plist /XF *.ps1 /XF *.cmd /XF package.json /XF dynamicdependencies.json /XF tacokitmetadata.json /XF commands.json /XF taco /XF remotebuild /XF build_config.json /XF exampleConfig.json
+robocopy /s "%SrcPath%" "%LBA_SDPATH%\default\%LBAProject%\locstudio.source" *.json /XD test /XF package.json /XF dynamicdependencies.json /XF tacokitmetadata.json /XF commands.json /XF build_config.json /XF exampleConfig.json
 
 goto :EOF
 
