@@ -7,6 +7,6 @@ for /f %%l in ('dir /b %LOCDROP%') do (
     if "!bl!" == "zh" (set cl=!al!) else (set cl=!bl!)
 
     for /f %%p in ('dir /b %LOCDROP%\%%l') do (
-     	robocopy %LOCDROP%\%%l\%%p\resources\en\ %TACO_ROOT%\src\%%p\resources\!cl!\
+     	robocopy %LOCDROP%\%%l\%%p\resources\en\ %TACO_ROOT%\build\packages\node_modules\%%p\resources\!cl!\
     )
 )

@@ -13,6 +13,7 @@ For /f "tokens=1-3 delims=/: " %%a in ('time /t') do (set mytime=%%a%%b%%c)
 set BuildNumber=%mydate%.%mytime%
 
 
+rem Compute INETROOT = full path to one folder above where this file is
 for %%A in ("%~dp0..") do set INETROOT=%%~fA
 
 rem Modified these and serverdrop path:
@@ -44,7 +45,8 @@ goto :EOF
 @echo  copy source files into LBA source folders
 
 rem tf get -r %INETROOT%\*.*
-robocopy /s "%SrcPath%" "%LBA_SDPATH%\default\%LBAProject%\locstudio.source" *.json /XD test /XF package.json /XF dynamicdependencies.json /XF tacokitmetadata.json /XF commands.json /XF build_config.json /XF exampleConfig.json
+set ROBOCOPYFILTER=resources.json /XD test
+robocopy /s "%SrcPath%" "%LBA_SDPATH%\default\%LBAProject%\locstudio.source" %ROBOCOPYFILTER%
 
 goto :EOF
 
