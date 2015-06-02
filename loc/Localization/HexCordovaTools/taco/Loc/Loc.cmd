@@ -18,7 +18,7 @@ for %%A in ("%~dp0..") do set INETROOT=%%~fA
 
 rem Modified these and serverdrop path:
 set LBAProject=taco
-set SrcPath=%TACO_ROOT%\src
+set SrcPath=%INETROOT%\..\..\..\..\taco\src
 
 if "%1" == "SERVERDROP" (
 rem change this to the drop folder

@@ -2,20 +2,21 @@
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
   <PropertyGroup>
-    <StartupFile>$(TACO_ROOT)\build\packages\node_modules\$(MSBuildProjectName)\$(StartupModule)</StartupFile>
+    <StartupFile>$(MSBuildThisFileDirectory)\..\taco\build\packages\node_modules\$(MSBuildProjectName)\$(StartupModule)</StartupFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
 
   <!--Enables Build Project scenario  in VS-->
   <Target Name="Build" >
-    <Exec Command="gulp prep" WorkingDirectory="$(GulpRoot)" />
-    <Exec Command="gulp --moduleFilter $(MSBuildProjectName)" WorkingDirectory="$(GulpRoot)" />
+    <Exec Command="npm install gulp" WorkingDirectory="$(GulpRoot)" />
+    <Exec Command="$(GulpRoot)\..\node_modules\.bin\gulp.cmd prep" WorkingDirectory="$(GulpRoot)" />
+    <Exec Command="$(GulpRoot)\..\node_modules\.bin\gulp.cmd --moduleFilter $(MSBuildProjectName)" WorkingDirectory="$(GulpRoot)" />
   </Target>
 
   <!--Enables Clean Project scenario  in VS-->
   <Target Name="Clean">
-    <Exec Command="gulp clean --moduleFilter $(MSBuildProjectName)" WorkingDirectory="$(GulpRoot)" />
+    <Exec Command="$(GulpRoot)\..\node_modules\.bin\gulp.cmd clean --moduleFilter $(MSBuildProjectName)" WorkingDirectory="$(GulpRoot)" />
   </Target>
 
   <!--Enables Rebuild Project scenario in VS -->

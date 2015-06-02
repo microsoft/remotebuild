@@ -1,0 +1,12 @@
+<?xml version="1.0", encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <FilesToLocalize Include="$(MSBuildThisFileDirectory)..\taco\src\remotebuild\resources\en\resources.json">
+      <Languages>$(VS)</Languages>
+      <ProjectFile>$(MSBuildThisFileFullPath)</ProjectFile>
+      <SettingsFile>$(LSBuildRoot)\CommentAndUI_SourceEncoding.lss</SettingsFile>
+      <LciCommentFile>$(MSBuildThisFileDirectory)..\loc\Localization\HexCordovaTools\taco\Loc\LBA\default\taco\lci\remotebuild\resources\en\resources.json.lci</LciCommentFile>
+      <!-- TranslationFile>$(MSBuildThisFileDirectory)..\loc\Localization\HexCordovaTools\taco\Loc\LBA\default\taco\lcl\{Lang}\remotebuild\resources\en\resources.json.lcl</TranslationFile -->
+    </FilesToLocalize>
+  </ItemGroup>
+</Project>

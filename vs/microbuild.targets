@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup>
+    <GulpRoot>$(MSBuildThisFileDirectory)\..\taco\</GulpRoot>
+  </PropertyGroup>
+
+  <!--Enables Build Project scenario  in VS-->
+  <Target Name="Build" >
+    <Exec Command="npm install gulp" WorkingDirectory="$(GulpRoot)" />
+    <Exec Command="$(GulpRoot)\node_modules\.bin\gulp.cmd prep" WorkingDirectory="$(GulpRoot)\src" />
+    <Exec Command="$(GulpRoot)\node_modules\.bin\gulp.cmd build" WorkingDirectory="$(GulpRoot)\src" />
+  </Target>
+
+  <!--Enables Clean Project scenario  in VS-->
+  <Target Name="Clean">
+    <Exec Command="$(GulpRoot)\node_modules\.bin\gulp.cmd clean" WorkingDirectory="$(GulpRoot)\src" />
+  </Target>
+
+  <!--Enables Rebuild Project scenario in VS -->
+  <Target Name="Rebuild" DependsOnTargets="Clean;Build" />
+
+</Project>

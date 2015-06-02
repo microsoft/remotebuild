@@ -1,0 +1,72 @@
+﻿{
+    "create": {
+        "synopsis": "<PATH> [ID [NAME [CONFIG]]] [options]",
+        "modulePath": "./create",
+        "description": "[CommandCreateDescription]",
+        "args": [
+            { "name": "PATH", "description": "[CommandCreateArgsPath]" },
+            { "name": "ID", "description": "[CommandCreateArgsId]" },
+            { "name": "NAME", "description": "[CommandCreateArgsName]" },
+            { "name": "CONFIG", "description": "[CommandCreateArgsConfig]" }
+        ],
+        "options": [
+            { "name": "--kit <NAME>", "description": "[CommandCreateOptionsKit]" },
+            { "name": "--template <NAME>", "description": "[CommandCreateOptionsTemplate]" },
+            { "name": "--cli <VERSION>", "description": "[CommandCreateOptionsCli]" },
+            { "name": "--copy-from|src <PATH>", "description": "[CommandCreateOptionsCopy]" },
+            { "name": "--link-to <PATH>", "description": "[CommandCreateOptionsLinkto]" },
+            { "name": "--list", "description": "[CommandCreateOptionsList]" }
+        ]
+    },
+    "help": {
+        "synopsis": "[COMMAND]",
+        "modulePath": "./help",
+        "description": "[CommandHelpDescription]"
+    },
+    "setup": {
+        "synopsis": "remote [PLATFORM]",
+        "modulePath": "./setup",
+        "description": "[CommandSetupDescription]",
+        "args": [
+            { "name": "PLATFORM", "description": "[CommandSetupOptionsPlatform]" }
+        ]
+    },
+    "build": {
+        "synopsis": "[PLATFORM] [--remote | --local] [--clean] [--debug | -- release] [--device | --emulator | --target=TARGET]",
+        "modulePath": "./build",
+        "description": "[CommandBuildDescription]",
+        "args": [
+            { "name": "PLATFORM", "description": "[CommandBuildPlatformDescription]" },
+            { "name": "--remote", "description": "[CommandBuildRemoteDescription]" },
+            { "name": "--local", "description": "[CommandBuildLocalDescription]" },
+            { "name": "--clean", "description": "[CommandBuildCleanDescription]" },
+            { "name": "--debug", "description": "[CommandBuildDebugDescription]" },
+            { "name": "--release", "description": "[CommandBuildReleaseDescription]" },
+            { "name": "--device", "description": "[CommandBuildDeviceDescription]" },
+            { "name": "--emulator", "description": "[CommandBuildEmulatorDescription]" },
+            { "name": "--target", "description": "[CommandBuildTargetDescription]" }
+        ]
+    },
+    "run": {
+        "synopsis": "[PLATFORM] [--debuginfo] [--remote | --local] [--nobuild] [--debug | -- release] [--device | --emulator | --target=TARGET]",
+        "modulePath": "./run",
+        "description": "[CommandRunDescription]",
+        "args": [
+            { "name": "PLATFORM", "description": "[CommandRunPlatformDescription]" },
+            { "name": "--remote", "description": "[CommandRunRemoteDescription]" },
+            { "name": "--local", "description": "[CommandRunLocalDescription]" },
+            { "name": "--nobuild", "description": "[CommandRunNobuildDescription]" },
+            { "name": "--debuginfo", "description": "[CommandRunDebuginfoDescription]" },
+            { "name": "--debug", "description": "[CommandRunDebugDescription]" },
+            { "name": "--release", "description": "[CommandRunReleaseDescription]" },
+            { "name": "--device", "description": "[CommandRunDeviceDescription]" },
+            { "name": "--emulator", "description": "[CommandRunEmulatorDescription]" },
+            { "name": "--target", "description": "[CommandRunTargetDescription]" }
+        ]
+    },
+    "version": {
+        "synopsis": "",
+        "modulePath": "./version",
+        "description": "[CommandVersionDescription]"
+    }
+  }

@@ -2,14 +2,14 @@
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectGuid>{c738a1c0-721e-4123-8863-267d7290ed05}</ProjectGuid>
-    <ProjectHome>$(TACO_ROOT)\src\$(MSBuildProjectName)</ProjectHome>
+    <ProjectHome>$(MSBuildThisFileDirectory)\..\..\taco\src\$(MSBuildProjectName)</ProjectHome>
   </PropertyGroup>
 
   <Import Project="taco.targets" />
 
   <ItemGroup>
     <Content Include="$(ProjectHome)\**\*.*" />
-    <Content Include="$(TACO_ROOT)\src\typings\**\*.*">
+    <Content Include="$(MSBuildThisFileDirectory)\..\taco\src\typings\**\*.*">
       <Link>typings\(Filename)%(Extension)</Link>
     </Content>
   </ItemGroup>
