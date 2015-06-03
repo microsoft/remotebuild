@@ -5,10 +5,10 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{32308FD8-795E-4DC6-98A1-821EB3775641}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ConsoleApplication1</RootNamespace>
-    <AssemblyName>ConsoleApplication1</AssemblyName>
+    <RootNamespace>LocalizableItems</RootNamespace>
+    <AssemblyName>LocalizableItems</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -32,28 +32,29 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="LocalizableItems\Properties\AssemblyInfo.cs" />
     <Content Include="..\taco\src\remotebuild\resources\en\resources.json" >
-      <Link>remotebuild\resources\en\resources.json</Link>
+      <Link>packages\node_modules\remotebuild\resources\en\resources.json</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="..\taco\src\taco-cli\resources\en\resources.json" >
-      <Link>taco-cli\resources\en\resources.json</Link>
+      <Link>packages\node_modules\taco-cli\resources\en\resources.json</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="..\taco\src\taco-remote\resources\en\resources.json" >
-      <Link>taco-remote\resources\en\resources.json</Link>
+      <Link>packages\node_modules\taco-remote\resources\en\resources.json</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="..\taco\src\taco-remote-lib\resources\en\resources.json" >
-      <Link>taco-remote-lib\resources\en\resources.json</Link>
+      <Link>packages\node_modules\taco-remote-lib\resources\en\resources.json</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="..\taco\src\taco-utils\resources\en\resources.json" >
-      <Link>taco-utils\resources\en\resources.json</Link>
+      <Link>packages\node_modules\taco-utils\resources\en\resources.json</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="..\taco\src\taco-kits\resources\en\resources.json" >
-      <Link>taco-kits\resources\en\resources.json</Link>
+      <Link>packages\node_modules\taco-kits\resources\en\resources.json</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
 

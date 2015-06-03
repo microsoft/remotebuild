@@ -5,8 +5,8 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "microbuild", "microbuild.njsproj", "{B28C65D0-85A6-48BA-9909-5D4C8498B964}"
 EndProject
-#Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalizableItems", "LocalizableItems.csproj", "{32308FD8-795E-4DC6-98A1-821EB3775641}"
-#EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalizableItems", "LocalizableItems.csproj", "{32308FD8-795E-4DC6-98A1-821EB3775641}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

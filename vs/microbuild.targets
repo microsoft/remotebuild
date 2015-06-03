@@ -5,12 +5,21 @@
   <PropertyGroup>
     <GulpRoot>$(MSBuildThisFileDirectory)\..\taco\</GulpRoot>
   </PropertyGroup>
-
+  
   <!--Enables Build Project scenario  in VS-->
   <Target Name="Build" >
+    <Message Text="Installing gulp"/>
     <Exec Command="npm install gulp" WorkingDirectory="$(GulpRoot)" />
+    <Message Text="Building project" />
     <Exec Command="$(GulpRoot)\node_modules\.bin\gulp.cmd prep" WorkingDirectory="$(GulpRoot)\src" />
-    <Exec Command="$(GulpRoot)\node_modules\.bin\gulp.cmd build" WorkingDirectory="$(GulpRoot)\src" />
+    <MakeDir Directories="$(TF_BUILD_DROPLOCATION)\packages\"/>
+    <Exec Command="$(GulpRoot)\node_modules\.bin\gulp.cmd build --drop=$(TF_BUILD_DROPLOCATION)\packages\" WorkingDirectory="$(GulpRoot)\src" />
+    <ItemGroup>
+      <BuildPackages Include="$(MSBuildThisFileDirectory)\..\taco\build\packages\**\*" />
+    </ItemGroup>
+    <Message Text="Copying sources to bin folder" />
+    <Copy SourceFiles="@(BuildPackages)" DestinationFiles="@(BuildPackages->'$(TF_BUILD_BINARIESDIRECTORY)\packages\%(RecursiveDir)%(Filename)%(Extension)')"/>
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)updateDynamicDependencies.sh" DestinationFolder="$(TF_BUILD_BINARIESDIRECTORY)\packages\node_modules"/>
   </Target>
 
   <!--Enables Clean Project scenario  in VS-->
