@@ -1,0 +1,731 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LCX SchemaVersion="6.0" Name="resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="pl-PL" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
+  <Props>
+    <Str Name="CustomName1" Val="Custom 1" />
+    <Str Name="CustomName2" Val="Custom 2" />
+    <Str Name="CustomName3" Val="Custom 3" />
+    <Str Name="CustomName4" Val="Custom 4" />
+    <Str Name="CustomName5" Val="Custom 5" />
+    <Str Name="CustomName6" Val="IQA" />
+    <Str Name="HobbitID" Val="1316f51d-8d82-4ae2-8787-cea0c84ae271" />
+  </Props>
+  <OwnedComments>
+    <Cmt Name="Dev" />
+    <Cmt Name="LcxAdmin" />
+    <Cmt Name="Note" />
+    <Cmt Name="Rccx" />
+  </OwnedComments>
+  <Settings Name="@vsLocTools@\current\default.lss" Type="LSS" />
+  <Item ItemId=";String Table" ItemType="0" PsrId="306" Leaf="false">
+    <Disp Icon="Expand" Expand="true" Disp="true" LocTbl="false" />
+    <Modified By="XPMUser" DateTime="2015-05-29T20:06:33Z" />
+    <Item ItemId=";Strings" ItemType="0" PsrId="306" Leaf="false">
+      <Disp Icon="Str" Disp="true" LocTbl="false" />
+      <Modified By="XPMUser" DateTime="2015-05-29T20:06:33Z" />
+      <Item ItemId=";AcquiringCordova" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Acquiring cordova.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[Pobieranie oprogramowania Cordova.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:08Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Status message returned when downloading and installing the requested version of cordova]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="cordova"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";ArchivePackError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unexpected error packing archive: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[Wystąpił nieoczekiwany błąd podczas pakowania archiwum: {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:08Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Error reported to console and back to the client when packing a zip file fails. {0} is the error]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";BuildFailedUnexpectedly" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Build failed unexpectedly]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[Wystąpił nieoczekiwany błąd kompilacji]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:08Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message reported when a build fails and we don't know the reason]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";BuildFailedWithError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Build failed with error {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[Niepowodzenie kompilacji — błąd {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:07Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it queried for the build status and the build failed due to an error from Cordova/XCode build operations. NOTE the {0} is from Cordova/XCode and will likely not be localized]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";BuildInvokedTwice" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Invalid request: build.js process already in use but was asked to build again. This is likely a programming error as a build.js process is meant to be used only once.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[Nieprawidłowe żądanie: proces build.js jest już w użyciu, ale poproszono o ponowną kompilację. Prawdopodobną przyczyną jest błąd programowania, ponieważ proces build.js jest przeznaczony do jednokrotnego użytku.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:08Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message when multiple builds are invoked at the same time.]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";BuildNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Build {0} does not exist]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[Kompilacja {0} nie istnieje]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:08Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio or user when it queries for a build but the build no longer exists, for example an old build that has been deleted. {0} is the build number]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";BuildRequestMissingCordovaVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A cordova version must be specified on the build request.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[W żądaniu kompilacji musi być określona wersja oprogramowania Cordova.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:07Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio if the build request does not specify the version of Cordova to build with]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";BuildRequestUnsupportedCommand" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The requested build command {0} is not supported by this build manager.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[Żądane polecenie kompilacji {0} nie jest obsługiwane przez tego menedżera kompilacji.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:07Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio if the build server does not support the build command specified in the build request (only build and emulate are currently supported)]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";BuildRequestUnsupportedConfiguration" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The requested build configuration {0} is not supported by this build manager. Only debug and release are supported.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[Żądana konfiguracja kompilacji {0} nie jest obsługiwana przez tego menedżera kompilacji. Obsługiwane jest tylko debugowanie i wydanie.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:07Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio if the build server does not support the build configuration specified in the build request]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";BuildRequestUnsupportedCordovaVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The build request for cordova version {0} is not supported by the iOS build server. The server is installed with cordova version {1}.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[Żądanie kompilacji dla wersji oprogramowania Cordova {0} nie jest obsługiwane przez serwer kompilacji z systemem iOS. Serwer został zainstalowany z następującą wersją oprogramowania Cordova: {1}.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:07Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio if the build server does not support the version of Cordova specified in the build request]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";CopyingNativeOverrides" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Copying native overrides.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[Kopiowanie natywnych przesłonięć.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:08Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Status message returned when copying data from /res/native]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";CordovaCompiling" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Compiling.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[Kompilowanie.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:07Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Status message returned when doing 'cordova compile ios']]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";DebugSuccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Successfully Debugging on the device]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[Debugowanie na urządzeniu zakończone pomyślnie]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:07Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it requests the build server to debug a build and the attempt is successful (the debugger is running)]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";DeviceLaunchTimeout" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Timeout: Is the device locked?]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[Limit czasu: czy urządzenie jest zablokowane?]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:08Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message reported when attempting to launch an application takes too long.]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";DoneBuilding" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Done building {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[Zakończono kompilowanie {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:08Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message logged when a build is completed successfully. {0} is the build number]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";DownloadInvalid" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[One or both of expected build outputs {0} and {1} are missing on file system.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[Brak co najmniej jednego z plików wyjściowych kompilacji {0} i {1} w systemie plików.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:08Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message reported to the user and to the console if the expected files to download are not present. {0} and {1} are paths to files]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";EmulateFailedWithError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error from attempting to emulate: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[Błąd podczas próby emulowania: {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:07Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it requests the build server to emulate a build and the emulation attempt fails with error]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";EmulateSuccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Successfully sent to ios Simulator]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[Wysyłanie do symulatora systemu iOS zakończone pomyślnie]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:07Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it requests the build server to emulate a build and the emulation attempt is successful (the application is now visibile on the build server)]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";ErrorBuilding" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Failed to build app for buildNumber {0}: {1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[Nie można skompilować aplikacji dla kompilacji o numerze {0}: {1}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:08Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message logged when a build fails. {0} is the build number and {1} is the error message]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";ErrorMountingDiskImage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error mounting developer disk image]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[Wystąpił błąd podczas instalowania obrazu dysku dewelopera]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:08Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message reported when mounting a disk image fails for an unknown reason]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";ErrorXcconfigDirNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Directory for build.xcconfig does not exist.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[Katalog pliku build.xcconfig nie istnieje.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:08Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message logged when we can't find the directory that build.xcconfig ]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";FailedFindDeveloperDiskImage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to find Developer Disk Image]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[Nie można odnaleźć obrazu dysku dewelopera]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:08Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message reported when we are unable to locate an appropriate developer disk image for the iOS device]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";FailedGetDeviceInfo" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to read device version, is it plugged in and turned on?]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[Nie można odczytać wersji urządzenia. Czy zostało ono podłączone i włączone?]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:08Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message reported when we are unable to find the version of the iOS device]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";IOSSimNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[****** ios-sim is not installed on path. `sudo npm install -g ios-sim` if you want this server to support emulator.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[****** Składnik ios-sim nie jest zainstalowany w ścieżce. Użyj polecenia „sudo npm install -g ios-sim”, aby włączyć obsługę emulatora na tym serwerze.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:08Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed when ]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="sudo npm install -g ios-sim"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";InstallFailNoDevice" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to find attached device; is it plugged in and unlocked?]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[Nie można znaleźć dołączonego urządzenia; czy zostało ono podłączone i odblokowane?]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:07Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to visual studio when a deploy fails because there is no iOS device attached to the remote machine]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";InstallSuccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Successfully installed on the device]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[Pomyślnie zainstalowano na urządzeniu]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:07Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it requests the build server to install a build and the installation attempt is successful (the application is now visibile on the device)]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";InvalidCordovaAppBadConfigXml" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The upload is not a valid Cordova Application. Error in parsing config.xml {0}.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[Przekazany program nie jest prawidłową aplikacją oprogramowania Cordova. Błąd podczas analizowania pliku config.xml {0}.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:07Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it queried for the build status and the build failed due to the error with config.xml application file]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";InvalidCordovaAppMissingConfigXml" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The upload is not a valid Cordova Application. It is missing config.xml in top level directory.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[Przekazany program nie jest prawidłową aplikacją oprogramowania Cordova. Brak pliku config.xml w katalogu najwyższego poziomu.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:07Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it queried for the build status and the build failed due to the error with config.xml application file]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";InvalidCordovaAppMissingWww" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The upload is not a valid Cordova Application. It is missing www directory in top level directory.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[Przekazany program nie jest prawidłową aplikacją oprogramowania Cordova. Brak katalogu www w katalogu najwyższego poziomu.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:07Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it queried for the build status and the build failed due to the error with www application directory]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";InvalidCordovaAppUnsupportedAppName" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unsupported iOS app name {0} in config.xml. Check for characters that are not Printable ASCII, or that match any of the following characters: {1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[Nieobsługiwana nazwa aplikacji systemu iOS {0} w pliku config.xml. Sprawdź, czy zawiera ona znaki inne niż drukowalne znaki ASCII lub dowolne spośród poniższych znaków: {1}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:07Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it queried for the build status and the build failed due to the error with config.xml application file]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";NoCordovaVersionSpecified" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[No cordova version specified!]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[Nie określono wersji oprogramowania Cordova!]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:08Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Error reported when trying to build without any version specified]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";NoDeviceAttached" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[No device found, is it plugged in and turned on?]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[Nie znaleziono urządzenia. Czy zostało ono podłączone i włączone?]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:08Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message reported when mounting a disk image fails because it cannot find a device]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";PackageNotInstalled" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to launch app, it is not installed.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[Nie można uruchomić aplikacji, ponieważ nie jest zainstalowana.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:08Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message reported when attempting to launch an application which is not installed]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";PackagingNativeApp" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Packaging app.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[Pakowanie aplikacji.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:08Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Status message returned when packaging the app for a device build]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";ProvisioningFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Installation failed: Check your provisioning profile]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[Instalacja zakończyła się niepowodzeniem: sprawdź swój profil inicjowania obsługi administracyjnej]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:07Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio or user when it attempts to install an app on a device without an appropriate provisioning profile]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";RequireCordovaFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: Failed to acquire cordova version {0}. {1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[Błąd: Nie można pobrać wersji oprogramowania Cordova {0}. {1}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:08Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Error message reported when a build fails to install the requested cordova version. {0} is the cordova version, and {1} is the error]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";RunSuccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Successfully ran on the device]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[Uruchamianie na urządzeniu zakończyło się pomyślnie]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:07Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it requests the build server to run a build and the attempt is successful (the application is running on the device)]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";UnableToDebug" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to start debug bridge]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[Nie można uruchomić mostka debugowania]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:08Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message reported if we are unable to start ios_webkit_debug_proxy to enable debugging]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";UnableToLaunchApp" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to launch app]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[Nie można uruchomić aplikacji]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:08Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message reported when attempting to launch an application and an unknown failure occurrs]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";UnsupportedPlatform" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to build: requested platform not supported]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[Nie można skompilować: żądana platforma nie jest obsługiwana ]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:08Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message reported to the client when a request for an unsupported platform is made]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";UpdatingIOSPlatform" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Updating iOS platform.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[Aktualizowanie platformy iOS.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:08Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Status message returned when doing a 'cordova platform add ios' or 'cordova prepare ios']]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+      <Item ItemId=";WrongInstalledAppsFile" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Output file not as expected]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[Plik wyjściowy niezgodny z oczekiwaniami]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="dawidch" DateTime="2015-06-01T10:16:08Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message reported if we get unexpected output when reading the list of installed apps]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom4" Val="LS83" />
+        </Props>
+      </Item>
+    </Item>
+  </Item>
+</LCX>

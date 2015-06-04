@@ -1,0 +1,1051 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LCX SchemaVersion="6.0" Name="resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="ru-RU" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
+  <Props>
+    <Str Name="CustomName1" Val="Custom 1" />
+    <Str Name="CustomName2" Val="Custom 2" />
+    <Str Name="CustomName3" Val="Custom 3" />
+    <Str Name="CustomName4" Val="Custom 4" />
+    <Str Name="CustomName5" Val="Custom 5" />
+    <Str Name="CustomName6" Val="IQA" />
+    <Str Name="HobbitID" Val="670b1b3f-ce13-4273-b0ef-fc210964d0fe" />
+  </Props>
+  <OwnedComments>
+    <Cmt Name="Dev" />
+    <Cmt Name="LcxAdmin" />
+    <Cmt Name="Note" />
+    <Cmt Name="Rccx" />
+  </OwnedComments>
+  <Settings Name="@vsLocTools@\current\default.lss" Type="LSS" />
+  <Item ItemId=";String Table" ItemType="0" PsrId="306" Leaf="false">
+    <Disp Icon="Expand" Expand="true" Disp="true" LocTbl="false" />
+    <Modified By="SUR" DateTime="2015-05-31T08:14:25Z" />
+    <Item ItemId=";Strings" ItemType="0" PsrId="306" Leaf="false">
+      <Disp Icon="Str" Disp="true" LocTbl="false" />
+      <Modified By="SUR" DateTime="2015-05-31T08:14:25Z" />
+      <Item ItemId=";CAFilesNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[One or both of required CA files {0} and {1} not found.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[Не удалось найти один или оба требуемых файла ЦС {0} и {1}.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="s_kaitmazov" DateTime="2015-06-01T11:56:46Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed to console when certificate files cannot be found. {0} and {1} are the files checked for certificates]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";CertExpirationInvalid" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[certExpirationdays {0} would result in expired certs. Default cert expiration {1} days will be used instead.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[Значение certExpirationdays {0} приведет к истечению срока действия сертификатов. Вместо этого будет использован срок действия сертификатов по умолчанию ({1} дн.).]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="s_kaitmazov" DateTime="2015-06-01T11:56:46Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[message printed to console when the user-configurable value certExpirationDays is invalid. {0} is the user-supplied value, and {1} is the value we are defaulting to]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="certExpirationdays"} {Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";CertificatesNotConfigured" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: Certificates not yet initialized!]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[Ошибка. Сертификаты еще не инициализированы.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="s_kaitmazov" DateTime="2015-06-01T11:56:46Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Error returned when certificates are accessed before initialization.]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";ClientCertNotFoundForPIN" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Client certificate not found for PIN]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[Не удалось найти сертификат клиента для ПИН-кода]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T12:57:43Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio if a PIN is submitted to for which no valid client SSL certificate is found]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";IndexPageContent" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Remote build Express server open for business on port {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Сервер удаленной сборки Express Server готов к работе через порт {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="s_kaitmazov" DateTime="2015-06-01T11:56:46Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back in any request for index page of build server]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";InsecureServerStarted" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Remote build server listening on [http]5D; port %d]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[Сервер удаленной сборки ожидает передачи данных от порта %d [http]5D;]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T12:57:43Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed when the server is started in non-secure mode. %d is the port number]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="%d"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";InvalidPIN" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Invalid PIN in request]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[Недопустимый ПИН-код в запросе]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T12:57:43Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio if an invalid PIN is submitted to download client SSL certificate]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";NoResourcesForLanguage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[No resources defined for language {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[Нет ресурсов, определенных для языка {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T12:57:43Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back in browser if user requests resources for a language that does not have specfic resources]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";NoServerModulesSelected" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Warning: No server modules selected. Defaulting to configuration "modules": {"taco-remote": { "mountPath": "cordova"} }]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[Предупреждение. Серверные модули не выбраны. По умолчанию используется конфигурация "modules": {"taco-remote": { "mountPath": "cordova"} }]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T08:23:11Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Warning printed to console when the configuration does not specify what server modules to load]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="\"modules\": {\"taco-remote\": { \"mountPath\": \"cordova\"} }"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";OSXCertSetupInformation[0]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Use the following information in Visual Studio under Tools, Options, Tools for Apache Cordova, Remote Agent Configuration to use this agent:]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[Используйте следующую информацию в Visual Studio в разделе "Сервис", "Параметры", "Инструменты для Apache Cordova", "Конфигурация удаленного агента" для использования этого агента:]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T08:23:11Z" />
+      </Item>
+      <Item ItemId=";OSXCertSetupInformation[10]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Port: {1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[Порт: {1}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T08:23:11Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{1}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";OSXCertSetupInformation[11]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[PIN: {2}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[ПИН-код: {2}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T08:27:13Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{2}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";OSXCertSetupInformation[2]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Enable remote iOS processing: True]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[Включить удаленную обработку iOS: True]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T08:27:13Z" />
+      </Item>
+      <Item ItemId=";OSXCertSetupInformation[3]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Host: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[Узел: {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T08:27:13Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";OSXCertSetupInformation[4]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Port: {1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[Порт: {1}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T08:27:13Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{1}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";OSXCertSetupInformation[5]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Secure mode: True]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[Безопасный режим: True]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T08:27:13Z" />
+      </Item>
+      <Item ItemId=";OSXCertSetupInformation[6]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Security PIN: {2}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[ПИН-код безопасности: {2}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T08:27:13Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{2}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";OSXCertSetupInformation[8]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Alternately, use 'taco setup remote <platform>' to configure the taco CLI to use this build server for the chosen platform, specifying]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[При необходимости используйте команду "taco setup remote <platform>", чтобы настроить интерфейс CLI taco для использования этого сервера сборки для выбранной платформы, указав]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T08:29:55Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="taco setup remote"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";OSXCertSetupInformation[9]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Host: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[Узел: {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T08:29:55Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";OSXCertSetupNoPinTimeout" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The security PIN is for one-time use. To generate additional PINs, use the following command:]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[ПИН-код безопасности предназначен для однократного использования. Чтобы создать дополнительные ПИН-коды, используйте следующую команду:]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T08:33:48Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed to console explaining how to generate new PINs. The following line is a console command to generate the certificates]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";OSXCertSetupPinTimeout" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The security PIN is for one-time use and expires in {0} minutes. To generate additional PINs, use the following command:]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[ПИН-код безопасности предназначен для однократного использования. Срок его действия истечет через {0} мин. Чтобы создать дополнительные ПИН-коды, используйте следующую команду:]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T08:33:48Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed to console explaining how to generate new PINs. {0} is the number of minutes that the PIN lasts for. The following line is a console command to generate the certificates]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";OSXResetServerCertPleaseYesNo" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Please answer [Y]5D;es or [N]5D;o.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[Ответьте "да" (Y) или "нет" (N).]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T08:33:48Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Query after user enters an option which is not recognised]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";OSXResetServerCertQuery" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Warning: This command deletes all current client certificates. You will need to generate and configure a new security PIN. Do you want to continue? [Y]5D;es or [N]5D;o]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[Предупреждение. Эта команда удаляет все текущие сертификаты клиентов. Вам потребуется создать и настроить новый ПИН-код безопасности. Продолжить? Да (Y) или нет (N)]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T08:38:07Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed when user invokes resetServerCert command asking if they are sure]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";OSXResetServerCertResponseNo[0]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[n]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[n]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T12:57:43Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";OSXResetServerCertResponseNo[1]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[no]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[нет]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T12:57:43Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";OSXResetServerCertResponseYes[0]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[y]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[y]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T12:57:43Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";OSXResetServerCertResponseYes[1]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[yes]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[да]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T12:57:43Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";RemoteBuildConfCertExpirationDays" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Number of days after which the generated SSL certificates will expire (defaults to 5 years if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[Срок действия созданных SSL-сертификатов в днях (если не указан, значение по умолчанию — 5 лет)]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="s_kaitmazov" DateTime="2015-06-01T11:56:46Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Help message printed for the --certExpirationDays argument]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";RemoteBuildConfConfig" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Path to server configuration json file with any of these settings (defaults to $TACO_HOME/RemoteBuild.config if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[Путь к файлу конфигурации сервера JSON с любыми из этих параметров (если не указан, путь по умолчанию — $TACO_HOME/RemoteBuild.config)]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="s_kaitmazov" DateTime="2015-06-01T11:56:46Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Help message printed for the --config argument]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="$TACO_HOME/RemoteBuild.config"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";RemoteBuildConfHostname" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Hostname to generate certificates for in secure mode (defaults to os.hostname())]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[Имя узла, для которого создаются сертификаты в безопасном режиме (имя по умолчанию — os.hostname())]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="s_kaitmazov" DateTime="2015-06-01T11:56:46Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Help message printed for the --hostname argument]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";RemoteBuildConfLang" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Language to use for console output (deafults to the language given by $LANG if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[Язык, используемый для выходных данных в консоли (если не указан, значение по умолчанию определяется переменной $LANG)]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T08:50:45Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Help message printed for the --lang argument]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="$LANG"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";RemoteBuildConfPinTimeout" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Number of minutes for which client SSL certs can be acquired (defaults to 10 minutes)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[Число минут, на которое можно получить SSL-сертификаты клиентов (значение по умолчанию — 10 минут)]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="s_kaitmazov" DateTime="2015-06-01T11:56:46Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Help message printed for the --pinTimeout argument]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";RemoteBuildConfPort" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Port number for server (defaults to 3000 if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[Номер порта для сервера (если не указан, значение по умолчанию — 3000)]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="s_kaitmazov" DateTime="2015-06-01T11:56:46Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Help message printed for the --port argument]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";RemoteBuildConfSecure" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[true for https with server/client SSL certs, false for plain http (defaults to true if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[Значение true для протокола HTTPS с SSL-сертификатами серверов и клиентов; значение false для обычного протокола HTTP (значение по умолчанию — true)]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="s_kaitmazov" DateTime="2015-06-01T11:56:46Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Help message printed for the --secure argument]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";RemoteBuildConfServerDir" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Root directory for server (defaults to $TACO_HOME/remote-builds if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[Корневой каталог сервера (если не указан, значение по умолчанию — $TACO_HOME/remote-builds)]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="s_kaitmazov" DateTime="2015-06-01T11:56:46Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Help message printed for the --serverDir argument]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="$TACO_HOME/remote-builds"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";RunningAsRootError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[****** remotebuild should not be run as root. Shutting down.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[****** remotebuild нельзя запускать в качестве корня. Завершение работы.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T08:54:21Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed when remotebuild is run as root, instructing the user not to do so]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="remotebuild"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";SecureServerStarted" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Remote build server listening on [https]5D; port %d]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[Сервер удаленной сборки ожидает передачи данных от порта %d [https]5D;]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T12:57:43Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed when the server is started in secure mode. %d is the port number]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="%d"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";ServerPortInUse" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to start server on port {0}. Address already in use.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[Не удалось запустить сервер на порте {0}. Адрес уже используется.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T13:17:44Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed when the server cannot be started due to the port already being used. {0} is the port]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";ServerShutdown" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[****** Performing server shutdown procedures.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[****** Выполняется завершение работы сервера.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T13:17:44Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed when the server shuts down from an error or after the user requests it.]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";ServerStartFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[****** Failed to start server: %s]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[****** Не удалось запустить сервер: %s]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T13:17:44Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed when the remotebuild server fails to start. %s is the underlying error]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="%s"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";TestFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: {0} test failed.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[Ошибка. Тест {0} не пройден.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="s_kaitmazov" DateTime="2015-06-01T11:56:46Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed when a server module test fails. {0} is the name of the module]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";TestPassed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[{0} test passed.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[Тест {0} пройден.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T08:54:21Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed when a server module test succeeds. {0} is the name of the module]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UnableToFindModule" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to load module '{0}'.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[Не удалось загрузить модуль "{0}".]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T08:54:21Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed when the user asks for help about a specific module, and we are unable to find it. {0} is the module they asked about]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UnableToLoadModule" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: Unable to load module {0}. Try running 'npm install {0}' or specifying the full path to the package]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[Ошибка. Не удалось загрузить модуль {0}. Попробуйте выполнить команду "npm install {0}" или указать полный путь к пакету]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="s_kaitmazov" DateTime="2015-06-01T11:56:46Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Error printed when we try to load a user-provided module and the require() fails. {0} is the name of the module]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="npm install"} {Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UnauthorizedClientRequest" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The remote build server denied the build request, because the client certificate is invalid or has expired.  To build your project, you must generate and configure a security PIN. See http://go.microsoft.com/fwlink/?LinkID=511904.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Сервер удаленной сборки отклонил запрос сборки, так как сертификат клиента недопустим или его срок действия истек. Чтобы выполнить сборку проекта, необходимо создать и настроить ПИН-код безопасности. Сведения см. по ссылке http://go.microsoft.com/fwlink/?LinkID=511904.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T13:18:58Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when a build request is submitted to a secure server with invalid client certificate]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";UncaughtErrorShutdown" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[****** Server will shutdown due to uncaught error ****** ]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[****** Сервер завершит работу из-за неперехваченной ошибки ****** ]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T13:18:58Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed when an uncaught error is encountered]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";UnknownCommand" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unknown command: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[Неизвестная команда: {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T08:59:11Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed when an unknown option is specified. {0} is the command]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UsageInformation1[0]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[remotebuild Remote build server]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[Сервер удаленной сборки remotebuild]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T08:59:11Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="remotebuild"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UsageInformation1[11]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[General Options]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[Общие параметры]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T13:18:58Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation1[12]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[   --h[elp]5D; [module]5D;         Show this help text and exit, or show help about a specified sub-module]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[   --h[elp]5D; [модуль]5D;         Показать этот текст справки и выйти или показать справку по указанному подмодулю]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T08:59:11Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="--h[elp]5D;"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UsageInformation1[13]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[   --v[ersion]5D;               Show version information and exit]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[   --v[ersion]5D;               Отображение сведений о версии и выход]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T13:19:38Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="--v[ersion]5D;"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation1[15]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Options (All options other than --config can be specified via a configuration file)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[Параметры (все параметры, кроме --config, можно указать с помощью файла конфигурации)]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T08:59:11Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="--config"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UsageInformation1[2]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Usage:]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[Использование:]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T13:19:38Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation1[3]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[remotebuild command [options]5D;]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[Команда remotebuild [параметры]5D;]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T08:59:11Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="remotebuild"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UsageInformation1[5]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Commands (defaults to start if no command specified):]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[Команды (если команда не указана, по умолчанию используется start):]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T13:19:38Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation1[6]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[   start                     Starts the server]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[   start                     Запуск сервера]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="s_kaitmazov" DateTime="2015-06-01T11:56:46Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="start"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation1[7]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[   resetServerCert           Resets server SSL certificates]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[   resetServerCert           Сброс SSL-сертификата сервера]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="s_kaitmazov" DateTime="2015-06-01T11:56:46Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="resetServerCert"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation1[8]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[   generateClientCert        Generate a new client certificate for configuring a new secure connection]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[   generateClientCert        Создание сертификата клиента для настройки безопасного подключения]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="s_kaitmazov" DateTime="2015-06-01T11:56:46Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="generateClientCert"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UsageInformation1[9]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[   help                      Print this help, or help about a particular module]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[   help                      Печать этой справки или справки по определенному модулю]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="s_kaitmazov" DateTime="2015-06-01T11:56:46Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="help"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UsageInformation2[10]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Try asking for help about the following modules:]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[Попробуйте запросить справку по следующим модулям:]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T09:01:25Z" />
+      </Item>
+      <Item ItemId=";UsageInformation2[11]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[	{0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[	{0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T13:19:38Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation2[13]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Examples:]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[Примеры:]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T13:19:38Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation2[14]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Start the server with all defaults (secure server with serverDir $TACO_HOME/remote-builds, port 3000)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[Запустить сервер со всеми значениями по умолчанию (безопасный сервер с каталогом serverDir $TACO_HOME/remote-builds и портом 3000)]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T09:03:26Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="$TACO_HOME/remote-builds"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UsageInformation2[15]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[remotebuild]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[remotebuild]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T09:03:26Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="remotebuild"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UsageInformation2[17]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Start the server with a different serverDir, port, and http (non-secure)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Запустить сервер с другим значением serverDir, порта и http (небезопасный)]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="s_kaitmazov" DateTime="2015-06-01T11:56:46Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation2[18]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[remotebuild --serverDir ~/other-builds --port 4000 --secure false]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[remotebuild --serverDir ~/other-builds --port 4000 --secure false]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T09:03:26Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="remotebuild --serverDir ~/other-builds --port 4000 --secure false"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UsageInformation2[1]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Usage for starting server: remotebuild --serverDir [directory]5D; --port [num]5D; --secure [true|false]5D; --pinTimeout [num]5D; --config [path_to_config_file]5D;]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[Использование для запуска сервера: remotebuild --serverDir [каталог]5D; --port [число]5D; --secure [true|false]5D; --pinTimeout [число]5D; --config [путь_к_файлу_конфигурации]5D;]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T09:01:25Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="remotebuild"} {Locked="--serverDir"} {Locked="--port"} {Locked="--secure"} {Locked="--pinTimeout"} {Locked="--config"} {Locked="true"} {Locked="false"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UsageInformation2[20]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Reset server certificates to expire in 1 year]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[Сбросить сертификаты сервера, срок действия которых истечет через год]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T13:21:13Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation2[21]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[remotebuild resetServerCert --certExpirationDays 365]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[remotebuild resetServerCert --certExpirationDays 365]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T09:03:26Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="remotebuild resetServerCert --certExpirationDays 365"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UsageInformation2[23]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Generate a new client certificate for use in Visual Studio, that will expire in 1 year]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Создать сертификат клиента для использования в Visual Studio, срок действия которого истечет через год]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="s_kaitmazov" DateTime="2015-06-01T11:56:46Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation2[24]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[remotebuild generateClientCert --certExpirationDays 365]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[remotebuild generateClientCert --certExpirationDays 365]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T09:03:26Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="remotebuild generateClientCert --certExpirationDays 365"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UsageInformation2[3]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[NOTE: command line options override configuration file values.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+            <Val><![CDATA[ПРИМЕЧАНИЕ. Параметры командной строки переопределяют значения файла конфигурации.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T13:21:13Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation2[5]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Usage for resetServerCert: remotebuild resetServerCert --serverDir [directory]5D; --certExpirationDays [num]5D;]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[Использование для resetServerCert: remotebuild resetServerCert --serverDir [каталог]5D; --certExpirationDays [число]5D;]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T09:03:26Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="remotebuild resetServerCert --serverDir"} {Locked="--certExpirationDays"} {Locked="resetServerCert"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UsageInformation2[7]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Usage for generateClientCert: remotebuild generateClientCert --serverDir [directory]5D; --certExpirationDays [num]5D;]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[Использование для generateClientCert: remotebuild generateClientCert --serverDir [каталог]5D; --certExpirationDays [число]5D;]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T09:07:43Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="remotebuild generateClientCert --serverDir"} {Locked="--certExpirationDays"} {Locked="generateClientCert"}]]></Cmt>
+        </Cmts>
+      </Item>
+      <Item ItemId=";UsageInformation2[9]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Other options are described in the individual modules]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
+            <Val><![CDATA[Другие параметры описываются в отдельных модулях]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="SUR" DateTime="2015-05-31T09:07:43Z" />
+      </Item>
+    </Item>
+  </Item>
+</LCX>

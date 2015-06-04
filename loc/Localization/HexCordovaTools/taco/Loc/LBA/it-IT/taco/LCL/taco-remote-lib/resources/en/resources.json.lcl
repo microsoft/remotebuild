@@ -1,0 +1,977 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LCX SchemaVersion="6.0" Name="resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="it-IT" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
+  <Props>
+    <Str Name="HobbitID" Val="1316f51d-8d82-4ae2-8787-cea0c84ae271" />
+  </Props>
+  <OwnedComments>
+    <Cmt Name="Dev" />
+    <Cmt Name="LcxAdmin" />
+    <Cmt Name="Rccx" />
+  </OwnedComments>
+  <Settings Name="@vsLocTools@\current\default.lss" Type="LSS" />
+  <Item ItemId=";String Table" ItemType="0" PsrId="306" Leaf="false">
+    <Disp Icon="Expand" Expand="true" Disp="true" LocTbl="false" />
+    <Item ItemId=";Strings" ItemType="0" PsrId="306" Leaf="false">
+      <Disp Icon="Str" Disp="true" LocTbl="false" />
+      <Item ItemId=";AcquiringCordova" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Acquiring cordova.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Acquisizione della versione di Cordova.]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.079626Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:48:08.0004252Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Status message returned when downloading and installing the requested version of cordova]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="cordova"}]]></Cmt>
+        </Cmts>
+        <Notes>
+          <Note Name="Loc" Order="0"><![CDATA[Artwords: locver error is a false positive as the correct spelling of cordova is Cordova]]></Note>
+        </Notes>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";ArchivePackError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unexpected error packing archive: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Errore imprevisto durante la creazione del pacchetto dell'archivio: {0}]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.079626Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Error reported to console and back to the client when packing a zip file fails. {0} is the error]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";BuildFailedUnexpectedly" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Build failed unexpectedly]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Si è verificato un errore imprevisto durante la compilazione]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.079626Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message reported when a build fails and we don't know the reason]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";BuildFailedWithError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Build failed with error {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[La compilazione non è riuscita. Errore: {0}]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.079626Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it queried for the build status and the build failed due to an error from Cordova/XCode build operations. NOTE the {0} is from Cordova/XCode and will likely not be localized]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";BuildInvokedTwice" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Invalid request: build.js process already in use but was asked to build again. This is likely a programming error as a build.js process is meant to be used only once.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Richiesta non valida: il processo build.js è già in uso ma è stato richiesto di eseguire nuovamente la compilazione. Si tratta probabilmente di un errore di programmazione perché il processo build.js deve essere usato una sola volta.]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.079626Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message when multiple builds are invoked at the same time.]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";BuildNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Build {0} does not exist]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[La compilazione {0} non esiste]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.079626Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio or user when it queries for a build but the build no longer exists, for example an old build that has been deleted. {0} is the build number]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";BuildRequestMissingCordovaVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A cordova version must be specified on the build request.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Nella richiesta di compilazione è necessario specificare una versione di Cordova.]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.079626Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio if the build request does not specify the version of Cordova to build with]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";BuildRequestUnsupportedCommand" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The requested build command {0} is not supported by this build manager.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Il comando di compilazione richiesto {0} non è supportato da questo gestore compilazioni.]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.079626Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio if the build server does not support the build command specified in the build request (only build and emulate are currently supported)]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";BuildRequestUnsupportedConfiguration" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The requested build configuration {0} is not supported by this build manager. Only debug and release are supported.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[La configurazione della build richiesta {0} non è supportata da questo gestore compilazioni. Sono supportate solo le configurazioni di tipo debug e versione.]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.079626Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio if the build server does not support the build configuration specified in the build request]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";BuildRequestUnsupportedCordovaVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The build request for cordova version {0} is not supported by the iOS build server. The server is installed with cordova version {1}.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[La richiesta di compilazione per la versione di Cordova {0} non è supportata dal server di compilazione iOS. Il server è installato con la versione di Cordova {1}.]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.079626Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio if the build server does not support the version of Cordova specified in the build request]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";CopyingNativeOverrides" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Copying native overrides.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Copia degli override nativi.]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.079626Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Status message returned when copying data from /res/native]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";CordovaCompiling" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Compiling.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Compilazione in corso.]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.079626Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Status message returned when doing 'cordova compile ios']]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";DebugSuccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Successfully Debugging on the device]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Debug riuscito nel dispositivo]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.079626Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it requests the build server to debug a build and the attempt is successful (the debugger is running)]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";DeviceLaunchTimeout" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Timeout: Is the device locked?]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Timeout: il dispositivo è bloccato?]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.080626Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message reported when attempting to launch an application takes too long.]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";DoneBuilding" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Done building {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Compilazione di {0} completata]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.080626Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message logged when a build is completed successfully. {0} is the build number]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";DownloadInvalid" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[One or both of expected build outputs {0} and {1} are missing on file system.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Uno o entrambi gli output di compilazione previsti {0} e {1} non sono presenti nel file system.]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.080626Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message reported to the user and to the console if the expected files to download are not present. {0} and {1} are paths to files]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";EmulateFailedWithError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error from attempting to emulate: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Errore durante il tentativo di emulazione: {0}]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.080626Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it requests the build server to emulate a build and the emulation attempt fails with error]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";EmulateSuccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Successfully sent to ios Simulator]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Invio al simulatore iOS riuscito]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.080626Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it requests the build server to emulate a build and the emulation attempt is successful (the application is now visibile on the build server)]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";ErrorBuilding" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Failed to build app for buildNumber {0}: {1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Non è stato possibile compilare l'app per il numero di build {0}: {1}]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.080626Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message logged when a build fails. {0} is the build number and {1} is the error message]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";ErrorMountingDiskImage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error mounting developer disk image]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Errore durante il montaggio dell'immagine del disco per sviluppatori]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.080626Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message reported when mounting a disk image fails for an unknown reason]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";ErrorXcconfigDirNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Directory for build.xcconfig does not exist.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[La directory per build.xcconfig non esiste.]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.080626Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message logged when we can't find the directory that build.xcconfig ]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";FailedFindDeveloperDiskImage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to find Developer Disk Image]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[L'immagine del disco per sviluppatori non è stata trovata]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.080626Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message reported when we are unable to locate an appropriate developer disk image for the iOS device]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";FailedGetDeviceInfo" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to read device version, is it plugged in and turned on?]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Non è possibile leggere la versione del dispositivo. È connesso e acceso?]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.080626Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message reported when we are unable to find the version of the iOS device]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";IOSSimNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[****** ios-sim is not installed on path. `sudo npm install -g ios-sim` if you want this server to support emulator.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[****** ios-sim non è installato nel percorso. Eseguire `sudo npm install -g ios-sim` se questo server deve supportare l'emulatore.]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.080626Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed when ]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="sudo npm install -g ios-sim"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";InstallFailNoDevice" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to find attached device; is it plugged in and unlocked?]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Il dispositivo collegato non è stato trovato. È connesso e sbloccato?]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.080626Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to visual studio when a deploy fails because there is no iOS device attached to the remote machine]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";InstallSuccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Successfully installed on the device]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Installazione nel dispositivo riuscita]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.080626Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it requests the build server to install a build and the installation attempt is successful (the application is now visibile on the device)]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";InvalidCordovaAppBadConfigXml" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The upload is not a valid Cordova Application. Error in parsing config.xml {0}.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Il caricamento non corrisponde a un'applicazione Cordova valida. Si è verificato un errore durante l'analisi del file config.xml {0}.]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.080626Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it queried for the build status and the build failed due to the error with config.xml application file]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";InvalidCordovaAppMissingConfigXml" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The upload is not a valid Cordova Application. It is missing config.xml in top level directory.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Il caricamento non corrisponde a un'applicazione Cordova valida. Nella directory di primo livello manca il file config.xml.]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0816261Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it queried for the build status and the build failed due to the error with config.xml application file]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";InvalidCordovaAppMissingWww" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The upload is not a valid Cordova Application. It is missing www directory in top level directory.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Il caricamento non corrisponde a un'applicazione Cordova valida. Nella directory di primo livello manca la directory www.]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0816261Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it queried for the build status and the build failed due to the error with www application directory]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";InvalidCordovaAppUnsupportedAppName" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unsupported iOS app name {0} in config.xml. Check for characters that are not Printable ASCII, or that match any of the following characters: {1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Il nome dell'app iOS {0} non è supportato in config.xml. Cercare caratteri non ASCII stampabili o corrispondenti ai seguenti: {1}]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0816261Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it queried for the build status and the build failed due to the error with config.xml application file]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";NoCordovaVersionSpecified" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[No cordova version specified!]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Non è stata specificata alcuna versione di Cordova.]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0816261Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Error reported when trying to build without any version specified]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";NoDeviceAttached" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[No device found, is it plugged in and turned on?]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Non è stato trovato alcun dispositivo. È connesso e acceso?]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0816261Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message reported when mounting a disk image fails because it cannot find a device]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";PackageNotInstalled" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to launch app, it is not installed.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Non è possibile avviare l'app perché non è installata.]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0816261Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message reported when attempting to launch an application which is not installed]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";PackagingNativeApp" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Packaging app.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Creazione del pacchetto dell'app in corso.]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0816261Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Status message returned when packaging the app for a device build]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";ProvisioningFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Installation failed: Check your provisioning profile]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Installazione non riuscita: verificare il profilo di provisioning]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0816261Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio or user when it attempts to install an app on a device without an appropriate provisioning profile]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";RequireCordovaFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: Failed to acquire cordova version {0}. {1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Errore: non è stato possibile acquisire la versione {0} di Cordova. {1}]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0816261Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Error message reported when a build fails to install the requested cordova version. {0} is the cordova version, and {1} is the error]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";RunSuccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Successfully ran on the device]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Esecuzione riuscita nel dispositivo]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0816261Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it requests the build server to run a build and the attempt is successful (the application is running on the device)]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";UnableToDebug" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to start debug bridge]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Non è possibile avviare il bridge di debug]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0816261Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message reported if we are unable to start ios_webkit_debug_proxy to enable debugging]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";UnableToLaunchApp" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to launch app]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Non è possibile avviare l'app]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0816261Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message reported when attempting to launch an application and an unknown failure occurrs]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";UnsupportedPlatform" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to build: requested platform not supported]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Non è possibile eseguire la compilazione: la piattaforma richiesta non è supportata]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0816261Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message reported to the client when a request for an unsupported platform is made]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";UpdatingIOSPlatform" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Updating iOS platform.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Aggiornamento della piattaforma iOS.]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0816261Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Status message returned when doing a 'cordova platform add ios' or 'cordova prepare ios']]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";WrongInstalledAppsFile" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Output file not as expected]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Il file di output non è quello previsto]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0816261Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message reported if we get unexpected output when reading the list of installed apps]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+    </Item>
+  </Item>
+</LCX>

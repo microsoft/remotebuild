@@ -1,0 +1,742 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LCX SchemaVersion="6.0" Name="resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="ko-KR" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
+  <Props>
+    <Str Name="HobbitID" Val="c8a3eaa6-2bfe-4e25-8126-990070cffd18" />
+  </Props>
+  <OwnedComments>
+    <Cmt Name="Dev" />
+    <Cmt Name="LcxAdmin" />
+    <Cmt Name="Rccx" />
+  </OwnedComments>
+  <Settings Name="@vsLocTools@\current\default.lss" Type="LSS" />
+  <Item ItemId=";String Table" ItemType="0" PsrId="306" Leaf="false">
+    <Disp Icon="Expand" Expand="true" Disp="true" LocTbl="false" />
+    <Item ItemId=";Strings" ItemType="0" PsrId="306" Leaf="false">
+      <Disp Icon="Str" Disp="true" LocTbl="false" />
+      <Item ItemId=";BuildBuilding" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Building Cordova app.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[Cordova 앱을 빌드하는 중입니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it is queried for the build status and the build status is currently building on server]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";BuildComplete" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Build completed successfully.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Confidence="100" Orig="Auto" Appr="PreApproved">
+            <Val><![CDATA[빌드를 완료했습니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it is queried for the build status and the build status is successfully completed]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";BuildDirectoryNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Build directory {0} does not exist.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[빌드 디렉터리 {0}이(가) 없습니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed to console and returned to the client when ]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+      </Item>
+      <Item ItemId=";BuildDownloaded" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Build completed and downloaded by client.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[클라이언트에서 빌드를 완료하고 다운로드했습니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it is queried for the build status and the build status is downloaded from server]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+      </Item>
+      <Item ItemId=";BuildExtracted" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Extracted app contents from uploaded build request]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Confidence="100" Orig="Auto" Appr="PreApproved">
+            <Val><![CDATA[업로드한 빌드 요청에서 앱 콘텐츠를 추출했습니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it is queried for the build status and the build status is extracted on server file system]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";BuildInvokedTwice" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Invalid request: build.js process already in use but was asked to build again. This is likely a programming error as a build.js process is meant to be used only once.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[잘못된 요청: build.js 프로세스가 이미 사용 중이지만 다시 빌드하라는 요청을 받았습니다. build.js 프로세스는 한 번만 실행되어야 하므로 프로그래밍 오류일 수 있습니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message when multiple builds are invoked at the same time.]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+      </Item>
+      <Item ItemId=";BuildManagerDirInit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Build will be executed under: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[빌드는 {0}에서 실행됩니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed to console when a build request is recieved. {0} is the path where the build will exist.]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+      </Item>
+      <Item ItemId=";BuildManagerInit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Initialized BuildManager with baseBuildDir %s; maxBuildsInQueue %d; deleteBuildsOnShutdown %s; allowsEmulate %s; nextBuildNumber %d]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[baseBuildDir %s, maxBuildsInQueue %d, deleteBuildsOnShutdown %s, allowsEmulate %s, nextBuildNumber %d을(를) 사용하여 BuildManager를 초기화했습니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed to console when the build manager is initialized]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="%s"} {Placeholder="%d"}]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+      </Item>
+      <Item ItemId=";BuildMovingOn" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Done with currentBuild. Checking for next build in queue.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[currentBuild 작업을 완료했습니다. 큐에서 다음 빌드를 확인하는 중입니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed to console when a build is finished, successfully or otherwise, before continuing with any queued builds]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+      </Item>
+      <Item ItemId=";BuildNotCompleted" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Requested build is not yet ready. Status: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[요청한 빌드가 아직 준비되지 않았습니다. 상태: {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message when attempting to perform an action on a build which is not yet ready. {0} is the current state of the build]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:48Z" />
+      </Item>
+      <Item ItemId=";BuildNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Build {0} does not exist]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[빌드 {0}이(가) 없습니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio or user when it queries for a build but the build no longer exists, for example an old build that has been deleted. {0} is the build number]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+      </Item>
+      <Item ItemId=";BuildQueueFull" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Build request rejected. The build queue is full. Limit is {0} queued builds.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[빌드 요청이 거부되었습니다. 빌드 큐가 꽉 찼습니다. 큐에 대기 중인 빌드의 제한 수는 {0}입니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message returned to the caller when a build is rejected due to a full queue. {0} is the maximum number of builds]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+      </Item>
+      <Item ItemId=";BuildRetentionDelete" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Deleting build %d from %s]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[%s에서 %d 빌드 삭제 중]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed to console for each build deleted. %d is the build number, and %s is the build location]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="%d"} {Placeholder="%s"}]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+      </Item>
+      <Item ItemId=";BuildRetentionInit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Build Retention initialized with baseBuildDir %s, maxBuildsToKeep %d]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[빌드 보존이 baseBuildDir %s, maxBuildsToKeep %d(으)로 초기화되었습니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed to console when build retention is initialized. %s is the directory where builds will be kept, and %d is the number of builds to keep.]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="%s"} {Placeholder="%d"}]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+      </Item>
+      <Item ItemId=";BuildRetentionPreDelete" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Deleting eligible builds. Will delete %d builds.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[적합한 빌드를 삭제하는 중입니다. %d개의 빌드를 삭제합니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed to console just before we delete old builds. %d is the number of builds we will delete]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="%d"}]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+      </Item>
+      <Item ItemId=";BuildUploaded" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Uploaded build request payload.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Confidence="100" Orig="Auto" Appr="PreApproved">
+            <Val><![CDATA[빌드 요청 페이로드를 업로드했습니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it is queried for the build status and the build status is uploaded to server]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:48Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";CordovaAcquisitionFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Failed to load cordova {0}: {1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[Cordova {0}을(를) 로드하지 못했습니다. {1}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed when dynamically acquiring cordova for the self test fails. {0} is the cordova version, and {1} is the error message]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+      </Item>
+      <Item ItemId=";EmulateDisabled" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Emulate is not enabled on this server.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[에뮬레이트는 이 서버에서 사용하지 않도록 설정되어 있습니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message reported back to the client when they request emulation and it is disabled on the server]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+      </Item>
+      <Item ItemId=";ErrorSavingTgz" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[An error occurred in saving the uploaded tgz file to {0}: {1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[업로드된 tgz 파일을 {0}에 저장하는 중 오류가 발생했습니다. {1}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[{0} is the filename of the tgz, and {1} is the error message]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+      </Item>
+      <Item ItemId=";ExceededMaxPings" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Exceeded max # of pings: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[최대 ping 수를 초과했습니다. {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Error printed when the self test times out. {0} is the number of attempts made to get the build status]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+      </Item>
+      <Item ItemId=";FailedCreateDirectory" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to create extract directory {0}: {1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[추출 디렉터리 {0}을(를) 만들 수 없습니다. {1}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed to console and reported back to Visual Studio when unable to create the directory we want to unpack a build request to. {0} is the directory, and {1} is the message of the error]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:48Z" />
+      </Item>
+      <Item ItemId=";FirstRunDependencyConfiguration" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Configuring first-run dependencies.]A;To deploy to physical iOS devices, or to debug a device or simulator, we need some packages from Homebrew.]A;Installing Homebrew may ask you for an admin password. Do you want to continue?]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Confidence="100" Orig="Auto" Appr="PreApproved">
+            <Val><![CDATA[첫 실행 종속성을 구성하는 중입니다.]A;실제 iOS 장치에 배포하거나 장치 또는 시뮬레이터를 디버그하려면 Homebrew의 일부 패키지가 필요합니다.]A;Homebrew를 설치하면 관리자 암호를 요청할 수 있습니다. 계속하시겠습니까?]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message displayed the first time remotebuild is run, asking for permission to install 3rd party dependencies]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";HomebrewInstallationDeclined" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[If you want to enable deploying to devices or debugging apps on devices or the simulator, delete {0} to be asked again.]A;]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[장치에 배포를 활성화하거나 장치 또는 시뮬레이터에서 앱 디버깅을 활성화하려는 경우 다시 요청되는 {0}을(를) 삭제하세요.]A;]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message displayed when the user opts out of installing 3rd party dependencies]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+      </Item>
+      <Item ItemId=";HomebrewInstallationFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error installing homebrew packages:]A;{0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[Homebrew 패키지를 설치하는 중 오류 발생:]A;{0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message displayed if installing any of the 3rd party dependencies fails. {0} is the contents of the error]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";HomebrewInstallationQuery" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[[y]5D;/n? ]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Confidence="100" Orig="Auto" Appr="PreApproved">
+            <Val><![CDATA[[y]5D;/n? ]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message asking the user whether to install 3rd party dependencies. Hitting return will default to yes]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";HomebrewInstallationQueryResponse" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[y]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Confidence="100" Orig="Auto" Appr="PreApproved">
+            <Val><![CDATA[y]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Prefix indicating that the user consents to installing 3rd party dependencies. If the user's entry begins with this string, we assume it means yes, otherwise we assume it meanns no]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:48Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";HomebrewInstallationSuccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Successfully installed homebrew packages.]A;]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Confidence="100" Orig="Auto" Appr="PreApproved">
+            <Val><![CDATA[Homebrew 패키지를 설치했습니다.]A;]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message displayed when 3rd party dependencies are successfully installed]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:48Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";HomebrewPackageVerificationFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error verifying homebrew packages:]A;{0}]A;Consider "brew reinstall libimobiledevice ios-webkit-debug-proxy ideviceinstaller" and trying again.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[Homebrew 패키지를 확인하는 중 오류 발생:]A;{0}]A;"brew reinstall libimobiledevice ios-webkit-debug-proxy ideviceinstaller"를 사용하고 다시 시도해 보세요.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message displayed if after installing the 3rd party dependencies, they do not work. {0} is the contents of the error]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="brew reinstall libimobiledevice ios-webkit-debug-proxy ideviceinstaller"} {Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";InvalidBuildRequest" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Invalid build request]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Confidence="100" Orig="Auto" Appr="PreApproved">
+            <Val><![CDATA[잘못된 빌드 요청]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio if an invalid build request was sent to the build server]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";LogFileReadError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error from reading build log file {0}:]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[빌드 로그 파일 {0}을(를) 읽는 중 오류 발생:]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed to console when we fail to retrieve the build log. {0} is the location of the file we tried to read.]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+      </Item>
+      <Item ItemId=";MalformedBuildInfo" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to find appropriate package for specified build]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[지정한 빌드에 적절한 패키지를 찾을 수 없습니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed when a buildInfo object is missing a 'pkg' member. Shouldn't ever happen.]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:48Z" />
+      </Item>
+      <Item ItemId=";NewBuildQueued" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A build is currently building. Queuing up {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[현재 빌드를 작성하고 있습니다. {0}이(가) 큐에 대기하는 중입니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed to console when a build request is recieved when another build is in progress. {0} is the build number of the new request which is now in a queue]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+      </Item>
+      <Item ItemId=";NewBuildStarted" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Taking {0} as current build]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[현재 빌드로 {0}을(를) 가져오는 중]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed to console when beginning a build. {0} is the build number]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:48Z" />
+      </Item>
+      <Item ItemId=";NewBuildSubmitted" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[New build request submitted:]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[새로운 빌드 요청이 제출되었습니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed to the console when a new build is received]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+      </Item>
+      <Item ItemId=";NoResourcesForLanguage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[No resources defined for language {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Confidence="100" Orig="Auto" Appr="PreApproved">
+            <Val><![CDATA[{0} 언어에 대해 정의된 리소스가 없습니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back in browser if user requests resources for a language that does not have specfic resources]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+        </Props>
+      </Item>
+      <Item ItemId=";NoTgzFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Build tgz file no longer exists on file system at {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[빌드 tgz 파일은 {0}에 있는 파일 시스템에 더 이상 존재하지 않습니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed to console and reported back to Visual Studio when unable to find the uploaded project. {0} is where the file was expected]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+      </Item>
+      <Item ItemId=";TacoRemoteConfigAllowsEmulate" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[true if server should support running builds in iOS simulator, false if not (defaults to true if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[서버가 iOS 시뮬레이터에서 빌드 실행을 지원해야 하는 경우 true, 그렇지 않으면 false(지정하지 않은 경우 기본값은 true)]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Help message printed for --allowsEmulate]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:48Z" />
+      </Item>
+      <Item ItemId=";TacoRemoteConfigDeleteBuildsOnShutdown" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Delete all builds when the server is shutdown (defaults to true if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[서버가 종료되면 모든 빌드를 삭제합니다(지정하지 않은 경우 기본값은 true임).]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Help message printed for --deleteBuildsOnShutdown]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+      </Item>
+      <Item ItemId=";TacoRemoteConfigMaxBuildsInQueue" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Maximum number of builds to allow in build queue. New builds over this limit are rejected (defaults to 10 if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[빌드 큐에서 허용되는 최대 빌드 수입니다. 이 제한을 넘는 새로운 빌드는 거부됩니다(지정하지 않은 경우 기본값은 10임).]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Help message printed for --maxBuildsInQueue]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+      </Item>
+      <Item ItemId=";TacoRemoteConfigMaxBuildsToKeep" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Maximum number of builds to retain on disk (defaults to 20 if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[디스크에 보존할 최대 빌드 수(지정하지 않은 경우 기본값은 20임)]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Help message printed for --maxBuildsToKeep]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+      </Item>
+      <Item ItemId=";TacoRemoteConfigNativeDebugProxyPort" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Port number for native debugger (defaults to 3001 if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[네이티브 디버거의 포트 번호(지정하지 않은 경우 기본값은 3001임)]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Help message printed for --nativeDebugProxyPort]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+      </Item>
+      <Item ItemId=";TacoRemoteConfigWebDebugProxyDevicePort" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Port number for webkit debugger device discovery (defaults to 9221 if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[webkit 디버거 장치 검색의 포트 번호(지정하지 않은 경우 기본값은 9221)]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Help message printed for --webDebugProxyDevicePort]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+      </Item>
+      <Item ItemId=";TacoRemoteConfigWebDebugProxyPortMax" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Last port number for webkit debugger to assign to devices (defaults to 9322 if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[webkit 디버거에서 장치에 할당할 수 있는 마지막 포트 번호(지정하지 않은 경우 기본값은 9322임)]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Help message printed for --webDebugProxyPortMax]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+      </Item>
+      <Item ItemId=";TacoRemoteConfigWebDebugProxyPortMin" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[First port number for webkit debugger to assign to devices (defaults to 9222 if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[webkit 디버거에서 장치에 할당할 수 있는 첫 번째 포트 번호(지정하지 않은 경우 기본값은 9222임)]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Help message printed for --webDebugProxyPortMin]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+      </Item>
+      <Item ItemId=";TacoRemoteHelp[0]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[taco-remote enables building Apache Cordova projects remotely.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[taco-remote를 사용하여 Apache Cordova 프로젝트를 원격으로 빌드할 수 있습니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="taco-remote"}]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:48Z" />
+      </Item>
+      <Item ItemId=";TacoRemoteHelp[1]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[More documentation for configuring taco remote build can be found at http://go.microsoft.com/fwlink/?LinkId=613345]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[taco 원격 빌드를 구성하는 방법에 대한 추가 설명서는 http://go.microsoft.com/fwlink/?LinkId=613345에서 확인할 수 있습니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="http://go.microsoft.com/fwlink/?LinkId=613345"}]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+      </Item>
+      <Item ItemId=";TacoRemoteHelp[3]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Options that may be specified in the config file (under { 'modules': { 'taco-remote': { } } )]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[config 파일의 { 'modules': { 'taco-remote': { } } 아래에서 지정할 수 있는 옵션]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="{ \'modules\': { \'taco-remote\': { } }"}]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+      </Item>
+      <Item ItemId=";TgzExtractError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[An error occurred in extracting contents from {0}: {1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[{0}에서 콘텐츠를 추출하는 중 오류가 발생했습니다. {1}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed to console and reported back to Visual Studio when an error occurs when extracting the tgz. {0} is the tgz file, and {1} is the error]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+      </Item>
+      <Item ItemId=";UploadExtractedSuccessfully" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Extracted app contents from uploaded build request to {0}. Requesting build.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[업로드한 빌드 요청에서 {0}(으)로 앱 콘텐츠를 추출했습니다. 빌드를 요청하는 중입니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed to console when the uploaded build is successfully extracted. {0} is the location that the uploaded build was extracted to]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+      </Item>
+      <Item ItemId=";UploadSavedSuccessfully" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Saved upload to {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[업로드를 {0}에 저장했습니다.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed to console when a build request is successfully saved. {0} is the location it was saved to]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:48Z" />
+      </Item>
+      <Item ItemId=";UploadSaving" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Saving build request payload to : {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[빌드 요청 페이로드 저장 위치: {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed when we start to save a build request. {0} is the location we are trying to save to]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Modified By="sjoh" DateTime="2015-06-01T11:21:48Z" />
+      </Item>
+    </Item>
+  </Item>
+</LCX>

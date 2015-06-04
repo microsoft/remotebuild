@@ -1,0 +1,1666 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LCX SchemaVersion="6.0" Name="resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="it-IT" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
+  <Props>
+    <Str Name="HobbitID" Val="670b1b3f-ce13-4273-b0ef-fc210964d0fe" />
+  </Props>
+  <OwnedComments>
+    <Cmt Name="Dev" />
+    <Cmt Name="LcxAdmin" />
+    <Cmt Name="Rccx" />
+  </OwnedComments>
+  <Settings Name="@vsLocTools@\current\default.lss" Type="LSS" />
+  <Item ItemId=";String Table" ItemType="0" PsrId="306" Leaf="false">
+    <Disp Icon="Expand" Expand="true" Disp="true" LocTbl="false" />
+    <Item ItemId=";Strings" ItemType="0" PsrId="306" Leaf="false">
+      <Disp Icon="Str" Disp="true" LocTbl="false" />
+      <Item ItemId=";CAFilesNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[One or both of required CA files {0} and {1} not found.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Uno o entrambi i file CA obbligatori {0} e {1} non sono stati trovati.]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0676253Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed to console when certificate files cannot be found. {0} and {1} are the files checked for certificates]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";CertExpirationInvalid" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[certExpirationdays {0} would result in expired certs. Default cert expiration {1} days will be used instead.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Se si specifica {0} per certExpirationdays, i certificati scadranno. Verrà usata la scadenza predefinita dei certificati, pari a {1} giorni.]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0686253Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[message printed to console when the user-configurable value certExpirationDays is invalid. {0} is the user-supplied value, and {1} is the value we are defaulting to]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="certExpirationdays"} {Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";CertificatesNotConfigured" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: Certificates not yet initialized!]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Errore: i certificati non sono stati ancora inizializzati.]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0686253Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Error returned when certificates are accessed before initialization.]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";ClientCertNotFoundForPIN" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Client certificate not found for PIN]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Il certificato client per il PIN non è stato trovato]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0696254Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio if a PIN is submitted to for which no valid client SSL certificate is found]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";IndexPageContent" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Remote build Express server open for business on port {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Server Express di compilazione remota aperto per le operazioni sulla porta {0}]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0706254Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back in any request for index page of build server]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";InsecureServerStarted" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Remote build server listening on [http]5D; port %d]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Server di compilazione remota in ascolto sulla porta [http]5D; %d]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0706254Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed when the server is started in non-secure mode. %d is the port number]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="%d"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";InvalidPIN" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Invalid PIN in request]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[PIN non valido nella richiesta]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0706254Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio if an invalid PIN is submitted to download client SSL certificate]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";NoResourcesForLanguage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[No resources defined for language {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Non sono state definite risorse per la lingua {0}]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0706254Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back in browser if user requests resources for a language that does not have specfic resources]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";NoServerModulesSelected" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Warning: No server modules selected. Defaulting to configuration "modules": {"taco-remote": { "mountPath": "cordova"} }]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Avviso: non sono stati selezionati moduli server. Verrà usata la configurazione predefinita "modules": {"taco-remote": { "mountPath": "cordova"} }]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0706254Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Warning printed to console when the configuration does not specify what server modules to load]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="\"modules\": {\"taco-remote\": { \"mountPath\": \"cordova\"} }"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";OSXCertSetupInformation[0]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Use the following information in Visual Studio under Tools, Options, Tools for Apache Cordova, Remote Agent Configuration to use this agent:]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Per usare questo agente, fare riferimento alle informazioni seguenti in Visual Studio, accessibili selezionando Strumenti, Opzioni, Strumenti per Apache Cordova, Configurazione agente remoto:]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0706254Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";OSXCertSetupInformation[10]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Port: {1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Porta: {1}]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0706254Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{1}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";OSXCertSetupInformation[11]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[PIN: {2}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[PIN: {2}]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0706254Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{2}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";OSXCertSetupInformation[2]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Enable remote iOS processing: True]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Abilita elaborazione iOS remota: True]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0706254Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";OSXCertSetupInformation[3]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Host: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Host: {0}]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0706254Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";OSXCertSetupInformation[4]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Port: {1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Porta: {1}]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0706254Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{1}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";OSXCertSetupInformation[5]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Secure mode: True]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Modalità protetta: True]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0716255Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";OSXCertSetupInformation[6]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Security PIN: {2}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[PIN di sicurezza: {2}]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0716255Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{2}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";OSXCertSetupInformation[8]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Alternately, use 'taco setup remote <platform>' to configure the taco CLI to use this build server for the chosen platform, specifying]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[In alternativa, eseguire 'taco setup remote <piattaforma>' per configurare l'interfaccia della riga di comando taco per usare questo server di compilazione per la piattaforma scelta, specificando]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0716255Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="taco setup remote"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";OSXCertSetupInformation[9]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Host: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Host: {0}]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0716255Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";OSXCertSetupNoPinTimeout" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The security PIN is for one-time use. To generate additional PINs, use the following command:]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Il PIN di sicurezza è monouso. Per generare altri PIN, usare il comando seguente:]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0716255Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed to console explaining how to generate new PINs. The following line is a console command to generate the certificates]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";OSXCertSetupPinTimeout" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The security PIN is for one-time use and expires in {0} minutes. To generate additional PINs, use the following command:]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Il PIN di sicurezza è monouso e scadrà tra {0} minuti. Per generare altri PIN, usare il comando seguente:]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0716255Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed to console explaining how to generate new PINs. {0} is the number of minutes that the PIN lasts for. The following line is a console command to generate the certificates]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";OSXResetServerCertPleaseYesNo" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Please answer [Y]5D;es or [N]5D;o.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Rispondere [S]5D;ì o [N]5D;o.]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0716255Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Query after user enters an option which is not recognised]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";OSXResetServerCertQuery" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Warning: This command deletes all current client certificates. You will need to generate and configure a new security PIN. Do you want to continue? [Y]5D;es or [N]5D;o]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Avviso: questo comando consente di eliminare tutti i certificati client correnti. Sarà necessario generare e configurare un nuovo PIN di sicurezza. Continuare? [S]5D;ì o [N]5D;o]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0716255Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed when user invokes resetServerCert command asking if they are sure]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";OSXResetServerCertResponseNo[0]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[n]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[n]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0716255Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";OSXResetServerCertResponseNo[1]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[no]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[no]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0716255Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";OSXResetServerCertResponseYes[0]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[y]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[s]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0716255Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";OSXResetServerCertResponseYes[1]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[yes]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[sì]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0716255Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";RemoteBuildConfCertExpirationDays" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Number of days after which the generated SSL certificates will expire (defaults to 5 years if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Numero di giorni trascorsi i quali i certificati SSL generati scadono. Se non è specificata, viene usata l'impostazione predefinita pari a 5 anni]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0716255Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Help message printed for the --certExpirationDays argument]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";RemoteBuildConfConfig" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Path to server configuration json file with any of these settings (defaults to $TACO_HOME/RemoteBuild.config if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Percorso del file json di configurazione del server con una qualsiasi di queste impostazioni. Se non è specificata, viene usato il percorso predefinito $TACO_HOME/RemoteBuild.config]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0716255Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Help message printed for the --config argument]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="$TACO_HOME/RemoteBuild.config"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";RemoteBuildConfHostname" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Hostname to generate certificates for in secure mode (defaults to os.hostname())]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Nome host per cui generare i certificati in modalità protetta. Impostazione predefinita: os.hostname()]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0726256Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Help message printed for the --hostname argument]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";RemoteBuildConfLang" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Language to use for console output (deafults to the language given by $LANG if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Lingua da usare per l'output della console. Se non è specificata, viene usata la lingua predefinita fornita da $LANG]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0726256Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Help message printed for the --lang argument]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="$LANG"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";RemoteBuildConfPinTimeout" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Number of minutes for which client SSL certs can be acquired (defaults to 10 minutes)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Numero di minuti entro cui è possibile acquisire i certificati SSL del client. Impostazione predefinita: 10 minuti]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0726256Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Help message printed for the --pinTimeout argument]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";RemoteBuildConfPort" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Port number for server (defaults to 3000 if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Numero di porta del server. Se non è specificata, viene usata l'impostazione predefinita 3000]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0726256Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Help message printed for the --port argument]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";RemoteBuildConfSecure" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[true for https with server/client SSL certs, false for plain http (defaults to true if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[È true per https con certificati SSL server/client; è false per http semplice. Se non è specificata, viene usata l'impostazione predefinita true]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0726256Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Help message printed for the --secure argument]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";RemoteBuildConfServerDir" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Root directory for server (defaults to $TACO_HOME/remote-builds if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Directory radice del server. Se non è specificata, viene usata l'impostazione predefinita $TACO_HOME/remote-builds]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0726256Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Help message printed for the --serverDir argument]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="$TACO_HOME/remote-builds"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";RunningAsRootError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[****** remotebuild should not be run as root. Shutting down.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[****** remotebuild non deve essere eseguito come radice. L'esecuzione verrà arrestata.]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0726256Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed when remotebuild is run as root, instructing the user not to do so]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="remotebuild"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";SecureServerStarted" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Remote build server listening on [https]5D; port %d]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Server di compilazione remota in ascolto sulla porta [https]5D; %d]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0726256Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed when the server is started in secure mode. %d is the port number]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="%d"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";ServerPortInUse" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to start server on port {0}. Address already in use.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Non è possibile avviare il server sulla porta {0}. L'indirizzo è già in uso.]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0726256Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed when the server cannot be started due to the port already being used. {0} is the port]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";ServerShutdown" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[****** Performing server shutdown procedures.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[****** Esecuzione delle procedure di arresto server in corso.]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0726256Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed when the server shuts down from an error or after the user requests it.]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";ServerStartFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[****** Failed to start server: %s]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[****** Avvio del server %s non riuscito]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0726256Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed when the remotebuild server fails to start. %s is the underlying error]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="%s"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";TestFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: {0} test failed.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Errore: il test di {0} non è riuscito.]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0726256Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed when a server module test fails. {0} is the name of the module]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";TestPassed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[{0} test passed.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Test di {0} superato.]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0726256Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed when a server module test succeeds. {0} is the name of the module]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";UnableToFindModule" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to load module '{0}'.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Non è possibile caricare il modulo '{0}'.]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0726256Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed when the user asks for help about a specific module, and we are unable to find it. {0} is the module they asked about]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";UnableToLoadModule" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: Unable to load module {0}. Try running 'npm install {0}' or specifying the full path to the package]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Errore: non è possibile caricare il modulo {0}. Provare a eseguire 'npm install {0}' o a specificare il percorso completo del pacchetto]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0736256Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Error printed when we try to load a user-provided module and the require() fails. {0} is the name of the module]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="npm install"} {Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";UnauthorizedClientRequest" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The remote build server denied the build request, because the client certificate is invalid or has expired.  To build your project, you must generate and configure a security PIN. See http://go.microsoft.com/fwlink/?LinkID=511904.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Il server di compilazione remota ha rifiutato la richiesta di compilazione perché il certificato client non è valido o è scaduto. Per compilare il progetto, è necessario generare e configurare un PIN di sicurezza. Vedere http://go.microsoft.com/fwlink/?LinkID=511904.]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0736256Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when a build request is submitted to a secure server with invalid client certificate]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";UncaughtErrorShutdown" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[****** Server will shutdown due to uncaught error ****** ]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[****** Il server verrà arrestato a causa di un errore non rilevato ****** ]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0736256Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed when an uncaught error is encountered]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";UnknownCommand" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unknown command: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Comando sconosciuto: {0}]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0736256Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message printed when an unknown option is specified. {0} is the command]]></Cmt>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation1[0]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[remotebuild Remote build server]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[remotebuild server di compilazione remota]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0736256Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="remotebuild"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation1[11]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[General Options]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Opzioni generali]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0736256Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation1[12]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[   --h[elp]5D; [module]5D;         Show this help text and exit, or show help about a specified sub-module]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[   --h[elp]5D; [modulo]5D;         Visualizza questo argomento della Guida e chiude la finestra oppure visualizza la Guida relativa a un modulo secondario specificato]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0736256Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="--h[elp]5D;"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation1[13]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[   --v[ersion]5D;               Show version information and exit]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[   --v[ersion]5D;               Visualizza le informazioni sulla versione e chiude la finestra]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0736256Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="--v[ersion]5D;"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation1[15]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Options (All options other than --config can be specified via a configuration file)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Opzioni (tutte le opzioni eccetto --config possono essere specificate tramite un file di configurazione)]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0736256Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="--config"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation1[2]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Usage:]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Sintassi:]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0736256Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation1[3]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[remotebuild command [options]5D;]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[remotebuild comando [opzioni]5D;]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0736256Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="remotebuild"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation1[5]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Commands (defaults to start if no command specified):]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Comandi (se non si specifica un comando, vengono usate le impostazioni predefinite iniziali):]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0736256Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation1[6]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[   start                     Starts the server]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[   start                     Avvia il server]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0736256Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="start"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation1[7]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[   resetServerCert           Resets server SSL certificates]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[   resetServerCert           Reimposta i certificati server SSL]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0736256Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="resetServerCert"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation1[8]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[   generateClientCert        Generate a new client certificate for configuring a new secure connection]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[   generateClientCert        Genera un nuovo certificato client per la configurazione di una nuova connessione protetta]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0736256Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="generateClientCert"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation1[9]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[   help                      Print this help, or help about a particular module]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[   help                      Visualizza questo argomento della Guida oppure la Guida relativa a un modulo specifico]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0746257Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:47:22.000785Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="help"}]]></Cmt>
+        </Cmts>
+        <Notes>
+          <Note Name="Loc" Order="0"><![CDATA[Artwords: locver error is a false positive as the only occurrence of help to lock is the first one]]></Note>
+        </Notes>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation2[10]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Try asking for help about the following modules:]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Provare a richiedere la Guida per i moduli seguenti:]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0746257Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation2[11]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[	{0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[	{0}]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0746257Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation2[13]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Examples:]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Esempi:]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0746257Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation2[14]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Start the server with all defaults (secure server with serverDir $TACO_HOME/remote-builds, port 3000)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Avvia il server con tutte le impostazioni predefinite (server protetto con serverDir $TACO_HOME/remote-builds, porta 3000)]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0746257Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="$TACO_HOME/remote-builds"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation2[15]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[remotebuild]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[remotebuild]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0746257Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="remotebuild"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation2[17]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Start the server with a different serverDir, port, and http (non-secure)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Avvia il server con valori diversi per serverDir, porta e http (non protetto)]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0746257Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation2[18]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[remotebuild --serverDir ~/other-builds --port 4000 --secure false]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[remotebuild --serverDir ~/other-builds --port 4000 --secure false]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0746257Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="remotebuild --serverDir ~/other-builds --port 4000 --secure false"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation2[1]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Usage for starting server: remotebuild --serverDir [directory]5D; --port [num]5D; --secure [true|false]5D; --pinTimeout [num]5D; --config [path_to_config_file]5D;]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Sintassi per l'avvio del server: remotebuild --serverDir [directory]5D; --port [numero]5D; --secure [true|false]5D; --pinTimeout [numero]5D; --config [percorso_file_di_configurazione]5D;]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0746257Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="remotebuild"} {Locked="--serverDir"} {Locked="--port"} {Locked="--secure"} {Locked="--pinTimeout"} {Locked="--config"} {Locked="true"} {Locked="false"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation2[20]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Reset server certificates to expire in 1 year]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Reimposta i certificati del server in modo che scadano tra un anno]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0746257Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation2[21]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[remotebuild resetServerCert --certExpirationDays 365]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[remotebuild resetServerCert --certExpirationDays 365]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0746257Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="remotebuild resetServerCert --certExpirationDays 365"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation2[23]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Generate a new client certificate for use in Visual Studio, that will expire in 1 year]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Genera un nuovo certificato client da usare in Visual Studio che scadrà tra un anno]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0746257Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation2[24]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[remotebuild generateClientCert --certExpirationDays 365]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[remotebuild generateClientCert --certExpirationDays 365]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0746257Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="remotebuild generateClientCert --certExpirationDays 365"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation2[3]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[NOTE: command line options override configuration file values.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[NOTA: le opzioni della riga di comando hanno la precedenza sui valori dei file di configurazione.]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0746257Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Props>
+          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 auto" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation2[5]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Usage for resetServerCert: remotebuild resetServerCert --serverDir [directory]5D; --certExpirationDays [num]5D;]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Sintassi di resetServerCert: remotebuild resetServerCert --serverDir [directory]5D; --certExpirationDays [numero]5D;]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0756257Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="remotebuild resetServerCert --serverDir"} {Locked="--certExpirationDays"} {Locked="resetServerCert"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation2[7]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Usage for generateClientCert: remotebuild generateClientCert --serverDir [directory]5D; --certExpirationDays [num]5D;]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Sintassi di generateClientCert: remotebuild generateClientCert --serverDir [directory]5D; --certExpirationDays [numero]5D;]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0756257Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Cmts>
+          <Cmt Name="LcxAdmin"><![CDATA[{Locked="remotebuild generateClientCert --serverDir"} {Locked="--certExpirationDays"} {Locked="generateClientCert"}]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";UsageInformation2[9]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Other options are described in the individual modules]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Altre opzioni sono descritte nei singoli moduli]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0756257Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="28/05/15 new" />
+        </Props>
+      </Item>
+    </Item>
+  </Item>
+</LCX>
