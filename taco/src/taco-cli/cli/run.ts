@@ -30,7 +30,6 @@ import tacoUtility = require ("taco-utils");
 import BuildInfo = tacoUtility.BuildInfo;
 import commands = tacoUtility.Commands;
 import logger = tacoUtility.Logger;
-import level = logger.Level;
 import UtilHelper = tacoUtility.UtilHelper;
 
 /*
@@ -120,7 +119,7 @@ class Run extends commands.TacoCommandBase implements commands.IDocumentedComman
     private static runRemotePlatform(platform: string, commandData: commands.ICommandData): Q.Promise<any> {
         return Settings.loadSettings().then(function (settings: Settings.ISettings): Q.Promise<any> {
             var configuration = commandData.options["release"] ? "release" : "debug";
-            var buildTarget = commandData.options["target"] || "iphone 5"; // TODO (Devdiv: 1160573): Select an appropriate default for non-iOS platforms, or leave target unspecified and have the server pick a default
+            var buildTarget = commandData.options["target"] || (commandData.options["device"] ? "device" : "");
             var language = settings.language || "en";
             var remoteConfig = settings.remotePlatforms[platform];
             if (!remoteConfig) {
@@ -164,16 +163,14 @@ class Run extends commands.TacoCommandBase implements commands.IDocumentedComman
                 runPromise = buildInfoPromise.then(function (buildInfo: BuildInfo): Q.Promise<BuildInfo> {
                     return RemoteBuildClientHelper.run(buildInfo, remoteConfig);
                 }).then(function (buildInfo: BuildInfo): BuildInfo {
-                    logger.log(resources.getString("CommandSuccessBase") + " ", logger.Level.Success);
-                    logger.logLine(resources.getString("CommandRunRemoteDeviceSuccess"));
+                    logger.log(resources.getString("CommandRunRemoteDeviceSuccess"));
                     return buildInfo;
                 });
             } else {
                 runPromise = buildInfoPromise.then(function (buildInfo: BuildInfo): Q.Promise<BuildInfo> {
                     return RemoteBuildClientHelper.emulate(buildInfo, remoteConfig, buildTarget);
                 }).then(function (buildInfo: BuildInfo): BuildInfo {
-                    logger.log(resources.getString("CommandSuccessBase") + " ", logger.Level.Success);
-                    logger.logLine(resources.getString("CommandRunRemoteEmulatorSuccess"));
+                    logger.log(resources.getString("CommandRunRemoteEmulatorSuccess"));
                     return buildInfo;
                 });
             }
@@ -210,7 +207,7 @@ class Run extends commands.TacoCommandBase implements commands.IDocumentedComman
                         return Run.runRemotePlatform(platform.platform, commandData);
                     };
                     var localRunFunc = function (): Q.Promise<any> {
-                        return CordovaWrapper.run(platform.platform);
+                        return CordovaWrapper.run(platform.platform, commandData);
                     };
                     switch (platform.location) {
                         case Settings.BuildLocationType.Local:
