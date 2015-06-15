@@ -9,8 +9,9 @@ $DropPackages = Write-Output --drop=$DropLocation\packages\
 cd $GulpRoot
 
 # Copy localized resources
-$langs = @{"CHS" = "zh-CN";
-         "CHT"= "zh-TW";
+# Note that the destination folders must be lower case since we run on case sensitive filesystems and lowercase everything.
+$langs = @{"CHS" = "zh-cn";
+         "CHT"= "zh-tw";
 	 "CSY" = "cs";
 	 "DEU" = "de";
 	 "ESN" = "es";
@@ -19,7 +20,7 @@ $langs = @{"CHS" = "zh-CN";
 	 "JPN" = "jp";
 	 "KOR" = "ko";
 	 "PLK" = "pl";
-	 "PTB" = "pt-BR";
+	 "PTB" = "pt-br";
 	 "RUS" = "ru";
 	 "TRK" = "tr"}
 
