@@ -100,6 +100,9 @@
       <Item ItemId=";PackageLoaderDownloadCompletedMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> {0} downloaded and installed.]]></Val>
+          <Tgt Cat="Text" CP="Unknown" Stat="Loc" Orig="New">
+            <Val><![CDATA[<success>Success!</success> {0} downloaded and installed.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
         <Cmts>
@@ -109,8 +112,8 @@
       <Item ItemId=";PackageLoaderDownloadError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error: Downloading {0} failed.]]></Val>
-          <Tgt Cat="Text" CP="Unknown" Stat="Update" Orig="New">
-            <Val><![CDATA[Downloading {0} failed.]]></Val>
+          <Tgt Cat="Text" CP="Unknown" Stat="Loc" Orig="New">
+            <Val><![CDATA[Error: Downloading {0} failed.]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Downloading {0} failed.]]></Val>
@@ -124,8 +127,8 @@
       <Item ItemId=";PackageLoaderDownloadingMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[<bold>Downloading</bold>: {0}]]></Val>
-          <Tgt Cat="Text" CP="Unknown" Stat="Update" Orig="New">
-            <Val><![CDATA[Downloading: ]]></Val>
+          <Tgt Cat="Text" CP="Unknown" Stat="Loc" Orig="New">
+            <Val><![CDATA[<bold>Downloading</bold>: {0}]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Downloading: ]]></Val>
@@ -163,6 +166,9 @@
       <Item ItemId=";PackageLoaderNpmInstallErrorMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error installing {0} via npm. See output for details.]]></Val>
+          <Tgt Cat="Text" CP="Unknown" Stat="Loc" Orig="New">
+            <Val><![CDATA[Error installing {0} via npm. See output for details.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
         <Cmts>
@@ -196,6 +202,9 @@
       <Item ItemId=";PackageLoaderNpmUpdateErrorMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error updating {0} via npm. See output for details.]]></Val>
+          <Tgt Cat="Text" CP="Unknown" Stat="Loc" Orig="New">
+            <Val><![CDATA[Error updating {0} via npm. See output for details.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
         <Cmts>
@@ -205,6 +214,9 @@
       <Item ItemId=";PackageLoaderNpmUpdateFailedEaccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error updating {0} via npm. Exit Code: {1}. Check permissions of npm cache. For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=613751.]]></Val>
+          <Tgt Cat="Text" CP="Unknown" Stat="Loc" Orig="New">
+            <Val><![CDATA[Error updating {0} via npm. Exit Code: {1}. Check permissions of npm cache. For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=613751.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
         <Cmts>
@@ -214,6 +226,9 @@
       <Item ItemId=";PackageLoaderNpmUpdateFailedWithCode" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error updating {0} via npm. Exit Code: {1}. See output for details.]]></Val>
+          <Tgt Cat="Text" CP="Unknown" Stat="Loc" Orig="New">
+            <Val><![CDATA[Error updating {0} via npm. Exit Code: {1}. See output for details.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
         <Cmts>

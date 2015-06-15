@@ -281,8 +281,8 @@
       <Item ItemId=";FirstRunDependencyConfiguration" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Configuring first-run dependencies.]A;To deploy to physical iOS devices, or to debug a device or simulator, we need some packages from Homebrew, a third party package manager.]A;Installing Homebrew may ask you for an admin password. Do you want to continue?]]></Val>
-          <Tgt Cat="Text" CP="Unknown" Stat="Update" Orig="New">
-            <Val><![CDATA[Configuring first-run dependencies.]A;To deploy to physical iOS devices, or to debug a device or simulator, we need some packages from Homebrew.]A;Installing Homebrew may ask you for an admin password. Do you want to continue?]]></Val>
+          <Tgt Cat="Text" CP="Unknown" Stat="Loc" Orig="New">
+            <Val><![CDATA[Configuring first-run dependencies.]A;To deploy to physical iOS devices, or to debug a device or simulator, we need some packages from Homebrew, a third party package manager.]A;Installing Homebrew may ask you for an admin password. Do you want to continue?]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Configuring first-run dependencies.]A;To deploy to physical iOS devices, or to debug a device or simulator, we need some packages from Homebrew.]A;Installing Homebrew may ask you for an admin password. Do you want to continue?]]></Val>
