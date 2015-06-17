@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<LCX SchemaVersion="6.0" Name="resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="cs-CZ" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
+<LCX SchemaVersion="6.0" Name="resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="cs-CZ" Desc="Commenting file created by LCXAdmin. For more information, please visit http://localizability/longhorn/LcxAdmin.asp" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
   <Props>
     <Str Name="CustomName1" Val="Custom 1" />
     <Str Name="CustomName2" Val="Custom 2" />
@@ -11,19 +11,9 @@
   </Props>
   <OwnedComments>
     <Cmt Name="Dev" />
-    <Cmt Name="DUIData" />
-    <Cmt Name="GoldMine" />
-    <Cmt Name="Goldmine8" />
     <Cmt Name="LcxAdmin" />
-    <Cmt Name="Loc" />
-    <Cmt Name="ManifestData" />
-    <Cmt Name="Mnemonic" />
     <Cmt Name="Note" />
-    <Cmt Name="RCCX" />
-    <Cmt Name="UIType" />
-    <Cmt Name="UTSData" />
-    <Cmt Name="UTSUI" />
-    <Cmt Name="zLocLevel" />
+    <Cmt Name="Rccx" />
   </OwnedComments>
   <Settings Name="@vsLocTools@\current\default.lss" Type="LSS" />
   <Item ItemId=";String Table" ItemType="0" PsrId="306" Leaf="false">
@@ -332,13 +322,16 @@
       </Item>
       <Item ItemId=";FirstRunDependencyConfiguration" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Configuring first-run dependencies.]A;To deploy to physical iOS devices, or to debug a device or simulator, we need some packages from Homebrew.]A;Installing Homebrew may ask you for an admin password. Do you want to continue?]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
-            <Val><![CDATA[Konfiguruje se první spuštění závislých součástí.]A;Pokud chcete nasazovat na fyzická zařízení iOS nebo ladit na zařízení nebo simulátoru, potřebujeme určité balíčky z nástroje Homebrew.]A;Instalace nástroje Homebrew se vás může zeptat na heslo správce. Chcete pokračovat?]]></Val>
+          <Val><![CDATA[Configuring first-run dependencies.]A;To deploy to physical iOS devices, or to debug a device or simulator, we need some packages from Homebrew, a third party package manager.]A;Installing Homebrew may ask you for an admin password. Do you want to continue?]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Konfiguruje se první spuštění závislých součástí.]A;Pokud chcete nasazovat na fyzická zařízení iOS nebo ladit na zařízení nebo simulátoru, potřebujeme určité balíčky z nástroje Homebrew, správce balíčků od třetí strany.]A;Instalace nástroje Homebrew se vás může zeptat na heslo správce. Chcete pokračovat?]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Configuring first-run dependencies.]A;To deploy to physical iOS devices, or to debug a device or simulator, we need some packages from Homebrew.]A;Installing Homebrew may ask you for an admin password. Do you want to continue?]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-28T11:44:28Z" />
+        <Modified By="pklimova" DateTime="2015-06-17T12:50:30Z" />
         <Cmts>
           <Cmt Name="Dev"><![CDATA[Message displayed the first time remotebuild is run, asking for permission to install 3rd party dependencies]]></Cmt>
         </Cmts>

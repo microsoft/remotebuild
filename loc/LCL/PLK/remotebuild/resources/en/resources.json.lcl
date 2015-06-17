@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<LCX SchemaVersion="6.0" Name="resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="pl-PL" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
+<LCX SchemaVersion="6.0" Name="resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="pl-PL" Desc="Commenting file created by LCXAdmin. For more information, please visit http://localizability/longhorn/LcxAdmin.asp" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
   <Props>
     <Str Name="CustomName1" Val="Custom 1" />
     <Str Name="CustomName2" Val="Custom 2" />
@@ -25,7 +25,7 @@
       <Item ItemId=";CAFilesNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[One or both of required CA files {0} and {1} not found.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Nie znaleziono co najmniej jednego z wymaganych plików urzędu certyfikacji {0} i {1}.]]></Val>
           </Tgt>
         </Str>
@@ -42,7 +42,7 @@
       <Item ItemId=";CertExpirationInvalid" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[certExpirationdays {0} would result in expired certs. Default cert expiration {1} days will be used instead.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Wartość certExpirationdays wynosząca {0} spowodowałaby wygaśnięcie certyfikatów. Zamiast tego zostanie użyta domyślna wartość wygaśnięcia certyfikatów wynosząca {1}.]]></Val>
           </Tgt>
         </Str>
@@ -59,7 +59,7 @@
       <Item ItemId=";CertificatesNotConfigured" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error: Certificates not yet initialized!]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Błąd: Certyfikaty nie zostały jeszcze zainicjowane!]]></Val>
           </Tgt>
         </Str>
@@ -75,7 +75,7 @@
       <Item ItemId=";ClientCertNotFoundForPIN" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Client certificate not found for PIN]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Nie znaleziono certyfikatu klienta dla numeru PIN]]></Val>
           </Tgt>
         </Str>
@@ -110,7 +110,7 @@
       <Item ItemId=";InsecureServerStarted" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Remote build server listening on [http]5D; port %d]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Zdalny serwer kompilacji nasłuchujący na porcie [http]5D; %d]]></Val>
           </Tgt>
         </Str>
@@ -128,7 +128,7 @@
       <Item ItemId=";InvalidPIN" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Invalid PIN in request]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Nieprawidłowy numer PIN w żądaniu]]></Val>
           </Tgt>
         </Str>
@@ -163,7 +163,7 @@
       <Item ItemId=";NoServerModulesSelected" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Warning: No server modules selected. Defaulting to configuration "modules": {"taco-remote": { "mountPath": "cordova"} }]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Ostrzeżenie: Nie wybrano modułów serwera. Przyjęto wartość domyślną konfiguracji "modules": {"taco-remote": { "mountPath": "cordova"} }]]></Val>
           </Tgt>
         </Str>
@@ -180,7 +180,7 @@
       <Item ItemId=";OSXCertSetupInformation[0]" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Use the following information in Visual Studio under Tools, Options, Tools for Apache Cordova, Remote Agent Configuration to use this agent:]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Użyj następujących informacji w programie Visual Studio w obszarze Narzędzia, Opcje, Narzędzia dla oprogramowania Apache Cordova, Konfiguracja agenta zdalnego, aby skorzystać z tego agenta:]]></Val>
           </Tgt>
         </Str>
@@ -193,7 +193,7 @@
       <Item ItemId=";OSXCertSetupInformation[10]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Port: {1}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Port: {1}]]></Val>
           </Tgt>
         </Str>
@@ -209,7 +209,7 @@
       <Item ItemId=";OSXCertSetupInformation[11]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[PIN: {2}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Numer PIN: {2}]]></Val>
           </Tgt>
         </Str>
@@ -225,7 +225,7 @@
       <Item ItemId=";OSXCertSetupInformation[2]" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Enable remote iOS processing: True]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Włącz zdalne przetwarzanie w systemie iOS: True]]></Val>
           </Tgt>
         </Str>
@@ -238,7 +238,7 @@
       <Item ItemId=";OSXCertSetupInformation[3]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Host: {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Host: {0}]]></Val>
           </Tgt>
         </Str>
@@ -254,7 +254,7 @@
       <Item ItemId=";OSXCertSetupInformation[4]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Port: {1}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Port: {1}]]></Val>
           </Tgt>
         </Str>
@@ -270,7 +270,7 @@
       <Item ItemId=";OSXCertSetupInformation[5]" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Secure mode: True]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Tryb zabezpieczony: True]]></Val>
           </Tgt>
         </Str>
@@ -283,7 +283,7 @@
       <Item ItemId=";OSXCertSetupInformation[6]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Security PIN: {2}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Zabezpieczający kod PIN: {2}]]></Val>
           </Tgt>
         </Str>
@@ -299,7 +299,7 @@
       <Item ItemId=";OSXCertSetupInformation[8]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Alternately, use 'taco setup remote <platform>' to configure the taco CLI to use this build server for the chosen platform, specifying]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Alternatywnie użyj polecenia taco setup remote <platforma>, aby skonfigurować interfejs wiersza polecenia taco tak, aby używać tego wbudowanego serwera dla wybranej platformy, określając]]></Val>
           </Tgt>
         </Str>
@@ -315,7 +315,7 @@
       <Item ItemId=";OSXCertSetupInformation[9]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Host: {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Host: {0}]]></Val>
           </Tgt>
         </Str>
@@ -331,7 +331,7 @@
       <Item ItemId=";OSXCertSetupNoPinTimeout" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[The security PIN is for one-time use. To generate additional PINs, use the following command:]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Ten zabezpieczający numer PIN jest przeznaczony do jednorazowego użytku. Aby wygenerować dodatkowe numery PIN, użyj następującego polecenia:]]></Val>
           </Tgt>
         </Str>
@@ -347,7 +347,7 @@
       <Item ItemId=";OSXCertSetupPinTimeout" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[The security PIN is for one-time use and expires in {0} minutes. To generate additional PINs, use the following command:]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Ten zabezpieczający numer PIN jest przeznaczony do jednorazowego użytku i wygasa za {0} min. Aby wygenerować dodatkowe numery PIN, użyj następującego polecenia:]]></Val>
           </Tgt>
         </Str>
@@ -364,7 +364,7 @@
       <Item ItemId=";OSXResetServerCertPleaseYesNo" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Please answer [Y]5D;es or [N]5D;o.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Odpowiedz [T]5D;ak lub [N]5D;ie.]]></Val>
           </Tgt>
         </Str>
@@ -380,7 +380,7 @@
       <Item ItemId=";OSXResetServerCertQuery" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Warning: This command deletes all current client certificates. You will need to generate and configure a new security PIN. Do you want to continue? [Y]5D;es or [N]5D;o]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Ostrzeżenie: To polecenie usuwa wszystkie bieżące certyfikaty klientów. Będzie konieczne wygenerowanie i skonfigurowanie nowego zabezpieczającego numeru PIN. Czy chcesz kontynuować? [T]5D;ak lub [N]5D;ie]]></Val>
           </Tgt>
         </Str>
@@ -452,7 +452,7 @@
       <Item ItemId=";RemoteBuildConfCertExpirationDays" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Number of days after which the generated SSL certificates will expire (defaults to 5 years if not specified)]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Liczba dni do wygaśnięcia wygenerowanych certyfikatów SSL (jeśli nie zostanie określona, przyjmowana jest wartość domyślna wynosząca 5 lat)]]></Val>
           </Tgt>
         </Str>
@@ -468,7 +468,7 @@
       <Item ItemId=";RemoteBuildConfConfig" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Path to server configuration json file with any of these settings (defaults to $TACO_HOME/RemoteBuild.config if not specified)]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Ścieżka do pliku json konfiguracji serwera z dowolnymi spośród tych ustawień (jeśli nie zostanie określona, przyjmowana jest wartość domyślna $TACO_HOME/RemoteBuild.config)]]></Val>
           </Tgt>
         </Str>
@@ -485,7 +485,7 @@
       <Item ItemId=";RemoteBuildConfHostname" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Hostname to generate certificates for in secure mode (defaults to os.hostname())]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Nazwa hosta służącego do generowania certyfikatów w trybie zabezpieczonym (wartość domyślna to os.hostname())]]></Val>
           </Tgt>
         </Str>
@@ -501,7 +501,7 @@
       <Item ItemId=";RemoteBuildConfLang" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Language to use for console output (deafults to the language given by $LANG if not specified)]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Język do użycia dla danych wyjściowych konsoli (jeśli nie zostanie określony, wartością domyślną będzie język $LANG)]]></Val>
           </Tgt>
         </Str>
@@ -518,7 +518,7 @@
       <Item ItemId=";RemoteBuildConfPinTimeout" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Number of minutes for which client SSL certs can be acquired (defaults to 10 minutes)]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Liczba minut, przez które można pobierać certyfikaty SSL klienta (wartość domyślna to 10 minut)]]></Val>
           </Tgt>
         </Str>
@@ -534,7 +534,7 @@
       <Item ItemId=";RemoteBuildConfPort" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Port number for server (defaults to 3000 if not specified)]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Numer portu serwera (jeśli nie zostanie określony, wartością domyślną będzie 3000)]]></Val>
           </Tgt>
         </Str>
@@ -550,7 +550,7 @@
       <Item ItemId=";RemoteBuildConfSecure" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[true for https with server/client SSL certs, false for plain http (defaults to true if not specified)]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Wartość true dla protokołu HTTP z certyfikatami SSL serwera/klienta, wartość false dla zwykłego protokołu HTTP (jeśli nie zostanie określona, wartością domyślną będzie true)]]></Val>
           </Tgt>
         </Str>
@@ -566,7 +566,7 @@
       <Item ItemId=";RemoteBuildConfServerDir" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Root directory for server (defaults to $TACO_HOME/remote-builds if not specified)]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Główny katalog serwera (jeśli nie zostanie określony, wartością domyślną będzie $TACO_HOME/remote-builds)]]></Val>
           </Tgt>
         </Str>
@@ -583,7 +583,7 @@
       <Item ItemId=";RunningAsRootError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[****** remotebuild should not be run as root. Shutting down.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[****** remotebuild nie powinien być uruchamiany jako program główny. Trwa zamykanie.]]></Val>
           </Tgt>
         </Str>
@@ -671,7 +671,7 @@
       <Item ItemId=";TestFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error: {0} test failed.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Błąd: niepowodzenie testu {0}.]]></Val>
           </Tgt>
         </Str>
@@ -688,7 +688,7 @@
       <Item ItemId=";TestPassed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[{0} test passed.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Test {0} zakończony powodzeniem.]]></Val>
           </Tgt>
         </Str>
@@ -705,7 +705,7 @@
       <Item ItemId=";UnableToFindModule" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Unable to load module '{0}'.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Nie można załadować modułu „{0}”.]]></Val>
           </Tgt>
         </Str>
@@ -722,7 +722,7 @@
       <Item ItemId=";UnableToLoadModule" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error: Unable to load module {0}. Try running 'npm install {0}' or specifying the full path to the package]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Błąd: nie można załadować modułu {0}. Spróbuj uruchomić polecenie „npm install {0}” lub określić pełną ścieżkę do pakietu]]></Val>
           </Tgt>
         </Str>
@@ -739,7 +739,7 @@
       <Item ItemId=";UnauthorizedClientRequest" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[The remote build server denied the build request, because the client certificate is invalid or has expired.  To build your project, you must generate and configure a security PIN. See http://go.microsoft.com/fwlink/?LinkID=511904.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Zdalny serwer kompilacji odmówił wykonania żądania kompilacji, ponieważ certyfikat klienta jest nieprawidłowy lub utracił ważność. Aby skompilować projekt, musisz wygenerować i skonfigurować zabezpieczający numer PIN. Zobacz http://go.microsoft.com/fwlink/?LinkID=511904.]]></Val>
           </Tgt>
         </Str>
@@ -773,7 +773,7 @@
       <Item ItemId=";UnknownCommand" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Unknown command: {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Nieznane polecenie: {0}]]></Val>
           </Tgt>
         </Str>
@@ -790,7 +790,7 @@
       <Item ItemId=";UsageInformation1[0]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[remotebuild Remote build server]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[remotebuild Zdalny serwer kompilacji]]></Val>
           </Tgt>
         </Str>
@@ -820,7 +820,7 @@
       <Item ItemId=";UsageInformation1[12]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[   --h[elp]5D; [module]5D;         Show this help text and exit, or show help about a specified sub-module]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[   --h[elp]5D; [module]5D;         Pokaż ten tekst pomocy i zakończ lub wyświetl pomoc dotyczącą określonego modułu podrzędnego]]></Val>
           </Tgt>
         </Str>
@@ -853,7 +853,7 @@
       <Item ItemId=";UsageInformation1[15]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Options (All options other than --config can be specified via a configuration file)]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Opcje (wszystkie opcje inne niż --config można określić przy użyciu pliku konfiguracyjnego)]]></Val>
           </Tgt>
         </Str>
@@ -883,7 +883,7 @@
       <Item ItemId=";UsageInformation1[3]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[remotebuild command [options]5D;]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[remotebuild polecenie [opcje]5D;]]></Val>
           </Tgt>
         </Str>
@@ -947,7 +947,7 @@
       <Item ItemId=";UsageInformation1[8]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[   generateClientCert        Generate a new client certificate for configuring a new secure connection]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[   generateClientCert        Generuje nowy certyfikat klienta do konfiguracji nowego bezpiecznego połączenia]]></Val>
           </Tgt>
         </Str>
@@ -963,15 +963,18 @@
       <Item ItemId=";UsageInformation1[9]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[   help                      Print this help, or help about a particular module]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[   help                      Wydrukuj tę pomoc lub pomoc dotyczącą określonego modułu]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="dawidch" DateTime="2015-06-01T10:16:07Z" />
+        <Modified By="jhosek" DateTime="2015-06-16T17:22:42.0006516Z" />
         <Cmts>
           <Cmt Name="LcxAdmin"><![CDATA[{Locked="help"}]]></Cmt>
         </Cmts>
+        <Notes>
+          <Note Name="Loc" Order="0"><![CDATA[Reported FP locver error]]></Note>
+        </Notes>
         <Props>
           <Str Name="Custom4" Val="LS83" />
         </Props>
@@ -979,7 +982,7 @@
       <Item ItemId=";UsageInformation2[10]" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Try asking for help about the following modules:]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Spróbuj uzyskać pomoc dotyczącą następujących modułów:]]></Val>
           </Tgt>
         </Str>
@@ -1023,7 +1026,7 @@
       <Item ItemId=";UsageInformation2[14]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Start the server with all defaults (secure server with serverDir $TACO_HOME/remote-builds, port 3000)]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Uruchamianie serwera z wszystkimi wartościami domyślnymi (zabezpieczony serwer z katalogiem $TACO_HOME/remote-builds i portem 3000)]]></Val>
           </Tgt>
         </Str>
@@ -1039,7 +1042,7 @@
       <Item ItemId=";UsageInformation2[15]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[remotebuild]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[remotebuild]]></Val>
           </Tgt>
         </Str>
@@ -1069,7 +1072,7 @@
       <Item ItemId=";UsageInformation2[18]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[remotebuild --serverDir ~/other-builds --port 4000 --secure false]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[remotebuild --serverDir ~/other-builds --port 4000 --secure false]]></Val>
           </Tgt>
         </Str>
@@ -1085,7 +1088,7 @@
       <Item ItemId=";UsageInformation2[1]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Usage for starting server: remotebuild --serverDir [directory]5D; --port [num]5D; --secure [true|false]5D; --pinTimeout [num]5D; --config [path_to_config_file]5D;]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Użycie na potrzeby uruchamiania serwera remotebuild --serverDir [katalog]5D; --port [numer]5D; --secure [true|false]5D; --pinTimeout [numer]5D; --config [ścieżka_do_pliku_konfiguracji]5D;]]></Val>
           </Tgt>
         </Str>
@@ -1115,7 +1118,7 @@
       <Item ItemId=";UsageInformation2[21]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[remotebuild resetServerCert --certExpirationDays 365]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[remotebuild resetServerCert --certExpirationDays 365]]></Val>
           </Tgt>
         </Str>
@@ -1145,7 +1148,7 @@
       <Item ItemId=";UsageInformation2[24]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[remotebuild generateClientCert --certExpirationDays 365]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[remotebuild generateClientCert --certExpirationDays 365]]></Val>
           </Tgt>
         </Str>
@@ -1175,7 +1178,7 @@
       <Item ItemId=";UsageInformation2[5]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Usage for resetServerCert: remotebuild resetServerCert --serverDir [directory]5D; --certExpirationDays [num]5D;]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Użycie na potrzeby polecenia resetServerCert: remotebuild resetServerCert --serverDir [katalog]5D; --certExpirationDays [numer]5D;]]></Val>
           </Tgt>
         </Str>
@@ -1191,7 +1194,7 @@
       <Item ItemId=";UsageInformation2[7]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Usage for generateClientCert: remotebuild generateClientCert --serverDir [directory]5D; --certExpirationDays [num]5D;]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Użycie na potrzeby polecenia generateClientCert: remotebuild generateClientCert --serverDir [katalog]5D; --certExpirationDays [numer]5D;]]></Val>
           </Tgt>
         </Str>
@@ -1207,7 +1210,7 @@
       <Item ItemId=";UsageInformation2[9]" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Other options are described in the individual modules]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Inne opcje opisano w poszczególnych modułach]]></Val>
           </Tgt>
         </Str>

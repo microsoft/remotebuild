@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<LCX SchemaVersion="6.0" Name="resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="tr-TR" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
+<LCX SchemaVersion="6.0" Name="resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="tr-TR" Desc="Commenting file created by LCXAdmin. For more information, please visit http://localizability/longhorn/LcxAdmin.asp" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
   <Props>
     <Str Name="HobbitID" Val="c8a3eaa6-2bfe-4e25-8126-990070cffd18" />
   </Props>
@@ -455,17 +455,20 @@
       </Item>
       <Item ItemId=";FirstRunDependencyConfiguration" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Configuring first-run dependencies.]A;To deploy to physical iOS devices, or to debug a device or simulator, we need some packages from Homebrew.]A;Installing Homebrew may ask you for an admin password. Do you want to continue?]]></Val>
+          <Val><![CDATA[Configuring first-run dependencies.]A;To deploy to physical iOS devices, or to debug a device or simulator, we need some packages from Homebrew, a third party package manager.]A;Installing Homebrew may ask you for an admin password. Do you want to continue?]]></Val>
           <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[İlk çalıştırma bağımlılıkları yapılandırılıyor.]A;Fiziksel iOS cihazlarına dağıtmak veya bir cihazın ya da öykünücünün hatalarını ayıklamak için Homebrew kaynağından bazı paketlere ihtiyacımız var.]A;Homebrew yüklemesi sırasında yönetici parolası girmeniz istenebilir. Devam etmek istiyor musunuz?]]></Val>
+            <Val><![CDATA[İlk çalıştırma bağımlılıkları yapılandırılıyor.]A;Fiziksel iOS cihazlarına dağıtmak veya bir cihazın ya da öykünücünün hatalarını ayıklamak için üçüncü taraf bir paket yöneticisi olan Homebrew kaynağından bazı paketlere ihtiyacımız var.]A;Homebrew yüklemesi sırasında yönetici parolası girmeniz istenebilir. Devam etmek istiyor musunuz?]]></Val>
             <Props>
-              <Str Name="TranslationModifiedBy" Val="engini" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-01T09:01:34.7725294Z" />
+              <Str Name="TranslationModifiedBy" Val="merto" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-15T13:46:06.8037123Z" />
             </Props>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Configuring first-run dependencies.]A;To deploy to physical iOS devices, or to debug a device or simulator, we need some packages from Homebrew.]A;Installing Homebrew may ask you for an admin password. Do you want to continue?]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="engini" DateTime="2015-06-01T10:10:04.0005294Z" />
+        <Modified By="merto" DateTime="2015-06-15T13:46:50.000063Z" />
         <Cmts>
           <Cmt Name="Dev"><![CDATA[Message displayed the first time remotebuild is run, asking for permission to install 3rd party dependencies]]></Cmt>
         </Cmts>

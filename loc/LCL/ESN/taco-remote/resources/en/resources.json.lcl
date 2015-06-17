@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<LCX SchemaVersion="6.0" Name="resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="es-ES" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
+<LCX SchemaVersion="6.0" Name="resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="es-ES" Desc="Commenting file created by LCXAdmin. For more information, please visit http://localizability/longhorn/LcxAdmin.asp" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
   <Props>
     <Str Name="CustomName1" Val="Custom 1" />
     <Str Name="CustomName2" Val="Custom 2" />
@@ -322,13 +322,16 @@
       </Item>
       <Item ItemId=";FirstRunDependencyConfiguration" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Configuring first-run dependencies.]A;To deploy to physical iOS devices, or to debug a device or simulator, we need some packages from Homebrew.]A;Installing Homebrew may ask you for an admin password. Do you want to continue?]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
-            <Val><![CDATA[Configurar dependencias por primera vez.]A;Para implementar en dispositivos iOS físicos o para depurar un dispositivo o simulador, necesitamos algunos paquetes de Homebrew.]A;Al instalar Homebrew, se le podría pedir una contraseña de administrador. ¿Quiere continuar?]]></Val>
+          <Val><![CDATA[Configuring first-run dependencies.]A;To deploy to physical iOS devices, or to debug a device or simulator, we need some packages from Homebrew, a third party package manager.]A;Installing Homebrew may ask you for an admin password. Do you want to continue?]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+            <Val><![CDATA[Configurar dependencias por primera vez.]A;Para implementar en dispositivos iOS físicos o para depurar un dispositivo o simulador, necesitamos algunos paquetes de Homebrew, un administrador de paquetes de terceros.]A;Al instalar Homebrew, se le podría pedir una contraseña de administrador. ¿Quiere continuar?]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Configuring first-run dependencies.]A;To deploy to physical iOS devices, or to debug a device or simulator, we need some packages from Homebrew.]A;Installing Homebrew may ask you for an admin password. Do you want to continue?]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="User" DateTime="2015-05-28T16:58:31Z" />
+        <Modified By="gerard" DateTime="2015-06-16T09:45:16Z" />
         <Cmts>
           <Cmt Name="Dev"><![CDATA[Message displayed the first time remotebuild is run, asking for permission to install 3rd party dependencies]]></Cmt>
         </Cmts>

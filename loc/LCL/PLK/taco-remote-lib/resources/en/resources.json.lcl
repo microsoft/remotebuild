@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<LCX SchemaVersion="6.0" Name="resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="pl-PL" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
+<LCX SchemaVersion="6.0" Name="resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="pl-PL" Desc="Commenting file created by LCXAdmin. For more information, please visit http://localizability/longhorn/LcxAdmin.asp" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
   <Props>
     <Str Name="CustomName1" Val="Custom 1" />
     <Str Name="CustomName2" Val="Custom 2" />
@@ -25,16 +25,19 @@
       <Item ItemId=";AcquiringCordova" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Acquiring cordova.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Pobieranie oprogramowania Cordova.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="dawidch" DateTime="2015-06-01T10:16:08Z" />
+        <Modified By="jhosek" DateTime="2015-06-16T17:22:43.000792Z" />
         <Cmts>
           <Cmt Name="Dev"><![CDATA[Status message returned when downloading and installing the requested version of cordova]]></Cmt>
           <Cmt Name="LcxAdmin"><![CDATA[{Locked="cordova"}]]></Cmt>
         </Cmts>
+        <Notes>
+          <Note Name="Loc" Order="0"><![CDATA[Reported FP locver error]]></Note>
+        </Notes>
         <Props>
           <Str Name="Custom4" Val="LS83" />
         </Props>
@@ -42,7 +45,7 @@
       <Item ItemId=";ArchivePackError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Unexpected error packing archive: {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Wystąpił nieoczekiwany błąd podczas pakowania archiwum: {0}]]></Val>
           </Tgt>
         </Str>
@@ -59,7 +62,7 @@
       <Item ItemId=";BuildFailedUnexpectedly" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Build failed unexpectedly]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Wystąpił nieoczekiwany błąd kompilacji]]></Val>
           </Tgt>
         </Str>
@@ -93,7 +96,7 @@
       <Item ItemId=";BuildInvokedTwice" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Invalid request: build.js process already in use but was asked to build again. This is likely a programming error as a build.js process is meant to be used only once.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Nieprawidłowe żądanie: proces build.js jest już w użyciu, ale poproszono o ponowną kompilację. Prawdopodobną przyczyną jest błąd programowania, ponieważ proces build.js jest przeznaczony do jednokrotnego użytku.]]></Val>
           </Tgt>
         </Str>
@@ -109,7 +112,7 @@
       <Item ItemId=";BuildNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Build {0} does not exist]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Kompilacja {0} nie istnieje]]></Val>
           </Tgt>
         </Str>
@@ -197,7 +200,7 @@
       <Item ItemId=";CopyingNativeOverrides" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Copying native overrides.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Kopiowanie natywnych przesłonięć.]]></Val>
           </Tgt>
         </Str>
@@ -247,7 +250,7 @@
       <Item ItemId=";DeviceLaunchTimeout" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Timeout: Is the device locked?]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Limit czasu: czy urządzenie jest zablokowane?]]></Val>
           </Tgt>
         </Str>
@@ -263,7 +266,7 @@
       <Item ItemId=";DoneBuilding" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Done building {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Zakończono kompilowanie {0}]]></Val>
           </Tgt>
         </Str>
@@ -280,7 +283,7 @@
       <Item ItemId=";DownloadInvalid" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[One or both of expected build outputs {0} and {1} are missing on file system.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Brak co najmniej jednego z plików wyjściowych kompilacji {0} i {1} w systemie plików.]]></Val>
           </Tgt>
         </Str>
@@ -332,7 +335,7 @@
       <Item ItemId=";ErrorBuilding" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Failed to build app for buildNumber {0}: {1}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Nie można skompilować aplikacji dla kompilacji o numerze {0}: {1}]]></Val>
           </Tgt>
         </Str>
@@ -349,7 +352,7 @@
       <Item ItemId=";ErrorMountingDiskImage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error mounting developer disk image]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Wystąpił błąd podczas instalowania obrazu dysku dewelopera]]></Val>
           </Tgt>
         </Str>
@@ -365,7 +368,7 @@
       <Item ItemId=";ErrorXcconfigDirNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Directory for build.xcconfig does not exist.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Katalog pliku build.xcconfig nie istnieje.]]></Val>
           </Tgt>
         </Str>
@@ -381,7 +384,7 @@
       <Item ItemId=";FailedFindDeveloperDiskImage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Unable to find Developer Disk Image]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Nie można odnaleźć obrazu dysku dewelopera]]></Val>
           </Tgt>
         </Str>
@@ -397,7 +400,7 @@
       <Item ItemId=";FailedGetDeviceInfo" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Unable to read device version, is it plugged in and turned on?]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Nie można odczytać wersji urządzenia. Czy zostało ono podłączone i włączone?]]></Val>
           </Tgt>
         </Str>
@@ -413,7 +416,7 @@
       <Item ItemId=";IOSSimNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[****** ios-sim is not installed on path. `sudo npm install -g ios-sim` if you want this server to support emulator.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[****** Składnik ios-sim nie jest zainstalowany w ścieżce. Użyj polecenia „sudo npm install -g ios-sim”, aby włączyć obsługę emulatora na tym serwerze.]]></Val>
           </Tgt>
         </Str>
@@ -534,7 +537,7 @@
       <Item ItemId=";NoCordovaVersionSpecified" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[No cordova version specified!]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Nie określono wersji oprogramowania Cordova!]]></Val>
           </Tgt>
         </Str>
@@ -550,7 +553,7 @@
       <Item ItemId=";NoDeviceAttached" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[No device found, is it plugged in and turned on?]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Nie znaleziono urządzenia. Czy zostało ono podłączone i włączone?]]></Val>
           </Tgt>
         </Str>
@@ -566,7 +569,7 @@
       <Item ItemId=";PackageNotInstalled" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Unable to launch app, it is not installed.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Nie można uruchomić aplikacji, ponieważ nie jest zainstalowana.]]></Val>
           </Tgt>
         </Str>
@@ -582,7 +585,7 @@
       <Item ItemId=";PackagingNativeApp" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Packaging app.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Pakowanie aplikacji.]]></Val>
           </Tgt>
         </Str>
@@ -615,7 +618,7 @@
       <Item ItemId=";RequireCordovaFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error: Failed to acquire cordova version {0}. {1}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Błąd: Nie można pobrać wersji oprogramowania Cordova {0}. {1}]]></Val>
           </Tgt>
         </Str>
@@ -649,7 +652,7 @@
       <Item ItemId=";UnableToDebug" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Unable to start debug bridge]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Nie można uruchomić mostka debugowania]]></Val>
           </Tgt>
         </Str>
@@ -665,7 +668,7 @@
       <Item ItemId=";UnableToLaunchApp" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Unable to launch app]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Nie można uruchomić aplikacji]]></Val>
           </Tgt>
         </Str>
@@ -681,7 +684,7 @@
       <Item ItemId=";UnsupportedPlatform" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Unable to build: requested platform not supported]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Nie można skompilować: żądana platforma nie jest obsługiwana ]]></Val>
           </Tgt>
         </Str>
@@ -697,7 +700,7 @@
       <Item ItemId=";UpdatingIOSPlatform" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Updating iOS platform.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Aktualizowanie platformy iOS.]]></Val>
           </Tgt>
         </Str>
@@ -713,7 +716,7 @@
       <Item ItemId=";WrongInstalledAppsFile" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Output file not as expected]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New" Appr="PreApproved">
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Plik wyjściowy niezgodny z oczekiwaniami]]></Val>
           </Tgt>
         </Str>

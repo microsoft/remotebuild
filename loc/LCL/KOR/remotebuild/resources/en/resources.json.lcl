@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<LCX SchemaVersion="6.0" Name="resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="ko-KR" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
+<LCX SchemaVersion="6.0" Name="resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="ko-KR" Desc="Commenting file created by LCXAdmin. For more information, please visit http://localizability/longhorn/LcxAdmin.asp" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
   <Props>
     <Str Name="HobbitID" Val="670b1b3f-ce13-4273-b0ef-fc210964d0fe" />
   </Props>
@@ -835,10 +835,13 @@
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="sjoh" DateTime="2015-06-01T11:21:47Z" />
+        <Modified By="jhosek" DateTime="2015-06-17T13:40:01.0009539Z" />
         <Cmts>
           <Cmt Name="LcxAdmin"><![CDATA[{Locked="help"}]]></Cmt>
         </Cmts>
+        <Notes>
+          <Note Name="Loc" Order="0"><![CDATA[reported FP locver error]]></Note>
+        </Notes>
       </Item>
       <Item ItemId=";UsageInformation2[10]" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">

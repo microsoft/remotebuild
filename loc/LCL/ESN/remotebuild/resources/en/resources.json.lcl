@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<LCX SchemaVersion="6.0" Name="resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="es-ES" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
+<LCX SchemaVersion="6.0" Name="resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="es-ES" Desc="Commenting file created by LCXAdmin. For more information, please visit http://localizability/longhorn/LcxAdmin.asp" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
   <Props>
     <Str Name="CustomName1" Val="Custom 1" />
     <Str Name="CustomName2" Val="Custom 2" />
@@ -844,10 +844,13 @@
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="gerard" DateTime="2015-06-02T09:30:43Z" />
+        <Modified By="jhosek" DateTime="2015-06-16T17:22:39.0001328Z" />
         <Cmts>
           <Cmt Name="LcxAdmin"><![CDATA[{Locked="help"}]]></Cmt>
         </Cmts>
+        <Notes>
+          <Note Name="Loc" Order="0"><![CDATA[Reported FP locver error]]></Note>
+        </Notes>
       </Item>
       <Item ItemId=";UsageInformation2[10]" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">

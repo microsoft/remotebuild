@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<LCX SchemaVersion="6.0" Name="resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="ru-RU" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
+<LCX SchemaVersion="6.0" Name="resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="ru-RU" Desc="Commenting file created by LCXAdmin. For more information, please visit http://localizability/longhorn/LcxAdmin.asp" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
   <Props>
     <Str Name="CustomName1" Val="Custom 1" />
     <Str Name="CustomName2" Val="Custom 2" />
@@ -30,11 +30,14 @@
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="SUR" DateTime="2015-05-31T12:30:33Z" />
+        <Modified By="jhosek" DateTime="2015-06-16T17:22:45.000801Z" />
         <Cmts>
           <Cmt Name="Dev"><![CDATA[Status message returned when downloading and installing the requested version of cordova]]></Cmt>
           <Cmt Name="LcxAdmin"><![CDATA[{Locked="cordova"}]]></Cmt>
         </Cmts>
+        <Notes>
+          <Note Name="Loc" Order="0"><![CDATA[Reported FP locver error]]></Note>
+        </Notes>
       </Item>
       <Item ItemId=";ArchivePackError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">

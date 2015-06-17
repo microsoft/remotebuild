@@ -101,28 +101,6 @@
           <Str Name="VendorComment" Val="28/05/15 new" />
         </Props>
       </Item>
-      <Item ItemId=";FailedGitClone" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Failed to clone the git repository from {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Non è stato possibile clonare il repository GIT da {0}]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0826261Z" />
-            </Props>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003464Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[{0} is hte git url]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-          <Str Name="VendorComment" Val="28/05/15 new" />
-        </Props>
-      </Item>
       <Item ItemId=";FailedRecursiveCopy" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Failed to recursively copy from {0} to {1}]]></Val>
@@ -145,7 +123,7 @@
           <Str Name="VendorComment" Val="28/05/15 new" />
         </Props>
       </Item>
-      <Item ItemId=";InnerErrorToString" ItemType="0" PsrId="306" Leaf="true">
+      <Item ItemId=";InnerErrorToString" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Inner Error:]A;{0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
@@ -158,6 +136,9 @@
         </Str>
         <Disp Icon="Str" />
         <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003464Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[token prefix to an inner error]]></Cmt>
+        </Cmts>
         <Props>
           <Str Name="TranslationStatus" Val="In Sync" />
           <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
@@ -186,70 +167,76 @@
           <Str Name="VendorComment" Val="28/05/15 new" />
         </Props>
       </Item>
-      <Item ItemId=";PackageLoaderDownloadError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";PackageLoaderDownloadCompletedMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Downloading {0} failed.]]></Val>
+          <Val><![CDATA[<success>Success!</success> {0} downloaded and installed.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Download di {0} non riuscito.]]></Val>
+            <Val><![CDATA[<success>Operazione riuscita.</success> {0} è stato scaricato e installato.]]></Val>
             <Props>
               <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0826261Z" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-15T18:35:20.367294Z" />
             </Props>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003464Z" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-15T18:35:33.0000719Z" />
         <Cmts>
-          <Cmt Name="Dev"><![CDATA[Error reported when downloading Cordova tools {0} fails]]></Cmt>
+          <Cmt Name="Dev"><![CDATA[Message reporting the success of package download and install.]]></Cmt>
         </Cmts>
         <Props>
           <Str Name="TranslationStatus" Val="In Sync" />
           <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-          <Str Name="VendorComment" Val="28/05/15 new" />
+          <Str Name="VendorComment" Val="15/06/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";PackageLoaderDownloadError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: Downloading {0} failed.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Errore: il download di {0} non è riuscito.]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-15T18:35:20.367294Z" />
+            </Props>
+          </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Downloading {0} failed.]]></Val>
+          </Prev>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-15T18:35:33.0000719Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Error reported when downloading a package fails]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="15/06/15 upd" />
         </Props>
       </Item>
       <Item ItemId=";PackageLoaderDownloadingMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Downloading: ]]></Val>
+          <Val><![CDATA[<bold>Downloading</bold>: {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Download: ]]></Val>
+            <Val><![CDATA[<bold>Download di</bold>: {0}]]></Val>
             <Props>
               <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0826261Z" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-15T18:35:20.367294Z" />
             </Props>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Downloading: ]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003464Z" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-15T18:35:33.0000719Z" />
         <Cmts>
           <Cmt Name="Dev"><![CDATA[Message printed when download and install of Cordova tools is in progress.]]></Cmt>
         </Cmts>
         <Props>
           <Str Name="TranslationStatus" Val="In Sync" />
           <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-          <Str Name="VendorComment" Val="28/05/15 new" />
-        </Props>
-      </Item>
-      <Item ItemId=";PackageLoaderErrorMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Failed to install package: ]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Installazione del pacchetto non riuscita: ]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0826261Z" />
-            </Props>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003464Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message denoting failure.]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-          <Str Name="VendorComment" Val="28/05/15 new" />
+          <Str Name="VendorComment" Val="15/06/15 upd" />
         </Props>
       </Item>
       <Item ItemId=";PackageLoaderInstalledMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
@@ -296,26 +283,26 @@
           <Str Name="VendorComment" Val="28/05/15 new" />
         </Props>
       </Item>
-      <Item ItemId=";PackageLoaderNpmInstallFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";PackageLoaderNpmInstallErrorMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error installing {0} via npm. See output for details.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Errore durante l'installazione di {0} tramite npm. Per i dettagli, vedere l'output.]]></Val>
             <Props>
               <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0836262Z" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-15T18:35:20.367294Z" />
             </Props>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003464Z" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-15T18:35:33.0000719Z" />
         <Cmts>
           <Cmt Name="Dev"><![CDATA[Message reported when npm install returns a non-zero exit code.]]></Cmt>
         </Cmts>
         <Props>
           <Str Name="TranslationStatus" Val="In Sync" />
           <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-          <Str Name="VendorComment" Val="28/05/15 new" />
+          <Str Name="VendorComment" Val="15/06/15 new" />
         </Props>
       </Item>
       <Item ItemId=";PackageLoaderNpmInstallFailedEaccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
@@ -340,7 +327,7 @@
           <Str Name="VendorComment" Val="28/05/15 new" />
         </Props>
       </Item>
-      <Item ItemId=";PackageLoaderNpmInstallFailedWithCode" ItemType="0" PsrId="306" Leaf="true">
+      <Item ItemId=";PackageLoaderNpmInstallFailedWithCode" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error installing {0} via npm. Exit Code: {1}. See output for details.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
@@ -353,32 +340,79 @@
         </Str>
         <Disp Icon="Str" />
         <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003464Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message reported when npm install fails with an exit code.]]></Cmt>
+        </Cmts>
         <Props>
           <Str Name="TranslationStatus" Val="In Sync" />
           <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
           <Str Name="VendorComment" Val="28/05/15 new" />
         </Props>
       </Item>
-      <Item ItemId=";PackageLoaderSuccessMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";PackageLoaderNpmUpdateErrorMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Success! ]]></Val>
+          <Val><![CDATA[Error updating {0} via npm. See output for details.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Operazione riuscita. ]]></Val>
+            <Val><![CDATA[Errore durante l'aggiornamento di {0} tramite npm. Per i dettagli, vedere l'output.]]></Val>
             <Props>
               <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0836262Z" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-15T18:35:20.367294Z" />
             </Props>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003464Z" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-15T18:35:33.0000719Z" />
         <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message denoting success.]]></Cmt>
+          <Cmt Name="Dev"><![CDATA[Message reported when npm update returns a non-zero exit code.]]></Cmt>
         </Cmts>
         <Props>
           <Str Name="TranslationStatus" Val="In Sync" />
           <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-          <Str Name="VendorComment" Val="28/05/15 new" />
+          <Str Name="VendorComment" Val="15/06/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";PackageLoaderNpmUpdateFailedEaccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error updating {0} via npm. Exit Code: {1}. Check permissions of npm cache. For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=613751.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Errore durante l'aggiornamento di {0} tramite npm. Codice di uscita: {1}. Verificare le autorizzazioni della cache di npm. Per altre informazioni, vedere http://go.microsoft.com/fwlink/?LinkId=613751.]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-15T18:35:20.367294Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-15T18:35:33.0000719Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message reported when npm update fails due to permissions]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="15/06/15 new" />
+        </Props>
+      </Item>
+      <Item ItemId=";PackageLoaderNpmUpdateFailedWithCode" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error updating {0} via npm. Exit Code: {1}. See output for details.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+            <Val><![CDATA[Errore durante l'aggiornamento di {0} tramite npm. Codice di uscita: {1}. Per i dettagli, vedere l'output.]]></Val>
+            <Props>
+              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
+              <Date Name="TranslationModifiedDate" Val="2015-06-15T18:35:20.368294Z" />
+            </Props>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-15T18:35:33.0000719Z" />
+        <Cmts>
+          <Cmt Name="Dev"><![CDATA[Message reported when npm update fails with an exit code.]]></Cmt>
+        </Cmts>
+        <Props>
+          <Str Name="TranslationStatus" Val="In Sync" />
+          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
+          <Str Name="VendorComment" Val="15/06/15 new" />
         </Props>
       </Item>
       <Item ItemId=";ProcessLogError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">

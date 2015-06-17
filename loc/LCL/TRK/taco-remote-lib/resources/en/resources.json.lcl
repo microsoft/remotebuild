@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<LCX SchemaVersion="6.0" Name="resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="tr-TR" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
+<LCX SchemaVersion="6.0" Name="resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="tr-TR" Desc="Commenting file created by LCXAdmin. For more information, please visit http://localizability/longhorn/LcxAdmin.asp" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
   <Props>
     <Str Name="HobbitID" Val="1316f51d-8d82-4ae2-8787-cea0c84ae271" />
   </Props>
@@ -25,11 +25,14 @@
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="JHosek" DateTime="2015-06-02T07:37:33Z" />
+        <Modified By="jhosek" DateTime="2015-06-16T17:22:46.0004234Z" />
         <Cmts>
           <Cmt Name="Dev"><![CDATA[Status message returned when downloading and installing the requested version of cordova]]></Cmt>
           <Cmt Name="LcxAdmin"><![CDATA[{Locked="cordova"}]]></Cmt>
         </Cmts>
+        <Notes>
+          <Note Name="Loc" Order="0"><![CDATA[Reported FP locver error]]></Note>
+        </Notes>
         <Props>
           <Str Name="TranslationStatus" Val="In Sync" />
           <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
