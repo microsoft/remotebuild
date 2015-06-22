@@ -2,6 +2,6 @@ Install VS2013
 Install Node Tools for Visual Studio
 Install nodeJS
 
-Set registry key HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\DisableUNCCheck to 0x1
+Set registry key HKEY_CURRENT_USER\Software\Microsoft\Command Processor\DisableUNCCheck to 0x1
 
 Policheck SOM workspace id = 6f039c57-b6ad-4a25-9146-52805bc17a67
