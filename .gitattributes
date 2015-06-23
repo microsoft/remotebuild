@@ -61,3 +61,7 @@
 #*.PDF   diff=astextplain
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
+
+# Make sure to keep "executable" files with lf line endings
+taco/src/taco-cli/bin/taco text eol=lf
+taco/src/remotebuild/bin/remotebuild text eol=lf
