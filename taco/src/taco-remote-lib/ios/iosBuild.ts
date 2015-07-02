@@ -30,7 +30,7 @@ import CordovaConfig = utils.CordovaConfig;
 import TacoPackageLoader = utils.TacoPackageLoader;
 import UtilHelper = utils.UtilHelper;
 
-var cordova: Cordova.ICordova = null;
+var cordova: typeof Cordova = null;
 
 function beforePrepare(data: any): void {
     // Instead of a build, we call prepare and then compile
@@ -48,7 +48,6 @@ function afterCompile(data: any): void {
 // All stderr/stdout messages are captured by the parent process and logged to a file.
 var currentBuild: BuildInfo = null;
 var cfg: CordovaConfig = null;
-var language: string = null;
 
 process.on("message", function (buildRequest: { buildInfo: BuildInfo; language: string }): void {
     var buildInfo = BuildInfo.createNewBuildInfoFromDataObject(buildRequest.buildInfo);
@@ -59,11 +58,11 @@ process.on("message", function (buildRequest: { buildInfo: BuildInfo; language: 
     }
 
     currentBuild = buildInfo;
-    language = buildRequest.language;
+    process.env.TACO_LANG = buildRequest.language;
     var cordovaVersion: string = currentBuild["vcordova"];
     buildInfo.updateStatus(BuildInfo.BUILDING, "AcquiringCordova");
     process.send(buildInfo);
-    TacoPackageLoader.lazyRequire<Cordova.ICordova>("cordova", "cordova@" + cordovaVersion, buildInfo.logLevel).done(function (pkg: Cordova.ICordova): void {
+    TacoPackageLoader.lazyRequire<typeof Cordova>("cordova", "cordova@" + cordovaVersion, buildInfo.logLevel).done(function (pkg: typeof Cordova): void {
         cordova = pkg;
 
         cordova.on("results", console.info);
@@ -220,6 +219,18 @@ class IOSBuildHelper {
             });
         }, Q({}));
 
+        var fetchJson: Cordova.IFetchJson = {};
+        var fetchJsonPath = path.join(remotePluginsPath, "fetch.json");
+        if (fs.existsSync(fetchJsonPath)) {
+            try {
+                fetchJson = JSON.parse(<any>fs.readFileSync(fetchJsonPath));
+            } catch (e) {
+                // fetch.json is malformed; act as though no plugins are installed
+                // If it turns out we do need variables from the fetch.json, then cordova will throw an error
+                // and report exactly what variables were required.
+            }
+        }
+
         return newAndModifiedPlugins.reduce(function (soFar: Q.Promise<any>, plugin: string): Q.Promise<any> {
             return soFar.then(function (): Q.Promise<any> {
                 var newFolder = path.join(remotePluginsPath, plugin);
@@ -232,7 +243,16 @@ class IOSBuildHelper {
                     return UtilHelper.copyRecursive(newFolder, installedFolder);
                 } else {
                     // The plugin is not installed; install it
-                    return cordova.raw.plugin("add", newFolder);
+                    var cli_variables: Cordova.IKeyValueStore<string> = {};
+
+                    // Check to see if the plugin is mentioned in fetch.json and has variables
+                    if (plugin in fetchJson && fetchJson[plugin].variables) {
+                        Object.keys(fetchJson[plugin].variables).forEach(function (key: string): void {
+                            cli_variables[key] = fetchJson[plugin].variables[key];
+                        });
+                    }
+
+                    return cordova.raw.plugin("add", newFolder, { cli_variables: cli_variables });
                 }
             });
         }, deleteOldPlugins).finally(function (): void {

@@ -29,6 +29,7 @@ import tacoUtility = require ("taco-utils");
 
 import commands = tacoUtility.Commands;
 import logger = tacoUtility.Logger;
+import loggerHelper = tacoUtility.LoggerHelper;
 import UtilHelper = tacoUtility.UtilHelper;
 
 interface ICliSession {
@@ -42,6 +43,7 @@ interface ICliSession {
  * handles "taco setup"
  */
 class Setup extends commands.TacoCommandBase implements commands.IDocumentedCommand {
+    private static HttpTimeoutMS: number = 20000;
     private static KnownOptions: Nopt.CommandData = {};
     private static ShortHands: Nopt.ShortFlags = {};
     /**
@@ -49,6 +51,20 @@ class Setup extends commands.TacoCommandBase implements commands.IDocumentedComm
      */
     public static CliSession: ICliSession = null;
     public subcommands: commands.ICommand[] = [
+        {
+            // taco setup remote <platform> --remove
+            run: Setup.remoteRemove,
+            canHandleArgs: function (setupData: commands.ICommandData): boolean {
+                return setupData.remain[0] && setupData.remain[0].toLowerCase() === "remote" && setupData.options["remove"];
+            }
+        },
+        {
+            // taco setup remote --list
+            run: Setup.remoteList,
+            canHandleArgs: function (setupData: commands.ICommandData): boolean {
+                return setupData.remain[0] && setupData.remain[0].toLowerCase() === "remote" && setupData.options["list"];
+            }
+        },
         {
             // taco setup remote
             run: Setup.remote,
@@ -73,6 +89,55 @@ class Setup extends commands.TacoCommandBase implements commands.IDocumentedComm
         var parsedOptions = tacoUtility.ArgsHelper.parseArguments(Setup.KnownOptions, Setup.ShortHands, args, 0);
 
         return parsedOptions;
+    }
+
+    private static remoteRemove(setupData: commands.ICommandData): Q.Promise<any> {
+        if (setupData.remain.length < 2) {
+            throw errorHelper.get(TacoErrorCodes.CommandSetupRemoteDeleteNeedsPlatform);
+        }
+
+        var platform: string = (setupData.remain[1]).toLowerCase();
+
+        return Settings.loadSettings().catch<Settings.ISettings>(function (err: any): Settings.ISettings {
+            // No settings or the settings were corrupted: start from scratch
+            return {};
+        }).then(function (settings: Settings.ISettings): Q.Promise<any> {
+            if (!(settings.remotePlatforms && platform in settings.remotePlatforms)) {
+                throw errorHelper.get(TacoErrorCodes.CommandSetupRemoteDeletePlatformNotAdded, platform);
+            } else {
+                delete settings.remotePlatforms[platform];
+                return Settings.saveSettings(settings);
+            }
+        }).then(function (): void {
+            logger.log(resources.getString("CommandSetupRemoteRemoveSuccessful", platform));
+        });
+    }
+
+    private static remoteList(setupData: commands.ICommandData): Q.Promise<any> {
+        return Settings.loadSettings().catch<Settings.ISettings>(function (err: any): Settings.ISettings {
+            // No settings or the settings were corrupted: start from scratch
+            return {};
+        }).then(function (settings: Settings.ISettings): void {
+            var platforms = settings.remotePlatforms && Object.keys(settings.remotePlatforms).map(function (platform: string): INameDescription {
+                    var remote = settings.remotePlatforms[platform];
+                    var url = util.format("[%s] %s://%s:%d/%s",
+                        remote.secure ? resources.getString("CommandSetupRemoteListSecured") : resources.getString("CommandSetupRemoteListNotSecured"),
+                        remote.secure ? "https" : "http",
+                        remote.host,
+                        remote.port,
+                        remote.mountPoint);
+                    return { name: platform, description: url };
+            });
+            
+            if (platforms && platforms.length > 0) {
+                logger.log(resources.getString("CommandSetupRemoteListPrelude"));
+                logger.logLine();
+                var header = { name: resources.getString("CommandSetupRemoteListPlatformHeader"), description: resources.getString("CommandSetupRemoteListDescriptionHeader") };
+                loggerHelper.logNameDescriptionTableWithHeader(header, platforms, null, null, " ");
+            } else {
+                logger.log(resources.getString("CommandSetupRemoteListNoPlatforms"));
+            }
+        });
     }
 
     private static remote(setupData: commands.ICommandData): Q.Promise<any> {
@@ -100,18 +165,20 @@ class Setup extends commands.TacoCommandBase implements commands.IDocumentedComm
         cliSession.question(resources.getString("CommandSetupRemoteQueryHost"), function (hostAnswer: string): void {
             hostPromise.resolve({ host: hostAnswer });
         });
-        hostPromise.promise.then(function (host: { host: string }): void {
+        hostPromise.promise.done(function (host: { host: string }): void {
             cliSession.question(resources.getString("CommandSetupRemoteQueryPort"), function (portAnswer: string): void {
                 var port: number = parseInt(portAnswer);
-                if (port > 0) {
+                if (port > 0 && port < 65536) {
                     // Port looks valid
                     portPromise.resolve({ host: host.host, port: port });
                 } else {
-                    portPromise.reject(errorHelper.get(TacoErrorCodes.CommandSetupRemoteInvalidPort, port));
+                    portPromise.reject(errorHelper.get(TacoErrorCodes.CommandSetupRemoteInvalidPort, portAnswer));
                 }
             });
+        }, function (err: any): void {
+            portPromise.reject(err);
         });
-        portPromise.promise.then(function (hostAndPort: { host: string; port: number }): void {
+        portPromise.promise.done(function (hostAndPort: { host: string; port: number }): void {
             cliSession.question(resources.getString("CommandSetupRemoteQueryPin"), function (pinAnswer: string): void {
                 var pin: number = parseInt(pinAnswer);
                 if (pinAnswer && !Setup.pinIsValid(pin)) {
@@ -121,6 +188,8 @@ class Setup extends commands.TacoCommandBase implements commands.IDocumentedComm
                     pinPromise.resolve({ host: hostAndPort.host, port: hostAndPort.port, pin: pin });
                 }
             });
+        }, function (err: any): void {
+            pinPromise.reject(err);
         });
         return pinPromise.promise.finally(function (): void {
             // Make sure to close the session regardless of error conditions otherwise the node process won't terminate.
@@ -138,7 +207,7 @@ class Setup extends commands.TacoCommandBase implements commands.IDocumentedComm
             var certificateUrl = util.format("https://%s:%d/certs/%d", hostPortAndPin.host, hostPortAndPin.port, hostPortAndPin.pin);
             var deferred = Q.defer<string>();
             // Note: we set strictSSL to be false here because we don't yet know who the server is. We are vulnerable to a MITM attack in this first instance here
-            request.get({ uri: certificateUrl, strictSSL: false, encoding: null }, function (error: any, response: any, body: Buffer): void {
+            request.get({ uri: certificateUrl, strictSSL: false, encoding: null, timeout: Setup.HttpTimeoutMS }, function (error: any, response: any, body: Buffer): void {
                 if (error) {
                     // Error contacting the build server
                     deferred.reject(Setup.getFriendlyHttpError(error, hostPortAndPin.host, hostPortAndPin.port, certificateUrl, !!hostPortAndPin.pin));
@@ -168,7 +237,8 @@ class Setup extends commands.TacoCommandBase implements commands.IDocumentedComm
         return ConnectionSecurityHelper.getAgent(hostPortAndCert).then(function (agent: https.Agent): Q.Promise<string> {
             var options: request.Options = {
                 url: mountDiscoveryUrl,
-                agent: agent
+                agent: agent,
+                timeout: Setup.HttpTimeoutMS
             };
 
             var deferred = Q.defer<string>();
@@ -222,7 +292,7 @@ class Setup extends commands.TacoCommandBase implements commands.IDocumentedComm
         } else if (error.code === "ENOTFOUND") {
             return errorHelper.get(TacoErrorCodes.CommandSetupNotfound, host);
         } else if (error.code === "ETIMEDOUT") {
-            return errorHelper.get(TacoErrorCodes.CommandSetupTimedout, host);
+            return errorHelper.get(TacoErrorCodes.CommandSetupTimedout, host, port);
         } else if (error.code === "ECONNRESET") {
             if (!secure) {
                 return errorHelper.get(TacoErrorCodes.RemoteBuildNonSslConnectionReset, url);

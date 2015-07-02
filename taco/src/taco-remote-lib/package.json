@@ -1,6 +1,6 @@
 {
 	"name": "taco-remote-lib",
-	"description": "Cordova-specific implementation of remotebuild's remote build functionality",
+	"description": "Cordova-specific implementation of taco-remote's build functionality",
 	"version": "0.2.6",
 	"author": {
 		"name": "Microsoft Corporation",
@@ -23,7 +23,6 @@
 		"mocha": "2.0.1",
 		"should":  "4.3.0"
 	},
-	"bundledDependencies": ["taco-utils"],
 	"optionalDependencies": {
 		"ios-sim": "2.0.1"
 	},

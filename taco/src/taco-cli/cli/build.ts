@@ -115,6 +115,10 @@ class Build extends commands.TacoCommandBase implements commands.IDocumentedComm
             throw errorHelper.get(TacoErrorCodes.CommandNotBothDeviceEmulate);
         }
 
+        if (parsedOptions.options["debug"] && parsedOptions.options["release"]) {
+            throw errorHelper.get(TacoErrorCodes.CommandNotBothDebugRelease);
+        }
+
         return parsedOptions;
     }
 
@@ -184,7 +188,7 @@ class Build extends commands.TacoCommandBase implements commands.IDocumentedComm
     private static buildRemotePlatform(platform: string, commandData: commands.ICommandData): Q.Promise<any> {
         var configuration = commandData.options["release"] ? "release" : "debug";
         var buildTarget = commandData.options["target"] || (commandData.options["device"] ? "device" : commandData.options["emulator"] ? "emulator" : "");
-        return Settings.loadSettings().then(function (settings: Settings.ISettings): Q.Promise<any> {
+        return Q.all([Settings.loadSettings(), CordovaWrapper.getCordovaVersion()]).spread<any>(function (settings: Settings.ISettings, cordovaVersion: string): Q.Promise<any> {
             var language = settings.language || "en";
             var remoteConfig = settings.remotePlatforms[platform];
             if (!remoteConfig) {
@@ -199,7 +203,7 @@ class Build extends commands.TacoCommandBase implements commands.IDocumentedComm
                 configuration: configuration,
                 buildTarget: buildTarget,
                 language: language,
-                cordovaVersion: require("cordova/package.json").version || "5.0.0" // TODO (Devdiv 1160583): Use Kit specified version
+                cordovaVersion: cordovaVersion
             });
             return Build.RemoteBuild.build(buildSettings);
         });

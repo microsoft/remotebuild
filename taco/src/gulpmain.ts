@@ -22,7 +22,7 @@ import stylecopUtil = require ("../tools/stylecopUtil");
 import gulpUtils = require ("../tools/GulpUtils");
  
 var buildConfig = require("../../src/build_config.json");
-var tacoModules = ["taco-utils", "taco-kits", "taco-cli", "remotebuild", "taco-remote", "taco-remote-lib"];
+var tacoModules = ["taco-utils", "taco-kits", "taco-dependency-installer", "taco-cli", "remotebuild", "taco-remote", "taco-remote-lib"];
 var allModules = tacoModules.concat(["taco-remote-multiplexer"]);
 
 // honour --moduleFilter flag.
@@ -41,13 +41,7 @@ gulp.task("compile", function (callback: Function): Q.Promise<any> {
         .pipe(sourcemaps.init())
         .pipe(ts(buildConfig.tsCompileOptions))
         .pipe(sourcemaps.write("."))
-        .pipe(gulp.dest(buildConfig.buildPackages)))
-        .then(function (): Q.Promise<any> {
-            return Q.all([
-                gulpUtils.prepareJsdocJson(path.join(buildConfig.buildPackages, "taco-remote", "lib", "tacoRemoteConfig.js")),
-                gulpUtils.prepareJsdocJson(path.join(buildConfig.buildPackages, "remotebuild", "lib", "remoteBuildConf.js"))
-            ]);
-    });
+        .pipe(gulp.dest(buildConfig.buildPackages)));
 });
 
 /* compile + copy */
@@ -114,6 +108,7 @@ gulp.task("copy", function (): Q.Promise<any> {
         "/**/templates/**",
         "/**/examples/**",
         "/**/*.ps1",
+        "/**/platformDependencies.json"
     ];
     return Q.all([
         gulpUtils.copyFiles(filesToCopy, buildConfig.src, buildConfig.buildPackages),

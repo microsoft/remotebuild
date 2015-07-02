@@ -6,8 +6,10 @@
 ﻿ *******************************************************
 ﻿ */
 
+/// <reference path="../typings/commandExample.d.ts" />
 /// <reference path="../typings/node.d.ts" />
 /// <reference path="../typings/Q.d.ts" />
+
 import fs = require ("fs");
 import path = require ("path");
 import Q = require ("q");
@@ -16,24 +18,20 @@ import logger = require ("./logger");
 import resources = require ("./resources/resourceManager");
 import tacoErrorCodes = require ("./tacoErrorCodes");
 import errorHelper = require ("./tacoErrorHelper");
-import utilHelper = require ("./utilHelper");
 
 import TacoErrorCodes = tacoErrorCodes.TacoErrorCode;
-import UtilHelper = utilHelper.UtilHelper;
 
 module TacoUtility {
     export module Commands {
-        export interface INameDescription {
-            name: string;
-            description: string;
-        }
-
         export interface ICommandInfo {
             synopsis: string;
             modulePath: string;
             description: string;
             args: INameDescription[];
             options: INameDescription[];
+            examples: ICommandExample[];
+            notes: string[];
+            aliases: ICommandAlias[];
         }
 
         export interface ICommandData {
@@ -137,7 +135,7 @@ module TacoUtility {
                 if (subcommand) {
                     return subcommand.run(commandData);
                 } else {
-                    return Q.reject(errorHelper.get(TacoErrorCodes.CommandBadArguments, this.name, commandData.original.toString()));
+                    return Q.reject(errorHelper.get(TacoErrorCodes.CommandBadSubcommand, this.name, commandData.original.toString()));
                 }
             }
 

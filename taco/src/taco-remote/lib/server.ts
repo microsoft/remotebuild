@@ -25,13 +25,13 @@ import serveIndex = require ("serve-index");
 import util = require ("util");
 
 import BuildManager = require ("./buildManager");
+import Help = require ("./help");
 import HostSpecifics = require ("./hostSpecifics");
 import selftest = require ("./selftest");
 import TacoRemoteConfig = require ("./tacoRemoteConfig");
 
 import utils = require ("taco-utils");
 
-import JSDocHelpPrinter = utils.JSDocHelpPrinter;
 import Logger = utils.Logger;
 
 class ServerModuleFactory implements RemoteBuild.IServerModuleFactory {
@@ -54,10 +54,8 @@ class ServerModuleFactory implements RemoteBuild.IServerModuleFactory {
     public printHelp(conf: RemoteBuild.IRemoteBuildConfiguration, modConfig: RemoteBuild.IServerModuleConfiguration): void {
         var tacoRemoteConf = new TacoRemoteConfig(conf, modConfig);
         var resources = new utils.ResourceManager(path.join(__dirname, "..", "resources"), conf.lang);
-        var jsdoc = new JSDocHelpPrinter(require.resolve("./tacoRemoteConfig.jsdoc.json"), resources);
-
-        console.info(resources.getString("TacoRemoteHelp"));
-        jsdoc.printHelp();
+        var help: Help = new Help();
+        help.run({ options: {}, original: ["taco-remote"], remain: ["taco-remote"] }).done();
     }
 }
 
@@ -109,7 +107,7 @@ class Server implements RemoteBuild.IServerModule {
         var modPath = this.modPath;
         var self = this;
         this.buildManager.submitNewBuild(req).then(function (buildInfo: utils.BuildInfo): void {
-            var contentLocation = util.format("%s://%s:%d/%s/build/tasks/%d", req.protocol, req.host, port, modPath, buildInfo.buildNumber);
+            var contentLocation = util.format("%s://%s:%d/%s/build/tasks/%d", req.protocol, req.hostname, port, modPath, buildInfo.buildNumber);
             res.set({
                 "Content-Type": "application/json",
                 "Content-Location": contentLocation

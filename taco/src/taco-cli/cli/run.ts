@@ -18,8 +18,8 @@ import fs = require ("fs");
 import path = require ("path");
 import Q = require ("q");
 
-import CordovaWrapper = require ("./utils/CordovaWrapper");
 import RemoteBuildSettings = require ("./remoteBuild/buildSettings");
+import CordovaWrapper = require ("./utils/CordovaWrapper");
 import RemoteBuildClientHelper = require ("./remoteBuild/remotebuildClientHelper");
 import resources = require ("../resources/resourceManager");
 import Settings = require ("./utils/settings");
@@ -104,6 +104,10 @@ class Run extends commands.TacoCommandBase implements commands.IDocumentedComman
             errorHelper.get(TacoErrorCodes.CommandNotBothDeviceEmulate);
         }
 
+        if (parsedOptions.options["debug"] && parsedOptions.options["release"]) {
+            throw errorHelper.get(TacoErrorCodes.CommandNotBothDebugRelease);
+        }
+
         return parsedOptions;
     }
 
@@ -117,7 +121,7 @@ class Run extends commands.TacoCommandBase implements commands.IDocumentedComman
     }
 
     private static runRemotePlatform(platform: string, commandData: commands.ICommandData): Q.Promise<any> {
-        return Settings.loadSettings().then(function (settings: Settings.ISettings): Q.Promise<any> {
+        return Q.all([Settings.loadSettings(), CordovaWrapper.getCordovaVersion()]).spread<any>(function (settings: Settings.ISettings, cordovaVersion: string): Q.Promise<any> {
             var configuration = commandData.options["release"] ? "release" : "debug";
             var buildTarget = commandData.options["target"] || (commandData.options["device"] ? "device" : "");
             var language = settings.language || "en";
@@ -137,7 +141,7 @@ class Run extends commands.TacoCommandBase implements commands.IDocumentedComman
                 configuration: configuration,
                 buildTarget: buildTarget,
                 language: language,
-                cordovaVersion: require("cordova/package.json").version || "5.0.0" // TODO (Devdiv 1160583): Use Kit specified version
+                cordovaVersion: cordovaVersion
             });
 
             // Find the build that we are supposed to run
@@ -180,12 +184,12 @@ class Run extends commands.TacoCommandBase implements commands.IDocumentedComman
                     // enable debugging and report connection information
                     return RemoteBuildClientHelper.debug(buildInfo, remoteConfig)
                         .then(function (buildInfo: BuildInfo): BuildInfo {
-                        if (buildInfo["webDebugProxyPort"]) {
-                            console.info(JSON.stringify({ webDebugProxyPort: buildInfo["webDebugProxyPort"] }));
-                        }
+                            if (buildInfo["webDebugProxyPort"]) {
+                                console.info(JSON.stringify({ webDebugProxyPort: buildInfo["webDebugProxyPort"] }));
+                            }
 
-                        return buildInfo;
-                    });
+                            return buildInfo;
+                        });
                 } else {
                     return Q(buildInfo);
                 }
