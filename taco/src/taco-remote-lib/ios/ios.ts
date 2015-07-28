@@ -18,6 +18,7 @@
 import child_process = require ("child_process");
 import fs = require ("fs");
 import net = require ("net");
+import os = require ("os");
 import path = require ("path");
 import util = require ("util");
 import packer = require ("zip-stream");
@@ -59,7 +60,7 @@ class IOSAgent implements ITargetPlatform {
     }
 
     public canServiceRequest(buildInfo: BuildInfo): boolean {
-        return buildInfo.buildPlatform.toLowerCase() === "ios";
+        return os.platform() === "darwin" && buildInfo.buildPlatform.toLowerCase() === "ios";
     }
 
     /**
@@ -96,9 +97,9 @@ class IOSAgent implements ITargetPlatform {
         var pathToPlistFile = path.join(iosOutputDir, buildInfo["appName"] + ".plist");
         var pathToIpaFile = path.join(iosOutputDir, buildInfo["appName"] + ".ipa");
         if (!fs.existsSync(pathToPlistFile) || !fs.existsSync(pathToIpaFile)) {
-            var msg = resources.getString("DownloadInvalid", pathToPlistFile, pathToIpaFile);
+            var msg = resources.getString("IOSDownloadInvalid", pathToPlistFile, pathToIpaFile);
             console.info(msg);
-            res.status(404).send(resources.getStringForLanguage(req, "DownloadInvalid", pathToPlistFile, pathToIpaFile));
+            res.status(404).send(resources.getStringForLanguage(req, "IOSDownloadInvalid", pathToPlistFile, pathToIpaFile));
             callback(msg);
             return;
         }

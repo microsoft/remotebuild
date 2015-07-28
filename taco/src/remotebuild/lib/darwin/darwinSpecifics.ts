@@ -44,7 +44,6 @@ class DarwinSpecifics implements HostSpecifics.IHostSpecifics {
         return base;
     }
 
-    // Note: we acquire dependencies for deploying and debugging here rather than in taco-remote-lib because it may require user intervention, and taco-remote-lib may be acquired unattended in future.
     public initialize(conf: RemoteBuildConf): Q.Promise<any> {
         DarwinSpecifics.Config = conf;
         if (process.getuid() === 0) {

@@ -36,6 +36,7 @@ class Win32Specifics implements HostSpecifics.IHostSpecifics {
 
     // Note: we acquire dependencies for deploying and debugging here rather than in taco-remote-lib because it may require user intervention, and taco-remote-lib may be acquired unattended in future.
     public initialize(conf: TacoRemoteConfig): Q.Promise<any> {
+        // No dependencies required?
         return Q({});
     }
 }
