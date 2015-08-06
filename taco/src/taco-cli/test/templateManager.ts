@@ -29,11 +29,8 @@ import zlib = require ("zlib");
 
 import resources = require ("../resources/resourceManager");
 import TacoErrorCodes = require ("../cli/tacoErrorCodes");
-import tacoKits = require ("taco-kits");
 import tacoUtils = require ("taco-utils");
 import templateManager = require ("../cli/utils/templateManager");
-
-import kitHelper = tacoKits.KitHelper;
 import utils = tacoUtils.UtilHelper;
 
 describe("TemplateManager", function (): void {
@@ -295,7 +292,7 @@ describe("TemplateManager", function (): void {
             var templates: templateManager = new templateManager(mockKitHelper, templateCache);
 
             // Build the expected result
-            var expectedResult: templateManager.ITemplateList = {
+            var expectedResult = {
                 kitId: testKitId,
                 templates: [
                     {
@@ -331,7 +328,7 @@ describe("TemplateManager", function (): void {
             var templates: templateManager = new templateManager(mockKitHelper, templateCache);
 
             // Build the expected result
-            var expectedResult: templateManager.ITemplateList = {
+            var expectedResult = {
                 kitId: "",
                 templates: [
                     {

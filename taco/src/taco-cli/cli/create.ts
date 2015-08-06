@@ -21,16 +21,15 @@ import util = require ("util");
 
 import cordovaHelper = require ("./utils/cordovaHelper");
 import cordovaWrapper = require ("./utils/cordovaWrapper");
+import kitHelper = require ("./utils/kitHelper");
 import projectHelper = require ("./utils/projectHelper");
 import resources = require ("../resources/resourceManager");
-import tacoKits = require ("taco-kits");
 import TacoErrorCodes = require ("./tacoErrorCodes");
 import errorHelper = require ("./tacoErrorHelper");
 import tacoUtility = require ("taco-utils");
 import templateManager = require ("./utils/templateManager");
 
 import commands = tacoUtility.Commands;
-import kitHelper = tacoKits.KitHelper;
 import logger = tacoUtility.Logger;
 import LoggerHelper = tacoUtility.LoggerHelper;
 import utils = tacoUtility.UtilHelper;
@@ -63,7 +62,7 @@ class Create implements commands.IDocumentedCommand {
     private static DefaultAppName: string = "HelloTaco";
 
     private commandParameters: ICreateParameters;
-    
+
     public info: commands.ICommandInfo;
 
     public run(data: commands.ICommandData): Q.Promise<any> {
@@ -166,8 +165,6 @@ class Create implements commands.IDocumentedCommand {
         var kitId: string = this.commandParameters.data.options["kit"];
         var templateId: string = this.commandParameters.data.options["template"];
 
-        logger.logLine();
-
         // Create the project 
         if (!this.isKitProject()) {
             return this.printStatusMessage()
@@ -187,7 +184,7 @@ class Create implements commands.IDocumentedCommand {
                     return kitHelper.getKitInfo(kitId);
                 } else {
                     return Q.resolve(null);
-                }      
+                }
             })
             .then(function (kitInfo: TacoKits.IKitInfo): Q.Promise<string> {
                 if (kitInfo && !!kitInfo.deprecated) {
@@ -213,26 +210,49 @@ class Create implements commands.IDocumentedCommand {
      * Prints the project creation status message
      */
     private printStatusMessage(): Q.Promise<any> {
+        var self = this;
         var cordovaParameters = this.commandParameters.cordovaParameters;
         var projectPath: string = cordovaParameters.projectPath ? path.resolve(cordovaParameters.projectPath) : "''";
 
         if (!this.isKitProject()) {
-            logger.log(resources.getString("CommandCreateStatusCordovaCliUsed", cordovaParameters.appName, cordovaParameters.appId, projectPath, this.commandParameters.data.options["cli"]));
+            self.printNewProjectTable("CommandCreateStatusTableCordovaCLIVersionDescription", this.commandParameters.data.options["cli"]);
             return Q({});
         } else {
             var kitId: string = this.commandParameters.data.options["kit"];
             return Q({})
                 .then(function (): Q.Promise<string> {
                     if (!kitId) {
-                        return kitHelper.getDefaultKit();
+                        return kitHelper.getDefaultKit().then(kitId => resources.getString("CommandCreateStatusDefaultKitUsedAnnotation", kitId));
                     }
 
                     return Q(kitId);
                 })
                 .then(function (kitIdUsed: string): void {
-                    logger.log(resources.getString("CommandCreateStatusKitIdUsed", cordovaParameters.appName, cordovaParameters.appId, projectPath, kitIdUsed));
+                    self.printNewProjectTable("CommandCreateStatusTableKitVersionDescription", kitIdUsed);
                 });
         }
+    }
+
+    private repeat(text: string, times: number): string {
+        // From: http://stackoverflow.com/questions/1877475/repeat-character-n-times
+        return new Array(times + 1).join(text);
+    }
+
+    private printNewProjectTable(kitOrCordovaStringResource: string, kitOrCordovaVersion: string): void {
+        var cordovaParameters = this.commandParameters.cordovaParameters;
+        var projectFullPath: string = path.resolve(this.commandParameters.cordovaParameters.projectPath);
+
+        logger.log(resources.getString("CommandCreateStatusCreatingNewProject"));
+
+        var indentation = 6; // We leave some empty space on the left before the text/table starts
+        var nameDescriptionPairs = [
+            { name: resources.getString("CommandCreateStatusTableNameDescription"), description: cordovaParameters.appName },
+            { name: resources.getString("CommandCreateStatusTableIDDescription"), description: cordovaParameters.appId },
+            { name: resources.getString("CommandCreateStatusTableLocationDescription"), description: projectFullPath },
+            { name: resources.getString(kitOrCordovaStringResource), description: kitOrCordovaVersion },
+            { name: resources.getString("CommandCreateStatusTableReleaseNotesDescription"), description: resources.getString("CommandCreateStatusTableReleaseNotesLink") },
+        ];
+        LoggerHelper.logNameDescriptionTableWithHorizontalBorders(nameDescriptionPairs, indentation);
     }
 
     /**
@@ -256,6 +276,21 @@ class Create implements commands.IDocumentedCommand {
         } else {
             logger.log(resources.getString("CommandCreateSuccessProjectCLI", projectFullPath));
         }
+
+        // Print the onboarding experience
+        logger.log("-------------------------------------");
+        LoggerHelper.logList(["HowToUseChangeToProjectFolder",
+            "HowToUseCommandPlatformAddPlatform",
+            "HowToUseCommandInstallReqsPlugin",
+            "HowToUseCommandAddPlugin",
+            "HowToUseCommandSetupRemote",
+            "HowToUseCommandBuildPlatform",
+            "HowToUseCommandEmulatePlatform",
+            "HowToUseCommandRunPlatform"].map(msg => resources.getString(msg, projectFullPath)));
+
+        ["",
+            "HowToUseCommandHelp",
+            "HowToUseCommandDocs"].forEach(msg => logger.log(resources.getString(msg)));
     }
 }
 

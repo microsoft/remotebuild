@@ -1,0 +1,784 @@
+[16:06:26] Using gulpfile C:\cygwin64\home\jithomso\taco\src\gulpfile.js
+[16:06:26] Starting 'clean-templates'...
+[16:06:26] Finished 'clean-templates' after 19 ms
+[16:06:26] Starting 'prepare-templates'...
+[16:06:27] Finished 'prepare-templates' after 895 ms
+[16:06:27] Starting 'build'...
+[16:06:27] Starting 'compile'...
+[16:06:34] Finished 'compile' after 6.33 s
+[16:06:34] Starting 'copy'...
+[16:06:34] Finished 'copy' after 448 ms
+[16:06:34] Finished 'build' after 6.78 s
+[16:06:34] Starting 'install-build'...
+Installing C:\cygwin64\home\jithomso\taco\build\packages\node_modules\taco-utils
+Installing C:\cygwin64\home\jithomso\taco\build\packages\node_modules\taco-kits
+Installing C:\cygwin64\home\jithomso\taco\build\packages\node_modules\taco-dependency-installer
+Installing C:\cygwin64\home\jithomso\taco\build\packages\node_modules\taco-cli
+Installing C:\cygwin64\home\jithomso\taco\build\packages\node_modules\remotebuild
+Installing C:\cygwin64\home\jithomso\taco\build\packages\node_modules\taco-remote
+Installing C:\cygwin64\home\jithomso\taco\build\packages\node_modules\taco-remote-lib
+[16:06:43] Finished 'install-build' after 9.35 s
+[16:06:43] Starting 'run-tests'...
+
+> taco-utils@0.0.1 test C:\cygwin64\home\jithomso\taco\build\packages\node_modules\taco-utils
+> mocha
+
+
+[0m[0m
+[0m  CordovaConfig[0m
+  [32m  √[0m[90m should correctly parse config files [0m
+  [32m  √[0m[90m should correctly normalize unicode display names [0m
+
+[0m  logFormathelper[0m
+  [32m  √[0m[90m should allow all supported styles for a correctly formatted string [0m
+  [32m  √[0m[90m should allow empty string [0m
+  [32m  √[0m[90m should allow deeply nested tags [0m
+  [32m  √[0m[90m should fail for missing helptitle start tag [0m
+  [32m  √[0m[90m should fail for missing synopsis end tag [0m
+  [32m  √[0m[90m should fail for no end tags [0m
+  [32m  √[0m[90m should fail for no start tags [0m
+  [32m  √[0m[90m should fail for unknown tags [0m
+
+[0m  TacoPackageLoader[0m
+is-empty@0.0.1 node_modules\is-empty
+  [32m  √[0m[90m should load packages from npm [0m[31m(1235ms)[0m
+is-empty@0.0.1 node_modules\is-empty
+  [32m  √[0m[90m should load packages from git [0m[31m(1906ms)[0m
+is-empty@0.0.1 node_modules\is-empty
+  [32m  √[0m[90m should be able to update npm package [0m[31m(2187ms)[0m
+foo@1.0.0 node_modules\foo
+foo@1.0.0 node_modules\foo
+  [32m  √[0m[90m should update local expirable package [0m[31m(2860ms)[0m
+
+[0m  resources[0m
+  [32m  √[0m[90m should use the default language by default [0m
+  [32m  √[0m[90m should correctly return strings for a primary language [0m
+  [32m  √[0m[90m should correctly return strings for a non-english primary language [0m
+  [32m  √[0m[90m should correctly substitute arguments in resource strings [0m
+  [32m  √[0m[90m should find the most specific region for a language [0m
+  [32m  √[0m[90m should fall back to more general languages if a more specific one is not available [0m
+  [32m  √[0m[90m should fall back to english as a default if the language is unknown [0m
+  [32m  √[0m[90m should return undefined for bad resource identifiers [0m
+  [32m  √[0m[90m should handle unicode in resource strings [0m
+  [32m  √[0m[90m should replace all placeholders correctly [0m
+
+[0m  taco Errors in taco-utils[0m
+  [32m  √[0m[90m Verify taco Errors in taco-utils [0m
+
+[0m  UtilHelper[0m
+[0m    parseArguments()[0m
+    [32m  √[0m[90m shouldn't throw errors for empty and missing parameters [0m
+    [32m  √[0m[90m should parse arguments properly when no flags are specified [0m
+    [32m  √[0m[90m should parse arguments properly when nopt-Boolean and nopt-String flags are specified [0m
+    [32m  √[0m[90m should mark nopt-String flags as undefined if they have empty values [0m
+    [32m  √[0m[90m should successfully parse abbreviated flags [0m
+    [32m  √[0m[90m should parse arguments properly when shorthands are specified [0m
+    [32m  √[0m[90m should handle complex scenarios correctly [0m
+
+
+[92m [0m[32m 32 passing[0m[90m (8s)[0m
+
+
+> taco-kits@0.0.2 test C:\cygwin64\home\jithomso\taco\build\packages\node_modules\taco-kits
+> mocha
+
+
+[0m[0m
+[0m  taco Errors in taco-kits[0m
+  [32m  √[0m[90m Verify taco Errors in taco-kits [0m
+
+[0m  KitHelper[0m
+[0m    getKitMetadata()[0m
+    [32m  √[0m[90m must return the right kit metadata [0m
+[0m    getKitInfo()[0m
+    [32m  √[0m[90m must return the right kit information for the deprecated kit ID passed [0m
+    [32m  √[0m[90m must return the right kit information for the default kit ID passed [0m
+[0m    getDefaultKit()[0m
+    [32m  √[0m[90m must return the ID of the default kit [0m
+[0m    getPlatformOverridesForKit()[0m
+    [32m  √[0m[90m must return the platform overrides of the specified kit [0m
+[0m    getPluginOverridesForKit()[0m
+    [32m  √[0m[90m must return the plugin overrides of the specified kit [0m
+[0m    getTemplateOverrideInfo()[0m
+    [32m  √[0m[90m must return the template override information for the kit ID and template ID passed [0m
+[0m    getTemplatesForKit()[0m
+    [32m  √[0m[90m should return the correct list of templates when no kit is specified [0m
+    [32m  √[0m[90m should return the correct list of templates for a kit that doesn't have a template override node in the metadata [0m
+    [32m  √[0m[90m should return the correct list of templates for a kit that has a template override node in the metadata [0m
+    [32m  √[0m[90m should return the correct error when asking for the templates of a kit that doesn't exist [0m
+[0m    getAllTemplates()[0m
+    [32m  √[0m[90m should return the correct list of all available templates [0m
+[0m    TacoKitMetaData.json[0m
+    [32m  √[0m[90m should only have kit ids that are suitable for directory names [0m
+    [32m  √[0m[90m should only have template ids that are suitable for directory names [0m
+
+
+[92m [0m[32m 15 passing[0m[90m (31ms)[0m
+
+
+> taco-dependency-installer@0.0.1 test C:\cygwin64\home\jithomso\taco\build\packages\node_modules\taco-dependency-installer
+> mocha
+
+
+[0m[0m
+[0m  DependencyDataWrapper[0m
+[0m    getInstallDirectory()[0m
+    [32m  √[0m[90m should return the correct install destination for a dependency [0m
+    [32m  √[0m[90m should not give errors when no install destination is available [0m
+[0m    getDisplayName()[0m
+    [32m  √[0m[90m should return the correct display name for a dependency [0m
+    [32m  √[0m[90m should not give errors for dependencies that don't have a display name [0m
+[0m    getInstallerPath()[0m
+    [32m  √[0m[90m should return the correct installer path for a dependency [0m
+    [32m  √[0m[90m should not give errors for dependencies that don't have an installer path [0m
+[0m    getLicenseUrl()[0m
+    [32m  √[0m[90m should return the correct license URL for a dependency [0m
+    [32m  √[0m[90m should not give errors for dependencies that don't have a license URL [0m
+[0m    getPrerequisites()[0m
+    [32m  √[0m[90m should return the correct prerequisites list for a dependency [0m
+    [32m  √[0m[90m should not give errors for dependencies that don't have a prerequisites list [0m
+[0m    getInstallerInfo()[0m
+    [32m  √[0m[90m should return the correct installer info for a dependency [0m
+    [32m  √[0m[90m should not give errors when no installer info is available [0m
+[0m    getFirstValidVersion()[0m
+    [32m  √[0m[90m should return the correct version info for a dependency [0m
+    [32m  √[0m[90m should not give errors when no version is supported for the current system [0m
+[0m    dependencyExists()[0m
+    [32m  √[0m[90m should correctly detect whether a dependency exists or not in our metadata [0m
+[0m    versionExists()[0m
+    [32m  √[0m[90m should correctly detect whether a version exists or not in our metadata [0m
+[0m    isSystemSupported()[0m
+    [32m  √[0m[90m should correctly detect whether a system is supported or not for the specified dependency [0m
+[0m    isImplicit()[0m
+    [32m  √[0m[90m should correctly detect whether a version exists or not in our metadata [0m
+
+[0m  DependencyInstaller[0m
+[0m    parseMissingDependencies()[0m
+    [32m  √[0m[90m should correctly parse missing and unsupported dependencies, in taco projects [0m
+    [32m  √[0m[90m should correctly parse missing and unsupported dependencies, in non-taco projects [0m
+[0m    parseFromString()[0m
+    [32m  √[0m[90m should correctly parse the cordova requirements results from the string output [0m
+[0m    parseFromRawResult()[0m
+    [32m  √[0m[90m should correctly parse the cordova requirements results returned by the raw api call [0m
+[0m    sortDependencies()[0m
+    [32m  √[0m[90m should correctly sort the missing dependencies according to their prerequisites [0m
+    [32m  √[0m[90m should sort the missing dependencies without error when there's only one dependency [0m
+[0m    canInstallDependency()[0m
+    [32m  √[0m[90m should return false for missing id [0m
+    [32m  √[0m[90m should return false for unknown id [0m
+    [32m  √[0m[90m should return true for implicit dependencies [0m
+    [32m  √[0m[90m should return false for a requested version that doesn't exist [0m
+    [32m  √[0m[90m should return false if the requested version exists, but the user's system is not supported [0m
+    [32m  √[0m[90m should return true if the requested version exists and the user's system is supported [0m
+    [32m  √[0m[90m should return false if no version is requested, but the user's system is not supported [0m
+    [32m  √[0m[90m should return true if no version is requested and the user's system is supported [0m
+[0m    buildInstallConfigFile()[0m
+    [32m  √[0m[90m should correctly generate the install config file [0m
+    [32m  √[0m[90m should correctly generate the install config file when one already exists [0m
+
+[0m  InstallerRunner[0m
+[0m    parseInstallConfig()[0m
+    [32m  √[0m[90m should parse without errors a valid installConfig file [0m
+    [32m  √[0m[90m should report the correct error when installConfig does not exist [0m
+    [32m  √[0m[90m should report the correct error when installConfig is malformed [0m
+    [32m  √[0m[90m should report the correct error when installConfig contains an unknown ID [0m
+    [32m  √[0m[90m should report the correct error when installConfig contains an unknown version ID [0m
+    [32m  √[0m[90m should report the correct error when installConfig contains an invalid install path [0m[31m(94ms)[0m
+    [32m  √[0m[90m should report the correct error when installConfig contains a non-empty install path [0m
+    [32m  √[0m[90m should report the correct error when installConfig contains duplicate install paths [0m
+[0m    instantiateInstaller()[0m
+    [32m  √[0m[90m should instantiate a sub-installer without error [0m
+
+[0m  InstallerUtils[0m
+[0m    isFileClean()[0m
+    [32m  √[0m[90m should return true when the specified file is clean [0m
+    [32m  √[0m[90m should return false when the specified file isn't clean (wrong byte size) [0m
+    [32m  √[0m[90m should return false when the specified file isn't clean (wrong SHA1 signature) [0m
+[0m    pathContains()[0m
+    [32m  √[0m[90m should correctly detect that a value is already in the path [0m
+    [32m  √[0m[90m should correctly detect that a value is not in the path [0m
+[0m    calculateFileSha1()[0m
+    [32m  √[0m[90m should calculate the correct hash [0m
+[0m    getFileBytes()[0m
+    [32m  √[0m[90m should calculate the correct file size in bytes [0m
+
+
+[92m [0m[32m 50 passing[0m[90m (219ms)[0m
+
+
+> taco-cli@0.0.1 test C:\cygwin64\home\jithomso\taco\build\packages\node_modules\taco-cli
+> mocha
+
+
+
+  taco build
+
+CommandCreateStatusCordovaCliUsed
+
+PackageLoaderDownloadingMessage
+cordova@4.0.0 node_modules\cordova
+├── q@0.9.7
+├── underscore@1.4.4
+├── nopt@2.2.1 (abbrev@1.0.7)
+└── cordova-lib@4.0.0 (osenv@0.0.3, properties-parser@0.2.3, bplist-parser@0.0.5, mime@1.2.11, unorm@1.3.3, semver@2.0.11, dep-graph@1.1.0, shelljs@0.3.0, npmconf@0.1.16, glob@3.2.11, xcode@0.6.7, d8@0.4.4, rc@0.3.0, elementtree@0.1.5, request@2.22.0, tar@0.1.20, cordova-js@3.7.1, plist@1.0.1, npm@1.3.4)
+
+PackageLoaderDownloadCompletedMessage
+CommandCreateSuccessProjectCLI
+IncrementalBuild
+SubmittingRemoteBuild
+NewRemoteBuildInfo
+CheckingRemoteBuildStatus
+Uploaded - null
+BuildLogWrittenTo
+CheckingRemoteBuildStatus
+Complete - null
+RemoteBuildSuccessful
+BuildLogWrittenTo
+    √ should make the correct sequence of calls for 'taco build --remote test' (172ms)
+
+CommandCreateStatusCordovaCliUsed
+CommandCreateSuccessProjectCLI
+IncrementalBuild
+SubmittingRemoteBuild
+NewRemoteBuildInfo
+CheckingRemoteBuildStatus
+Uploaded - null
+BuildLogWrittenTo
+CheckingRemoteBuildStatus
+Error - null
+    √ should report an error if the remote build fails (125ms)
+BuildLogWrittenTo
+
+CommandCreateStatusCordovaCliUsed
+CommandCreateSuccessProjectCLI
+IncrementalBuild
+SubmittingRemoteBuild
+NewRemoteBuildInfo
+CheckingRemoteBuildStatus
+Error - null
+    √ should attempt incremental builds where possible (78ms)
+BuildLogWrittenTo
+
+  taco create
+    Success scenarios
+taco-kits@0.0.2 node_modules\taco-kits
+├── q@1.4.1
+└── taco-utils@0.0.1 (rimraf@2.2.6, ncp@0.5.1, colors@1.1.2, unorm@1.3.3, applicationinsights@0.15.2, semver@2.3.1, windows-no-runnable@0.0.6, nopt@3.0.3, mkdirp@0.5.0, elementtree@0.1.6)
+
+CommandCreateStatusKitIdUsed
+CommandCreateWarningDeprecatedKit
+
+PackageLoaderDownloadingMessage
+cordova@4.3.1 node_modules\cordova
+├── underscore@1.7.0
+├── q@1.0.1
+├── nopt@3.0.1 (abbrev@1.0.7)
+└── cordova-lib@4.3.1 (valid-identifier@0.0.1, osenv@0.1.0, properties-parser@0.2.3, mime@1.2.11, bplist-parser@0.0.6, unorm@1.3.3, semver@2.0.11, dep-graph@1.1.0, rc@0.5.2, shelljs@0.3.0, npmconf@0.1.16, through2@0.6.3, xcode@0.6.7, d8@0.4.4, elementtree@0.1.5, init-package-json@1.7.1, request@2.47.0, tar@1.0.2, glob@4.0.6, cordova-js@3.8.0, plist@1.1.0, npm@1.3.4)
+
+PackageLoaderDownloadCompletedMessage
+CommandCreateSuccessProjectTemplate
+CommandCreateInstallGulp
+      √ Success scenario 1 [path, id, name, cordovaConfig, kit, template] (58313ms)
+
+CommandCreateStatusKitIdUsed
+
+PackageLoaderDownloadingMessage
+cordova@5.0.0 node_modules\cordova
+├── underscore@1.7.0
+├── q@1.0.1
+├── nopt@3.0.1 (abbrev@1.0.7)
+└── cordova-lib@5.0.0 (valid-identifier@0.0.1, osenv@0.1.0, properties-parser@0.2.3, bplist-parser@0.0.6, mime@1.2.11, unorm@1.3.3, semver@2.1.0, rc@0.5.2, shelljs@0.3.0, dep-graph@1.1.0, npmconf@0.1.16, through2@0.6.3, xcode@0.6.7, d8@0.4.4, init-package-json@1.7.1, elementtree@0.1.5, request@2.47.0, tar@1.0.2, glob@4.0.6, cordova-registry-mapper@1.1.9, cordova-app-hello-world@3.9.0, cordova-js@3.9.0, plist@1.1.0, npm@1.3.4)
+
+PackageLoaderDownloadCompletedMessage
+CommandCreateSuccessProjectTemplate
+      √ Success scenario 2 [path, id, name, kit, template] (55437ms)
+
+CommandCreateStatusKitIdUsed
+CommandCreateWarningDeprecatedKit
+
+PackageLoaderDownloadingMessage
+cordova@4.2.0 node_modules\cordova
+├── underscore@1.7.0
+├── q@1.0.1
+├── nopt@3.0.1 (abbrev@1.0.7)
+└── cordova-lib@4.2.0 (valid-identifier@0.0.1, osenv@0.1.0, properties-parser@0.2.3, bplist-parser@0.0.6, mime@1.2.11, unorm@1.3.3, semver@2.0.11, rc@0.5.2, shelljs@0.3.0, dep-graph@1.1.0, npmconf@0.1.16, through2@0.6.3, xcode@0.6.7, d8@0.4.4, elementtree@0.1.5, request@2.47.0, glob@4.0.6, tar@1.0.2, cordova-js@3.7.3, plist@1.1.0, npm@1.4.28)
+
+PackageLoaderDownloadCompletedMessage
+CommandCreateSuccessProjectTemplate
+CommandCreateInstallGulp
+      √ Success scenario 3 [path, id, kit, template] (44766ms)
+
+CommandCreateStatusKitIdUsed
+CommandCreateWarningDeprecatedKit
+CommandCreateSuccessProjectTemplate
+      √ Success scenario 4 [path, kit, template] (453ms)
+
+CommandCreateStatusKitIdUsed
+CommandCreateSuccessProjectTemplate
+      √ Success scenario 5 [path, kit, template (no value)] (281ms)
+
+CommandCreateStatusKitIdUsed
+CommandCreateWarningDeprecatedKit
+CommandCreateSuccessProjectTemplate
+      √ Success scenario 6 [path, kit] (391ms)
+
+CommandCreateStatusKitIdUsed
+CommandCreateSuccessProjectTemplate
+      √ Success scenario 7 [path, template] (234ms)
+
+CommandCreateStatusKitIdUsed
+CommandCreateSuccessProjectTemplate
+      √ Success scenario 8 [path, template (no value)] (203ms)
+
+CommandCreateStatusKitIdUsed
+CommandCreateSuccessProjectCustomWww
+      √ Success scenario 9 [path, copy-from]
+
+CommandCreateStatusCordovaCliUsed
+CommandCreateSuccessProjectCLI
+      √ Success scenario 10 [path, cli] (265ms)
+
+CommandCreateStatusKitIdUsed
+CommandCreateSuccessProjectTemplate
+      √ Success scenario 11 [path, extra unknown parameter] (297ms)
+
+CommandCreateStatusKitIdUsed
+CommandCreateSuccessProjectTemplate
+      √ Success scenario 12 [path, kit (empty)] (344ms)
+
+CommandCreateStatusKitIdUsed
+CommandCreateSuccessProjectTemplate
+CommandCreateInstallGulp
+      √ Success scenario 13 [path, template (typescript)] (625ms)
+    Failure scenarios
+
+      √ Failure scenario 1 [path, kit (unknown value)]
+
+CommandCreateStatusKitIdUsed
+      √ Failure scenario 2 [path, template (unknown value)]
+
+CommandCreateStatusKitIdUsed
+      √ Failure scenario 3 [path, template (typescript, with a deprecated kit that doesn't have a typescript template)]
+      √ Failure scenario 4 [path, kit, template, copy-from]
+      √ Failure scenario 5 [path, kit, cli]
+      √ Failure scenario 6 [path, cli, template]
+      √ Failure scenario 7 [path (value is an existing project)]
+
+CommandCreateStatusKitIdUsed
+      √ Failure scenario 8 [path, copy-from (unknown path)]
+
+CommandCreateStatusCordovaCliUsed
+      √ Failure scenario 9 [path, cli (unknown value)] (1734ms)
+
+CommandCreateStatusKitIdUsed
+      √ Failure scenario 10 [path, appId (invalid value)]
+      √ Failure scenario 11 [(NO path)]
+      √ Failure scenario 12 [path (invalid)]
+      √ Failure scenario 13 [path (existing)]
+
+  taco meta command tests: 
+    taco
+
+CommandHelpUsageSynopsis
+   taco create <PATH> [ID [NAME [CONFIG]]] [options]
+
+CommandCreateDescription
+
+   PATH ......................... CommandCreateArgsPath
+   ID ........................... CommandCreateArgsId
+   NAME ......................... CommandCreateArgsName
+   CONFIG ....................... CommandCreateArgsConfig
+CommandHelpUsageOptions
+      --kit [NAME] .............. CommandCreateOptionsKit
+      --template [NAME] ......... CommandCreateOptionsTemplate
+      --cli <VERSION> ........... CommandCreateOptionsCli
+      --copy-from|src <PATH> .... CommandCreateOptionsCopy
+      --link-to <PATH> .......... CommandCreateOptionsLinkto
+      √ help create executes with no error
+
+CommandHelpUsageSynopsis
+   taco templates 
+
+CommandTemplatesDescription
+
+      √ help templates executes with no error
+
+CommandHelpUsageSynopsis
+   taco help [COMMAND]
+
+CommandHelpDescription
+
+      √ help help executes with no error
+
+CommandHelpUsageSynopsis
+   taco kit [COMMAND] [--json]
+
+CommandKitDescription
+
+   COMMAND ................ CommandKitSubcommandDescription
+   list ................... CommandKitListSubcommandDescription
+        --json <PATH> ..... CommandKitJsonOptionDescription
+        --kit <KIT-ID> .... CommandKitOptionKitDescription
+      √ help kit executes with no error
+
+CommandHelpUsageSynopsis
+   taco remote COMMAND
+
+CommandRemoteDescription
+
+   COMMAND .............. CommandRemoteSubcommandDescription
+   add <PLATFORM> ....... CommandRemoteAddSubcommandDescription
+   remove <PLATFORM> .... CommandRemoteRemoveSubcommandDescription
+   list ................. CommandRemoteListSubcommandDescription
+CommandHelpUsageAliases
+   rm -> remove
+   ls -> list
+      √ help remote executes with no error
+
+CommandHelpUsageSynopsis
+   taco platform [COMMAND] [options]
+
+CommandPlatformDescription
+
+   COMMAND ............... CommandPlatformSubcommandDescription
+   add <PLAT-SPEC> ....... CommandPlatformAddSubcommandDescription
+        --usegit ......... CommandPlatformUsegitDescription
+        --save ........... CommandPlatformSaveAddDescription
+        --link ........... CommandPlatformLinkDescription
+   remove <PLATFORM> ..... CommandPlatformRemoveSubcommandDescription
+        --save ........... CommandPlatformSaveRemoveDescription
+   list .................. CommandPlatformListSubcommandDescription
+   update <PLAT-SPEC> .... CommandPlatformUpdateSubcommandDescription
+        --usegit ......... CommandPlatformUsegitDescription
+        --save ........... CommandPlatformSaveUpdateDescription
+   check ................. CommandPlatformCheckSubcommandDescription
+CommandHelpUsageAliases
+   platforms -> platform
+   rm -> remove
+   ls -> list
+      √ help platform executes with no error
+
+CommandHelpUsageSynopsis
+   taco plugin [COMMAND] [options]
+
+CommandPluginDescription
+
+   COMMAND ............................ CommandPluginSubcommandDescription
+   add <PLAT-SPEC> .................... CommandPluginAddSubcommandDescription
+        [--searchpath <DIRECTORY>] .... CommandPluginSearchPathDescription
+        [--noregistry] ................ CommandPluginNoRegistryDescription
+        [--link] ...................... CommandPluginLinkDescription
+        [--save] ...................... CommandPluginSaveAddDescription
+        [--shrinkwrap] ................ CommandPluginShrinkwrapDescription
+   remove <PLUGINID> [...] ............ 
+                                        CommandPluginRemoveSubcommandDescription 
+        [--save] ...................... CommandPluginSaveRemoveDescription
+   list ............................... CommandPluginListSubcommandDescription
+   search ............................. 
+                                        CommandPluginSearchSubcommandDescription 
+CommandHelpUsageAliases
+   plugins -> plugin
+   rm -> remove
+   ls -> list
+      √ help plugin executes with no error
+
+CommandHelpUsageSynopsis
+   taco build [PLATFORM] [--remote | --local] [--clean] [--debug | --release] [--device | --emulator | --target=TARGET]
+
+CommandBuildDescription
+
+   PLATFORM ............ CommandBuildPlatformDescription
+   --remote ............ CommandBuildRemoteDescription
+   --local ............. CommandBuildLocalDescription
+   --clean ............. CommandBuildCleanDescription
+   --debug ............. CommandBuildDebugDescription
+   --release ........... CommandBuildReleaseDescription
+   --device ............ CommandBuildDeviceDescription
+   --emulator .......... CommandBuildEmulatorDescription
+   --target ............ CommandBuildTargetDescription
+      √ help build executes with no error
+
+CommandHelpUsageSynopsis
+   taco run [PLATFORM] [--debuginfo] [--remote | --local] [--nobuild] [--debug | --release] [--device | --emulator | --target=TARGET]
+
+CommandRunDescription
+
+   PLATFORM ............ CommandRunPlatformDescription
+   --remote ............ CommandRunRemoteDescription
+   --local ............. CommandRunLocalDescription
+   --nobuild ........... CommandRunNobuildDescription
+   --debuginfo ......... CommandRunDebuginfoDescription
+   --debug ............. CommandRunDebugDescription
+   --release ........... CommandRunReleaseDescription
+   --device ............ CommandRunDeviceDescription
+   --emulator .......... CommandRunEmulatorDescription
+   --target ............ CommandRunTargetDescription
+      √ help run executes with no error
+
+CommandHelpUsageSynopsis
+   taco version 
+
+CommandVersionDescription
+
+      √ help version executes with no error
+
+CommandHelpUsageSynopsis
+   taco install-reqs [PLATFORM_1] [PLATFORM_2] ...
+
+CommandInstallReqsDescription
+
+CommandHelpUsageOptions
+      [PLATFORM] ....... CommandInstallReqsPlatformDescription
+      √ help install-reqs executes with no error
+    taco
+
+CommandHelpUsageSynopsis
+   taco command [options]
+
+   create .............. CommandCreateDescription
+   templates ........... CommandTemplatesDescription
+   help ................ CommandHelpDescription
+   kit ................. CommandKitDescription
+   remote .............. CommandRemoteDescription
+   platform ............ CommandPlatformDescription
+   plugin .............. CommandPluginDescription
+   build ............... CommandBuildDescription
+   run ................. CommandRunDescription
+   version ............. CommandVersionDescription
+   install-reqs ........ CommandInstallReqsDescription
+      √ help info executes with no error
+    taco command
+
+CommandHelpUsageSynopsis
+   taco command [options]
+
+   create .............. CommandCreateDescription
+   templates ........... CommandTemplatesDescription
+   help ................ CommandHelpDescription
+   kit ................. CommandKitDescription
+   remote .............. CommandRemoteDescription
+   platform ............ CommandPlatformDescription
+   plugin .............. CommandPluginDescription
+   build ............... CommandBuildDescription
+   run ................. CommandRunDescription
+   version ............. CommandVersionDescription
+   install-reqs ........ CommandInstallReqsDescription
+      √ with options  executes with no error
+0.0.1
+      √ with options -v executes with no error
+
+CommandHelpUsageSynopsis
+   taco command [options]
+
+   create .............. CommandCreateDescription
+   templates ........... CommandTemplatesDescription
+   help ................ CommandHelpDescription
+   kit ................. CommandKitDescription
+   remote .............. CommandRemoteDescription
+   platform ............ CommandPlatformDescription
+   plugin .............. CommandPluginDescription
+   build ............... CommandBuildDescription
+   run ................. CommandRunDescription
+   version ............. CommandVersionDescription
+   install-reqs ........ CommandInstallReqsDescription
+      √ with options --help executes with no error
+
+CommandHelpUsageSynopsis
+   taco command [options]
+
+   create .............. CommandCreateDescription
+   templates ........... CommandTemplatesDescription
+   help ................ CommandHelpDescription
+   kit ................. CommandKitDescription
+   remote .............. CommandRemoteDescription
+   platform ............ CommandPlatformDescription
+   plugin .............. CommandPluginDescription
+   build ............... CommandBuildDescription
+   run ................. CommandRunDescription
+   version ............. CommandVersionDescription
+   install-reqs ........ CommandInstallReqsDescription
+      √ with options -----help executes with no error
+      √ with invalid options /? executes with expected error (500ms)
+      √ with invalid options ? executes with expected error (485ms)
+    taco version command
+0.0.1
+      √ should execute without an error
+
+  taco platform for kit
+
+taco-kits@0.0.2 node_modules\taco-kits
+├── q@1.4.1
+└── taco-utils@0.0.1 (rimraf@2.2.6, ncp@0.5.1, colors@1.1.2, unorm@1.3.3, applicationinsights@0.15.2, semver@2.3.1, nopt@3.0.3, windows-no-runnable@0.0.6, mkdirp@0.5.0, elementtree@0.1.6)
+CommandCreateStatusKitIdUsed
+
+PackageLoaderDownloadingMessage
+cordova@5.0.0 node_modules\cordova
+├── underscore@1.7.0
+├── q@1.0.1
+├── nopt@3.0.1 (abbrev@1.0.7)
+└── cordova-lib@5.0.0 (valid-identifier@0.0.1, osenv@0.1.0, properties-parser@0.2.3, bplist-parser@0.0.6, mime@1.2.11, unorm@1.3.3, semver@2.1.0, rc@0.5.2, shelljs@0.3.0, dep-graph@1.1.0, npmconf@0.1.16, through2@0.6.3, xcode@0.6.7, init-package-json@1.7.1, d8@0.4.4, elementtree@0.1.5, request@2.47.0, glob@4.0.6, tar@1.0.2, cordova-registry-mapper@1.1.9, cordova-app-hello-world@3.9.0, cordova-js@3.9.0, plist@1.1.0, npm@1.3.4)
+
+PackageLoaderDownloadCompletedMessage
+CommandCreateSuccessProjectTemplate
+    taco platform/plugin operation for a kit project with platform/plugin overrides execute with no errors
+CommandPlatformStatusAdding
+Creating Cordova project for the Android platform:
+	Path: platforms\android
+	Package: io.cordova.hellocordova
+	Name: HelloTaco
+	Activity: MainActivity
+	Android target: android-22
+Copying template files...
+Android project created with cordova-android@4.0.2
+iOS project created with cordova-ios@3.8.0
+CommandPlatformStatusAdded
+      √ taco platform add android ios executes with no error (4468ms)
+CommandPlatformStatusRemoved
+      √ taco platform remove android ios executes with no error (172ms)
+CommandPlatformStatusAdding
+Creating Cordova project for the Android platform:
+	Path: platforms\android
+	Package: io.cordova.hellocordova
+	Name: HelloTaco
+	Activity: MainActivity
+	Android target: android-22
+Copying template files...
+Android project created with cordova-android@4.0.1
+iOS project created with cordova-ios@3.8.0
+CommandPlatformStatusAdded
+      √ taco platform add android@4.0.1 ios@3.8.0 executes with no error (3485ms)
+CommandPluginStatusAdding
+CommandPluginStatusAdded
+      √ taco plugin add cordova-plugin-camera@1.0.0 cordova-plugin-contacts@1.0.0 executes with no error (3734ms)
+CommandPluginStatusRemoved
+      √ taco plugin remove cordova-plugin-camera cordova-plugin-contacts executes with no error (750ms)
+    taco platform/plugin operation for a CLI project with no platform/plugin overrides execute with no errors
+
+CommandCreateStatusCordovaCliUsed
+CommandCreateSuccessProjectCLI
+Creating Cordova project for the Android platform:
+	Path: platforms\android
+	Package: io.cordova.hellocordova
+	Name: HelloTaco
+	Activity: MainActivity
+	Android target: android-22
+Copying template files...
+Android project created with cordova-android@4.0.0
+iOS project created with cordova-ios@3.8.0
+CommandPlatformStatusAdded
+      √ taco platform add android ios executes with no error (5047ms)
+CommandPlatformStatusRemoved
+      √ taco platform remove android ios executes with no error (297ms)
+Creating Cordova project for the Android platform:
+	Path: platforms\android
+	Package: io.cordova.hellocordova
+	Name: HelloTaco
+	Activity: MainActivity
+	Android target: android-22
+Copying template files...
+Android project created with cordova-android@4.0.1
+iOS project created with cordova-ios@3.8.0
+CommandPlatformStatusAdded
+      √ taco platform add android@4.0.1 ios@3.8.0 executes with no error (4641ms)
+CommandPlatformStatusRemoved
+      √ taco platform remove android ios executes with no error (484ms)
+CommandPluginStatusAdded
+      √ taco plugin add cordova-plugin-camera@1.0.0 cordova-plugin-contacts@1.0.0 executes with no error (1328ms)
+CommandPluginStatusRemoved
+      √ taco plugin remove cordova-plugin-camera cordova-plugin-contacts executes with no error (94ms)
+
+  taco remote
+    √ should handle arguments
+CommandRemoteHeader
+CommandRemoteSettingsStored
+    √ should save in the expected format
+    √ should reject unknown parameters
+CommandRemoteHeader
+CommandRemoteSettingsStored
+    √ should be able to configure secure connections (6265ms)
+
+  taco run
+
+CommandCreateStatusCordovaCliUsed
+
+PackageLoaderDownloadingMessage
+    1) "before each" hook
+
+  taco settings
+    √ should correctly report build locations when --local is specified
+    √ should correctly report build locations when --remote is specified
+    √ should correctly report build locations when neither --remote nor --local is specified
+
+CommandCreateStatusKitIdUsed
+
+PackageLoaderDownloadingMessage
+cordova@4.0.0 node_modules\cordova
+├── q@0.9.7
+├── underscore@1.4.4
+├── nopt@2.2.1 (abbrev@1.0.7)
+└── cordova-lib@4.0.0 (osenv@0.0.3, properties-parser@0.2.3, mime@1.2.11, bplist-parser@0.0.5, unorm@1.3.3, semver@2.0.11, shelljs@0.3.0, dep-graph@1.1.0, npmconf@0.1.16, rc@0.3.0, glob@3.2.11, xcode@0.6.7, elementtree@0.1.5, d8@0.4.4, request@2.22.0, tar@0.1.20, cordova-js@3.7.1, plist@1.0.1, npm@1.3.4)
+
+PackageLoaderDownloadCompletedMessage
+CommandCreateSuccessProjectCLI
+    2) should correctly report build locations when no platforms are specified
+cordova@5.0.0 node_modules\cordova
+├── underscore@1.7.0
+├── q@1.0.1
+├── nopt@3.0.1 (abbrev@1.0.7)
+└── cordova-lib@5.0.0 (valid-identifier@0.0.1, osenv@0.1.0, properties-parser@0.2.3, bplist-parser@0.0.6, mime@1.2.11, unorm@1.3.3, semver@2.1.0, rc@0.5.2, dep-graph@1.1.0, shelljs@0.3.0, npmconf@0.1.16, through2@0.6.3, xcode@0.6.7, init-package-json@1.7.1, d8@0.4.4, elementtree@0.1.5, request@2.47.0, glob@4.0.6, cordova-registry-mapper@1.1.9, tar@1.0.2, cordova-app-hello-world@3.9.0, cordova-js@3.9.0, plist@1.1.0, npm@1.3.4)
+
+PackageLoaderDownloadCompletedMessage
+
+  taco Errors in taco-cli
+    √ Verify taco Errors in taco-cli
+
+  TemplateManager
+    findTemplatePath()
+      √ should correctly find a template that is already cached
+      √ should correctly find and cache a template that is not already cached
+      √ should return the appropriate error when templates are not available
+    performTokenReplacements()
+      √ should correctly replace all tokens in all files, recursively
+    getTemplatesForKit()
+      √ should return the correct list of templates
+    getAllTemplates()
+      √ should return all available templates
+
+  templates
+taco-kits@0.0.2 node_modules\taco-kits
+├── q@1.4.1
+└── taco-utils@0.0.1 (rimraf@2.2.6, colors@1.1.2, ncp@0.5.1, unorm@1.3.3, applicationinsights@0.15.2, semver@2.3.1, windows-no-runnable@0.0.6, nopt@3.0.3, mkdirp@0.5.0, elementtree@0.1.6)
+
+CommandTemplatesHeader
+
+   blank ............... BlankTemplateName
+   typescript .......... TypescriptTemplateName
+
+    √ 'taco templates' should not throw any error (5547ms)
+
+
+  74 passing (7m)
+  2 failing
+
+  1) taco run "before each" hook:
+     Error: timeout of 50000ms exceeded. Ensure the done() callback is being called in this test.
+  
+
+  2) taco settings should correctly report build locations when no platforms are specified:
+     Error: timeout of 70000ms exceeded. Ensure the done() callback is being called in this test.
+  
+
+
+
+[16:14:24] 'run-tests' errored after 7.67 min
+[16:14:24] Error: Test failed for C:\cygwin64\home\jithomso\taco\build\packages\node_modules\taco-cli
+    at formatError (C:\Users\jithomso\AppData\Roaming\npm\node_modules\gulp\bin\gulp.js:169:10)
+    at Gulp.<anonymous> (C:\Users\jithomso\AppData\Roaming\npm\node_modules\gulp\bin\gulp.js:195:15)
+    at Gulp.emit (events.js:129:20)
+    at Gulp.Orchestrator._emitTaskDone (C:\cygwin64\home\jithomso\taco\node_modules\gulp\node_modules\orchestrator\index.js:264:8)
+    at C:\cygwin64\home\jithomso\taco\node_modules\gulp\node_modules\orchestrator\index.js:275:23
+    at finish (C:\cygwin64\home\jithomso\taco\node_modules\gulp\node_modules\orchestrator\lib\runTask.js:21:8)
+    at C:\cygwin64\home\jithomso\taco\node_modules\gulp\node_modules\orchestrator\lib\runTask.js:45:4
+    at _rejected (C:\cygwin64\home\jithomso\taco\node_modules\q\q.js:844:24)
+    at C:\cygwin64\home\jithomso\taco\node_modules\q\q.js:870:30
+    at Promise.when (C:\cygwin64\home\jithomso\taco\node_modules\q\q.js:1122:31)
