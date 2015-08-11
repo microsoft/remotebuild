@@ -34,6 +34,13 @@
     "_CommandVersionDescription.comment":  "Description printed for remotebuild version command",
     "CommandHelpDescription": "Gets help for a command or a module",
     "_CommandHelpDescription.comment": "Description printed for remotebuild help command",
+    "CommandSaveConfigDescription": "Saves the specified configuration to a file.",
+    "_CommandSaveConfigDescription.comment": "Description printed for 'remotebuild savesettings' command",
+
+    "SavedConfig": "Configuration saved successfully to {0}.",
+    "_SavedConfig.comment": "Message printed when 'remotebuild saveconfig' completes successfully.",
+    "CheckSettingsForInfo": "Please view/edit server configuration at {0}. You many need to run 'remotebuild saveconfig' to generate it. You will have to restart the server if you update the server configurations.",
+    "_CheckSettingsForInfo.comment": "Message printed after starting the server to tell the user where configuration options are stored. {0} is the path to where we look for the config file",
 
     "RemoteBuildStartExample1": "Start the server with all defaults (secure server with serverDir $TACO_HOME/remote-builds, port 3000)",
     "_RemoteBuildStartExample1.comment": "Text shown in examples section describing an example when user invokes 'remotebuild help start'",
@@ -102,6 +109,15 @@
     "_OSXResetServerCertResponseNo.comment": "List of responses that are considered negative. User input will be converted to lower case before consulting this list",
     "OSXResetServerCertPleaseYesNo": "Please answer [Y]es or [N]o.",
     "_OSXResetServerCertPleaseYesNo.comment": "Query after user enters an option which is not recognised",
+
+    "CommandTestDescription": "Run tests against another instance of remotebuild",
+    "_CommandTestDescription.comment": "Description for 'remotebuild test'",
+    "CommandTestDevice": "Test that the machine is configured for device builds",
+    "_CommandTestDevice.comment": "Description for the --device option to remotebuild test",
+    "RemoteBuildTestExample1": "Run tests against a server started using all defaults",
+    "_RemoteBuildTestExample1.comment": "Text shown in examples section describing an example when user invokes 'remotebuild help test'",
+    "RemoteBuildTestExample2": "Run device tests against a server started with 'remotebuild --config config.json'",
+    "_RemoteBuildTestExample2.comment": "Text shown in examples section describing an example when user invokes 'remotebuild help test'",
 
     "RunningAsRootError": "****** remotebuild should not be run as root. Shutting down.",
     "_RunningAsRootError.comment": "Message printed when remotebuild is run as root, instructing the user not to do so",
