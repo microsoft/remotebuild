@@ -212,7 +212,7 @@ describe("taco remote", function (): void {
         }, mocha);
     });
 
-    describe.skip("Onboarding experience", function (): void {
+    describe("Onboarding experience", function (): void {
         var stdoutWrite = process.stdout.write; // We save the original implementation, so we can restore it later
         var memoryStdout: ms.MemoryStream;
 

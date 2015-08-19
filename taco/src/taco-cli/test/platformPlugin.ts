@@ -344,7 +344,7 @@ describe("taco platform for kit", function (): void {
         });
     });
 
-    describe.skip("Onboarding experience", () => {
+    describe("Onboarding experience", () => {
         var stdoutWrite = process.stdout.write; // We save the original implementation, so we can restore it later
         var memoryStdout: ms.MemoryStream;
 
