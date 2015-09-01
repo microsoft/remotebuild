@@ -20,7 +20,9 @@ import logLevel = require ("./logLevel");
 import tacoGlobalConfig = require ("./tacoGlobalConfig");
 import os = require ("os");
 import path = require ("path");
+import Q = require ("q");
 import readline = require ("readline");
+import sender = require ("applicationinsights/Library/Sender");
 import utilHelper = require ("./utilHelper");
 import utilResources = require ("./resources/resourceManager");
 
@@ -129,11 +131,23 @@ module TacoUtility {
             }
         }
 
+        export function sendPendingData(): Q.Promise<string> {
+            var defer = Q.defer<string>();
+            appInsights.client.sendPendingData((result: string) => defer.resolve(result));
+            return defer.promise;
+        }
+
         export function isInternal(): boolean {
             return TelemetryUtils.UserType === TelemetryUtils.USERTYPE_INTERNAL;
         }
 
         export function changeTelemetryOptInSetting(): void {
+            // If user's choice was already collected during initialization
+            // for this session, do not prompt again
+            if (TelemetryUtils.OptInCollectedForCurrentSession) {
+                return;
+            }
+
             var currentOptIn: boolean = TelemetryUtils.getTelemetryOptInSetting();
             var newOptIn: boolean;
 
@@ -149,6 +163,14 @@ module TacoUtility {
             Telemetry.isOptedIn = newOptIn;
         }
 
+        export function getSessionId(): string {
+            return TelemetryUtils.SessionId;
+        }
+
+        export function setSessionId(sessionId: string): void {
+            TelemetryUtils.SessionId = sessionId;
+        }
+
         interface ITelemetrySettings {
             [settingKey: string]: any;
             userId?: string;
@@ -158,7 +180,6 @@ module TacoUtility {
         }
 
         class TelemetryUtils {
-            private static SessionId: string;
             private static UserId: string;
             private static MachineId: string;
             private static TelemetrySettings: ITelemetrySettings = null;
@@ -173,6 +194,8 @@ module TacoUtility {
             public static USERTYPE_INTERNAL = "Internal";
             public static USERTYPE_EXTERNAL = "External";
             public static UserType: string;
+            public static SessionId: string;
+            public static OptInCollectedForCurrentSession: boolean;
 
             private static get telemetrySettingsFile(): string {
                 return path.join(UtilHelper.tacoHome, TelemetryUtils.TelemetrySettingsFileName);
@@ -188,7 +211,9 @@ module TacoUtility {
                     .setAutoCollectExceptions(true)
                     .start();
                 appInsights.client.config.maxBatchIntervalMs = 100;
-
+                appInsights.client.channel.setOfflineMode(true);
+                sender.WAIT_BETWEEN_RESEND = 0; 
+                
                 if (appVersion) {
                     var context: Context = appInsights.client.context;
                     context.tags[context.keys.applicationVersion] = appVersion;
@@ -242,6 +267,7 @@ module TacoUtility {
                     Telemetry.send(new TelemetryEvent(Telemetry.appName + "/telemetryOptOut"), true);
                 }
 
+                TelemetryUtils.OptInCollectedForCurrentSession = true;
                 TelemetryUtils.saveSettings();
             }
 

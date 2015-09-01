@@ -42,5 +42,8 @@ declare module TacoUtility {
         function isInternal(): boolean;
         function send(event: TelemetryEvent, ignoreOptIn?: boolean): void;
         function changeTelemetryOptInSetting(): void;
+        function sendPendingData(): Q.Promise<string>;
+        function getSessionId(): string;
+        function setSessionId(sessionId: string): void;
     }
 }
