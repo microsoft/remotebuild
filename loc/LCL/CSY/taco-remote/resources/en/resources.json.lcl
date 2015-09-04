@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<LCX SchemaVersion="6.0" Name="resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="cs-CZ" Desc="Commenting file created by LCXAdmin. For more information, please visit http://localizability/longhorn/LcxAdmin.asp" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
+<?xml version="1.0" encoding="utf-8"?>
+<LCX SchemaVersion="6.0" Name="resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="cs-CZ" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
   <Props>
     <Str Name="CustomName1" Val="Custom 1" />
     <Str Name="CustomName2" Val="Custom 2" />
@@ -12,742 +12,2000 @@
   <OwnedComments>
     <Cmt Name="Dev" />
     <Cmt Name="LcxAdmin" />
+    <Cmt Name="Loc" />
     <Cmt Name="Note" />
     <Cmt Name="Rccx" />
   </OwnedComments>
   <Settings Name="@vsLocTools@\current\default.lss" Type="LSS" />
   <Item ItemId=";String Table" ItemType="0" PsrId="306" Leaf="false">
     <Disp Icon="Expand" Expand="true" Disp="true" LocTbl="false" />
-    <Modified By="MirekP" DateTime="2015-05-28T11:39:10Z" />
     <Item ItemId=";Strings" ItemType="0" PsrId="306" Leaf="false">
       <Disp Icon="Str" Disp="true" LocTbl="false" />
-      <Modified By="MirekP" DateTime="2015-05-28T11:39:10Z" />
-      <Item ItemId=";BuildBuilding" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";BuildLogWrittenTo" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Building Cordova app.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
-            <Val><![CDATA[Sestavuje se aplikace Cordova.]]></Val>
+          <Val><![CDATA[Remote build log written to {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Protokol vzdáleného buildu zapsán do {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-28T11:44:28Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it is queried for the build status and the build status is currently building on server]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
-        </Props>
       </Item>
-      <Item ItemId=";BuildComplete" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CheckingRemoteBuildStatus" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Build completed successfully.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
-            <Val><![CDATA[Build se úspěšně dokončil.]]></Val>
+          <Val><![CDATA[------ {0} Checking on build status from {1} [Attempt {2}]5D;]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[------ {0}, kontrola stavu buildu z {1} [pokus {2}]5D;]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-28T11:44:28Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it is queried for the build status and the build status is successfully completed]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
-        </Props>
       </Item>
-      <Item ItemId=";BuildDirectoryNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CleaningRemoteResources" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Build directory {0} does not exist.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Adresář buildů {0} neexistuje.]]></Val>
+          <Val><![CDATA[Cleaning remote {0} {1} build.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Čistí se vzdálený build {0} {1}.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message printed to console and returned to the client when ]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";BuildDownloaded" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildCleanDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Build completed and downloaded by client.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Build je hotový a stažený klientem.]]></Val>
+          <Val><![CDATA[Clean before building]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Provede čištění před sestavením.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it is queried for the build status and the build status is downloaded from server]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";BuildExtracted" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildDebugDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Extracted app contents from uploaded build request]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
-            <Val><![CDATA[Obsah aplikace se rozbalil z nahrané žádosti o sestavení.]]></Val>
+          <Val><![CDATA[Create a debug build]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Vytvoří ladicí build.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-28T11:44:28Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it is queried for the build status and the build status is extracted on server file system]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
-        </Props>
       </Item>
-      <Item ItemId=";BuildInvokedTwice" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Invalid request: build.js process already in use but was asked to build again. This is likely a programming error as a build.js process is meant to be used only once.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Neplatná žádost: Proces build.js se už používá, ale byl požádaný o opětovné sestavení. Nejspíš jde o programovací chybu, protože proces build.js se dá použít jenom jednou.]]></Val>
+          <Val><![CDATA[Build the project for a given platform]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Sestaví projekt pro danou platformu.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message when multiple builds are invoked at the same time.]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";BuildManagerDirInit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildDeviceDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Build will be executed under: {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Build se spustí tady: {0}]]></Val>
+          <Val><![CDATA[Create a build to run on a physical device]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Vytvoří build pro spuštění na fyzickém zařízení.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message printed to console when a build request is recieved. {0} is the path where the build will exist.]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";BuildManagerInit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildEmulatorDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Initialized BuildManager with baseBuildDir %s; maxBuildsInQueue %d; deleteBuildsOnShutdown %s; allowsEmulate %s; nextBuildNumber %d]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[BuildManager je inicializovaný s parametry baseBuildDir %s; maxBuildsInQueue %d; deleteBuildsOnShutdown %s; allowsEmulate %s; nextBuildNumber %d.]]></Val>
+          <Val><![CDATA[Create a build to run in an emulator]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Vytvořit build pro spuštění v emulátoru.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message printed to console when the build manager is initialized]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="%s"} {Placeholder="%d"}]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";BuildMovingOn" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildInvalidPlatformLocation" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Done with currentBuild. Checking for next build in queue.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Aktuální build je hotový. Zjišťuje se další build ve frontě.]]></Val>
+          <Val><![CDATA[Error: Unable to understand '{0}' platform]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Chyba: Platforma {0} je nesrozumitelná.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message printed to console when a build is finished, successfully or otherwise, before continuing with any queued builds]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";BuildNotCompleted" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildLocalDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Requested build is not yet ready. Status: {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Požadovaný build ještě není připravený. Stav: {0}]]></Val>
+          <Val><![CDATA[Force a local build]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Vynutí místní build.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message when attempting to perform an action on a build which is not yet ready. {0} is the current state of the build]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";BuildNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildLocalPlatformNotAdded" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Build {0} does not exist]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Build {0} neexistuje.]]></Val>
+          <Val><![CDATA[Error: Platform {0} has not been added locally. Please try 'taco platform add {0}' before building]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Chyba: Platforma {0} nebyla přidaná místně. Před sestavením zkuste taco platform add {0}.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio or user when it queries for a build but the build no longer exists, for example an old build that has been deleted. {0} is the build number]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";BuildQueueFull" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildNoLocalPlatformsFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Build request rejected. The build queue is full. Limit is {0} queued builds.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Žádost o build se odmítla. Fronta buildů je plná. Fronta je omezená na tento počet buildů: {0}.]]></Val>
+          <Val><![CDATA[Error: no platforms in project. Please run 'taco platform add' to add a platform]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Chyba: V projektu nejsou žádné platformy. Přidejte prosím platformu příkazem taco platform add.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message returned to the caller when a build is rejected due to a full queue. {0} is the maximum number of builds]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";BuildRetentionDelete" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildPlatformDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Deleting build %d from %s]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Build %d se odstraňuje z %s.]]></Val>
+          <Val><![CDATA[The platform that you wish to build]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Platforma, kterou chcete sestavit]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message printed to console for each build deleted. %d is the build number, and %s is the build location]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="%d"} {Placeholder="%s"}]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";BuildRetentionInit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildPlatformNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Build Retention initialized with baseBuildDir %s, maxBuildsToKeep %d]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Uchování buildů se inicializovalo s parametry baseBuildDir %s, maxBuildsToKeep %d.]]></Val>
+          <Val><![CDATA[Error: Unable to find local or remote configuration of {0}. Please run 'taco platform add {0}' or 'taco remote add {0}']]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Chyba: Nejde najít místní nebo vzdálenou konfiguraci platformy {0}. Spusťte prosím taco platform add {0} nebo taco remote add {0}.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message printed to console when build retention is initialized. %s is the directory where builds will be kept, and %d is the number of builds to keep.]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="%s"} {Placeholder="%d"}]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";BuildRetentionPreDelete" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildPlatformsNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Deleting eligible builds. Will delete %d builds.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Odstraňují se způsobilé buildy. Odstraní se tento počet buildů: %d.]]></Val>
+          <Val><![CDATA[Error: Unable to find any local or remote platforms. Please run 'taco platform add' or 'taco remote add']]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Chyba: Nejde najít žádné místní ani vzdálené platformy. Spusťte prosím taco platform add nebo taco remote add.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message printed to console just before we delete old builds. %d is the number of builds we will delete]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="%d"}]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";BuildUploaded" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildReleaseDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Uploaded build request payload.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
-            <Val><![CDATA[Datová část žádosti o sestavení se nahrála.]]></Val>
+          <Val><![CDATA[Create a release build]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Vytvoří build pro vydání.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-28T11:44:28Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it is queried for the build status and the build status is uploaded to server]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
-        </Props>
       </Item>
-      <Item ItemId=";CordovaAcquisitionFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildRemoteDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Failed to load cordova {0}: {1}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Nepovedlo se načíst aplikaci cordova {0}: {1}.]]></Val>
+          <Val><![CDATA[Force a remote build]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Vynutí vzdálený build.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message printed when dynamically acquiring cordova for the self test fails. {0} is the cordova version, and {1} is the error message]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";EmulateDisabled" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildRemotePlatformNotConfigured" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Emulate is not enabled on this server.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Emulace není na tomto serveru zapnutá.]]></Val>
+          <Val><![CDATA[Error: Unable to load remote settings for {0}. Please run 'taco remote add {0}' to configure remote builds for this platform]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Chyba: Nejde načíst vzdálené nastavení pro {0}. Spusťte prosím taco remote add {0} pro konfiguraci vzdálených buildů pro tuto platformu.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reported back to the client when they request emulation and it is disabled on the server]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";ErrorSavingTgz" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildRemotePlatformsNotConfigured" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[An error occurred in saving the uploaded tgz file to {0}: {1}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Při ukládání nahraného souboru tgz na {0} se stala chyba: {1}]]></Val>
+          <Val><![CDATA[Error: No remote platforms configured. Please run 'taco remote add' to configure one]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Chyba: Nejsou nakonfigurované žádné vzdálené platformy. Nakonfigurujte prosím nějakou příkazem taco remote add.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[{0} is the filename of the tgz, and {1} is the error message]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";ExceededMaxPings" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildTacoSettingsNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Exceeded max # of pings: {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Překročil se maximální počet příkazů ping: {0}.]]></Val>
+          <Val><![CDATA[Error: Unable to load settings. Please run 'taco remote add' before building remotely]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Chyba: Nejde načíst nastavení. Před vzdáleným sestavením prosím spusťte taco remote add.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Error printed when the self test times out. {0} is the number of attempts made to get the build status]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";FailedCreateDirectory" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildTargetDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Unable to create extract directory {0}: {1}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Nejde vytvořit adresář pro rozbalení {0}: {1}]]></Val>
+          <Val><![CDATA[Create a build to run on the specified target]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Vytvoří build pro spuštění v zadaném cíli.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message printed to console and reported back to Visual Studio when unable to create the directory we want to unpack a build request to. {0} is the directory, and {1} is the message of the error]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";FirstRunDependencyConfiguration" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandCreateArgsConfig" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Configuring first-run dependencies.]A;To deploy to physical iOS devices, or to debug a device or simulator, we need some packages from Homebrew, a third party package manager.]A;Installing Homebrew may ask you for an admin password. Do you want to continue?]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Konfiguruje se první spuštění závislých součástí.]A;Pokud chcete nasazovat na fyzická zařízení iOS nebo ladit na zařízení nebo simulátoru, potřebujeme určité balíčky z nástroje Homebrew, správce balíčků od třetí strany.]A;Instalace nástroje Homebrew se vás může zeptat na heslo správce. Chcete pokračovat?]]></Val>
-          </Tgt>
-          <Prev Cat="Text">
-            <Val><![CDATA[Configuring first-run dependencies.]A;To deploy to physical iOS devices, or to debug a device or simulator, we need some packages from Homebrew.]A;Installing Homebrew may ask you for an admin password. Do you want to continue?]]></Val>
-          </Prev>
-        </Str>
-        <Disp Icon="Str" />
-        <Modified By="pklimova" DateTime="2015-06-17T12:50:30Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message displayed the first time remotebuild is run, asking for permission to install 3rd party dependencies]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
-        </Props>
-      </Item>
-      <Item ItemId=";HomebrewInstallationDeclined" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[If you want to enable deploying to devices or debugging apps on devices or the simulator, delete {0} to be asked again.]A;]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Pokud chcete povolit nasazení na zařízení nebo ladění aplikací na zařízeních nebo simulátoru, odstraňte {0} a dotaz se zobrazí znovu.]A;]]></Val>
+          <Val><![CDATA[json string whose key/values will be included in '[PATH]5D;/.cordova/config.json']]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Řetězec JSON, jehož klíč/hodnoty budou zahrnuté do [CESTA]5D;/.cordova/config.json]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message displayed when the user opts out of installing 3rd party dependencies]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";HomebrewInstallationFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandCreateArgsId" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error installing homebrew packages:]A;{0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
-            <Val><![CDATA[Chyba při instalaci balíčků Homebrew:]A;{0}]]></Val>
+          <Val><![CDATA[Package ID for the project]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[ID balíčku pro projekt]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-28T11:44:28Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message displayed if installing any of the 3rd party dependencies fails. {0} is the contents of the error]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
-        </Props>
       </Item>
-      <Item ItemId=";HomebrewInstallationQuery" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandCreateArgsName" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[[y]5D;/n? ]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
-            <Val><![CDATA[[a]5D;/n? ]]></Val>
+          <Val><![CDATA[Human readable app name]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Lidsky čitelný název aplikace]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-28T11:44:28Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message asking the user whether to install 3rd party dependencies. Hitting return will default to yes]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
-        </Props>
       </Item>
-      <Item ItemId=";HomebrewInstallationQueryResponse" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandCreateArgsPath" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Where to create the project]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Kde vytvořit projekt]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Create a new Cordova based TACO project]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Vytvoření nový projekt TACO založený na Cordově.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateGitCloneError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: unable to perform 'git clone' for the specified template. Please see the output from git for more details.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Chyba: Nejde provést git clone pro zadanou šablonu. Další podrobnosti najdete ve výstupu z příkazu git.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateGitTemplateHeader" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Acquiring template from git...<br/>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Načítá se šablona z příkazu git...<br/>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateGitTemplateName" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[custom git template]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[vlastní šablona git]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateInstallGulp" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<br/>Please install gulp and gulp-typescript by following the installation steps listed at <link>http://go.microsoft.com/fwlink/?LinkId=620942</link>.<br/><br/>Once installed, run 'gulp typescript' to pre-compile the TS files before building your project.<br/><br/>Once your TS files are pre-compiled, use 'taco build [platform]5D;' to build your project.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateInvalidPath" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: The specified path is invalid: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Chyba: Zadaná cesta není platná: {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateNoGit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: No git found. Please ensure git is installed and is in your system's Path environment variable.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Chyba: Nenašel se žádný git. Ujistěte se prosím, jestli je git nainstalovaný a jestli se nachází v proměnné prostředí Path vašeho systému.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateNoPath" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: A directory name must be specified in order to create a project. See 'taco help create'.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Chyba: Pro vytvoření projektu je nutné zadat název adresáře. Viz taco help create.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateNotBothCliAndKit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: Cannot specify both --cli and --kit]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Chyba: Nejde zadat --cli i --kit.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateNotBothTemplateAndCli" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: The --template option is not supported with the --cli option; use --kit for templates]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Chyba: Možnost --template není podporovaná s možností --cli; pro šablony použijte --kit.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateNotTemplateIfCustomWww" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: Cannot specify --template if specifying --copy-from or --link-to]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Chyba: Nejde zadat --template, pokud je zadané --copy-from nebo --link-to.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateOnlyLocalCustomWww" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: Only local paths for custom www assets are supported.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Chyba: Pro vlastní prostředky www se podporují jenom místní cesty.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateOptionsCli" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Use a version of the Cordova CLI rather than a TACO Dev Kit.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Místo vývojářské sady TACO použije verzi Cordova CLI.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateOptionsCopy" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Use custom www assets instead of using a TACO template.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Místo šablony TACO použije vlastní prostředky www.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateOptionsKit" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Use the specified Cordova Dev Kit for this project rather than the default.  Use "taco kit list" to see a list of available Kits.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Místo výchozí vývojářské sady Cordova použije pro tento projekt určenou sadu. Příkazem taco kit list si zobrazíte seznam dostupných sad.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateOptionsLinkto" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Symlink to custom www assets without creating a copy.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Symbolický odkaz na vlastní prostředky www bez vytvoření kopie]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateOptionsTemplate" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Use an alternate project template instead of blank.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Použije alternativní šablonu projektu místo prázdné.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreatePathNotEmpty" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: Could not create the project because the specified path already exists and is not empty: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Chyba: Nejde vytvořit projekt, protože zadaná cesta už existuje a není prázdná: {0}.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateStatusCreatingNewProject" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Creating a new Cordova project.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Vytváří se nový projekt Cordova.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateStatusTableCordovaCLIVersionDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Cordova]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Cordova]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateStatusTableIDDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[ID]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[ID]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateStatusTableKitVersionDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Kit]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Sada]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateStatusTableLocationDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Location]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Místo]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateStatusTableNameDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Name]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Název]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateStatusTableReleaseNotesDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Release notes]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Poznámky k verzi]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateStatusTableReleaseNotesLink" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<link>http://go.microsoft.com/fwlink/?LinkId=619747</link>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<link>http://go.microsoft.com/fwlink/?LinkId=619747</link>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateSuccessProjectCLI" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<br/><success>Success!</success> Your project is ready for use at <highlight>{0}</highlight>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<br/><success>Úspěch!</success> Váš projekt je připravený k použití v <highlight>{0}</highlight>.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateSuccessProjectCustomWww" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<br/><success>Success!</success> Your project using custom assets from {0} is ready for use at <highlight>{1}</highlight>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<br/><success>Úspěch!</success> Váš projekt využívající vlastní prostředky z {0} je připravený k použití v <highlight>{1}</highlight>.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateSuccessProjectTemplate" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<br/><success>Success!</success> Your project using the {0} is ready for use at <highlight>{1}</highlight>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<br/><success>Úspěch!</success> Váš projekt s použitím šablony {0} je připravený k použití v <highlight>{1}</highlight>.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateTacoJsonFileCreationError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: Creation of taco.json file failed]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Chyba: Vytvoření souboru taco.json se nepovedlo.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateTacoJsonFileWriteError" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Failed to write to {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Zápis do {0} se nepovedl.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateTemplatesUnavailable" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: Unable to access or download templates]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Chyba: Nejde získat přístup k šablonám ani je stáhnout.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateWarningDeprecatedKit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<br/><warn>Warning: Kit {0} has been deprecated.</warn><br/>Consider changing your project to use a more recent Kit. For deprecation information, see <link>http://go.microsoft.com/fwlink/?LinkId=618170</link>]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandDocumentationDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Open up the documentation page in your default browser]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Otevře stránku dokumentace ve výchozím prohlížeči.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandEmulateDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Emulate a cordova project]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Emuluje projekt Cordova.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: An error occurred while running the command.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Chyba: Při spuštění příkazu došlo k chybě.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandFeedbackDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Change feedback setting]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Změní nastavení pro zpětnou vazbu.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandHelpDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Get help for a TACO command]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Načte nápovědu k příkazu TACO.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandInstallCordovaTooOld" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: The current project uses Cordova version {0}. 'taco install-reqs' supports projects using Cordova version {1} or higher.<br/><br/>If your project was created using a TACO kit, consider moving to a kit that has a more recent version of Cordova. If your project was created using Cordova directly, consider updating the installation of Cordova. For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandInstallFinalPlatforms" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Installing dependencies for the following platforms: <highlight>{0}</highlight>]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandInstallNoPlatformsAdded" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: No platforms added to your project. To install the dependencies for a given platform, please add it to your project first.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandInstallNoPlatformsFolder" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: No 'platforms' folder found. Please make sure the current directory is the root of a Cordova project, and at least one platform has been added.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandInstallNoReqsSupportHint" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<highlight>Note:</highlight> To manually update a single platform, remove the platform from your project and then run:<br/><br/>    <highlight>taco platform add </highlight>[platform]5D;<highlight>@</highlight>[version]5D;]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandInstallNothingToInstall" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[There is nothing to install. Please see the above messages for details.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandInstallPlatformBullet" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[- <highlight>{0}</highlight>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[– <highlight>{0}</highlight>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandInstallPlatformVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Minimum version required: {0}@<highlight>{1}</highlight>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Minimální požadovaná verze: {0}@<highlight>{1}</highlight>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandInstallReqsDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Install platform-specific third-party dependencies required to build]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Nainstaluje závislosti třetích stran specifické pro platformy, které jsou potřebné k sestavení.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandInstallReqsPlatformDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A platform for which to install third-party dependencies]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Platforma, pro kterou se mají nainstalovat závislosti třetích stran]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandInstallSkipNoReqsSupport" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The following platforms will be skipped because they don't support Cordova's requirements checking:<br/>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Následující platformy se přeskočí, protože nepodporují kontrolu požadavků pro Cordovu:<br/>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandInstallSkipNotAdded" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The following platforms will be skipped because they haven't been added to your project yet:<br/>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Následující platformy se přeskočí, protože zatím nebyly přidané do vašeho projektu:<br/>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandInstallSkipSystem" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The following platforms will be skipped because they aren't supported for your current operating system:<br/>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Následující platformy se přeskočí, protože nejsou podporované pro aktuální operační systém:<br/>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitCliOrKitShouldBeSpecified" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: Kit or CLI needs to be specified. Please run 'taco help kit' for more details.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Chyba: Je třeba zadat sadu nebo CLI. Další podrobnosti si zobrazíte příkazem taco help kit.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitCliOrKitShouldBeSpecified.comment" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error thrown when no Kit or CLI is specified for the 'taco kit select' command]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Chyba, která se zobrazí, když pro příkaz taco kit select není zadaná sada nebo CLI]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Perform kit related operations]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Provede operace související se sadou.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitJsonOptionDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Save the list of known kits to a json file at path <PATH>.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Uloží seznam známých sad do souboru json v cestě <CESTA>.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitList" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The following kits are available for use:]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Následující sady jsou k dispozici pro použití:]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitListCordovaCliForKit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<bold>Cordova CLI: </bold>{0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<bold>Cordova CLI: </bold>{0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitListCurrentCordovaCli" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<bold>Cordova CLI Version: </bold>{0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<bold>Verze Cordova CLI: </bold>{0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitListCurrentKit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<bold>Current Kit</bold>: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<bold>Aktuální sada:</bold> {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitListDefaultDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A toolkit of plugins and platforms that works with Cordova CLI v{0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Sada nástrojů s moduly plug-in a platformami, která funguje s Cordova CLI verze {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitListDefaultKit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Default]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Výchozí]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitListDeprecatedKit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Deprecated]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Zastaralé]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitListJsonFileStatus" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<success>Success!</success> Kit metadata file is saved at <highlight>{0}</highlight>]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitListJsonOverwritePrompt" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The file {0} already exists. Do you wish to overwrite? [y/n]5D;?]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitListPlatformOverridesForKit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<bold>Platforms: </bold>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<bold>Platformy: </bold>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitListPluginOverridesForKit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<bold>Plugins: </bold>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<bold>Moduly plug-in: </bold>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitListReleaseNotes" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[For more information about this kit, please visit <link>{0}</link>.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Další informace o této sadě najdete na <link>{0}</link>.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitListSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[List available TACO kits]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Seznam dostupných sad TACO]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitOptionKitDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[List the details (pinned version of Cordova CLI, platforms and plugins) for a specific kit with ID <KIT-ID>.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitProjectUsesSameCli" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: TACO project already uses the Cordova CLI {0}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitProjectUsesSameKit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: TACO project already uses kit {0}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitSelectCliPreview" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[You have opted not to use a Kit. Cordova CLI {0} may pin platform and plugin versions that are different from what are currently added to your project and may not have been verified to work with TACO. Here is an overview of what this update will change:]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitSelectKitCliVersion.comment" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[String used to represent the CLI pinned version of platforms and plugins that aproject will be updated to, on 'taco kit select']]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitSelectKitPlatformVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[[DEFAULT]5D;]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[[VÝCHOZÍ]5D;]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitSelectKitPluginVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[[EDGE]5D;]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[[EDGE]5D;]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitSelectKitPreview" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Kit {0} recommends a different version for some platforms and plugins already added to your project. Here is an overview of what this update will change:]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitSelectNoUpdateListHeader" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The following plugins were not installed from NPM and will not be updated:]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitSelectOptionCliDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Use the specified version of Cordova CLI for the project.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitSelectOptionKitDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Use the specified TACO kit for the project. Use "taco kit list" to see a list of available kits.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitSelectProjectUpdatePrompt" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Make these changes now [y/n]5D;?]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitSelectProjectUpdateWarning" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<warn>Warning:</warn> Platforms and plugins in your project will be removed and replaced with these updates. Plugins installed from the local file system or a GIT respository will be ignored.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitSelectStatusSuccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<success>Success!</success>]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitSelectStatusUpdatingPlatforms" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Updating platforms...]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitSelectStatusUpdatingPlugins" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Updating plugins...]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitSelectSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Select a kit or a Cordova CLI version for the project]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Perform kit related operations (like list)]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformAddSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Add specified platforms]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformCheckSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[List platforms which can be updated by 'taco platform update']]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Manage project platforms]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformLinkDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[When <plat-spec> is a local path, links the platform library directly instead of making a copy of it (support varies by platform; useful for platform development)]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformListSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[List all the installed and available platforms]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformOptBranchDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Name of the branch to checkout after cloning the git repo; If none is specified, the 'master' branch will be checked out]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformOptPathDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Path to a directory containing a platform name of platform to be retrieved from npm registry]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformOptPlatformDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Platform (typically from the npm registry)]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformOptUrlDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Url to a git repository containing a platform]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformOptVersionDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The major.minor.patch version specifier]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformRemoveSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Remove specified platforms]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformSaveAddDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Save specified platforms into config.xml after installing them]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformSaveRemoveDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Delete specified platforms from config.xml after removing them]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformSaveUpdateDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Save the latest versions of the specified platforms into config.xml]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformStatusAdded" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<success>Success!</success> Platform(s) <highlight>{0}</highlight> added to the project.<br/>]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformStatusAdding" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Adding platform <highlight>{0}</highlight> to Cordova project...<br/>]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformStatusRemoved" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<success>Success!</success> Platform(s) <highlight>{0}</highlight> removed from the project.<br/>]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformStatusRemoving" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Removing platform <highlight>{0}</highlight> from Cordova project...<br/>]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformStatusUpdated" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<success>Success!</success> Platform(s) <highlight>{0}</highlight> updated.<br/>]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformStatusUpdating" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Updating platform <highlight>{0}</highlight>...<br/>]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The subcommand to be run - add, remove, list, update or check]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformUpdateSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Update the version of cordova used for a specific platform; Update to the latest <VERSION>, if no <VERSION>, path or <URL> is specified.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformUsegitDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Retrieve from git instead of npm registry]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginAddSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Add specified Plugins; pluginid will be matched in --searchpath / registry; directory is a directory containing a plugin; giturl is a git repo containing a plugin]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginBrowserifyDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Plugins javascript gets loaded at build time instead of runtime using browserify, Replace cordovajs file with one that included the JS of the installed plugins.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Manage Cordova plugins for the project]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginLinkDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[When installing from a local path, creates a symbolic link to the plugin instead of copying files. The extent to which files are linked vs copied varies by platform. Useful for plugin development.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginListSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[List currently installed plugins]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginNoRegistryDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Don't search the registry for plugins]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginRemoveSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Remove plugins with the given IDs]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginSaveAddDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Save the information for specified plugin into config.xml]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginSaveRemoveDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Remove the information for the specified plugin from config.xml]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginSearchPathDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[When looking up plugins by ID, look in this directory and each of its subdirectories for the plugin before hitting the registry. Multiple search paths can be used by either specifying the flag multiple times, or by seperating paths with a delimiter (':' on Unix, ';' on Windows).]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginSearchSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Search the plugin registry for plugins matching the keywords]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginShrinkwrapDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Used together with --save, saves the installed version number to config.xml]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginStatusAdded" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<success>Success!</success> Plugin added.<br/>]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginStatusAdding" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Fetching plugin "<highlight>{0}</highlight>" via npm.<br/>]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginStatusRemoved" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<success>Success!</success> Plugin <highlight>{0}</highlight> removed<br/>]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginStatusRemoving" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Removing plugin <highlight>{0}</highlight> from Cordova project...<br/>]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The subcommand to be run - add, remove, list, or search]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginTestedPlatforms" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The plugin <highlight>{0}</highlight> has been validated on platform(s) - {1}.<br/>]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginWithIdStatusAdded" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<success>Success!</success> {0} installed.<br/>]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteAddSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Add a remote build agent for the specified platform]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteCantFindRemoteMount" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to contact {0} to find where the remote build server services Cordova builds. Is the server running remotebuild with taco-remote configured?]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteConnectionRefused" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to connect to remote server. Make sure that the remotebuild server is running at {0}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteDeleteNeedsPlatform" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[No platform specified]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteDeletePlatformNotAdded" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to remove platform '{0}': platform not added]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Configure remote builds (currently supports iOS build only)]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteHeader" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Please ensure that remotebuild is running on the remote server.<br/> You can generate new client information at any time by typing remotebuild generateClientCert. For more details, see <fwlink goes here>]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteInvalidPin" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Invalid PIN '{0}': PINs are 6 digit integers]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteInvalidPort" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Invalid port '{0}': ports must be integers greater than 0 and less than 65536]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteListDescriptionHeader" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Remote Server]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Vzdálený server]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteListNoPlatforms" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[No platforms configured for remote build.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Pro vzdálený build nejsou nakonfigurované žádné platformy.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteListNotSecured" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Not Secured]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Nezabezpečené]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteListPlatformHeader" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Platform]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Platforma]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteListPrelude" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Current remote configuration(s):]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Aktuální vzdálené konfigurace:]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteListSecured" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Secured]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Zabezpečené]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteListSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[List all currently configured remote build agents]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Zobrazí seznam všech aktuálně nakonfigurovaných agentů vzdálených buildů.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteNotfound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to look up host '{0}'. Check that the name is correct.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemotePlatformNotKnown" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: No remote settings found for {0}. Please run 'taco remote add {0}']]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteQueryHost" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Remote host name / IP address: ]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteQueryPin" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[PIN (leave blank for insecure servers): ]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteQueryPort" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Port number: ]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Číslo portu: ]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteRejectedPin" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to use PIN to pair with remote build server: PIN was rejected]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteRemoveSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Remove a remote build agent for the specified platform]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteRemoveSuccessful" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<success>Success!</success> Removed remote platform {0}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteSettingsStored" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<success>Success!</success> Settings stored in {0}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The subcommand to run: add, remove, or list]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteTimedout" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to contact '{0}:{1}', please check that the server is reachable.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRunDebugDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Run or emulate a debug build]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRunDebuginfoDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Report back additional information to allow connecting a debugger to the running instance]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRunDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Run the project for a given platform on the selected device/emulator target]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRunDeviceDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Run a build on a physical device]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Spustí build na fyzickém zařízení.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRunEmulatorDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Run a build in an emulator]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Spustí build v emulátoru.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRunLocalDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Force a local build]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Vynutí místní build.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRunNobuildDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Do not perform a build before running or emulating]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Neprovede sestavení před spuštěním nebo emulací.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRunPlatformDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The platform that you wish to run or emulate]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Platforma, kterou chcete spustit nebo emulovat]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRunReleaseDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Run or emulate a release build]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Spustí nebo emuluje verzi pro vydání.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRunRemoteDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Force a remote build]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Vynutí vzdálený build.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRunRemoteDeviceSuccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<success>Success!</success> Build running on remote attached device]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRunRemoteEmulatorSuccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<success>Success!</success> Build running on remote emulator]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRunTargetDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Run a build on the specified target]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Spustí build v zadaném cíli.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandTemplatesDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[List available TACO templates for project creation]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandTemplatesHeader" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Available templates:]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Dostupné šablony:]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandUnsupportedPlatformIgnored" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Warning: Platform '{0}' is not supported and will be ignored.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandVersionDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Display the current TACO version]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CordovaCmdNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Cordova not found, please run 'npm install –g cordova' to install Cordova globally]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CordovaCommandFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA['cordova {1}' failed with exit code {0}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CordovaCommandFailedWithError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA['cordova {0}' failed.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";DoneExtractingRemoteBuild" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[------ Done extracting the build outputs to {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[------ Výstupy buildu se rozbalily do {0}.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";DownloadedRemoteBuild" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[------ Done downloading the build outputs to {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[------ Výstupy buildu se stáhly do {0}.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";DownloadingRemoteBuild" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[------ Downloading completed build files from {0} to {1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[------ Soubory buildu se stáhly z {0} do {1}.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorCertificateLoad" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Failed to load certificate {0}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorCertificatePathChmod" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Failed to change permissions for certificate folder {0}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorCertificateSave" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Failed to save certificate]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorCertificateSaveToPath" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Failed to save certificate at {0}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorCertificateSaveWithErrorCode" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Failed to save certificate in certficate store. Exit Code: {0}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorDownloadingRemoteBuild" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error from downloading build outputs to {0}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorDuringRemoteBuildSubmission" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error during build submission: {0}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorHttpGet" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error contacting {0}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorIncompatibleOptions" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: {0} option cannot be used in conjunction with {1} option.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorInvalidJsonFilePath" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: The specified path is not a valid JSON file path: {0}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorInvalidPath" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: The specified path is invalid: {0}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorInvalidVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: {0} is an invalid {1} version.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorNoPlatformsFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to find any platforms. Please 'taco platform add <platform>' or 'taco remote add <platform>' and retry.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorNoPluginOrPlatformSpecified" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[No {0}(s) specified. Please specify {0}(s) to {1}. See `taco {0} list`.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorOperationCancelled" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Operation cancelled]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorPatchCreation" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Failed to parse changed files needed to prepare a build patch]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorReadingPackageVersions" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: Could not read versions of {0}.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorTacoJsonMissingOrMalformed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: taco.json is missing or malformed.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorUploadingRemoteBuild" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[An error occurred uploading to the build server {0}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ExtractingRemoteBuild" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[------ Extracting the build outputs to {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[------ Výstupy buildu se rozbalují do {0}.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";FailedToDeleteRemoteZip" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[------ Failed to delete downloaded zip file {0}. This did not prevent a successful build.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[------ Nepovedlo se odstranit stažený soubor zip {0}. To nezabránilo úspěšnému vytvoření buildu.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";GeneralCommandsTitle" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[General Commands:]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";GetCertificateFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: unable to find certificate.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";HowToUseChangeToProjectFolder" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Change the directory to your project: <bold>cd {0}</bold>]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";HowToUseCommandAddPlugin" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Add a Cordova plugin: <bold>taco add plugin <PLUGIN-ID></bold>]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";HowToUseCommandBuildPlatform" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Build your app: <bold>taco build <PLATFORM></bold>]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";HowToUseCommandDocs" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[For full documentation online, use '<bold>taco docs</bold>']]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";HowToUseCommandEmulatePlatform" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Run your app in the emulator: <bold>taco emulate <PLATFORM></bold>]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";HowToUseCommandHelp" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[For command help, use '<bold>taco help</bold>' ]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";HowToUseCommandInstallReqsPlugin" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Install the build tools for each platform:  <bold>taco install-reqs <PLATFORM></bold>]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";HowToUseCommandPlatformAddPlatform" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Add a platform:  <bold>taco platform add <PLATFORM></bold>]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";HowToUseCommandRunPlatform" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Run your app on a device: <bold>taco run <PLATFORM></bold>]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";HowToUseCommandSetupRemote" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Connect to a remote build agent: <bold>taco remote add <PLATFORM></bold>]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";HowToUseCreateProjectWithTemplate" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[e.g: To create a new TypeScript project, use <bold>taco create <PATH> [ID]5D; --template typescript</bold>]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";HttpGetFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Http {0}: {1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Http {0}: {1}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";IncrementalBuild" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[------ Incremental Build: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[------ Přírůstkový build: {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";InvalidBuildSubmission400" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[{0}:{1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[{0}:{1}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";InvalidRemoteBuild" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Invalid remote build: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Neplatný vzdálený build: {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";InvalidRemoteBuildClientCert" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The remote build server denied the build request, because the client certificate is invalid or has expired. To build your project, you must generate and configure a security PIN. See http://go.microsoft.com/fwlink/?LinkID=511904]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Vzdálený sestavovací server zamítl žádost o sestavení, protože klientský certifikát je neplatný nebo prošlý. Pokud chcete projekt sestavit, musíte vygenerovat a nakonfigurovat bezpečnostní PIN kód. Viz http://go.microsoft.com/fwlink/?LinkID=511904.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";InvalidRemoteBuildUrl" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The remote build server Url {0} is invalid. It should specify http or https.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Adresa URL vzdáleného sestavovacího serveru {0} je neplatná. Měla by obsahovat http nebo https.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";NewRemoteBuildInfo" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[------ New Build information: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[------ Informace o novém buildu: {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";NewerTacoCLIVersionAvailable" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<br/>------------------------------------]A;<warn>A newer version is available for taco-cli:</warn>]A; * Locally installed version: {0}]A; * Latest version: {1}]A; * <link>http://go.microsoft.com/fwlink/?LinkId=619747</link>]A; * Run <command>npm install -g taco-cli</command> to update]A;------------------------------------]A;]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";NoCertificateFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: No certificate '{0}' found]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";NoRemoteBuildIdFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: No remote build found. Please run '{0}' first]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";NotInCordovaProject" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: Current working directory is not a Cordova-based project]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";OnboardingExperienceTitle" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<br/>Quick tips & commands:]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ProgramDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[TACO is a command line tool that makes it easy to create, build, run, and emulate Cordova applications.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ProjectCommandsTitle" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Project Commands:]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";PromptResponseYes[0]" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[y]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[a]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-28T11:44:28Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Prefix indicating that the user consents to installing 3rd party dependencies. If the user's entry begins with this string, we assume it means yes, otherwise we assume it meanns no]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
-        </Props>
       </Item>
-      <Item ItemId=";HomebrewInstallationSuccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";PromptResponseYes[1]" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Successfully installed homebrew packages.]A;]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
-            <Val><![CDATA[Balíčky Homebrew se úspěšně nainstalovaly.]A;]]></Val>
+          <Val><![CDATA[yes]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[ano]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-28T11:44:28Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message displayed when 3rd party dependencies are successfully installed]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
-        </Props>
       </Item>
-      <Item ItemId=";HomebrewPackageVerificationFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";RemoteBuildError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error verifying homebrew packages:]A;{0}]A;Consider "brew reinstall libimobiledevice ios-webkit-debug-proxy ideviceinstaller" and trying again.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Chyba při ověřování balíčků Homebrew:]A;{0}]A;Zvažte použití příkazu „brew reinstall libimobiledevice ios-webkit-debug-proxy ideviceinstaller“ a opakování této operace.]]></Val>
+          <Val><![CDATA[Remote build error from the build server {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Chyba vzdáleného buildu ze sestavovacího serveru {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message displayed if after installing the 3rd party dependencies, they do not work. {0} is the contents of the error]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Locked="brew reinstall libimobiledevice ios-webkit-debug-proxy ideviceinstaller"} {Placeholder="{0}"}]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
-        </Props>
       </Item>
-      <Item ItemId=";InvalidBuildRequest" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";RemoteBuildHostNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Invalid build request]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
-            <Val><![CDATA[Neplatná žádost o sestavení]]></Val>
+          <Val><![CDATA[Host unreachable for build server {0}.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Hostitel není pro sestavovací server {0} dostupný.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-28T11:44:28Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio if an invalid build request was sent to the build server]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
-        </Props>
       </Item>
-      <Item ItemId=";LogFileReadError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";RemoteBuildNoConnection" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error from reading build log file {0}:]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Chyba při čtení souboru protokolu buildu {0}:]]></Val>
+          <Val><![CDATA[Remote build server {0} connection failed. Verify that the server is running.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Připojení k vzdálenému sestavovacímu serveru {0} selhalo. Ověřte, jestli tento server běží.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message printed to console when we fail to retrieve the build log. {0} is the location of the file we tried to read.]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";MalformedBuildInfo" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";RemoteBuildNonSslConnectionReset" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Unable to find appropriate package for specified build]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Nejde najít příslušný balíček pro zadaný build.]]></Val>
+          <Val><![CDATA[Non-secure connection to {0} could not be established. Verify that the build server is not running in secure mode.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Nešlo navázat nezabezpečené připojení k serveru {0}. Ověřte, jestli sestavovací server neběží v zabezpečeném režimu.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message printed when a buildInfo object is missing a 'pkg' member. Shouldn't ever happen.]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";NewBuildQueued" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";RemoteBuildSslConnectionReset" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[A build is currently building. Queuing up {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Právě se sestavuje build. {0} se zařazuje do fronty.]]></Val>
+          <Val><![CDATA[Secure connection to {0} could not be established. Verify that the build server is running in secure mode.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Nešlo navázat zabezpečené připojení k serveru {0}. Ověřte, jestli sestavovací server běží v zabezpečeném režimu.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message printed to console when a build request is recieved when another build is in progress. {0} is the build number of the new request which is now in a queue]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";NewBuildStarted" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";RemoteBuildStatusPollFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Taking {0} as current build]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[{0} se přebírá jako aktuální build.]]></Val>
+          <Val><![CDATA[HTTP {0}: {1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[HTTP {0}: {1}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message printed to console when beginning a build. {0} is the build number]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";NewBuildSubmitted" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";RemoteBuildSuccessful" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[New build request submitted:]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Odeslala se nová žádost o build:]]></Val>
+          <Val><![CDATA[Remote build successfully completed]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";RemoteBuildUnsuccessful" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Remote build failed]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";RemoteBuildUnsupportedPlatform" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: Platform '{0}' not supported by current version of cordova.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";SubmittingRemoteBuild" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[------ Submitting new build request to: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[------ Odesílá se žádost o nové sestavení pro: {0}.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message printed to the console when a new build is received]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";NoResourcesForLanguage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";TacoCommandPassthrough" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[No resources defined for language {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
-            <Val><![CDATA[Pro jazyk {0} nejsou definované žádné prostředky.]]></Val>
+          <Val><![CDATA[Unknown TACO command, passing it to cordova]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TacoDocumentationLink" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[http://go.microsoft.com/fwlink/?LinkId=619747]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[http://go.microsoft.com/fwlink/?LinkId=619747]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-28T11:44:28Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message sent back in browser if user requests resources for a language that does not have specfic resources]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
-        </Props>
       </Item>
-      <Item ItemId=";NoTgzFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";TacoSettingsFileDoesNotExist" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Build tgz file no longer exists on file system at {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Soubor tgz buildu už neexistuje v systému souborů v cestě {0}.]]></Val>
-          </Tgt>
+          <Val><![CDATA[Error: Unable to load settings. Please run 'taco remote add' before building remotely]]></Val>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message printed to console and reported back to Visual Studio when unable to find the uploaded project. {0} is where the file was expected]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";TacoRemoteConfigAllowsEmulate" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";UnimplementedAbstractMethod" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[true if server should support running builds in iOS simulator, false if not (defaults to true if not specified)]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Hodnota true, pokud má server podporovat spouštění buildů na simulátoru iOS, hodnota false, pokud nemá (pokud není zadaná, použije se výchozí hodnota true)]]></Val>
-          </Tgt>
+          <Val><![CDATA[This is an abstract method and should be implemented by a derived overload]]></Val>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Help message printed for --allowsEmulate]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";TacoRemoteConfigDeleteBuildsOnShutdown" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";UnsupportedHostPlatform" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Delete all builds when the server is shutdown (defaults to true if not specified)]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Při vypnutí serveru odstraní všechny buildy (pokud není zadané, použije se výchozí hodnota true).]]></Val>
-          </Tgt>
+          <Val><![CDATA[Error: Unsupported platform {0}]]></Val>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Help message printed for --deleteBuildsOnShutdown]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";TacoRemoteConfigMaxBuildsInQueue" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";_RemoteBuildUnsupportedPlatformcomment" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Maximum number of builds to allow in build queue. New builds over this limit are rejected (defaults to 10 if not specified)]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Maximální počet buildů, které se dají zařadit do fronty. Nové buildy přesahující tento limit se odmítnou (pokud není zadaný, použije se výchozí hodnota 10).]]></Val>
-          </Tgt>
+          <Val><![CDATA[Error message printed when trying to 'taco remote add <platform>' and the platform is not supported. {0} is the platform]]></Val>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Help message printed for --maxBuildsInQueue]]></Cmt>
-        </Cmts>
-      </Item>
-      <Item ItemId=";TacoRemoteConfigMaxBuildsToKeep" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Maximum number of builds to retain on disk (defaults to 20 if not specified)]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Maximální počet buildů, které se uchovávají na disku (pokud není zadaný, použije se výchozí hodnota 20)]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Help message printed for --maxBuildsToKeep]]></Cmt>
-        </Cmts>
-      </Item>
-      <Item ItemId=";TacoRemoteConfigNativeDebugProxyPort" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Port number for native debugger (defaults to 3001 if not specified)]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Číslo portu pro nativní ladicí program (pokud není zadaný, použije se výchozí hodnota 3001)]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Help message printed for --nativeDebugProxyPort]]></Cmt>
-        </Cmts>
-      </Item>
-      <Item ItemId=";TacoRemoteConfigWebDebugProxyDevicePort" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Port number for webkit debugger device discovery (defaults to 9221 if not specified)]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Číslo portu pro zjišťování zařízení ladicího programu webkitu (pokud není zadaný, použije se výchozí hodnota 9221)]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Help message printed for --webDebugProxyDevicePort]]></Cmt>
-        </Cmts>
-      </Item>
-      <Item ItemId=";TacoRemoteConfigWebDebugProxyPortMax" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Last port number for webkit debugger to assign to devices (defaults to 9322 if not specified)]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Poslední číslo portu, které má ladicí program webkitu přiřazovat zařízením (pokud není zadaný, použije se výchozí hodnota 9322)]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Help message printed for --webDebugProxyPortMax]]></Cmt>
-        </Cmts>
-      </Item>
-      <Item ItemId=";TacoRemoteConfigWebDebugProxyPortMin" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[First port number for webkit debugger to assign to devices (defaults to 9222 if not specified)]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[První číslo portu, které má ladicí program webkitu přiřazovat zařízením (pokud není zadaný, použije se výchozí hodnota 9222)]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Help message printed for --webDebugProxyPortMin]]></Cmt>
-        </Cmts>
-      </Item>
-      <Item ItemId=";TacoRemoteHelp[0]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[taco-remote enables building Apache Cordova projects remotely.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Parametr taco-remote umožňuje vzdálené sestavování projektů Apache Cordova.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="LcxAdmin"><![CDATA[{Locked="taco-remote"}]]></Cmt>
-        </Cmts>
-      </Item>
-      <Item ItemId=";TacoRemoteHelp[1]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[More documentation for configuring taco remote build can be found at http://go.microsoft.com/fwlink/?LinkId=613345]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Další dokumentaci ke konfiguraci vzdáleného buildu taco najdete na adrese http://go.microsoft.com/fwlink/?LinkId=613345.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="LcxAdmin"><![CDATA[{Locked="http://go.microsoft.com/fwlink/?LinkId=613345"}]]></Cmt>
-        </Cmts>
-      </Item>
-      <Item ItemId=";TacoRemoteHelp[3]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Options that may be specified in the config file (under { 'modules': { 'taco-remote': { } } )]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Parametry, které se dají zadat v konfiguračním souboru (v sekci { 'modules': { 'taco-remote': { } } )]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="LcxAdmin"><![CDATA[{Locked="{ \'modules\': { \'taco-remote\': { } }"}]]></Cmt>
-        </Cmts>
-      </Item>
-      <Item ItemId=";TgzExtractError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[An error occurred in extracting contents from {0}: {1}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Při rozbalování obsahu souboru {0} se stala chyba: {1}]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message printed to console and reported back to Visual Studio when an error occurs when extracting the tgz. {0} is the tgz file, and {1} is the error]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
-        </Cmts>
-      </Item>
-      <Item ItemId=";UploadExtractedSuccessfully" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Extracted app contents from uploaded build request to {0}. Requesting build.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Obsah aplikace z nahrané žádosti o build se rozbalil sem: {0}. Probíhá žádost o build.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message printed to console when the uploaded build is successfully extracted. {0} is the location that the uploaded build was extracted to]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
-        </Cmts>
-      </Item>
-      <Item ItemId=";UploadSavedSuccessfully" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Saved upload to {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Nahraná žádost o build se uložila sem: {0}.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message printed to console when a build request is successfully saved. {0} is the location it was saved to]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
-        </Cmts>
-      </Item>
-      <Item ItemId=";UploadSaving" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Saving build request payload to : {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New" AutoAppr="N/A">
-            <Val><![CDATA[Datová část žádosti o build se ukládá sem: {0}.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-        <Modified By="MirekP" DateTime="2015-05-29T08:45:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message printed when we start to save a build request. {0} is the location we are trying to save to]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
-        </Cmts>
       </Item>
     </Item>
   </Item>

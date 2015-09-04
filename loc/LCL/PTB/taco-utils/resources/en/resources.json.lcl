@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<LCX SchemaVersion="6.0" Name="resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="pt-BR" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
+<?xml version="1.0" encoding="utf-8"?>
+<LCX SchemaVersion="6.0" Name="resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="pt-BR" Desc="Commenting file created by LCXAdmin. For more information, please visit http://localizability/longhorn/LcxAdmin.asp" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
   <Props>
     <Str Name="HobbitID" Val="6b5add36-5e22-4342-ae9a-92a83859502e" />
   </Props>
@@ -13,452 +13,446 @@
     <Disp Icon="Expand" Expand="true" Disp="true" LocTbl="false" />
     <Item ItemId=";Strings" ItemType="0" PsrId="306" Leaf="false">
       <Disp Icon="Str" Disp="true" LocTbl="false" />
-      <Item ItemId=";AbstractMethod" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";BuildBuilding" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[This is an abstract method and should be implemented by a derived overload]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Este é um método abstrato e deve ser implementado por uma sobrecarga derivada]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="PTBR_PM1_Moravia@outlook.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-05-29T18:37:40.858Z" />
-            </Props>
+          <Val><![CDATA[Building Cordova app.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Compilando o aplicativo Cordova.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="ZAUM" DateTime="2015-06-01T12:17:55.0002786Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Error thrown for an unimplemented method]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-        </Props>
       </Item>
-      <Item ItemId=";CommandBadArguments" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";BuildComplete" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Unhandled arguments for {0}: {1}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Argumentos não tratados para {0}: {1}]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="PTBR_PM1_Moravia@outlook.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-05-29T18:38:10.451Z" />
-            </Props>
+          <Val><![CDATA[Build completed successfully.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Compilação concluída com êxito.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="ZAUM" DateTime="2015-06-01T12:17:55.0002786Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Error reported when 'taco {0}' is given arguments it cannot handle. {0} is the command name and {1} is the arguments]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-        </Props>
       </Item>
-      <Item ItemId=";FailedFileRead" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";BuildDirectoryNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Failed to read file from {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Falha ao ler o arquivo em {0}]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="ZAUM" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-01T12:14:02.690611Z" />
-            </Props>
+          <Val><![CDATA[Build directory {0} does not exist.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[O diretório de compilação {0} não existe.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="ZAUM" DateTime="2015-06-01T12:17:55.0002786Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[{0} is the full path to the file being read]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-        </Props>
       </Item>
-      <Item ItemId=";FailedFileWrite" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";BuildDownloaded" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Failed to write file at {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Falha ao gravar o arquivo em {0}]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="PTBR_PM1_Moravia@outlook.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-05-29T18:38:51.439Z" />
-            </Props>
+          <Val><![CDATA[Build completed and downloaded by client.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Compilação concluída e baixada pelo cliente.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="ZAUM" DateTime="2015-06-01T12:17:55.0002786Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[{0} is the full path to the file being written]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-        </Props>
       </Item>
-      <Item ItemId=";FailedRecursiveCopy" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";BuildExtracted" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Failed to recursively copy from {0} to {1}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Falha ao copiar de forma recursiva de {0} para {1}]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="PTBR_PM1_Moravia@outlook.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-05-29T18:42:11.993Z" />
-            </Props>
+          <Val><![CDATA[Extracted app contents from uploaded build request]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Conteúdo de aplicativo extraído da solicitação de compilação carregada]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="ZAUM" DateTime="2015-06-01T12:17:55.0002786Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[{0} is the full path to source directory and {1} is the full path to target directory]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-        </Props>
       </Item>
-      <Item ItemId=";InnerErrorToString" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";BuildInvokedTwice" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Inner Error:]A;{0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Erro interno:]A;{0}]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="PTBR_PM1_Moravia@outlook.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-05-29T18:42:20.476Z" />
-            </Props>
+          <Val><![CDATA[Invalid request: build.js process already in use but was asked to build again. This is likely a programming error as a build.js process is meant to be used only once.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Solicitação inválida: o processo build.js já está sendo usado, mas foi solicitado a fazer uma nova compilação. Este é provavelmente um erro de programação, já que um processo build.js deve ser usado apenas uma vez.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="ZAUM" DateTime="2015-06-01T12:17:55.0002786Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[token prefix to an inner error]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-        </Props>
       </Item>
-      <Item ItemId=";LoggedProcessTerminatedWithCode" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";BuildManagerDirInit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Process exited with code {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Processo encerrado com o código {0}]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="PTBR_PM1_Moravia@outlook.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-05-29T18:42:35.637Z" />
-            </Props>
+          <Val><![CDATA[Build will be executed under: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[A compilação será executada em: {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="ZAUM" DateTime="2015-06-01T12:17:55.0002786Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message logged to a file when a process exits. {0} is the numeric exit code the process exited with]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-        </Props>
       </Item>
-      <Item ItemId=";PackageLoaderDownloadCompletedMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";BuildMovingOn" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[<success>Success!</success> {0} downloaded and installed.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[<success>Êxito!</success> {0} foi baixado e instalado.]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="ZAUM" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-15T20:11:05.9282569Z" />
-            </Props>
+          <Val><![CDATA[Done with current build. Checking for next build in queue.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Configuração atual concluída. Verificando a próxima compilação na fila.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="ZAUM" DateTime="2015-06-15T20:20:35.0002569Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reporting the success of package download and install.]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-        </Props>
       </Item>
-      <Item ItemId=";PackageLoaderDownloadError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";BuildNotCompleted" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error: Downloading {0} failed.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Erro: o download de {0} falhou.]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="ZAUM" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-15T20:15:05.8712569Z" />
-            </Props>
+          <Val><![CDATA[Requested build is not yet ready. Status: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[A compilação solicitada ainda não está pronta. Status: {0}]]></Val>
           </Tgt>
-          <Prev Cat="Text">
-            <Val><![CDATA[Downloading {0} failed.]]></Val>
-          </Prev>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="ZAUM" DateTime="2015-06-15T20:20:35.0002569Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Error reported when downloading a package fails]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-        </Props>
       </Item>
-      <Item ItemId=";PackageLoaderDownloadingMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";BuildNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[<bold>Downloading</bold>: {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[<bold>Baixando</bold>: {0}]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="ZAUM" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-15T20:15:17.7442569Z" />
-            </Props>
+          <Val><![CDATA[Build {0} does not exist]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[A compilação {0} não existe]]></Val>
           </Tgt>
-          <Prev Cat="Text">
-            <Val><![CDATA[Downloading: ]]></Val>
-          </Prev>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="ZAUM" DateTime="2015-06-15T20:20:35.0002569Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message printed when download and install of Cordova tools is in progress.]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-        </Props>
       </Item>
-      <Item ItemId=";PackageLoaderInstalledMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";BuildQueueFull" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Installed {0}{1}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Instalado {0}{1}]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="PTBR_PM1_Moravia@outlook.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-05-29T18:43:29.9Z" />
-            </Props>
+          <Val><![CDATA[Build request rejected. The build queue is full. Limit is {0} queued builds.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Solicitação de compilação rejeitada. A fila de compilação está cheia. O limite é de {0} compilações na fila.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="ZAUM" DateTime="2015-06-01T12:17:55.0002786Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reporting the success of Cordova tools {0} download.]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-        </Props>
       </Item>
-      <Item ItemId=";PackageLoaderInvalidPackageVersionSpecifier" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";BuildRetentionDelete" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error: {0} is an invalid {1} version]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Erro: {0} é uma versão inválida de {1}]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="PTBR_PM1_Moravia@outlook.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-05-29T18:43:46.567Z" />
-            </Props>
+          <Val><![CDATA[Deleting build %d from %s]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Excluindo compilação %d de %s]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="ZAUM" DateTime="2015-06-01T12:17:55.0002786Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[{0} is the package name, and {1} is the package version]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-        </Props>
       </Item>
-      <Item ItemId=";PackageLoaderNpmInstallErrorMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";BuildRetentionPreDelete" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error installing {0} via npm. See output for details.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Erro ao instalar {0} pelo npm. Consulte a saída para obter detalhes.]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="ZAUM" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-15T20:10:51.8232569Z" />
-            </Props>
+          <Val><![CDATA[Deleting eligible builds. Will delete %d builds.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Excluindo compilações elegíveis. %d compilações serão excluídas.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="ZAUM" DateTime="2015-06-15T20:20:35.0002569Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reported when npm install returns a non-zero exit code.]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-        </Props>
       </Item>
-      <Item ItemId=";PackageLoaderNpmInstallFailedEaccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";BuildUploaded" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error installing {0} via npm. Exit Code: {1}. Check permissions of npm cache. For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=613751.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Erro ao instalar {0} via npm. Código de saída: {1}. Verifique as permissões de cache do npm. Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkId=613751.]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="PTBR_PM1_Moravia@outlook.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-05-29T18:45:40.541Z" />
-            </Props>
+          <Val><![CDATA[Uploaded build request payload.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Conteúdo de solicitação de compilação carregado.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="ZAUM" DateTime="2015-06-01T12:17:55.0002786Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reported when npm install fails due to permissions]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-        </Props>
       </Item>
-      <Item ItemId=";PackageLoaderNpmInstallFailedWithCode" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CordovaAcquisitionFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error installing {0} via npm. Exit Code: {1}. See output for details.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Erro ao instalar {0} via npm. Código de saída: {1}. Consulte a saída para obter detalhes.]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="PTBR_PM1_Moravia@outlook.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-05-29T18:46:23.534Z" />
-            </Props>
+          <Val><![CDATA[Failed to load cordova {0}: {1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Falha ao carregar o Cordova {0}: {1}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="ZAUM" DateTime="2015-06-01T12:17:55.0002786Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reported when npm install fails with an exit code.]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-        </Props>
       </Item>
-      <Item ItemId=";PackageLoaderNpmUpdateErrorMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";EmulateDisabled" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error updating {0} via npm. See output for details.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Erro ao atualizar {0} pelo npm. Consulte a saída para obter detalhes.]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="ZAUM" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-15T20:18:19.1272569Z" />
-            </Props>
+          <Val><![CDATA[Emulate is not enabled on this server.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[A emulação não está habilitada neste servidor.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="ZAUM" DateTime="2015-06-15T20:20:35.0002569Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reported when npm update returns a non-zero exit code.]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-        </Props>
       </Item>
-      <Item ItemId=";PackageLoaderNpmUpdateFailedEaccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";ErrorSavingTgz" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error updating {0} via npm. Exit Code: {1}. Check permissions of npm cache. For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=613751.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Erro ao atualizar {0} pelo npm. Código de Saída: {1}. Verifique as permissões do cache do npm. Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkId=613751.]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="ZAUM" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-15T20:19:09.5322569Z" />
-            </Props>
+          <Val><![CDATA[An error occurred while saving the uploaded tgz file to {0}: {1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Ocorreu um erro ao salvar o arquivo tgz carregado em {0}: {1}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="ZAUM" DateTime="2015-06-15T20:20:35.0002569Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reported when npm update fails due to permissions]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-        </Props>
       </Item>
-      <Item ItemId=";PackageLoaderNpmUpdateFailedWithCode" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";ExceededMaxPings" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error updating {0} via npm. Exit Code: {1}. See output for details.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Erro ao atualizar {0} pelo npm. Código de Saída: {1}. Consulte a saída para obter detalhes.]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="ZAUM" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-15T20:13:19.9412569Z" />
-            </Props>
+          <Val><![CDATA[Exceeded max # of pings: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[O número máx. de pings foi excedido: {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="ZAUM" DateTime="2015-06-15T20:20:35.0002569Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reported when npm update fails with an exit code.]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-        </Props>
       </Item>
-      <Item ItemId=";ProcessLogError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";FailedCreateDirectory" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error from writing to stream at %s: %s]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Erro ao gravar para transmitir em %s: %s]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="PTBR_PM1_Moravia@outlook.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-05-29T18:47:24.535Z" />
-            </Props>
+          <Val><![CDATA[Unable to create extract directory {0}: {1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Não foi possível criar o diretório de extração {0}: {1}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="ZAUM" DateTime="2015-06-01T12:17:55.0002786Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message printed to console when an error occurs during logging. the first %s is the path to the log file, the second %s is the error message]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-        </Props>
       </Item>
-      <Item ItemId=";TacoUtilsExceptionListingfile" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";FirstRunDependencyConfiguration" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Cannot find command listing file]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Não é possível localizar o arquivo de listagem de comando]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="PTBR_PM1_Moravia@outlook.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-05-29T18:47:43.778Z" />
-            </Props>
+          <Val><![CDATA[Configuring first-run dependencies.]A;To deploy to physical iOS devices, or to debug a device or simulator, we need some packages from Homebrew, a third party package manager.]A;Installing Homebrew may ask you for an admin password. Do you want to continue?]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Configurando as dependências da primeira execução.]A;Para implantá-las em dispositivos iOS físicos ou para depurar um dispositivo ou simulador, precisamos de alguns pacotes da Homebrew, um gerenciador de pacotes terceiro.]A;Ao instalar o Homebrew, você pode ser solicitado a fornecer uma senha de administrador. Deseja continuar?]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="ZAUM" DateTime="2015-06-01T12:17:55.0002786Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[error finding commands.json, shouldn't happen]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-        </Props>
       </Item>
-      <Item ItemId=";TacoUtilsExceptionMissingcommand" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";HomebrewInstallationDeclined" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Cannot find command module for command {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Não é possível localizar o módulo de comando para o comando {0}]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="PTBR_PM1_Moravia@outlook.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-05-29T18:48:07.281Z" />
-            </Props>
+          <Val><![CDATA[If you want to enable deploying to devices or debugging apps on devices or the simulator, delete {0} to be asked again.]A;]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Se você deseja ativar a implantação para dispositivos ou a depuração de aplicativos em dispositivos ou no simulador, exclua {0} para ser solicitado novamente.]A;]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="ZAUM" DateTime="2015-06-01T12:17:55.0002786Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[can find commands.json, but cannot find module referenced i.e. create.js, shouldn't happen]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-        </Props>
+      </Item>
+      <Item ItemId=";HomebrewInstallationFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error installing homebrew packages:]A;{0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Erro ao instalar os pacotes do homebrew:]A;{0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";HomebrewInstallationQuery" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[[y]5D;/n? ]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[[s]5D;/n? ]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";HomebrewInstallationQueryResponse" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[y]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[s]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";HomebrewInstallationSuccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Successfully installed homebrew packages.]A;]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Pacotes do homebrew instalados com êxito.]A;]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";HomebrewPackageVerificationFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error verifying homebrew packages:]A;{0}]A;Consider "brew reinstall libimobiledevice ios-webkit-debug-proxy ideviceinstaller" and trying again.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Erro ao verificar os pacotes do homebrew:]A;{0}]A;Considere a possibilidade de usar "brew reinstall libimobiledevice ios-webkit-debug-proxy ideviceinstaller" e tentar novamente.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";InvalidBuildRequest" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Invalid build request]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Solicitação de compilação inválida]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";LogFileReadError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error from reading build log file {0}:]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Erro de leitura do arquivo {0} de log da compilação:]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";MalformedBuildInfo" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to find appropriate package for specified build]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Não foi possível encontrar o pacote apropriado para a compilação especificada]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";NewBuildQueued" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A build is currently building. Queuing up {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Uma compilação está atualmente sendo compilada. Colocando na fila {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";NewBuildStarted" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Taking {0} as current build]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Considerando {0} como a compilação atual]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";NewBuildSubmitted" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[New build request submitted:]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Nova solicitação de compilação enviada:]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";NoResourcesForLanguage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[No resources defined for language {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Nenhum recurso definido para o idioma {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";NoTgzFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Build tgz file no longer exists on file system at {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[O arquivo tgz de compilação não existe mais no sistema de arquivos em {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TacoRemoteConfigAllowsEmulate" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[true if server should support running builds in iOS simulator, false if not (defaults to true if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[true se o servidor deve dar suporte às compilações em execução no simulador iOS; false se não (o padrão é true, se não especificado)]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TacoRemoteConfigDeleteBuildsOnShutdown" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Delete all builds when the server is shutdown (defaults to true if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Exclui todas as compilações quando o servidor é desligado (o padrão é true, se não especificado)]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TacoRemoteConfigMaxBuildsInQueue" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Maximum number of builds to allow in build queue. New builds over this limit are rejected (defaults to 10 if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Número máximo de compilações a ser permitidas na fila de compilação. Novas compilações acima desse limite serão rejeitadas (o padrão é 10, se não especificado)]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TacoRemoteConfigMaxBuildsToKeep" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Maximum number of builds to retain on disk (defaults to 20 if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Número máximo de compilações a ser retidas em disco (o padrão é 20, se não especificado)]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TacoRemoteConfigNativeDebugProxyPort" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Port number for native debugger (defaults to 3001 if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Número de portas para o depurador nativo (o padrão é 3.001, se não especificado)]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TacoRemoteConfigWebDebugProxyDevicePort" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Port number for webkit debugger device discovery (defaults to 9221 if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Número de portas de descoberta de dispositivo do depurador do kit da Web (o padrão é 9.221, se não especificado)]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TacoRemoteConfigWebDebugProxyPortMax" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Last port number for webkit debugger to assign to devices (defaults to 9322 if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Número da última porta para o depurador do kit da Web atribuir aos dispositivos (o padrão é 9.322, se não especificado)]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TacoRemoteConfigWebDebugProxyPortMin" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[First port number for webkit debugger to assign to devices (defaults to 9222 if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Número da primeira porta para o depurador do kit da Web atribuir aos dispositivos (o padrão é 9.222, se não especificado)]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TacoRemoteHelpDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[taco-remote enables building Apache Cordova projects remotely.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[taco-remote permite a compilação remota de projetos do Apache Cordova.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TacoRemoteHelpExample" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Use following config file to configure remotebuild port, web debug proxy port, no builds retention and build cleanup on shutdown]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Use o seguinte arquivo de configuração para configurar a porta de remotebuild, porta proxy de depuração da Web, retenção sem compilações e limpeza de compilação no desligamento]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TacoRemoteHelpNotes" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[More documentation for configuring taco remote build can be found at <link>http://go.microsoft.com/fwlink/?LinkId=618174</link>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Mais documentação para a configuração da compilação remota do TACO pode ser encontrada em <link>http://go.microsoft.com/fwlink/?LinkId=618174</link>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TgzExtractError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[An error occurred in extracting contents from {0}: {1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Ocorreu um erro ao extrair o conteúdo de {0}: {1}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";UploadExtractedSuccessfully" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Extracted app contents from uploaded build request to {0}. Requesting build.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Conteúdo do aplicativo extraído da solicitação da compilação carregada para {0}. Solicitando compilação.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";UploadSavedSuccessfully" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Saved uploaded build to {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Compilação carregada salva em {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";UploadSaving" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Saving build request payload to : {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Salvando conteúdo da solicitação da compilação em: {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
       </Item>
     </Item>
   </Item>
