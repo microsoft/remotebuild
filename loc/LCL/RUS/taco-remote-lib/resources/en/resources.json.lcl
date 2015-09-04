@@ -34,7 +34,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Consider changing your project to use a more recent Kit. For deprecation information, see <link>http://go.microsoft.com/fwlink/?LinkId=618170</link>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Рекомендуется изменить проект, чтобы использовать более новый набор. Сведения об устаревших наборах см. по адресу <link>http://go.microsoft.com/fwlink/?LinkId=618170</link>]]></Val>
+            <Val><![CDATA[Рекомендуется изменить проект, чтобы использовать более новый комплект. Сведения об устаревших комплектах см. по адресу <link>http://go.microsoft.com/fwlink/?LinkId=618170</link>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -43,7 +43,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Warning: Kit {0} has been deprecated]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Предупреждение. Набор {0} не рекомендуется]]></Val>
+            <Val><![CDATA[Предупреждение. Комплект "{0}" устарел и не рекомендуется к использованию]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -52,7 +52,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: {0} is not a known Kit. Please run 'taco kit list' for the list of known kits.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Ошибка. Набор {0} является неизвестным. Чтобы создать список известных наборов, выполните команду "taco kit list".]]></Val>
+            <Val><![CDATA[Ошибка. Комплект "{0}" является неизвестным. Чтобы создать список известных комплектов, выполните команду "taco kit list".]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -70,7 +70,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: The kit metadata file is corrupt. Please fix this by re-installing taco-kits from npm.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Ошибка. Файл метаданных набора поврежден. Исправьте, повторно установив taco-kits из NPM.]]></Val>
+            <Val><![CDATA[Ошибка. Файл метаданных комплекта поврежден. Исправьте, переустановив taco-kits из NPM.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -79,7 +79,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: The kit metadata file is not found. Please fix this by re-installing taco-kits from npm.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Ошибка. Файл метаданных набора не найден. Исправьте, повторно установив taco-kits из NPM.]]></Val>
+            <Val><![CDATA[Ошибка. Файл метаданных комплекта не найден. Исправьте, переустановив taco-kits из NPM.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -88,7 +88,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: No Cordova CLI specification is found for kit {0}. The kit metadata file appears to be corrupt. Please fix this by re-installing taco-kits from npm or run "taco kit list" to see the list of available kits]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Ошибка. Спецификация Cordova CLI не найдена для набора {0}. Файл метаданных набора поврежден. Исправьте, повторно установив taco-kits из NPM, или выполните команду "taco kit list", чтобы просмотреть список доступных наборов]]></Val>
+            <Val><![CDATA[Ошибка. Спецификация Cordova CLI не найдена для комплекта "{0}". Файл метаданных комплекта поврежден. Исправьте, переустановив taco-kits из NPM, или выполните команду "taco kit list", чтобы просмотреть список доступных комплектов.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -97,7 +97,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: No default kit found. Please fix this by re-installing taco-kits from npm or run "taco kit list" to see the list of available kits]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Ошибка. Набор по умолчанию не найден. Исправьте, повторно установив taco-kits из NPM, или выполните команду "taco kit list", чтобы просмотреть список доступных наборов]A;]]></Val>
+            <Val><![CDATA[Ошибка. Комплект по умолчанию не найден. Исправьте, переустановив taco-kits из NPM, или выполните команду "taco kit list", чтобы просмотреть список доступных комплектов.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -106,7 +106,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: This version of Cordova does not contain a TypeScript template]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Ошибка. Версия Cordova не содержит шаблон TypeScript]]></Val>
+            <Val><![CDATA[Ошибка. Эта версия Cordova не содержит шаблон TypeScript]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -124,7 +124,7 @@
         <Str Cat="Text">
           <Val><![CDATA[5.1.1 Cordova Kit]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Набор Cordova 5.1.1]]></Val>
+            <Val><![CDATA[Комплект Cordova 5.1.1]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -133,7 +133,7 @@
         <Str Cat="Text">
           <Val><![CDATA[A toolkit of plugins and platforms that works with Cordova CLI v5.1.1]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Набор подключаемых модулей и платформ, которые функционируют с Cordova CLI версии 5.1.1]]></Val>
+            <Val><![CDATA[Набор подключаемых модулей и платформ, которые работают с Cordova CLI версии 5.1.1]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

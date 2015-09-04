@@ -433,6 +433,9 @@
       <Item ItemId=";RemoteBuildStartExample2" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Start the server with a different serverDir, port, and http (non-secure)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Sunucuyu farklı bir serverDir, bağlantı noktası ve http (güvenli olmayan) ile başlat]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -451,6 +454,9 @@
       <Item ItemId=";ResetServerCertExample1" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Reset server certificates to expire in 1 year]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Sunucu sertifikalarını 1 yılda süresi dolacak biçimde sıfırla]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>

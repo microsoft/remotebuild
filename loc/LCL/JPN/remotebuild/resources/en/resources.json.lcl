@@ -43,6 +43,9 @@
       <Item ItemId=";CheckSettingsForInfo" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Please view/edit server configuration at {0}. You many need to run 'remotebuild saveconfig' to generate it. You will have to restart the server if you update the server configurations.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[{0} にあるサーバー構成を表示または編集してください。'remotebuild saveconfig' を実行してサーバー構成を生成しなければならない場合があります。サーバー構成を更新した場合は、サーバーを再起動する必要があります。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -58,60 +61,90 @@
       <Item ItemId=";CommandCertificatesDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Updates client/server SSL certificates for a secure connection]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[セキュリティで保護された接続のクライアント/サーバーの SSL 証明書を更新します]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";CommandGenerateDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Generates a new client SSL certificate for configuring a new secure connection]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[セキュリティで保護された新しい接続を構成するために、新しいクライアント SSL 証明書を生成します]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";CommandHelpDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Gets help for a command or a module]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[コマンドまたはモジュールのヘルプを取得します]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";CommandResetDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Resets server SSL certificates]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[サーバーの SSL 証明書をリセットします]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";CommandSaveConfigDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Saves the specified configuration to a file.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[指定された構成をファイルに保存します。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";CommandStartDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Starts the server]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[サーバーを起動します]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";CommandTestDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Run tests against another instance of remotebuild]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[remotebuild の別のインスタンスに対してテストを実行します]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";CommandTestDevice" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Test that the machine is configured for device builds]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[コンピューターがデバイスのビルド用に構成されていることをテストします]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";CommandVersionDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Displays the current remotebuild version]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[現在の remotebuild のバージョンを表示します]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";GenerateClientCertExample1" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Generate a new certificate for use in the client that will expire in 1 year]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[クライアントで使用する新しい証明書を生成します。有効期限は 1 年間です]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -145,6 +178,9 @@
       <Item ItemId=";InvalidPortSpecified" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Invalid port '{0}' specified. Port must be an integer between 0 and 65536]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[指定されたポート '{0}' が無効です。ポートは 0 から 65,536 の間の整数でなければなりません]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -349,6 +385,9 @@
       <Item ItemId=";RemoteBuildConfConfigFile" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Path to config file which specifies default values for remotebuild]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[remotebuild の既定値を指定する構成ファイルへのパス]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -409,24 +448,36 @@
       <Item ItemId=";RemoteBuildModuleHelpText" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Other options are described in the individual modules. Try asking for help about the following modules: {0}.<br/>For example, 'remotebuild help taco-remote']]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[その他のオプションについては、個々のモジュールで説明します。次のモジュールに関するヘルプを確認してみてください: {0}。<br/>例: 'remotebuild help taco-remote']]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";RemoteBuildNotes1" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Options (All options other than --config can be specified via a configuration file)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[オプション (--config 以外のすべてのオプションは、構成ファイルを使用して指定できます)]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";RemoteBuildNotes2" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Command line options override configuration file values]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[コマンド ライン オプションは、構成ファイルの値を上書きします]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";RemoteBuildStartExample1" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Start the server with all defaults (secure server with serverDir $TACO_HOME/remote-builds, port 3000)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[すべてを既定値に設定してサーバーを起動します (セキュリティで保護されたサーバーの場合: serverDir $TACO_HOME/remote-builds、ポート 3000)]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -434,7 +485,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Start the server with a different serverDir, port, and http (non-secure)]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[異なる serverDir、ポート、および http (セキュリティで保護されていない) でサーバーを起動する]]></Val>
+            <Val><![CDATA[異なる serverDir、ポート、および http (セキュリティで保護されていない) でサーバーを起動します]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -442,12 +493,18 @@
       <Item ItemId=";RemoteBuildTestExample1" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Run tests against a server started using all defaults]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[すべて既定値を使用して起動したサーバーに対してテストを実行します]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";RemoteBuildTestExample2" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Run device tests against a server started with 'remotebuild --config config.json']]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA['remotebuild --config config.json' を指定して起動したサーバーに対してデバイス テストを実行します]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -455,7 +512,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Reset server certificates to expire in 1 year]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[サーバー証明書の有効期限を 1 年にリセットする]]></Val>
+            <Val><![CDATA[サーバー証明書の有効期限を 1 年にリセットします]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -472,6 +529,9 @@
       <Item ItemId=";SavedConfig" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Configuration saved successfully to {0}.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[構成が {0} に正常に保存されました。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>

@@ -51,7 +51,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Please view/edit server configuration at {0}. You many need to run 'remotebuild saveconfig' to generate it. You will have to restart the server if you update the server configurations.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Просмотрите и измените конфигурацию сервера в "{0}". Для ее создания может потребоваться выполнение команды "remotebuild saveconfig'. Необходимо перезапустить сервер, если конфигурация сервера была обновлена.]]></Val>
+            <Val><![CDATA[Просмотрите и измените конфигурацию сервера в "{0}". Для ее создания может потребоваться выполнение команды "remotebuild saveconfig". Необходимо перезапустить сервер, если конфигурация сервера была обновлена.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -69,7 +69,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Updates client/server SSL certificates for a secure connection]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Обновляет SSL-сертификаты клиента и сервера для безопасного подключения]]></Val>
+            <Val><![CDATA[Обновляет SSL-сертификаты клиента и сервера для защищенного подключения]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -123,7 +123,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Run tests against another instance of remotebuild]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Выполнение тестов для другого экземпляра remotebuild]]></Val>
+            <Val><![CDATA[Выполняет тесты для другого экземпляра remotebuild]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -132,7 +132,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Test that the machine is configured for device builds]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Проверка соответствия конфигурации компьютера сборкам устройства]]></Val>
+            <Val><![CDATA[Проверяет, подходит ли конфигурация компьютера для сборок устройств]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -483,7 +483,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Start the server with all defaults (secure server with serverDir $TACO_HOME/remote-builds, port 3000)]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Запустите сервер со всеми значениям по умолчанию (безопасный сервер с serverDir $TACO_HOME/remote-builds, портом 3000)]]></Val>
+            <Val><![CDATA[Запуск сервера со всеми значениям по умолчанию (защищенный сервер с serverDir $TACO_HOME/remote-builds, укажите порт 3000)]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -492,7 +492,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Start the server with a different serverDir, port, and http (non-secure)]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Запустите сервер с другим значением serverDir, порта и http (небезопасный)]]></Val>
+            <Val><![CDATA[Запуск сервера с другим значением для serverDir, порта и HTTP (небезопасный)]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -519,7 +519,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Reset server certificates to expire in 1 year]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Сбросить сертификаты сервера, срок действия которых истечет через год]]></Val>
+            <Val><![CDATA[Сброс сертификатов сервера, срок действия которых истечет через год]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
