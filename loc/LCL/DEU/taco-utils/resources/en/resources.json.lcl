@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<LCX SchemaVersion="6.0" Name="resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="de-DE" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
+<?xml version="1.0" encoding="utf-8"?>
+<LCX SchemaVersion="6.0" Name="resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="de-DE" Desc="Commenting file created by LCXAdmin. For more information, please visit http://localizability/longhorn/LcxAdmin.asp" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
   <Props>
     <Str Name="HobbitID" Val="6b5add36-5e22-4342-ae9a-92a83859502e" />
   </Props>
@@ -13,340 +13,446 @@
     <Disp Icon="Expand" Expand="true" Disp="true" LocTbl="false" />
     <Item ItemId=";Strings" ItemType="0" PsrId="306" Leaf="false">
       <Disp Icon="Str" Disp="true" LocTbl="false" />
-      <Item ItemId=";AbstractMethod" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";BuildBuilding" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[This is an abstract method and should be implemented by a derived overload]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Hierbei handelt es sich um eine Abstraktionsmethode, die durch einen abgeleiteten Overload implementiert werden sollte]]></Val>
+          <Val><![CDATA[Building Cordova app.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Die Cordova-App wird erstellt.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="j.wieltsch" DateTime="2015-06-01T12:44:40Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Error thrown for an unimplemented method]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";CommandBadArguments" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";BuildComplete" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Unhandled arguments for {0}: {1}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Nicht verarbeitete Argumente für {0}: {1}]]></Val>
+          <Val><![CDATA[Build completed successfully.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Der Buildvorgang wurde erfolgreich abgeschlossen.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="j.wieltsch" DateTime="2015-06-01T12:44:40Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Error reported when 'taco {0}' is given arguments it cannot handle. {0} is the command name and {1} is the arguments]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";FailedFileRead" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";BuildDirectoryNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Failed to read file from {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Fehler beim Lesen der Datei aus {0}]]></Val>
+          <Val><![CDATA[Build directory {0} does not exist.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Das Buildverzeichnis "{0}" ist nicht vorhanden.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="j.wieltsch" DateTime="2015-06-01T12:44:40Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[{0} is the full path to the file being read]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";FailedFileWrite" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";BuildDownloaded" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Failed to write file at {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Fehler beim Schreiben der Datei unter {0}]]></Val>
+          <Val><![CDATA[Build completed and downloaded by client.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Der Build wurde abgeschlossen und vom Client heruntergeladen.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="j.wieltsch" DateTime="2015-06-01T12:44:40Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[{0} is the full path to the file being written]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";FailedRecursiveCopy" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";BuildExtracted" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Failed to recursively copy from {0} to {1}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Fehler beim rekursiven Kopieren aus {0} in {1}]]></Val>
+          <Val><![CDATA[Extracted app contents from uploaded build request]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[App-Inhalte wurden aus der hochgeladenen Buildanforderung extrahiert.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="j.wieltsch" DateTime="2015-06-01T12:44:40Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[{0} is the full path to source directory and {1} is the full path to target directory]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";InnerErrorToString" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";BuildInvokedTwice" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Inner Error:]A;{0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Interner Fehler:]A;{0}]]></Val>
+          <Val><![CDATA[Invalid request: build.js process already in use but was asked to build again. This is likely a programming error as a build.js process is meant to be used only once.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Ungültige Anforderung: Der build.js-Prozess wird bereits verwendet, der Buildvorgang wurde aber nochmals angefordert. Dies ist wahrscheinlich ein Programmierfehler, weil ein build.js-Prozess nur ein Mal verwendet werden soll.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="j.wieltsch" DateTime="2015-06-01T12:44:40Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[token prefix to an inner error]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";LoggedProcessTerminatedWithCode" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";BuildManagerDirInit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Process exited with code {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Prozess beendet mit dem Code {0}]]></Val>
+          <Val><![CDATA[Build will be executed under: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Der Build wird ausgeführt unter: {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="j.wieltsch" DateTime="2015-06-01T12:44:40Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message logged to a file when a process exits. {0} is the numeric exit code the process exited with]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";PackageLoaderDownloadCompletedMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";BuildMovingOn" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[<success>Success!</success> {0} downloaded and installed.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[<success>Erfolg!</success> "{0}" wurde heruntergeladen und installiert.]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="DE_Translator2" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-15T21:03:06.850255Z" />
-            </Props>
+          <Val><![CDATA[Done with current build. Checking for next build in queue.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Der aktuelle Build wurde abgeschlossen. Der nächste Build in der Warteschlange wird überprüft.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="DE_Translator2" DateTime="2015-06-15T21:44:55.0007246Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reporting the success of package download and install.]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-        </Props>
       </Item>
-      <Item ItemId=";PackageLoaderDownloadError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";BuildNotCompleted" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error: Downloading {0} failed.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Fehler: Fehler beim Herunterladen von "{0}".]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="DE_Translator2" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-15T20:56:46.5595036Z" />
-            </Props>
+          <Val><![CDATA[Requested build is not yet ready. Status: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Der angeforderte Build ist noch nicht bereit. Status: {0}]]></Val>
           </Tgt>
-          <Prev Cat="Text">
-            <Val><![CDATA[Downloading {0} failed.]]></Val>
-          </Prev>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="DE_Translator2" DateTime="2015-06-15T21:00:34.0005218Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Error reported when downloading a package fails]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-        </Props>
       </Item>
-      <Item ItemId=";PackageLoaderDownloadingMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";BuildNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[<bold>Downloading</bold>: {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[<bold>Wird heruntergeladen</bold>: {0}]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="DE_Translator2" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-15T20:59:43.4356203Z" />
-            </Props>
+          <Val><![CDATA[Build {0} does not exist]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Der Build "{0}" ist nicht vorhanden.]]></Val>
           </Tgt>
-          <Prev Cat="Text">
-            <Val><![CDATA[Downloading: ]]></Val>
-          </Prev>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="DE_Translator2" DateTime="2015-06-15T21:00:34.0005218Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message printed when download and install of Cordova tools is in progress.]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-        </Props>
       </Item>
-      <Item ItemId=";PackageLoaderInstalledMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";BuildQueueFull" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Installed {0}{1}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[{0}{1} wurde installiert]]></Val>
+          <Val><![CDATA[Build request rejected. The build queue is full. Limit is {0} queued builds.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Die Buildanforderung wurde abgelehnt. Die Buildwarteschlange ist voll. Der Grenzwert sind {0} Builds in der Warteschlange.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="j.wieltsch" DateTime="2015-06-01T12:44:40Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reporting the success of Cordova tools {0} download.]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";PackageLoaderInvalidPackageVersionSpecifier" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";BuildRetentionDelete" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error: {0} is an invalid {1} version]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Fehler: {0} ist eine ungültige {1}-Version]]></Val>
+          <Val><![CDATA[Deleting build %d from %s]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Der Build %d wird aus "%s" gelöscht.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="j.wieltsch" DateTime="2015-06-01T12:44:40Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[{0} is the package name, and {1} is the package version]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";PackageLoaderNpmInstallErrorMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";BuildRetentionPreDelete" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error installing {0} via npm. See output for details.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Fehler beim Installieren von "{0}" über npm. Details finden Sie in der Ausgabe.]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="DE_Translator2" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-15T21:43:46.4747935Z" />
-            </Props>
+          <Val><![CDATA[Deleting eligible builds. Will delete %d builds.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Geeignete Builds werden gelöscht. Es werden %d Builds gelöscht.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="DE_Translator2" DateTime="2015-06-15T21:44:55.0007246Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reported when npm install returns a non-zero exit code.]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-        </Props>
       </Item>
-      <Item ItemId=";PackageLoaderNpmInstallFailedEaccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";BuildUploaded" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error installing {0} via npm. Exit Code: {1}. Check permissions of npm cache. For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=613751.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Fehler beim Installieren von {0} über npm. Exitcode: {1}. Überprüfen Sie die Berechtigungen des npm-Cache. Weitere Informationen finden Sie unter http://go.microsoft.com/fwlink/?LinkId=613751.]]></Val>
+          <Val><![CDATA[Uploaded build request payload.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Die Buildanforderungsnutzlast wurde hochgeladen.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="j.wieltsch" DateTime="2015-06-01T12:44:40Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reported when npm install fails due to permissions]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";PackageLoaderNpmInstallFailedWithCode" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CordovaAcquisitionFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error installing {0} via npm. Exit Code: {1}. See output for details.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Fehler beim Installieren von {0} über npm. Exitcode: {1}. Weitere Details finden Sie in der Ausgabe.]]></Val>
+          <Val><![CDATA[Failed to load cordova {0}: {1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Fehler beim Laden von Cordova {0}: {1}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="j.wieltsch" DateTime="2015-06-01T12:44:40Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reported when npm install fails with an exit code.]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";PackageLoaderNpmUpdateErrorMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";EmulateDisabled" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error updating {0} via npm. See output for details.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Fehler beim Aktualisieren von "{0}" über npm. Details finden Sie in der Ausgabe.]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="DE_Translator2" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-15T21:44:02.3367008Z" />
-            </Props>
+          <Val><![CDATA[Emulate is not enabled on this server.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Emulation ist auf diesem Server nicht aktiviert.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="DE_Translator2" DateTime="2015-06-15T21:44:55.0007246Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reported when npm update returns a non-zero exit code.]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-        </Props>
       </Item>
-      <Item ItemId=";PackageLoaderNpmUpdateFailedEaccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";ErrorSavingTgz" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error updating {0} via npm. Exit Code: {1}. Check permissions of npm cache. For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=613751.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Fehler beim Aktualisieren von "{0}" über npm. Exitcode: {1}. Überprüfen Sie die Berechtigungen des npm-Caches. Weitere Informationen finden Sie unter "http://go.microsoft.com/fwlink/?LinkId=613751".]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="DE_Translator2" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-15T21:44:29.8722757Z" />
-            </Props>
+          <Val><![CDATA[An error occurred while saving the uploaded tgz file to {0}: {1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Fehler beim Speichern der hochgeladenen TGZ-Datei in {0}: {1}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="DE_Translator2" DateTime="2015-06-15T21:44:55.0007246Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reported when npm update fails due to permissions]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-        </Props>
       </Item>
-      <Item ItemId=";PackageLoaderNpmUpdateFailedWithCode" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";ExceededMaxPings" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error updating {0} via npm. Exit Code: {1}. See output for details.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Fehler beim Aktualisieren von "{0}" über npm. Exitcode: {1}. Details finden Sie in der Ausgabe.]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="DE_Translator2" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-15T21:44:39.0668016Z" />
-            </Props>
+          <Val><![CDATA[Exceeded max # of pings: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Die maximale Anzahl von Pings wurde überschritten: {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="DE_Translator2" DateTime="2015-06-15T21:44:55.0007246Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reported when npm update fails with an exit code.]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-        </Props>
       </Item>
-      <Item ItemId=";ProcessLogError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";FailedCreateDirectory" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error from writing to stream at %s: %s]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Fehler beim Schreiben im Stream unter %s: %s]]></Val>
+          <Val><![CDATA[Unable to create extract directory {0}: {1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Das Extraktionsverzeichnis "{0}" kann nicht erstellt werden: {1}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="j.wieltsch" DateTime="2015-06-01T12:44:40Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message printed to console when an error occurs during logging. the first %s is the path to the log file, the second %s is the error message]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";TacoUtilsExceptionListingfile" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";FirstRunDependencyConfiguration" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Cannot find command listing file]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Befehlsauflistungsdatei wurde nicht gefunden]]></Val>
+          <Val><![CDATA[Configuring first-run dependencies.]A;To deploy to physical iOS devices, or to debug a device or simulator, we need some packages from Homebrew, a third party package manager.]A;Installing Homebrew may ask you for an admin password. Do you want to continue?]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Abhängigkeiten der ersten Ausführung werden konfiguriert.]A;Damit die Bereitstellung auf physischen iOS-Geräten oder das Debuggen eines Geräts oder Simulators aufgeführt werden kann, benötigen wir einige Pakete von Homebrew, einem Drittanbieter-Paket-Manager.]A;Bei der Installation von Homebrew werden Sie ggf. zur Eingabe eines Administratorkennworts aufgefordert. Möchten Sie den Vorgang fortsetzen?]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="j.wieltsch" DateTime="2015-06-01T12:44:40Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[error finding commands.json, shouldn't happen]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";TacoUtilsExceptionMissingcommand" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";HomebrewInstallationDeclined" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Cannot find command module for command {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Befehlsmodul für den Befehl {0} wurde nicht gefunden]]></Val>
+          <Val><![CDATA[If you want to enable deploying to devices or debugging apps on devices or the simulator, delete {0} to be asked again.]A;]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Wenn Sie die Bereitstellung auf Geräten oder das Debuggen von Apps auf Geräten oder im Simulator aktivieren möchten, löschen Sie "{0}", damit Sie erneut aufgefordert werden.]A;]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="j.wieltsch" DateTime="2015-06-01T12:44:40Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[can find commands.json, but cannot find module referenced i.e. create.js, shouldn't happen]]></Cmt>
-        </Cmts>
+      </Item>
+      <Item ItemId=";HomebrewInstallationFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error installing homebrew packages:]A;{0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Fehler beim Installieren von Homebrew-Paketen:]A;{0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";HomebrewInstallationQuery" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[[y]5D;/n? ]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[[j]5D;/n? ]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";HomebrewInstallationQueryResponse" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[y]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[j]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";HomebrewInstallationSuccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Successfully installed homebrew packages.]A;]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Homebrew-Pakete wurden erfolgreich installiert.]A;]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";HomebrewPackageVerificationFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error verifying homebrew packages:]A;{0}]A;Consider "brew reinstall libimobiledevice ios-webkit-debug-proxy ideviceinstaller" and trying again.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Fehler beim Überprüfen der Homebrew-Pakete:]A;{0}]A;Verwenden Sie "brew reinstall libimobiledevice ios-webkit-debug-proxy ideviceinstaller", und versuchen Sie es erneut.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";InvalidBuildRequest" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Invalid build request]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Ungültige Buildanforderung.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";LogFileReadError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error from reading build log file {0}:]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Fehler beim Lesen der Buildprotokolldatei "{0}":]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";MalformedBuildInfo" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to find appropriate package for specified build]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Das entsprechende Paket für den angegebenen Build wurde nicht gefunden.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";NewBuildQueued" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A build is currently building. Queuing up {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Ein Build wird zurzeit erstellt. "{0}" wird in die Warteschlange eingereiht.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";NewBuildStarted" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Taking {0} as current build]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA["{0}" wird als aktueller Build angenommen.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";NewBuildSubmitted" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[New build request submitted:]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Neue gesendete Buildanforderung:]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";NoResourcesForLanguage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[No resources defined for language {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Für die Sprache {0} sind keine Ressourcen definiert.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";NoTgzFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Build tgz file no longer exists on file system at {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Die TGZ-Datei des Builds ist nicht mehr im Dateisystem unter "{0}" vorhanden.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TacoRemoteConfigAllowsEmulate" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[true if server should support running builds in iOS simulator, false if not (defaults to true if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA["true", wenn der Server die Ausführung von Builds im iOS-Simulator unterstützen soll, andernfalls "false" (Standardwert ist "true", wenn keine Angabe erfolgt).]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TacoRemoteConfigDeleteBuildsOnShutdown" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Delete all builds when the server is shutdown (defaults to true if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Löscht alle Builds, wenn der Server heruntergefahren wird (Standardwert ist "true", keine Angabe erfolgt).]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TacoRemoteConfigMaxBuildsInQueue" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Maximum number of builds to allow in build queue. New builds over this limit are rejected (defaults to 10 if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Die maximale Anzahl von Builds, die in der Warteschlange zulässig ist. Neue Builds, die diesen Grenzwert überschreiten, werden abgelehnt (Standardwert ist 10, wenn keine Angabe erfolgt).]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TacoRemoteConfigMaxBuildsToKeep" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Maximum number of builds to retain on disk (defaults to 20 if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Die maximale Anzahl von Builds, die auf dem Datenträger beibehalten werden sollen (Standardwert 20, wenn keine Angabe erfolgt).]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TacoRemoteConfigNativeDebugProxyPort" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Port number for native debugger (defaults to 3001 if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Die Portnummer für den systemeigenen Debugger (Standardwert 3001, wenn keine Angabe erfolgt).]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TacoRemoteConfigWebDebugProxyDevicePort" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Port number for webkit debugger device discovery (defaults to 9221 if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Die Portnummer für die Geräteermittlung des Webkit-Debuggers (Standardwert 9331, wenn keine Angabe erfolgt).]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TacoRemoteConfigWebDebugProxyPortMax" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Last port number for webkit debugger to assign to devices (defaults to 9322 if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Die letzte Portnummer für den Webkit-Debugger, die Geräten zugewiesen werden soll (Standardwert 9322, wenn keine Angabe erfolgt).]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TacoRemoteConfigWebDebugProxyPortMin" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[First port number for webkit debugger to assign to devices (defaults to 9222 if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Die erste Portnummer für den Webkit-Debugger, die Geräten zugewiesen werden soll (Standardwert 9222, wenn keine Angabe erfolgt).]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TacoRemoteHelpDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[taco-remote enables building Apache Cordova projects remotely.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA["taco-remote" ermöglicht die Remoteerstellung von Apache Cordova-Projekten.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TacoRemoteHelpExample" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Use following config file to configure remotebuild port, web debug proxy port, no builds retention and build cleanup on shutdown]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Verwenden Sie die folgende Konfigurationsdatei zum Konfigurieren des Remotebuildports und des Webdebug-Proxyports sowie von keiner Beibehaltung von Builds und Buildbereinigung beim Herunterfahren.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TacoRemoteHelpNotes" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[More documentation for configuring taco remote build can be found at <link>http://go.microsoft.com/fwlink/?LinkId=618174</link>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Weitere Dokumentation zum Konfigurieren von Taco-Remotebuilds finden Sie unter <link>http://go.microsoft.com/fwlink/?LinkId=618174</link>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TgzExtractError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[An error occurred in extracting contents from {0}: {1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Fehler beim Extrahieren der Inhalte aus "{0}:{1}".]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";UploadExtractedSuccessfully" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Extracted app contents from uploaded build request to {0}. Requesting build.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Die App-Inhalte aus der hochgeladenen Buildanforderung wurden in "{0}" extrahiert. Der Build wird angefordert.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";UploadSavedSuccessfully" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Saved uploaded build to {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Der hochgeladene Build wurde in "{0}" gespeichert.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";UploadSaving" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Saving build request payload to : {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Die Nutzlast der Buildanforderung wird gespeichert in: {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
       </Item>
     </Item>
   </Item>
