@@ -34,7 +34,7 @@
         <Str Cat="Text">
           <Val><![CDATA[------ {0} Checking on build status from {1} [Attempt {2}]5D;]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[------ {0} Идет проверка состояния сборки из {1} [Попытка {2}]5D;]]></Val>
+            <Val><![CDATA[------ {0} Идет проверка состояния сборки из "{1}" [Попытка {2}]5D;]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -43,7 +43,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Cleaning remote {0} {1} build.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Выполняется очистка сборки {0} {1}.]]></Val>
+            <Val><![CDATA[Выполняется очистка удаленной сборки {0} {1}.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -70,7 +70,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Build the project for a given platform]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Создать проект для указанной платформы]]></Val>
+            <Val><![CDATA[Создает проект для указанной платформы]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -97,7 +97,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Unable to understand '{0}' platform]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Ошибка. Не удается расшифровать платформу "{0}"]]></Val>
+            <Val><![CDATA[Ошибка. Не удается определить платформу "{0}"]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -115,7 +115,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Platform {0} has not been added locally. Please try 'taco platform add {0}' before building]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Ошибка. Платформа {0} не была добавлена локально. Попробуйте выполнить команду "taco platform add {0}", прежде чем создать сборку]]></Val>
+            <Val><![CDATA[Ошибка. Платформа "{0}" не была добавлена локально. Попробуйте выполнить команду "taco platform add {0}", прежде чем создавать сборку.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -124,7 +124,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: no platforms in project. Please run 'taco platform add' to add a platform]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Ошибка. В проекте отсутствуют платформы. Выполните команду "taco platform add", чтобы добавить платформу]]></Val>
+            <Val><![CDATA[Ошибка. В проекте отсутствуют платформы. Выполните команду "taco platform add", чтобы добавить платформу.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -142,7 +142,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Unable to find local or remote configuration of {0}. Please run 'taco platform add {0}' or 'taco remote add {0}']]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Ошибка. Не удается найти локальную или удаленную конфигурацию {0}. Выполните команду "taco platform add {0}" или "taco remote add {0}"]]></Val>
+            <Val><![CDATA[Ошибка. Не удается найти локальную или удаленную конфигурацию "{0}". Выполните команду "taco platform add {0}" или "taco remote add {0}".]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -151,7 +151,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Unable to find any local or remote platforms. Please run 'taco platform add' or 'taco remote add']]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Ошибка. Не удается найти локальную или удаленную платформу. Выполните команду "taco platform add" или "taco remote add"]]></Val>
+            <Val><![CDATA[Ошибка. Не удается найти локальную или удаленную платформу. Выполните команду "taco platform add" или "taco remote add".]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -178,7 +178,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Unable to load remote settings for {0}. Please run 'taco remote add {0}' to configure remote builds for this platform]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Ошибка. Не удается загрузить настройки удаленной системы {0}. Выполните команду "taco remote add {0}", чтобы настроить удаленные сборки для этой платформы]]></Val>
+            <Val><![CDATA[Ошибка. Не удается загрузить параметры удаленной системы {0}. Выполните команду "taco remote add {0}", чтобы настроить удаленные сборки для этой платформы.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -187,7 +187,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: No remote platforms configured. Please run 'taco remote add' to configure one]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Ошибка. Удаленные платформы не настроены. Выполните команду "taco remote add", чтобы настроить платформу]]></Val>
+            <Val><![CDATA[Ошибка. Удаленные платформы не настроены. Выполните команду "taco remote add", чтобы настроить платформу.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -196,7 +196,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Unable to load settings. Please run 'taco remote add' before building remotely]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Ошибка. Не удается загрузить параметры. Выполните команду "taco remote add", прежде чем создать сборку удаленно]]></Val>
+            <Val><![CDATA[Ошибка. Не удается загрузить параметры. Выполните команду "taco remote add", прежде чем создавать сборку удаленно.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -205,7 +205,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Create a build to run on the specified target]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Создание сборки для запуска на указанном целевом объекте]]></Val>
+            <Val><![CDATA[Создать сборку для запуска на указанном целевом объекте]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -250,7 +250,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Create a new Cordova based TACO project]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Создать новый проект TACO на базе Cordova ]]></Val>
+            <Val><![CDATA[Создает новый проект TACO на базе Cordova ]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -286,7 +286,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<br/>Please install gulp and gulp-typescript by following the installation steps listed at <link>http://go.microsoft.com/fwlink/?LinkId=620942</link>.<br/><br/>Once installed, run 'gulp typescript' to pre-compile the TS files before building your project.<br/><br/>Once your TS files are pre-compiled, use 'taco build [platform]5D;' to build your project.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<br/>Установите gulp и gulp-typescript, выполнив шаги для установки, перечисленные на странице <link>http://go.microsoft.com/fwlink/?LinkId=620942</link>.<br/><br/>После установки используйте команду "gulp typescript", чтобы выполнить предварительную компиляцию TS-файлов, прежде чем создать проект.<br/><br/>После выполнения предварительной компиляции TS-файлов, используйте команду "taco build [platform]5D;" для создания проекта.]]></Val>
+            <Val><![CDATA[<br/>Установите gulp и gulp-typescript, выполнив шаги для установки, перечисленные на странице <link>http://go.microsoft.com/fwlink/?LinkId=620942</link>.<br/><br/>После установки используйте команду "gulp typescript", чтобы выполнить предварительную компиляцию TS-файлов, прежде чем создавать проект.<br/><br/>После выполнения предварительной компиляции TS-файлов используйте команду "taco build [платформа]5D;" для создания проекта.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -304,7 +304,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: No git found. Please ensure git is installed and is in your system's Path environment variable.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Ошибка. Git не найден. Убедитесь, что Git установлен и указан в переменной среды пути системы.]]></Val>
+            <Val><![CDATA[Ошибка. Git не найден. Убедитесь, что Git установлен и указан в переменной среды Path системы.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -349,7 +349,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Only local paths for custom www assets are supported.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Ошибка. Для настраиваемых ресурсов www поддерживаются только локальные пути.]]></Val>
+            <Val><![CDATA[Ошибка. Для настраиваемых веб-ресурсов (www) поддерживаются только локальные пути.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -358,7 +358,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Use a version of the Cordova CLI rather than a TACO Dev Kit.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Используйте версию Cordova CLI, а не набор для разработки TACO.]]></Val>
+            <Val><![CDATA[Используйте версию Cordova CLI, а не комплект для разработки TACO.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -367,7 +367,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Use custom www assets instead of using a TACO template.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Используйте настраиваемый ресурс www вместо шаблона TACO.]]></Val>
+            <Val><![CDATA[Используйте настраиваемые веб-ресурсы (www) вместо шаблона TACO.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -376,7 +376,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Use the specified Cordova Dev Kit for this project rather than the default.  Use "taco kit list" to see a list of available Kits.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Для этого проекта используйте указанный набор для разработки Cordova, а не набор по умолчанию. Используйте команду "taco kit list", чтобы ознакомиться со списком доступных наборов.]]></Val>
+            <Val><![CDATA[Для этого проекта используйте указанный комплект для разработки Cordova, а не комплект по умолчанию. Используйте команду "taco kit list", чтобы ознакомиться со списком доступных комплектов.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -385,7 +385,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Symlink to custom www assets without creating a copy.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Создайте символьную ссылку на ресурсы www без создания копии.]]></Val>
+            <Val><![CDATA[Создайте символьную ссылку на веб-ресурсы (www) без создания копии.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -478,7 +478,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<br/><success>Success!</success> Your project is ready for use at <highlight>{0}</highlight>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<br/><success>Успешно!</success> Ваш проект готов к использование и находится в <highlight>{0}</highlight>]]></Val>
+            <Val><![CDATA[<br/><success>Успешно выполнено!</success> Ваш проект готов к использованию и находится в <highlight>{0}</highlight>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -487,7 +487,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<br/><success>Success!</success> Your project using custom assets from {0} is ready for use at <highlight>{1}</highlight>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<br/><success>Успешно!</success> Ваш проект, использующий настраиваемые ресурсы из {0}, готов к использованию и находится в <highlight>{1}</highlight>]]></Val>
+            <Val><![CDATA[<br/><success>Успешно выполнено!</success> Ваш проект, использующий настраиваемые ресурсы из "{0}", готов к использованию и находится в <highlight>{1}</highlight>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -496,7 +496,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<br/><success>Success!</success> Your project using the {0} is ready for use at <highlight>{1}</highlight>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<br/><success>Успешно!</success> Ваш проект, использующий {0}, готов к использованию и находится в <highlight>{1}</highlight>]]></Val>
+            <Val><![CDATA[<br/><success>Успешно выполнено!</success> Ваш проект, использующий "{0}", готов к использованию и находится в <highlight>{1}</highlight>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -514,7 +514,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Failed to write to {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Не удалось записать в {0}]]></Val>
+            <Val><![CDATA[Не удалось записать в "{0}"]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -523,7 +523,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Unable to access or download templates]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Ошибка. Не удалось получить доступ к шаблонам или загрузить их]]></Val>
+            <Val><![CDATA[Ошибка. Не удалось получить доступ к шаблонам или скачать их]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -532,7 +532,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<br/><warn>Warning: Kit {0} has been deprecated.</warn><br/>Consider changing your project to use a more recent Kit. For deprecation information, see <link>http://go.microsoft.com/fwlink/?LinkId=618170</link>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<br/><warn>Предупреждение. Набор {0} не рекомендуется.</warn><br/>Рекомендуется изменить проект, чтобы использовать более новый набор. Сведения об устаревших наборах см. по адресу<link>http://go.microsoft.com/fwlink/?LinkId=618170</link>]]></Val>
+            <Val><![CDATA[<br/><warn>Предупреждение. Комплект "{0}" устарел и не рекомендуется к использованию.</warn><br/>Рекомендуется изменить проект, чтобы использовать более новый комплект. Сведения об устаревших комплектах см. по адресу <link>http://go.microsoft.com/fwlink/?LinkId=618170</link>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -541,7 +541,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Open up the documentation page in your default browser]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Откройте страницу документации в браузере по умолчанию]]></Val>
+            <Val><![CDATA[Открывает страницу документации в браузере по умолчанию]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -550,7 +550,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Emulate a cordova project]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Эмулировать проект Cordova]]></Val>
+            <Val><![CDATA[Эмулирует проект Cordova]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -568,7 +568,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Change feedback setting]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Изменение параметров отзыва]]></Val>
+            <Val><![CDATA[Изменяет параметры отзыва]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -577,7 +577,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Get help for a TACO command]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Получение справки по команде TACO]]></Val>
+            <Val><![CDATA[Получает справку по команде TACO]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -586,7 +586,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: The current project uses Cordova version {0}. 'taco install-reqs' supports projects using Cordova version {1} or higher.<br/><br/>If your project was created using a TACO kit, consider moving to a kit that has a more recent version of Cordova. If your project was created using Cordova directly, consider updating the installation of Cordova. For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Ошибка. Текущий проект использует версию Cordova {0}. Команда "taco install-reqs" поддерживает проекты, использующие версию Cordova {1} или более новые.<br/><br/>Если проект был создан с использованием набора TACO, рекомендуется перейти на использование набора с более новой версией Cordova. Если проект был создан с непосредственным использованием Cordova, рекомендуется обновить установку Cordova. Дополнительные сведения см. по адресу http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
+            <Val><![CDATA[Ошибка. Текущий проект использует Cordova версии {0}. Команда "taco install-reqs" поддерживает проекты, использующие Cordova версии {1} или более новой.<br/><br/>Если проект был создан с использованием комплекта TACO, рекомендуется перейти на использование комплекта с более новой версией Cordova. Если проект был создан с непосредственным использованием Cordova, рекомендуется обновить установку Cordova. Дополнительные сведения см. по адресу http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -604,7 +604,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: No platforms added to your project. To install the dependencies for a given platform, please add it to your project first.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Ошибка. Платформы не добавлены для проекта. Чтобы установить зависимости для текущей платформы, сначала добавьте платформу для проекта.]]></Val>
+            <Val><![CDATA[Ошибка. Платформы не добавлены в проект. Чтобы установить зависимости для конкретной платформы, сначала добавьте ее в проект.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -613,7 +613,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: No 'platforms' folder found. Please make sure the current directory is the root of a Cordova project, and at least one platform has been added.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Ошибка. Папка "Платформы" не найдена. Убедитесь, что текущий каталог является корневым для проекта Cordova и добавлена как минимум одна платформа.]]></Val>
+            <Val><![CDATA[Ошибка. Папка "platforms" не найдена. Убедитесь, что текущий каталог является корневым для проекта Cordova и добавлена как минимум одна платформа.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -622,7 +622,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<highlight>Note:</highlight> To manually update a single platform, remove the platform from your project and then run:<br/><br/>    <highlight>taco platform add </highlight>[platform]5D;<highlight>@</highlight>[version]5D;]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<highlight>Примечание.</highlight> Чтобы вручную обновить одну платформу, удалите платформу из проекта и запустите команду:<br/><br/>    <highlight>taco platform add </highlight>[platform]5D;<highlight>@</highlight>[version]5D;]]></Val>
+            <Val><![CDATA[<highlight>Примечание.</highlight> Чтобы вручную обновить одну платформу, удалите платформу из проекта и запустите команду:<br/><br/>    <highlight>taco platform add </highlight>[платформа]5D;<highlight>@</highlight>[версия]5D;]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -631,7 +631,7 @@
         <Str Cat="Text">
           <Val><![CDATA[There is nothing to install. Please see the above messages for details.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Отсутствуют объекты для установки. Сведения см. в сообщениях выше.]]></Val>
+            <Val><![CDATA[Отсутствуют объекты для установки. Подробности см. в сообщениях выше.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -655,7 +655,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Install platform-specific third-party dependencies required to build]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Установка сторонних зависимостей для конкретной платформы, требуемых для сборки]]></Val>
+            <Val><![CDATA[Устанавливает сторонние зависимости для конкретной платформы, требуемые для сборки]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -673,7 +673,7 @@
         <Str Cat="Text">
           <Val><![CDATA[The following platforms will be skipped because they don't support Cordova's requirements checking:<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Следующие платформы будут пропущены, так как они не поддерживают проверку требований Cordova:<br/>]]></Val>
+            <Val><![CDATA[Следующие платформы будут пропущены, так как они не поддерживают проверку на соответствие требованиям Cordova:<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -682,7 +682,7 @@
         <Str Cat="Text">
           <Val><![CDATA[The following platforms will be skipped because they haven't been added to your project yet:<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Следующие платформы будут пропущены, так как они пока не добавлены для проекта:<br/>]]></Val>
+            <Val><![CDATA[Следующие платформы будут пропущены, так как они пока не добавлены в проект:<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -700,7 +700,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Kit or CLI needs to be specified. Please run 'taco help kit' for more details.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Ошибка. Требуется указать набор или CLI. Чтобы получить дополнительные сведения, выполните команду "taco help kit".]]></Val>
+            <Val><![CDATA[Ошибка. Требуется указать комплект или CLI. Чтобы получить дополнительные сведения, выполните команду "taco help kit".]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -709,7 +709,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error thrown when no Kit or CLI is specified for the 'taco kit select' command]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Возникает ошибка, если для команды "taco kit select" не указан набор или CLI. ]]></Val>
+            <Val><![CDATA[Возникающая ошибка, если для команды "taco kit select" не указан комплект или CLI. ]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -718,7 +718,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Perform kit related operations]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Выполнение операций, связанных с комплектом]]></Val>
+            <Val><![CDATA[Выполняет операции, связанные с комплектом]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -727,7 +727,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Save the list of known kits to a json file at path <PATH>.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Сохранение списка известных наборов в файл json с путем <PATH>.]]></Val>
+            <Val><![CDATA[Сохранить список известных комплектов в файл JSON по пути <PATH>.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -736,7 +736,7 @@
         <Str Cat="Text">
           <Val><![CDATA[The following kits are available for use:]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Следующие наборы доступны для использования:]]></Val>
+            <Val><![CDATA[Следующие комплекты доступны для использования:]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -760,7 +760,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<bold>Current Kit</bold>: {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<bold>Текущий набор</bold>: {0}]]></Val>
+            <Val><![CDATA[<bold>Текущий комплект</bold>: {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -769,7 +769,7 @@
         <Str Cat="Text">
           <Val><![CDATA[A toolkit of plugins and platforms that works with Cordova CLI v{0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Набор подключаемых модулей и платформ, которые функционируют с Cordova CLI версии {0}]]></Val>
+            <Val><![CDATA[Набор подключаемых модулей и платформ, которые работают с Cordova CLI версии {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -787,7 +787,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Deprecated]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Нерекомендуемый]]></Val>
+            <Val><![CDATA[Устаревший]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -796,7 +796,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Kit metadata file is saved at <highlight>{0}</highlight>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>Успешно!</success> Файл метаданных набор сохранен в <highlight>{0}</highlight>]]></Val>
+            <Val><![CDATA[<success>Успешно выполнено!</success> Файл метаданных комплекта сохранен в <highlight>{0}</highlight>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -805,7 +805,7 @@
         <Str Cat="Text">
           <Val><![CDATA[The file {0} already exists. Do you wish to overwrite? [y/n]5D;?]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Файл {0} уже существует. Перезаписать? [д/н]5D;?]]></Val>
+            <Val><![CDATA[Файл "{0}" уже существует. Перезаписать? [y/n]5D;?]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -823,7 +823,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<bold>Plugins: </bold>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<bold>Встроенные модули: </bold>]]></Val>
+            <Val><![CDATA[<bold>Подключаемые модули: </bold>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -841,7 +841,7 @@
         <Str Cat="Text">
           <Val><![CDATA[List available TACO kits]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Создание списка доступных наборов TACO]]></Val>
+            <Val><![CDATA[Создает список доступных комплектов TACO]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -850,7 +850,7 @@
         <Str Cat="Text">
           <Val><![CDATA[List the details (pinned version of Cordova CLI, platforms and plugins) for a specific kit with ID <KIT-ID>.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Создание списка подробных сведений (зафиксированная версия Cordova CLI, платформы и подключаемые модули) для определенного комплекта с идентификатором <KIT-ID>.]]></Val>
+            <Val><![CDATA[Создать список подробных сведений (зафиксированная версия Cordova CLI, платформы и подключаемые модули) для определенного комплекта с идентификатором <KIT-ID>.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -868,7 +868,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: TACO project already uses kit {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Ошибка. Проект TACO уже использует набор {0}]]></Val>
+            <Val><![CDATA[Ошибка. Проект TACO уже использует комплект {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -877,7 +877,7 @@
         <Str Cat="Text">
           <Val><![CDATA[You have opted not to use a Kit. Cordova CLI {0} may pin platform and plugin versions that are different from what are currently added to your project and may not have been verified to work with TACO. Here is an overview of what this update will change:]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Вы выбрали не использовать этот набор. Cordova CLI {0} может закреплять версии платформы и встроенного модуля, которые отличаются от добавленных в настоящее время версий для проекта, и может быть не проверен для работы с TACO. Ниже приведен обзор изменений в рамках этого обновления:]]></Val>
+            <Val><![CDATA[Вы выбрали не использовать этот комплект. Cordova CLI {0} может фиксировать версии платформ и подключаемых модулей, которые отличаются от добавленных в настоящее время версий для проекта, и которые, возможно, не проверены на предмент работы с TACO. Ниже приведен обзор изменений в рамках этого обновления:]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -886,7 +886,7 @@
         <Str Cat="Text">
           <Val><![CDATA[String used to represent the CLI pinned version of platforms and plugins that aproject will be updated to, on 'taco kit select']]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Строка команды "taco kit select", которая используется для представления закрепленной CLI версии платформ и встроенных модулей, до которой будет обновлен проект]]></Val>
+            <Val><![CDATA[Строка команды "taco kit select", которая используется для представления зафиксированной версии CLI платформ и подключаемых модулей, до которой будет обновлен проект]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -904,7 +904,7 @@
         <Str Cat="Text">
           <Val><![CDATA[[EDGE]5D;]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[[КРАЙ]5D;]]></Val>
+            <Val><![CDATA[[ПОСЛЕДНЯЯ]5D;]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -922,7 +922,7 @@
         <Str Cat="Text">
           <Val><![CDATA[The following plugins were not installed from NPM and will not be updated:]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Следующие встроенные модули не были установлены из NPM и не будут обновлены:]]></Val>
+            <Val><![CDATA[Следующие подключаемые модули не были установлены из NPM и не будут обновлены:]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -931,7 +931,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Use the specified version of Cordova CLI for the project.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Используйте указанную версию Cordova CLI для проекта.]]></Val>
+            <Val><![CDATA[Использовать указанную версию Cordova CLI для проекта.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -940,7 +940,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Use the specified TACO kit for the project. Use "taco kit list" to see a list of available kits.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Используйте указанный набор TACO для проекта. Используйте команду "taco kit list", чтобы просмотреть список доступных наборов.]]></Val>
+            <Val><![CDATA[Использовать указанный комплект TACO для проекта. Используйте команду "taco kit list", чтобы просмотреть список доступных комплектов.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -958,7 +958,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<warn>Warning:</warn> Platforms and plugins in your project will be removed and replaced with these updates. Plugins installed from the local file system or a GIT respository will be ignored.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<warn>Предупреждение.</warn> Платформы и встроенные модули в проекте будут удалены и заменены следующими обновлениями. Встроенные модули, установленные из локальной файловой системы или репозитория GIT, будут игнорироваться.]]></Val>
+            <Val><![CDATA[<warn>Предупреждение.</warn> Платформы и подключаемые модули в проекте будут удалены и заменены следующими обновлениями. Подключаемые модули, установленные из локальной файловой системы или репозитория GIT, будут игнорироваться.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -967,7 +967,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>Успешно!</success>]]></Val>
+            <Val><![CDATA[<success>Успешно выполнено!</success>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -985,7 +985,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Updating plugins...]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Выполняется обновление встроенных модулей...]]></Val>
+            <Val><![CDATA[Выполняется обновление подключаемых модулей...]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -994,7 +994,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Select a kit or a Cordova CLI version for the project]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Выберите набор или версию Cordova CLI для этого проекта]]></Val>
+            <Val><![CDATA[Выберите комплект или версию Cordova CLI для этого проекта]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1003,7 +1003,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Perform kit related operations (like list)]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Выполнение операций, связанных с комплектом (например, команда list)]]></Val>
+            <Val><![CDATA[Выполнить операции, связанные с комплектом (например, команду list)]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1012,7 +1012,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Add specified platforms]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Добавить указанные платформы]]></Val>
+            <Val><![CDATA[Добавляет указанные платформы]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1021,7 +1021,7 @@
         <Str Cat="Text">
           <Val><![CDATA[List platforms which can be updated by 'taco platform update']]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Создание списка платформ, которые могут быть обновлены с помощью команды "taco platform update"]]></Val>
+            <Val><![CDATA[Создает список платформ, которые могут быть обновлены с помощью команды "taco platform update"]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1030,7 +1030,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Manage project platforms]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Управление платформами проекта]]></Val>
+            <Val><![CDATA[Управляет платформами проекта]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1039,7 +1039,7 @@
         <Str Cat="Text">
           <Val><![CDATA[When <plat-spec> is a local path, links the platform library directly instead of making a copy of it (support varies by platform; useful for platform development)]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Если <plat-spec> является локальным путем, ссылается на библиотек платформы напрямую вместо создания ее копии (поддержка зависит от платформы; используется для разработки платформ)]]></Val>
+            <Val><![CDATA[Если <plat-spec> является локальным путем, ссылается на библиотеку платформы напрямую вместо создания ее копии (поддержка зависит от платформы; полезно для разработки платформ)]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1048,7 +1048,7 @@
         <Str Cat="Text">
           <Val><![CDATA[List all the installed and available platforms]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Создание списка всех установленных и доступных платформ]]></Val>
+            <Val><![CDATA[Создает список всех установленных и доступных платформ]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1093,7 +1093,7 @@
         <Str Cat="Text">
           <Val><![CDATA[The major.minor.patch version specifier]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Спецификатор версии в формате основной_номер.дополнительный_номер.исправление]]></Val>
+            <Val><![CDATA[Описатель версии в формате основной_номер.дополнительный_номер.исправление]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1102,7 +1102,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Remove specified platforms]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Удаление указанных платформ]]></Val>
+            <Val><![CDATA[Удаляет указанные платформы]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1111,7 +1111,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Save specified platforms into config.xml after installing them]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Сохранение указанных платформ в файл config.xml после их установки]]></Val>
+            <Val><![CDATA[Сохранить указанные платформы в файл config.xml после их установки]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1120,7 +1120,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Delete specified platforms from config.xml after removing them]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Удаление файла из указанных платформ config.xml после их удаления]]></Val>
+            <Val><![CDATA[Удалить указанные платформы из файла config.xml после их удаления]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1129,7 +1129,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Save the latest versions of the specified platforms into config.xml]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Сохранение последних версий указанных платформ в файл config.xml]]></Val>
+            <Val><![CDATA[Сохранить последние версии указанных платформ в файл config.xml]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1138,7 +1138,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Platform(s) <highlight>{0}</highlight> added to the project.<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>Успешно!</success> Платформы (платформа) <highlight>{0}</highlight> добавлены в проект.<br/>]]></Val>
+            <Val><![CDATA[<success>Успешно выполнено!</success> Платформы <highlight>{0}</highlight> добавлены в проект.<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1156,7 +1156,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Platform(s) <highlight>{0}</highlight> removed from the project.<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>Успешно!</success> Платформы (платформа) <highlight>{0}</highlight> удалены из проекта.<br/>]]></Val>
+            <Val><![CDATA[<success>Успешно выполнено!</success> Платформы <highlight>{0}</highlight> удалены из проекта.<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1174,7 +1174,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Platform(s) <highlight>{0}</highlight> updated.<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>Успешно!</success> Платформы (платформа) <highlight>{0}</highlight> обновлены.<br/>]]></Val>
+            <Val><![CDATA[<success>Успешно выполнено!</success> Платформы <highlight>{0}</highlight> обновлены.<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1192,7 +1192,7 @@
         <Str Cat="Text">
           <Val><![CDATA[The subcommand to be run - add, remove, list, update or check]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Подкоманда, которая используется с - add, remove, list, update или check]]></Val>
+            <Val><![CDATA[Выполняемая подкоманда — add, remove, list, update или check]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1201,7 +1201,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Update the version of cordova used for a specific platform; Update to the latest <VERSION>, if no <VERSION>, path or <URL> is specified.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Обновление версии Cordova, используемой для указанной платформы; обновление до последней <VERSION>, если не указана <VERSION>, путь или <URL>.]]></Val>
+            <Val><![CDATA[Обновляет версию Cordova, используемую для указанной платформы; обновляет до последней версии (<VERSION>), если не указана версия (<VERSION>), путь или URL-адрес (<URL>).]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1210,7 +1210,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Retrieve from git instead of npm registry]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Извлечение из репозитория GIT вместо реестра NPM]]></Val>
+            <Val><![CDATA[Извлечь из репозитория GIT вместо реестра NPM]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1219,7 +1219,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Add specified Plugins; pluginid will be matched in --searchpath / registry; directory is a directory containing a plugin; giturl is a git repo containing a plugin]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Добавление указанных встроенных модулей; идентификатор встроенного модуля будет сопоставлен с --searchpath / registry; каталог - это каталог, содержащий встроенный модуль; URL-адрес Git — репозиторий Git, содержащий встроенный модуль]]></Val>
+            <Val><![CDATA[Добавляет указанные подключаемые модули; идентификатор подключаемого модуля (pluginid) будет сопоставлен с --searchpath / registry; directory — это каталог, содержащий подключаемый модуль; giturl — репозиторий Git, содержащий подключаемый модуль]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1237,7 +1237,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Manage Cordova plugins for the project]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Управление подключаемыми модулями Cordova проекта]]></Val>
+            <Val><![CDATA[Управляет подключаемыми модулями Cordova проекта]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1246,7 +1246,7 @@
         <Str Cat="Text">
           <Val><![CDATA[When installing from a local path, creates a symbolic link to the plugin instead of copying files. The extent to which files are linked vs copied varies by platform. Useful for plugin development.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[При выполнении установки из локального пути создает символьную ссылку на встроенный модуль вместо копирования файлов. Число файлов, для которых создается ссылка и число копируемых файлов зависит от платформы. Используется для разработки встроенных модулей.]]></Val>
+            <Val><![CDATA[При выполнении установки из локального пути создает символьную ссылку на подключаемый модуль вместо копирования файлов. Число файлов, для которых создается ссылка и число копируемых файлов зависит от платформы. Полезно для разработки подключаемых модулей.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1255,7 +1255,7 @@
         <Str Cat="Text">
           <Val><![CDATA[List currently installed plugins]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Создание списка установленных в настоящее время подключаемых модулей]]></Val>
+            <Val><![CDATA[Создает список установленных в настоящее время подключаемых модулей]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1264,7 +1264,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Don't search the registry for plugins]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Не выполнять поиск реестра для встроенных модулей]]></Val>
+            <Val><![CDATA[Не выполнять поиск подключаемых модулей в реестре]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1273,7 +1273,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Remove plugins with the given IDs]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Удаление подключаемых модулей с указанными идентификаторами]]></Val>
+            <Val><![CDATA[Удаляет подключаемые модули с указанными идентификаторами]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1282,7 +1282,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Save the information for specified plugin into config.xml]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Сохранение сведений об указанном встроенном модуле в файл config.xml]]></Val>
+            <Val><![CDATA[Сохранить данные об указанном подключаемом модуле в файл config.xml]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1291,7 +1291,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Remove the information for the specified plugin from config.xml]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Удаление данных об указанном подключаемом модуле из файла config.xml]]></Val>
+            <Val><![CDATA[Удалить данные об указанном подключаемом модуле из файла config.xml]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1300,7 +1300,7 @@
         <Str Cat="Text">
           <Val><![CDATA[When looking up plugins by ID, look in this directory and each of its subdirectories for the plugin before hitting the registry. Multiple search paths can be used by either specifying the flag multiple times, or by seperating paths with a delimiter (':' on Unix, ';' on Windows).]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[При поиске встроенных модулей по идентификатору выполнять поиск в этом каталоге и в каждом из подкаталогов, прежде чем перейти к реестру. Можно использовать несколько путей поиска, отметив несколько флажков или разделив пути с помощью разделителя  (":" в Unix, ";" в Windows).]]></Val>
+            <Val><![CDATA[При поиске подключаемых модулей по идентификатору выполнять поиск в этом каталоге и в каждом из подкаталогов, прежде чем перейти к реестру. Можно использовать несколько путей поиска, указав флаг несколько раз или разделив пути с помощью разделителя  (":" в Unix, ";" в Windows).]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1309,7 +1309,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Search the plugin registry for plugins matching the keywords]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Поиск реестра для встроенных модулей, соответствующих ключевому слову]]></Val>
+            <Val><![CDATA[Ищет в реестре подключаемые модули, соответствующие ключевым словам]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1327,7 +1327,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Plugin added.<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>Успешно!</success> Встроенный модуль добавлен.<br/>]]></Val>
+            <Val><![CDATA[<success>Успешно выполнено!</success> Подключаемый модуль добавлен.<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1336,7 +1336,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Fetching plugin "<highlight>{0}</highlight>" via npm.<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Получение встроенного модуля "<highlight>{0}</highlight>" из NPM.<br/>]]></Val>
+            <Val><![CDATA[Получение подключаемого модуля "<highlight>{0}</highlight>" из NPM.<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1345,7 +1345,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Plugin <highlight>{0}</highlight> removed<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>Успешно!</success> Встроенный модуль <highlight>{0}</highlight> удален<br/>]]></Val>
+            <Val><![CDATA[<success>Успешно выполнено!</success> Подключаемый модуль <highlight>{0}</highlight> удален<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1363,7 +1363,7 @@
         <Str Cat="Text">
           <Val><![CDATA[The subcommand to be run - add, remove, list, or search]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Подкоманда, которая используется с - add, remove, list или search]]></Val>
+            <Val><![CDATA[Выполняемая подкоманда — add, remove, list или search]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1372,7 +1372,7 @@
         <Str Cat="Text">
           <Val><![CDATA[The plugin <highlight>{0}</highlight> has been validated on platform(s) - {1}.<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Встроенный модуль <highlight>{0}</highlight> был проверен на платформе (платформах) — {1}.<br/>]]></Val>
+            <Val><![CDATA[Подключаемый модуль <highlight>{0}</highlight> был проверен на следующих платформах — {1}.<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1381,7 +1381,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> {0} installed.<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>Успешно!</success> {0} установлен.<br/>]]></Val>
+            <Val><![CDATA[<success>Успешно выполнено!</success> "{0}" установлен.<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1390,7 +1390,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Add a remote build agent for the specified platform]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Добавление удаленного агента сборки для указанной платформы]]></Val>
+            <Val><![CDATA[Добавляет удаленный агент сборки для указанной платформы]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1399,7 +1399,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Unable to contact {0} to find where the remote build server services Cordova builds. Is the server running remotebuild with taco-remote configured?]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Не удается подключиться к {0}, чтобы найти, какой удаленный сервер сборки обслуживает сборки Cordova. На сервере выполняется пакет remotebuild с настроенным агентом taco-remote?]]></Val>
+            <Val><![CDATA[Не удается подключиться к {0}, чтобы узнать, какой удаленный сервер сборки обслуживает сборки Cordova. На сервере выполняется remotebuild с настроенным модулем taco-remote?]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1408,7 +1408,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Unable to connect to remote server. Make sure that the remotebuild server is running at {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Не удается подключиться к удаленному серверу. Убедитесь, что сервер remotebuild запущен в {0}]]></Val>
+            <Val><![CDATA[Не удается подключиться к удаленному серверу. Убедитесь, что сервер remotebuild запущен в "{0}"]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1435,7 +1435,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Configure remote builds (currently supports iOS build only)]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Настройка удаленных сборок (в настоящее время поддерживает только сборку iOS)]]></Val>
+            <Val><![CDATA[Настраивает удаленные сборки (в настоящее время поддерживает только сборку iOS)]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1507,7 +1507,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Current remote configuration(s):]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Текущие конфигурации (конфигурация) удаленной системы:]]></Val>
+            <Val><![CDATA[Текущие конфигурации удаленной системы:]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1525,7 +1525,7 @@
         <Str Cat="Text">
           <Val><![CDATA[List all currently configured remote build agents]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Создание списка всех текущих настроенных агентов удаленной сборки]]></Val>
+            <Val><![CDATA[Создает список всех текущих настроенных агентов удаленной сборки]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1543,7 +1543,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: No remote settings found for {0}. Please run 'taco remote add {0}']]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Ошибка. Настройки удаленной системы не найдены для {0}. Выполните команду "taco remote add {0}"]]></Val>
+            <Val><![CDATA[Ошибка. Параметры удаленной системы не найдены для "{0}". Выполните команду "taco remote add {0}"]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1579,7 +1579,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Unable to use PIN to pair with remote build server: PIN was rejected]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Не удается использовать ПИН-код для соединения с сервером удаленной сборки: ПИН-код был отклонен]]></Val>
+            <Val><![CDATA[Не удается использовать ПИН-код для соединения с удаленным сервером сборки: ПИН-код был отклонен]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1588,7 +1588,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Remove a remote build agent for the specified platform]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Удаление агента удаленной сборки для указанной платформы]]></Val>
+            <Val><![CDATA[Удаляет агент удаленной сборки для указанной платформы]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1597,7 +1597,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Removed remote platform {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>Успешно!</success> Удаленная платформа {0} удалена]]></Val>
+            <Val><![CDATA[<success>Успешно выполнено!</success> Удаленная платформа "{0}" удалена]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1606,7 +1606,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Settings stored in {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>Успешно!</success> Настройки сохранены в {0}]]></Val>
+            <Val><![CDATA[<success>Успешно выполнено!</success> Параметры сохранены в "{0}"]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1615,7 +1615,7 @@
         <Str Cat="Text">
           <Val><![CDATA[The subcommand to run: add, remove, or list]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Подкоманда, которая используется с add, remove или list]]></Val>
+            <Val><![CDATA[Выполняемая подкоманда — add, remove или list]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1633,7 +1633,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Run or emulate a debug build]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Запустите или создайте эмуляцию отладочной сборки]]></Val>
+            <Val><![CDATA[Запустить или эмулировать отладочную сборку]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1642,7 +1642,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Report back additional information to allow connecting a debugger to the running instance]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Предоставление дополнительных сведений, которые позволяют подключить отладчик к запущенному экземпляру]]></Val>
+            <Val><![CDATA[Предоставить дополнительные сведения, которые позволят подключить отладчик к запущенному экземпляру]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1651,7 +1651,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Run the project for a given platform on the selected device/emulator target]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Запуск проекта для текущей платформы на выбранном целевом устройстве или эмуляции]]></Val>
+            <Val><![CDATA[Запускает проект для указанной платформы на выбранном целевом устройстве или эмуляторе]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1660,7 +1660,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Run a build on a physical device]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Запуск сборки на физическом устройстве]]></Val>
+            <Val><![CDATA[Запустить сборку на физическом устройстве]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1669,7 +1669,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Run a build in an emulator]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Запуск сборки в эмуляторе]]></Val>
+            <Val><![CDATA[Запустить сборку в эмуляторе]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1723,7 +1723,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Build running on remote attached device]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>Успешно!</success> Сборка запущена на удаленном подключенном устройстве]]></Val>
+            <Val><![CDATA[<success>Успешно выполнено!</success> Сборка запущена на удаленном подключенном устройстве]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1732,7 +1732,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Build running on remote emulator]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>Успешно!</success> Сборка запущена на удаленной эмуляции]]></Val>
+            <Val><![CDATA[<success>Успешно выполнено!</success> Сборка запущена в удаленном эмуляторе]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1741,7 +1741,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Run a build on the specified target]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Запуск сборки на указанном целевом объекте]]></Val>
+            <Val><![CDATA[Запустить сборку на указанном целевом объекте]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1750,7 +1750,7 @@
         <Str Cat="Text">
           <Val><![CDATA[List available TACO templates for project creation]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Создание списка доступных шаблонов TACO для создания проекта]]></Val>
+            <Val><![CDATA[Создает список доступных шаблонов TACO для создания проекта]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1777,7 +1777,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Display the current TACO version]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Отображение текущей версии TACO]]></Val>
+            <Val><![CDATA[Отобразить текущую версию TACO]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1813,7 +1813,7 @@
         <Str Cat="Text">
           <Val><![CDATA[------ Done extracting the build outputs to {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[------ Извлечение выходных данных сборки в {0} завершено]]></Val>
+            <Val><![CDATA[------ Извлечение выходных данных сборки в "{0}" завершено]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1822,7 +1822,7 @@
         <Str Cat="Text">
           <Val><![CDATA[------ Done downloading the build outputs to {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[------ Скачивание выходных данных сборки в {0} завершено]]></Val>
+            <Val><![CDATA[------ Скачивание выходных данных сборки в "{0}" завершено]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1831,7 +1831,7 @@
         <Str Cat="Text">
           <Val><![CDATA[------ Downloading completed build files from {0} to {1}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[------ Идет скачивание файлов с выполненными сборками из {0} в {1}]]></Val>
+            <Val><![CDATA[------ Идет скачивание готовых файлов сборки из "{0}" в "{1}"]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1849,7 +1849,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Failed to change permissions for certificate folder {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Не удалось изменить разрешения для папки сертификатов {0}]]></Val>
+            <Val><![CDATA[Не удалось изменить разрешения для папки сертификатов "{0}"]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1867,7 +1867,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Failed to save certificate at {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Не удалось сохранить сертификат в {0}]]></Val>
+            <Val><![CDATA[Не удалось сохранить сертификат в "{0}"]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1885,7 +1885,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error from downloading build outputs to {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Сбой при загрузке выходных данных сборки в {0}]]></Val>
+            <Val><![CDATA[Сбой при скачивании выходных данных сборки в "{0}"]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1894,7 +1894,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error during build submission: {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Сбой при создании сборки передачи: {0}]]></Val>
+            <Val><![CDATA[Сбой при отправке сборки: {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1903,7 +1903,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error contacting {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Сбой при подключении к {0}]]></Val>
+            <Val><![CDATA[Сбой при подключении к "{0}"]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1912,7 +1912,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: {0} option cannot be used in conjunction with {1} option.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Ошибка. Параметр {0} не может быть использован вместе с параметром {1}.]]></Val>
+            <Val><![CDATA[Ошибка. Параметр "{0}" не может быть использован вместе с параметром "{1}".]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1921,7 +1921,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: The specified path is not a valid JSON file path: {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Ошибка. Указанный путь не является действительным путем файла JSON: {0}]]></Val>
+            <Val><![CDATA[Ошибка. Указанный путь не является действительным путем к файлу JSON: {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1948,7 +1948,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Unable to find any platforms. Please 'taco platform add <platform>' or 'taco remote add <platform>' and retry.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Не удается найти платформы. Выполните команды "taco platform add <platform>" или "taco remote add <platform>" и повторите попытку.]]></Val>
+            <Val><![CDATA[Не удается найти платформы. Выполните команды "taco platform add <платформа>" или "taco remote add <платформа>" и повторите попытку.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1975,7 +1975,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Failed to parse changed files needed to prepare a build patch]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Не удалось проанализировать измененные файлы, которые требуются для подготовки изменения сборки]]></Val>
+            <Val><![CDATA[Не удалось проанализировать измененные файлы, которые требуются для подготовки исправления сборки]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1984,7 +1984,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Could not read versions of {0}.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Ошибка. Не удалось прочитать версии пакета {0}.]]></Val>
+            <Val><![CDATA[Ошибка. Не удалось прочитать версии пакета "{0}".]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2002,7 +2002,7 @@
         <Str Cat="Text">
           <Val><![CDATA[An error occurred uploading to the build server {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Произошла ошибка при загрузке на сервер сборки {0}]]></Val>
+            <Val><![CDATA[Произошла ошибка при отправке данных на сервер сборки "{0}"]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2011,7 +2011,7 @@
         <Str Cat="Text">
           <Val><![CDATA[------ Extracting the build outputs to {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[------ Идет извлечение выходных данных сборки в {0}]]></Val>
+            <Val><![CDATA[------ Идет извлечение выходных данных сборки в "{0}"]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2020,7 +2020,7 @@
         <Str Cat="Text">
           <Val><![CDATA[------ Failed to delete downloaded zip file {0}. This did not prevent a successful build.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[------ Не удалось удалить скачанный ZIP-файл {0}. Сборка успешно выполнена.]]></Val>
+            <Val><![CDATA[------ Не удалось удалить скачанный ZIP-файл {0}. Тем не менее, сборка успешно выполнена.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2056,7 +2056,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Add a Cordova plugin: <bold>taco add plugin <PLUGIN-ID></bold>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Добавление встроенного модуля Cordova: <bold>taco add plugin <PLUGIN-ID></bold>]]></Val>
+            <Val><![CDATA[Добавление подключаемого модуля Cordova: <bold>taco add plugin <ИД_ПОДКЛЮЧАЕМОГО_МОДУЛЯ></bold>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2065,7 +2065,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Build your app: <bold>taco build <PLATFORM></bold>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Создание приложения: <bold>taco build <PLATFORM></bold>]]></Val>
+            <Val><![CDATA[Создание приложения: <bold>taco build <ПЛАТФОРМА></bold>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2083,7 +2083,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Run your app in the emulator: <bold>taco emulate <PLATFORM></bold>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Запуск приложения в эмуляции: <bold>taco emulate <PLATFORM></bold>]]></Val>
+            <Val><![CDATA[Запуск приложения в эмуляторе: <bold>taco emulate <ПЛАТФОРМА></bold>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2110,7 +2110,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Add a platform:  <bold>taco platform add <PLATFORM></bold>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Добавление платформы:  <bold>taco platform add <PLATFORM></bold>]]></Val>
+            <Val><![CDATA[Добавление платформы:  <bold>taco platform add <ПЛАТФОРМА></bold>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2119,7 +2119,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Run your app on a device: <bold>taco run <PLATFORM></bold>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Запуск приложения на устройстве: <bold>taco run <PLATFORM></bold>]]></Val>
+            <Val><![CDATA[Запуск приложения на устройстве: <bold>taco run <ПЛАТФОРМА></bold>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2128,7 +2128,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Connect to a remote build agent: <bold>taco remote add <PLATFORM></bold>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Подключение к агенту удаленной сборки: <bold>taco remote add <PLATFORM></bold>]]></Val>
+            <Val><![CDATA[Подключение к агенту удаленной сборки: <bold>taco remote add <ПЛАТФОРМА></bold>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2137,7 +2137,7 @@
         <Str Cat="Text">
           <Val><![CDATA[e.g: To create a new TypeScript project, use <bold>taco create <PATH> [ID]5D; --template typescript</bold>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Пример. Чтобы создать новый проект TypeScript, используйте команду <bold>taco create <PATH> [ID]5D; --template typescript</bold>]]></Val>
+            <Val><![CDATA[Пример. Чтобы создать новый проект TypeScript, используйте команду <bold>taco create <ПУТЬ> [ИД]5D; --template typescript</bold>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2179,7 +2179,7 @@
         <Str Cat="Text">
           <Val><![CDATA[The remote build server denied the build request, because the client certificate is invalid or has expired. To build your project, you must generate and configure a security PIN. See http://go.microsoft.com/fwlink/?LinkID=511904]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Сервер удаленной сборки отклонил запрос сборки, так как сертификат клиента недопустим или его срок действия истек. Чтобы выполнить сборку проекта, необходимо создать и настроить ПИН-код безопасности. Сведения см. по ссылке http://go.microsoft.com/fwlink/?LinkID=511904]]></Val>
+            <Val><![CDATA[Удаленный сервер сборки отклонил запрос на сборку, так как сертификат клиента недопустим или его срок действия истек. Чтобы выполнить сборку проекта, необходимо создать и настроить ПИН-код безопасности. Сведения см. по ссылке http://go.microsoft.com/fwlink/?LinkID=511904]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2188,7 +2188,7 @@
         <Str Cat="Text">
           <Val><![CDATA[The remote build server Url {0} is invalid. It should specify http or https.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[URL-адрес сервера удаленной сборки {0} недопустим. В нем должен быть указан HTTP или HTTPS.]]></Val>
+            <Val><![CDATA[URL-адрес удаленного сервера сборки "{0}" недопустим. В нем должен быть указан префикс HTTP или HTTPS.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2206,7 +2206,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<br/>------------------------------------]A;<warn>A newer version is available for taco-cli:</warn>]A; * Locally installed version: {0}]A; * Latest version: {1}]A; * <link>http://go.microsoft.com/fwlink/?LinkId=619747</link>]A; * Run <command>npm install -g taco-cli</command> to update]A;------------------------------------]A;]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<br/>------------------------------------]A;<warn>Более новая версия доступна для taco-cli:</warn>]A; * Установленная локальная версия: {0}]A; * Последняя версия: {1}]A; * <link>http://go.microsoft.com/fwlink/?LinkId=619747</link>]A; * Чтобы обновить, выполните команду <command>npm install -g taco-cli</command>]A;------------------------------------]A;]]></Val>
+            <Val><![CDATA[<br/>------------------------------------]A;<warn>Более новая версия доступна для taco-cli:</warn>]A; * Установленная локальная версия: {0}]A; * Последняя версия: {1}]A; * <link>http://go.microsoft.com/fwlink/?LinkId=619747</link>]A; * Чтобы обновиться, выполните команду <command>npm install -g taco-cli</command>]A;------------------------------------]A;]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2215,7 +2215,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: No certificate '{0}' found]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Ошибка. Сертификаты "{0}" не найдены]]></Val>
+            <Val><![CDATA[Ошибка. Сертификат "{0}" не найден]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2242,7 +2242,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<br/>Quick tips & commands:]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<br/>Краткие советы и команды]]></Val>
+            <Val><![CDATA[<br/>Полезные советы и команды:]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2305,7 +2305,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Remote build server {0} connection failed. Verify that the server is running.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Сбой подключения к серверу удаленной сборки "{0}". Убедитесь, что сервер работает.]]></Val>
+            <Val><![CDATA[Сбой подключения к удаленному серверу сборки "{0}". Убедитесь, что сервер работает.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2323,7 +2323,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Secure connection to {0} could not be established. Verify that the build server is running in secure mode.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Не удалось установить безопасное подключение к {0}. Убедитесь, что сервер сборки запущен в безопасном режиме.]]></Val>
+            <Val><![CDATA[Не удалось установить защищенное подключение к {0}. Убедитесь, что сервер сборки запущен в безопасном режиме.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2389,7 +2389,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Unable to load settings. Please run 'taco remote add' before building remotely]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Ошибка. Не удается загрузить параметры. Выполните команду "taco remote add", прежде чем создать удаленную сборку]]></Val>
+            <Val><![CDATA[Ошибка. Не удается загрузить параметры. Выполните команду "taco remote add", прежде чем создавать сборку удаленно.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2398,7 +2398,7 @@
         <Str Cat="Text">
           <Val><![CDATA[This is an abstract method and should be implemented by a derived overload]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Это абстрактный метод, который следует реализовывать путем производной перегрузки]]></Val>
+            <Val><![CDATA[Это — абстрактный метод, который следует реализовывать путем производной перегрузки]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2407,7 +2407,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Unsupported platform {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Ошибка. Платформа {0} не поддерживается]]></Val>
+            <Val><![CDATA[Ошибка. Платформа "{0}" не поддерживается]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2416,7 +2416,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error message printed when trying to 'taco remote add <platform>' and the platform is not supported. {0} is the platform]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Сообщение об ошибке, которое отображается при попытке выполнить команду "taco remote add <platform>" для платформы. которая не поддерживается. {0} обозначает платформу]]></Val>
+            <Val><![CDATA[Сообщение об ошибке, которое отображается при попытке выполнить команду "taco remote add <платформа>" для платформы, которая не поддерживается. "{0}" обозначает платформу.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

@@ -173,7 +173,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Invalid port '{0}' specified. Port must be an integer between 0 and 65536]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[잘못된 포트 '{0}'이(가) 지정되었습니다. 포트는 0에서 65536 사이의 정수여야 합니다.]]></Val>
+            <Val><![CDATA[잘못된 '{0}' 포트가 지정되었습니다. 포트는 0에서 65536 사이의 정수여야 합니다.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -497,7 +497,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Run device tests against a server started with 'remotebuild --config config.json']]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA['remotebuild --config config.json'을 사용하여 시작된 서버에 대해 장치 테스트를 실행합니다.]]></Val>
+            <Val><![CDATA[remotebuild --config config.json'을 사용하여 시작된 서버에 대해 장치 테스트를 실행합니다.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

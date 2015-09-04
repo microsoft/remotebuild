@@ -42,7 +42,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Build directory {0} does not exist.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Каталог сборки {0} не существует.]]></Val>
+            <Val><![CDATA[Каталог сборки "{0}" не существует.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -51,7 +51,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Build completed and downloaded by client.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Сборка выполнена и загружена клиентом.]]></Val>
+            <Val><![CDATA[Сборка выполнена и скачана клиентом.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -78,7 +78,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Build will be executed under: {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Сборка будет выполнена в {0}]]></Val>
+            <Val><![CDATA[Сборка будет выполнена в "{0}"]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -87,7 +87,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Done with current build. Checking for next build in queue.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Текущая сборка готова. Проверка следующей сборки в очереди.]]></Val>
+            <Val><![CDATA[Текущая сборка готова. Проверка наличия следующей сборки в очереди.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -105,7 +105,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Build {0} does not exist]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Сборка {0} не существует]]></Val>
+            <Val><![CDATA[Сборка "{0}" не существует]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -114,7 +114,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Build request rejected. The build queue is full. Limit is {0} queued builds.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Запрос на сборку отклонен. Очередь сборок переполнена. Максимальное число сборок в очереди — {0}.]]></Val>
+            <Val><![CDATA[Запрос на сборку отклонен. Очередь сборок заполнена. Максимальное число сборок в очереди — {0}.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -123,7 +123,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Deleting build %d from %s]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Удаление сборки %d из %s]]></Val>
+            <Val><![CDATA[Удаление сборки "%d" из "%s"]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -141,7 +141,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Uploaded build request payload.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Полезная нагрузка запроса сборки отправлена.]]></Val>
+            <Val><![CDATA[Полезная нагрузка запроса на сборку отправлена.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -168,7 +168,7 @@
         <Str Cat="Text">
           <Val><![CDATA[An error occurred while saving the uploaded tgz file to {0}: {1}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Произошла ошибка при сохранении загруженного TGZ-файла в {0}: {1}]]></Val>
+            <Val><![CDATA[Произошла ошибка при сохранении переданного TGZ-файла в {0}: {1}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -195,7 +195,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Configuring first-run dependencies.]A;To deploy to physical iOS devices, or to debug a device or simulator, we need some packages from Homebrew, a third party package manager.]A;Installing Homebrew may ask you for an admin password. Do you want to continue?]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Идет настройка зависимостей при первом включении.]A;Для развертывания на физических устройствах iOS, а также для отладки устройства или симулятора необходимы некоторые пакеты из Homebrew.]A;При установке Homebrew может потребоваться пароль администратора. Вы хотите продолжить?]]></Val>
+            <Val><![CDATA[Идет настройка зависимостей при первом включении.]A;Для развертывания на физических устройствах iOS, а также для отладки устройства или использования симулятора необходимы некоторые пакеты из Homebrew (стороннего диспетчера пакетов).]A;При установке Homebrew может потребоваться пароль администратора. Вы хотите продолжить?]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -222,7 +222,7 @@
         <Str Cat="Text">
           <Val><![CDATA[[y]5D;/n? ]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[[д]5D;/н? ]]></Val>
+            <Val><![CDATA[[y]5D;/n? ]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -267,7 +267,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error from reading build log file {0}:]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Ошибка при чтении файла журнала сборки {0}:]]></Val>
+            <Val><![CDATA[Ошибка при чтении файла журнала сборки "{0}":]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -294,7 +294,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Taking {0} as current build]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Использование {0} в качестве текущий сборки]]></Val>
+            <Val><![CDATA[Использование "{0}" в качестве текущий сборки]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -321,7 +321,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Build tgz file no longer exists on file system at {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[TGZ-файл сборки больше не существует в файловой системе в {0}]]></Val>
+            <Val><![CDATA[TGZ-файл сборки больше не существует в файловой системе в "{0}"]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -330,7 +330,7 @@
         <Str Cat="Text">
           <Val><![CDATA[true if server should support running builds in iOS simulator, false if not (defaults to true if not specified)]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Значение " true" , если сервер должен поддерживать выполняющиеся сборки в симуляторе iOS, в противном случае значение " false" (если значение не указано, по умолчанию используется " true" )]]></Val>
+            <Val><![CDATA[Значение "true", если сервер должен поддерживать выполняющиеся сборки в симуляторе iOS, в противном случае значение "false" (если значение не указано, по умолчанию используется "true")]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -339,7 +339,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Delete all builds when the server is shutdown (defaults to true if not specified)]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Удаление всех сборок, если сервер выключен (если значение не указано, по умолчанию используется " true" )]]></Val>
+            <Val><![CDATA[Удалить все сборки, если сервер выключен (если значение не указано, по умолчанию используется "true")]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -393,7 +393,7 @@
         <Str Cat="Text">
           <Val><![CDATA[First port number for webkit debugger to assign to devices (defaults to 9222 if not specified)]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Первый номер порта для отладчика веб-набора, назначаемый устройствам (если значение не указано, по умолчанию используется " 9222" )]]></Val>
+            <Val><![CDATA[Первый номер порта отладчика веб-комплекта, назначаемый устройствам (если значение не указано, по умолчанию используется "9222")]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -411,7 +411,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Use following config file to configure remotebuild port, web debug proxy port, no builds retention and build cleanup on shutdown]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Используйте следующий файл конфигурации для настройки порта remotebuild, порта веб-прокси отладки, условий хранения сборки и очистки сборки при выключении]]></Val>
+            <Val><![CDATA[Используйте следующий файл конфигурации для настройки порта remotebuild, порта веб-прокси отладки, указания, что сборки не хранятся и удаляются при выключении]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -438,7 +438,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Extracted app contents from uploaded build request to {0}. Requesting build.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Содержимое приложения из отправленного запроса сборки извлечено в {0}. Выполняется запрос сборки.]]></Val>
+            <Val><![CDATA[Содержимое приложения из отправленного запроса сборки извлечено в "{0}". Выполняется запрос сборки.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -447,7 +447,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Saved uploaded build to {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Отправленная сборка сохранена в {0}]]></Val>
+            <Val><![CDATA[Отправленная сборка сохранена в "{0}"]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -456,7 +456,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Saving build request payload to : {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Полезная нагрузка запроса сборки сохранена в {0}]]></Val>
+            <Val><![CDATA[Полезная нагрузка запроса на сборку будет сохранена в "{0}"]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

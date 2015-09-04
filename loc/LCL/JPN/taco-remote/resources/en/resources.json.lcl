@@ -18,7 +18,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Remote build log written to {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[{0} に書かれたリモート ビルド ログ]]></Val>
+            <Val><![CDATA[リモート ビルド ログが {0} に書き込まれました]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -27,7 +27,7 @@
         <Str Cat="Text">
           <Val><![CDATA[------ {0} Checking on build status from {1} [Attempt {2}]5D;]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[------ {0} は {1} からビルドのステータスをチェックしています [試行回数 {2}]5D;]]></Val>
+            <Val><![CDATA[------ {0}  {1} からビルドのステータスをチェックしています [試行回数 {2}]5D;]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -45,7 +45,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Clean before building]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[ビルドする前にクリーニングしてください]]></Val>
+            <Val><![CDATA[ビルドする前にクリーニングします]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -54,7 +54,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Create a debug build]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[デバッグ ビルドを作成してください]]></Val>
+            <Val><![CDATA[デバッグ ビルドを作成します]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -63,7 +63,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Build the project for a given platform]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[指定されたプラットフォームのプロジェクトをビルドしてください]]></Val>
+            <Val><![CDATA[指定されたプラットフォームのプロジェクトをビルドします]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -72,7 +72,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Create a build to run on a physical device]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[物理デバイス上で実行するビルドを作成してください]]></Val>
+            <Val><![CDATA[物理デバイス上で実行するビルドを作成します]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -81,7 +81,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Create a build to run in an emulator]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[エミュレーターで実行するビルドを作成してください]]></Val>
+            <Val><![CDATA[エミュレーターで実行するビルドを作成します]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -90,7 +90,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Unable to understand '{0}' platform]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[エラー: プラットフォーム '{0}' を確認できませんでした]]></Val>
+            <Val><![CDATA[エラー: プラットフォーム '{0}' を認識できませんでした]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -108,7 +108,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Platform {0} has not been added locally. Please try 'taco platform add {0}' before building]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[エラー: プラットフォーム {0} がローカルに追加されませんでした。ビルドの前に 'taco プラットフォーム {0} を追加' をお試しください]]></Val>
+            <Val><![CDATA[エラー: プラットフォーム {0} がローカルに追加されませんでした。ビルドの前に 'taco platform add {0}' をお試しください]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -117,7 +117,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: no platforms in project. Please run 'taco platform add' to add a platform]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[エラー: プロジェクトにプラットフォームがありません。プラットフォームを追加するには 'taco プラットフォームで追加' を実行してください]]></Val>
+            <Val><![CDATA[エラー: プロジェクトにプラットフォームがありません。'taco platform add' を実行してプラットフォームを追加してください]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -126,7 +126,7 @@
         <Str Cat="Text">
           <Val><![CDATA[The platform that you wish to build]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[ビルドしたいプラットフォーム]]></Val>
+            <Val><![CDATA[ビルド対象のプラットフォーム]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -135,7 +135,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Unable to find local or remote configuration of {0}. Please run 'taco platform add {0}' or 'taco remote add {0}']]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[エラー: {0} のローカルまたはリモート構成が見つかりませんでした。'taco プラットフォーム {0} を追加' または 'taco リモート {0} を追加' を実行してください]]></Val>
+            <Val><![CDATA[エラー: {0} のローカルまたはリモートの構成が見つかりませんでした。'taco platform add {0}' または 'taco remote add {0}' を実行してください]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -144,7 +144,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Unable to find any local or remote platforms. Please run 'taco platform add' or 'taco remote add']]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[エラー: ローカルまたはリモート プラットフォームが見つかりませんでした。'taco プラットフォームを追加' または 'taco リモートを追加' を実行してください]]></Val>
+            <Val><![CDATA[エラー: ローカルまたはリモートのプラットフォームが見つかりませんでした。'taco platform add' または 'taco remote add' を実行してください]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -153,7 +153,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Create a release build]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[リリース　ビルドを作成します]]></Val>
+            <Val><![CDATA[リリース ビルドを作成します]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -171,7 +171,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Unable to load remote settings for {0}. Please run 'taco remote add {0}' to configure remote builds for this platform]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[エラー: {0} のリモート設定をロードできませんでした。'taco リモート {0} を追加' を実行してこのプラットフォームのリモート ビルドを構成してください]]></Val>
+            <Val><![CDATA[エラー: {0} のリモート設定をロードできませんでした。'taco remote add {0}' を実行してこのプラットフォームのリモート ビルドを構成してください]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -180,7 +180,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: No remote platforms configured. Please run 'taco remote add' to configure one]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[エラー: 構成されているリモート プラットフォームがありません。'taco リモートを追加' を実行して構成してください]]></Val>
+            <Val><![CDATA[エラー: 構成されているリモート プラットフォームがありません。'taco remote add' を実行して構成してください]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -189,7 +189,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Unable to load settings. Please run 'taco remote add' before building remotely]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[エラー: 設定をロードできませんでした。リモートでビルドする前に 'taco リモートを追加' を実行してください]]></Val>
+            <Val><![CDATA[エラー: 設定をロードできませんでした。リモートでビルドする前に 'taco remote add' を実行してください]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -198,7 +198,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Create a build to run on the specified target]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[指定されたターゲットで実行するビルドを作成してください]]></Val>
+            <Val><![CDATA[指定されたターゲットで実行するビルドを作成します]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -216,7 +216,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Package ID for the project]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[プロジェクト パッケージ ID]]></Val>
+            <Val><![CDATA[プロジェクトのパッケージ ID]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -225,7 +225,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Human readable app name]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[人間が判読できるアプリ名]]></Val>
+            <Val><![CDATA[人が読んでわかるアプリ名]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -243,7 +243,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Create a new Cordova based TACO project]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Cordova ベースの新しい TACO プロジェクトを作成する]]></Val>
+            <Val><![CDATA[Cordova ベースの新しい TACO プロジェクトを作成します]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -252,7 +252,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: unable to perform 'git clone' for the specified template. Please see the output from git for more details.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[エラー: 指定されたテンプレートの 'git クローン' を実行できませんでした。詳細については git の出力を参照してください。]]></Val>
+            <Val><![CDATA[エラー: 指定されたテンプレートの 'git clone' を実行できませんでした。詳細については Git の出力を参照してください。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -261,7 +261,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Acquiring template from git...<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[git からテンプレートを取得しています...<br/>]]></Val>
+            <Val><![CDATA[Git からテンプレートを取得しています...<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -270,7 +270,7 @@
         <Str Cat="Text">
           <Val><![CDATA[custom git template]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[カスタム git テンプレート]]></Val>
+            <Val><![CDATA[カスタム Git テンプレート]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -279,7 +279,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<br/>Please install gulp and gulp-typescript by following the installation steps listed at <link>http://go.microsoft.com/fwlink/?LinkId=620942</link>.<br/><br/>Once installed, run 'gulp typescript' to pre-compile the TS files before building your project.<br/><br/>Once your TS files are pre-compiled, use 'taco build [platform]5D;' to build your project.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<br/><link>http://go.microsoft.com/fwlink/?LinkId=620942</link> にリストアップされているインストール手順に従って、gulp および gulp-typescript をインストールしてください。<br/><br/>インストールしたら、プロジェクトをビルドする前に 'gulp typescript' を実行して TS ファイルをプリコンパイルしてください。<br/><br/>TS ファイルをプリコンパイルしたら、'taco ビルド [プラットフォーム]5D;' を使用してプロジェクトをビルドしてください。]]></Val>
+            <Val><![CDATA[<br/><link>http://go.microsoft.com/fwlink/?LinkId=620942</link> に記載されているインストール手順に従って、gulp および gulp-typescript をインストールしてください。<br/><br/>インストールしたら、プロジェクトをビルドする前に 'gulp typescript' を実行して TS ファイルをプリコンパイルしてください。<br/><br/>TS ファイルをプリコンパイルしたら、'taco build [プラットフォーム]5D;' を使用してプロジェクトをビルドしてください。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -297,7 +297,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: No git found. Please ensure git is installed and is in your system's Path environment variable.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[エラー: git が見つかりませんでした。Git がインストールされていることとお使いのシステムのパスの環境変数に含まれていことを確認してください。]]></Val>
+            <Val><![CDATA[エラー: Git が見つかりませんでした。Git がインストールされていて、お使いのシステムの Path 環境変数に含まれていることを確認してください。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -306,7 +306,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: A directory name must be specified in order to create a project. See 'taco help create'.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[エラー: プロジェクトを作成するには、ディレクトリ名が指定されている必要があります。'taco 作成のヘルプ' をご覧ください。]]></Val>
+            <Val><![CDATA[エラー: プロジェクトを作成するには、ディレクトリ名を指定する必要があります。'taco help create' を参照してください。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -315,7 +315,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Cannot specify both --cli and --kit]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[エラー: --cli と--kit のどちらも特定することができませんでした]]></Val>
+            <Val><![CDATA[エラー: --cli と--kit を同時に指定することはできません]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -324,7 +324,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: The --template option is not supported with the --cli option; use --kit for templates]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[エラー: --template オプションは --cli オプションとサポートされていません。テンプレートに --kit を使用してください]]></Val>
+            <Val><![CDATA[エラー: --template オプションは --cli オプションと同時に指定することはできません。テンプレートには --kit を使用してください]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -333,7 +333,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Cannot specify --template if specifying --copy-from or --link-to]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[エラー: --copy-from または --link-to を使用すると、--template を特定できません]]></Val>
+            <Val><![CDATA[エラー: --copy-from または --link-to と、--template を同時に指定することはできません]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -342,7 +342,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Only local paths for custom www assets are supported.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[エラー: カスタム www アセットのローカル パスしかサポートされていません。]]></Val>
+            <Val><![CDATA[エラー: カスタム www アセット用にサポートされているのはローカル パスのみです。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -360,7 +360,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Use custom www assets instead of using a TACO template.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[TACO テンプレートを使用するのではなく、カスタム www アセットを使用してください。]]></Val>
+            <Val><![CDATA[TACO テンプレートではなく、カスタム www アセットを使用してください。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -369,7 +369,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Use the specified Cordova Dev Kit for this project rather than the default.  Use "taco kit list" to see a list of available Kits.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[このプロジェクトでは既定値ではなく、Cordova Dev Kit を使用してください。使用可能なキットを確認するには "taco キット リスト" を使用してください。]]></Val>
+            <Val><![CDATA[このプロジェクトでは既定値ではなく、Cordova Dev Kit を使用してください。使用可能なキットを確認するには "taco kit list" を使用してください。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -396,7 +396,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Could not create the project because the specified path already exists and is not empty: {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[エラー: 指定されたパスがすでに存在し、空ではないためプロジェクトを作成できませんでした: {0}]]></Val>
+            <Val><![CDATA[エラー: 指定されたパスが既に存在し、空ではないため、プロジェクトを作成できませんでした: {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -477,7 +477,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<br/><success>Success!</success> Your project is ready for use at <highlight>{0}</highlight>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<br/><success>正常に処理されました。</success> プロジェクトが <highlight>{0}</highlight> で使用できます]]></Val>
+            <Val><![CDATA[<br/><success>正常に処理されました。</success> プロジェクトは <highlight>{0}</highlight> で使用できます]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -531,7 +531,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<br/><warn>Warning: Kit {0} has been deprecated.</warn><br/>Consider changing your project to use a more recent Kit. For deprecation information, see <link>http://go.microsoft.com/fwlink/?LinkId=618170</link>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<br/><warn>注意: キット {0} が削除されました。</warn><br/>プロジェクトで最近のキットを使用するようにしてください。削除情報についてはこちらをご覧ください: <link>http://go.microsoft.com/fwlink/?LinkId=618170</link>]]></Val>
+            <Val><![CDATA[<br/><warn>警告: キット {0} は使用されなくなりました。</warn><br/>より新しいキットを使用するようプロジェクトを変更してください。非推奨に関する情報についてはこちらをご覧ください: <link>http://go.microsoft.com/fwlink/?LinkId=618170</link>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -540,7 +540,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Open up the documentation page in your default browser]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[ドキュメント ページをデフォルト ブラウザーで開いてください]]></Val>
+            <Val><![CDATA[ドキュメント ページを既定の ブラウザーで開きます]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -549,7 +549,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Emulate a cordova project]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Cordova プロジェクトをエミュレートしてください]]></Val>
+            <Val><![CDATA[Cordova プロジェクトをエミュレートします]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -567,7 +567,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Change feedback setting]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[フィードバック設定を変更する]]></Val>
+            <Val><![CDATA[フィードバック設定を変更します]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -576,7 +576,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Get help for a TACO command]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[TACO コマンドについてのヘルプを入手する]]></Val>
+            <Val><![CDATA[TACO コマンドについてのヘルプを入手します]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -585,7 +585,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: The current project uses Cordova version {0}. 'taco install-reqs' supports projects using Cordova version {1} or higher.<br/><br/>If your project was created using a TACO kit, consider moving to a kit that has a more recent version of Cordova. If your project was created using Cordova directly, consider updating the installation of Cordova. For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[エラー: 現在のプロジェクトは Cordova バージョン {0} を使用しています。'taco install-reqs' は Cordova バージョン {1} 以上を使用するプロジェクトをサポートしています。<br/><br/>お使いのプロジェクトが TACO キットを使用して作成された場合、Cordova の最新バージョンのキットへ移動させるようにしてください。詳細については、http://go.microsoft.com/fwlink/?LinkId=618544 を参照してください。]]></Val>
+            <Val><![CDATA[エラー: 現在のプロジェクトは Cordova バージョン {0} を使用しています。'taco install-reqs' は Cordova バージョン {1} 以上を使用するプロジェクトをサポートしています。<br/><br/>TACO キットを使用してプロジェクトを作成した場合、Cordova のより新しいバージョンに移行することを検討してください。直接 Cordova を使用してプロジェクトを作成した場合は、インストール済みの Cordova を更新することを検討してください。詳細については、http://go.microsoft.com/fwlink/?LinkId=618544 を参照してください。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -594,7 +594,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Installing dependencies for the following platforms: <highlight>{0}</highlight>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[次のプラットフォームの依存項目をインストール中: <highlight>{0}</highlight>]]></Val>
+            <Val><![CDATA[次のプラットフォームの依存関係をインストール中: <highlight>{0}</highlight>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -603,7 +603,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: No platforms added to your project. To install the dependencies for a given platform, please add it to your project first.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[エラー: プロジェクトにプラットフォームが追加されていません。指定されたプラットフォームの依存する項目をインストールするには、まずお使いのプロジェクトに追加してください。]]></Val>
+            <Val><![CDATA[エラー: プロジェクトにプラットフォームが追加されていません。指定されたプラットフォームの依存関係をインストールするには、まずプロジェクトに追加してください。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -612,7 +612,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: No 'platforms' folder found. Please make sure the current directory is the root of a Cordova project, and at least one platform has been added.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[エラー: 'platforms' フォルダーが見つかりませんでした。現在のディレクトリが Cordova プロジェクトのルートであり、一つ以上のプラットフォームが追加されていることを確認してください。]]></Val>
+            <Val><![CDATA[エラー: 'platforms' フォルダーが見つかりませんでした。現在のディレクトリが Cordova プロジェクトのルートであり、1 つ以上のプラットフォームが追加されていることを確認してください。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -621,7 +621,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<highlight>Note:</highlight> To manually update a single platform, remove the platform from your project and then run:<br/><br/>    <highlight>taco platform add </highlight>[platform]5D;<highlight>@</highlight>[version]5D;]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<highlight>メモ:</highlight> 一つのプラットフォームを手動でアップデートするには、お使いのプロジェクトからプラットフォームを削除してから実行してください:<br/><br/>    <highlight>taco プラットフォームの追加 </highlight>[プラットフォーム]5D;<highlight>@</highlight>[バージョン]5D;]]></Val>
+            <Val><![CDATA[<highlight>メモ:</highlight> 1 つのプラットフォームを手動で更新するには、プロジェクトからプラットフォームを削除してから、次を実行してください:<br/><br/>    <highlight>taco platform add</highlight>[プラットフォーム]5D;<highlight>@</highlight>[バージョン]5D;]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -657,7 +657,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Install platform-specific third-party dependencies required to build]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[ビルドのために必要な、プラットフォーム固有のサード パーティー依存項目をインストールしてください]]></Val>
+            <Val><![CDATA[ビルドに必要な、プラットフォーム固有のサード パーティの依存関係をインストールします]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -666,7 +666,7 @@
         <Str Cat="Text">
           <Val><![CDATA[A platform for which to install third-party dependencies]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[サードパーティー依存項目をインストールするプラットフォーム]]></Val>
+            <Val><![CDATA[サードパーティの依存関係をインストールするプラットフォーム]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -675,7 +675,7 @@
         <Str Cat="Text">
           <Val><![CDATA[The following platforms will be skipped because they don't support Cordova's requirements checking:<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[次のプラットフォームは Cordova の要求事項の確認をサポートしていないためスキップされます:<br/>]]></Val>
+            <Val><![CDATA[次のプラットフォームは Cordova の要件の確認をサポートしていないためスキップされます:<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -684,7 +684,7 @@
         <Str Cat="Text">
           <Val><![CDATA[The following platforms will be skipped because they haven't been added to your project yet:<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[次のプラットフォームはお使いのプロジェクトにまだ追加されていないためスキップされます:<br/>]]></Val>
+            <Val><![CDATA[次のプラットフォームはプロジェクトにまだ追加されていないためスキップされます:<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -693,7 +693,7 @@
         <Str Cat="Text">
           <Val><![CDATA[The following platforms will be skipped because they aren't supported for your current operating system:<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[次のプラットフォームはお使いのオペレーティング システムがサポートされていないためスキップされます:<br/>]]></Val>
+            <Val><![CDATA[次のプラットフォームはお使いのオペレーティング システムでサポートされていないためスキップされます:<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -702,7 +702,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Kit or CLI needs to be specified. Please run 'taco help kit' for more details.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[エラー: キットまたは CLI が指定される必要があります。さらなる詳細については 'taco ヘルプ キット' を実行してください。]]></Val>
+            <Val><![CDATA[エラー: キットまたは CLI を指定する必要があります。詳細を確認するには 'taco help kit' を実行してください。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -711,7 +711,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error thrown when no Kit or CLI is specified for the 'taco kit select' command]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA['taco キットの選択' コマンドでキットまたは CLI が指定されなかったためエラーが発生しました]]></Val>
+            <Val><![CDATA['taco kit select' コマンドでキットまたは CLI が指定されなかったためエラーが発生しました]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -720,7 +720,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Perform kit related operations]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[キットに関連する操作を行う]]></Val>
+            <Val><![CDATA[キットに関連する操作を行います]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -729,7 +729,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Save the list of known kits to a json file at path <PATH>.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[パス <PATH> にある json ファイルに、既知のキット リストを保存する。]]></Val>
+            <Val><![CDATA[パス <PATH> にある json ファイルに、既知のキットのリストを保存します。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -774,7 +774,7 @@
         <Str Cat="Text">
           <Val><![CDATA[A toolkit of plugins and platforms that works with Cordova CLI v{0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Cordova CLI v{0} で動くプラグインとプラットフォームのツールキット]]></Val>
+            <Val><![CDATA[Cordova CLI v{0} で動作するプラグインとプラットフォームのツールキット]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -792,7 +792,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Deprecated]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[削除済み]]></Val>
+            <Val><![CDATA[非推奨]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -810,7 +810,7 @@
         <Str Cat="Text">
           <Val><![CDATA[The file {0} already exists. Do you wish to overwrite? [y/n]5D;?]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[ファイル {0} はすでに存在しています。上書きしますか? [y/n]5D;?]]></Val>
+            <Val><![CDATA[ファイル {0} は既に存在しています。上書きしますか? [y/n]5D;?]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -837,7 +837,7 @@
         <Str Cat="Text">
           <Val><![CDATA[For more information about this kit, please visit <link>{0}</link>.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[このキットについての詳しい情報については、<link>{0}</link> にアクセスしてください。]]></Val>
+            <Val><![CDATA[このキットの詳しい情報については、<link>{0}</link> にアクセスしてください。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -846,7 +846,7 @@
         <Str Cat="Text">
           <Val><![CDATA[List available TACO kits]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[利用可能な TACO キットをリストアップする]]></Val>
+            <Val><![CDATA[利用可能な TACO キットを一覧表示します]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -855,7 +855,7 @@
         <Str Cat="Text">
           <Val><![CDATA[List the details (pinned version of Cordova CLI, platforms and plugins) for a specific kit with ID <KIT-ID>.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[ID が <KIT-ID> である特定のキットの詳細 (Cordova CLI のピン設定されたバージョン、プラットフォーム、プラグイン) をリストアップします。]]></Val>
+            <Val><![CDATA[ID が <KIT-ID> である特定のキットの詳細 (Cordova CLI のピン設定されたバージョン、プラットフォーム、プラグイン) を一覧表示します。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -864,7 +864,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: TACO project already uses the Cordova CLI {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[エラー: TACO プロジェクトはすでに Cordova CLI {0} を使用しています]]></Val>
+            <Val><![CDATA[エラー: TACO プロジェクトは既に Cordova CLI {0} を使用しています]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -873,7 +873,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: TACO project already uses kit {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[エラー: TACO プロジェクトはすでにキット {0} を使用しています]]></Val>
+            <Val><![CDATA[エラー: TACO プロジェクトは既にキット {0} を使用しています]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -882,7 +882,7 @@
         <Str Cat="Text">
           <Val><![CDATA[You have opted not to use a Kit. Cordova CLI {0} may pin platform and plugin versions that are different from what are currently added to your project and may not have been verified to work with TACO. Here is an overview of what this update will change:]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[キットを使用しないように設定しました。Cordova CLI {0} は現在プロジェクトに追加されているものと異なるプラットフォームおよびプラグインをピン設定する場合があり、TACO で利用できるよう確認できていない可能性があります。このアップデートによって変更される内容をこちらで確認できます:]]></Val>
+            <Val><![CDATA[キットを使用しないように設定しました。Cordova CLI {0} は、現在プロジェクトに追加されているものと異なるバージョンのプラットフォームやプラグインをピン設定する場合があり、TACO での動作が確認されていない可能性があります。この更新によって変更される内容をこちらで確認できます:]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -891,7 +891,7 @@
         <Str Cat="Text">
           <Val><![CDATA[String used to represent the CLI pinned version of platforms and plugins that aproject will be updated to, on 'taco kit select']]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[プロジェクトがアップデートされたバージョンのプラットフォームおよびプラグインのうち、CLI ピン設定をされたものを示すのに使用する文字列が 'taco キットの選択' にあります]]></Val>
+            <Val><![CDATA['taco kit select' で、プロジェクトが更新される、CLI ピンの設定されたプラットフォームやプラグインのバージョンを示す文字列]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -918,7 +918,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Kit {0} recommends a different version for some platforms and plugins already added to your project. Here is an overview of what this update will change:]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[キット {0} は、お使いのプロジェクトにすでに追加されている一部のプラットフォームとプラグインについて別のバージョンを推奨しています。このアップデートによって変更される内容をこちらで確認できます:]]></Val>
+            <Val><![CDATA[キット {0} は、プロジェクトに既に追加されている一部のプラットフォームとプラグインについて別のバージョンを推奨しています。この更新によって変更される内容をこちらで確認できます:]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -927,7 +927,7 @@
         <Str Cat="Text">
           <Val><![CDATA[The following plugins were not installed from NPM and will not be updated:]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[次のプラグインは NPM からインストールされていないためアップデートされません:]]></Val>
+            <Val><![CDATA[次のプラグインは NPM からインストールされていないため更新されません:]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -936,7 +936,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Use the specified version of Cordova CLI for the project.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[このプロジェクトには指定されたバージョンの Cordova CLI を使用してください。]]></Val>
+            <Val><![CDATA[プロジェクトに指定されたバージョンの Cordova CLI を使用します。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -945,7 +945,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Use the specified TACO kit for the project. Use "taco kit list" to see a list of available kits.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[このプロジェクトには指定された TACO キットを使用してください。使用可能なキットのリストを確認するには、"taco キット リスト" を実行してください。]]></Val>
+            <Val><![CDATA[このプロジェクトには指定された TACO キットを使用します。使用可能なキットのリストを確認するには "taco kit list" を使用してください。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -963,7 +963,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<warn>Warning:</warn> Platforms and plugins in your project will be removed and replaced with these updates. Plugins installed from the local file system or a GIT respository will be ignored.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<warn>注意:</warn> お使いのプロジェクトのプラットフォームとプラグインは削除され、アップデートに置き換えられます。ローカル ファイル システムまたは GIT リポジトリからインストールされたプラグインは無視されます。]]></Val>
+            <Val><![CDATA[<warn>警告:</warn> プロジェクトのプラットフォームとプラグインは削除され、更新に置き換えられます。ローカル ファイル システムまたは GIT リポジトリからインストールされたプラグインは無視されます。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -981,7 +981,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Updating platforms...]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[プラットフォームをアップデート中...]]></Val>
+            <Val><![CDATA[プラットフォームを更新中...]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -990,7 +990,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Updating plugins...]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[プラグインをアップデート中...]]></Val>
+            <Val><![CDATA[プラグインを更新中...]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -999,7 +999,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Select a kit or a Cordova CLI version for the project]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[プロジェクトのためのキットまたは Cordova CLI バージョンを選択する]]></Val>
+            <Val><![CDATA[プロジェクトのキットまたは Cordova CLI バージョンを選択します]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1008,7 +1008,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Perform kit related operations (like list)]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[キットと関連する操作を行う (リストアップなど)]]></Val>
+            <Val><![CDATA[キットに関連する操作 (リストなど) を行います]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1017,7 +1017,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Add specified platforms]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[特定のプラットフォームを追加する]]></Val>
+            <Val><![CDATA[指定されたプラットフォームを追加します]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1026,7 +1026,7 @@
         <Str Cat="Text">
           <Val><![CDATA[List platforms which can be updated by 'taco platform update']]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA['taco プラットフォーム アップデート' でアップデートできるプラットフォームをリストアップする]]></Val>
+            <Val><![CDATA['taco platform update' で更新できるプラットフォームを一覧表示します]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1035,7 +1035,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Manage project platforms]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[プロジェクト プラットフォームを管理する]]></Val>
+            <Val><![CDATA[プロジェクト プラットフォームを管理します]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1062,7 +1062,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Name of the branch to checkout after cloning the git repo; If none is specified, the 'master' branch will be checked out]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Git リポジトリの複製後にチェックアウトする分岐の名前。何も指定されていな場合は、'master' 分岐がチェックアウトされます]]></Val>
+            <Val><![CDATA[Git リポジトリの複製後にチェックアウトする分岐の名前。何も指定されていない場合は、'master' 分岐がチェックアウトされます]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1116,7 +1116,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Save specified platforms into config.xml after installing them]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[インストール後に指定されたプラットフォームを config.xml に保存します]]></Val>
+            <Val><![CDATA[指定されたプラットフォームをインストール後に config.xml に保存します]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1125,7 +1125,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Delete specified platforms from config.xml after removing them]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[削除後に指定されたプラットフォームを config.xml から削除します]]></Val>
+            <Val><![CDATA[指定されたプラットフォームを削除後に config.xml から消去します]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1143,7 +1143,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Platform(s) <highlight>{0}</highlight> added to the project.<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>成功しました。</success>プラットフォーム <highlight>{0}</highlight> がプロジェクトに追加されました。<br/>]]></Val>
+            <Val><![CDATA[<success>正常に処理されました。</success>プラットフォーム <highlight>{0}</highlight> がプロジェクトに追加されました。<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1161,7 +1161,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Platform(s) <highlight>{0}</highlight> removed from the project.<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>成功しました。</success>プラットフォーム <highlight>{0}</highlight> がプロジェクトから削除されました。<br/>]]></Val>
+            <Val><![CDATA[<success>正常に処理されました。</success>プラットフォーム <highlight>{0}</highlight> がプロジェクトから削除されました。<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1179,7 +1179,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Platform(s) <highlight>{0}</highlight> updated.<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>成功しました。</success>プラットーフォーム <highlight>{0}</highlight> が更新されました。<br/>]]></Val>
+            <Val><![CDATA[<success>正常に処理されました。</success>プラットーフォーム <highlight>{0}</highlight> が更新されました。<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1224,7 +1224,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Add specified Plugins; pluginid will be matched in --searchpath / registry; directory is a directory containing a plugin; giturl is a git repo containing a plugin]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[指定されたプラグインを追加します。プラグイン ID は --検索パス/レジストリで一致します。ディレクトリはプラグインを含むディレクトリです。Git URL はプラグインを含む Git リポジトリです]]></Val>
+            <Val><![CDATA[指定されたプラグインを追加します。プラグイン ID は --searchpath / registry で一致します。ディレクトリはプラグインを含むディレクトリです。Git URL はプラグインを含む Git リポジトリです]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1305,7 +1305,7 @@
         <Str Cat="Text">
           <Val><![CDATA[When looking up plugins by ID, look in this directory and each of its subdirectories for the plugin before hitting the registry. Multiple search paths can be used by either specifying the flag multiple times, or by seperating paths with a delimiter (':' on Unix, ';' on Windows).]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[ID ごとにプラグインを検索する場合、レジストリに到達する前にこのディレクトリおよびプラグインに対するそのディレクトリの各サブディレクトリを確認します。フラグを複数回指定するか、区切り記号 (Unix では ':'、Windows では ';') でパスを分割することによって、複数の検索パスを使用することができます。]]></Val>
+            <Val><![CDATA[ID ごとにプラグインを検索する場合、レジストリを検索する前に、このディレクトリとその各サブディレクトリでプラグインを探します。フラグを複数回指定するか、区切り記号 (Unix では ':'、Windows では ';') でパスを区切ることによって、複数の検索パスを使用できます。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1314,7 +1314,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Search the plugin registry for plugins matching the keywords]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[キーワードと一致するプラグインのプラグイン レジストリを検索します]]></Val>
+            <Val><![CDATA[プラグイン レジストリでキーワードと一致するプラグインを検索します]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1323,7 +1323,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Used together with --save, saves the installed version number to config.xml]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[--保存と一緒に使用することによって、インストール済みのバージョン番号が config.xml に保存されます]]></Val>
+            <Val><![CDATA[--saveと一緒に使用すると、インストール済みのバージョン番号が config.xml に保存されます]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1332,7 +1332,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Plugin added.<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>成功しました。</success>プラグインが追加されました。<br/>]]></Val>
+            <Val><![CDATA[<success>正常に処理されました。</success>プラグインが追加されました。<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1350,7 +1350,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Plugin <highlight>{0}</highlight> removed<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>成功しました。</success>プラグイン <highlight>{0}</highlight> が削除されました<br/>]]></Val>
+            <Val><![CDATA[<success>正常に処理されました。</success>プラグイン <highlight>{0}</highlight> が削除されました<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1386,7 +1386,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> {0} installed.<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>成功しました。</success> {0} がインストールされました。<br/>]]></Val>
+            <Val><![CDATA[<success>正常に処理されました。</success> {0} がインストールされました。<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1539,7 +1539,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Unable to look up host '{0}'. Check that the name is correct.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[ホスト '{0}' を検索することができません。名前が正しいことを確認してください。]]></Val>
+            <Val><![CDATA[ホスト '{0}' を検索できません。名前が正しいことを確認してください。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1602,7 +1602,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Removed remote platform {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>成功しました。</success>リモート プラットフォーム {0} が削除されました]]></Val>
+            <Val><![CDATA[<success>正常に処理されました。</success>リモート プラットフォーム {0} が削除されました]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1611,7 +1611,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Settings stored in {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>成功しました。</success>設定が {0} に保存されました]]></Val>
+            <Val><![CDATA[<success>正常に処理されました。</success>設定が {0} に保存されました]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1656,7 +1656,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Run the project for a given platform on the selected device/emulator target]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[選択されたデバイス/エミュレーター ターゲットで指定されたプラットフォームのプロジェクトを実行します]]></Val>
+            <Val><![CDATA[選択されたデバイス/エミュレーター ターゲットで、指定されたプラットフォームのプロジェクトを実行します]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1728,7 +1728,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Build running on remote attached device]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>成功しました。</success>リモート接続されているデバイスでビルドが実行されています]]></Val>
+            <Val><![CDATA[<success>正常に処理されました。</success>リモート接続されているデバイスでビルドが実行されています]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1737,7 +1737,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Build running on remote emulator]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>成功しました。</success>リモート エミュレーターでビルドが実行されています]]></Val>
+            <Val><![CDATA[<success>正常に処理されました。</success>リモート エミュレーターでビルドが実行されています]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1800,7 +1800,7 @@
         <Str Cat="Text">
           <Val><![CDATA['cordova {1}' failed with exit code {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[終了コード {0} によって 'cordova {1}' が失敗しました]]></Val>
+            <Val><![CDATA[終了コード {0} で 'cordova {1}' が失敗しました]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1872,7 +1872,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Failed to save certificate at {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[{0} で証明書を保存できませんでした]]></Val>
+            <Val><![CDATA[{0} に証明書を保存できませんでした]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1980,7 +1980,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Failed to parse changed files needed to prepare a build patch]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[ビルド パッチを準備するのに必要な変更されたファイルを解析できませんでした]]></Val>
+            <Val><![CDATA[ビルド パッチを準備するのに必要な、変更されたファイルを解析できませんでした]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2025,7 +2025,7 @@
         <Str Cat="Text">
           <Val><![CDATA[------ Failed to delete downloaded zip file {0}. This did not prevent a successful build.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[------ ダウンロード済みの zip ファイル {0} の削除に失敗しました。これがビルドの成功を妨げることはありませんでした。]]></Val>
+            <Val><![CDATA[------ ダウンロード済みの zip ファイル {0} の削除に失敗しました。ビルドの処理は正常に完了しました。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2061,7 +2061,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Add a Cordova plugin: <bold>taco add plugin <PLUGIN-ID></bold>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Cordova プラグインの追加: <bold>taco add plugin <PLUGIN-ID></bold>]]></Val>
+            <Val><![CDATA[Cordova プラグインを追加: <bold>taco add plugin <PLUGIN-ID></bold>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2070,7 +2070,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Build your app: <bold>taco build <PLATFORM></bold>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[アプリのビルド: <bold>taco build <PLATFORM></bold>]]></Val>
+            <Val><![CDATA[アプリをビルド: <bold>taco build <PLATFORM></bold>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2187,7 +2187,7 @@
         <Str Cat="Text">
           <Val><![CDATA[The remote build server denied the build request, because the client certificate is invalid or has expired. To build your project, you must generate and configure a security PIN. See http://go.microsoft.com/fwlink/?LinkID=511904]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[クライアント証明書が無効か有効期限が切れたため、リモート ビルド サーバーがビルド要求を拒否しました。プロジェクトをビルドするには、セキュリティ PIN を生成する必要があります。http://go.microsoft.com/fwlink/?LinkID=511904 を参照してください。]]></Val>
+            <Val><![CDATA[クライアント証明書が無効か有効期限が切れたため、リモート ビルド サーバーがビルド要求を拒否しました。プロジェクトをビルドするには、セキュリティ PIN を生成し構成する必要があります。http://go.microsoft.com/fwlink/?LinkID=511904 を参照してください。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2241,7 +2241,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Current working directory is not a Cordova-based project]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[エラー: 現在動作中のディレクトリは Cordova ベースのプロジェクトではありません]]></Val>
+            <Val><![CDATA[エラー: 現在作業中のディレクトリは Cordova ベースのプロジェクトではありません]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2250,7 +2250,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<br/>Quick tips & commands:]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<br/>ポップ ヒントおよびコマンド:]]></Val>
+            <Val><![CDATA[<br/>クイック ヒントおよびコマンド:]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2259,7 +2259,7 @@
         <Str Cat="Text">
           <Val><![CDATA[TACO is a command line tool that makes it easy to create, build, run, and emulate Cordova applications.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[TACO は、Cordova アプリケーションの作成、ビルド、実行、およびエミュレートを簡単にするコマンド ライン ツールです。]]></Val>
+            <Val><![CDATA[TACO は、Cordova アプリケーションの作成、ビルド、実行、エミュレートを簡単に行うためのコマンド ライン ツールです。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2322,7 +2322,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Non-secure connection to {0} could not be established. Verify that the build server is not running in secure mode.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[{0} に対するセキュリティで保護されていない接続を確立できませんでした。ビルド サーバーがセキュリティで保護されたモードで実行されていないことを確認してください。]]></Val>
+            <Val><![CDATA[{0} に対し、セキュリティで保護されていない接続を確立できませんでした。ビルド サーバーがセキュリティで保護されたモードで実行されていないことを確認してください。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2331,7 +2331,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Secure connection to {0} could not be established. Verify that the build server is running in secure mode.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[{0} に対するセキュリティで保護された接続を確立できませんでした。ビルド サーバーがセキュリティで保護されたモードで実行されていることを確認してください。]]></Val>
+            <Val><![CDATA[{0} に対し、セキュリティで保護された接続を確立できませんでした。ビルド サーバーがセキュリティで保護されたモードで実行されていることを確認してください。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2430,7 +2430,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error message printed when trying to 'taco remote add <platform>' and the platform is not supported. {0} is the platform]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA['taco remote add <platform>' を実行しようとして、エラー メッセージが印刷され、プラットフォームはサポートされていません。{0} はプラットフォームです]]></Val>
+            <Val><![CDATA['taco remote add <platform>' を実行しようとして、プラットフォームがサポートされていない場合に出力されるエラー メッセージ。{0} はプラットフォームです]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

@@ -27,7 +27,7 @@
         <Str Cat="Text">
           <Val><![CDATA[------ {0} Checking on build status from {1} [Attempt {2}]5D;]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[------ {0}이(가) {1}에서 빌드 상태 확인 중[{2}번 시도]5D;]]></Val>
+            <Val><![CDATA['------ {0} 현재 {1}에서 빌드 상태 확인 중[{2}번 시도함]5D;]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -413,12 +413,18 @@
       <Item ItemId=";CommandCreateStatusTableCordovaCLIVersionDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Cordova]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Cordova]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";CommandCreateStatusTableIDDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[ID]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[ID]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -461,6 +467,9 @@
       <Item ItemId=";CommandCreateStatusTableReleaseNotesLink" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[<link>http://go.microsoft.com/fwlink/?LinkId=619747</link>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<link>http://go.microsoft.com/fwlink/?LinkId=619747</link>]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -629,6 +638,9 @@
       <Item ItemId=";CommandInstallPlatformBullet" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[- <highlight>{0}</highlight>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[- <highlight>{0}</highlight>]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -663,7 +675,7 @@
         <Str Cat="Text">
           <Val><![CDATA[The following platforms will be skipped because they don't support Cordova's requirements checking:<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Cordova의 요구 사항 확인을 지원하지 않으므로 다음 플랫폼을 건너뜁니다.<br />]]></Val>
+            <Val><![CDATA[Cordova의 요구 사항 확인을 지원하지 않으므로 다음 플랫폼을 건너뜁니다.<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -672,7 +684,7 @@
         <Str Cat="Text">
           <Val><![CDATA[The following platforms will be skipped because they haven't been added to your project yet:<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[프로젝트에 아직 추가되지 않았으므로 다음 플랫폼을 건너뜁니다.<br />]]></Val>
+            <Val><![CDATA[프로젝트에 아직 추가되지 않았으므로 다음 플랫폼을 건너뜁니다.<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -699,7 +711,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error thrown when no Kit or CLI is specified for the 'taco kit select' command]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA['taco kit select' 명령에 키트나 CLI를 지정하지 않으면 오류가 발생합니다.]]></Val>
+            <Val><![CDATA[taco kit select' 명령에 키트나 CLI를 지정하지 않으면 오류가 발생합니다.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -734,6 +746,9 @@
       <Item ItemId=";CommandKitListCordovaCliForKit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[<bold>Cordova CLI: </bold>{0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<bold>Cordova CLI: </bold>{0}]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -759,7 +774,7 @@
         <Str Cat="Text">
           <Val><![CDATA[A toolkit of plugins and platforms that works with Cordova CLI v{0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Cordova CLI v{0}과(와) 작동하는 플러그 인 및 플랫폼의 도구 키트]]></Val>
+            <Val><![CDATA[Cordova CLI v{0}과(와) 호환되는 플러그 인 및 플랫폼의 도구 키트]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -867,7 +882,7 @@
         <Str Cat="Text">
           <Val><![CDATA[You have opted not to use a Kit. Cordova CLI {0} may pin platform and plugin versions that are different from what are currently added to your project and may not have been verified to work with TACO. Here is an overview of what this update will change:]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[키트를 사용하지 않도록 선택했습니다. Cordova CLI {0}은(는) 프로젝트에 현재 추가된 것과 다른 플랫폼 및 플러그 인 버전을 고정할 수 있으며 TACO와 작동하는 것이 확인되지 않았을 수 있습니다. 이 업데이트로 변경될 사항에 대한 개요는 다음과 같습니다.]]></Val>
+            <Val><![CDATA[키트를 사용하지 않도록 선택했습니다. Cordova CLI {0}은(는) 프로젝트에 현재 추가된 것과 다른 플랫폼 및 플러그 인 버전을 고정할 수 있으며 TACO와의 호환성이 확인되지 않았을 수 있습니다. 이 업데이트로 변경될 사항에 대한 개요는 다음과 같습니다.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -876,7 +891,7 @@
         <Str Cat="Text">
           <Val><![CDATA[String used to represent the CLI pinned version of platforms and plugins that aproject will be updated to, on 'taco kit select']]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA['taco kit select'에서 프로젝트가 업데이트될 플랫폼 및 플러그 인의 CLI 고정 버전을 나타내는 데 사용되는 문자열]]></Val>
+            <Val><![CDATA[taco kit select'에서 프로젝트가 업데이트될 플랫폼 및 플러그 인의 CLI 고정 버전을 나타내는 데 사용되는 문자열]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -893,6 +908,9 @@
       <Item ItemId=";CommandKitSelectKitPluginVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[[EDGE]5D;]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[[EDGE]5D;]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1008,7 +1026,7 @@
         <Str Cat="Text">
           <Val><![CDATA[List platforms which can be updated by 'taco platform update']]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA['taco platform update'로 업데이트할 수 있는 플랫폼을 나열합니다.]]></Val>
+            <Val><![CDATA[taco platform update'로 업데이트할 수 있는 플랫폼을 나열합니다.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1071,7 +1089,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Url to a git repository containing a platform]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[플랫폼이 포함된 Git 리포지토리의 URI]]></Val>
+            <Val><![CDATA[플랫폼이 포함된 Git 리포지토리의 URL]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1215,7 +1233,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Plugins javascript gets loaded at build time instead of runtime using browserify, Replace cordovajs file with one that included the JS of the installed plugins.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[플러그 인 JavaScript가 browserify를 사용하여 런타임 대신 빌드 시에 로드됩니다, cordovajs 파일을 설치된 플러그 인의 JS가 포함된 것으로 바꿉니다.]]></Val>
+            <Val><![CDATA[플러그 인 JavaScript가 browserify를 사용하여 런타임 대신 빌드 시에 로드됩니다. cordovajs 파일을 설치된 플러그 인의 JS가 포함된 것으로 바꿉니다.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1413,7 +1431,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Unable to remove platform '{0}': platform not added]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA['{0}' 플랫폼을 제거할 수 없습니다. 플랫폼이 추가되지 않았습니다.]]></Val>
+            <Val><![CDATA[{0}' 플랫폼을 제거할 수 없습니다. 플랫폼이 추가되지 않았습니다.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1521,7 +1539,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Unable to look up host '{0}'. Check that the name is correct.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA['{0}' 호스트를 조회할 수 없습니다. 이름이 올바른지 확인하세요.]]></Val>
+            <Val><![CDATA[{0}' 호스트를 조회할 수 없습니다. 이름이 올바른지 확인하세요.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1539,7 +1557,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Remote host name / IP address: ]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[원격 호스트 이름/IP 주소:]]></Val>
+            <Val><![CDATA[원격 호스트 이름/IP 주소: ]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1611,7 +1629,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Unable to contact '{0}:{1}', please check that the server is reachable.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA['{0}:{1}'에 연결할 수 없습니다. 서버에 연결할 수 있는지 확인하세요.]]></Val>
+            <Val><![CDATA[{0}:{1}'에 연결할 수 없습니다. 서버에 연결할 수 있는지 확인하세요.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1782,7 +1800,7 @@
         <Str Cat="Text">
           <Val><![CDATA['cordova {1}' failed with exit code {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA['cordova {1}'이(가) 실패했습니다. 종료 코드: {0}]]></Val>
+            <Val><![CDATA[cordova {1}'이(가) 실패했습니다. 종료 코드: {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1791,7 +1809,7 @@
         <Str Cat="Text">
           <Val><![CDATA['cordova {0}' failed.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA['cordova {0}'이(가) 실패했습니다.]]></Val>
+            <Val><![CDATA[cordova {0}'이(가) 실패했습니다.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1917,7 +1935,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: The specified path is invalid: {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[오류: 지정된 경로가 잘못되었습니다. {0}]]></Val>
+            <Val><![CDATA[오류: 지정된 경로 {0}(이)가 잘못되었습니다.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2088,7 +2106,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Install the build tools for each platform:  <bold>taco install-reqs <PLATFORM></bold>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[각 플랫폼의 빌드 도구 설치: <bold>taco install-reqs <PLATFORM></bold>]]></Val>
+            <Val><![CDATA[각 플랫폼의 빌드 도구 설치:  <bold>taco install-reqs <PLATFORM></bold>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2097,7 +2115,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Add a platform:  <bold>taco platform add <PLATFORM></bold>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[플랫폼 추가: <bold>taco platform add <PLATFORM></bold>]]></Val>
+            <Val><![CDATA[플랫폼 추가:  <bold>taco platform add <PLATFORM></bold>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2258,6 +2276,9 @@
       <Item ItemId=";PromptResponseYes[0]" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[y]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[y]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -2318,6 +2339,9 @@
       <Item ItemId=";RemoteBuildStatusPollFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[HTTP {0}: {1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[HTTP {0}: {1}]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -2369,6 +2393,9 @@
       <Item ItemId=";TacoDocumentationLink" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[http://go.microsoft.com/fwlink/?LinkId=619747]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[http://go.microsoft.com/fwlink/?LinkId=619747]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -2403,7 +2430,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error message printed when trying to 'taco remote add <platform>' and the platform is not supported. {0} is the platform]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA['taco remote add <platform>'을(를) 실행하려고 할 때 해당 플랫폼이 지원되지 않는 경우 인쇄되는 오류 메시지입니다. {0}(은)는 플랫폼입니다.]]></Val>
+            <Val><![CDATA[taco remote add <platform>'을(를) 실행하려고 할 때 해당 플랫폼이 지원되지 않는 경우 인쇄되는 오류 메시지입니다. {0}(은)는 플랫폼입니다.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

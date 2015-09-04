@@ -71,7 +71,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Build will be executed under: {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[빌드가 다음 위치에서 실행됩니다. {0}]]></Val>
+            <Val><![CDATA[빌드가 {0}에서 실행됩니다. ]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -107,7 +107,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Build request rejected. The build queue is full. Limit is {0} queued builds.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[빌드 요청이 거부되었습니다. 빌드 큐가 가득 찼습니다. 한도는 {0}개의 대기된 빌드입니다.]]></Val>
+            <Val><![CDATA[빌드 요청이 거부되었습니다. 빌드 큐가 가득 찼습니다. 최대 {0}개까지 빌드가 큐에 대기할 수 있습니다.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -170,7 +170,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Exceeded max # of pings: {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[ping의 최대 수 {0}을(를) 초과했습니다.]]></Val>
+            <Val><![CDATA[{0}번의 최대 ping 수를 초과했습니다.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -223,6 +223,9 @@
       <Item ItemId=";HomebrewInstallationQueryResponse" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[y]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[y]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -275,7 +278,7 @@
         <Str Cat="Text">
           <Val><![CDATA[A build is currently building. Queuing up {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[빌드가 현재 빌드되고 있습니다. {0}을(를) 큐에 대기시키고 있습니다.]]></Val>
+            <Val><![CDATA[현재 빌드가 진행되고 있습니다. {0} 빌드가 큐에 대기 중입니다.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -284,7 +287,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Taking {0} as current build]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[{0}을(를) 현재 빌드로 사용하고 있습니다.]]></Val>
+            <Val><![CDATA[{0} 빌드를 현재 빌드로 사용하고 있습니다.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -302,7 +305,7 @@
         <Str Cat="Text">
           <Val><![CDATA[No resources defined for language {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[언어 {0}에 대한 리소스가 정의되지 않았습니다.]]></Val>
+            <Val><![CDATA[{0} 언어에 대한 리소스가 정의되지 않았습니다.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

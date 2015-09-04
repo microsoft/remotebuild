@@ -116,6 +116,9 @@
       <Item ItemId=";tacokit@1.0.0" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[5.1.1 Cordova Kit]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[5.1.1 Cordova Kit]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -123,7 +126,7 @@
         <Str Cat="Text">
           <Val><![CDATA[A toolkit of plugins and platforms that works with Cordova CLI v5.1.1]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Cordova CLI v5.1.1과 작동하는 플러그 인 및 플랫폼의 도구 키트]]></Val>
+            <Val><![CDATA[Cordova CLI v5.1.1과 호환되는 플러그 인 및 플랫폼의 도구 키트]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
