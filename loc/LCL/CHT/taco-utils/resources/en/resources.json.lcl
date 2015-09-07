@@ -44,7 +44,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Build completed and downloaded by client.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[用戶端已完成並下載組建。]]></Val>
+            <Val><![CDATA[用戶端已完成組建並下載了該組建。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -62,7 +62,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Invalid request: build.js process already in use but was asked to build again. This is likely a programming error as a build.js process is meant to be used only once.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[無效的要求: build.js 處理序已在使用中，但要求再次建置。這可能是程式設計錯誤，因為 build.js 處理序只能使用一次。]]></Val>
+            <Val><![CDATA[要求無效: build.js 處理序已在使用中，但要求您再建置一次。有可能是程式設計錯誤，因為 build.js 處理序只能使用一次。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -80,7 +80,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Done with current build. Checking for next build in queue.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[已完成目前的組建。正在檢查佇列中的下一個組建。]]></Val>
+            <Val><![CDATA[已完成目前的組建。正在查看佇列中的下一個組建。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -107,7 +107,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Build request rejected. The build queue is full. Limit is {0} queued builds.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[已拒絕組建要求。組建佇列已滿。限制為 {0} 個已佇列的組建。]]></Val>
+            <Val><![CDATA[已拒絕組建要求。組建佇列已滿。限制為 {0} 個排入佇列的組建。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -116,7 +116,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Deleting build %d from %s]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[正在從 %s 刪除組建 %d]]></Val>
+            <Val><![CDATA[正在從 %s 刪除組建 %d ]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -125,7 +125,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Deleting eligible builds. Will delete %d builds.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[正在刪除合適的組建。將刪除 %d 個組建。]]></Val>
+            <Val><![CDATA[正在刪除適合的組建。將會刪除 %d 個組建。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -170,7 +170,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Exceeded max # of pings: {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[超過 ping 的最大數目: {0}]]></Val>
+            <Val><![CDATA[超過 Ping 的數目上限: {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -179,7 +179,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Unable to create extract directory {0}: {1}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[無法建立壓縮目錄 {0}: {1}]]></Val>
+            <Val><![CDATA[無法建立解壓縮目錄 {0}: {1}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -188,7 +188,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Configuring first-run dependencies.]A;To deploy to physical iOS devices, or to debug a device or simulator, we need some packages from Homebrew, a third party package manager.]A;Installing Homebrew may ask you for an admin password. Do you want to continue?]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[正在設定初次執行的相依性。]A;若要部署至實體 iOS 裝置，或者偵錯裝置或模擬器，需要來自協力廠商封裝管理程式 Homebrew 的一些套件。]A;安裝 Homebrew 時可能會請您輸入管理密碼。您要繼續嗎?]]></Val>
+            <Val><![CDATA[正在設定初次執行的相依性。]A;若要部署至實體 iOS 裝置，或是偵錯裝置或模擬器，需要來自協力廠商封裝管理員 Homebrew 的一些套件。]A;安裝 Homebrew 時可能會請您輸入管理密碼。要繼續嗎?]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -197,7 +197,7 @@
         <Str Cat="Text">
           <Val><![CDATA[If you want to enable deploying to devices or debugging apps on devices or the simulator, delete {0} to be asked again.]A;]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[如果您要允許部署至裝置，或者在裝置或模擬器上偵錯應用程式，請刪除 {0} 以重新要求。]A;]]></Val>
+            <Val><![CDATA[如果您允許部署至裝置，或者在裝置或模擬器上偵錯應用程式，請刪除 {0} 以重新要求。]A;]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -206,7 +206,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error installing homebrew packages:]A;{0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[安裝 Homebrew 套件時發生錯誤:]A;{0}]]></Val>
+            <Val><![CDATA[安裝 Homebrew 封裝時發生錯誤:]A;{0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -233,7 +233,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Successfully installed homebrew packages.]A;]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[已成功安裝 Homebrew 套件。]A;]]></Val>
+            <Val><![CDATA[已成功安裝 Homebrew 封裝。]A;]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -242,7 +242,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error verifying homebrew packages:]A;{0}]A;Consider "brew reinstall libimobiledevice ios-webkit-debug-proxy ideviceinstaller" and trying again.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[驗證 Homebrew 套件時發生錯誤:]A;{0}]A;請考慮使用 "brew reinstall libimobiledevice ios-webkit-debug-proxy ideviceinstaller"，然後再試一次。]]></Val>
+            <Val><![CDATA[驗證 Homebrew 封裝時發生錯誤:]A;{0}]A;請考慮使用 "brew reinstall libimobiledevice ios-webkit-debug-proxy ideviceinstaller"，然後再試一次。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -269,7 +269,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Unable to find appropriate package for specified build]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[找不到適合指定組建的套件]]></Val>
+            <Val><![CDATA[無法為指定的組建找到適合之封裝]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -278,7 +278,7 @@
         <Str Cat="Text">
           <Val><![CDATA[A build is currently building. Queuing up {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[組建目前正在建置中。最多可佇列 {0} 個]]></Val>
+            <Val><![CDATA[組建目前正在建置中。最多可將 {0} 個排入佇列]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -296,7 +296,7 @@
         <Str Cat="Text">
           <Val><![CDATA[New build request submitted:]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[已提交新的組建要求:]]></Val>
+            <Val><![CDATA[已送出新的組建要求:]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -305,7 +305,7 @@
         <Str Cat="Text">
           <Val><![CDATA[No resources defined for language {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[沒有為語言 {0} 定義任何資源]]></Val>
+            <Val><![CDATA[未對語言 {0} 定義任何資源]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -314,7 +314,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Build tgz file no longer exists on file system at {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[組建 tgz 檔案已經不在 {0} 的檔案系統上]]></Val>
+            <Val><![CDATA[組建 tgz 檔案已不存在於 {0} 的檔案系統上]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -323,7 +323,7 @@
         <Str Cat="Text">
           <Val><![CDATA[true if server should support running builds in iOS simulator, false if not (defaults to true if not specified)]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[如果伺服器應支援 iOS 模擬器中執行的組建，則為 true，否則為 false (如果未指定，則預設為 true)]]></Val>
+            <Val><![CDATA[如果伺服器應支援在 iOS 模擬器中執行組建，則為 true; 否則為 false (如果未指定，則預設為 true)]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -341,7 +341,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Maximum number of builds to allow in build queue. New builds over this limit are rejected (defaults to 10 if not specified)]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[在組建佇列中允許的組建數目上限。超過這個限制的新組建會被拒絕 (如果未指定，則預設為 10)]]></Val>
+            <Val><![CDATA[組建佇列中允許的組建數目上限。超過這個限制的新組建會被拒絕 (如果未指定，則預設為 10)]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -404,7 +404,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Use following config file to configure remotebuild port, web debug proxy port, no builds retention and build cleanup on shutdown]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[請使用下列組態檔設定 remotebuild 連接埠、Web 偵錯 Proxy 連接埠、不保留組建，以及關閉時清除組建]]></Val>
+            <Val><![CDATA[請使用下列組態檔設定 remotebuild 連接埠、Web 偵錯 Proxy 連接埠、不保留組建，同時在關閉時清除組建]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -413,7 +413,7 @@
         <Str Cat="Text">
           <Val><![CDATA[More documentation for configuring taco remote build can be found at <link>http://go.microsoft.com/fwlink/?LinkId=618174</link>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[如需 taco 遠端組建的更多文件，請參閱 <link>http://go.microsoft.com/fwlink/?LinkId=618174</link>]]></Val>
+            <Val><![CDATA[如需更多設定 taco 遠端組建的文件，請參閱 <link>http://go.microsoft.com/fwlink/?LinkId=618174</link>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

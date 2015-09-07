@@ -32,6 +32,9 @@
       <Item ItemId=";CertExpirationInvalid" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[certExpirationDays {0} would result in expired certs. Default cert expiration {1} days will be used instead.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Podanie dla parametru certExpirationDays wartości {0} spowodowałoby wygaśnięcie certyfikatów. Zostanie użyty domyślny okres ważności certyfikatów — {1} dni.]]></Val>
+          </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[certExpirationdays {0} would result in expired certs. Default cert expiration {1} days will be used instead.]]></Val>
           </Prev>
@@ -50,6 +53,9 @@
       <Item ItemId=";CheckSettingsForInfo" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Please view/edit server configuration at {0}. You many need to run 'remotebuild saveconfig' to generate it. You will have to restart the server if you update the server configurations.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Przejrzyj/zmodyfikuj konfigurację serwera w ścieżce {0}. Do jej wygenerowania może być konieczne użycie polecenia „remotebuild saveconfig”. Musisz uruchomić ponownie serwer, jeśli zaktualizujesz konfiguracje serwera.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -65,60 +71,90 @@
       <Item ItemId=";CommandCertificatesDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Updates client/server SSL certificates for a secure connection]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Aktualizuje certyfikaty SSL klienta/serwera na potrzeby bezpiecznego połączenia]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";CommandGenerateDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Generates a new client SSL certificate for configuring a new secure connection]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Generuje nowy certyfikat SSL klienta na potrzeby konfigurowania nowego bezpiecznego połączenia]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";CommandHelpDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Gets help for a command or a module]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Wyświetla pomoc dla polecenia lub modułu]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";CommandResetDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Resets server SSL certificates]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Resetuje certyfikaty SSL serwera]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";CommandSaveConfigDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Saves the specified configuration to a file.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Zapisuje określoną konfigurację do pliku.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";CommandStartDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Starts the server]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Uruchamia serwer]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";CommandTestDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Run tests against another instance of remotebuild]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Uruchamia testy dla innego wystąpienia polecenia remotebuild]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";CommandTestDevice" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Test that the machine is configured for device builds]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Testuje, czy maszyna jest skonfigurowana pod kątem kompilacji urządzenia]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";CommandVersionDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Displays the current remotebuild version]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Wyświetla wersję bieżącego polecenia remotebuild]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";GenerateClientCertExample1" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Generate a new certificate for use in the client that will expire in 1 year]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Generuje nowy certyfikat do użycia przez klienta z okresem ważności 1 roku]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -152,6 +188,9 @@
       <Item ItemId=";InvalidPortSpecified" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Invalid port '{0}' specified. Port must be an integer between 0 and 65536]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Określono nieprawidłowy port „{0}”. Port musi być liczbą całkowitą z zakresu od 0 do 65536.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -248,6 +287,9 @@
       <Item ItemId=";OSXCertSetupInformation[8]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Alternately to use the taco-cli run 'taco remote add <platform>' to configure the taco CLI to use this build server for the chosen platform, specifying]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Jeśli nie chcesz używać programu taco-cli, możesz uruchomić polecenie „taco remote add <platforma>”, aby skonfigurować interfejs wiersza polecenia programu taco pod kątem użycia tego serwera kompilacji dla wybranej platformy, określając]]></Val>
+          </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Alternately, use 'taco setup remote <platform>' to configure the taco CLI to use this build server for the chosen platform, specifying]]></Val>
           </Prev>
@@ -356,12 +398,18 @@
       <Item ItemId=";RemoteBuildConfConfigFile" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Path to config file which specifies default values for remotebuild]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Ścieżka do pliku konfiguracji, który określa domyślne wartości dla polecenia remotebuild]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";RemoteBuildConfHostname" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Hostname for which to generate SSL certificates when in secure mode (defaults to os.hostname())]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Nazwa hosta, dla którego mają zostać wygenerowane certyfikaty SSL w trybie bezpiecznym (domyślną nazwę określa funkcja os.hostname())]]></Val>
+          </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Hostname to generate certificates for in secure mode (defaults to os.hostname())]]></Val>
           </Prev>
@@ -371,6 +419,9 @@
       <Item ItemId=";RemoteBuildConfLang" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Language to use for console output (defaults to the language given by $LANG if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Język do użycia dla danych wyjściowych konsoli (jeśli nie jest określony, domyślnie jest używany język określony przez zmienną środowiskową $LANG)]]></Val>
+          </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Language to use for console output (deafults to the language given by $LANG if not specified)]]></Val>
           </Prev>
@@ -380,6 +431,9 @@
       <Item ItemId=";RemoteBuildConfPinTimeout" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Time in minutes for which client SSL certs can be acquired (defaults to 10 minutes)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Czas w minutach, przez który można uzyskać certyfikaty SSL klienta (domyślnie 10 minut)]]></Val>
+          </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Number of minutes for which client SSL certs can be acquired (defaults to 10 minutes)]]></Val>
           </Prev>
@@ -416,24 +470,36 @@
       <Item ItemId=";RemoteBuildModuleHelpText" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Other options are described in the individual modules. Try asking for help about the following modules: {0}.<br/>For example, 'remotebuild help taco-remote']]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Inne opcje są opisane w poszczególnych modułach. Spróbuj skorzystać z pomocy następujących modułów: {0}.<br/>Na przykład „remotebuild help taco-remote”.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";RemoteBuildNotes1" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Options (All options other than --config can be specified via a configuration file)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Opcje (Wszystkie opcje inne niż --config można określić za pomocą pliku konfiguracji)]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";RemoteBuildNotes2" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Command line options override configuration file values]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Opcje wiersza polecenia przesłaniają wartości w pliku konfiguracji]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";RemoteBuildStartExample1" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Start the server with all defaults (secure server with serverDir $TACO_HOME/remote-builds, port 3000)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Uruchamia serwer przy użyciu wszystkich wartości domyślnych (bezpieczny serwer z parametrem serverDir o wartości $TACO_HOME/remote-builds, port 3000)]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -449,12 +515,18 @@
       <Item ItemId=";RemoteBuildTestExample1" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Run tests against a server started using all defaults]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Uruchom testy dla serwera uruchomionego za pomocą wszystkich wartości domyślnych]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";RemoteBuildTestExample2" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Run device tests against a server started with 'remotebuild --config config.json']]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Uruchom testy urządzenia dla serwera uruchomionego za pomocą polecenia „remotebuild --config config.json”]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -479,6 +551,9 @@
       <Item ItemId=";SavedConfig" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Configuration saved successfully to {0}.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Konfiguracja została zapisana pomyślnie w {0}.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>

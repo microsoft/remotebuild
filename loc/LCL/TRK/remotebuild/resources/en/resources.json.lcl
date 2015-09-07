@@ -26,7 +26,7 @@
         <Str Cat="Text">
           <Val><![CDATA[certExpirationDays {0} would result in expired certs. Default cert expiration {1} days will be used instead.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[certExpirationDays {0} sonucunda süresi dolan sertifikalar oluşur. Bunun yerine varsayılan sertifika süre sonu {1} gün kullanılacak.]]></Val>
+            <Val><![CDATA[certExpirationDays için {0} değerinin kullanılması süresi dolmuş sertifikaların oluşturulmasına neden olur. Bunun yerine varsayılan sertifika süre sonu değeri olan {1} gün kullanılacak.]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[certExpirationdays {0} would result in expired certs. Default cert expiration {1} days will be used instead.]]></Val>
@@ -119,7 +119,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Run tests against another instance of remotebuild]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Başka bir remotebuild örneği için testler çalıştır]]></Val>
+            <Val><![CDATA[Başka bir remotebuild örneği için testler çalıştırır]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -128,7 +128,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Test that the machine is configured for device builds]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Makinenin cihaz derlemeleri için yapılandırıldığını test et]]></Val>
+            <Val><![CDATA[Makinenin cihaz derlemeleri için yapılandırıldığını test eder]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -146,7 +146,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Generate a new certificate for use in the client that will expire in 1 year]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[1 yıl içinde süresi dolacak olan istemcide kullanılması için yeni bir sertifika oluştur]]></Val>
+            <Val><![CDATA[İstemcide kullanılmak üzere, süresi 1 yıl içinde dolacak olan yeni bir sertifika oluştur]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -182,7 +182,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Invalid port '{0}' specified. Port must be an integer between 0 and 65536]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Geçersiz bağlantı noktası '{0}' belirtildi. Bağlantı noktası 0 ve 65536 arasında bir tamsayı olmalıdır]]></Val>
+            <Val><![CDATA[Geçersiz bağlantı noktası ('{0}') belirtildi. Bağlantı noktası 0 ve 65536 arasında bir tamsayı olmalıdır]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -281,7 +281,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Alternately to use the taco-cli run 'taco remote add <platform>' to configure the taco CLI to use this build server for the chosen platform, specifying]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Alternatif olarak seçilen platform için bu yapı sunucusunu kullanmak üzere taco CLI'yi yapılandırmak amacıyla taco-cli komutunu kullanmak için  'taco remote add <platform>' komutunu çalıştırın ve şunu belirtin:]]></Val>
+            <Val><![CDATA[Alternatif olarak, taco-cli kullanarak, seçilen platform için bu derleme sunucusunu kullanmak üzere taco CLI'yı yapılandırmak amacıyla 'taco remote add <platform>' komutunu çalıştırın ve şunu belirtin:]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Alternately, use 'taco setup remote <platform>' to configure the taco CLI to use this build server for the chosen platform, specifying]]></Val>
@@ -392,7 +392,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Path to config file which specifies default values for remotebuild]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[remotebuild için varsayılan değerleri belirten yapılandırma dosyasının yolu]]></Val>
+            <Val><![CDATA[Remotebuild için varsayılan değerleri belirten yapılandırma dosyasının yolu]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -401,7 +401,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Hostname for which to generate SSL certificates when in secure mode (defaults to os.hostname())]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Güvenli moddayken SSL sertifikaları oluşturulacak ana bilgisayar adı (varsayılan olarak os.hostname())]]></Val>
+            <Val><![CDATA[Güvenli moddayken SSL sertifikaları oluşturulacak konak adı (varsayılan olarak os.hostname())]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Hostname to generate certificates for in secure mode (defaults to os.hostname())]]></Val>
@@ -509,7 +509,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Run tests against a server started using all defaults]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Tüm varsayılanlar kullanılarak başlatılan bir sunucu için testler çalıştır]]></Val>
+            <Val><![CDATA[Tüm varsayılanları kullanarak başlatılan bir sunucu için testler çalıştır]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

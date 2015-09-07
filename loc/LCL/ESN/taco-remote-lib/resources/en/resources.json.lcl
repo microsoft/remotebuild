@@ -43,7 +43,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Warning: Kit {0} has been deprecated]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Advertencia: el kit {0} está desusado.]]></Val>
+            <Val><![CDATA[Advertencia: El kit {0} está desusado]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -52,7 +52,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: {0} is not a known Kit. Please run 'taco kit list' for the list of known kits.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: {0} no es un kit conocido. Ejecute el comando 'taco kit list' de la lista de kits conocidos.]]></Val>
+            <Val><![CDATA[Error: {0} no es un kit conocido. Ejecute el comando "taco kit list" de la lista de kits conocidos.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -61,7 +61,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: No template matching [--template {0}]5D; found]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: no se encontraron coincidencias de plantillas [--template {0}]5D;.]]></Val>
+            <Val><![CDATA[Error: no se encontraron plantillas que coincidan con [--template {0}]5D;]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -88,7 +88,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: No Cordova CLI specification is found for kit {0}. The kit metadata file appears to be corrupt. Please fix this by re-installing taco-kits from npm or run "taco kit list" to see the list of available kits]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: no se encuentra ninguna especificación de CLI de Cordova para el kit {0}. El archivo de metadatos del kit parece estar dañado. Para solucionar esto, vuelva a instalar los taco-kits de npm o ejecute el comando "taco kit list" para ver la lista de kits disponibles.]]></Val>
+            <Val><![CDATA[Error: no se encuentra ninguna especificación de CLI de Cordova para el kit {0}. El archivo de metadatos del kit parece estar dañado. Para solucionar esto, vuelva a instalar los taco-kits de npm o ejecute el comando "taco kit list" para ver la lista de kits disponibles]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -97,7 +97,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: No default kit found. Please fix this by re-installing taco-kits from npm or run "taco kit list" to see the list of available kits]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: no se encontró ningún kit predeterminado. Para solucionar esto, vuelva a instalar los taco-kits de npm o ejecute el comando "taco kit list" para ver la lista de kits disponibles.]]></Val>
+            <Val><![CDATA[Error: no se encontró ningún kit predeterminado. Para solucionar esto, vuelva a instalar los taco-kits de npm o ejecute el comando "taco kit list" para ver la lista de kits disponibles]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -106,7 +106,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: This version of Cordova does not contain a TypeScript template]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: esta versión de Cordova no contiene una plantilla TypeScript.]]></Val>
+            <Val><![CDATA[Error: esta versión de Cordova no contiene una plantilla TypeScript]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

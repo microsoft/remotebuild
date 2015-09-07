@@ -27,7 +27,7 @@
         <Str Cat="Text">
           <Val><![CDATA[------ {0} Checking on build status from {1} [Attempt {2}]5D;]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[------ {0} {1} kaynağından derleme durumu denetleniyor [Girişim {2}]5D;]]></Val>
+            <Val><![CDATA[------ {0} {1} adresinden derleme durumu denetleniyor [Deneme {2}]5D;]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -99,7 +99,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Force a local build]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Yerel bir derlemeyi zorla]]></Val>
+            <Val><![CDATA[Yerel derlemeyi zorunlu kıl]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -153,7 +153,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Create a release build]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Bir sürüm derlemesi oluştur]]></Val>
+            <Val><![CDATA[Sürüm derlemesi oluştur]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -162,7 +162,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Force a remote build]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Bir sürüm derlemesini zorla]]></Val>
+            <Val><![CDATA[Uzak derlemeyi zorunlu kıl]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -189,7 +189,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Unable to load settings. Please run 'taco remote add' before building remotely]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Hata: Ayarlar yüklenemedi. Lütfen uzak olarak derlemeden önce 'taco remote add' komutunu çalıştırın]]></Val>
+            <Val><![CDATA[Hata: Ayarlar yüklenemedi. Lütfen uzaktan derlemeden önce 'taco remote add' komutunu çalıştırın]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -252,7 +252,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: unable to perform 'git clone' for the specified template. Please see the output from git for more details.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Hata: Belirtilen şablon için 'git clone' gerçekleştirilemedi. Daha fazla bilgi için lütfen git çıktısına bakın.]]></Val>
+            <Val><![CDATA[Hata: Belirtilen şablon için 'git clone' işlemi gerçekleştirilemedi. Daha fazla bilgi için lütfen git çıktısına bakın.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -324,7 +324,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: The --template option is not supported with the --cli option; use --kit for templates]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Hata: --template seçeneği --cli seçeneği ile desteklenmiyor; şablonlar için --kit parametresini kullanın]]></Val>
+            <Val><![CDATA[Hata: --template seçeneğinin --cli seçeneği ile birlikte kullanılması desteklenmiyor; şablonlar için --kit parametresini kullanın]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -378,7 +378,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Symlink to custom www assets without creating a copy.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Bir kopya oluşturmaksızın özel www assets varlıklarına ait simgesel bağlantı sağlayın.]]></Val>
+            <Val><![CDATA[Bir kopya oluşturmaksızın özel www varlıklarına ait sembolik bağlantı sağlayın.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -396,7 +396,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Could not create the project because the specified path already exists and is not empty: {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Hata: Belirtilen yol zaten var olduğundan ve boş olmadığından proje oluşturulamadı: {0}]]></Val>
+            <Val><![CDATA[Hata: Belirtilen yol zaten mevcut olduğundan ve boş olmadığından proje oluşturulamadı: {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -495,7 +495,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<br/><success>Success!</success> Your project using the {0} is ready for use at <highlight>{1}</highlight>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<br/><success>Başarılı!</success> {0} adlı projeniz <highlight>{1}</highlight> konumunda kullanıma hazır]]></Val>
+            <Val><![CDATA[<br/><success>Başarılı!</success> {0} şablonunu kullanan projeniz <highlight>{1}</highlight> konumunda kullanıma hazır]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -504,7 +504,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Creation of taco.json file failed]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Hata: taco.json dosyası oluşturulamadı]]></Val>
+            <Val><![CDATA[Hata: Taco.json dosyası oluşturulamadı]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -531,7 +531,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<br/><warn>Warning: Kit {0} has been deprecated.</warn><br/>Consider changing your project to use a more recent Kit. For deprecation information, see <link>http://go.microsoft.com/fwlink/?LinkId=618170</link>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<br/><warn>Uyarı: {0} Seti kullanımdan kaldırılmış.</warn><br/>Projenizi daha güncel bir Set kullanmak üzere değiştirmeyi göz önünde bulundurun. Kullanımdan kaldırma bilgileri için bkz. <link>http://go.microsoft.com/fwlink/?LinkId=618170</link>]]></Val>
+            <Val><![CDATA[<br/><warn>Uyarı: {0} Seti kullanım dışı bırakılmış.</warn><br/>Projenizi daha güncel bir Set kullanmak üzere değiştirmeyi deneyin. Kullanım dışı bırakma bilgileri için bkz. <link>http://go.microsoft.com/fwlink/?LinkId=618170</link>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -540,7 +540,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Open up the documentation page in your default browser]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Belgeler sayfasını varsayılan tarayıcıda aç]]></Val>
+            <Val><![CDATA[Belge sayfasını varsayılan tarayıcınızda açın]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -576,7 +576,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Get help for a TACO command]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Bir TACO komutu için yardım al]]></Val>
+            <Val><![CDATA[Bir TACO komutu için yardım alın]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -585,7 +585,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: The current project uses Cordova version {0}. 'taco install-reqs' supports projects using Cordova version {1} or higher.<br/><br/>If your project was created using a TACO kit, consider moving to a kit that has a more recent version of Cordova. If your project was created using Cordova directly, consider updating the installation of Cordova. For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Hata: Geçerli proje, {0} Cordova sürümünü kullanıyor. 'taco install-reqs' komutu, {1} veya daha sonraki Cordova sürümlerini kullanan projeleri destekler.<br/><br/>Projeniz bir TACO seti kullanılarak oluşturulduysa, projeyi daha güncel bir Cordova sürümüne sahip bir kite taşımayı göz önünde bulundurun. Projeniz doğrudan Cordova kullanılarak oluşturulduysa, Cordova yüklemesini güncelleştirmeyi göz önünde bulundurun. Daha fazla bilgi edinmek için lütfen bkz. http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
+            <Val><![CDATA[Hata: Geçerli proje, Cordova sürüm {0} kullanıyor. 'Taco install-reqs' komutu, {1} veya daha sonraki Cordova sürümlerini kullanan projeleri destekler.<br/><br/>Projeniz bir TACO seti kullanılarak oluşturulduysa, projeyi daha güncel bir Cordova sürümüne sahip bir sete taşımayı düşünün. Projeniz doğrudan Cordova kullanılarak oluşturulduysa, Cordova yüklemesini güncelleştirmeyi düşünün. Daha fazla bilgi edinmek için bkz. http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -612,7 +612,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: No 'platforms' folder found. Please make sure the current directory is the root of a Cordova project, and at least one platform has been added.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Hata: 'platforms' klasörü bulunamadı. Lütfen geçerli dizinin bir Cordova projesine ait kök dizin olduğundan ve en az bir platform eklendiğinden emin olun.]]></Val>
+            <Val><![CDATA[Hata: 'Platforms' klasörü bulunamadı. Lütfen geçerli dizinin bir Cordova projesine ait kök dizin olduğundan ve en az bir platform eklendiğinden emin olun.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -621,7 +621,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<highlight>Note:</highlight> To manually update a single platform, remove the platform from your project and then run:<br/><br/>    <highlight>taco platform add </highlight>[platform]5D;<highlight>@</highlight>[version]5D;]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<highlight>Not:</highlight> Tek bir platformu el ile güncelleştirmek için platformu projenizden kaldırın ve ardından şu komutu çalıştırın:<br/><br/>    <highlight>taco platform add </highlight>[platform]5D;<highlight>@</highlight>[version]5D;]]></Val>
+            <Val><![CDATA[<highlight>Not:</highlight> Tek bir platformu kendiniz güncelleştirmek için platformu projenizden kaldırın ve ardından şu komutu çalıştırın:<br/><br/>    <highlight>taco platform add </highlight>[platform]5D;<highlight>@</highlight>[version]5D;]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -648,7 +648,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Minimum version required: {0}@<highlight>{1}</highlight>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Desteklenen en düşük sürüm: {0}@<highlight>{1}</highlight>]]></Val>
+            <Val><![CDATA[Gereken en düşük sürüm: {0}@<highlight>{1}</highlight>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -693,7 +693,7 @@
         <Str Cat="Text">
           <Val><![CDATA[The following platforms will be skipped because they aren't supported for your current operating system:<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Geçerli işletim sisteminiz için desteklenmediklerinden şu platformlar atlanacak:<br/>]]></Val>
+            <Val><![CDATA[Geçerli işletim sisteminizde desteklenmediklerinden şu platformlar atlanacak:<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -702,7 +702,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Kit or CLI needs to be specified. Please run 'taco help kit' for more details.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Hata: Set veya CLI belirtilmesi gerekiyor. Lütfen ayrıntılar için 'taco help kit' komutunu çalıştırın.]]></Val>
+            <Val><![CDATA[Hata: Setin veya CLI'nın belirtilmesi gerekiyor. Lütfen ayrıntılar için 'taco help kit' komutunu çalıştırın.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -711,7 +711,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error thrown when no Kit or CLI is specified for the 'taco kit select' command]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA['taco kit select' komutu için Set veya CLI belirtilmediğinde görüntülenen hata]]></Val>
+            <Val><![CDATA['Taco kit select' komutu için Set veya CLI belirtilmediğinde görüntülenen hata]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -774,7 +774,7 @@
         <Str Cat="Text">
           <Val><![CDATA[A toolkit of plugins and platforms that works with Cordova CLI v{0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Cordova CLI v{0} ile birlikte çalışan eklentilere ve platformlara ait bir araç seti]]></Val>
+            <Val><![CDATA[Cordova CLI v{0} ile birlikte çalışan eklentilerden ve platformlardan oluşan ait bir araç seti]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -792,7 +792,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Deprecated]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Kullanımdan Kaldırılmış]]></Val>
+            <Val><![CDATA[Kullanım Dışı]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -801,7 +801,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Kit metadata file is saved at <highlight>{0}</highlight>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>Başarılı!</success> Set metaverileri <highlight>{0}</highlight> konumuna kaydedildi]]></Val>
+            <Val><![CDATA[<success>Başarılı!</success> Set meta verileri <highlight>{0}</highlight> konumuna kaydedildi]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -864,7 +864,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: TACO project already uses the Cordova CLI {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Hata: TACO projesi zaten Cordova CLI {0} sürümünü kullanıyor]]></Val>
+            <Val><![CDATA[Hata: TACO projesi zaten Cordova CLI {0} kullanıyor]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -882,7 +882,7 @@
         <Str Cat="Text">
           <Val><![CDATA[You have opted not to use a Kit. Cordova CLI {0} may pin platform and plugin versions that are different from what are currently added to your project and may not have been verified to work with TACO. Here is an overview of what this update will change:]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Bir Set kullanmamayı seçtiniz. Cordova CLI {0}, şu anda projenizde ekli sürümden farklı olan ve TACO ile çalıştığı doğrulanmamış olabilen platform ve eklenti sürümlerini sabitleyebilir. Aşağıda, bu güncelleştirme sonucunda oluşacak değişiklikler için bir genel bakış sağlanmıştır:]]></Val>
+            <Val><![CDATA[Bir Set kullanmamayı seçtiniz. Cordova CLI {0}, şu anda projenizde ekli sürümden farklı olan ve TACO ile çalışmak üzere doğrulanmamış olabilecek platform ve eklenti sürümlerini sabitleyebilir. Aşağıda, bu güncelleştirme sonucunda oluşacak değişiklikler için bir genel bakış sağlanmıştır:]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1026,7 +1026,7 @@
         <Str Cat="Text">
           <Val><![CDATA[List platforms which can be updated by 'taco platform update']]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA['taco platform update' komutu tarafından güncelleştirilebilen platformları listele]]></Val>
+            <Val><![CDATA['Taco platform update' komutu tarafından güncelleştirilebilen platformları listele]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1044,7 +1044,7 @@
         <Str Cat="Text">
           <Val><![CDATA[When <plat-spec> is a local path, links the platform library directly instead of making a copy of it (support varies by platform; useful for platform development)]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<plat-spec> yerel bir yol olduğunda, platformun bir kopyasını oluşturmak yerine platformu doğrudan bağlar (destek platforma göre değişir; platform geliştirme için kullanışlıdır)]]></Val>
+            <Val><![CDATA[<plat-spec> yerel bir yol olduğunda, platform kitaplığının bir kopyasını oluşturmak yerine platform kitaplığını doğrudan bağlar (destek platforma göre değişir; platform geliştirme için kullanışlıdır)]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1062,7 +1062,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Name of the branch to checkout after cloning the git repo; If none is specified, the 'master' branch will be checked out]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Git deposu kopyalandıktan sonra sonuçlandırılacak dalın adı; Bir ad belirtilmezse, 'master' dalı sonuçlandırılır]]></Val>
+            <Val><![CDATA[Git deposu kopyalandıktan sonra sonuçlandırılacak dalın adı; bir ad belirtilmezse, 'master' dalı sonuçlandırılır]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1071,7 +1071,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Path to a directory containing a platform name of platform to be retrieved from npm registry]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[npm kayıt defterinden alınacak bir platformun adını içeren dizine ait yol]]></Val>
+            <Val><![CDATA[Npm kayıt defterinden alınacak platformun adını içeren dizine ait yol]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1098,7 +1098,7 @@
         <Str Cat="Text">
           <Val><![CDATA[The major.minor.patch version specifier]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[major.minor.patch sürüm belirticisi]]></Val>
+            <Val><![CDATA[major.minor.patch sürüm tanımlayıcısı]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1134,7 +1134,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Save the latest versions of the specified platforms into config.xml]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Belirtilen platformlara ait en güncel sürümleri config.xml dosyasına kaydet]]></Val>
+            <Val><![CDATA[Belirtilen platformların en güncel sürümlerini config.xml dosyasına kaydet]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1143,7 +1143,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Platform(s) <highlight>{0}</highlight> added to the project.<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>Başarılı!</success> <highlight>{0}</highlight> platformu/platformları projeye eklendi.<br/>]]></Val>
+            <Val><![CDATA[<success>Başarılı!</success> <highlight>{0}</highlight> platformları projeye eklendi.<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1161,7 +1161,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Platform(s) <highlight>{0}</highlight> removed from the project.<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>Başarılı!</success> <highlight>{0}</highlight> platformu/platformları projeden kaldırıldı.<br/>]]></Val>
+            <Val><![CDATA[<success>Başarılı!</success> <highlight>{0}</highlight> platformları projeden kaldırıldı.<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1179,7 +1179,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Platform(s) <highlight>{0}</highlight> updated.<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>Başarılı!</success> <highlight>{0}</highlight> platformu/platformları güncelleştirildi.<br/>]]></Val>
+            <Val><![CDATA[<success>Başarılı!</success> <highlight>{0}</highlight> platformları güncelleştirildi.<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1206,7 +1206,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Update the version of cordova used for a specific platform; Update to the latest <VERSION>, if no <VERSION>, path or <URL> is specified.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Belirli bir platform için kullanılan Cordova sürümünü güncelleştir; <VERSION>, yol veya <URL> belirtilmediyse en güncel <VERSION> sürümüne güncelleştir]]></Val>
+            <Val><![CDATA[Belirli bir platform için kullanılan Cordova sürümünü güncelleştir; <VERSION>, yol veya <URL> belirtilmediyse en güncel <VERSION> sürümüne güncelleştir.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1215,7 +1215,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Retrieve from git instead of npm registry]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[npm kayıt defteri yerine git'ten al]]></Val>
+            <Val><![CDATA[Npm kayıt defteri yerine git'ten al]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1224,7 +1224,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Add specified Plugins; pluginid will be matched in --searchpath / registry; directory is a directory containing a plugin; giturl is a git repo containing a plugin]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Belirtilen Eklentileri ekle; pluginid, --searchpath / registry içerisinde eşlenir; dizin, eklenti içeren bir dizindir; giturl, eklenti içeren bir git deposudur]]></Val>
+            <Val><![CDATA[Belirtilen Eklentileri ekle; pluginid, --searchpath / registry içinde eşlenir; dizin, eklenti içeren bir dizindir; giturl, eklenti içeren bir git deposudur]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1233,7 +1233,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Plugins javascript gets loaded at build time instead of runtime using browserify, Replace cordovajs file with one that included the JS of the installed plugins.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Eklentilerin javascript'i browserify kullanılarak çalışma zamanı yerine derleme sırasında yüklenir; cordovajs dosyasını, yüklü eklentilere ait JS'yi içeren bir dosya ile değiştir.]]></Val>
+            <Val><![CDATA[Eklentilerin javascript'i browserify kullanılarak çalışma zamanı yerine derleme sırasında yüklenir; cordovajs dosyasını, yüklü eklentilere ait JS'yi içeren bir dosya ile değiştirin.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1251,7 +1251,7 @@
         <Str Cat="Text">
           <Val><![CDATA[When installing from a local path, creates a symbolic link to the plugin instead of copying files. The extent to which files are linked vs copied varies by platform. Useful for plugin development.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Bir yerel yoldan yüklerken, dosyaları kopyalamak yerine eklentiye ait sembolik bir bağlantı oluşturur. Dosyaların bağlanması ve kopyalanmasına yönelik kapsam platforma göre değişiklik gösterir. Eklenti geliştirme için kullanışlıdır.]]></Val>
+            <Val><![CDATA[Bir yerel yoldan yüklerken, dosyaları kopyalamak yerine eklentiye ait sembolik bir bağlantı oluşturur. Dosyaların bağlanmasına ve kopyalanmasına yönelik kapsam platforma göre değişiklik gösterir. Eklenti geliştirme için kullanışlıdır.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1260,7 +1260,7 @@
         <Str Cat="Text">
           <Val><![CDATA[List currently installed plugins]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Şu an yüklü olan eklentileri listele]]></Val>
+            <Val><![CDATA[Şu anda yüklü olan eklentileri listele]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1359,7 +1359,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Removing plugin <highlight>{0}</highlight> from Cordova project...<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<highlight>{0}</highlight> eklentisi Cordova projesinden kaldırıldı...<br/>]]></Val>
+            <Val><![CDATA[<highlight>{0}</highlight> eklentisi Cordova projesinden kaldırılıyor...<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1377,7 +1377,7 @@
         <Str Cat="Text">
           <Val><![CDATA[The plugin <highlight>{0}</highlight> has been validated on platform(s) - {1}.<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<highlight>{0}</highlight> eklentisi {1} platformunda/platformlarında doğrulandı.<br/>]]></Val>
+            <Val><![CDATA[<highlight>{0}</highlight> eklentisi {1} platformlarında doğrulandı.<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1404,7 +1404,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Unable to contact {0} to find where the remote build server services Cordova builds. Is the server running remotebuild with taco-remote configured?]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Uzak derleme sunucusunun Cordova derlemeleri için nerede hizmet verdiğini bulmak üzere {0} adresi ile iletişim kurulamadı. Sunucu taco-remote yapılandırması içeren remotebuild mi çalıştırıyor?]]></Val>
+            <Val><![CDATA[Uzak derleme sunucusunun Cordova derlemeleri için nerede hizmet verdiğini bulmak üzere {0} adresi ile iletişim kurulamadı. Sunucu taco-remote yapılandırılmış halde remotebuild mi çalıştırıyor?]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1413,7 +1413,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Unable to connect to remote server. Make sure that the remotebuild server is running at {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Uzak sunucu ile bağlantı kurulamadı. remotebuild sunucusunun {0} adresinde çalıştığından emin olun]]></Val>
+            <Val><![CDATA[Uzak sunucu ile bağlantı kurulamadı. Remotebuild sunucusunun {0} adresinde çalıştığından emin olun]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1611,7 +1611,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Settings stored in {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>Başarılı!</success> Ayarlar konumunda {0} depolandı]]></Val>
+            <Val><![CDATA[<success>Başarılı!</success> Ayarlar {0} konumunda depolandı]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1656,7 +1656,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Run the project for a given platform on the selected device/emulator target]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Belirli bir platforma ait projeyi seçilen cihazda/öykünücü hedefinde çalıştır]]></Val>
+            <Val><![CDATA[Belirli bir platforma ait projeyi seçilen cihaz/öykünücü hedefinde çalıştır]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1683,7 +1683,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Force a local build]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Yerel derlemeyi zorla]]></Val>
+            <Val><![CDATA[Yerel derlemeyi uygula]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1773,7 +1773,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Warning: Platform '{0}' is not supported and will be ignored.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Uyarı: '{0}' platformu desteklenmediği için yoksayılacak.]]></Val>
+            <Val><![CDATA[Uyarı: '{0}' platformu desteklenmediğinden yoksayılacak.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1998,7 +1998,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: taco.json is missing or malformed.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Hata: taco.json eksik veya yanlış biçimlendirilmiş.]]></Val>
+            <Val><![CDATA[Hata: Taco.json eksik veya yanlış biçimlendirilmiş.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2025,7 +2025,7 @@
         <Str Cat="Text">
           <Val><![CDATA[------ Failed to delete downloaded zip file {0}. This did not prevent a successful build.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[------ İndirilen zip dosyası {0} silinemedi. Bu, derlemenin başarılı olmasını engellemedi.]]></Val>
+            <Val><![CDATA[------ İndirilen zip dosyası ({0}) silinemedi. Bu, derlemenin başarılı olmasını engellemedi.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2052,7 +2052,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Change the directory to your project: <bold>cd {0}</bold>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Projenize ait dizini değiştirin: <bold>cd {0}</bold>]]></Val>
+            <Val><![CDATA[Projenizin dizinini değiştirin: <bold>cd {0}</bold>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2106,7 +2106,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Install the build tools for each platform:  <bold>taco install-reqs <PLATFORM></bold>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Her bir platform için derleme araçlarını yükleyin: <bold>taco install-reqs <PLATFORM></bold>]]></Val>
+            <Val><![CDATA[Her platform için derleme araçlarını yükleyin: <bold>taco install-reqs <PLATFORM></bold>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2214,7 +2214,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<br/>------------------------------------]A;<warn>A newer version is available for taco-cli:</warn>]A; * Locally installed version: {0}]A; * Latest version: {1}]A; * <link>http://go.microsoft.com/fwlink/?LinkId=619747</link>]A; * Run <command>npm install -g taco-cli</command> to update]A;------------------------------------]A;]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<br/>------------------------------------]A;<warn>taco-cli için yeni bir sürüm mevcut:</warn>]A; * Yerel olarak yüklenen sürüm: {0}]A; * En güncel sürüm: {1}]A; * <link>http://go.microsoft.com/fwlink/?LinkId=619747</link>]A; * Güncelleştirmek için <command>npm install -g taco-cli</command> komutunu çalıştırın]A;------------------------------------]A;]]></Val>
+            <Val><![CDATA[<br/>------------------------------------]A;<warn>taco-cli için yeni bir sürüm var:</warn>]A; * Yerel olarak yüklenen sürüm: {0}]A; * En güncel sürüm: {1}]A; * <link>http://go.microsoft.com/fwlink/?LinkId=619747</link>]A; * Güncelleştirmek için <command>npm install -g taco-cli</command> komutunu çalıştırın]A;------------------------------------]A;]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2376,7 +2376,7 @@
         <Str Cat="Text">
           <Val><![CDATA[------ Submitting new build request to: {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[------ Yeni derleme isteği gönderiliyor şu adrese: {0}]]></Val>
+            <Val><![CDATA[------ Yeni derleme isteği şu adrese gönderiliyor: {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2385,7 +2385,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Unknown TACO command, passing it to cordova]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Bilinmeyen TACO komutu, Cordova'ya geçiriliyor]]></Val>
+            <Val><![CDATA[Bilinmeyen TACO komutu; Cordova'ya geçiriliyor]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2412,7 +2412,7 @@
         <Str Cat="Text">
           <Val><![CDATA[This is an abstract method and should be implemented by a derived overload]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Bu bir özet yöntemdir ve türetilmiş bir aşırı yükleme tarafından uygulanmalıdır]]></Val>
+            <Val><![CDATA[Bu bir soyut metottur ve türetilmiş bir aşırı yükleme tarafından uygulanmalıdır]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2421,7 +2421,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Unsupported platform {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Hata: Desteklenmeyen {0} platformu]]></Val>
+            <Val><![CDATA[Hata: {0} platformu desteklenmiyor]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

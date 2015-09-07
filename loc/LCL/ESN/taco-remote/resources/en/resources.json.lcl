@@ -25,7 +25,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Remote build log written to {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Se escribió el registro de compilación remota en {0}.]]></Val>
+            <Val><![CDATA[El registro de compilación remota se escribió en {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -79,7 +79,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Create a build to run on a physical device]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Crear una compilación para ejecutar en un dispositivo físico]]></Val>
+            <Val><![CDATA[Crear una compilación para ejecutarla en un dispositivo físico]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -88,7 +88,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Create a build to run in an emulator]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Crear una compilación para ejecutar en un emulador]]></Val>
+            <Val><![CDATA[Crear una compilación para ejecutarla en un emulador]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -97,7 +97,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Unable to understand '{0}' platform]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: no se puede comprender la plataforma '{0}'.]]></Val>
+            <Val><![CDATA[Error: No se puede entender la plataforma "{0}"]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -115,7 +115,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Platform {0} has not been added locally. Please try 'taco platform add {0}' before building]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: la plataforma {0} no se agregó de forma local. Intente ejecutar el comando 'taco platform add {0}' antes de realizar la compilación.]]></Val>
+            <Val><![CDATA[Error: la plataforma {0} no se agregó de forma local. Intente ejecutar el comando "taco platform add {0}" antes de realizar la compilación]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -124,7 +124,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: no platforms in project. Please run 'taco platform add' to add a platform]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: no hay plataformas en el proyecto. Ejecute el comando 'taco platform add' para agregar una plataforma.]]></Val>
+            <Val><![CDATA[Error: no hay plataformas en el proyecto. Ejecute el comando "taco platform add" para agregar una plataforma]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -142,7 +142,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Unable to find local or remote configuration of {0}. Please run 'taco platform add {0}' or 'taco remote add {0}']]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: no se encuentra ninguna configuración local o remota de {0}. Ejecute los comandos 'taco platform add {0}' o 'taco remote add {0}'.]]></Val>
+            <Val><![CDATA[Error: no se encuentra ninguna configuración local o remota de {0}. Ejecute los comandos "taco platform add {0}" o "taco remote add {0}"]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -151,7 +151,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Unable to find any local or remote platforms. Please run 'taco platform add' or 'taco remote add']]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: no se encuentra ninguna plataforma local o remota. Ejecute los comandos 'taco platform add' o 'taco remote add'.]]></Val>
+            <Val><![CDATA[Error: no se encuentra ninguna plataforma local o remota. Ejecute los comandos "taco platform add" o "taco remote add"]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -178,7 +178,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Unable to load remote settings for {0}. Please run 'taco remote add {0}' to configure remote builds for this platform]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: no se pueden cargar configuraciones remotas para {0}. Ejecute 'taco remote add {0}' para configurar compilaciones remotas para esta plataforma.]]></Val>
+            <Val><![CDATA[Error: no se pueden cargar configuraciones remotas para {0}. Ejecute "taco remote add {0}" para configurar compilaciones remotas para esta plataforma]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -187,7 +187,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: No remote platforms configured. Please run 'taco remote add' to configure one]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: no hay plataformas remotas configuradas. Ejecute el comando 'taco remote add' para configurar una.]]></Val>
+            <Val><![CDATA[Error: no hay plataformas remotas configuradas. Ejecute el comando "taco remote add" para configurar una]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -196,7 +196,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Unable to load settings. Please run 'taco remote add' before building remotely]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: no se puede cargar la configuración. Ejecute el comando 'taco remote add' antes de realizar una compilación remota.]]></Val>
+            <Val><![CDATA[Error: no se puede cargar la configuración. Ejecute el comando "taco remote add" antes de realizar una compilación remota]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -214,7 +214,7 @@
         <Str Cat="Text">
           <Val><![CDATA[json string whose key/values will be included in '[PATH]5D;/.cordova/config.json']]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Cadena JSON cuya clave o cuyos valores se incluirán en '[PATH]5D;/.cordova/config.json']]></Val>
+            <Val><![CDATA[Cadena JSON cuya clave o cuyos valores se incluirán en "[PATH]5D;/.cordova/config.json"]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -259,7 +259,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: unable to perform 'git clone' for the specified template. Please see the output from git for more details.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: no se puede ejecutar 'git clone' para la plantilla especificada. Vea la salida de Git para obtener más detalles.]]></Val>
+            <Val><![CDATA[Error: no se puede ejecutar "git clone" para la plantilla especificada. Vea la salida de Git para obtener más detalles.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -286,7 +286,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<br/>Please install gulp and gulp-typescript by following the installation steps listed at <link>http://go.microsoft.com/fwlink/?LinkId=620942</link>.<br/><br/>Once installed, run 'gulp typescript' to pre-compile the TS files before building your project.<br/><br/>Once your TS files are pre-compiled, use 'taco build [platform]5D;' to build your project.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<br/>Instale gulp y gulp-typescript siguiendo los pasos de instalación que aparecen en <link>http://go.microsoft.com/fwlink/?LinkId=620942</link>.<br/><br/>Una vez realizada la instalación, ejecute 'gulp typescript' para precompilar los archivos TS antes de compilar el proyecto.<br/><br/>Una vez precompilados los archivos TS, use 'taco build [platform]5D;' para compilar el proyecto.]]></Val>
+            <Val><![CDATA[<br/>Instale gulp y gulp-typescript siguiendo los pasos de instalación que aparecen en <link>http://go.microsoft.com/fwlink/?LinkId=620942</link>.<br/><br/>Una vez realizada la instalación, ejecute "gulp typescript" para precompilar los archivos TS antes de compilar el proyecto.<br/><br/>Una vez precompilados los archivos TS, use "taco build [plataforma]5D;" para compilar el proyecto.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -313,7 +313,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: A directory name must be specified in order to create a project. See 'taco help create'.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: se debe especificar un nombre de directorio para crear un proyecto. Vea 'taco help create'.]]></Val>
+            <Val><![CDATA[Error: se debe especificar un nombre de directorio para crear un proyecto. Vea "taco help create".]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -322,7 +322,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Cannot specify both --cli and --kit]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: no se puede especificar --cli ni --kit.]]></Val>
+            <Val><![CDATA[Error: no se puede especificar --cli ni --kit]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -331,7 +331,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: The --template option is not supported with the --cli option; use --kit for templates]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: la opción --template no se admite con la opción --cli; use --kit para las plantillas.]]></Val>
+            <Val><![CDATA[Error: la opción --template no se admite con la opción --cli; use --kit para las plantillas]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -340,7 +340,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Cannot specify --template if specifying --copy-from or --link-to]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: no se puede especificar --template if specifying, --copy-from ni --link-to.]]></Val>
+            <Val><![CDATA[Error: no se puede especificar --template si se especifica --copy-from o --link-to]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -349,7 +349,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Only local paths for custom www assets are supported.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: solo se admiten rutas de acceso locales para recursos www.]]></Val>
+            <Val><![CDATA[Error: solo se admiten rutas locales para recursos www personalizados.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -484,7 +484,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<br/><success>Success!</success> Your project is ready for use at <highlight>{0}</highlight>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<br/><success>¡Éxito!</success> El proyecto está listo para usarse en <highlight>{0}</highlight>]]></Val>
+            <Val><![CDATA[<br/><success>Correcto</success>. El proyecto está listo para usarse en <highlight>{0}</highlight>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -493,7 +493,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<br/><success>Success!</success> Your project using custom assets from {0} is ready for use at <highlight>{1}</highlight>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<br/><success>¡Éxito!</success> El proyecto que usa recursos personalizados de {0} está listo para usarse en <highlight>{1}</highlight>]]></Val>
+            <Val><![CDATA[<br/><success>Correcto</success>. El proyecto que usa recursos personalizados de {0} está listo para usarse en <highlight>{1}</highlight>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -502,7 +502,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<br/><success>Success!</success> Your project using the {0} is ready for use at <highlight>{1}</highlight>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<br/><success>¡Éxito!</success> El proyecto que usa {0} está listo para usarse en <highlight>{1}</highlight>]]></Val>
+            <Val><![CDATA[<br/><success>Correcto</success>. El proyecto que usa {0} está listo para usarse en <highlight>{1}</highlight>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -511,7 +511,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Creation of taco.json file failed]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: error en la creación del archivo taco.json.]]></Val>
+            <Val><![CDATA[Error: error al crear el archivo taco.json]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -520,7 +520,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Failed to write to {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[No se pudo escribir en {0}.]]></Val>
+            <Val><![CDATA[No se pudo escribir en {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -529,7 +529,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Unable to access or download templates]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: no se puede acceder a las plantillas ni descargarlas.]]></Val>
+            <Val><![CDATA[Error: no se puede acceder a las plantillas ni descargarlas]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -538,7 +538,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<br/><warn>Warning: Kit {0} has been deprecated.</warn><br/>Consider changing your project to use a more recent Kit. For deprecation information, see <link>http://go.microsoft.com/fwlink/?LinkId=618170</link>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<br/><warn>Advertencia: El kit de {0} quedó en desuso.</warn><br/>Considere la posibilidad de cambiar el proyecto para que use un kit más reciente. Para obtener información sobre el desuso, vea <link>http://go.microsoft.com/fwlink/?LinkId=618170</link>.]]></Val>
+            <Val><![CDATA[<br/><warn>Advertencia: El kit de {0} quedó en desuso.</warn><br/>Considere la posibilidad de cambiar el proyecto para que use un kit más reciente. Para obtener información sobre el desuso, vea <link>http://go.microsoft.com/fwlink/?LinkId=618170</link>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -592,7 +592,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: The current project uses Cordova version {0}. 'taco install-reqs' supports projects using Cordova version {1} or higher.<br/><br/>If your project was created using a TACO kit, consider moving to a kit that has a more recent version of Cordova. If your project was created using Cordova directly, consider updating the installation of Cordova. For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: el proyecto actual usa la versión de Cordova {0}. 'taco install-reqs' admite proyectos que usan la versión de Cordova {1} o superior.<br/><br/>Si el proyecto se creó con un kit de TACO, es buena idea moverlo a un kit que tenga una versión más reciente de Cordova. Si el proyecto se creó directamente con Cordova, se recomienda actualizar la instalación de Cordova. Para más información, visite http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
+            <Val><![CDATA[Error: el proyecto actual usa la versión de Cordova {0}. "taco install-reqs" admite proyectos que usan la versión de Cordova {1} o superior.<br/><br/>Si el proyecto se creó con un kit de TACO, es buena idea moverlo a un kit que tenga una versión más reciente de Cordova. Si el proyecto se creó directamente con Cordova, se recomienda actualizar la instalación de Cordova. Para obtener más información, visite http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -628,7 +628,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<highlight>Note:</highlight> To manually update a single platform, remove the platform from your project and then run:<br/><br/>    <highlight>taco platform add </highlight>[platform]5D;<highlight>@</highlight>[version]5D;]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<highlight>Nota:</highlight> Para actualizar manualmente una sola plataforma, quítela del proyecto y luego ejecute:<br/><br/>    <highlight>taco platform add </highlight>[platform]5D;<highlight>@</highlight>[version]5D;]]></Val>
+            <Val><![CDATA[<highlight>Nota:</highlight> Para actualizar manualmente una sola plataforma, quítela del proyecto y luego ejecute:<br/><br/>    <highlight>taco platform add </highlight>[plataforma]5D;<highlight>@</highlight>[versión]5D;]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -709,7 +709,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Kit or CLI needs to be specified. Please run 'taco help kit' for more details.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: se debe especificar el kit o la CLI. Ejecute el comando 'taco help kit' para más detalles.]]></Val>
+            <Val><![CDATA[Error: se debe especificar el kit o la CLI. Ejecute el comando "taco help kit" para más detalles.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -718,7 +718,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error thrown when no Kit or CLI is specified for the 'taco kit select' command]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error que se produce cuando no se especifica ningún kit o CLI para el comando 'taco kit select'.]]></Val>
+            <Val><![CDATA[Error que se produce cuando no se especifica ningún kit o CLI para el comando "taco kit select"]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -799,7 +799,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Deprecated]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[En desuso]]></Val>
+            <Val><![CDATA[Desusado]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -808,7 +808,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Kit metadata file is saved at <highlight>{0}</highlight>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>¡Éxito!</success> El archivo de metadatos del kit se guardó en <highlight>{0}</highlight>]]></Val>
+            <Val><![CDATA[<success>Correcto</success>. El archivo de metadatos del kit se guardó en <highlight>{0}</highlight>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -817,7 +817,7 @@
         <Str Cat="Text">
           <Val><![CDATA[The file {0} already exists. Do you wish to overwrite? [y/n]5D;?]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[El archivo {0} ya existe. ¿Desea sobreescribirlo? [s/n]5D;?]]></Val>
+            <Val><![CDATA[El archivo {0} ya existe. ¿Desea sobrescribirlo? [s/n]5D;]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -826,7 +826,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<bold>Platforms: </bold>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<bold>Platformas: </bold>]]></Val>
+            <Val><![CDATA[<bold>Plataformas: </bold>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -844,7 +844,7 @@
         <Str Cat="Text">
           <Val><![CDATA[For more information about this kit, please visit <link>{0}</link>.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Para más información sobre este kit, visite <link>{0}</link>.]]></Val>
+            <Val><![CDATA[Para obtener más información sobre este kit, visite <link>{0}</link>.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -871,7 +871,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: TACO project already uses the Cordova CLI {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: el proyecto de TACO ya usa la CLI de Cordova {0}.]]></Val>
+            <Val><![CDATA[Error: el proyecto de TACO ya usa la CLI de Cordova {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -880,7 +880,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: TACO project already uses kit {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: el proyecto de TACO ya usa el kit {0}.]]></Val>
+            <Val><![CDATA[Error: el proyecto de TACO ya usa el kit {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -898,7 +898,7 @@
         <Str Cat="Text">
           <Val><![CDATA[String used to represent the CLI pinned version of platforms and plugins that aproject will be updated to, on 'taco kit select']]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Cadena que se usa para representar la versión anclada de CLI de las plataformas y los complementos a la que se actualizará un proyecto, en 'taco kit select']]></Val>
+            <Val><![CDATA[Cadena que se usa para representar la versión anclada de CLI de las plataformas y los complementos a la que se actualizará un proyecto, en "taco kit select"]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -907,7 +907,7 @@
         <Str Cat="Text">
           <Val><![CDATA[[DEFAULT]5D;]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[[Predeterminado]5D;]]></Val>
+            <Val><![CDATA[[PREDETERMINADA]5D;]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -916,7 +916,7 @@
         <Str Cat="Text">
           <Val><![CDATA[[EDGE]5D;]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[[Borde]5D;]]></Val>
+            <Val><![CDATA[[ÚLTIMA VERSIÓN]5D;]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -961,7 +961,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Make these changes now [y/n]5D;?]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[¿Desea hacer estos cambios ahora [s/n]5D;?]]></Val>
+            <Val><![CDATA[¿Desea aplicar estos cambios ahora [s/n]5D;?]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -979,7 +979,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>¡Éxito!</success>]]></Val>
+            <Val><![CDATA[<success>Correcto</success>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1033,7 +1033,7 @@
         <Str Cat="Text">
           <Val><![CDATA[List platforms which can be updated by 'taco platform update']]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Enumerar plataformas que se pueden actualizar con el comando 'taco platform update']]></Val>
+            <Val><![CDATA[Enumerar plataformas que se pueden actualizar con el comando "taco platform update"]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1051,7 +1051,7 @@
         <Str Cat="Text">
           <Val><![CDATA[When <plat-spec> is a local path, links the platform library directly instead of making a copy of it (support varies by platform; useful for platform development)]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Cuando <plat-spec> es una ruta de acceso local, vincula la biblioteca de la plataforma directamente en lugar de hacer una copia de ella (la compatibilidad varía de acuerdo a la plataforma; es útil para el desarrollo de plataformas).]]></Val>
+            <Val><![CDATA[Cuando <plat-spec> es una ruta de acceso local, vincula la biblioteca de la plataforma directamente en lugar de hacer una copia de ella (la compatibilidad varía de acuerdo a la plataforma; es útil para el desarrollo de plataformas)]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1069,7 +1069,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Name of the branch to checkout after cloning the git repo; If none is specified, the 'master' branch will be checked out]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Nombre de la rama que se debe comprobar después de la clonación del repositorio Git; Si no se especifica ninguno, se comprueba la rama 'master'.]]></Val>
+            <Val><![CDATA[Nombre de la rama que se debe desproteger después de clonar el repositorio Git; si no se especifica ninguno, se desprotegerá la rama "master"]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1150,7 +1150,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Platform(s) <highlight>{0}</highlight> added to the project.<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>¡Éxito!</success> Las plataformas <highlight>{0}</highlight> se agregaron al proyecto.<br/>]]></Val>
+            <Val><![CDATA[<success>Correcto</success>. Las plataformas <highlight>{0}</highlight> se agregaron al proyecto.<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1168,7 +1168,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Platform(s) <highlight>{0}</highlight> removed from the project.<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>¡Éxito!</success> Las plataformas <highlight>{0}</highlight> se eliminaron del proyecto.<br/>]]></Val>
+            <Val><![CDATA[<success>Correcto</success>. Las plataformas <highlight>{0}</highlight> se quitaron del proyecto.<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1186,7 +1186,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Platform(s) <highlight>{0}</highlight> updated.<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>¡Éxito!</success> Se actualizaron las plataformas <highlight>{0}</highlight>.<br/>]]></Val>
+            <Val><![CDATA[<success>Correcto</success>. Se actualizaron las plataformas <highlight>{0}</highlight>.<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1213,7 +1213,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Update the version of cordova used for a specific platform; Update to the latest <VERSION>, if no <VERSION>, path or <URL> is specified.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Actualice la versión de Cordova que se usa para una plataforma específica; Actualice a la versión <VERSION> más reciente, si no se especificó <VERSION>, ruta de acceso o <URL>.]]></Val>
+            <Val><![CDATA[Actualice la versión de Cordova que se usa para una plataforma específica; actualice a la versión <VERSION> más reciente, si no se especificó <VERSION>, ruta de acceso o <URL>.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1240,7 +1240,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Plugins javascript gets loaded at build time instead of runtime using browserify, Replace cordovajs file with one that included the JS of the installed plugins.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Con Browerify, los complementos de JavaScript se cargan en tiempo de compilación en lugar de en tiempo de ejecución. Reemplace el archivo cordovajs por uno que incluya el JS de los complementos instalados.]]></Val>
+            <Val><![CDATA[Con Browserify, los complementos de JavaScript se cargan en tiempo de compilación en lugar de en tiempo de ejecución. Reemplace el archivo cordovajs por uno que incluya el JS de los complementos instalados.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1258,7 +1258,7 @@
         <Str Cat="Text">
           <Val><![CDATA[When installing from a local path, creates a symbolic link to the plugin instead of copying files. The extent to which files are linked vs copied varies by platform. Useful for plugin development.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Al hacer la instalación desde una ruta de acceso local, se crea un vínculo simbólico para el complemento en lugar de hacerse una copia de los archivos. Que los archivos se vinculen o se copien depende de la plataforma. Es útil para el desarrollo de complementos.]]></Val>
+            <Val><![CDATA[Al instalar desde una ruta de acceso local, se crea un vínculo simbólico al complemento, en lugar de copiarse los archivos (los archivos que se vinculan o se copian dependen de la plataforma). Es útil para el desarrollo de complementos.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1276,7 +1276,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Don't search the registry for plugins]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[No buscar complementos en el registro]]></Val>
+            <Val><![CDATA[No buscar complementos en el Registro]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1312,7 +1312,7 @@
         <Str Cat="Text">
           <Val><![CDATA[When looking up plugins by ID, look in this directory and each of its subdirectories for the plugin before hitting the registry. Multiple search paths can be used by either specifying the flag multiple times, or by seperating paths with a delimiter (':' on Unix, ';' on Windows).]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Al buscar un complemento por Id., hágalo en este directorio y en cada uno de sus subdirectorios antes de llegar al registro. Se pueden usar varias rutas de búsqueda especificando el indicador varias veces o separando las rutas con un delimitador (":" en Unix y ";" en Windows).]]></Val>
+            <Val><![CDATA[Al buscar un complemento por Id., hágalo en este directorio y en cada uno de sus subdirectorios antes de llegar al Registro. Se pueden usar varias rutas de búsqueda especificando el indicador varias veces o separando las rutas con un delimitador (":" en Unix y ";" en Windows).]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1321,7 +1321,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Search the plugin registry for plugins matching the keywords]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Buscar complementos que coincidan con las palabras clave en el registro de complementos]]></Val>
+            <Val><![CDATA[Buscar complementos que coincidan con las palabras clave en el Registro de complementos]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1330,7 +1330,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Used together with --save, saves the installed version number to config.xml]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Si se usa en conjunto con--save, guarda el número de versión instalada en el archivo config.xml.]]></Val>
+            <Val><![CDATA[Si se usa en conjunto con--save, guarda el número de versión instalada en el archivo config.xml]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1339,7 +1339,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Plugin added.<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>¡Éxito!</success> Se agregó el complemento.<br/>]]></Val>
+            <Val><![CDATA[<success>Correcto</success>. Se agregó el complemento.<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1357,7 +1357,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Plugin <highlight>{0}</highlight> removed<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>¡Éxito!</success> Se quitó el complemento <highlight>{0}</highlight>.<br/>]]></Val>
+            <Val><![CDATA[<success>Correcto</success>. Se quitó el complemento <highlight>{0}</highlight>.<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1384,7 +1384,7 @@
         <Str Cat="Text">
           <Val><![CDATA[The plugin <highlight>{0}</highlight> has been validated on platform(s) - {1}.<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[El complemento <highlight>{0}</highlight> se validó en las plataformas - {1}.<br/>]]></Val>
+            <Val><![CDATA[El complemento <highlight>{0}</highlight> se validó en las plataformas: {1}.<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1393,7 +1393,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> {0} installed.<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>¡Éxito!</success> Se instaló {0}.<br/>]]></Val>
+            <Val><![CDATA[<success>Correcto</success>. Se instaló {0}.<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1411,7 +1411,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Unable to contact {0} to find where the remote build server services Cordova builds. Is the server running remotebuild with taco-remote configured?]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[No se puede establecer contacto con {0} para saber en dónde se compilan los servicios del servidor de compilación remota de Cordova. ¿El servidor está ejecutando remotebuild con taco-remote configurado?]]></Val>
+            <Val><![CDATA[No se puede establecer contacto con {0} para determinar dónde se compilan los servicios del servidor remoto de compilación de Cordova. ¿El servidor está ejecutando remotebuild con taco-remote configurado?]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1420,7 +1420,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Unable to connect to remote server. Make sure that the remotebuild server is running at {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[No se puede conectar al servidor remoto. Asegúrese de que el servidor remotebuild se está ejecutando en {0}.]]></Val>
+            <Val><![CDATA[No se puede conectar al servidor remoto. Asegúrese de que el servidor remotebuild se está ejecutando en {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1429,7 +1429,7 @@
         <Str Cat="Text">
           <Val><![CDATA[No platform specified]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[No se especificó ninguna plataforma.]]></Val>
+            <Val><![CDATA[No se especificó ninguna plataforma]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1438,7 +1438,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Unable to remove platform '{0}': platform not added]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[No se puede quitar la plataforma '{0}': la plataforma no está agregada.]]></Val>
+            <Val><![CDATA[No se puede quitar la plataforma "{0}": la plataforma no está agregada]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1456,7 +1456,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Please ensure that remotebuild is running on the remote server.<br/> You can generate new client information at any time by typing remotebuild generateClientCert. For more details, see <fwlink goes here>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Asegúrese de que remotebuild se está ejecutando en el servidor remoto.<br/> Puede generar nueva información de cliente en cualquier momento. Para ello, escriba remotebuild generateClientCert. Para obtener más detalles, vea <fwlink goes here>.]]></Val>
+            <Val><![CDATA[Asegúrese de que remotebuild se está ejecutando en el servidor remoto.<br/> Puede generar nueva información de cliente en cualquier momento. Para ello, escriba remotebuild generateClientCert. Para obtener más información, consulte <fwlink goes here>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1465,7 +1465,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Invalid PIN '{0}': PINs are 6 digit integers]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[PIN '{0}' no válido: los PIN son números enteros de 6 dígitos.]]></Val>
+            <Val><![CDATA[PIN "{0}" no válido: un código PIN es un número entero de 6 dígitos]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1474,7 +1474,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Invalid port '{0}': ports must be integers greater than 0 and less than 65536]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Puerto '{0}' no válido: los puertos deben ser números enteros mayores que 0 y menores que 65536.]]></Val>
+            <Val><![CDATA[Puerto "{0}" no válido: los puertos deben ser números enteros mayores que 0 y menores que 65536]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1546,7 +1546,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Unable to look up host '{0}'. Check that the name is correct.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[No se puede buscar el host '{0}'. Compruebe que el nombre es correcto.]]></Val>
+            <Val><![CDATA[No se puede buscar el host "{0}". Compruebe que el nombre es correcto.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1555,7 +1555,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: No remote settings found for {0}. Please run 'taco remote add {0}']]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: no se encontraron configuraciones remotas para {0}. Ejecute 'taco remote add {0}'.]]></Val>
+            <Val><![CDATA[Error: no se encontraron configuraciones remotas para {0}. Ejecute "taco remote add {0}"]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1573,7 +1573,7 @@
         <Str Cat="Text">
           <Val><![CDATA[PIN (leave blank for insecure servers): ]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[PIN (déjelo en blanco para servidores no seguros): ]]></Val>
+            <Val><![CDATA[PIN (dejar en blanco para servidores no seguros): ]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1591,7 +1591,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Unable to use PIN to pair with remote build server: PIN was rejected]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[No se puede usar el PIN para realizar el emparejamiento con el servidor de compilación: se rechazó el PIN.]]></Val>
+            <Val><![CDATA[No se puede usar el PIN para realizar el emparejamiento con el servidor de compilación remoto: se rechazó el PIN]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1609,7 +1609,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Removed remote platform {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>¡Éxito!</success> Se quitó la plataforma remota {0}.]]></Val>
+            <Val><![CDATA[<success>Correcto</success>. Se quitó la plataforma remota {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1618,7 +1618,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Settings stored in {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>¡Éxito!</success> La configuración se almacenó en {0}.]]></Val>
+            <Val><![CDATA[<success>Correcto</success>. La configuración se almacenó en {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1636,7 +1636,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Unable to contact '{0}:{1}', please check that the server is reachable.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[No se puede establecer contacto con '{0}:{1}'. Compruebe que el servidor es accesible.]]></Val>
+            <Val><![CDATA[No se puede establecer contacto con "{0}:{1}". Compruebe que el servidor es accesible.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1735,7 +1735,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Build running on remote attached device]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>¡Éxito!</success> La compilación se está ejecutando en el dispositivo adjunto remoto]]></Val>
+            <Val><![CDATA[<success>Correcto</success>. La compilación se está ejecutando en el dispositivo remoto conectado]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1744,7 +1744,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Build running on remote emulator]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<success>¡Éxito!</success> La compilación se está ejecutando en el emulador remoto]]></Val>
+            <Val><![CDATA[<success>Correcto</success>. La compilación se está ejecutando en el emulador remoto]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1780,7 +1780,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Warning: Platform '{0}' is not supported and will be ignored.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Advertencia: la plataforma '{0}' no es compatible y se omitirá.]]></Val>
+            <Val><![CDATA[Advertencia: La plataforma "{0}" no es compatible y se omitirá.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1798,7 +1798,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Cordova not found, please run 'npm install –g cordova' to install Cordova globally]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[No se encontró Cordova. Ejecute 'npm install –g cordova' para instalar Cordova de forma global.]]></Val>
+            <Val><![CDATA[No se encontró Cordova. Ejecute "npm install –g cordova" para instalar Cordova de forma global]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1807,7 +1807,7 @@
         <Str Cat="Text">
           <Val><![CDATA['cordova {1}' failed with exit code {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error en 'cordova {1}' con código de salida {0}]]></Val>
+            <Val><![CDATA[Error en "cordova {1}" con código de salida {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1816,7 +1816,7 @@
         <Str Cat="Text">
           <Val><![CDATA['cordova {0}' failed.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error en 'cordova {0}'.]]></Val>
+            <Val><![CDATA[Error en "cordova {0}".]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1852,7 +1852,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Failed to load certificate {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[No se pudo cargar el certificado {0}.]]></Val>
+            <Val><![CDATA[No se pudo cargar el certificado {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1861,7 +1861,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Failed to change permissions for certificate folder {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[No se pudieron cambiar los permisos para la carpeta de certificados {0}.]]></Val>
+            <Val><![CDATA[No se pudieron cambiar los permisos para la carpeta de certificados {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1870,7 +1870,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Failed to save certificate]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[No se pudo guardar el certificado.]]></Val>
+            <Val><![CDATA[No se pudo guardar el certificado]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1879,7 +1879,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Failed to save certificate at {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[No se pudo guardar el certificado en {0}.]]></Val>
+            <Val><![CDATA[No se pudo guardar el certificado en {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1897,7 +1897,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error from downloading build outputs to {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error al descargar salidas de la compilación en {0}.]]></Val>
+            <Val><![CDATA[Error al descargar salidas de la compilación en {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1906,7 +1906,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error during build submission: {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error durante el envío de la compilación: {0}]]></Val>
+            <Val><![CDATA[Error al enviar la compilación: {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1915,7 +1915,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error contacting {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error al contactarse con {0}.]]></Val>
+            <Val><![CDATA[Error al establecer contacto con {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1924,7 +1924,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: {0} option cannot be used in conjunction with {1} option.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: la opción {0} no se puede usar junto con la opción {1}.]]></Val>
+            <Val><![CDATA[Error: la opción {0} no se puede usar con la opción {1}.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1960,7 +1960,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Unable to find any platforms. Please 'taco platform add <platform>' or 'taco remote add <platform>' and retry.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[No se pueden encontrar plataformas. Ejecute los comandos 'taco platform add <platform>' o 'taco remote add <platform>', y vuelva a intentarlo.]]></Val>
+            <Val><![CDATA[No se pueden encontrar plataformas. Ejecute los comandos "taco platform add <platform>" o "taco remote add <platform>", y vuelva a intentarlo.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1969,7 +1969,7 @@
         <Str Cat="Text">
           <Val><![CDATA[No {0}(s) specified. Please specify {0}(s) to {1}. See `taco {0} list`.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[No se especificaron {0}. Especifique {0} en {1}. Vea `taco {0} list`.]]></Val>
+            <Val><![CDATA[No se especificaron {0}. Especifique {0} en {1}. Vea "taco {0} list".]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -1987,7 +1987,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Failed to parse changed files needed to prepare a build patch]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[No se pudieron analizar los archivos cambiados necesarios para preparar una revisión de compilación.]]></Val>
+            <Val><![CDATA[No se pudieron analizar los archivos cambiados necesarios para preparar una revisión de compilación]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2014,7 +2014,7 @@
         <Str Cat="Text">
           <Val><![CDATA[An error occurred uploading to the build server {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Se produjo un error al realizar la carga en el servidor de compilación: {0}.]]></Val>
+            <Val><![CDATA[Error al cargar en el servidor de compilación {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2086,7 +2086,7 @@
         <Str Cat="Text">
           <Val><![CDATA[For full documentation online, use '<bold>taco docs</bold>']]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Para ver toda la documentación en línea, use el comando '<bold>taco docs</bold>'.]]></Val>
+            <Val><![CDATA[Para ver toda la documentación en línea, use el comando "<bold>taco docs</bold>"]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2104,7 +2104,7 @@
         <Str Cat="Text">
           <Val><![CDATA[For command help, use '<bold>taco help</bold>' ]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Para obtener ayuda sobre los comandos, use el comando '<bold>taco help</bold>'. ]]></Val>
+            <Val><![CDATA[Para obtener ayuda sobre los comandos, use el comando "<bold>taco help</bold>" ]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2149,7 +2149,7 @@
         <Str Cat="Text">
           <Val><![CDATA[e.g: To create a new TypeScript project, use <bold>taco create <PATH> [ID]5D; --template typescript</bold>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Por ejemplo: para crear un nuevo proyecto de TypeScript, use <bold>taco create <PATH> [ID]5D; --template typescript</bold>]]></Val>
+            <Val><![CDATA[Por ejemplo: para crear un nuevo proyecto de TypeScript, use <bold>taco create <PATH> [Id.]5D; --template typescript</bold>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2194,7 +2194,7 @@
         <Str Cat="Text">
           <Val><![CDATA[The remote build server denied the build request, because the client certificate is invalid or has expired. To build your project, you must generate and configure a security PIN. See http://go.microsoft.com/fwlink/?LinkID=511904]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[El servidor de compilación remota denegó la solicitud de compilación porque el certificado de cliente no es válido o expiró. Para compilar un proyecto, debe generar y configurar un PIN de seguridad. Vea http://go.microsoft.com/fwlink/?LinkID=511904.]]></Val>
+            <Val><![CDATA[El servidor de compilación remota denegó la solicitud de compilación porque el certificado de cliente no es válido o expiró. Para compilar un proyecto, debe generar y configurar un PIN de seguridad. Vea http://go.microsoft.com/fwlink/?LinkID=511904]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2230,7 +2230,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: No certificate '{0}' found]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: no se encontró ningún certificado '{0}'.]]></Val>
+            <Val><![CDATA[Error: no se encontró ningún certificado "{0}"]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2239,7 +2239,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: No remote build found. Please run '{0}' first]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: no se encontró ninguna compilación remota. Ejecute primero '{0}'.]]></Val>
+            <Val><![CDATA[Error: no se encontró ninguna compilación remota. Ejecute primero "{0}"]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2248,7 +2248,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Current working directory is not a Cordova-based project]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: el directorio de trabajo actual no es un proyecto basado en Cordova.]]></Val>
+            <Val><![CDATA[Error: el directorio de trabajo actual no es un proyecto basado en Cordova]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2356,7 +2356,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Remote build successfully completed]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[La compilación remota se completó correctamente.]]></Val>
+            <Val><![CDATA[La compilación remota se completó correctamente]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2365,7 +2365,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Remote build failed]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error en la compilación remota.]]></Val>
+            <Val><![CDATA[Error en la compilación remota]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2374,7 +2374,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Platform '{0}' not supported by current version of cordova.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: la plataforma '{0}' no es compatible con la versión actual de Cordova.]]></Val>
+            <Val><![CDATA[Error: la plataforma "{0}" no es compatible con la versión actual de Cordova.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2392,7 +2392,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Unknown TACO command, passing it to cordova]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Comando de TACO no conocido. Se lo pasará a Cordova.]]></Val>
+            <Val><![CDATA[Comando de TACO desconocido, pasado a Cordova]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2410,7 +2410,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Unable to load settings. Please run 'taco remote add' before building remotely]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: no se puede cargar la configuración. Ejecute el comando 'taco remote add' antes de realizar una compilación remota.]]></Val>
+            <Val><![CDATA[Error: no se puede cargar la configuración. Ejecute el comando "taco remote add" antes de realizar una compilación remota]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2419,7 +2419,7 @@
         <Str Cat="Text">
           <Val><![CDATA[This is an abstract method and should be implemented by a derived overload]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Este es un método abstracto y debe implementarse mediante una sobrecarga derivada.]]></Val>
+            <Val><![CDATA[Este es un método abstracto y debe implementarse mediante una sobrecarga derivada]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2428,7 +2428,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: Unsupported platform {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: plataforma {0} no compatible.]]></Val>
+            <Val><![CDATA[Error: plataforma {0} no compatible]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2437,7 +2437,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error message printed when trying to 'taco remote add <platform>' and the platform is not supported. {0} is the platform]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Mensaje de error que aparece cuando se intenta ejecutar 'taco remote add <platform>' y la plataforma no es compatible. La plataforma es {0}.]]></Val>
+            <Val><![CDATA[Mensaje de error que aparece cuando se intenta ejecutar "taco remote add <platform>" y la plataforma no es compatible. La plataforma es {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

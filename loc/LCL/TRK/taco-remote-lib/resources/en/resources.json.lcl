@@ -27,7 +27,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Consider changing your project to use a more recent Kit. For deprecation information, see <link>http://go.microsoft.com/fwlink/?LinkId=618170</link>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Projenizi daha güncel bir Set kullanacak şekilde değiştirmeyi göz önünde bulundurun. Kullanımdan kaldırma bilgileri için bkz. <link>http://go.microsoft.com/fwlink/?LinkId=618170</link>]]></Val>
+            <Val><![CDATA[Projenizi daha güncel bir Set kullanacak şekilde değiştirmeyi düşünün. Kullanım dışı bırakma bilgileri için bkz. <link>http://go.microsoft.com/fwlink/?LinkId=618170</link>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -36,7 +36,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Warning: Kit {0} has been deprecated]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Uyarı: {0} seti kullanımdan kaldırılmış]]></Val>
+            <Val><![CDATA[Uyarı: {0} seti kullanım dışı bırakılmış]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -63,7 +63,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: The kit metadata file is corrupt. Please fix this by re-installing taco-kits from npm.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Hata: Set metaveri dosyası bozuk. Lütfen taco-kits'i npm'den yeniden yükleyeren bu sorunu giderin.]]></Val>
+            <Val><![CDATA[Hata: Set meta veri dosyası bozuk. Lütfen taco-kits'i npm'den yeniden yükleyerek bu sorunu giderin.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -72,7 +72,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: The kit metadata file is not found. Please fix this by re-installing taco-kits from npm.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Hata: Set metaveri dosyası bulunamadı. Lütfen taco-kits'i npm'den yeniden yükleyeren bu sorunu giderin.]]></Val>
+            <Val><![CDATA[Hata: Set meta veri dosyası bulunamadı. Lütfen taco-kits'i npm'den yeniden yükleyerek bu sorunu giderin.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -81,7 +81,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: No Cordova CLI specification is found for kit {0}. The kit metadata file appears to be corrupt. Please fix this by re-installing taco-kits from npm or run "taco kit list" to see the list of available kits]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Hata: {0} seti için Cordova CLI belirtimi bulunamadı. Görünüşe göre set mer. Lütfen taco-kits'i npm'den yeniden yükleyeren bu sorunu giderin veya kullanılabilir setlerin listesini görmek için "taco kit list" komutunu çalıştırın]]></Val>
+            <Val><![CDATA[Hata: {0} seti için Cordova CLI belirtimi bulunamadı. Set meta verisi bozulmuş görünüyor. Lütfen taco-kits'i npm'den yeniden yükleyerek bu sorunu giderin veya kullanılabilir setlerin listesini görmek için "taco kit list" komutunu çalıştırın]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -90,7 +90,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: No default kit found. Please fix this by re-installing taco-kits from npm or run "taco kit list" to see the list of available kits]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Hata: Varsayılan set bulunamadı. Lütfen taco-kits'i npm'den yeniden yükleyeren bu sorunu giderin veya kullanılabilir setlerin listesini görmek için "taco kit list" komutunu çalıştırın]]></Val>
+            <Val><![CDATA[Hata: Varsayılan set bulunamadı. Lütfen taco-kits'i npm'den yeniden yükleyerek bu sorunu giderin veya kullanılabilir setlerin listesini görmek için "taco kit list" komutunu çalıştırın]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -126,7 +126,7 @@
         <Str Cat="Text">
           <Val><![CDATA[A toolkit of plugins and platforms that works with Cordova CLI v5.1.1]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[CLI v5.1.1 sürümü ile birlikte çalışan eklentilere ve platformlara ait bir araç seti]]></Val>
+            <Val><![CDATA[CLI v5.1.1 sürümü ile birlikte çalışan eklentilerden ve platformlardan oluşan ait bir araç seti]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
