@@ -51,7 +51,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Please view/edit server configuration at {0}. You many need to run 'remotebuild saveconfig' to generate it. You will have to restart the server if you update the server configurations.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Vea o edite la configuración del servidor en {0}. Puede que deba ejecutar 'remotebuild saveconfig' para generarla. Si actualiza las configuraciones del servidor, tendrá que reiniciar este último.]]></Val>
+            <Val><![CDATA[Vea o edite la configuración del servidor en {0}. Puede que deba ejecutar "remotebuild saveconfig" para generarla. Si actualiza las configuraciones del servidor, tendrá que reiniciar el servidor.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -69,7 +69,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Updates client/server SSL certificates for a secure connection]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Actualiza los certificados SSL de cliente o servidor para una conexión segura.]]></Val>
+            <Val><![CDATA[Actualiza los certificados SSL de cliente o servidor para una conexión segura]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -78,7 +78,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Generates a new client SSL certificate for configuring a new secure connection]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Genera un nuevo certificado SSL de cliente para configurar una nueva conexión segura.]]></Val>
+            <Val><![CDATA[Genera un nuevo certificado SSL de cliente para configurar una nueva conexión segura]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -87,7 +87,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Gets help for a command or a module]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Proporciona ayuda sobre un comando o un módulo.]]></Val>
+            <Val><![CDATA[Proporciona ayuda sobre un comando o un módulo]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -96,7 +96,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Resets server SSL certificates]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Reestablece los certificados SSL del servidor.]]></Val>
+            <Val><![CDATA[Restablece los certificados SSL del servidor]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -114,7 +114,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Starts the server]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Inicia el servidor.]]></Val>
+            <Val><![CDATA[Inicia el servidor]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -141,7 +141,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Displays the current remotebuild version]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Muestra la versión de remotebuild actual.]]></Val>
+            <Val><![CDATA[Muestra la versión de remotebuild actual]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -150,7 +150,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Generate a new certificate for use in the client that will expire in 1 year]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Generar un nuevo certificado de 1 año de vigencia para usar en el cliente]]></Val>
+            <Val><![CDATA[Generar un nuevo certificado para usarlo en el cliente que expirará en 1 año]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -186,7 +186,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Invalid port '{0}' specified. Port must be an integer between 0 and 65536]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Se especificó un puerto '{0}' no válido. El puerto debe ser un número entero entre 0 y 65536.]]></Val>
+            <Val><![CDATA[Se especificó un puerto "{0}" no válido. El puerto debe ser un número entero entre 0 y 65536]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -456,7 +456,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Other options are described in the individual modules. Try asking for help about the following modules: {0}.<br/>For example, 'remotebuild help taco-remote']]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Las demás opciones se describen en módulos individuales. Intente buscar ayuda para los siguientes módulos: {0}.<br/>Por ejemplo, 'remotebuild help taco-remote'.]]></Val>
+            <Val><![CDATA[Las demás opciones se describen en los módulos individuales. Intente buscar ayuda para los siguientes módulos: {0}.<br/>Por ejemplo, "remotebuild help taco-remote"]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -465,7 +465,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Options (All options other than --config can be specified via a configuration file)]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Opciones (Todas las opciones que no sean --config se pueden especificar mediante un archivo de configuración)]]></Val>
+            <Val><![CDATA[Opciones (todas las opciones distintas de --config se pueden especificar mediante un archivo de configuración)]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -474,7 +474,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Command line options override configuration file values]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Las opciones de la línea de comandos invalidan los valores del archivo de configuración.]]></Val>
+            <Val><![CDATA[Las opciones de la línea de comandos invalidan los valores del archivo de configuración]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -483,7 +483,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Start the server with all defaults (secure server with serverDir $TACO_HOME/remote-builds, port 3000)]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Iniciar el servidor con todos los valores predeterminados (servidor serguro con serverDir $TACO_HOME/remote-builds, puerto 3000)]]></Val>
+            <Val><![CDATA[Iniciar el servidor con todos los valores predeterminados (servidor seguro con serverDir $TACO_HOME/remote-builds, puerto 3000)]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -510,7 +510,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Run device tests against a server started with 'remotebuild --config config.json']]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Ejecutar pruebas de dispositivos en un servidor iniciado con el comando 'remotebuild --config config.json']]></Val>
+            <Val><![CDATA[Ejecutar pruebas de dispositivos en un servidor iniciado con el comando "remotebuild --config config.json"]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -519,7 +519,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Reset server certificates to expire in 1 year]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Restablecer certificados de servidor para que expiren pasado 1 año]]></Val>
+            <Val><![CDATA[Restablecer certificados de servidor para que expiren en 1 año]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

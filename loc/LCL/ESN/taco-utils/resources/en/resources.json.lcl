@@ -60,7 +60,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Extracted app contents from uploaded build request]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Se extrajo el contenido de la aplicación desde la solicitud de compilación cargada.]]></Val>
+            <Val><![CDATA[Se extrajo el contenido de la aplicación desde la solicitud de compilación cargada]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -69,7 +69,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Invalid request: build.js process already in use but was asked to build again. This is likely a programming error as a build.js process is meant to be used only once.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Solicitud no válida: el proceso build.js ya está en uso, pero se solicitó su compilación nuevamente. Es probable que sea un error de programación, ya que el proceso build.js está pensado para usarse solo una vez.]]></Val>
+            <Val><![CDATA[Solicitud no válida: el proceso build.js ya está en uso, pero se volvió a solicitar su compilación. Es probable que sea un error de programación, ya que el proceso build.js solo debe usarse una vez.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -105,7 +105,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Build {0} does not exist]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[La compilación {0} no existe.]]></Val>
+            <Val><![CDATA[La compilación {0} no existe]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -132,7 +132,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Deleting eligible builds. Will delete %d builds.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Eliminando compilaciones elegibles. Se eliminarán %d compilaciones.]]></Val>
+            <Val><![CDATA[Eliminando compilaciones válidas. Se eliminarán %d compilaciones.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -168,7 +168,7 @@
         <Str Cat="Text">
           <Val><![CDATA[An error occurred while saving the uploaded tgz file to {0}: {1}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Se produjo un error al guardar el archivo tgz cargado en {0}: {1}.]]></Val>
+            <Val><![CDATA[Se produjo un error al guardar el archivo tgz cargado en {0}: {1}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -276,7 +276,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Unable to find appropriate package for specified build]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[No se puede encontrar el paquete adecuado para la compilación especificada.]]></Val>
+            <Val><![CDATA[No se puede encontrar el paquete adecuado para la compilación especificada]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -285,7 +285,7 @@
         <Str Cat="Text">
           <Val><![CDATA[A build is currently building. Queuing up {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Actualmente se está realizando una compilación. Poniendo {0} en cola.]]></Val>
+            <Val><![CDATA[Actualmente se está realizando una compilación. Poniendo {0} en cola]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -294,7 +294,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Taking {0} as current build]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Tomando {0} como compilación actual.]]></Val>
+            <Val><![CDATA[Tomando {0} como compilación actual]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -312,7 +312,7 @@
         <Str Cat="Text">
           <Val><![CDATA[No resources defined for language {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[No hay recursos definidos para el idioma {0}.]]></Val>
+            <Val><![CDATA[No hay recursos definidos para el idioma {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -321,7 +321,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Build tgz file no longer exists on file system at {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[El archivo tgz de compilación ya no existe en {0} dentro del sistema de archivos.]]></Val>
+            <Val><![CDATA[El archivo tgz de compilación ya no existe en {0} dentro del sistema de archivos]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -348,7 +348,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Maximum number of builds to allow in build queue. New builds over this limit are rejected (defaults to 10 if not specified)]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Cantidad máxima de compilaciones permitidas en la cola de compilaciones. Las compilaciones nuevas que queden fuera de este límite serán rechazadas (el valor predeterminado es 10 si no se especifica).]]></Val>
+            <Val><![CDATA[Cantidad máxima de compilaciones permitidas en la cola de compilaciones. Las compilaciones nuevas que queden fuera de este límite serán rechazadas (el valor predeterminado es 10 si no se especifica)]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -375,7 +375,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Port number for webkit debugger device discovery (defaults to 9221 if not specified)]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Número de puerto para la detección del dispositivo depurador webkit (el valor predeterminado es 9221 si no se especifica)]A;]]></Val>
+            <Val><![CDATA[Número de puerto para la detección del dispositivo depurador webkit (el valor predeterminado es 9221 si no se especifica)]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -411,7 +411,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Use following config file to configure remotebuild port, web debug proxy port, no builds retention and build cleanup on shutdown]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Use el siguiente archivo config para configurar el puerto remotebuild, el puerto de proxy de depuración web, ninguna retención de compilaciones y la limpieza de aplicaciones luego del apagado.]]></Val>
+            <Val><![CDATA[Use el siguiente archivo config para configurar el puerto remotebuild, el puerto de proxy de depuración web, ninguna retención de compilaciones y la limpieza de aplicaciones después del apagado]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -420,7 +420,7 @@
         <Str Cat="Text">
           <Val><![CDATA[More documentation for configuring taco remote build can be found at <link>http://go.microsoft.com/fwlink/?LinkId=618174</link>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Encontrará más documentación sobre la configuración de la compilación remota de taco en <link>http://go.microsoft.com/fwlink/?LinkId=618174</link>.]]></Val>
+            <Val><![CDATA[Encontrará más documentación sobre la configuración de la compilación remota de taco en <link>http://go.microsoft.com/fwlink/?LinkId=618174</link>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -429,7 +429,7 @@
         <Str Cat="Text">
           <Val><![CDATA[An error occurred in extracting contents from {0}: {1}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Se produjo un error al extraer contenido de {0}: {1}.]]></Val>
+            <Val><![CDATA[Se produjo un error al extraer contenido de {0}: {1}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -447,7 +447,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Saved uploaded build to {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Se guardó la compilación descargada en {0}.]]></Val>
+            <Val><![CDATA[Se guardó la compilación descargada en {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

@@ -27,7 +27,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Consider changing your project to use a more recent Kit. For deprecation information, see <link>http://go.microsoft.com/fwlink/?LinkId=618170</link>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[請考慮變更您的專案，以使用更新的套件。如需取代資訊，請參閱 <link>http://go.microsoft.com/fwlink/?LinkId=618170</link>]]></Val>
+            <Val><![CDATA[請考慮變更您的專案，以使用較新的套件。如需取代的相關資訊，請參閱 <link>http://go.microsoft.com/fwlink/?LinkId=618170</link>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -54,7 +54,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: No template matching [--template {0}]5D; found]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[錯誤: 找不到符合 [--template {0}]5D; 的範本]]></Val>
+            <Val><![CDATA[錯誤: 找不到任何符合 [--template {0}]5D; 的範本]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -63,7 +63,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: The kit metadata file is corrupt. Please fix this by re-installing taco-kits from npm.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[錯誤: 套件中繼資料檔已損毀。請從 npm 重新安裝 taco-kits 來修正這個問題。]]></Val>
+            <Val><![CDATA[錯誤: 套件中繼資料檔已損毀。請從 npm 重新安裝 taco-kits 以修正這個問題。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -72,7 +72,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: The kit metadata file is not found. Please fix this by re-installing taco-kits from npm.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[錯誤: 找不到套件中繼資料檔。請從 npm 重新安裝 taco-kits 來修正這個問題。]]></Val>
+            <Val><![CDATA[錯誤: 找不到該套件中繼資料檔。請從 npm 重新安裝 taco-kits 以修正這個問題。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -81,7 +81,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: No Cordova CLI specification is found for kit {0}. The kit metadata file appears to be corrupt. Please fix this by re-installing taco-kits from npm or run "taco kit list" to see the list of available kits]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[錯誤: 找不到套件 {0} 的 Cordova CLI 規格。套件中繼資料檔可能已損毀。請從 npm 重新安裝 taco-kits 來修正這個問題，或執行 "taco kit list" 來查看可用套件清單]]></Val>
+            <Val><![CDATA[錯誤: 找不到套件 {0} 的 Cordova CLI 規格。套件中繼資料檔可能已損毀。請從 npm 重新安裝 taco-kits 以修正這個問題，或執行 "taco kit list" 以查看可用套件清單]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -90,7 +90,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error: No default kit found. Please fix this by re-installing taco-kits from npm or run "taco kit list" to see the list of available kits]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[錯誤: 找不到預設套件。請從 npm 重新安裝 taco-kits 來修正這個問題，或執行 "taco kit list" 來查看可用套件清單]]></Val>
+            <Val><![CDATA[錯誤: 找不到預設套件。請從 npm 重新安裝 taco-kits 以修正這個問題，或執行 "taco kit list" 以查看可用套件清單]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -126,7 +126,7 @@
         <Str Cat="Text">
           <Val><![CDATA[A toolkit of plugins and platforms that works with Cordova CLI v5.1.1]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[適用於 Cordova CLI v5.1.1 之外掛程式和平台的工具組]]></Val>
+            <Val><![CDATA[適用於 Cordova CLI v5.1.1 的外掛程式與平台工具組]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

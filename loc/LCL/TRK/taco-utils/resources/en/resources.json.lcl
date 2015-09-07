@@ -35,7 +35,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Build directory {0} does not exist.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[{0} derleme dizini mevcut değil.]]></Val>
+            <Val><![CDATA[{0} derleme dizini yok.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -62,7 +62,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Invalid request: build.js process already in use but was asked to build again. This is likely a programming error as a build.js process is meant to be used only once.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Geçersiz istek: build.js işlemi zaten kullanımda olmasına rağmen yeniden derlemesi istendi. build.js işleminin yalnızca bir kere kullanılması gerektiğinden bu durum, büyük olasılıkla bir programlama hatasından kaynaklanır.]]></Val>
+            <Val><![CDATA[Geçersiz istek: Build.js işlemi zaten kullanımda olmasına rağmen yeniden derlemesi istendi. Build.js işleminin yalnızca bir kere kullanılması gerektiğinden, bu durum büyük olasılıkla bir programlama hatasından kaynaklanır.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -188,7 +188,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Configuring first-run dependencies.]A;To deploy to physical iOS devices, or to debug a device or simulator, we need some packages from Homebrew, a third party package manager.]A;Installing Homebrew may ask you for an admin password. Do you want to continue?]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[İlk kez çalıştırılan bağımlılıklar yapılandırılıyor.]A;Fiziksel iOS cihazlarına dağıtmak veya bir cihazda ya da benzeticide hata ayıklama gerçekleştirmek için üçüncü taraf paket yöneticisi olan Homebrew'dan bazı paketlere ihtiyacımız var.]A;Homebrew yüklemesi için sizden bir yönetici parolası istenebilir. Devam etmek istiyor musunuz?]]></Val>
+            <Val><![CDATA[İlk kez çalıştırılan bağımlılıklar yapılandırılıyor.]A;Fiziksel iOS cihazlarına dağıtmak veya bir cihazda ya da benzeticide hata ayıklamak için üçüncü taraf paket yöneticisi olan Homebrew'dan bazı paketlere ihtiyacımız var.]A;Homebrew yüklemesi için sizden bir yönetici parolası istenebilir. Devam etmek istiyor musunuz?]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -242,7 +242,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Error verifying homebrew packages:]A;{0}]A;Consider "brew reinstall libimobiledevice ios-webkit-debug-proxy ideviceinstaller" and trying again.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Homebrew paketleri doğrulanırken hata oluştu:]A;{0}]A;"brew reinstall libimobiledevice ios-webkit-debug-proxy ideviceinstaller" kodunu ve yeniden denemeyi göz önünde bulundurun.]]></Val>
+            <Val><![CDATA[Homebrew paketleri doğrulanırken hata oluştu:]A;{0}]A;"brew reinstall libimobiledevice ios-webkit-debug-proxy ideviceinstaller" komutunu kullanın ve yeniden deneyin.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -323,7 +323,7 @@
         <Str Cat="Text">
           <Val><![CDATA[true if server should support running builds in iOS simulator, false if not (defaults to true if not specified)]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[sunucunun iOS benzeticisinde derlemelerin çalıştırılmasını desteklemesi gerekiyorsa true, gerekmiyorsa false (belirtilmezse varsayılan olarak true değerini alır)]]></Val>
+            <Val><![CDATA[sunucunun iOS Simulator'da derlemelerin çalıştırılmasını desteklemesi gerekiyorsa true, gerekmiyorsa false (belirtilmezse varsayılan olarak true değerini alır)]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -350,7 +350,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Maximum number of builds to retain on disk (defaults to 20 if not specified)]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Diskte bekletilecek derleme sayısının üst sınırı (belirtilmezse varsayılan olarak 20 değerini alır)]]></Val>
+            <Val><![CDATA[Diskte saklanacak derleme sayısının üst sınırı (belirtilmezse varsayılan olarak 20 değerini alır)]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -404,7 +404,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Use following config file to configure remotebuild port, web debug proxy port, no builds retention and build cleanup on shutdown]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[remotebuild bağlantı noktasını, web hata ayıklama proxy'si bağlantı noktasını, kapatma sırasında derleme bekletme ve derleme temizleme yok ayarını yapılandırmak için aşağıdaki yapılandırma dosyasını kullanın]]></Val>
+            <Val><![CDATA[Remotebuild bağlantı noktasını, web hata ayıklama proxy'si bağlantı noktasını, derleme saklama yok ayarını ve kapatma sırasında derleme temizlemeyi yapılandırmak için aşağıdaki yapılandırma dosyasını kullanın]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -413,7 +413,7 @@
         <Str Cat="Text">
           <Val><![CDATA[More documentation for configuring taco remote build can be found at <link>http://go.microsoft.com/fwlink/?LinkId=618174</link>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[taco uzak derlemesini yapılandırmaya yönelik daha fazla belgeyi <link>http://go.microsoft.com/fwlink/?LinkId=618174</link> adresinde bulabilirsiniz]]></Val>
+            <Val><![CDATA[Taco uzak derlemesini yapılandırmaya yönelik daha fazla belgeyi <link>http://go.microsoft.com/fwlink/?LinkId=618174</link> adresinde bulabilirsiniz]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

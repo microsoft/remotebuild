@@ -44,7 +44,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Please view/edit server configuration at {0}. You many need to run 'remotebuild saveconfig' to generate it. You will have to restart the server if you update the server configurations.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[請檢視/編輯位於 {0} 的伺服器組態。您可能需要執行 'remotebuild saveconfig' 予以產生。如果更新伺服器組態，則必須重新啟動伺服器。]]></Val>
+            <Val><![CDATA[請檢視/編輯位於 {0} 的伺服器組態。您可能需要執行 'remotebuild saveconfig' 以產生該組態。如果更新伺服器組態，則必須重新啟動該伺服器。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -125,7 +125,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Test that the machine is configured for device builds]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[測試已為裝置組建設定電腦]]></Val>
+            <Val><![CDATA[測試已為裝置組建設定的電腦]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -143,7 +143,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Generate a new certificate for use in the client that will expire in 1 year]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[產生用於用戶端的新憑證，該憑證將在 1 年內到期]]></Val>
+            <Val><![CDATA[產生用於用戶端的新憑證，該憑證將在 1 年後到期]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -179,7 +179,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Invalid port '{0}' specified. Port must be an integer between 0 and 65536]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[指定了無效的連接埠 '{0}'。連接埠必須是介於 0 和 65536 之間的整數]]></Val>
+            <Val><![CDATA[指定的連接埠 '{0}' 無效。連接埠必須是介於 0 到 65536 之間的整數]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -386,7 +386,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Path to config file which specifies default values for remotebuild]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[指定 remotebuild 之預設值的組態檔路徑]]></Val>
+            <Val><![CDATA[指定 remotebuild 預設值的組態檔路徑]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -449,7 +449,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Other options are described in the individual modules. Try asking for help about the following modules: {0}.<br/>For example, 'remotebuild help taco-remote']]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[其他選項會以個別模組來進行說明。請嘗試尋求下列模組的協助: {0}。<br/>例如，'remotebuild help taco-remote']]></Val>
+            <Val><![CDATA[其他選項會以個別模組加以說明。請嘗試尋求下列模組的協助: {0}。<br/>例如，'remotebuild help taco-remote']]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -458,7 +458,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Options (All options other than --config can be specified via a configuration file)]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[選項 (--config 以外的所有選項可透過組態檔指定)]]></Val>
+            <Val><![CDATA[選項 (--config 以外的所有選項都可透過組態檔指定)]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -476,7 +476,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Start the server with all defaults (secure server with serverDir $TACO_HOME/remote-builds, port 3000)]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[使用所有預設值啟動伺服器 (使用 serverDir $TACO_HOME/remote-builds、連接埠 3000 保護伺服器)]]></Val>
+            <Val><![CDATA[使用所有預設值啟動伺服器 (使用 serverDir $TACO_HOME/remote-builds、連接埠 3000 的安全伺服器)]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -485,7 +485,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Start the server with a different serverDir, port, and http (non-secure)]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[使用不同的 serverDir、連接埠和 http (非安全)，啟動伺服器]]></Val>
+            <Val><![CDATA[使用不同的 serverDir、連接埠與 http (非安全)，啟動伺服器]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -503,7 +503,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Run device tests against a server started with 'remotebuild --config config.json']]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[對使用 'remotebuild --config config.json' 啟動的伺服器執行裝置測試]]></Val>
+            <Val><![CDATA[對以 'remotebuild --config config.json' 啟動的伺服器執行裝置測試]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -512,7 +512,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Reset server certificates to expire in 1 year]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[將伺服器憑證重設為在 1 年內到期]]></Val>
+            <Val><![CDATA[將伺服器憑證重設為在 1 年後到期]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
