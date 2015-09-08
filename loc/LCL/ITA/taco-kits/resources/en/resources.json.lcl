@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<LCX SchemaVersion="6.0" Name="F:\43\bin\packages\node_modules\taco-kits\resources\en\resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="it-IT" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
+<?xml version="1.0" encoding="utf-8"?>
+<LCX SchemaVersion="6.0" Name="F:\43\bin\packages\node_modules\taco-kits\resources\en\resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="it-IT" Desc="Commenting file created by LCXAdmin. For more information, please visit http://localizability/longhorn/LcxAdmin.asp" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
   <Props>
     <Str Name="HobbitID" Val="236ee03f-24ae-4583-83a0-08605a12f80b" />
   </Props>
@@ -13,146 +13,338 @@
     <Disp Icon="Expand" Expand="true" Disp="true" LocTbl="false" />
     <Item ItemId=";Strings" ItemType="0" PsrId="306" Leaf="false">
       <Disp Icon="Str" Disp="true" LocTbl="false" />
-      <Item ItemId=";2.2.0-Kit" ItemType="0" PsrId="306" Leaf="true">
+      <Item ItemId=";AbstractMethod" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[2.2.0 Cordova Kit]]></Val>
+          <Val><![CDATA[This is an abstract method and should be implemented by a derived overload]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Questo è un metodo astratto e deve essere implementato da un overload derivato]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";2.2.0-Kit-desc" ItemType="0" PsrId="306" Leaf="true">
+      <Item ItemId=";CommandBadSubcommand" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[A toolkit of plugins and platforms that work with Cordova CLI v2.2.0.]]></Val>
+          <Val><![CDATA[Unknown subcommand for '{0}': '{1}'. See 'taco help {0}'.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Sottocomando sconosciuto per '{0}': '{1}'. Vedere 'taco help {0}'.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";4.0.0-Kit" ItemType="0" PsrId="306" Leaf="true">
+      <Item ItemId=";CommandHelpBadcomand" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[4.0.0 Cordova Kit]]></Val>
+          <Val><![CDATA[{0} is not a valid command<br/>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[{0} non è un comando valido<br/>]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";4.0.0-Kit-desc" ItemType="0" PsrId="306" Leaf="true">
+      <Item ItemId=";CommandHelpTableTitle" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[A toolkit of plugins and platforms that work with Cordova CLI v4.0.0.]]></Val>
+          <Val><![CDATA[Commands:]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Comandi:]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";4.2.0-Kit" ItemType="0" PsrId="306" Leaf="true">
+      <Item ItemId=";CommandHelpUsageAliases" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[4.2.0 Cordova Kit]]></Val>
+          <Val><![CDATA[<br/><helptitle>Aliases:</helptitle><br/>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<br/><helptitle>Alias:</helptitle><br/>]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";4.2.0-Kit-desc" ItemType="0" PsrId="306" Leaf="true">
+      <Item ItemId=";CommandHelpUsageExamples" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[A toolkit of plugins and platforms that work with Cordova CLI v4.2.0.]]></Val>
+          <Val><![CDATA[<br/><helptitle>Examples:</helptitle><br/>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<br/><helptitle>Esempi:</helptitle><br/>]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";4.2.0-Win10-Beta" ItemType="0" PsrId="306" Leaf="true">
+      <Item ItemId=";CommandHelpUsageNotes" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[4.2.0 + Cordova Windows 10 Beta Kit]]></Val>
+          <Val><![CDATA[<br/><helptitle>Notes:</helptitle><br/>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<br/><helptitle>Note:</helptitle><br/>]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";4.2.0-Win10-Beta-desc" ItemType="0" PsrId="306" Leaf="true">
+      <Item ItemId=";CommandHelpUsageOptions" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[A toolkit of plugins and platforms designed to work with the beta version of the Cordova Windows 10 platform.]]></Val>
+          <Val><![CDATA[<br/><helptitle>Options:</helptitle><br/>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<br/><helptitle>Opzioni:</helptitle><br/>]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";5.0.0-Kit" ItemType="0" PsrId="306" Leaf="true">
+      <Item ItemId=";CommandHelpUsageParameters" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[5.0.0 Cordova Kit]]></Val>
+          <Val><![CDATA[<helptitle>Parameters:</helptitle><br/>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<helptitle>Parametri:</helptitle><br/>]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";5.0.0-Kit-desc" ItemType="0" PsrId="306" Leaf="true">
+      <Item ItemId=";CommandHelpUsageSynopsis" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[A toolkit of plugins and platforms that work with Cordova CLI v5.0.0.]]></Val>
+          <Val><![CDATA[<helptitle>Synopsis</helptitle><br/>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<helptitle>Riepilogo</helptitle><br/>]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";TacoKitsExceptionDeprecatedKitMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";FailedFileRead" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Consider changing your project to use a more recent Kit. For deprecation information, see {todo_fwdLink}]]></Val>
+          <Val><![CDATA[Failed to read file from {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Non è stato possibile leggere il file da {0}]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Helpful message shown when the user specifies deprecated kit identifier.]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";TacoKitsExceptionDeprecatedKitWarning" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";FailedFileWrite" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Warning: Kit {0} has been deprecated]]></Val>
+          <Val><![CDATA[Failed to write file at {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Non è stato possibile scrivere il file in {0}]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Error shown when the user specifies a kit that is deprecated.]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";TacoKitsExceptionInvalidKit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";FailedRecursiveCopy" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error: {0} is not a known Kit.]]></Val>
+          <Val><![CDATA[Failed to recursively copy from {0} to {1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Non è stato possibile eseguire la copia ricorsiva da {0} a {1}]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Error shown when the user specifies an unknown kit identifier. {0} is the kit identifier that the user specified as parameter in the command line.]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";TacoKitsExceptionInvalidTemplate" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";InnerErrorToString" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error: No template matching [--template {0}]5D; found]]></Val>
+          <Val><![CDATA[Inner Error:]A;{0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Errore interno:]A;{0}]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Error shown when the user specifies an unknown template identifier. {0} is the template identifier that the user specified as parameter in the command line.]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";TacoKitsExceptionKitMetadataFileMalformed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";LoggedProcessTerminatedWithCode" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error: The kit metadata file is corrupt. Please fix this by re-installing taco-kits from npm.]]></Val>
+          <Val><![CDATA[Process exited with code {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Processo terminato con codice {0}]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Error thrown when the TacoKitMetadata.json is malformed]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";TacoKitsExceptionKitMetadataFileNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";PackageLoaderDownloadCompletedMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error: The kit metadata file is not found. Please fix this by re-installing taco-kits from npm.]]></Val>
+          <Val><![CDATA[{0} downloaded and installed.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[{0} è stato scaricato e installato.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Error thrown when the TacoKitMetadata.json file is not found]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";TacoKitsExceptionNoCliSpecification" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";PackageLoaderDownloadError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error: No Cordova CLI specification is found for kit {0}. The kit metadata file appears to be corrupt. Please fix this by re-installing taco-kits from npm or run "taco kit list" to see the list of available kits]]></Val>
+          <Val><![CDATA[Error: Downloading {0} failed.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Errore: il download di {0} non è riuscito.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Error thrown when no Cordova CLI is specified for the kit {0} in the kit metadata file, TacoKitMetadata.json]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";TacoKitsExceptionNoDefaultKit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";PackageLoaderDownloadingMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error: No default kit found. Please fix this by re-installing taco-kits from npm or run "taco kit list" to see the list of available kits]]></Val>
+          <Val><![CDATA[<bold>Downloading</bold>: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<bold>Download di</bold>: {0}]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Error thrown when no default kit is specified in the kit metadata file, TacoKitMetadata.json]]></Cmt>
-        </Cmts>
       </Item>
-      <Item ItemId=";TacoKitsExceptionTypescriptNotSupported" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";PackageLoaderInstalledMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error: This version of Cordova does not contain a TypeScript template]]></Val>
+          <Val><![CDATA[Installed {0}{1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Installazione di {0}{1} completata]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Error shown when the user specifies a TypeScript template, but there is no such template available for the selected kit.]]></Cmt>
-        </Cmts>
+      </Item>
+      <Item ItemId=";PackageLoaderInvalidPackageVersionSpecifier" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: {0} is an invalid {1} version]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Errore: {0} non è una versione valida di {1}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";PackageLoaderNpmInstallErrorMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error installing {0} via npm. See output for details.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Errore durante l'installazione di {0} tramite NPM. Per i dettagli, vedere l'output.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";PackageLoaderNpmInstallFailedConsoleMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[For more information please refer to http://aka.ms/TacoCliKnownIssues]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Per altre informazioni, vedere http://aka.ms/TacoCliKnownIssues]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";PackageLoaderNpmInstallFailedEaccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error installing {0} via npm. Exit Code: {1}. Check permissions of npm cache. For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=613751.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Errore durante l'installazione di {0} tramite NPM. Codice di uscita: {1}. Verificare le autorizzazioni della cache di NPM. Per altre informazioni, vedere http://go.microsoft.com/fwlink/?LinkId=613751.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";PackageLoaderNpmInstallFailedWithCode" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error installing {0} via npm. Exit Code: {1}. See output for details.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Errore durante l'installazione di {0} tramite NPM. Codice di uscita: {1}. Per i dettagli, vedere l'output.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";PackageLoaderNpmUpdateErrorMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error updating {0} via npm. See output for details.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Errore durante l'aggiornamento di {0} tramite NPM. Per i dettagli, vedere l'output.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";PackageLoaderNpmUpdateFailedEaccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error updating {0} via npm. Exit Code: {1}. Check permissions of npm cache. For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=613751.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Errore durante l'aggiornamento di {0} tramite NPM. Codice di uscita: {1}. Verificare le autorizzazioni della cache di NPM. Per altre informazioni, vedere http://go.microsoft.com/fwlink/?LinkId=613751.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";PackageLoaderNpmUpdateFailedWithCode" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error updating {0} via npm. Exit Code: {1}. See output for details.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Errore durante l'aggiornamento di {0} tramite NPM. Codice di uscita: {1}. Per i dettagli, vedere l'output.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";PackageLoaderUpdateUnableToRecover" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error attempting to recover from failed installation at {0}.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Errore durante il tentativo di ripristino dall'installazione non riuscita in {0}.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ProcessLogError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error from writing to stream at %s: %s]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Errore durante la scrittura nel flusso in %s: %s]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TacoUtilsExceptionListingfile" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Cannot find command listing file]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Il file dell'elenco di comandi non è stato trovato]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TacoUtilsExceptionMissingcommand" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Cannot find command module for command {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Il modulo comandi per il comando {0} non è stato trovato]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TelemetryCurrentlyOptedInPrompt" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Would you like to continue doing so?]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Continuare?]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TelemetryCurrentlyOptedOutPrompt" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Would you like to allow us to collect your usage data?]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Consentire a Microsoft di raccogliere i dati di utilizzo?]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TelemetryOptInMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<bold>Do you want to help improve the quality of Microsoft products and services by allowing us to collect your usage data?</bold><br/><br/>You can read our privacy policy that provides information on what data we collect and how we will use it at the following location: <link>https://www.visualstudio.com/en-us/dn948229</link>.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<bold>Contribuire a migliorare la qualità di prodotti e servizi Microsoft acconsentendo alla raccolta dei dati di utilizzo?</bold><br/><br/>Per informazioni sui dati raccolti e su come verranno usati, leggere l'informativa sulla privacy disponibile all'indirizzo: <link>https://www.visualstudio.com/it-it/dn948229</link>.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TelemetryOptInNo" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<bold>You are currently not providing usage feedback.</bold><br/><br/>How you use {0} is an important data point we use to help improve Microsoft products and services, and you can read our privacy policy that provides information on what data we collect and how we will use it at the following location: <link>https://www.visualstudio.com/en-us/dn948229</link>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<bold>Al momento non vengono forniti commenti sull'utilizzo.</bold><br/><br/>La modalità di utilizzo di {0} costituisce un punto dati importante che verrà usato per migliorare prodotti e servizi Microsoft. L'informativa sulla privacy, che fornisce le informazioni sui dati raccolti e su come verranno usati, è disponibile all'indirizzo seguente: <link>https://www.visualstudio.com/it-it/dn948229</link>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TelemetryOptInNote" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Note: We will send the result of this question even if you select No. ]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Nota: la risposta a questa domanda verrà inviato anche se si seleziona No. ]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TelemetryOptInYes" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<bold>You are currently providing usage feedback to help improve Microsoft products and services. Thank you!</bold>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<bold>Al momento vengono forniti commenti sull'utilizzo per migliorare prodotti e servizi Microsoft. Grazie!</bold>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
       </Item>
     </Item>
   </Item>

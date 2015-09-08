@@ -368,7 +368,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Port number for webkit debugger device discovery (defaults to 9221 if not specified)]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Die Portnummer für die Geräteermittlung des Webkit-Debuggers (Standardwert 9331, wenn keine Angabe erfolgt).]]></Val>
+            <Val><![CDATA[Die Portnummer für die Geräteermittlung des Webkit-Debuggers (Standardwert 9221, wenn keine Angabe erfolgt).]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

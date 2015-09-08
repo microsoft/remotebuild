@@ -501,6 +501,9 @@
       <Item ItemId=";RemoteBuildStartExample2" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Start the server with a different serverDir, port, and http (non-secure)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Spustí server s jiným adresářem (serverDir), portem a protokolem http (v nezabezpečeném režimu).]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
