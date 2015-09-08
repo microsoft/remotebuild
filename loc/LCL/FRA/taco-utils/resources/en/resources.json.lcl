@@ -34,7 +34,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Building Cordova app.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Génération d'application Cordova.]]></Val>
+            <Val><![CDATA[Build de l’application Cordova.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -97,7 +97,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Done with current build. Checking for next build in queue.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Build actuelle achevée. Recherche de la prochaine build en file d'attente.]]></Val>
+            <Val><![CDATA[Build actuelle terminée. Recherche de la prochaine build en file d'attente.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -151,7 +151,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Uploaded build request payload.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Charge utile de la requête de build chargée.]]></Val>
+            <Val><![CDATA[Charge utile de la requête de build chargée sur le serveur.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -448,7 +448,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Extracted app contents from uploaded build request to {0}. Requesting build.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Extraction effectuée des contenus d'application à partir de la requête de build chargée vers {0}. Requête de build.]]></Val>
+            <Val><![CDATA[Le contenu de l’application de la requête de build téléchargée a été extrait sur {0}. Création d’une requête de build.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -466,7 +466,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Saving build request payload to : {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Enregistrement de la charge utile de la requête de build dans : {0}]]></Val>
+            <Val><![CDATA[Enregistrement du contenu de la requête de build dans : {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
