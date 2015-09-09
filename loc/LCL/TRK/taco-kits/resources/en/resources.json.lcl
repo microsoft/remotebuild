@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LCX SchemaVersion="6.0" Name="F:\43\bin\packages\node_modules\taco-kits\resources\en\resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="tr-TR" Desc="Commenting file created by LCXAdmin. For more information, please visit http://localizability/longhorn/LcxAdmin.asp" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
+<LCX SchemaVersion="6.0" Name="F:\43\bin\packages\node_modules\taco-kits\resources\en\resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="tr-TR" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
   <Props>
     <Str Name="HobbitID" Val="236ee03f-24ae-4583-83a0-08605a12f80b" />
   </Props>
@@ -14,335 +14,119 @@
     <Disp Icon="Expand" Expand="true" Disp="true" LocTbl="false" />
     <Item ItemId=";Strings" ItemType="0" PsrId="306" Leaf="false">
       <Disp Icon="Str" Disp="true" LocTbl="false" />
-      <Item ItemId=";AbstractMethod" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";BlankTemplateName" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[This is an abstract method and should be implemented by a derived overload]]></Val>
+          <Val><![CDATA[Blank template]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Bu bir soyut metottur ve türetilmiş bir aşırı yükleme tarafından uygulanmalıdır]]></Val>
+            <Val><![CDATA[Boş şablon]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";CommandBadSubcommand" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";TacoKitsExceptionDeprecatedKitMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Unknown subcommand for '{0}': '{1}'. See 'taco help {0}'.]]></Val>
+          <Val><![CDATA[Consider changing your project to use a more recent Kit. For deprecation information, see <link>http://go.microsoft.com/fwlink/?LinkId=618170</link>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA['{0}' komutu için bilinmeyen alt komut: '{1}'. Bkz. 'taco help {0}'.]]></Val>
+            <Val><![CDATA[Projenizi daha güncel bir Set kullanacak şekilde değiştirmeyi düşünün. Kullanım dışı bırakma bilgileri için bkz. <link>http://go.microsoft.com/fwlink/?LinkId=618170</link>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";CommandHelpBadcomand" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";TacoKitsExceptionDeprecatedKitWarning" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[{0} is not a valid command<br/>]]></Val>
+          <Val><![CDATA[Warning: Kit {0} has been deprecated]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[{0} geçerli bir komut değil<br/>]]></Val>
+            <Val><![CDATA[Uyarı: {0} seti kullanım dışı bırakılmış]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";CommandHelpTableTitle" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";TacoKitsExceptionInvalidKit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Commands:]]></Val>
+          <Val><![CDATA[Error: {0} is not a known Kit. Please run 'taco kit list' for the list of known kits.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Komutlar:]]></Val>
+            <Val><![CDATA[Hata: {0} bilinen bir Set değil. Bilinen setlerin listesi için lütfen 'taco kit list' komutunu çalıştırın.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";CommandHelpUsageAliases" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";TacoKitsExceptionInvalidTemplate" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[<br/><helptitle>Aliases:</helptitle><br/>]]></Val>
+          <Val><![CDATA[Error: No template matching [--template {0}]5D; found]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<br/><helptitle>Diğer adlar:</helptitle><br/>]]></Val>
+            <Val><![CDATA[Hata: [--template {0}]5D; ile eşleşen şablon bulunamadı]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";CommandHelpUsageExamples" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";TacoKitsExceptionKitMetadataFileMalformed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[<br/><helptitle>Examples:</helptitle><br/>]]></Val>
+          <Val><![CDATA[Error: The kit metadata file is corrupt. Please fix this by re-installing taco-kits from npm.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<br/><helptitle>Örnekler:</helptitle><br/>]]></Val>
+            <Val><![CDATA[Hata: Set meta veri dosyası bozuk. Lütfen taco-kits'i npm'den yeniden yükleyerek bu sorunu giderin.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";CommandHelpUsageNotes" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";TacoKitsExceptionKitMetadataFileNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[<br/><helptitle>Notes:</helptitle><br/>]]></Val>
+          <Val><![CDATA[Error: The kit metadata file is not found. Please fix this by re-installing taco-kits from npm.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<br/><helptitle>Notlar:</helptitle><br/>]]></Val>
+            <Val><![CDATA[Hata: Set meta veri dosyası bulunamadı. Lütfen taco-kits'i npm'den yeniden yükleyerek bu sorunu giderin.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";CommandHelpUsageOptions" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";TacoKitsExceptionNoCliSpecification" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[<br/><helptitle>Options:</helptitle><br/>]]></Val>
+          <Val><![CDATA[Error: No Cordova CLI specification is found for kit {0}. The kit metadata file appears to be corrupt. Please fix this by re-installing taco-kits from npm or run "taco kit list" to see the list of available kits]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<br/><helptitle>Seçenekler:</helptitle><br/>]]></Val>
+            <Val><![CDATA[Hata: {0} seti için Cordova CLI belirtimi bulunamadı. Set meta verisi bozulmuş görünüyor. Lütfen taco-kits'i npm'den yeniden yükleyerek bu sorunu giderin veya kullanılabilir setlerin listesini görmek için "taco kit list" komutunu çalıştırın]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";CommandHelpUsageParameters" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";TacoKitsExceptionNoDefaultKit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[<helptitle>Parameters:</helptitle><br/>]]></Val>
+          <Val><![CDATA[Error: No default kit found. Please fix this by re-installing taco-kits from npm or run "taco kit list" to see the list of available kits]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<helptitle>Parametreler:</helptitle><br/>]]></Val>
+            <Val><![CDATA[Hata: Varsayılan set bulunamadı. Lütfen taco-kits'i npm'den yeniden yükleyerek bu sorunu giderin veya kullanılabilir setlerin listesini görmek için "taco kit list" komutunu çalıştırın]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";CommandHelpUsageSynopsis" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";TacoKitsExceptionTypescriptNotSupported" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[<helptitle>Synopsis</helptitle><br/>]]></Val>
+          <Val><![CDATA[Error: This version of Cordova does not contain a TypeScript template]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<helptitle>Özet</helptitle><br/>]]></Val>
+            <Val><![CDATA[Hata: Bu Cordova sürümü bir TypeScript şablonu içermiyor]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";FailedFileRead" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";TypescriptTemplateName" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Failed to read file from {0}]]></Val>
+          <Val><![CDATA[Blank TypeScript template]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[{0} konumundaki dosya okunamadı]]></Val>
+            <Val><![CDATA[Boş TypeScript şablonu]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";FailedFileWrite" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";tacokit@1.0.0" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Failed to write file at {0}]]></Val>
+          <Val><![CDATA[5.1.1 Cordova Kit]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Dosya {0} konumuna yazılamadı]]></Val>
+            <Val><![CDATA[5.1.1 Cordova Seti]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";FailedRecursiveCopy" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";tacokit@1.0.0-desc" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Failed to recursively copy from {0} to {1}]]></Val>
+          <Val><![CDATA[A toolkit of plugins and platforms that works with Cordova CLI v5.1.1]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[{0} konumundan {1} konumuna özyinelemeli olarak kopyalanamadı]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";InnerErrorToString" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Inner Error:]A;{0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[İç Hata:]A;{0}]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";LoggedProcessTerminatedWithCode" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Process exited with code {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[{0} koduyla işlemden çıkıldı]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";PackageLoaderDownloadCompletedMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[{0} downloaded and installed.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[{0} indirildi ve yüklendi.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";PackageLoaderDownloadError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Error: Downloading {0} failed.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Hata: {0} indirme işlemi başarısız oldu.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";PackageLoaderDownloadingMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[<bold>Downloading</bold>: {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<bold>İndiriliyor</bold>: {0}]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";PackageLoaderInstalledMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Installed {0}{1}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[{0}{1} yüklendi]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";PackageLoaderInvalidPackageVersionSpecifier" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Error: {0} is an invalid {1} version]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Hata: {0}, geçersiz bir {1} sürümü]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";PackageLoaderNpmInstallErrorMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Error installing {0} via npm. See output for details.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[{0} npm aracılığıyla yüklenirken hata oluştu. Ayrıntılar için çıkışa bakın.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";PackageLoaderNpmInstallFailedConsoleMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[For more information please refer to http://aka.ms/TacoCliKnownIssues]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Daha fazla bilgi edinmek için bkz. http://aka.ms/TacoCliKnownIssues]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";PackageLoaderNpmInstallFailedEaccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Error installing {0} via npm. Exit Code: {1}. Check permissions of npm cache. For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=613751.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[{0}, npm aracılığıyla yüklenirken hata oluştu. Çıkış Kodu: {1}. Npm önbelleğinin izinlerini denetleyin. Daha fazla bilgi edinmek için bkz. http://go.microsoft.com/fwlink/?LinkId=613751.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";PackageLoaderNpmInstallFailedWithCode" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Error installing {0} via npm. Exit Code: {1}. See output for details.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[{0}, npm aracılığıyla yüklenirken hata oluştu. Çıkış Kodu: {1}. Ayrıntılar için çıkışa bakın.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";PackageLoaderNpmUpdateErrorMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Error updating {0} via npm. See output for details.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[{0}, npm aracılığıyla güncelleştirilirken hata oluştu. Ayrıntılar için çıkışa bakın.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";PackageLoaderNpmUpdateFailedEaccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Error updating {0} via npm. Exit Code: {1}. Check permissions of npm cache. For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=613751.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[{0}, npm aracılığıyla güncelleştirilirken hata oluştu. Çıkış Kodu: {1}. Npm önbelleğinin izinlerini denetleyin. Daha fazla bilgi edinmek için bkz. http://go.microsoft.com/fwlink/?LinkId=613751.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";PackageLoaderNpmUpdateFailedWithCode" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Error updating {0} via npm. Exit Code: {1}. See output for details.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[{0}, npm aracılığıyla güncelleştirilirken hata oluştu. Çıkış Kodu: {1}. Ayrıntılar için çıkışa bakın.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";PackageLoaderUpdateUnableToRecover" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Error attempting to recover from failed installation at {0}.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[{0} konumundaki başarısız yüklemeden kurtarmaya çalışılırken hata oluştu.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";ProcessLogError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Error from writing to stream at %s: %s]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[%s konumundaki akışa yazarken hata oluştu: %s]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";TacoUtilsExceptionListingfile" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Cannot find command listing file]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Komut listesi dosyası bulunamıyor]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";TacoUtilsExceptionMissingcommand" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Cannot find command module for command {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[{0} komutu için komut modülü bulunamıyor]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";TelemetryCurrentlyOptedInPrompt" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Would you like to continue doing so?]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[İşleme devam etmek istiyor musunuz?]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";TelemetryCurrentlyOptedOutPrompt" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Would you like to allow us to collect your usage data?]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Kullanım verilerinizi toplamamıza izin vermek istiyor musunuz?]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";TelemetryOptInMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[<bold>Do you want to help improve the quality of Microsoft products and services by allowing us to collect your usage data?</bold><br/><br/>You can read our privacy policy that provides information on what data we collect and how we will use it at the following location: <link>https://www.visualstudio.com/en-us/dn948229</link>.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<bold>Kullanım verilerinizi toplamamıza izin vererek Microsoft ürün ve hizmetlerinin kalitesini geliştirmemize yardımcı olmak istiyor musunuz?</bold><br/><br/>Topladığımız verilerle ve bu verileri hangi amaçlarla kullanacağımızla ilgili bilgi edinmek için şu adresteki gizlilik ilkemizi okuyabilirsiniz: <link>https://www.visualstudio.com/en-us/dn948229</link>.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";TelemetryOptInNo" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[<bold>You are currently not providing usage feedback.</bold><br/><br/>How you use {0} is an important data point we use to help improve Microsoft products and services, and you can read our privacy policy that provides information on what data we collect and how we will use it at the following location: <link>https://www.visualstudio.com/en-us/dn948229</link>]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<bold>Şu anda kullanım geri bildirimi sağlamıyorsunuz.</bold><br/><br/>{0} hizmetini kullanım şekliniz, Microsoft ürün ve hizmetlerini geliştirmek için kullandığımız önemli bir veri noktası niteliğindedir. Topladığımız verilerle ve bu verileri hangi amaçlarla kullanacağımızla ilgili bilgi edinmek için şu adresteki gizlilik ilkemizi okuyabilirsiniz: <link>https://www.visualstudio.com/en-us/dn948229</link>]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";TelemetryOptInNote" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Note: We will send the result of this question even if you select No. ]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Not: Hayır seçeneğini belirleseniz bile bu sorunun yanıtını göndereceğiz. ]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";TelemetryOptInYes" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[<bold>You are currently providing usage feedback to help improve Microsoft products and services. Thank you!</bold>]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<bold>Şu anda Microsoft ürün ve hizmetlerini geliştirmemize yardımcı olmak için kullanım geri bildirimi sağlıyorsunuz. Teşekkür ederiz!</bold>]]></Val>
+            <Val><![CDATA[CLI v5.1.1 sürümü ile birlikte çalışan eklentilerden ve platformlardan oluşan ait bir araç seti]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
