@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LCX SchemaVersion="6.0" Name="F:\43\bin\packages\node_modules\taco-cli\resources\en\resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="zh-CN" Desc="Commenting file created by LCXAdmin. For more information, please visit http://localizability/longhorn/LcxAdmin.asp" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
+<LCX SchemaVersion="6.0" Name="F:\43\bin\packages\node_modules\taco-cli\resources\en\resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="zh-CN" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
   <Props>
     <Str Name="HobbitID" Val="a79ac570-9c15-4150-9010-c73713d80a4f" />
   </Props>
@@ -14,389 +14,2423 @@
     <Disp Icon="Expand" Expand="true" Disp="true" LocTbl="false" />
     <Item ItemId=";Strings" ItemType="0" PsrId="306" Leaf="false">
       <Disp Icon="Str" Disp="true" LocTbl="false" />
-      <Item ItemId=";AcquiringCordova" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";BuildLogWrittenTo" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Acquiring cordova.]]></Val>
+          <Val><![CDATA[Remote build log written to {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[正在获取 cordova。]]></Val>
+            <Val><![CDATA[远程生成日志已写入 {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";ArchivePackError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CheckingRemoteBuildStatus" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Unexpected error packing archive: {0}]]></Val>
+          <Val><![CDATA[------ {0} Checking on build status from {1} [Attempt {2}]5D;]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[打包档案时出现意外错误: {0}]]></Val>
+            <Val><![CDATA[------ {0} 正在检查 {1} 中的生成状态 [第 {2} 次尝试]5D;]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";BuildFailedUnexpectedly" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CleaningRemoteResources" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Build failed unexpectedly]]></Val>
+          <Val><![CDATA[Cleaning remote {0} {1} build.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[生成意外失败]]></Val>
+            <Val><![CDATA[正在清除远程 {0} {1} 生成。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";BuildFailedWithError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildCleanDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Build failed with error {0}]]></Val>
+          <Val><![CDATA[Clean before building]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[生成失败，错误 {0}]]></Val>
+            <Val><![CDATA[在生成之前清除]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";BuildInvokedTwice" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildDebugDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Invalid request: build.js process already in use but was asked to build again. This is likely a programming error as a build.js process is meant to be used only once.]]></Val>
+          <Val><![CDATA[Create a debug build]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[无效的请求: build.js 进程已在使用中，但要求重新生成。这可能是一种编程错误，因为 build.js 进程仅可使用一次。]]></Val>
+            <Val><![CDATA[创建调试生成]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";BuildNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Build {0} does not exist]]></Val>
+          <Val><![CDATA[Build the project for a given platform]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[生成 {0} 不存在]]></Val>
+            <Val><![CDATA[针对给定平台生成项目]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";BuildRequestMissingCordovaVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildDeviceDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[A cordova version must be specified on the build request.]]></Val>
+          <Val><![CDATA[Create a build to run on a physical device]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[生成请求上必须指定一个 Cordova 版本。]]></Val>
+            <Val><![CDATA[创建要在物理设备上运行的生成]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";BuildRequestUnsupportedCommand" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildEmulatorDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[The requested build command {0} is not supported by this build manager.]]></Val>
+          <Val><![CDATA[Create a build to run in an emulator]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[此生成管理器不支持请求的生成命令 {0}。]]></Val>
+            <Val><![CDATA[创建要在仿真器中运行的生成]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";BuildRequestUnsupportedConfiguration" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildInvalidPlatformLocation" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[The requested build configuration {0} is not supported by this build manager. Only debug and release are supported.]]></Val>
+          <Val><![CDATA[Error: Unable to understand '{0}' platform]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[此生成管理器不支持请求的生成配置 {0}。仅支持调试和发布。]]></Val>
+            <Val><![CDATA[错误: 无法读懂“{0}”平台指令]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";BuildRequestUnsupportedCordovaVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildLocalDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[The build request for cordova version {0} is not supported by the iOS build server. The server is installed with cordova version {1}.]]></Val>
+          <Val><![CDATA[Force a local build]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[iOS 生成服务器不支持 Cordova {0} 版本的生成请求。服务器和 Cordova {1} 版本安装在一起。]]></Val>
+            <Val><![CDATA[强制执行本地生成]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";CopyingNativeOverrides" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildLocalPlatformNotAdded" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Copying native overrides.]]></Val>
+          <Val><![CDATA[Error: Platform {0} has not been added locally. Please try 'taco platform add {0}' before building]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[正在复制本机替代。]]></Val>
+            <Val><![CDATA[错误: 尚未在本地添加平台 {0}。请在生成前尝试“taco platform add {0}”]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";CordovaCompiling" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildNoLocalPlatformsFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Compiling.]]></Val>
+          <Val><![CDATA[Error: no platforms in project. Please run 'taco platform add' to add a platform]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[正在编译。]]></Val>
+            <Val><![CDATA[错误: 项目中没有平台。请运行 "taco platform add”以添加平台]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";DebugSuccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildPlatformDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Successfully Debugging on the device]]></Val>
+          <Val><![CDATA[The platform that you wish to build]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[已在设备上成功调试]]></Val>
+            <Val><![CDATA[要生成的平台]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";DeviceLaunchTimeout" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildPlatformNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Timeout: Is the device locked?]]></Val>
+          <Val><![CDATA[Error: Unable to find local or remote configuration of {0}. Please run 'taco platform add {0}' or 'taco remote add {0}']]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[超时: 设备是否已锁定?]]></Val>
+            <Val><![CDATA[错误: 找不到 {0} 的本地或远程配置。请运行“taco platform add {0}”或“taco remote add {0}”]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";DoneBuilding" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildPlatformsNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Done building {0}]]></Val>
+          <Val><![CDATA[Error: Unable to find any local or remote platforms. Please run 'taco platform add' or 'taco remote add']]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[已完成生成 {0}]]></Val>
+            <Val><![CDATA[错误: 找不到任何本地或远程平台。请运行 "taco platform add" 或 "taco remote add"]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";DownloadInvalid" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildReleaseDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[One or both of expected build outputs {0} and {1} are missing on file system.]]></Val>
+          <Val><![CDATA[Create a release build]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[预期生成输出 {0} 和 {1} 的其中一个或两个都在文件系统中缺失。]]></Val>
+            <Val><![CDATA[创建版本生成]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";EmulateFailedTimeout" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildRemoteDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error: timed out launching iOS simulator.]]></Val>
+          <Val><![CDATA[Force a remote build]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[错误: 启动 iOS 模拟器超时。]]></Val>
+            <Val><![CDATA[强制执行远程生成]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";EmulateFailedWithError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildRemotePlatformNotConfigured" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error from attempting to emulate: {0}]]></Val>
+          <Val><![CDATA[Error: Unable to load remote settings for {0}. Please run 'taco remote add {0}' to configure remote builds for this platform]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[尝试仿真时出错: {0}]]></Val>
+            <Val><![CDATA[错误: 无法加载 {0} 的远程设置。请运行“taco remote add {0}”以配置此平台的远程生成]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";EmulateSuccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildRemotePlatformsNotConfigured" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Successfully sent to ios Simulator]]></Val>
+          <Val><![CDATA[Error: No remote platforms configured. Please run 'taco remote add' to configure one]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[已成功发送至 iOS 模拟器]]></Val>
+            <Val><![CDATA[错误: 未配置任何远程平台。请运行 "taco remote add" 以配置一个远程平台]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";ErrorBuilding" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildTacoSettingsNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Failed to build app for buildNumber {0}: {1}]]></Val>
+          <Val><![CDATA[Error: Unable to load settings. Please run 'taco remote add' before building remotely]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[为 buildNumber {0} 生成应用失败: {1}]]></Val>
+            <Val><![CDATA[错误: 无法加载设置。请在远程生成前运行 "taco remote add"]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";ErrorMountingDiskImage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBuildTargetDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error mounting developer disk image]]></Val>
+          <Val><![CDATA[Create a build to run on the specified target]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[安装开发人员磁盘映像时出错]]></Val>
+            <Val><![CDATA[创建在指定目标上运行的生成]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";ErrorXcconfigDirNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandCreateArgsConfig" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Directory for build.xcconfig does not exist.]]></Val>
+          <Val><![CDATA[json string whose key/values will be included in '[PATH]5D;/.cordova/config.json']]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[build.xcconfig 的目录不存在。]]></Val>
+            <Val><![CDATA[其键/值将包括在 "[PATH]5D;/.cordova/config.json" 中的 json 字符串]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";FailedFindDeveloperDiskImage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandCreateArgsId" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Unable to find Developer Disk Image]]></Val>
+          <Val><![CDATA[Package ID for the project]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[找不到开发人员磁盘映像]]></Val>
+            <Val><![CDATA[项目的包 ID]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";FailedGetDeviceInfo" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandCreateArgsName" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Unable to read device version, is it plugged in and turned on?]]></Val>
+          <Val><![CDATA[Human readable app name]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[无法读取设备版本，是否已插入并打开设备?]]></Val>
+            <Val><![CDATA[可人工读取的应用名称]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";IOSSimNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandCreateArgsPath" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[****** ios-sim is not installed on path. `sudo npm install -g ios-sim` if you want this server to support emulator.]]></Val>
+          <Val><![CDATA[Where to create the project]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[****** 未在路径上安装 ios-sim。如果想要此服务器支持仿真器，请使用 "sudo npm install -g ios-sim"。]]></Val>
+            <Val><![CDATA[创建项目的位置]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";InstallFailNoDevice" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandCreateDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Unable to find attached device; is it plugged in and unlocked?]]></Val>
+          <Val><![CDATA[Create a new Cordova based TACO project]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[找不到连接的设备；设备是否已插入并解锁?]]></Val>
+            <Val><![CDATA[创建一个基于 Cordova 的新 TACO 项目]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";InstallSuccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandCreateGitCloneError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Successfully installed on the device]]></Val>
+          <Val><![CDATA[Error: unable to perform 'git clone' for the specified template. Please see the output from git for more details.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[已在设备上成功安装]]></Val>
+            <Val><![CDATA[错误: 无法针对指定模板执行 "git clone"。有关详细信息，请参阅 GIT 的输出。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";InvalidCordovaAppBadConfigXml" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandCreateGitTemplateHeader" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[The upload is not a valid Cordova Application. Error in parsing config.xml {0}.]]></Val>
+          <Val><![CDATA[Acquiring template from git...<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[上载的 Cordova 应用程序无效。分析 config.xml {0} 时出错。]]></Val>
+            <Val><![CDATA[正在从 GIT 获取模板...<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";InvalidCordovaAppMissingConfigXml" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandCreateGitTemplateName" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[The upload is not a valid Cordova Application. It is missing config.xml in top level directory.]]></Val>
+          <Val><![CDATA[custom git template]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[上载的 Cordova 应用程序无效。其顶级目录中缺少 config.xml。]]></Val>
+            <Val><![CDATA[自定义 GIT 模板]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";InvalidCordovaAppMissingWww" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandCreateInstallGulp" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[The upload is not a valid Cordova Application. It is missing www directory in top level directory.]]></Val>
+          <Val><![CDATA[<br/>Please install gulp and gulp-typescript by following the installation steps listed at <link>http://go.microsoft.com/fwlink/?LinkId=620942</link>.<br/><br/>Once installed, run 'gulp typescript' to pre-compile the TS files before building your project.<br/><br/>Once your TS files are pre-compiled, use 'taco build [platform]5D;' to build your project.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[上载的 Cordova 应用程序无效。其顶级目录中缺少 www 目录。]]></Val>
+            <Val><![CDATA[<br/>请按照 <link>http://go.microsoft.com/fwlink/?LinkId=620942</link> 中列出的安装步骤安装 Gulp 和 Gulp-Typescript。<br/><br/>安装完成后，在生成项目前运行 "gulp typescript"，对 TS 文件进行预编译。<br/><br/>对 TS 文件进行预编译后，使用 "taco build [platform]5D;" 生成项目。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";InvalidCordovaAppUnsupportedAppName" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandCreateInvalidPath" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Unsupported iOS app name {0} in config.xml. Check for characters that are not Printable ASCII, or that match any of the following characters: {1}]]></Val>
+          <Val><![CDATA[Error: The specified path is invalid: {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[config.xml 中不受支持的 iOS 应用名称 {0}。检查确保字符不是可打印的 ASCII 或匹配任何以下字符: {1}]]></Val>
+            <Val><![CDATA[错误: 指定的路径无效: {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";NoCordovaVersionSpecified" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandCreateNoGit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[No cordova version specified!]]></Val>
+          <Val><![CDATA[Error: No git found. Please ensure git is installed and is in your system's Path environment variable.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[未指定 Cordova 版本!]]></Val>
+            <Val><![CDATA[错误: 找不到 GIT。请确保已安装 GIT，并且它在系统的 Path 环境变量中。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";NoDeviceAttached" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandCreateNoPath" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[No device found, is it plugged in and turned on?]]></Val>
+          <Val><![CDATA[Error: A directory name must be specified in order to create a project. See 'taco help create'.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[找不到设备，是否已插入并打开设备?]]></Val>
+            <Val><![CDATA[错误: 要创建项目，必须指定目录名称。请参阅 "taco help create"。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";PackageNotInstalled" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandCreateNotBothCliAndKit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Unable to launch app, it is not installed.]]></Val>
+          <Val><![CDATA[Error: Cannot specify both --cli and --kit]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[无法启动应用，尚未安装该应用。]]></Val>
+            <Val><![CDATA[错误: 无法同时指定 --cli 和 --kit]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";PackagingNativeApp" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandCreateNotBothTemplateAndCli" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Packaging app.]]></Val>
+          <Val><![CDATA[Error: The --template option is not supported with the --cli option; use --kit for templates]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[打包应用。]]></Val>
+            <Val><![CDATA[错误: --cli 选项不支持 --template 选项；请对模板使用 --kit]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";ProvisioningFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandCreateNotTemplateIfCustomWww" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Installation failed: Check your provisioning profile]]></Val>
+          <Val><![CDATA[Error: Cannot specify --template if specifying --copy-from or --link-to]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[安装失败: 检查设置配置文件]]></Val>
+            <Val><![CDATA[错误: 如果指定了 --copy-from 或 --link-to，则无法指定 --template]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";RequireCordovaFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandCreateOnlyLocalCustomWww" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error: Failed to acquire cordova version {0}. {1}]]></Val>
+          <Val><![CDATA[Error: Only local paths for custom www assets are supported.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[错误: 未能获取 Cordova 版本 {0}。{1}]]></Val>
+            <Val><![CDATA[错误: 仅支持自定义 www 资产的本地路径。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";RunSuccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandCreateOptionsCli" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Successfully ran on the device]]></Val>
+          <Val><![CDATA[Use a version of the Cordova CLI rather than a TACO Dev Kit.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[已在设备上成功运行]]></Val>
+            <Val><![CDATA[使用 Cordova CLI 版本而不是 TACO 开发工具包。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";UnableToDebug" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandCreateOptionsCopy" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Unable to start debug bridge]]></Val>
+          <Val><![CDATA[Use custom www assets instead of using a TACO template.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[无法启动调试桥]]></Val>
+            <Val><![CDATA[使用自定义 www 资产而不是 TACO 模板。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";UnableToLaunchApp" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandCreateOptionsKit" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Unable to launch app]]></Val>
+          <Val><![CDATA[Use the specified Cordova Dev Kit for this project rather than the default.  Use "taco kit list" to see a list of available Kits.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[无法启动应用]]></Val>
+            <Val><![CDATA[对此项目使用指定 Cordova 开发工具包而不是默认设置。使用 "taco kit list" 可查看可用工具包列表。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";UnsupportedPlatform" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandCreateOptionsLinkto" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Unable to build: requested platform not supported]]></Val>
+          <Val><![CDATA[Symlink to custom www assets without creating a copy.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[无法生成: 请求的平台不受支持]]></Val>
+            <Val><![CDATA[创建指向自定义 www 资产的符号链接而不创建副本。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";UpdatingIOSPlatform" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandCreateOptionsTemplate" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Updating iOS platform.]]></Val>
+          <Val><![CDATA[Use an alternate project template instead of blank.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[正在更新 iOS 平台。]]></Val>
+            <Val><![CDATA[使用备用项目模板而不使用空白模板。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";WrongInstalledAppsFile" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandCreatePathNotEmpty" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Output file not as expected]]></Val>
+          <Val><![CDATA[Error: Could not create the project because the specified path already exists and is not empty: {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[输出文件与预期不符]]></Val>
+            <Val><![CDATA[错误: 无法创建项目，因为指定的路径已存在且不为空: {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateStatusCreatingNewProject" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Creating a new Cordova project.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[正在创建新 Cordova 项目。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateStatusTableCordovaCLIVersionDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Cordova]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Cordova]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateStatusTableIDDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[ID]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[ID]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateStatusTableKitVersionDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Kit]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[工具包]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateStatusTableLocationDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Location]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[位置]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateStatusTableNameDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Name]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[名称]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateStatusTableReleaseNotesDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Release notes]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[发行说明]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateStatusTableReleaseNotesLink" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<link>http://go.microsoft.com/fwlink/?LinkId=619747</link>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<link>http://go.microsoft.com/fwlink/?LinkId=619747</link>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateSuccessProjectCLI" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<br/><success>Success!</success> Your project is ready for use at <highlight>{0}</highlight>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<br/><success>成功!</success> 已在 <highlight>{0}</highlight> 处使用项目]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateSuccessProjectCustomWww" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<br/><success>Success!</success> Your project using custom assets from {0} is ready for use at <highlight>{1}</highlight>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<br/><success>成功!</success> 使用 {0} 中的自定义资产的项目已在 <highlight>{1}</highlight> 处使用]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateSuccessProjectTemplate" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<br/><success>Success!</success> Your project using the {0} is ready for use at <highlight>{1}</highlight>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<br/><success>成功!</success> 使用 {0} 的项目已在 <highlight>{1}</highlight> 处使用]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateTacoJsonFileCreationError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: Creation of taco.json file failed]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[错误: 创建 taco.json 文件失败]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateTacoJsonFileWriteError" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Failed to write to {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[未能写入 {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateTemplatesUnavailable" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: Unable to access or download templates]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[错误: 无法访问或下载模板]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateWarningDeprecatedKit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<br/><warn>Warning: Kit {0} has been deprecated.</warn><br/>Consider changing your project to use a more recent Kit. For deprecation information, see <link>http://go.microsoft.com/fwlink/?LinkId=618170</link>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<br/><warn>警告: 工具包 {0} 已弃用。</warn><br/>请考虑将项目更改为使用较新的工具包。有关弃用信息，请参阅 <link>http://go.microsoft.com/fwlink/?LinkId=618170</link>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandDocumentationDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Open up the documentation page in your default browser]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[在默认浏览器中打开文档页]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandEmulateDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Emulate a cordova project]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[仿真 Cordova 项目]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: An error occurred while running the command.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[错误: 运行命令时出错。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandFeedbackDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Change feedback setting]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[更改反馈设置]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandHelpDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Get help for a TACO command]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[获取 TACO 命令的帮助]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandInstallCordovaTooOld" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: The current project uses Cordova version {0}. 'taco install-reqs' supports projects using Cordova version {1} or higher.<br/><br/>If your project was created using a TACO kit, consider moving to a kit that has a more recent version of Cordova. If your project was created using Cordova directly, consider updating the installation of Cordova. For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[错误: 当前项目使用 Cordova {0}。"taco install-reqs" 支持使用 Cordova {1} 或更高版本的项目。<br/><br/>如果项目是使用 TACO 工具包创建的，请考虑改用包含更新版本的 Cordova 的工具包。如果项目是直接使用 Cordova 创建的，请考虑更新 Cordova 的安装。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkId=618544。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandInstallFinalPlatforms" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Installing dependencies for the following platforms: <highlight>{0}</highlight>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[正在安装以下平台的依赖项: <highlight>{0}</highlight>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandInstallNoPlatformsAdded" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: No platforms added to your project. To install the dependencies for a given platform, please add it to your project first.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[错误: 未向项目添加任何平台。若要安装给定平台的依赖项，请首先将该平台添加到项目。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandInstallNoPlatformsFolder" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: No 'platforms' folder found. Please make sure the current directory is the root of a Cordova project, and at least one platform has been added.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[错误: 找不到 "platforms" 文件夹。请确保当前目录是 Cordova 项目的根目录，并且添加了至少一个平台。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandInstallNoReqsSupportHint" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<highlight>Note:</highlight> To manually update a single platform, remove the platform from your project and then run:<br/><br/>    <highlight>taco platform add </highlight>[platform]5D;<highlight>@</highlight>[version]5D;]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<highlight>注:</highlight> 若要手动更新一个平台，请从项目中删除该平台，然后运行:<br/><br/>    <highlight>taco platform add </highlight>[platform]5D;<highlight>@</highlight>[version]5D;]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandInstallNothingToInstall" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[There is nothing to install. Please see the above messages for details.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[没有要安装的内容。有关详细信息，请参阅上述消息。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandInstallPlatformBullet" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[- <highlight>{0}</highlight>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[- <highlight>{0}</highlight>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandInstallPlatformVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Minimum version required: {0}@<highlight>{1}</highlight>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[需要的最低版本: {0}@<highlight>{1}</highlight>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandInstallReqsDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Install platform-specific third-party dependencies required to build]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[安装生成所需的特定于平台的第三方依赖项]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandInstallReqsPlatformDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A platform for which to install third-party dependencies]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[要为其安装第三方依赖项的平台]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandInstallSkipNoReqsSupport" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The following platforms will be skipped because they don't support Cordova's requirements checking:<br/>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[将跳过以下平台，因为它们不支持 Cordova 的要求检查:<br />]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandInstallSkipNotAdded" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The following platforms will be skipped because they haven't been added to your project yet:<br/>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[将跳过以下平台，因为尚未将它们添加到项目:<br />]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandInstallSkipSystem" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The following platforms will be skipped because they aren't supported for your current operating system:<br/>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[将跳过以下平台，因为它们在当前操作系统中不受支持:<br/>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitCliOrKitShouldBeSpecified" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: Kit or CLI needs to be specified. Please run 'taco help kit' for more details.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[错误: 需要指定工具包或 CLI。有关详细信息，请运行 "taco help kit"。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitCliOrKitShouldBeSpecified.comment" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error thrown when no Kit or CLI is specified for the 'taco kit select' command]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[没有为 "taco kit select" 命令指定工具包或 CLI 时会引发错误]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Perform kit related operations]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[执行工具包的相关操作]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitJsonOptionDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Save the list of known kits to a json file at path <PATH>.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[将已知工具包列表保存到路径 <PATH> 处的 json 文件。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitList" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The following kits are available for use:]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[以下工具包可供使用:]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitListCordovaCliForKit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<bold>Cordova CLI: </bold>{0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<bold>Cordova CLI: </bold>{0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitListCurrentCordovaCli" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<bold>Cordova CLI Version: </bold>{0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<bold>Cordova CLI 版本: </bold>{0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitListCurrentKit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<bold>Current Kit</bold>: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<bold>当前工具包</bold>: {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitListDefaultDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A toolkit of plugins and platforms that works with Cordova CLI v{0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[包含插件和平台的工具包，可用于 Cordova CLI v{0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitListDefaultKit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Default]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[默认]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitListDeprecatedKit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Deprecated]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[已弃用]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitListJsonFileStatus" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<success>Success!</success> Kit metadata file is saved at <highlight>{0}</highlight>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<success>成功!</success> 工具包元数据文件已保存到 <highlight>{0}</highlight>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitListJsonOverwritePrompt" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The file {0} already exists. Do you wish to overwrite? [y/n]5D;?]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[文件 {0} 已存在。是否要覆盖? [是/否]5D;?]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitListPlatformOverridesForKit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<bold>Platforms: </bold>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<bold>平台: </bold>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitListPluginOverridesForKit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<bold>Plugins: </bold>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<bold>插件: </bold>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitListReleaseNotes" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[For more information about this kit, please visit <link>{0}</link>.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[有关此工具包的详细信息，请访问 <link>{0}</link>。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitListSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[List available TACO kits]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[列出可用 TACO 工具包]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitOptionKitDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[List the details (pinned version of Cordova CLI, platforms and plugins) for a specific kit with ID <KIT-ID>.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[列出 ID 为 <KIT-ID> 的指定工具包的详细信息(Cordova CLI、平台和插件的固定版本)。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitProjectUsesSameCli" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: TACO project already uses the Cordova CLI {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[错误: TACO 项目已在使用 Cordova CLI {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitProjectUsesSameKit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: TACO project already uses kit {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[错误: TACO 项目已在使用工具包 {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitSelectCliPreview" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[You have opted not to use a Kit. Cordova CLI {0} may pin platform and plugin versions that are different from what are currently added to your project and may not have been verified to work with TACO. Here is an overview of what this update will change:]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[你已选择不使用工具包。Cordova CLI {0} 可能固定当前未添加到项目的平台和插件版本，以及尚未验证是否可用于 TACO 的平台和插件版本。下面概述了此更新将更改的内容:]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitSelectKitCliVersion.comment" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[String used to represent the CLI pinned version of platforms and plugins that aproject will be updated to, on 'taco kit select']]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[用于表示平台和插件的 CLI 固定版本的字符串,在运行 "taco kit select" 时,项目将更新到该版本]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitSelectKitPlatformVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[[DEFAULT]5D;]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[[默认值]5D;]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitSelectKitPluginVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[[EDGE]5D;]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[[EDGE]5D;]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitSelectKitPreview" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Kit {0} recommends a different version for some platforms and plugins already added to your project. Here is an overview of what this update will change:]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[工具包 {0} 为已添加到项目的某些平台和插件推荐不同的版本。下面概述了此更新将更改的内容:]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitSelectNoUpdateListHeader" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The following plugins were not installed from NPM and will not be updated:]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[未从 NPM 安装以下插件，将不会更新这些插件:]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitSelectOptionCliDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Use the specified version of Cordova CLI for the project.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[对项目使用指定版本的 Cordova CLI。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitSelectOptionKitDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Use the specified TACO kit for the project. Use "taco kit list" to see a list of available kits.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[对项目使用指定的 TACO 工具包。使用 "taco kit list" 可查看可用工具包列表。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitSelectProjectUpdatePrompt" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Make these changes now [y/n]5D;?]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[立即进行这些更改 [是/否]5D;?]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitSelectProjectUpdateWarning" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<warn>Warning:</warn> Platforms and plugins in your project will be removed and replaced with these updates. Plugins installed from the local file system or a GIT respository will be ignored.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<warn>警告:</warn> 将删除项目中的平台和插件，并替换为这些更新。将忽略从本地文件系统或 GIT 存储库安装的插件。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitSelectStatusSuccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<success>Success!</success>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<success>成功!</success>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitSelectStatusUpdatingPlatforms" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Updating platforms...]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[正在更新平台...]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitSelectStatusUpdatingPlugins" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Updating plugins...]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[正在更新插件...]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitSelectSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Select a kit or a Cordova CLI version for the project]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[为项目选择工具包或 Cordova CLI 版本]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Perform kit related operations (like list)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[执行工具包相关的操作(如列表)]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformAddSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Add specified platforms]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[添加指定的平台]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformCheckSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[List platforms which can be updated by 'taco platform update']]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[列出可通过 "taco platform update" 更新的平台]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Manage project platforms]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[管理项目平台]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformLinkDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[When <plat-spec> is a local path, links the platform library directly instead of making a copy of it (support varies by platform; useful for platform development)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[当 <plat-spec> 是本地路径时，直接链接平台库而不是制作其副本(支持因平台而异；可用于平台开发)]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformListSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[List all the installed and available platforms]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[列出所有已安装的可用平台]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformOptBranchDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Name of the branch to checkout after cloning the git repo; If none is specified, the 'master' branch will be checked out]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[要在克隆 GIT 存储库后签出的分支名称；如果未指定任何分支，则将签出 "master" 分支]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformOptPathDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Path to a directory containing a platform name of platform to be retrieved from npm registry]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[目录的路径，该目录中包含将从 NPM 注册表中检索的平台的平台名称]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformOptPlatformDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Platform (typically from the npm registry)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[平台(通常来自 NPM 注册表)]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformOptUrlDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Url to a git repository containing a platform]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[包含平台的 GIT 存储库的 URL]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformOptVersionDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The major.minor.patch version specifier]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[major.minor.patch 版本说明符]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformRemoveSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Remove specified platforms]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[删除指定的平台]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformSaveAddDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Save specified platforms into config.xml after installing them]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[在安装后将指定的平台保存到 config.xml 中]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformSaveRemoveDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Delete specified platforms from config.xml after removing them]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[在删除后从 config.xml 中删除指定的平台]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformSaveUpdateDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Save the latest versions of the specified platforms into config.xml]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[将最新版本的指定平台保存到 config.xml 中]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformStatusAdded" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<success>Success!</success> Platform(s) <highlight>{0}</highlight> added to the project.<br/>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<success>成功!</success> 平台 <highlight>{0}</highlight> 已添加到项目。<br/>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformStatusAdding" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Adding platform <highlight>{0}</highlight> to Cordova project...<br/>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[正在向 Cordova 项目添加平台 <highlight>{0}</highlight>...<br/>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformStatusRemoved" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<success>Success!</success> Platform(s) <highlight>{0}</highlight> removed from the project.<br/>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<success>成功!</success> 已从项目中删除平台 <highlight>{0}</highlight>。<br/>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformStatusRemoving" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Removing platform <highlight>{0}</highlight> from Cordova project...<br/>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[正在从 Cordova 项目中删除平台 <highlight>{0}</highlight>...<br/>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformStatusUpdated" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<success>Success!</success> Platform(s) <highlight>{0}</highlight> updated.<br/>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<success>成功!</success> 平台 <highlight>{0}</highlight> 已更新。<br/>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformStatusUpdating" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Updating platform <highlight>{0}</highlight>...<br/>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[正在更新平台 <highlight>{0}</highlight>...<br/>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The subcommand to be run - add, remove, list, update or check]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[要运行的子命令 - add、remove、list、update 或 check]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformUpdateSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Update the version of cordova used for a specific platform; Update to the latest <VERSION>, if no <VERSION>, path or <URL> is specified.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[更新用于特定平台的 Cordova 版本。如果未指定 <VERSION>、路径或 <URL>，则更新到最新的 <VERSION>。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPlatformUsegitDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Retrieve from git instead of npm registry]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[从 GIT 而不是 NPM 注册表中检索]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginAddSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Add specified Plugins; pluginid will be matched in --searchpath / registry; directory is a directory containing a plugin; giturl is a git repo containing a plugin]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[添加指定的插件；pluginid 将在 --searchpath/注册表中匹配；directory 是包含插件的目录；giturl 是包含插件 GIT 存储库]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginBrowserifyDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Plugins javascript gets loaded at build time instead of runtime using browserify, Replace cordovajs file with one that included the JS of the installed plugins.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[插件 javascript 将在生成时加载而不是在运行时使用 browserify 加载，将 Cordovajs 文件替换为包含已安装插件的 JS 的文件。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Manage Cordova plugins for the project]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[管理项目的 Cordova 插件]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginLinkDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[When installing from a local path, creates a symbolic link to the plugin instead of copying files. The extent to which files are linked vs copied varies by platform. Useful for plugin development.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[从本地路径安装时，创建指向插件的符号路径而不是复制文件。所链接文件与所复制文件的范围因平台而异。可用于插件开发。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginListSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[List currently installed plugins]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[列出当前已安装的插件]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginNoRegistryDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Don't search the registry for plugins]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[不要在注册表中搜索插件]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginRemoveSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Remove plugins with the given IDs]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[删除具有给定 ID 的插件]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginSaveAddDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Save the information for specified plugin into config.xml]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[将指定插件的信息保存到 config.xml 中]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginSaveRemoveDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Remove the information for the specified plugin from config.xml]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[从 config.xml 中删除指定插件的信息]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginSearchPathDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[When looking up plugins by ID, look in this directory and each of its subdirectories for the plugin before hitting the registry. Multiple search paths can be used by either specifying the flag multiple times, or by seperating paths with a delimiter (':' on Unix, ';' on Windows).]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[按 ID 查找插件时，在查找注册表之前先在目录及其每个子目录中查找。可使用多个搜索路径，方法是多次指定标志，或用分隔符(在 Unix 中使用 ":"、在 Windows 中使用 ";")分隔路径。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginSearchSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Search the plugin registry for plugins matching the keywords]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[在插件注册表中搜索与关键字匹配的插件]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginShrinkwrapDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Used together with --save, saves the installed version number to config.xml]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[与 --save 配合使用可将已安装版本号保存到 config.xml]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginStatusAdded" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<success>Success!</success> Plugin added.<br/>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<success>成功!</success> 已添加插件。<br/>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginStatusAdding" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Fetching plugin "<highlight>{0}</highlight>" via npm.<br/>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[正在通过 NPM 提取插件“<highlight>{0}</highlight>”。<br/>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginStatusRemoved" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<success>Success!</success> Plugin <highlight>{0}</highlight> removed<br/>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<success>成功!</success> 已删除插件 <highlight>{0}</highlight><br/>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginStatusRemoving" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Removing plugin <highlight>{0}</highlight> from Cordova project...<br/>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[正在从 Cordova 项目中删除插件 <highlight>{0}</highlight>...<br/>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The subcommand to be run - add, remove, list, or search]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[要运行的子命令 - add、remove、list 或 search]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginTestedPlatforms" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The plugin <highlight>{0}</highlight> has been validated on platform(s) - {1}.<br/>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[已在平台上验证插件 <highlight>{0}</highlight> - {1}。<br/>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandPluginWithIdStatusAdded" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<success>Success!</success> {0} installed.<br/>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<success>成功!</success> 已安装 {0}。<br/>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteAddSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Add a remote build agent for the specified platform]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[为指定平台添加远程生成代理]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteCantFindRemoteMount" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to contact {0} to find where the remote build server services Cordova builds. Is the server running remotebuild with taco-remote configured?]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[无法联系 {0} 以查找 Cordova 生成的远程生成服务器服务。是否为运行 remotebuild 的服务器配置了 taco-remote?]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteConnectionRefused" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to connect to remote server. Make sure that the remotebuild server is running at {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[无法连接到远程服务器。请确保 remotebuild 服务器正在 {0} 处运行]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteDeleteNeedsPlatform" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[No platform specified]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[未指定平台]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteDeletePlatformNotAdded" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to remove platform '{0}': platform not added]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[无法删除平台“{0}”: 未添加平台]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Configure remote builds (currently supports iOS build only)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[配置远程生成(当前仅支持 iOS 生成)]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteHeader" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Please ensure that remotebuild is running on the remote server.<br/> You can generate new client information at any time by typing remotebuild generateClientCert. For more details, see <fwlink goes here>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[请确保 remotebuild 正在远程服务器上运行。<br/> 可通过键入 remotebuild generateClientCert 在任意时刻生成新客户端信息。有关更多详细信息，请参阅 <fwlink goes here>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteInvalidPin" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Invalid PIN '{0}': PINs are 6 digit integers]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[PIN“{0}”无效: PIN 是 6 位整数]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteInvalidPort" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Invalid port '{0}': ports must be integers greater than 0 and less than 65536]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[端口“{0}”无效: 端口必须是大于 0 且小于 65536 的整数]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteListDescriptionHeader" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Remote Server]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[远程服务器]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteListNoPlatforms" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[No platforms configured for remote build.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[没有为远程生成配置平台。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteListNotSecured" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Not Secured]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[不安全]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteListPlatformHeader" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Platform]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[平台]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteListPrelude" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Current remote configuration(s):]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[当前远程配置:]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteListSecured" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Secured]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[安全]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteListSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[List all currently configured remote build agents]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[列出所有当前已配置的远程生成代理]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteNotfound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to look up host '{0}'. Check that the name is correct.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[无法查找主机“{0}”。请检查名称是否正确。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemotePlatformNotKnown" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: No remote settings found for {0}. Please run 'taco remote add {0}']]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[错误: 找不到 {0} 的远程设置。请运行“taco remote add {0}”]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteQueryHost" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Remote host name / IP address: ]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[远程主机名/IP 地址: ]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteQueryPin" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[PIN (leave blank for insecure servers): ]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[PIN (对于不安全的服务器，保留空白): ]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteQueryPort" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Port number: ]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[端口号:]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteRejectedPin" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to use PIN to pair with remote build server: PIN was rejected]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[无法使用 PIN 与远程生成服务器配对: PIN 被拒绝]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteRemoveSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Remove a remote build agent for the specified platform]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[删除指定平台的远程生成代理]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteRemoveSuccessful" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<success>Success!</success> Removed remote platform {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<success>成功!</success> 已删除远程平台 {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteSettingsStored" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<success>Success!</success> Settings stored in {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<success>成功!</success> 设置已存储在 {0} 中]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The subcommand to run: add, remove, or list]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[要运行的子命令: add、remove 或 list]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRemoteTimedout" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to contact '{0}:{1}', please check that the server is reachable.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[无法联系“{0}:{1}”，请检查是否可访问服务器。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRunDebugDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Run or emulate a debug build]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[运行或仿真调试生成]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRunDebuginfoDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Report back additional information to allow connecting a debugger to the running instance]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[报告回其他信息，以允许将调试器连接到正在运行的实例]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRunDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Run the project for a given platform on the selected device/emulator target]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[在所选设备/仿真器目标上针对给定平台运行项目]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRunDeviceDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Run a build on a physical device]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[在物理设备上运行生成]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRunEmulatorDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Run a build in an emulator]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[在仿真器中运行生成]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRunLocalDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Force a local build]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[强制执行本地生成]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRunNobuildDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Do not perform a build before running or emulating]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[不要在运行或仿真前执行生成]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRunPlatformDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The platform that you wish to run or emulate]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[想要运行或仿真的平台]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRunReleaseDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Run or emulate a release build]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[运行或仿真版本生成]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRunRemoteDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Force a remote build]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[强制执行远程生成]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRunRemoteDeviceSuccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<success>Success!</success> Build running on remote attached device]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<success>成功!</success> 生成正在远程附加的设备上运行]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRunRemoteEmulatorSuccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<success>Success!</success> Build running on remote emulator]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<success>成功!</success> 生成正在远程仿真器中运行]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandRunTargetDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Run a build on the specified target]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[在指定目标上运行生成]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandTemplatesDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[List available TACO templates for project creation]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[列出可用于创建项目的 TACO 模板]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandTemplatesHeader" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Available templates:]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[可用模板:]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandUnsupportedPlatformIgnored" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Warning: Platform '{0}' is not supported and will be ignored.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[警告: 平台“{0}”不受支持，将被忽略。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandVersionDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Display the current TACO version]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[显示当前 TACO 版本]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CordovaCmdNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Cordova not found, please run 'npm install –g cordova' to install Cordova globally]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[找不到 Cordova，请运行 "npm install –g cordova" 以全局安装 Cordova]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CordovaCommandFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA['cordova {1}' failed with exit code {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[“cordova {1}”失败，退出代码为 {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CordovaCommandFailedWithError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA['cordova {0}' failed.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[“cordova {0}”失败。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";DoneExtractingRemoteBuild" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[------ Done extracting the build outputs to {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[------ 已将生成输出提取至 {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";DownloadedRemoteBuild" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[------ Done downloading the build outputs to {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[------ 已将生成输出下载到 {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";DownloadingRemoteBuild" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[------ Downloading completed build files from {0} to {1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[------ 正在将 {0} 中已完成的生成文件下载到 {1}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorCertificateLoad" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Failed to load certificate {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[未能加载证书 {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorCertificatePathChmod" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Failed to change permissions for certificate folder {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[未能更改证书文件夹 {0} 的权限]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorCertificateSave" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Failed to save certificate]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[未能保存证书]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorCertificateSaveToPath" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Failed to save certificate at {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[未能在 {0} 处保存证书]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorCertificateSaveWithErrorCode" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Failed to save certificate in certficate store. Exit Code: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[未能在证书存储中保存证书。退出代码: {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorDownloadingRemoteBuild" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error from downloading build outputs to {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[将生成输出下载到 {0} 时出错]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorDuringRemoteBuildSubmission" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error during build submission: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[生成会话期间出错: {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorHttpGet" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error contacting {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[联系 {0} 时出错]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorIncompatibleOptions" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: {0} option cannot be used in conjunction with {1} option.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[错误: {0} 选项可与 {1} 选项配合使用。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorInvalidJsonFilePath" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: The specified path is not a valid JSON file path: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[错误: 指定的路径不是有效的 JSON 文件路径: {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorInvalidPath" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: The specified path is invalid: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[错误: 指定的路径无效: {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorInvalidVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: {0} is an invalid {1} version.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[错误: {0} 是无效的 {1} 版本。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorNoPlatformsFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to find any platforms. Please 'taco platform add <platform>' or 'taco remote add <platform>' and retry.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[找不到任何平台。请运行 "taco platform add <platform>" 或 "taco remote add <platform>"，然后重试。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorNoPluginOrPlatformSpecified" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[No {0}(s) specified. Please specify {0}(s) to {1}. See `taco {0} list`.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[未指定 {0}。请为 {1} 指定 {0}。请参阅“taco {0} list”。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorOperationCancelled" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Operation cancelled]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[操作已取消]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorPatchCreation" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Failed to parse changed files needed to prepare a build patch]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[分析准备生成路径所需的已更改文件失败]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorReadingPackageVersions" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: Could not read versions of {0}.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[错误: 无法读取 {0} 的版本。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorTacoJsonMissingOrMalformed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: taco.json is missing or malformed.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[错误: taco.json 缺失或格式不正确。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorUploadingRemoteBuild" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[An error occurred uploading to the build server {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[上载到生成服务器 {0} 时出错]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ExtractingRemoteBuild" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[------ Extracting the build outputs to {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[------正在将生成输出提取到 {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";FailedToDeleteRemoteZip" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[------ Failed to delete downloaded zip file {0}. This did not prevent a successful build.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[------ 未能删除已下载 zip 文件 {0}。这不会阻止成功生成。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";GeneralCommandsTitle" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[General Commands:]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[常规命令:]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";GetCertificateFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: unable to find certificate.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[错误: 找不到证书。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";HowToUseChangeToProjectFolder" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Change the directory to your project: <bold>cd {0}</bold>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[更改项目的目录: <bold>cd {0}</bold>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";HowToUseCommandAddPlugin" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Add a Cordova plugin: <bold>taco add plugin <PLUGIN-ID></bold>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[添加 Cordova 插件: <bold>taco add plugin <PLUGIN-ID></bold>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";HowToUseCommandBuildPlatform" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Build your app: <bold>taco build <PLATFORM></bold>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[生成应用: <bold>taco build <PLATFORM></bold>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";HowToUseCommandDocs" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[For full documentation online, use '<bold>taco docs</bold>']]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[要在线获取完整文档，请使用 "<bold>taco docs</bold>"]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";HowToUseCommandEmulatePlatform" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Run your app in the emulator: <bold>taco emulate <PLATFORM></bold>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[在仿真器中运行应用: <bold>taco emulate <PLATFORM></bold>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";HowToUseCommandHelp" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[For command help, use '<bold>taco help</bold>' ]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[要获取命令帮助，请使用 "<bold>taco help</bold>" ]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";HowToUseCommandInstallReqsPlugin" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Install the build tools for each platform:  <bold>taco install-reqs <PLATFORM></bold>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[为每个平台安装生成工具:  <bold>taco install-reqs <PLATFORM></bold>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";HowToUseCommandPlatformAddPlatform" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Add a platform:  <bold>taco platform add <PLATFORM></bold>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[添加平台:  <bold>taco platform add <PLATFORM></bold>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";HowToUseCommandRunPlatform" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Run your app on a device: <bold>taco run <PLATFORM></bold>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[在设备上运行应用: <bold>taco run <PLATFORM></bold>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";HowToUseCommandSetupRemote" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Connect to a remote build agent: <bold>taco remote add <PLATFORM></bold>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[连接到远程生成代理: <bold>taco remote add <PLATFORM></bold>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";HowToUseCreateProjectWithTemplate" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[e.g: To create a new TypeScript project, use <bold>taco create <PATH> [ID]5D; --template typescript</bold>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[如: 要创建新的 TypeScript 项目，使用 <bold>taco create <PATH> [ID]5D; --template typescript</bold>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";HttpGetFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Http {0}: {1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[HTTP {0}: {1}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";IncrementalBuild" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[------ Incremental Build: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[------ 增量生成: {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";InvalidBuildSubmission400" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[{0}:{1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[{0}:{1}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";InvalidRemoteBuild" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Invalid remote build: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[远程生成无效: {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";InvalidRemoteBuildClientCert" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The remote build server denied the build request, because the client certificate is invalid or has expired. To build your project, you must generate and configure a security PIN. See http://go.microsoft.com/fwlink/?LinkID=511904]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[远程生成服务器拒绝了生成请求，因为客户端证书无效或已过期。若要生成你的项目，必须生成并配置一个安全 PIN。请参阅 http://go.microsoft.com/fwlink/?LinkID=511904]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";InvalidRemoteBuildUrl" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The remote build server Url {0} is invalid. It should specify http or https.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[远程生成服务器 URL {0} 无效。它应指定 http 或 https。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";NewRemoteBuildInfo" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[------ New Build information: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[------ 新生成信息: {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";NewerTacoCLIVersionAvailable" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<br/>------------------------------------]A;<warn>A newer version is available for taco-cli:</warn>]A; * Locally installed version: {0}]A; * Latest version: {1}]A; * <link>http://go.microsoft.com/fwlink/?LinkId=619747</link>]A; * Run <command>npm install -g taco-cli</command> to update]A;------------------------------------]A;]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<br/>------------------------------------]A;<warn>taco-cli 有较新的版本可用:</warn>]A; * 本地安装的版本: {0}]A; * 最新版本: {1}]A; * <link>http://go.microsoft.com/fwlink/?LinkId=619747</link>]A; * 运行 <command>npm install -g taco-cli</command> 以更新]A;------------------------------------]A;]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";NoCertificateFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: No certificate '{0}' found]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[错误: 找不到证书“{0}”]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";NoRemoteBuildIdFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: No remote build found. Please run '{0}' first]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[错误: 找不到远程生成。请先运行“{0}”]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";NotInCordovaProject" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: Current working directory is not a Cordova-based project]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[错误: 当前工作目录不是基于 Cordova 的项目]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";OnboardingExperienceTitle" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<br/>Quick tips & commands:]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<br/>快速提示和命令:]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ProgramDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[TACO is a command line tool that makes it easy to create, build, run, and emulate Cordova applications.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[TACO 是一个命令行工具，可简化 Cordova 应用程序的创建、生成、运行和仿真。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ProjectCommandsTitle" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Project Commands:]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[项目命令:]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";PromptResponseYes[0]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[y]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[是]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";PromptResponseYes[1]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[yes]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[是]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";RemoteBuildError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Remote build error from the build server {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[生成服务器上出现远程生成错误 {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";RemoteBuildHostNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Host unreachable for build server {0}.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[生成服务器 {0} 无法访问主机。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";RemoteBuildNoConnection" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Remote build server {0} connection failed. Verify that the server is running.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[远程生成服务器 {0} 连接失败。请验证服务器是否正在运行。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";RemoteBuildNonSslConnectionReset" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Non-secure connection to {0} could not be established. Verify that the build server is not running in secure mode.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[无法建立与 {0} 的非安全连接。请验证生成服务器是否在安全模式下运行。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";RemoteBuildSslConnectionReset" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Secure connection to {0} could not be established. Verify that the build server is running in secure mode.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[无法建立与 {0} 的安全连接。请验证生成服务器是否在安全模式下运行。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";RemoteBuildStatusPollFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[HTTP {0}: {1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[HTTP {0}: {1}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";RemoteBuildSuccessful" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Remote build successfully completed]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[远程生成已成功完成]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";RemoteBuildUnsuccessful" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Remote build failed]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[远程生成失败]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";RemoteBuildUnsupportedPlatform" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: Platform '{0}' not supported by current version of cordova.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[错误: 当前 Cordova 版本不支持平台“{0}”。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";SubmittingRemoteBuild" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[------ Submitting new build request to: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[------ 正在将新的生成请求提交至: {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TacoCommandPassthrough" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unknown TACO command, passing it to cordova]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[未知的 TACO 命令，将其传递给 Cordova]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TacoDocumentationLink" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[http://go.microsoft.com/fwlink/?LinkId=619747]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[http://go.microsoft.com/fwlink/?LinkId=619747]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TacoSettingsFileDoesNotExist" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: Unable to load settings. Please run 'taco remote add' before building remotely]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[错误: 无法加载设置。请在远程生成前运行 "taco remote add"]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";UnimplementedAbstractMethod" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[This is an abstract method and should be implemented by a derived overload]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[这是一个抽象方法，应由派生的重载实现]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";UnsupportedHostPlatform" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: Unsupported platform {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[错误: 不受支持的平台 {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";_RemoteBuildUnsupportedPlatformcomment" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error message printed when trying to 'taco remote add <platform>' and the platform is not supported. {0} is the platform]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[在平台不受支持的情况下尝试 "taco remote add <platform>" 时显示的错误消息。{0} 表示平台]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
