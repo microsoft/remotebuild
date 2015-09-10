@@ -124,10 +124,25 @@
       </Item>
       <Item ItemId=";tacokit@1.0.0-desc" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[A toolkit of plugins and platforms that works with Cordova CLI v5.1.1]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
+          <Val><![CDATA[A toolkit of plugins and platforms that works with Cordova CLI v5.1.1.]]></Val>
+          <Tgt Cat="Text" Stat="Update" Orig="New">
             <Val><![CDATA[包含插件和平台的工具包，可用于 CLI v5.1.1]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[A toolkit of plugins and platforms that works with Cordova CLI v5.1.1]]></Val>
+          </Prev>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";tacokit@2.0.0" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[5.2.0 Cordova Kit]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";tacokit@2.0.0-desc" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[A toolkit of plugins and platforms that works with Cordova CLI v5.2.0.]]></Val>
         </Str>
         <Disp Icon="Str" />
       </Item>
