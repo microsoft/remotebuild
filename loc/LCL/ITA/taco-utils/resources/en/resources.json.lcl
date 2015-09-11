@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<LCX SchemaVersion="6.0" Name="resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="it-IT" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
+<?xml version="1.0" encoding="utf-8"?>
+<LCX SchemaVersion="6.0" Name="resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="it-IT" Desc="Commenting file created by LCXAdmin. For more information, please visit http://localizability/longhorn/LcxAdmin.asp" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
   <Props>
     <Str Name="HobbitID" Val="6b5add36-5e22-4342-ae9a-92a83859502e" />
   </Props>
@@ -16,470 +16,335 @@
       <Item ItemId=";AbstractMethod" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[This is an abstract method and should be implemented by a derived overload]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Questo è un metodo astratto e deve essere implementato da un overload derivato]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0826261Z" />
-            </Props>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003463Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Error thrown for an unimplemented method]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-          <Str Name="VendorComment" Val="28/05/15 new" />
-        </Props>
       </Item>
-      <Item ItemId=";CommandBadArguments" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandBadSubcommand" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Unhandled arguments for {0}: {1}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Argomenti non gestiti per {0}: {1}]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0826261Z" />
-            </Props>
+          <Val><![CDATA[Unknown subcommand for '{0}': '{1}'. See 'taco help {0}'.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Sottocomando sconosciuto per '{0}': '{1}'. Vedere 'taco help {0}'.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003464Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Error reported when 'taco {0}' is given arguments it cannot handle. {0} is the command name and {1} is the arguments]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-          <Str Name="VendorComment" Val="28/05/15 new" />
-        </Props>
+      </Item>
+      <Item ItemId=";CommandHelpBadcomand" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[{0} is not a valid command<br/>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[{0} non è un comando valido<br/>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandHelpTableTitle" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Commands:]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Comandi:]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandHelpUsageAliases" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<br/><helptitle>Aliases:</helptitle><br/>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<br/><helptitle>Alias:</helptitle><br/>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandHelpUsageExamples" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<br/><helptitle>Examples:</helptitle><br/>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<br/><helptitle>Esempi:</helptitle><br/>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandHelpUsageNotes" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<br/><helptitle>Notes:</helptitle><br/>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<br/><helptitle>Note:</helptitle><br/>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandHelpUsageOptions" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<br/><helptitle>Options:</helptitle><br/>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<br/><helptitle>Opzioni:</helptitle><br/>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandHelpUsageParameters" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<helptitle>Parameters:</helptitle><br/>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<helptitle>Parametri:</helptitle><br/>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandHelpUsageSynopsis" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<helptitle>Synopsis</helptitle><br/>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<helptitle>Riepilogo</helptitle><br/>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
       </Item>
       <Item ItemId=";FailedFileRead" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Failed to read file from {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Non è stato possibile leggere il file da {0}]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0826261Z" />
-            </Props>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003464Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[{0} is the full path to the file being read]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-          <Str Name="VendorComment" Val="28/05/15 new" />
-        </Props>
       </Item>
       <Item ItemId=";FailedFileWrite" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Failed to write file at {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Non è stato possibile scrivere il file in {0}]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0826261Z" />
-            </Props>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003464Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[{0} is the full path to the file being written]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-          <Str Name="VendorComment" Val="28/05/15 new" />
-        </Props>
       </Item>
       <Item ItemId=";FailedRecursiveCopy" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Failed to recursively copy from {0} to {1}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Non è stato possibile eseguire la copia ricorsiva da {0} a {1}]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0826261Z" />
-            </Props>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003464Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[{0} is the full path to source directory and {1} is the full path to target directory]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-          <Str Name="VendorComment" Val="28/05/15 new" />
-        </Props>
       </Item>
       <Item ItemId=";InnerErrorToString" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Inner Error:]A;{0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Errore interno:]A;{0}]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0826261Z" />
-            </Props>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003464Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[token prefix to an inner error]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-          <Str Name="VendorComment" Val="28/05/15 new" />
-        </Props>
       </Item>
       <Item ItemId=";LoggedProcessTerminatedWithCode" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Process exited with code {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Processo terminato con codice {0}]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0826261Z" />
-            </Props>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003464Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message logged to a file when a process exits. {0} is the numeric exit code the process exited with]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-          <Str Name="VendorComment" Val="28/05/15 new" />
-        </Props>
       </Item>
       <Item ItemId=";PackageLoaderDownloadCompletedMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[<success>Success!</success> {0} downloaded and installed.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[<success>Operazione riuscita.</success> {0} è stato scaricato e installato.]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-15T18:35:20.367294Z" />
-            </Props>
+          <Val><![CDATA[{0} downloaded and installed.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[{0} è stato scaricato e installato.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-15T18:35:33.0000719Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reporting the success of package download and install.]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-          <Str Name="VendorComment" Val="15/06/15 new" />
-        </Props>
       </Item>
       <Item ItemId=";PackageLoaderDownloadError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error: Downloading {0} failed.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Errore: il download di {0} non è riuscito.]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-15T18:35:20.367294Z" />
-            </Props>
           </Tgt>
-          <Prev Cat="Text">
-            <Val><![CDATA[Downloading {0} failed.]]></Val>
-          </Prev>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-15T18:35:33.0000719Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Error reported when downloading a package fails]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-          <Str Name="VendorComment" Val="15/06/15 upd" />
-        </Props>
       </Item>
       <Item ItemId=";PackageLoaderDownloadingMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[<bold>Downloading</bold>: {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[<bold>Download di</bold>: {0}]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-15T18:35:20.367294Z" />
-            </Props>
           </Tgt>
-          <Prev Cat="Text">
-            <Val><![CDATA[Downloading: ]]></Val>
-          </Prev>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-15T18:35:33.0000719Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message printed when download and install of Cordova tools is in progress.]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-          <Str Name="VendorComment" Val="15/06/15 upd" />
-        </Props>
       </Item>
       <Item ItemId=";PackageLoaderInstalledMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Installed {0}{1}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Installazione di {0}{1} completata]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0826261Z" />
-            </Props>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003464Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reporting the success of Cordova tools {0} download.]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-          <Str Name="VendorComment" Val="28/05/15 new" />
-        </Props>
       </Item>
       <Item ItemId=";PackageLoaderInvalidPackageVersionSpecifier" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error: {0} is an invalid {1} version]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Errore: {0} non è una versione valida di {1}]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0826261Z" />
-            </Props>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003464Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[{0} is the package name, and {1} is the package version]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-          <Str Name="VendorComment" Val="28/05/15 new" />
-        </Props>
       </Item>
       <Item ItemId=";PackageLoaderNpmInstallErrorMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error installing {0} via npm. See output for details.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Errore durante l'installazione di {0} tramite npm. Per i dettagli, vedere l'output.]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-15T18:35:20.367294Z" />
-            </Props>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Errore durante l'installazione di {0} tramite NPM. Per i dettagli, vedere l'output.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-15T18:35:33.0000719Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reported when npm install returns a non-zero exit code.]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-          <Str Name="VendorComment" Val="15/06/15 new" />
-        </Props>
+      </Item>
+      <Item ItemId=";PackageLoaderNpmInstallFailedConsoleMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[For more information please refer to http://aka.ms/TacoCliKnownIssues]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Per altre informazioni, vedere http://aka.ms/TacoCliKnownIssues]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
       </Item>
       <Item ItemId=";PackageLoaderNpmInstallFailedEaccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error installing {0} via npm. Exit Code: {1}. Check permissions of npm cache. For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=613751.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Errore durante l'installazione di {0} tramite npm. Codice di uscita: {1}. Verificare le autorizzazioni della cache di npm. Per altre informazioni, vedere http://go.microsoft.com/fwlink/?LinkId=613751.]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0836262Z" />
-            </Props>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Errore durante l'installazione di {0} tramite NPM. Codice di uscita: {1}. Verificare le autorizzazioni della cache di NPM. Per altre informazioni, vedere http://go.microsoft.com/fwlink/?LinkId=613751.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003464Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reported when npm install fails due to permissions]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-          <Str Name="VendorComment" Val="28/05/15 new" />
-        </Props>
       </Item>
       <Item ItemId=";PackageLoaderNpmInstallFailedWithCode" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error installing {0} via npm. Exit Code: {1}. See output for details.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Errore durante l'installazione di {0} tramite npm. Codice di uscita: {1}. Per i dettagli, vedere l'output.]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0836262Z" />
-            </Props>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Errore durante l'installazione di {0} tramite NPM. Codice di uscita: {1}. Per i dettagli, vedere l'output.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003464Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reported when npm install fails with an exit code.]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-          <Str Name="VendorComment" Val="28/05/15 new" />
-        </Props>
       </Item>
       <Item ItemId=";PackageLoaderNpmUpdateErrorMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error updating {0} via npm. See output for details.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Errore durante l'aggiornamento di {0} tramite npm. Per i dettagli, vedere l'output.]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-15T18:35:20.367294Z" />
-            </Props>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Errore durante l'aggiornamento di {0} tramite NPM. Per i dettagli, vedere l'output.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-15T18:35:33.0000719Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reported when npm update returns a non-zero exit code.]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-          <Str Name="VendorComment" Val="15/06/15 new" />
-        </Props>
       </Item>
       <Item ItemId=";PackageLoaderNpmUpdateFailedEaccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error updating {0} via npm. Exit Code: {1}. Check permissions of npm cache. For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=613751.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Errore durante l'aggiornamento di {0} tramite npm. Codice di uscita: {1}. Verificare le autorizzazioni della cache di npm. Per altre informazioni, vedere http://go.microsoft.com/fwlink/?LinkId=613751.]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-15T18:35:20.367294Z" />
-            </Props>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Errore durante l'aggiornamento di {0} tramite NPM. Codice di uscita: {1}. Verificare le autorizzazioni della cache di NPM. Per altre informazioni, vedere http://go.microsoft.com/fwlink/?LinkId=613751.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-15T18:35:33.0000719Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reported when npm update fails due to permissions]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-          <Str Name="VendorComment" Val="15/06/15 new" />
-        </Props>
       </Item>
       <Item ItemId=";PackageLoaderNpmUpdateFailedWithCode" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error updating {0} via npm. Exit Code: {1}. See output for details.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Errore durante l'aggiornamento di {0} tramite npm. Codice di uscita: {1}. Per i dettagli, vedere l'output.]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-15T18:35:20.368294Z" />
-            </Props>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Errore durante l'aggiornamento di {0} tramite NPM. Codice di uscita: {1}. Per i dettagli, vedere l'output.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-15T18:35:33.0000719Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reported when npm update fails with an exit code.]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-          <Str Name="VendorComment" Val="15/06/15 new" />
-        </Props>
+      </Item>
+      <Item ItemId=";PackageLoaderUpdateUnableToRecover" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error attempting to recover from failed installation at {0}.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Errore durante il tentativo di ripristino dall'installazione non riuscita in {0}.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
       </Item>
       <Item ItemId=";ProcessLogError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error from writing to stream at %s: %s]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Errore durante la scrittura nel flusso in %s: %s]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0836262Z" />
-            </Props>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003464Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message printed to console when an error occurs during logging. the first %s is the path to the log file, the second %s is the error message]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-          <Str Name="VendorComment" Val="28/05/15 new" />
-        </Props>
       </Item>
       <Item ItemId=";TacoUtilsExceptionListingfile" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Cannot find command listing file]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Il file dell'elenco di comandi non è stato trovato]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0836262Z" />
-            </Props>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003464Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[error finding commands.json, shouldn't happen]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-          <Str Name="VendorComment" Val="28/05/15 new" />
-        </Props>
       </Item>
       <Item ItemId=";TacoUtilsExceptionMissingcommand" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Cannot find command module for command {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Il modulo comandi per il comando {0} non è stato trovato]]></Val>
-            <Props>
-              <Str Name="TranslationModifiedBy" Val="IT_Translator3_Moravia@hotmail.com" />
-              <Date Name="TranslationModifiedDate" Val="2015-06-01T10:44:42.0836262Z" />
-            </Props>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="IT_Translator3_Moravia@hotmail.com" DateTime="2015-06-01T10:46:22.0003464Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[can find commands.json, but cannot find module referenced i.e. create.js, shouldn't happen]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="TranslationStatus" Val="In Sync" />
-          <Str Name="TranslationStatusPosition" Val="3 - ReadyForReview" />
-          <Str Name="VendorComment" Val="28/05/15 new" />
-        </Props>
+      </Item>
+      <Item ItemId=";TelemetryCurrentlyOptedInPrompt" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Would you like to continue doing so?]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Continuare?]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TelemetryCurrentlyOptedOutPrompt" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Would you like to allow us to collect your usage data?]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Consentire a Microsoft di raccogliere i dati di utilizzo?]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TelemetryOptInMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<bold>Do you want to help improve the quality of Microsoft products and services by allowing us to collect your usage data?</bold><br/><br/>You can read our privacy policy that provides information on what data we collect and how we will use it at the following location: <link>https://www.visualstudio.com/en-us/dn948229</link>.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<bold>Contribuire a migliorare la qualità di prodotti e servizi Microsoft acconsentendo alla raccolta dei dati di utilizzo?</bold><br/><br/>Per informazioni sui dati raccolti e su come verranno usati, leggere l'informativa sulla privacy disponibile all'indirizzo: <link>https://www.visualstudio.com/it-it/dn948229</link>.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TelemetryOptInNo" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<bold>You are currently not providing usage feedback.</bold><br/><br/>How you use {0} is an important data point we use to help improve Microsoft products and services, and you can read our privacy policy that provides information on what data we collect and how we will use it at the following location: <link>https://www.visualstudio.com/en-us/dn948229</link>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<bold>Al momento non vengono forniti commenti sull'utilizzo.</bold><br/><br/>La modalità di utilizzo di {0} costituisce un punto dati importante che verrà usato per migliorare prodotti e servizi Microsoft. L'informativa sulla privacy, che fornisce le informazioni sui dati raccolti e su come verranno usati, è disponibile all'indirizzo seguente: <link>https://www.visualstudio.com/it-it/dn948229</link>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TelemetryOptInNote" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Note: We will send the result of this question even if you select No. ]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Nota: la risposta a questa domanda verrà inviato anche se si seleziona No. ]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TelemetryOptInYes" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<bold>You are currently providing usage feedback to help improve Microsoft products and services. Thank you!</bold>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<bold>Al momento vengono forniti commenti sull'utilizzo per migliorare prodotti e servizi Microsoft. Grazie!</bold>]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
       </Item>
     </Item>
   </Item>

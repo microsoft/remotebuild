@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <LCX SchemaVersion="6.0" Name="resources.json" PsrId="306" FileType="1" SrcCul="en-US" TgtCul="zh-CN" Desc="Commenting file created by LCXAdmin. For more information, please visit http://localizability/longhorn/LcxAdmin.asp" xmlns="http://schemas.microsoft.com/locstudio/2006/6/lcx">
   <Props>
     <Str Name="HobbitID" Val="1316f51d-8d82-4ae2-8787-cea0c84ae271" />
@@ -6,6 +6,7 @@
   <OwnedComments>
     <Cmt Name="Dev" />
     <Cmt Name="LcxAdmin" />
+    <Cmt Name="Loc" />
     <Cmt Name="Rccx" />
   </OwnedComments>
   <Settings Name="@vsLocTools@\current\default.lss" Type="LSS" />
@@ -16,617 +17,389 @@
       <Item ItemId=";AcquiringCordova" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Acquiring cordova.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[正在获取 Cordova。]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[正在获取 cordova。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="jhosek" DateTime="2015-06-17T13:40:02.0004963Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Status message returned when downloading and installing the requested version of cordova]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Locked="cordova"}]]></Cmt>
-        </Cmts>
-        <Notes>
-          <Note Name="Loc" Order="0"><![CDATA[reported FP locver error]]></Note>
-        </Notes>
       </Item>
       <Item ItemId=";ArchivePackError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Unexpected error packing archive: {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[意外错误包存档: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[打包档案时出现意外错误: {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T08:26:20Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Error reported to console and back to the client when packing a zip file fails. {0} is the error]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";BuildFailedUnexpectedly" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Build failed unexpectedly]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[生成意外失败]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T05:59:00Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reported when a build fails and we don't know the reason]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";BuildFailedWithError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Build failed with error {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[生成失败，错误 {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T04:33:15Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it queried for the build status and the build failed due to an error from Cordova/XCode build operations. NOTE the {0} is from Cordova/XCode and will likely not be localized]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
-        </Props>
       </Item>
       <Item ItemId=";BuildInvokedTwice" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Invalid request: build.js process already in use but was asked to build again. This is likely a programming error as a build.js process is meant to be used only once.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[无效的请求: build.js 进程正在使用，但是被要求再次生成。这很可能是一个编程错误，因为 build.js 进程应只使用一次。]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[无效的请求: build.js 进程已在使用中，但要求重新生成。这可能是一种编程错误，因为 build.js 进程仅可使用一次。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T06:41:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message when multiple builds are invoked at the same time.]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";BuildNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Build {0} does not exist]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[生成 {0} 不存在]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T05:59:00Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio or user when it queries for a build but the build no longer exists, for example an old build that has been deleted. {0} is the build number]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";BuildRequestMissingCordovaVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[A cordova version must be specified on the build request.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[生成请求上必须指定一个 Cordova 版本。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T04:33:15Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio if the build request does not specify the version of Cordova to build with]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
-        </Props>
       </Item>
       <Item ItemId=";BuildRequestUnsupportedCommand" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[The requested build command {0} is not supported by this build manager.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[此生成管理器不支持请求的生成命令 {0}。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T04:33:15Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio if the build server does not support the build command specified in the build request (only build and emulate are currently supported)]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
-        </Props>
       </Item>
       <Item ItemId=";BuildRequestUnsupportedConfiguration" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[The requested build configuration {0} is not supported by this build manager. Only debug and release are supported.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[此生成管理器不支持请求的生成配置 {0}。仅支持调试和发布。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T04:33:15Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio if the build server does not support the build configuration specified in the build request]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
-        </Props>
       </Item>
       <Item ItemId=";BuildRequestUnsupportedCordovaVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[The build request for cordova version {0} is not supported by the iOS build server. The server is installed with cordova version {1}.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[iOS 生成服务器不支持 Cordova {0} 版本的生成请求。服务器安装了 Cordova {1} 版本。]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[iOS 生成服务器不支持 Cordova {0} 版本的生成请求。服务器和 Cordova {1} 版本安装在一起。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T04:33:15Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio if the build server does not support the version of Cordova specified in the build request]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
-        </Props>
       </Item>
       <Item ItemId=";CopyingNativeOverrides" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Copying native overrides.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[正在复制本机的替代。]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[正在复制本机替代。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T05:59:00Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Status message returned when copying data from /res/native]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";CordovaCompiling" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Compiling.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[正在编译。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T04:33:15Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Status message returned when doing 'cordova compile ios']]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
-        </Props>
       </Item>
       <Item ItemId=";DebugSuccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Successfully Debugging on the device]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[已在设备上成功调试]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T04:33:15Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it requests the build server to debug a build and the attempt is successful (the debugger is running)]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
-        </Props>
       </Item>
       <Item ItemId=";DeviceLaunchTimeout" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Timeout: Is the device locked?]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[超时: 设备是否锁定?]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[超时: 设备是否已锁定?]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T07:54:46Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reported when attempting to launch an application takes too long.]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";DoneBuilding" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Done building {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[已完成生成 {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T05:59:00Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message logged when a build is completed successfully. {0} is the build number]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";DownloadInvalid" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[One or both of expected build outputs {0} and {1} are missing on file system.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[文件系统上缺失期望的生成输出 {0} 和 {1} 中的一个或两个。]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[预期生成输出 {0} 和 {1} 的其中一个或两个都在文件系统中缺失。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T07:06:30Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reported to the user and to the console if the expected files to download are not present. {0} and {1} are paths to files]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
-        </Cmts>
+      </Item>
+      <Item ItemId=";EmulateFailedTimeout" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: timed out launching iOS simulator.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[错误: 启动 iOS 模拟器超时。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
       </Item>
       <Item ItemId=";EmulateFailedWithError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error from attempting to emulate: {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[尝试仿真时出错: {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T04:33:15Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it requests the build server to emulate a build and the emulation attempt fails with error]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
-        </Props>
       </Item>
       <Item ItemId=";EmulateSuccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Successfully sent to ios Simulator]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[已成功发送至 iOS 模拟器]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T04:33:15Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it requests the build server to emulate a build and the emulation attempt is successful (the application is now visibile on the build server)]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
-        </Props>
       </Item>
       <Item ItemId=";ErrorBuilding" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Failed to build app for buildNumber {0}: {1}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[未能生成 buildNumber {0} 的应用: {1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[为 buildNumber {0} 生成应用失败: {1}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T06:06:22Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message logged when a build fails. {0} is the build number and {1} is the error message]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";ErrorMountingDiskImage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error mounting developer disk image]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[安装开发者磁盘映像时出现错误]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[安装开发人员磁盘映像时出错]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T05:59:01Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reported when mounting a disk image fails for an unknown reason]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";ErrorXcconfigDirNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Directory for build.xcconfig does not exist.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[build.xcconfig 的目录不存在。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T05:59:00Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message logged when we can't find the directory that build.xcconfig ]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";FailedFindDeveloperDiskImage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Unable to find Developer Disk Image]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[无法找到开发者磁盘映像]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[找不到开发人员磁盘映像]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T08:17:47Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reported when we are unable to locate an appropriate developer disk image for the iOS device]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";FailedGetDeviceInfo" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Unable to read device version, is it plugged in and turned on?]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[无法读取设备版本，设备是否插入并打开?]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[无法读取设备版本，是否已插入并打开设备?]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T08:17:47Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reported when we are unable to find the version of the iOS device]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";IOSSimNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[****** ios-sim is not installed on path. `sudo npm install -g ios-sim` if you want this server to support emulator.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[****** ios-sim 未在路径上安装。“sudo npm install -g ios-sim”如果你想要此服务器支持模拟器。]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[****** 未在路径上安装 ios-sim。如果想要此服务器支持仿真器，请使用 "sudo npm install -g ios-sim"。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T05:59:00Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message printed when ]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Locked="sudo npm install -g ios-sim"}]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";InstallFailNoDevice" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Unable to find attached device; is it plugged in and unlocked?]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
-            <Val><![CDATA[找不到连接的设备; 设备是否已插入并解锁?]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[找不到连接的设备；设备是否已插入并解锁?]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T04:33:15Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message sent back to visual studio when a deploy fails because there is no iOS device attached to the remote machine]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
-        </Props>
       </Item>
       <Item ItemId=";InstallSuccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Successfully installed on the device]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[已在设备上成功安装]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T04:33:15Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it requests the build server to install a build and the installation attempt is successful (the application is now visibile on the device)]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
-        </Props>
       </Item>
       <Item ItemId=";InvalidCordovaAppBadConfigXml" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[The upload is not a valid Cordova Application. Error in parsing config.xml {0}.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
-            <Val><![CDATA[上载的 Cordova 应用程序无效。解析 config.xml {0} 时出错。]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[上载的 Cordova 应用程序无效。分析 config.xml {0} 时出错。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T04:33:15Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it queried for the build status and the build failed due to the error with config.xml application file]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"}]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
-        </Props>
       </Item>
       <Item ItemId=";InvalidCordovaAppMissingConfigXml" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[The upload is not a valid Cordova Application. It is missing config.xml in top level directory.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[上载的 Cordova 应用程序无效。其顶级目录中缺少 config.xml。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T04:33:15Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it queried for the build status and the build failed due to the error with config.xml application file]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
-        </Props>
       </Item>
       <Item ItemId=";InvalidCordovaAppMissingWww" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[The upload is not a valid Cordova Application. It is missing www directory in top level directory.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[上载的 Cordova 应用程序无效。其顶级目录中缺少 www 目录。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T04:33:15Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it queried for the build status and the build failed due to the error with www application directory]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
-        </Props>
       </Item>
       <Item ItemId=";InvalidCordovaAppUnsupportedAppName" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Unsupported iOS app name {0} in config.xml. Check for characters that are not Printable ASCII, or that match any of the following characters: {1}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
-            <Val><![CDATA[config.xml 中不受支持的 iOS 应用程序名称 {0}。检查确保字符不是可打印的 ASCII 或匹配任何以下字符: {1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[config.xml 中不受支持的 iOS 应用名称 {0}。检查确保字符不是可打印的 ASCII 或匹配任何以下字符: {1}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T04:33:15Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it queried for the build status and the build failed due to the error with config.xml application file]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
-        </Props>
       </Item>
       <Item ItemId=";NoCordovaVersionSpecified" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[No cordova version specified!]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[未指定 Cordova 版本!]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T06:41:29Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Error reported when trying to build without any version specified]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";NoDeviceAttached" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[No device found, is it plugged in and turned on?]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[未找到设备，设备是否已插入或打开?]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[找不到设备，是否已插入并打开设备?]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T07:06:30Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reported when mounting a disk image fails because it cannot find a device]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";PackageNotInstalled" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Unable to launch app, it is not installed.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[无法启动应用，应用未安装。]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[无法启动应用，尚未安装该应用。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T08:17:47Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reported when attempting to launch an application which is not installed]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";PackagingNativeApp" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Packaging app.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[封装应用。]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[打包应用。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T07:06:30Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Status message returned when packaging the app for a device build]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";ProvisioningFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Installation failed: Check your provisioning profile]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
-            <Val><![CDATA[安装失败: 检查配置文件]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[安装失败: 检查设置配置文件]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T04:33:15Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio or user when it attempts to install an app on a device without an appropriate provisioning profile]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
-        </Props>
       </Item>
       <Item ItemId=";RequireCordovaFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error: Failed to acquire cordova version {0}. {1}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[错误: 未能获取 Cordova 版本 {0}。{1}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T05:59:01Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Error message reported when a build fails to install the requested cordova version. {0} is the cordova version, and {1} is the error]]></Cmt>
-          <Cmt Name="LcxAdmin"><![CDATA[{Placeholder="{0}"} {Placeholder="{1}"}]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";RunSuccess" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Successfully ran on the device]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="Auto" Confidence="100">
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[已在设备上成功运行]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T04:33:15Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message sent back to Visual Studio when it requests the build server to run a build and the attempt is successful (the application is running on the device)]]></Cmt>
-        </Cmts>
-        <Props>
-          <Str Name="Custom2" Val="Ls_AT_Exact_Exact" />
-        </Props>
       </Item>
       <Item ItemId=";UnableToDebug" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Unable to start debug bridge]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[无法启动调试网桥]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[无法启动调试桥]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T08:17:47Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reported if we are unable to start ios_webkit_debug_proxy to enable debugging]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";UnableToLaunchApp" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Unable to launch app]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[无法启动应用]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T08:17:47Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reported when attempting to launch an application and an unknown failure occurrs]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";UnsupportedPlatform" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Unable to build: requested platform not supported]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[无法生成: 不支持请求的平台]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[无法生成: 请求的平台不受支持]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T08:17:47Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reported to the client when a request for an unsupported platform is made]]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";UpdatingIOSPlatform" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Updating iOS platform.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[正在更新 iOS 平台.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[正在更新 iOS 平台。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T08:26:20Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Status message returned when doing a 'cordova platform add ios' or 'cordova prepare ios']]></Cmt>
-        </Cmts>
       </Item>
       <Item ItemId=";WrongInstalledAppsFile" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Output file not as expected]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[输出文件不如预期]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[输出文件与预期不符]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
-        <Modified By="xingyi.qu" DateTime="2015-05-29T07:06:30Z" />
-        <Cmts>
-          <Cmt Name="Dev"><![CDATA[Message reported if we get unexpected output when reading the list of installed apps]]></Cmt>
-        </Cmts>
       </Item>
     </Item>
   </Item>
