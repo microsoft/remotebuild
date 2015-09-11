@@ -25,6 +25,9 @@
       <Item ItemId=";CertExpirationInvalid" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[certExpirationDays {0} would result in expired certs. Default cert expiration {1} days will be used instead.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[certExpirationDays {0}을(를) 지정하면 인증서가 만료됩니다. 기본 인증서 만료 {1}일이 대신 사용됩니다.]]></Val>
+          </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[certExpirationdays {0} would result in expired certs. Default cert expiration {1} days will be used instead.]]></Val>
           </Prev>
@@ -277,6 +280,9 @@
       <Item ItemId=";OSXCertSetupInformation[8]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Alternately to use the taco-cli run 'taco remote add <platform>' to configure the taco CLI to use this build server for the chosen platform, specifying]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[또는 선택된 플랫폼에 이 빌드 서버를 사용하도록 taco CLI를 구성하려면 taco-cli run 'taco remote add <platform>'을(를) 사용합니다.]]></Val>
+          </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Alternately, use 'taco setup remote <platform>' to configure the taco CLI to use this build server for the chosen platform, specifying]]></Val>
           </Prev>
@@ -394,6 +400,9 @@
       <Item ItemId=";RemoteBuildConfHostname" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Hostname for which to generate SSL certificates when in secure mode (defaults to os.hostname())]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[보안 모드에 있을 때 SSL 인증서를 생성할 호스트 이름(기본값은 os.hostname()임)]]></Val>
+          </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Hostname to generate certificates for in secure mode (defaults to os.hostname())]]></Val>
           </Prev>
@@ -403,6 +412,9 @@
       <Item ItemId=";RemoteBuildConfLang" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Language to use for console output (defaults to the language given by $LANG if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[콘솔 출력에 사용할 언어(지정하지 않으면 기본값은 $LANG로 제공된 언어임)]]></Val>
+          </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Language to use for console output (deafults to the language given by $LANG if not specified)]]></Val>
           </Prev>
@@ -412,6 +424,9 @@
       <Item ItemId=";RemoteBuildConfPinTimeout" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Time in minutes for which client SSL certs can be acquired (defaults to 10 minutes)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[클라이언트 SSL 인증서를 가져올 수 있는 시간(분)(기본값은 10분임)]]></Val>
+          </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Number of minutes for which client SSL certs can be acquired (defaults to 10 minutes)]]></Val>
           </Prev>
