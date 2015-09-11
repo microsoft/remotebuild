@@ -321,7 +321,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<bold>Do you want to help improve the quality of Microsoft products and services by allowing us to collect your usage data?</bold><br/><br/>You can read our privacy policy that provides information on what data we collect and how we will use it at the following location: <link>https://www.visualstudio.com/en-us/dn948229</link>.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<bold>Chcete přispět ke zlepšování kvality produktů a služeb Microsoft tím, že nám umožníte shromažďovat data o využití?</bold><br/><br/>Můžete si přečíst naše zásady ochrany osobních údajů, v nichž se dozvíte, jaká data shromažďujeme a jak je používáme. Najdete je tady:  <link>https://www.visualstudio.com/en-us/dn948229</link>.]]></Val>
+            <Val><![CDATA[<bold>Chcete přispět ke zlepšování kvality produktů a služeb Microsoft tím, že nám umožníte shromažďovat data o využití?</bold><br/><br/>Můžete si přečíst naše zásady ochrany osobních údajů, v nichž se dozvíte, jaká data shromažďujeme a jak je používáme. Najdete je tady:  <link>https://www.visualstudio.com/cs-cz/dn948229</link>.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -330,7 +330,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<bold>You are currently not providing usage feedback.</bold><br/><br/>How you use {0} is an important data point we use to help improve Microsoft products and services, and you can read our privacy policy that provides information on what data we collect and how we will use it at the following location: <link>https://www.visualstudio.com/en-us/dn948229</link>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<bold>Aktuálně neposkytujete zpětnou vazbu s daty o využití.</bold><br/><br/>Způsob, jakým používáte {0}, je pro nás důležitým zdrojem dat pro vylepšování produktů a služeb Microsoft. Můžete si přečíst naše zásady ochrany osobních údajů, v nichž se dozvíte, jaká data shromažďujeme a jak je používáme. Najdete je tady: <link>https://www.visualstudio.com/en-us/dn948229</link>.]]></Val>
+            <Val><![CDATA[<bold>Aktuálně neposkytujete zpětnou vazbu s daty o využití.</bold><br/><br/>Způsob, jakým používáte {0}, je pro nás důležitým zdrojem dat pro vylepšování produktů a služeb Microsoft. Můžete si přečíst naše zásady ochrany osobních údajů, v nichž se dozvíte, jaká data shromažďujeme a jak je používáme. Najdete je tady: <link>https://www.visualstudio.com/cs-cz/dn948229</link>.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

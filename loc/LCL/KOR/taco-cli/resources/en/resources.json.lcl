@@ -782,6 +782,9 @@
       <Item ItemId=";CommandKitListDefaultKitDescSuffix" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[This is the default kit used for project creation.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[프로젝트를 만드는 데 사용되는 기본 키트입니다.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -797,6 +800,9 @@
       <Item ItemId=";CommandKitListDeprecatedKitDescSuffix" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[This is a deprecated kit.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[사용되지 않는 키트입니다.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1841,6 +1847,9 @@
       <Item ItemId=";CordovaCommandUnhandledException" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Cordova threw an unhandled exception, check http://go.microsoft.com/fwlink/?LinkId=623759 for possible details.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Cordova에서 처리되지 않은 예외가 throw되었습니다. 세부 정보가 있는지 알아보려면 http://go.microsoft.com/fwlink/?LinkId=623759를 확인하세요.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -2438,24 +2447,36 @@
       <Item ItemId=";TacoKitListExample" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[List the validated set of Cordova CLI, platforms and plugins for <bold>tacokit@2.0.0</bold>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<bold>tacokit@2.0.0</bold>에 대한 유효성이 검사된 Cordova CLI, 플랫폼 및 플러그 인의 집합을 나열합니다.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";TacoKitNotes" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[For more information about Kits, visit <link>http://go.microsoft.com/fwlink/?LinkId=619747</link>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[키트에 대한 자세한 내용은 <link>http://go.microsoft.com/fwlink/?LinkId=619747</link>을 참조하세요.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";TacoKitSelectExample1" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Update the current project to a Kit project targeting <bold>tacokit@2.0.0</bold>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<bold>tacokit@2.0.0</bold>을 대상으로 하는 키트 프로젝트로 현재 프로젝트를 업데이트합니다.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";TacoKitSelectExample2" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Update the current project to a CLI project targeting Cordova CLI <bold>v5.2.0</bold>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Cordova CLI <bold>v5.2.0</bold>을 대상으로 하는 CLI 프로젝트로 현재 프로젝트를 업데이트합니다.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>

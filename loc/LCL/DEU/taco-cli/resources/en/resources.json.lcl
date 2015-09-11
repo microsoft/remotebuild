@@ -386,8 +386,8 @@
       <Item ItemId=";CommandCreateOptionsTemplate" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Use an alternate project template instead of blank. The argument can either be a TACO template ID or a Git repository URL.]]></Val>
-          <Tgt Cat="Text" Stat="Update" Orig="New">
-            <Val><![CDATA[Verwenden Sie eine andere Projektvorlage anstelle einer leeren Vorlage.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Verwenden Sie eine andere Projektvorlage anstelle einer leeren Vorlage. Das Argument kann die ID einer TACO-Vorlage oder die URL eines Git-Repositorys sein.]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Use an alternate project template instead of blank.]]></Val>
@@ -704,8 +704,8 @@
       <Item ItemId=";CommandKitDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[View or update details about your Kit (Cordova CLI, platforms, and plugins)]]></Val>
-          <Tgt Cat="Text" Stat="Update" Orig="New">
-            <Val><![CDATA[Führt Vorgänge aus, die sich auf das Kit beziehen.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Zeigen Sie Details zu Ihrem Kit an, oder aktualisieren Sie diese (Cordova-CLI, Plattformen und Plug-Ins).]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Perform kit related operations]]></Val>
@@ -716,8 +716,8 @@
       <Item ItemId=";CommandKitJsonOptionDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Save the list of known Kits to a json file at path <PATH>.]]></Val>
-          <Tgt Cat="Text" Stat="Update" Orig="New">
-            <Val><![CDATA[Speichert die Liste der bekannten Kits in einer Json-Datei im Pfad <PFAD>.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Speichert die Liste der bekannten Kits in einer JSON-Datei im Pfad <PFAD>.]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Save the list of known kits to a json file at path <PATH>.]]></Val>
@@ -782,6 +782,9 @@
       <Item ItemId=";CommandKitListDefaultKitDescSuffix" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[This is the default kit used for project creation.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Dies ist das Standard-Kit, das für die Projekterstellung verwendet wird.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -797,6 +800,9 @@
       <Item ItemId=";CommandKitListDeprecatedKitDescSuffix" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[This is a deprecated kit.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Dies ist ein veraltetes Kit.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -839,7 +845,7 @@
       <Item ItemId=";CommandKitListReleaseNotes" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[For more information about this Kit, please visit <link>{0}</link>.]]></Val>
-          <Tgt Cat="Text" Stat="Update" Orig="New">
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Weitere Informationen zu diesem Kit finden Sie unter <link>{0}</link>.]]></Val>
           </Tgt>
           <Prev Cat="Text">
@@ -851,8 +857,8 @@
       <Item ItemId=";CommandKitListSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[List available TACO Kits]]></Val>
-          <Tgt Cat="Text" Stat="Update" Orig="New">
-            <Val><![CDATA[Lister die verfügbaren TACO-Kits auf.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Listen Sie die verfügbaren TACO-Kits auf.]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[List available TACO kits]]></Val>
@@ -863,8 +869,8 @@
       <Item ItemId=";CommandKitOptionKitDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[List the details (pinned version of Cordova CLI, platforms and plugins) for a specific Kit with ID <KIT-ID>.]]></Val>
-          <Tgt Cat="Text" Stat="Update" Orig="New">
-            <Val><![CDATA[Listet die Details (angeheftete Version der Cordova-CLI, Plattformen und Plug-Ins) für ein bestimmtes Kit mit der ID <KIT-ID> auf.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Listen Sie die Details (angeheftete Version der Cordova-CLI, Plattformen und Plug-Ins) für ein bestimmtes Kit mit der ID <KIT-ID> auf.]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[List the details (pinned version of Cordova CLI, platforms and plugins) for a specific kit with ID <KIT-ID>.]]></Val>
@@ -956,8 +962,8 @@
       <Item ItemId=";CommandKitSelectOptionKitDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Use the specified TACO Kit for the project. Use "taco kit list" to see a list of available kits.]]></Val>
-          <Tgt Cat="Text" Stat="Update" Orig="New">
-            <Val><![CDATA[Verwendet das angegebene TACO-Kit für das Projekt. Verwenden Sie "taco kit list", um eine Liste der verfügbaren Kits anzuzeigen.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Verwenden Sie das angegebene TACO-Kit für das Projekt. Verwenden Sie "taco kit list", um eine Liste der verfügbaren Kits anzuzeigen.]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Use the specified TACO kit for the project. Use "taco kit list" to see a list of available kits.]]></Val>
@@ -1013,8 +1019,8 @@
       <Item ItemId=";CommandKitSelectSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Select a Kit or a Cordova CLI version for the project]]></Val>
-          <Tgt Cat="Text" Stat="Update" Orig="New">
-            <Val><![CDATA[Wählen ein Kit oder eine Cordova-CLI-Version für das Projekt aus.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Wählen Sie ein Kit oder eine Cordova-CLI-Version für das Projekt aus.]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Select a kit or a Cordova CLI version for the project]]></Val>
@@ -1025,8 +1031,8 @@
       <Item ItemId=";CommandKitSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Perform Kit related operations (like list)]]></Val>
-          <Tgt Cat="Text" Stat="Update" Orig="New">
-            <Val><![CDATA[Führt Vorgänge aus, die sich auf das Kit beziehen (z. B. "list").]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Führen Sie Vorgänge aus, die sich auf das Kit beziehen (z. B. "list").]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Perform kit related operations (like list)]]></Val>
@@ -1469,8 +1475,8 @@
       <Item ItemId=";CommandRemoteHeader" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Please ensure that remotebuild is running on the remote server.<br/> You can generate new client information at any time by typing 'remotebuild certificates generate'. For more details, see <link>http://go.microsoft.com/fwlink/?LinkId=624345</link>]]></Val>
-          <Tgt Cat="Text" Stat="Update" Orig="New">
-            <Val><![CDATA[Bitte stellen Sie sicher, dass dieser Remotebuild auf dem Remoteserver ausgeführt wird.<br/> Sie können neue Clientinformationen jederzeit durch Eingeben von "remotebuild generateClientCert" generieren. Weitere Informationen finden Sie unter <fwlink hier>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Bitte stellen Sie sicher, dass dieser Remotebuild auf dem Remoteserver ausgeführt wird.<br/> Sie können neue Clientinformationen jederzeit durch Eingeben von "remotebuild certificates generate" generieren. Weitere Informationen finden Sie unter <link>http://go.microsoft.com/fwlink/?LinkId=624345</link>]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Please ensure that remotebuild is running on the remote server.<br/> You can generate new client information at any time by typing remotebuild generateClientCert. For more details, see <fwlink goes here>]]></Val>
@@ -1841,6 +1847,9 @@
       <Item ItemId=";CordovaCommandUnhandledException" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Cordova threw an unhandled exception, check http://go.microsoft.com/fwlink/?LinkId=623759 for possible details.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Cordova: Ausnahmefehler. Überprüfen Sie "http://go.microsoft.com/fwlink/?LinkId=623759", um ggf. Details anzuzeigen.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -2090,8 +2099,8 @@
       <Item ItemId=";HowToUseCommandAddPlugin" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Add a Cordova plugin: <bold>taco plugin add <PLUGIN-ID></bold>]]></Val>
-          <Tgt Cat="Text" Stat="Update" Orig="New">
-            <Val><![CDATA[Fügen Sie ein Cordova-Plug-In hinzu: <bold>taco add plugin <PLUG-IN-ID></bold>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Fügen Sie ein Cordova-Plug-In hinzu: <bold>taco plugin add <PLUG-IN-ID></bold>]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Add a Cordova plugin: <bold>taco add plugin <PLUGIN-ID></bold>]]></Val>
@@ -2291,8 +2300,8 @@
       <Item ItemId=";ProgramDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[<helptitle>TACO is a command line tool that makes it easy to create, build, run, and emulate Cordova applications.</helptitle>]]></Val>
-          <Tgt Cat="Text" Stat="Update" Orig="New">
-            <Val><![CDATA[TACO ist ein Befehlszeilentool, das das Erstellen, den Buildvorgang, das Ausführen und das Emulieren von Cordova-Anwendungen vereinfacht.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<helptitle>TACO ist ein Befehlszeilentool, das das Erstellen, den Buildvorgang, das Ausführen und das Emulieren von Cordova-Anwendungen vereinfacht.</helptitle>]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[TACO is a command line tool that makes it easy to create, build, run, and emulate Cordova applications.]]></Val>
@@ -2312,6 +2321,9 @@
       <Item ItemId=";PromptResponseYes[0]" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[y]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[j]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -2435,24 +2447,36 @@
       <Item ItemId=";TacoKitListExample" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[List the validated set of Cordova CLI, platforms and plugins for <bold>tacokit@2.0.0</bold>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Auflisten der überprüften Sammlung von Cordova-CLIs, Plattformen und Plug-Ins für <bold>tacokit@2.0.0</bold>]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";TacoKitNotes" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[For more information about Kits, visit <link>http://go.microsoft.com/fwlink/?LinkId=619747</link>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Weitere Informationen zu Kits finden Sie unter <link>http://go.microsoft.com/fwlink/?LinkId=619747</link>]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";TacoKitSelectExample1" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Update the current project to a Kit project targeting <bold>tacokit@2.0.0</bold>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Aktualisieren des aktuellen Projekts auf ein Kit-Projekt mit dem Ziel <bold>tacokit@2.0.0</bold>]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";TacoKitSelectExample2" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Update the current project to a CLI project targeting Cordova CLI <bold>v5.2.0</bold>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Aktualisieren des aktuellen Projekts auf ein CLI-Projekt mit dem Ziel Cordova-CLI <bold>v5.2.0</bold>]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>

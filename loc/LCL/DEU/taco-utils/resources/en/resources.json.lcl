@@ -314,7 +314,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<bold>Do you want to help improve the quality of Microsoft products and services by allowing us to collect your usage data?</bold><br/><br/>You can read our privacy policy that provides information on what data we collect and how we will use it at the following location: <link>https://www.visualstudio.com/en-us/dn948229</link>.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<bold>Möchten Sie uns beim Verbessern der Qualität von Produkten und Diensten von Microsoft unterstützen, indem Sie zulassen, dass wir Ihre Nutzungsdaten erfassen?</bold><br/><br/>Sie können unsere Datenschutzrichtlinie, die Informationen zu den erfassten Daten und deren Verwendung bereitstellt, hier lesen: <link>https://www.visualstudio.com/en-us/dn948229</link>.]]></Val>
+            <Val><![CDATA[<bold>Möchten Sie uns beim Verbessern der Qualität von Produkten und Diensten von Microsoft unterstützen, indem Sie zulassen, dass wir Ihre Nutzungsdaten erfassen?</bold><br/><br/>Sie können unsere Datenschutzrichtlinie, die Informationen zu den erfassten Daten und deren Verwendung bereitstellt, hier lesen: <link>https://www.visualstudio.com/de-de/dn948229</link>.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -323,7 +323,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<bold>You are currently not providing usage feedback.</bold><br/><br/>How you use {0} is an important data point we use to help improve Microsoft products and services, and you can read our privacy policy that provides information on what data we collect and how we will use it at the following location: <link>https://www.visualstudio.com/en-us/dn948229</link>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<bold>Sie stellen zurzeit kein Nutzungsfeedback bereit.</bold><br/><br/>Wie Sie {0} verwenden, ist ein wichtiger Datenpunkt, den wir nutzen, um Produkte und Dienste von Microsoft zu verbessern. Sie können unsere Datenschutzrichtlinie, die Informationen zu den erfassten Daten und deren Verwendung bereitstellt, hier lesen: <link>https://www.visualstudio.com/en-us/dn948229</link>]]></Val>
+            <Val><![CDATA[<bold>Sie stellen zurzeit kein Nutzungsfeedback bereit.</bold><br/><br/>Wie Sie {0} verwenden, ist ein wichtiger Datenpunkt, den wir nutzen, um Produkte und Dienste von Microsoft zu verbessern. Sie können unsere Datenschutzrichtlinie, die Informationen zu den erfassten Daten und deren Verwendung bereitstellt, hier lesen: <link>https://www.visualstudio.com/de-de/dn948229</link>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

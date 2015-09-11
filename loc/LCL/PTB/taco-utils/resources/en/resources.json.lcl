@@ -314,7 +314,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<bold>Do you want to help improve the quality of Microsoft products and services by allowing us to collect your usage data?</bold><br/><br/>You can read our privacy policy that provides information on what data we collect and how we will use it at the following location: <link>https://www.visualstudio.com/en-us/dn948229</link>.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<bold>Você deseja ajudar a melhorar a qualidade dos produtos e serviços da Microsoft, permitindo que façamos a coleta de seus dados de uso?</bold><br/><br/>Você pode ler nossa política de privacidade, que fornece informações sobre os dados que coletamos e como eles serão usados, no seguinte local: <link>https://www.visualstudio.com/en-us/dn948229</link>.]]></Val>
+            <Val><![CDATA[<bold>Você deseja ajudar a melhorar a qualidade dos produtos e serviços da Microsoft, permitindo que façamos a coleta de seus dados de uso?</bold><br/><br/>Você pode ler nossa política de privacidade, que fornece informações sobre os dados que coletamos e como eles serão usados, no seguinte local: <link>https://www.visualstudio.com/pt-br/dn948229</link>.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -323,7 +323,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<bold>You are currently not providing usage feedback.</bold><br/><br/>How you use {0} is an important data point we use to help improve Microsoft products and services, and you can read our privacy policy that provides information on what data we collect and how we will use it at the following location: <link>https://www.visualstudio.com/en-us/dn948229</link>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<bold>No momento, você não está fornecendo feedback sobre o seu uso.</bold><br/><br/>A forma como você usa o {0} é um importante ponto de dados que usamos para ajudar a melhorar os produtos e serviços da Microsoft. Você também pode ler nossa política de privacidade, que fornece informações sobre os dados que coletamos e como eles serão usados, no seguinte local: <link>https://www.visualstudio.com/en-us/dn948229</link>]]></Val>
+            <Val><![CDATA[<bold>No momento, você não está fornecendo feedback sobre o seu uso.</bold><br/><br/>A forma como você usa o {0} é um importante ponto de dados que usamos para ajudar a melhorar os produtos e serviços da Microsoft. Você também pode ler nossa política de privacidade, que fornece informações sobre os dados que coletamos e como eles serão usados, no seguinte local: <link>https://www.visualstudio.com/pt-br/dn948229</link>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
