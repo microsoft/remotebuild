@@ -330,7 +330,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<bold>You are currently not providing usage feedback.</bold><br/><br/>How you use {0} is an important data point we use to help improve Microsoft products and services, and you can read our privacy policy that provides information on what data we collect and how we will use it at the following location: <link>https://www.visualstudio.com/en-us/dn948229</link>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<bold>Actualmente no está proporcionando comentarios de uso.</bold><br/><br/>La manera en que usa {0} es un punto de datos importante que usamos para ayudar a mejorar los productos y servicios de Microsoft. Para leer nuestra directiva de privacidad, que proporciona información sobre los datos que recopilamos y cómo los usamos, visite la siguiente ubicación: <link>https://https://www.visualstudio.com/es-us/dn948229</link>]]></Val>
+            <Val><![CDATA[<bold>Actualmente no está proporcionando comentarios de uso.</bold><br/><br/>La manera en que usa {0} es un punto de datos importante que usamos para ayudar a mejorar los productos y servicios de Microsoft. Para leer nuestra directiva de privacidad, que proporciona información sobre los datos que recopilamos y cómo los usamos, visite la siguiente ubicación: <link>https://https://www.visualstudio.com/es-es/dn948229</link>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

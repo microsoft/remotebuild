@@ -32,6 +32,9 @@
       <Item ItemId=";CertExpirationInvalid" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[certExpirationDays {0} would result in expired certs. Default cert expiration {1} days will be used instead.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[El valor certExpirationDays {0} produciría certificados expirados. En su lugar se usará {1} días, que es el valor predeterminado de expiración de certificados.]]></Val>
+          </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[certExpirationdays {0} would result in expired certs. Default cert expiration {1} days will be used instead.]]></Val>
           </Prev>
@@ -284,6 +287,9 @@
       <Item ItemId=";OSXCertSetupInformation[8]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Alternately to use the taco-cli run 'taco remote add <platform>' to configure the taco CLI to use this build server for the chosen platform, specifying]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Otra opción es ejecutar 'taco remote add <plataforma>' en la interfaz taco-cli para configurar taco CLI de modo que use este servidor de compilación para la plataforma elegida, especificando]]></Val>
+          </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Alternately, use 'taco setup remote <platform>' to configure the taco CLI to use this build server for the chosen platform, specifying]]></Val>
           </Prev>
@@ -401,6 +407,9 @@
       <Item ItemId=";RemoteBuildConfHostname" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Hostname for which to generate SSL certificates when in secure mode (defaults to os.hostname())]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Nombre del host para el que se generan los certificados SSL en modo seguro (el valor predeterminado es os.hostname())]]></Val>
+          </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Hostname to generate certificates for in secure mode (defaults to os.hostname())]]></Val>
           </Prev>
@@ -410,6 +419,9 @@
       <Item ItemId=";RemoteBuildConfLang" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Language to use for console output (defaults to the language given by $LANG if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Lenguaje usado para la salida de la consola (si no se especifica, el valor predeterminado es el que proporciona $LANG)]]></Val>
+          </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Language to use for console output (deafults to the language given by $LANG if not specified)]]></Val>
           </Prev>
@@ -419,6 +431,9 @@
       <Item ItemId=";RemoteBuildConfPinTimeout" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Time in minutes for which client SSL certs can be acquired (defaults to 10 minutes)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Tiempo en minutos durante el que se pueden adquirir los certificados SSL del cliente (el valor predeterminado es 10 minutos)]]></Val>
+          </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Number of minutes for which client SSL certs can be acquired (defaults to 10 minutes)]]></Val>
           </Prev>

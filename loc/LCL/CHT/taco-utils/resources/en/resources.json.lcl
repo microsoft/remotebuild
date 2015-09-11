@@ -314,7 +314,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<bold>Do you want to help improve the quality of Microsoft products and services by allowing us to collect your usage data?</bold><br/><br/>You can read our privacy policy that provides information on what data we collect and how we will use it at the following location: <link>https://www.visualstudio.com/en-us/dn948229</link>.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<bold>允許我們收集您的使用情況，以協助改善 Microsoft 產品與服務的品質嗎?</bold><br/><br/>您可以在下列位置閱讀我們的隱私權政策，其中提供我們會收集的資料以及我們會如何使用這些資料的相關資訊: <link>https://www.visualstudio.com/en-us/dn948229</link>。]]></Val>
+            <Val><![CDATA[<bold>允許我們收集您的使用情況，以協助改善 Microsoft 產品與服務的品質嗎?</bold><br/><br/>您可以在下列位置閱讀我們的隱私權政策，其中提供我們會收集的資料以及我們會如何使用這些資料的相關資訊: <link>https://www.visualstudio.com/zh-tw/dn948229</link>。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -323,7 +323,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<bold>You are currently not providing usage feedback.</bold><br/><br/>How you use {0} is an important data point we use to help improve Microsoft products and services, and you can read our privacy policy that provides information on what data we collect and how we will use it at the following location: <link>https://www.visualstudio.com/en-us/dn948229</link>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<bold>您目前未提供任何使用意見。</bold><br/><br/>您如何使用 {0} 是我們用以改善 Microsoft 產品與服務的重要資料要點，您可以在下列位置閱讀我們的隱私權政策，其中提供我們會收集的資料以及我們會如何使用這些資料的相關資訊: <link>https://www.visualstudio.com/en-us/dn948229</link>]]></Val>
+            <Val><![CDATA[<bold>您目前未提供任何使用意見。</bold><br/><br/>您如何使用 {0} 是我們用以改善 Microsoft 產品與服務的重要資料要點，您可以在下列位置閱讀我們的隱私權政策，其中提供我們會收集的資料以及我們會如何使用這些資料的相關資訊: <link>https://www.visualstudio.com/zh-tw/dn948229</link>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

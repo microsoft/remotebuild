@@ -25,6 +25,9 @@
       <Item ItemId=";CertExpirationInvalid" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[certExpirationDays {0} would result in expired certs. Default cert expiration {1} days will be used instead.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[certExpirationDays {0} では、有効期限が切れた証明書になってしまいます。既定の証明書有効期限 {1} 日間が代わりに使用されます。]]></Val>
+          </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[certExpirationdays {0} would result in expired certs. Default cert expiration {1} days will be used instead.]]></Val>
           </Prev>
@@ -277,6 +280,9 @@
       <Item ItemId=";OSXCertSetupInformation[8]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Alternately to use the taco-cli run 'taco remote add <platform>' to configure the taco CLI to use this build server for the chosen platform, specifying]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[代わりに taco-cli を使用するには 'taco remote add <platform>' を実行して taco CLI を構成し、選択されたプラットフォームにこのビルド サーバーを使用します。次の情報を指定します:]]></Val>
+          </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Alternately, use 'taco setup remote <platform>' to configure the taco CLI to use this build server for the chosen platform, specifying]]></Val>
           </Prev>
@@ -394,6 +400,9 @@
       <Item ItemId=";RemoteBuildConfHostname" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Hostname for which to generate SSL certificates when in secure mode (defaults to os.hostname())]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[保護モードで SSL 証明書を作成するホスト名 (既定値は os.hostname())]]></Val>
+          </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Hostname to generate certificates for in secure mode (defaults to os.hostname())]]></Val>
           </Prev>
@@ -403,6 +412,9 @@
       <Item ItemId=";RemoteBuildConfLang" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Language to use for console output (defaults to the language given by $LANG if not specified)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[コンソールの出力に使用する言語 (指定がない場合の既定値は $LANG から与えられた言語)]]></Val>
+          </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Language to use for console output (deafults to the language given by $LANG if not specified)]]></Val>
           </Prev>
@@ -412,6 +424,9 @@
       <Item ItemId=";RemoteBuildConfPinTimeout" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Time in minutes for which client SSL certs can be acquired (defaults to 10 minutes)]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[クライアントの SSL 証明書を取得できる分単位の時間 (既定値は 10 分)]]></Val>
+          </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Number of minutes for which client SSL certs can be acquired (defaults to 10 minutes)]]></Val>
           </Prev>

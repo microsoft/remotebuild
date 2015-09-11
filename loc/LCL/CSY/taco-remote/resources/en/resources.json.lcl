@@ -222,6 +222,9 @@
       <Item ItemId=";HomebrewInstallationQuery" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[[y]5D;/n? ]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[[a]5D;/n? ]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
