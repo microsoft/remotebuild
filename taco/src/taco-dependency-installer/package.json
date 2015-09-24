@@ -24,7 +24,7 @@
         "hash-files": "^1.0.0",
         "q": "^1.1.2",
         "request": "2.36.0",
-        "taco-utils": "file:../taco-utils",
+        "taco-utils": "~1.1.0",
         "toposort": "^0.2.10",
         "wrench": "^1.5.8"
     },
