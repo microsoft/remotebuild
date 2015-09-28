@@ -2,7 +2,6 @@
   "taco-remote-multiplexer": {
     "packageName": "taco-remote-multiplexer",
     "packageId": "taco-remote-multiplexer",
-    "expirationIntervalInHours": 4,
-    "dev":  true
+    "expirationIntervalInHours": 4
   }
 }

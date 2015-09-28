@@ -32,10 +32,10 @@
         "nconf": "0.6.9",
         "q": "1.0.1",
         "rimraf": "2.2.6",
-        "taco-utils": "file:../taco-utils"
+        "taco-utils": "~1.1.0"
     },
     "optionalDependencies": { 
-        "taco-remote": "file:../taco-remote"
+        "taco-remote": "~1.1.0"
     },
     "devDependencies": {
         "typescript": "1.3.0",
