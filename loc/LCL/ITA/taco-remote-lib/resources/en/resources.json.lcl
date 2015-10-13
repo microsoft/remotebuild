@@ -18,7 +18,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Acquiring cordova.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Acquisizione della versione di cordova.]]></Val>
+            <Val><![CDATA[Acquisizione della versione di Cordova.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
