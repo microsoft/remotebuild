@@ -34,7 +34,7 @@
             }
             ,
             {
-                "name": "--cli <VERSION>", "description": "[CommandCreateOptionsCli]"
+                "name": "--cordova <VERSION>", "description": "[CommandCreateOptionsCordova]"
             }
             ,
             {
@@ -85,7 +85,7 @@
                 }
                 ,
                 {
-                    "name": "--cli <VERSION>", "description": "[CommandKitSelectOptionCliDescription]"
+                    "name": "--cordova <VERSION>", "description": "[CommandKitSelectOptionCordovaDescription]"
                 }
                 ]
             }
@@ -100,7 +100,7 @@
                 "description": "[TacoKitSelectExample1]" 
             },
             { 
-                "example": "taco kit select --cli 5.2.0", 
+                "example": "taco kit select --cordova 5.2.0", 
                 "description": "[TacoKitSelectExample2]" 
             }
             ],
@@ -199,19 +199,10 @@
                 "name": "branch", "description": "[CommandPlatformOptBranchDescription]"
             }
             ],
-            "aliases": [
-            {
-                "alias": "platforms", "command": "platform"
+            "aliases": {
+                "rm": "remove",
+                "ls": "list"
             }
-            ,
-            {
-                "alias": "rm", "command": "remove"
-            }
-            ,
-            {
-                "alias": "ls", "command": "list"
-            }
-            ]
         }
         ,
         "plugin":
@@ -265,19 +256,10 @@
                 "name": "search", "description": "[CommandPluginSearchSubcommandDescription]"
             }
             ],
-            "aliases": [
-            {
-                "alias": "plugins", "command": "plugin"
+            "aliases": {
+                "rm": "remove",
+                "ls": "list"
             }
-            ,
-            {
-                "alias": "rm", "command": "remove"
-            }
-            ,
-            {
-                "alias": "ls", "command": "list"
-            }
-            ]
         }
         ,
         "install-reqs":
@@ -319,15 +301,10 @@
                 "description": "[CommandRemoteListSubcommandDescription]"
             }
             ],
-            "aliases": [
-            {
-                "alias": "rm", "command": "remove"
+            "aliases": {
+                "rm": "remove",
+                "ls": "list"
             }
-            ,
-            {
-                "alias": "ls", "command": "list"
-            }
-            ]
         }
         ,
         "build":
@@ -492,7 +469,7 @@
         },
         "feedback":
         {
-            "synopsis": "<synopsis>[COMMAND]</synopsis>",
+            "synopsis": "<synopsis></synopsis>",
             "categoryTitle": "[GeneralCommandsTitle]",
             "modulePath": "./feedback",
             "description": "<helptitle>[CommandFeedbackDescription]</helptitle>"
@@ -501,6 +478,7 @@
     "aliases":
     {
         "platforms": "platform",
-        "plugins": "plugin"
+        "plugins": "plugin",
+        "template":  "templates"
     }
 }

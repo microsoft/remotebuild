@@ -15,13 +15,13 @@ import os = require ("os");
 import path = require ("path");
 
 class DependencyDataWrapper {
-    private static DefaultDependenciesMetadataFilePath: string = path.resolve(__dirname, "..", "platformDependencies.json");
+    private static defaultDependenciesMetadataFilePath: string = path.resolve(__dirname, "..", "platformDependencies.json");
 
     private dependencies: DependencyInstallerInterfaces.IDependencyDictionary;
     private unsupported: DependencyInstallerInterfaces.IUnsupportedDictionary;
 
     constructor(dependenciesMetadataFilePath?: string) {
-        var loadPath: string = dependenciesMetadataFilePath || DependencyDataWrapper.DefaultDependenciesMetadataFilePath;
+        var loadPath: string = dependenciesMetadataFilePath || DependencyDataWrapper.defaultDependenciesMetadataFilePath;
 
         var metadata: DependencyInstallerInterfaces.IDependencyInstallerMetadata = JSON.parse(fs.readFileSync(loadPath, "utf8"));
 
@@ -126,7 +126,7 @@ class DependencyDataWrapper {
      * platform if no platform is specified) or the "default" platform. Returns null if no such version ID exists.
      */
     public getFirstValidVersion(id: string, platform: string = process.platform, architecture: string = os.arch()): string {
-        var self = this;
+        var self: DependencyDataWrapper = this;
         var validVersion: string;
 
         if (this.dependencyExists(id) && !!this.dependencies[id].versions) {

@@ -13,7 +13,11 @@
 
 "use strict";
 
-var should_module = require("should"); // Note not import: We don't want to refer to should_module, but we need the require to occur since it modifies the prototype of Object.
+/* tslint:disable:no-var-requires */
+// var require needed for should module to work correctly
+// Note not import: We don't want to refer to shouldModule, but we need the require to occur since it modifies the prototype of Object.
+var shouldModule: any = require("should");
+/* tslint:enable:no-var-requires */
 
 import del = require ("del");
 import fs = require ("fs");
@@ -34,11 +38,15 @@ import utils = TacoUtility.UtilHelper;
 
 import commands = tacoUtils.Commands.ICommandData;
 
+interface IKeyValuePair<T> {
+    [key: string]: T;
+}
+
 describe("Kit", function (): void {
     this.timeout(20000);
 
     function kitRun(args: string[] = []): Q.Promise<TacoUtility.ICommandTelemetryProperties> {
-        var kit = new kitMod();
+        var kit: kitMod = new kitMod();
         var data: commands = {
             options: {},
             original: args,
@@ -57,7 +65,7 @@ describe("Kit", function (): void {
     var originalCwd: string;
 
     function createProject(args: string[], projectDir: string): Q.Promise<any> {
-        var create = new createMod();
+        var create: createMod = new createMod();
         // Create a dummy test project with no platforms added
         utils.createDirectoryIfNecessary(tacoHome);
         process.chdir(tacoHome);
@@ -74,7 +82,7 @@ describe("Kit", function (): void {
     }
 
     function createCliProject(cli: string): Q.Promise<any> {
-         return createProject(["cliProject", "--cli", cli], cliProjectDir);
+         return createProject(["cliProject", "--cordova", cli], cliProjectDir);
     }
 
     function createKitProject(kit: string): Q.Promise<any> {
@@ -82,14 +90,16 @@ describe("Kit", function (): void {
     }
 
     function runKitCommandAndVerifyTacoJsonContents(args: string[],
-        tacoJsonPath: string, tacoJsonFileContents: string): Q.Promise<TacoUtility.ICommandTelemetryProperties> {
+        tacoJsonPath: string, tacoJsonKeyValues: IKeyValuePair<string>): Q.Promise<TacoUtility.ICommandTelemetryProperties> {
         return kitRun(args)
-            .then((telemetryParameters: TacoUtility.ICommandTelemetryProperties) => {
-                fs.existsSync(tacoJsonPath).should.be.true;
-                var fileContents: string = fs.readFileSync(tacoJsonPath).toString();
-                fileContents.should.be.exactly(tacoJsonFileContents);
-                return telemetryParameters;
-            });
+        .then((telemetryParameters: TacoUtility.ICommandTelemetryProperties) => {
+            fs.existsSync(tacoJsonPath).should.be.true;
+
+            var tacoJson: IKeyValuePair<string> = require(tacoJsonPath);
+
+            tacoJsonKeyValues.should.be.eql(tacoJson);
+            return telemetryParameters;
+        });
     }
 
     before(() => {
@@ -102,23 +112,23 @@ describe("Kit", function (): void {
         process.env["TACO_HOME"] = tacoHome;
 
         // Force KitHelper to fetch the package fresh
-        kitHelper.KitPackagePromise = null;
+        kitHelper.kitPackagePromise = null;
 
-        this.timeout(100000);
+        this.timeout(60000);
         rimraf.sync(runFolder);
     });
 
     after((done: MochaDone) => {
         process.env["TACO_UNIT_TEST"] = previous;
         process.chdir(originalCwd);
-        kitHelper.KitPackagePromise = null;
+        kitHelper.kitPackagePromise = null;
         rimraf(runFolder, function (err: Error): void { done(); }); // ignore errors
     });
 
     it("'taco kit' should not throw any error", function (done: MochaDone): void {
         kitRun()
             .done((telemetryParameters: TacoUtility.ICommandTelemetryProperties) => {
-                var expected = { subCommand: { isPii: false, value: "list" } };
+                var expected: TacoUtility.ICommandTelemetryProperties = { subCommand: { isPii: false, value: "list" } };
                 telemetryParameters.should.be.eql(expected);
                 done();
             }, function (err: tacoUtils.TacoError): void {
@@ -129,7 +139,7 @@ describe("Kit", function (): void {
     it("'taco kit list' should not throw any error", function (done: MochaDone): void {
         kitRun(["list"])
             .done((telemetryParameters: TacoUtility.ICommandTelemetryProperties) => {
-                var expected = { subCommand: { isPii: false, value: "list" } };
+                var expected: TacoUtility.ICommandTelemetryProperties = { subCommand: { isPii: false, value: "list" } };
                 telemetryParameters.should.be.eql(expected);
                 done();
             }, function (err: tacoUtils.TacoError): void {
@@ -140,7 +150,7 @@ describe("Kit", function (): void {
     it("'taco kit list --kit {kit-ID}' should not throw any error", function (done: MochaDone): void {
         kitRun(["list", "--kit", "5.1.1-Kit"])
             .done((telemetryParameters: TacoUtility.ICommandTelemetryProperties) => {
-                var expected = {
+                var expected: TacoUtility.ICommandTelemetryProperties = {
                     subCommand: { isPii: false, value: "list" },
                     "options.kit": { isPii: false, value: "5.1.1-Kit" }
                 };
@@ -155,7 +165,7 @@ describe("Kit", function (): void {
         kitRun(["list", "--json", tempJson])
             .done((telemetryParameters: TacoUtility.ICommandTelemetryProperties) => {
                 fs.existsSync(tempJson).should.be.true;
-                var expected = {
+                var expected: TacoUtility.ICommandTelemetryProperties = {
                     subCommand: { isPii: false, value: "list" },
                     "options.json": { isPii: true, value: tempJson }
                 };
@@ -169,66 +179,70 @@ describe("Kit", function (): void {
     describe("'taco kit select' to convert a Kit project to a cli project works as expected", function (): void {
         var kitProjectpath: string = path.join(tacoHome, kitProjectDir);
         var tacoJsonPath: string = path.resolve(kitProjectpath, "taco.json");
-        var tacoJsonFileContents: string = "{\"cli\":\"5.1.1\"}";
-        this.timeout(50000);
+        var expectedCliTacoJsonKeyValues: IKeyValuePair<string> = {
+            "cordova-cli": "5.1.1"
+        };
+
+        this.timeout(60000);
 
         before(function (done: MochaDone): void {
             createKitProject("5.1.1-Kit")
             .done(function (): void {
                 process.chdir(kitProjectpath);
                 done();
-            });  
+            });
         });
 
         after(function (done: MochaDone): void {
-            this.timeout(30000);
             process.chdir(tacoHome);
             rimraf(kitProjectpath, function (err: Error): void { done(); }); // ignore errors
         });
 
-        it("'taco kit select --cli {CLI-VERSION}' should execute with no errors", function (done: MochaDone): void {
-            runKitCommandAndVerifyTacoJsonContents(["select", "--cli", "5.1.1"], tacoJsonPath, tacoJsonFileContents)
-                .done((telemetryParameters: TacoUtility.ICommandTelemetryProperties) => {
-                    var expected = {
+        it("'taco kit select --cordova {CLI-VERSION}' should execute with no errors", function (done: MochaDone): void {
+            runKitCommandAndVerifyTacoJsonContents(["select", "--cordova", "5.1.1"], tacoJsonPath, expectedCliTacoJsonKeyValues)
+                .then((telemetryParameters: TacoUtility.ICommandTelemetryProperties) => {
+                    var expected: TacoUtility.ICommandTelemetryProperties = {
                         subCommand: { isPii: false, value: "select" },
-                        "options.cli": { isPii: false, value: "5.1.1" }
+                        "options.cordova": { isPii: false, value: "5.1.1" }
                     };
                     telemetryParameters.should.be.eql(expected);
-                    done();
-                }, done);
+                })
+                .done(() => done(), done);
         });
     });
 
     describe("'taco kit select' to convert CLI project to a Kit project works as expected", function (): void {
         var cliProjectpath: string = path.join(tacoHome, cliProjectDir);
         var tacoJsonPath: string = path.resolve(cliProjectpath, "taco.json");
-        var tacoJsonFileContents: string = "{\"kit\":\"5.1.1-Kit\"}";
-        this.timeout(50000);
+        var expectedKitTacoJsonKeyValues: IKeyValuePair<string> = {
+            kit: "5.1.1-Kit", "cordova-cli": "5.1.1"
+        };
+
+        this.timeout(60000);
 
         before(function (done: MochaDone): void {
             createCliProject("5.1.1")
             .done(function (): void {
                 process.chdir(cliProjectpath);
                 done();
-            });  
+            }, done);
         });
 
         after(function (done: MochaDone): void {
-            this.timeout(30000);
             process.chdir(tacoHome);
             rimraf(cliProjectpath, function (err: Error): void { done(); }); // ignore errors
         });
 
         it("'taco kit select --kit {kit-ID}' should execute with no errors", function (done: MochaDone): void {
-            runKitCommandAndVerifyTacoJsonContents(["select", "--kit", "5.1.1-Kit"], tacoJsonPath, tacoJsonFileContents)
-                .done((telemetryParameters: TacoUtility.ICommandTelemetryProperties) => {
-                    var expected = {
+            runKitCommandAndVerifyTacoJsonContents(["select", "--kit", "5.1.1-Kit"], tacoJsonPath, expectedKitTacoJsonKeyValues)
+                .then((telemetryParameters: TacoUtility.ICommandTelemetryProperties) => {
+                    var expected: TacoUtility.ICommandTelemetryProperties = {
                         subCommand: { isPii: false, value: "select" },
                         "options.kit": { isPii: false, value: "5.1.1-Kit" }
                     };
                     telemetryParameters.should.be.eql(expected);
-                    done();
-                }, done);
-        });   
+                })
+                .done(() => done(), done);
+        });
     });
 });

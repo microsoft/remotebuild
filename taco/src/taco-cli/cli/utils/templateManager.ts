@@ -15,7 +15,7 @@
 
 "use strict";
 
-import admZip = require ("adm-zip");
+import AdmZip = require ("adm-zip");
 import childProcess = require ("child_process");
 import crypto = require ("crypto");
 import fs = require ("fs");
@@ -41,7 +41,6 @@ module TemplateManager {
     export interface ITemplateDescriptor {
         id: string;
         name: string;
-        getDescription(): string;
     }
 
     export interface ITemplateList {
@@ -65,11 +64,9 @@ class TemplateDescriptor implements TemplateManager.ITemplateDescriptor {
 }
 
 class TemplateManager {
-    private static DefaultTemplateId: string = "blank";
-    private static TemplatesFolderName: string = "templates";
-    private static GitTemplatesFolderName: string = "git-templates";
-    private static GitPrefix: string = "template_"; // Because Cordova checks for "http" at the start of the --copy-from path, we need some prefix for the git templates, otherwise they will get rejected
-    private static GitFileList: string[] = [
+    private static DEFAULT_TEMPLATE_ID: string = "blank";
+    private static TEMPLATES_FOLDER_NAME: string = "templates";
+    private static GIT_FILE_LIST: string[] = [
         ".git",
         ".gitignore",
         ".gitattributes"
@@ -81,7 +78,30 @@ class TemplateManager {
 
     constructor(kits: TacoKits.IKitHelper, templateCache?: string) {
         this.kitHelper = kits;
-        this.templateCachePath = templateCache || path.join(utils.tacoHome, TemplateManager.TemplatesFolderName);
+        this.templateCachePath = templateCache || path.join(utils.tacoHome, TemplateManager.TEMPLATES_FOLDER_NAME);
+    }
+
+    private static performTokenReplacements(projectPath: string, appId: string, appName: string): Q.Promise<any> {
+        var replaceParams: Replace.IReplaceParameters = {
+            regex: "",
+            replacement: "",
+            paths: [path.resolve(projectPath)],
+            recursive: true,
+            silent: true
+        };
+
+        var tokens: { [token: string]: string } = {
+            "\\$appid\\$": appId,
+            "\\$projectname\\$": appName
+        };
+
+        Object.keys(tokens).forEach(function(token: string): void {
+            replaceParams.regex = token;
+            replaceParams.replacement = tokens[token];
+            replace(replaceParams);
+        });
+
+        return Q.resolve(null);
     }
 
     /**
@@ -95,10 +115,10 @@ class TemplateManager {
      * @return {Q.Promise<string>} A Q promise that is resolved with the template's display name if there are no errors
      */
     public createKitProjectWithTemplate(kitId: string, templateId: string, cordovaCliVersion: string, cordovaParameters: Cordova.ICordovaCreateParameters): Q.Promise<string> {
-        var self = this;
+        var self: TemplateManager = this;
         var templateSrcPath: string = null;
 
-        templateId = templateId ? templateId : TemplateManager.DefaultTemplateId;
+        templateId = templateId ? templateId : TemplateManager.DEFAULT_TEMPLATE_ID;
 
         return this.acquireTemplate(templateId, kitId)
             .then(function (templatePath: string): Q.Promise<any> {
@@ -108,12 +128,39 @@ class TemplateManager {
                 return cordovaWrapper.create(cordovaCliVersion, cordovaParameters);
             })
             .then(function (): Q.Promise<any> {
-                var filterFunc = function (itemPath: string): boolean {
-                    // Return true if the item path is not in our list of git files to ignore
-                    return TemplateManager.GitFileList.indexOf(itemPath) === -1;
-                };
-                var options: any = { clobber: false, filter: filterFunc };
+                /*
+                Cordova's --copy-from behavior: "cordova create [project path] --copy-from [template path]" supports 2 scenarios: 1) The template is for the entire project; 2) The template is only
+                for the www assets.
 
+                Cordova looks for a "www" folder at the root of the specified path ("the template"). If it finds one, then it assumes we are in case 1), otherwise it assumes we are in case 2).
+
+                For case 1), Cordova looks for 4 specific items at the root of the template: "config.xml", "www\", "merges\" and "hooks\". When it finds one of those items, Cordova copies it to the
+                user's project, otherwise it uses the default for that particular item. It ignores everything else in the template.
+
+                For case 2), Cordova copies everything it finds in the template over to the "www\" folder of the user's project, and uses default items for everything else ("config.xml", "merges\",
+                etc).
+
+                What this means for TACO project creation: If we are in case 1), we need to copy the template items that Cordova ignored. For simplicity, we will simply recursively copy the entire
+                template folder to the user's project, while using the "clobber = false" option of the NCP package. That way, all the items get copied over, but those that were already copied by
+                Cordova are ignored. If we are in case 2), it means we don't have anything to do, because Cordova already copied all the template items to the "www\" folder of the user's project.
+                */
+
+                // If we are in case 2) (see above comment), we need to skip the copy step
+                var skipCopy: boolean = !fs.readdirSync(templateSrcPath).some(function (itemPath: string): boolean {
+                    return path.basename(itemPath) === "www";
+                });
+
+                if (skipCopy) {
+                    return Q.resolve({});
+                }
+
+                // If we reach this point, we are in case 1) (see above comment), so we need to perform a recursive copy
+                var filterFunc: (itemPath: string) => boolean = function (itemPath: string): boolean {
+                    // Return true if the item path is not in our list of git files to ignore
+                    return TemplateManager.GIT_FILE_LIST.indexOf(path.basename(itemPath)) === -1;
+                };
+
+                var options: tacoUtility.ICopyOptions = { clobber: false, filter: filterFunc };
                 return utils.copyRecursive(templateSrcPath, cordovaParameters.projectPath, options);
             })
             .then(function (): Q.Promise<any> {
@@ -151,7 +198,7 @@ class TemplateManager {
             .then(function (kitOverride: TacoKits.IKitTemplatesOverrideInfo): Q.Promise<TemplateManager.ITemplateList> {
                 return Q.resolve({
                     kitId: kitOverride.kitId,
-                    templates: kitOverride.templates.map(t => new TemplateDescriptor(t))
+                    templates: kitOverride.templates.map((t: TacoKits.ITemplateOverrideInfo) => new TemplateDescriptor(t))
             });
         });
     }
@@ -166,7 +213,7 @@ class TemplateManager {
             .then(function (results: TacoKits.ITemplateOverrideInfo[]): Q.Promise<TemplateManager.ITemplateList> {
                 return Q.resolve({
                     kitId: "",
-                    templates: results.map(templateInfo => new TemplateDescriptor(templateInfo))
+                    templates: results.map((templateInfo: TacoKits.ITemplateOverrideInfo) => new TemplateDescriptor(templateInfo))
                 });
             });
     }
@@ -182,34 +229,10 @@ class TemplateManager {
     public getTemplateEntriesCount(kitId: string, templateId: string): Q.Promise<number> {
         return this.kitHelper.getTemplateOverrideInfo(kitId, templateId)
             .then(function (templateOverrideInfo: TacoKits.ITemplateOverrideInfo): number {
-                var templateZip = new admZip(templateOverrideInfo.templateInfo.url);
+                var templateZip: AdmZip = new AdmZip(templateOverrideInfo.templateInfo.url);
 
                 return templateZip.getEntries().length - 1; // We substract 1, because the returned count includes the root folder of the template
             });
-    }
-
-    private static performTokenReplacements(projectPath: string, appId: string, appName: string): Q.Promise<any> {
-        var replaceParams: Replace.IReplaceParameters = {
-            regex: "",
-            replacement: "",
-            paths: [path.resolve(projectPath)],
-            recursive: true,
-            silent: true
-        };
-
-        var tokens: { [token: string]: string } = {
-            "\\$appid\\$": appId,
-            "\\$projectname\\$": appName
-        };
-
-        for (var token in tokens) {
-            replaceParams.regex = token;
-            replaceParams.replacement = tokens[token];
-
-            replace(replaceParams);
-        }
-
-        return Q.resolve(null);
     }
 
     private acquireTemplate(templateId: string, kitId: string): Q.Promise<string> {
@@ -228,9 +251,6 @@ class TemplateManager {
     }
 
     private acquireFromGit(templateUrl: string): Q.Promise<string> {
-        var gitTemplatesCache: string = path.join(this.templateCachePath, TemplateManager.GitTemplatesFolderName);
-        var templateLocation: string = path.join(gitTemplatesCache, this.getSafeGitTemplateName(templateUrl));
-
         loggerHelper.logSeparatorLine();
         logger.log(resources.getString("CommandCreateGitTemplateHeader"));
 
@@ -280,11 +300,11 @@ class TemplateManager {
     }
 
     private acquireFromTacoKits(templateId: string, kitId: string): Q.Promise<string> {
-        var self = this;
+        var self: TemplateManager = this;
 
         return this.kitHelper.getTemplateOverrideInfo(kitId, templateId)
             .then(function (templateOverrideForKit: TacoKits.ITemplateOverrideInfo): Q.Promise<string> {
-                var templateInfo = templateOverrideForKit.templateInfo;
+                var templateInfo: TacoKits.ITemplateInfo = templateOverrideForKit.templateInfo;
 
                 self.templateName = templateInfo.name;
 
@@ -306,16 +326,12 @@ class TemplateManager {
             wrench.mkdirSyncRecursive(cachedTemplateKitPath, 511); // 511 decimal is 0777 octal
 
             // Extract the template archive to the cache
-            var templateZip = new admZip(templateInfo.url);
+            var templateZip: AdmZip = new AdmZip(templateInfo.url);
 
             templateZip.extractAllTo(cachedTemplateKitPath);
         }
 
         return Q.resolve(cachedTemplatePath);
-    }
-
-    private getSafeGitTemplateName(gitUrl: string): string {
-        return TemplateManager.GitPrefix + encodeURIComponent(gitUrl);
     }
 }
 

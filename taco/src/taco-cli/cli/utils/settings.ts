@@ -13,43 +13,39 @@
 "use strict";
 
 import fs = require ("fs");
-import os = require ("os");
 import path = require ("path");
 import Q = require ("q");
 import util = require ("util");
 
-import CordovaHelper = require ("./cordovaHelper");
-import resources = require ("../../resources/resourceManager");
 import TacoErrorCodes = require ("../tacoErrorCodes");
 import errorHelper = require ("../tacoErrorHelper");
 import tacoUtils = require ("taco-utils");
 
 import commands = tacoUtils.Commands;
-import logger = tacoUtils.Logger;
 import utils = tacoUtils.UtilHelper;
 
 /*
  * A static class which is responsible for dealing with the TacoSettings.json file
  */
 class Settings {
-    private static Settings: Settings.ISettings = null;
-    private static SettingsFileName = "TacoSettings.json";
+    private static settings: Settings.ISettings = null;
+    private static SETTINGS_FILENAME: string = "TacoSettings.json";
 
     public static get settingsFile(): string {
-        return path.join(utils.tacoHome, Settings.SettingsFileName);
+        return path.join(utils.tacoHome, Settings.SETTINGS_FILENAME);
     }
 
     /*
      * Load data from TACO_HOME/TacoSettings.json
      */
     public static loadSettings(): Q.Promise<Settings.ISettings> {
-        if (Settings.Settings) {
-            return Q(Settings.Settings);
+        if (Settings.settings) {
+            return Q(Settings.settings);
         }
 
         try {
-            Settings.Settings = JSON.parse(<any>fs.readFileSync(Settings.settingsFile));
-            return Q(Settings.Settings);
+            Settings.settings = JSON.parse(<any> fs.readFileSync(Settings.settingsFile));
+            return Q(Settings.settings);
         } catch (e) {
             if (e.code === "ENOENT") {
                 // File doesn't exist, no need for a stack trace.
@@ -64,42 +60,10 @@ class Settings {
 
     public static saveSettings(settings: Settings.ISettings): Q.Promise<Settings.ISettings> {
         // save to TACO_HOME/TacoSettings.json and store as the cached version
-        Settings.Settings = settings;
+        Settings.settings = settings;
         utils.createDirectoryIfNecessary(utils.tacoHome);
         fs.writeFileSync(Settings.settingsFile, JSON.stringify(settings));
         return Q(settings);
-    }    
-
-    /*
-     * Given the command line options, determine which platforms we should operate on.
-     * For example, "--local foo" specifies the local platform foo.
-     *              "--remote bar" specifies the remote platform bar
-     *              "--local" specifies all local platforms, but if there is nothing in /platforms then this is an error
-     *              "--remote" specifies all remote platforms, but if there are no remote platforms configured then this is an error
-     *              "foo" should build remotely if there is a remote configuration, otherwise it should build locally
-     *              "" means all platforms in the following order:
-     *                 - If a platform has a remote configuration, then perform a remote build
-     *                 - If a platform exists in /platforms and does not have a remote configuration, then perform a local build
-     */
-    public static determinePlatform(options: commands.ICommandData): Q.Promise<Settings.IPlatformWithLocation[]> {
-        return Q.all([
-            CordovaHelper.getSupportedPlatforms(),
-            Settings.determinePlatformsFromOptions(options)
-        ]).spread<Settings.IPlatformWithLocation[]>(function (supportedPlatforms: CordovaHelper.IDictionary<any>, platforms: Settings.IPlatformWithLocation[]): Settings.IPlatformWithLocation[] {
-            var filteredPlatforms = platforms.filter(function (platform: Settings.IPlatformWithLocation): boolean {
-                var supported = !supportedPlatforms || platform.platform in supportedPlatforms;
-                if (!supported) {
-                    logger.logWarning(resources.getString("CommandUnsupportedPlatformIgnored", platform.platform));
-                }
-
-                return supported;
-            });
-            if (filteredPlatforms.length > 0) {
-                return filteredPlatforms;
-            } else {
-                throw errorHelper.get(TacoErrorCodes.ErrorNoPlatformsFound);
-            }
-        });
     }
 
     /*
@@ -124,7 +88,7 @@ class Settings {
                     throw error;
                 }
             })
-            .then(settings => {
+            .then((settings: Settings.ISettings) => {
                 updateFunction(settings);
                 return this.saveSettings(settings);
             });
@@ -134,81 +98,11 @@ class Settings {
      * Remove cached settings object, for use in tests
      */
     public static forgetSettings(): void {
-        Settings.Settings = null;
-    }
-
-    public static determineSpecificPlatformsFromOptions(options: commands.ICommandData, settings: Settings.ISettings): Settings.IPlatformWithLocation[] {
-        var optionsToIgnore = options.original.indexOf("--") === -1 ? [] : options.original.slice(options.original.indexOf("--"));
-        var platforms = options.remain.filter(function (platform: string): boolean { return optionsToIgnore.indexOf(platform) === -1; });
-        // one or more specific platforms are specified. Determine whether they should be built locally, remotely, or local falling back to remote
-        return platforms.map(function (platform: string): Settings.IPlatformWithLocation {
-            var buildLocation: Settings.BuildLocationType;
-            if (options.options["remote"]) {
-                buildLocation = Settings.BuildLocationType.Remote;
-            } else if (options.options["local"]) {
-                buildLocation = Settings.BuildLocationType.Local;
-            } else {                     
-                // we build remotely if either remote server is setup for the given platform or if the target platform cannot be built locally
-                buildLocation = (platform in (settings.remotePlatforms || {})) || !Settings.canBuildLocally(platform) ?
-                    Settings.BuildLocationType.Remote : Settings.BuildLocationType.Local;
-            }
-
-            return { location: buildLocation, platform: platform };
-        });
+        Settings.settings = null;
     }
 
     public static loadSettingsOrReturnEmpty(): Q.Promise<Settings.ISettings> {
         return Settings.loadSettings().fail(function (): Settings.ISettings { return { remotePlatforms: {} }; });
-    }
-
-    /**
-     * Determine whether the given target platform can be built on the local machine
-     *
-     * @targetPlatform {string} target platform to build, e.g. ios, windows
-     * @return {boolean} true if target platform can be built on local machine
-     */
-    private static canBuildLocally(targetPlatform: string): boolean {
-        switch (os.platform()) {
-            case "darwin":
-                return targetPlatform !== "windows";  // can be android, ios
-            case "win32":
-                return targetPlatform !== "ios";  // can be android, wp*, or windows
-        }
-
-        return false;
-    }
-
-    private static determinePlatformsFromOptions(options: commands.ICommandData): Q.Promise<Settings.IPlatformWithLocation[]> {
-        return this.loadSettingsOrReturnEmpty()
-            .then((settings: Settings.ISettings) => {
-                // if one or more specific platforms are specified. Determine whether they should be built locally, remotely, or local falling back to remote
-                var platformsFromOptions = this.determineSpecificPlatformsFromOptions(options, settings);
-
-                if (platformsFromOptions.length > 0) {
-                    return platformsFromOptions;
-                } else {
-                    // No platform specified: try to do 'all' of them
-                    var remotePlatforms: string[] = [];
-                    if (!options.options["local"]) {
-                        // If we are not only building locally, then we need to consider any remote-only builds we need to do
-                        remotePlatforms = Object.keys(settings.remotePlatforms || {});
-                    }
-
-                    var localPlatforms: string[] = [];
-                    if (!options.options["remote"] && fs.existsSync("platforms")) {
-                        // Check for local platforms to try building
-                        localPlatforms = fs.readdirSync("platforms").filter(function (entry: string): boolean {
-                            return fs.statSync(path.join("platforms", entry)).isDirectory() && remotePlatforms.indexOf(entry) === -1;
-                        });
-                    }
-
-                    return remotePlatforms.map(function (platform: string): Settings.IPlatformWithLocation {
-                        return { location: Settings.BuildLocationType.Remote, platform: platform };
-                    }).concat(localPlatforms.map(function (platform: string): Settings.IPlatformWithLocation {
-                        return { location: Settings.BuildLocationType.Local, platform: platform };
-                    }));
-                }
-            });
     }
 }
 
@@ -227,16 +121,6 @@ module Settings {
         };
         language?: string;
         lastCheckForNewerVersionTimestamp?: number;
-    }
-
-    export enum BuildLocationType {
-        Local,
-        Remote
-    }
-
-    export interface IPlatformWithLocation {
-        platform: string;
-        location: BuildLocationType;
     }
 }
 

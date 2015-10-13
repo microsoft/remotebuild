@@ -10,12 +10,12 @@
 /// <reference path="../../typings/tacoUtils.d.ts"/>
 
 "use strict";
-var should_module = require("should"); // Note not import: We don't want to refer to should_module, but we need the require to occur since it modifies the prototype of Object.
 
 import fs = require ("fs");
 import mocha = require ("mocha");
 import path = require ("path");
 import Q = require ("q");
+import should = require ("should");
 import util = require ("util");
 
 import Help = require ("../cli/help");
@@ -45,18 +45,18 @@ interface ICommandInfo {
 
 describe("taco meta command tests: ", function (): void {
     // Command list
-    var commandsJsonPath = path.resolve(__dirname, "..", "cli", "commands.json");
+    var commandsJsonPath: string = path.resolve(__dirname, "..", "cli", "commands.json");
     fs.existsSync(commandsJsonPath).should.be.true;
 
-    var commands = require(commandsJsonPath);
-    commands.should.not.be.empty;
+    var commands: any = require(commandsJsonPath);
+    should(commands).not.be.empty;
 
     // Options we are interested in testing
     var tacoValidArgs: string[][] = [[], ["-v"], ["--help"], ["-----help"]];
     var tacoInvalidArgs: string[][] = [["/?"], ["?"]];
 
     function runHelp(command: string): Q.Promise<any> {
-        var help = new Help();
+        var help: Help = new Help();
 
         // Construct CommandData and pass it as argument
         var original: string[] = [];
@@ -75,7 +75,7 @@ describe("taco meta command tests: ", function (): void {
     };
 
     function runVersion(): Q.Promise<any> {
-        var version = new Version();
+        var version: Version = new Version();
 
         var commandData: tacoUtils.Commands.ICommandData = {
             options: {},
@@ -114,14 +114,14 @@ describe("taco meta command tests: ", function (): void {
                 Taco.runWithArgs(optionString).then(function (): void {
                     done(new Error("Passing Invalid options to \'taco\' should have failed"));
                 }, function (err: any): void {
-                    if (err.code = TacoErrorCodes.CordovaCommandFailed) {
+                    if (err.errorCode === TacoErrorCodes.CordovaCommandFailed) {
                         done();
                     } else {
                         done(new Error("Unexpected error code"));
                     }
                 });
             });
-        });       
+        });
     });
 
     // Run taco version command

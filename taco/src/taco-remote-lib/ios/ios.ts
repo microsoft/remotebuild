@@ -20,13 +20,14 @@ import fs = require ("fs");
 import net = require ("net");
 import path = require ("path");
 import util = require ("util");
-import packer = require ("zip-stream");
+import Packer = require ("zip-stream");
 
 import iosAppRunner = require ("./iosAppRunnerHelper");
 import resources = require ("../resources/resourceManager");
 import utils = require ("taco-utils");
 
 import BuildInfo = utils.BuildInfo;
+import Logger = utils.Logger;
 import ProcessLogger = utils.ProcessLogger;
 import UtilHelper = utils.UtilHelper;
 
@@ -52,7 +53,7 @@ class IOSAgent implements ITargetPlatform {
             process.env["PATH"] = path.resolve(__dirname, path.join("..", "node_modules", "ios-sim", "build", "release")) + ":" + process.env["PATH"];
             child_process.exec("which ios-sim", function (err: Error, stdout: Buffer, stderr: Buffer): void {
                 if (err) {
-                    console.error(resources.getString("IOSSimNotFound"));
+                    Logger.logError(resources.getString("IOSSimNotFound"));
                 }
             });
         }
@@ -75,8 +76,8 @@ class IOSAgent implements ITargetPlatform {
             return;
         }
 
-        var proxyPort = this.nativeDebugProxyPort;
-        var cfg = utils.CordovaConfig.getCordovaConfig(buildInfo.appDir);
+        var proxyPort: number = this.nativeDebugProxyPort;
+        var cfg: utils.CordovaConfig = utils.CordovaConfig.getCordovaConfig(buildInfo.appDir);
         iosAppRunner.startDebugProxy(proxyPort)
             .then(function (nativeProxyProcess: child_process.ChildProcess): Q.Promise<net.Socket> {
             return iosAppRunner.startApp(cfg.id(), proxyPort);
@@ -92,38 +93,40 @@ class IOSAgent implements ITargetPlatform {
     }
 
     public downloadBuild(buildInfo: BuildInfo, req: Express.Request, res: Express.Response, callback: (err: any) => void): void {
-        var iosOutputDir = path.join(buildInfo.appDir, "platforms", "ios", "build", "device");
-        var pathToPlistFile = path.join(iosOutputDir, buildInfo["appName"] + ".plist");
-        var pathToIpaFile = path.join(iosOutputDir, buildInfo["appName"] + ".ipa");
+        var iosOutputDir: string = path.join(buildInfo.appDir, "platforms", "ios", "build", "device");
+        var pathToPlistFile: string = path.join(iosOutputDir, buildInfo["appName"] + ".plist");
+        var pathToIpaFile: string = path.join(iosOutputDir, buildInfo["appName"] + ".ipa");
         if (!fs.existsSync(pathToPlistFile) || !fs.existsSync(pathToIpaFile)) {
-            var msg = resources.getString("DownloadInvalid", pathToPlistFile, pathToIpaFile);
-            console.info(msg);
+            var msg: string = resources.getString("DownloadInvalid", pathToPlistFile, pathToIpaFile);
+            Logger.log(msg);
             res.status(404).send(resources.getStringForLanguage(req, "DownloadInvalid", pathToPlistFile, pathToIpaFile));
             callback(msg);
             return;
         }
 
-        var archive = new packer();
+        var archive: Packer = new Packer();
         archive.on("error", function (err: Error): void {
-            console.error(resources.getString("ArchivePackError", err.message));
+            Logger.logError(resources.getString("ArchivePackError", err.message));
             callback(err);
             res.status(404).send(resources.getStringForLanguage(req, "ArchivePackError", err.message));
         });
         res.set({ "Content-Type": "application/zip" });
         archive.pipe(res);
-        archive.entry(fs.createReadStream(pathToPlistFile), { name: buildInfo["appName"] + ".plist" }, function (err: Error, file: any): void {
-            if (err) {
-                console.error(resources.getString("ArchivePackError", err.message));
-                callback(err);
-                res.status(404).send(resources.getStringForLanguage(req, "ArchivePackError", err.message));
+        archive.entry(fs.createReadStream(pathToPlistFile), { name: buildInfo["appName"] + ".plist" },
+            function (pListEntryError: Error, pListEntry: any): void {
+            if (pListEntryError) {
+                Logger.logError(resources.getString("ArchivePackError", pListEntryError.message));
+                callback(pListEntryError);
+                res.status(404).send(resources.getStringForLanguage(req, "ArchivePackError", pListEntryError.message));
                 return;
             }
 
-            archive.entry(fs.createReadStream(pathToIpaFile), { name: buildInfo["appName"] + ".ipa" }, function (err: Error, file: any): void {
-                if (err) {
-                    console.error(resources.getString("ArchivePackError", err.message));
-                    callback(err);
-                    res.status(404).send(resources.getStringForLanguage(req, "ArchivePackError", err.message));
+            archive.entry(fs.createReadStream(pathToIpaFile), { name: buildInfo["appName"] + ".ipa" },
+                function (ipaEntryError: Error, ipaEntry: any): void {
+                if (ipaEntryError) {
+                    Logger.logError(resources.getString("ArchivePackError", ipaEntryError.message));
+                    callback(ipaEntryError);
+                    res.status(404).send(resources.getStringForLanguage(req, "ArchivePackError", ipaEntryError.message));
                     return;
                 }
 
@@ -144,10 +147,10 @@ class IOSAgent implements ITargetPlatform {
             req.query.target = "iphone 5";
         }
 
-        var cfg = utils.CordovaConfig.getCordovaConfig(buildInfo.appDir);
+        var cfg: utils.CordovaConfig = utils.CordovaConfig.getCordovaConfig(buildInfo.appDir);
 
-        var emulateProcess = child_process.fork(path.join(__dirname, "iosEmulateHelper.js"), [], { silent: true });
-        var emulateLogger = new ProcessLogger();
+        var emulateProcess: child_process.ChildProcess = child_process.fork(path.join(__dirname, "iosEmulateHelper.js"), [], { silent: true });
+        var emulateLogger: ProcessLogger = new ProcessLogger();
         emulateLogger.begin(buildInfo.buildDir, "emulate.log", buildInfo.buildLang, emulateProcess);
         emulateProcess.send({ appDir: buildInfo.appDir, appName: cfg.id(), target: req.query.target }, null);
 
@@ -165,13 +168,13 @@ class IOSAgent implements ITargetPlatform {
     }
 
     public deployBuildToDevice(buildInfo: utils.BuildInfo, req: Express.Request, res: Express.Response): void {
-        var pathToIpaFile = path.join(buildInfo.appDir, "platforms", "ios", "build", "device", buildInfo["appName"] + ".ipa");
+        var pathToIpaFile: string = path.join(buildInfo.appDir, "platforms", "ios", "build", "device", buildInfo["appName"] + ".ipa");
         if (!fs.existsSync(pathToIpaFile)) {
             res.status(404).send(resources.getStringForLanguage(req, "BuildNotFound", req.params.id));
             return;
         }
 
-        var ideviceinstaller = child_process.spawn("ideviceinstaller", ["-i", pathToIpaFile]);
+        var ideviceinstaller: child_process.ChildProcess = child_process.spawn("ideviceinstaller", ["-i", pathToIpaFile]);
         var stdout: string = "";
         var stderr: string = "";
         var errorMessage: string;
@@ -213,7 +216,7 @@ class IOSAgent implements ITargetPlatform {
             this.webProxyInstance = null;
         }
 
-        var portRange = util.format("null:%d,:%d-%d", this.webDebugProxyDevicePort, this.webDebugProxyPortMin, this.webDebugProxyPortMax);
+        var portRange: string = util.format("null:%d,:%d-%d", this.webDebugProxyDevicePort, this.webDebugProxyPortMin, this.webDebugProxyPortMax);
         try {
             this.webProxyInstance = child_process.spawn("ios_webkit_debug_proxy", ["-c", portRange]);
         } catch (e) {

@@ -32,11 +32,11 @@ module TacoUtility {
     };
 
     interface IDictionary<T> {
-        [key: string]: T
+        [key: string]: T;
     }
 
     interface IHasErrorCode {
-        errorCode: number
+        errorCode: number;
     }
 
     export class TelemetryGenerator {
@@ -61,9 +61,9 @@ module TacoUtility {
             //     * Object is a value, we add the element as baseName
             try {
                 if (Array.isArray(value)) {
-                    this.addArray(baseName, <any[]>value, piiEvaluator);
+                    this.addArray(baseName, <any[]> value, piiEvaluator);
                 } else if (_.isObject(value)) {
-                    this.addHash(baseName, <IDictionary<any>>value, piiEvaluator);
+                    this.addHash(baseName, <IDictionary<any>> value, piiEvaluator);
                 } else {
                     this.addString(baseName, String(value), piiEvaluator);
                 }
@@ -78,7 +78,7 @@ module TacoUtility {
 
         public addError(error: Error): TelemetryGenerator {
             this.add("error.message" + ++this.errorIndex, error, /*isPii*/ true);
-            var errorWithErrorCode = <IHasErrorCode><Object>error;
+            var errorWithErrorCode: IHasErrorCode = <IHasErrorCode> <Object> error;
             if (errorWithErrorCode.errorCode) {
                 this.add("error.code" + this.errorIndex, errorWithErrorCode.errorCode, /*isPii*/ false);
             }
@@ -87,7 +87,7 @@ module TacoUtility {
         }
 
         public time<T>(name: string, codeToMeasure: { (): T }): T {
-            var startTime = process.hrtime();
+            var startTime: number[] = process.hrtime();
             return executeAfter(codeToMeasure(),
                 () => this.finishTime(name, startTime),
                 (reason: any) => {
@@ -118,20 +118,20 @@ module TacoUtility {
 
         private sendCurrentStep(): void {
             this.add("step", this.currentStep, /*isPii*/ false);
-            var telemetryEvent = new Telemetry.TelemetryEvent(Telemetry.appName + "/" + this.componentName);
+            var telemetryEvent: Telemetry.TelemetryEvent = new Telemetry.TelemetryEvent(Telemetry.appName + "/" + this.componentName);
             TelemetryHelper.addTelemetryEventProperties(telemetryEvent, this.telemetryProperties);
             Telemetry.send(telemetryEvent);
         }
 
         private addArray(baseName: string, array: any[], piiEvaluator: { (value: string, name: string): boolean }): void {
             // Object is an array, we add each element as baseNameNNN
-            var elementIndex = 1; // We send telemetry properties in a one-based index
+            var elementIndex: number = 1; // We send telemetry properties in a one-based index
             array.forEach((element: any) => this.addWithPiiEvaluator(baseName + elementIndex++, element, piiEvaluator));
         }
 
         private addHash(baseName: string, hash: IDictionary<any>, piiEvaluator: { (value: string, name: string): boolean }): void {
             // Object is a hash, we add each element as baseName.KEY
-            Object.keys(hash).forEach(key => this.addWithPiiEvaluator(baseName + "." + key, hash[key], piiEvaluator));
+            Object.keys(hash).forEach((key: string) => this.addWithPiiEvaluator(baseName + "." + key, hash[key], piiEvaluator));
         }
 
         private addString(name: string, value: string, piiEvaluator: { (value: string, name: string): boolean }): void {
@@ -139,12 +139,12 @@ module TacoUtility {
         }
 
         private combine(...components: string[]): string {
-            var nonNullComponents = components.filter(component => !_.isNull(component));
+            var nonNullComponents: string[] = components.filter((component: string) => !_.isNull(component));
             return nonNullComponents.join(".");
         }
 
         private finishTime(name: string, startTime: number[]): void {
-            var endTime = process.hrtime(startTime);
+            var endTime: number[] = process.hrtime(startTime);
             this.add(this.combine(name, "time"), String(endTime[0] * 1000 + endTime[1] / 1000000), /*isPii*/ false);
         }
     }
@@ -155,10 +155,10 @@ module TacoUtility {
     *    It also supports attaching a fail callback in case it's a promise
     */
     function executeAfter<T>(valueOrPromise: T, afterCallback: { (): void }, failCallback: { (reason: any): void } = (reason: any) => Q.reject(reason)): T {
-        var valueAsPromise = <Q.Promise<any>><Object>valueOrPromise;
+        var valueAsPromise: Q.Promise<any> = <Q.Promise<any>> <Object> valueOrPromise;
         if (_.isObject(valueAsPromise) && _.isFunction(valueAsPromise.finally)) {
             // valueOrPromise must be a promise. We'll add the callback as a finally handler
-            return <T><Object>valueAsPromise.finally(afterCallback).fail(failCallback);
+            return <T> <Object> valueAsPromise.finally(afterCallback).fail(failCallback);
         } else {
             // valueOrPromise is just a value. We'll execute the callback now
             afterCallback();
@@ -182,7 +182,7 @@ module TacoUtility {
         }
 
         public static sendCommandFailureTelemetry(commandName: string, error: any, projectProperties: ICommandTelemetryProperties, args: string[] = null): void {
-            var errorEvent = TelemetryHelper.createBasicCommandTelemetry(commandName, args);
+            var errorEvent: Telemetry.TelemetryEvent = TelemetryHelper.createBasicCommandTelemetry(commandName, args);
 
             if (error.isTacoError) {
                 errorEvent.properties["tacoErrorCode"] = error.errorCode;
@@ -196,7 +196,7 @@ module TacoUtility {
         }
 
         public static sendCommandSuccessTelemetry(commandName: string, commandProperties: ICommandTelemetryProperties, args: string[] = null): void {
-            var successEvent = TelemetryHelper.createBasicCommandTelemetry(commandName, args);
+            var successEvent: Telemetry.TelemetryEvent = TelemetryHelper.createBasicCommandTelemetry(commandName, args);
 
             TelemetryHelper.addTelemetryEventProperties(successEvent, commandProperties);
 
@@ -204,8 +204,9 @@ module TacoUtility {
         }
 
         public static sanitizeTargetStringPropertyInfo(targetString: string): ITelemetryPropertyInfo {
-            var propertyInfo = { value: targetString, isPii: false };
-            if (packageLoader.TacoPackageLoader.GitUriRegex.test(targetString) || packageLoader.TacoPackageLoader.FileUriRegex.test(targetString)) {
+            var propertyInfo: ITelemetryPropertyInfo = { value: targetString, isPii: false };
+            if (packageLoader.TacoPackageLoader.GIT_URI_REGEX.test(targetString)
+                || packageLoader.TacoPackageLoader.FILE_URI_REGEX.test(targetString)) {
                 propertyInfo.isPii = true;
             } else {
                 propertyInfo.value = targetString;
@@ -225,9 +226,9 @@ module TacoUtility {
         public static addPropertiesFromOptions(telemetryProperties: ICommandTelemetryProperties, knownOptions: Nopt.CommandData,
             commandOptions: { [flag: string]: any }, nonPiiOptions: string[] = []): ICommandTelemetryProperties {
             // We parse only the known options, to avoid potential private information that may appear on the command line
-            var unknownOptionIndex = 1;
-            Object.keys(commandOptions).forEach(key => {
-                var value = commandOptions[key];
+            var unknownOptionIndex: number = 1;
+            Object.keys(commandOptions).forEach((key: string) => {
+                var value: any = commandOptions[key];
                 if (Object.keys(knownOptions).indexOf(key) >= 0) {
                     // This is a known option. We'll check the list to decide if it's pii or not
                     if (typeof (value) !== "undefined") {
@@ -244,13 +245,13 @@ module TacoUtility {
         }
 
         public static generate<T>(name: string, codeGeneratingTelemetry: { (telemetry: TelemetryGenerator): T }): T {
-            var generator = new TelemetryGenerator(name);
+            var generator: TelemetryGenerator = new TelemetryGenerator(name);
             return executeAfter(generator.time(null, () => codeGeneratingTelemetry(generator)), () => generator.send());
         }
 
         private static createBasicCommandTelemetry(commandName: string, args: string[] = null): Telemetry.TelemetryEvent {
-            var commandEvent = new Telemetry.TelemetryEvent(Telemetry.appName + "/" + (commandName || "command"));
-            
+            var commandEvent: Telemetry.TelemetryEvent = new Telemetry.TelemetryEvent(Telemetry.appName + "/" + (commandName || "command"));
+
             if (!commandName && args && args.length > 0) {
                 commandEvent.setPiiProperty("command", args[0]);
             }
@@ -261,19 +262,19 @@ module TacoUtility {
 
             return commandEvent;
         }
-        
+
         private static setTelemetryEventProperty(event: Telemetry.TelemetryEvent, propertyName: string, propertyValue: string, isPii: boolean): void {
             if (isPii) {
                 event.setPiiProperty(propertyName, String(propertyValue));
             } else {
                 event.properties[propertyName] = String(propertyValue);
-            }       
+            }
         }
 
         private static addMultiValuedTelemetryEventProperty(event: Telemetry.TelemetryEvent, propertyName: string, propertyValue: string, isPii: boolean): void {
-            for (var i = 0; i < propertyValue.length; i++) {
+            for (var i: number = 0; i < propertyValue.length; i++) {
                 TelemetryHelper.setTelemetryEventProperty(event, propertyName + i, propertyValue[i], isPii);
-            }            
+            }
         }
     };
 }

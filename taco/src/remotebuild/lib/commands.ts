@@ -9,7 +9,9 @@
 /// <reference path="../../typings/node.d.ts" />
 /// <reference path="../../typings/Q.d.ts" />
 /// <reference path="../../typings/nconf.d.ts" />
+/// <reference path="../../typings/remotebuild.d.ts" />
 /// <reference path="../../typings/tacoUtils.d.ts" />
+
 "use strict";
 import Q = require ("q");
 
@@ -20,16 +22,13 @@ import server = require ("./server");
 import utils = require ("taco-utils");
 
 import Logger = utils.Logger;
-interface IRemoteBuildTask {
-    execute(config: RemoteBuildConf, cliArguments?: string[]): Q.Promise<any>;
-}
 
 class Commands {
-    public static Tasks: { [key: string]: IRemoteBuildTask } = {
+    public static tasks: { [key: string]: RemoteBuild.IRemoteBuildTask } = {
         start: {
             execute: function (config: RemoteBuildConf, cliArguments?: string[]): Q.Promise<any> {
                 return server.start(config);
-            },
+            }
         },
         test: {
             execute: function (config: RemoteBuildConf, cliArguments: string[]): Q.Promise<any> {
@@ -42,7 +41,7 @@ class Commands {
         },
         certificates: {
             execute: function (config: RemoteBuildConf, cliArguments: string[]): Q.Promise<any> {
-                var subCommand = cliArguments[1];
+                var subCommand: string = cliArguments[1];
                 switch (subCommand) {
                     case "generate":
                         return server.generateClientCert(config);

@@ -42,13 +42,14 @@ module TacoUtility {
      * handles "Taco Help"
      */
     export class HelpCommandBase extends TacoCommandBase {
-        private static DefaultBullet: string = "*";
-        private static OptionIndent: number = 5;
+        private static DEFAULT_BULLET: string = "*";
+        private static OPTIONS_INDENT: number = 5;
+
+        public info: ICommandInfo;
 
         private commandsFactory: CommandsFactory = null;
         private cliResources: ResourceManager = null;
         private cliName: string = null;
-        public info: ICommandInfo;
 
         constructor(cliName: string, commandJsonPath: string, resources: ResourceManager) {
             super();
@@ -74,7 +75,7 @@ module TacoUtility {
             } else {
                 this.printGeneralUsage();
             }
-            
+
             return Q({});
         }
 
@@ -94,9 +95,11 @@ module TacoUtility {
             Logger.log(util.format("   <synopsis>%s %s</synopsis><br/>", this.cliName, "<COMMAND>"));
 
             var nameDescriptionPairs: INameDescription[] = new Array();
-            for (var i in this.commandsFactory.listings) {
-                nameDescriptionPairs.push({ name: i, description: this.commandsFactory.listings[i].description, category: this.commandsFactory.listings[i].categoryTitle });
-            }
+
+            var listings: any = this.commandsFactory.listings;
+            Object.keys(listings).forEach(function(i: string): void {
+                nameDescriptionPairs.push({ name: i, description: listings[i].description, category: listings[i].categoryTitle });
+            });
 
             // we use first entry to conclude if command table has categories
             if (nameDescriptionPairs.length > 0 && !nameDescriptionPairs[0].category) {
@@ -107,10 +110,14 @@ module TacoUtility {
         }
 
         /**
-         * prints out specific usage, i.e. TACO help create
+         * prints out specific usage, i.e. taco help create
          * @param {string} command - TACO command being inquired
          */
         private printCommandUsage(command: string): void {
+            if (this.commandsFactory.aliases[command]) {
+                command = this.commandsFactory.aliases[command];
+            }
+
             if (!this.commandsFactory.listings || !this.commandsFactory.listings[command]) {
                 Logger.logError(resources.getString("CommandHelpBadcomand", "'" + command + "'"));
                 this.printGeneralUsage();
@@ -123,17 +130,17 @@ module TacoUtility {
             var args: any[] = this.commandsFactory.listings[command].args;
             var list: ICommandInfo = this.commandsFactory.listings[command];
             this.printCommandHeader(this.cliName, command, list.synopsis, list.description);
-            var optionsLeftIndent: string = LoggerHelper.repeat(" ", HelpCommandBase.OptionIndent);
+            var optionsLeftIndent: string = LoggerHelper.repeat(" ", HelpCommandBase.OPTIONS_INDENT);
             if (args) {
-                args.forEach(arg => {
+                args.forEach((arg: any) => {
                     // Push the arg first
                     argList.push({
                         name: arg.name,
                         description: arg.description
                     });
                     if (arg.options) {
-                        var options: INameDescription[] = <INameDescription[]>arg.options;
-                        options.forEach(nvp => {
+                        var options: INameDescription[] = <INameDescription[]> arg.options;
+                        options.forEach((nvp: INameDescription) => {
                             nvp.name = optionsLeftIndent + nvp.name;
                             argList.push({
                                 name: nvp.name,
@@ -150,17 +157,17 @@ module TacoUtility {
             // we need to also account for extra indenation given to options
             var longestArgsLength: number = LoggerHelper.getLongestNameLength(list.args);
             var longestOptionsLength: number = LoggerHelper.getLongestNameLength(list.options);
-            var longestKeyLength: number = Math.max(longestArgsLength, longestOptionsLength + LoggerHelper.DefaultIndent);
-            var indent2 = LoggerHelper.getDescriptionColumnIndent(longestKeyLength);
+            var longestKeyLength: number = Math.max(longestArgsLength, longestOptionsLength + LoggerHelper.DEFAULT_INDENT);
+            var indent2: number = LoggerHelper.getDescriptionColumnIndent(longestKeyLength);
 
             if (list.args) {
                 Logger.log(resources.getString("CommandHelpUsageParameters"));
-                this.printCommandTable(list.args, LoggerHelper.DefaultIndent, indent2);
+                this.printCommandTable(list.args, LoggerHelper.DEFAULT_INDENT, indent2);
             }
 
             if (list.options) {
                 Logger.log(resources.getString("CommandHelpUsageOptions"));
-                this.printCommandTable(list.options, 2 * LoggerHelper.DefaultIndent, indent2);
+                this.printCommandTable(list.options, 2 * LoggerHelper.DEFAULT_INDENT, indent2);
             }
 
             if (list.aliases) {
@@ -173,7 +180,7 @@ module TacoUtility {
         }
 
         private printCommandTable(nameDescriptionPairs: INameDescription[], indent1?: number, indent2?: number): void {
-            for (var i = 0; i < nameDescriptionPairs.length; i++) {
+            for (var i: number = 0; i < nameDescriptionPairs.length; i++) {
                 nameDescriptionPairs[i].description = this.getResourceString(nameDescriptionPairs[i].description);
                 if (nameDescriptionPairs[i].category) {
                     nameDescriptionPairs[i].category = util.format("<highlight>%s</highlight>", this.getResourceString(nameDescriptionPairs[i].category));
@@ -186,15 +193,15 @@ module TacoUtility {
         private printExamples(examples: ICommandExample[]): void {
             if (examples) {
                 Logger.log(resources.getString("CommandHelpUsageExamples"));
-                var indent: string = LoggerHelper.repeat(" ", LoggerHelper.DefaultIndent);
-                var indent2: string = LoggerHelper.repeat(" ", 2 * LoggerHelper.DefaultIndent);
-                for (var i = 0; i < examples.length; i++) {
-                    Logger.log(util.format("%s%s %s", indent, HelpCommandBase.DefaultBullet, this.getResourceString(examples[i].description)));
+                var indent: string = LoggerHelper.repeat(" ", LoggerHelper.DEFAULT_INDENT);
+                var indent2: string = LoggerHelper.repeat(" ", 2 * LoggerHelper.DEFAULT_INDENT);
+                for (var i: number = 0; i < examples.length; i++) {
+                    Logger.log(util.format("%s%s %s", indent, HelpCommandBase.DEFAULT_BULLET, this.getResourceString(examples[i].description)));
                     Logger.logLine();
                     if (typeof examples[i].example === "string") {
                         Logger.log(util.format("%s  <highlight>%s</highlight>", indent2, examples[i].example));
                     } else {
-                        LoggerHelper.printJson(<any>examples[i].example, 2 * LoggerHelper.DefaultIndent);
+                        LoggerHelper.printJson(<any> examples[i].example, 2 * LoggerHelper.DEFAULT_INDENT);
                     }
 
                     Logger.logLine();
@@ -205,9 +212,9 @@ module TacoUtility {
         private printNotes(notes: string[]): void {
             if (notes) {
                 Logger.log(resources.getString("CommandHelpUsageNotes"));
-                var indent: string = LoggerHelper.repeat(" ", LoggerHelper.DefaultIndent);
-                for (var i = 0; i < notes.length; i++) {
-                    var bullet: string = (notes.length > 1) ? (i + 1) + "." : HelpCommandBase.DefaultBullet;
+                var indent: string = LoggerHelper.repeat(" ", LoggerHelper.DEFAULT_INDENT);
+                for (var i: number = 0; i < notes.length; i++) {
+                    var bullet: string = (notes.length > 1) ? (i + 1) + "." : HelpCommandBase.DEFAULT_BULLET;
                     Logger.log(util.format("%s%s %s", indent, bullet, this.getResourceString(notes[i])));
                     Logger.logLine();
                 }
@@ -222,15 +229,18 @@ module TacoUtility {
 
             if (synopsis) {
                 Logger.logLine();
-                var leftIndent: string = LoggerHelper.repeat(" ", LoggerHelper.DefaultIndent);
+                var leftIndent: string = LoggerHelper.repeat(" ", LoggerHelper.DEFAULT_INDENT);
                 Logger.log(util.format("%s<synopsis>%s %s %s</synopsis><br/>", leftIndent, cliName, commandName, synopsis));
             }
         }
 
-        private printAliasTable(commandAliases: ICommandAlias[]): void {
-            var leftIndent: string = LoggerHelper.repeat(" ", LoggerHelper.DefaultIndent);
-            commandAliases.forEach(cmdAliasPair => {
-                Logger.log(util.format("%s<key>%s</key> %s <key>%s</key>", leftIndent, cmdAliasPair.alias, "->", cmdAliasPair.command));
+        private printAliasTable(commandAliases: ICommandAlias): void {
+            var leftIndent: string = LoggerHelper.repeat(" ", LoggerHelper.DEFAULT_INDENT);
+            Object.keys(commandAliases).forEach((cmdKey: string) => {
+                var value: string = commandAliases[cmdKey];
+                if (value && value !== cmdKey) {
+                    Logger.log(util.format("%s<key>%s</key> %s <key>%s</key>", leftIndent, cmdKey, "->", value));
+                }
             });
         }
 
@@ -242,9 +252,9 @@ module TacoUtility {
         private getResourceString(id: string): string {
             var regex: RegExp = new RegExp("(\\[.*\\])");
             var res: ResourceManager = this.cliResources;
-            return id.replace(regex, function (id: string): string {
-                id = id.slice(1, id.length - 1);
-                return res.getString(id);
+            return id.replace(regex, function (resourceId: string): string {
+                resourceId = resourceId.slice(1, resourceId.length - 1);
+                return res.getString(resourceId);
             });
         }
 
@@ -253,13 +263,7 @@ module TacoUtility {
          * @param {string} id - command to query
          */
         private commandExists(command: string): boolean {
-            for (var i in this.commandsFactory.listings) {
-                if (i === command) {
-                    return true;
-                }
-            }
-
-            return false;
+            return command in this.commandsFactory.listings || command in this.commandsFactory.aliases;
         }
     }
 }

@@ -40,7 +40,7 @@ import ICommandTelemetryProperties = tacoUtility.ICommandTelemetryProperties;
 
 interface ICliSession {
     question: (question: string, callback: (answer: string) => void) => void;
-    close: () => void
+    close: () => void;
 };
 
 /**
@@ -49,13 +49,15 @@ interface ICliSession {
  * handles "taco remote"
  */
 class Remote extends commands.TacoCommandBase {
-    private static HttpTimeoutMS: number = 20000;
-    private static KnownOptions: Nopt.CommandData = {};
-    private static ShortHands: Nopt.ShortFlags = {};
     /**
      * Mockable CLI for test purposes
      */
-    public static CliSession: ICliSession = null;
+    public static cliSession: ICliSession = null;
+
+    private static HTTP_TIMEOUT_IN_MS: number = 20000;
+    private static KNOWN_OPTIONS: Nopt.CommandData = {};
+    private static SHORT_HANDS: Nopt.ShortFlags = {};
+
     public subcommands: commands.ICommand[] = [
         {
             // taco remote remove <platform>
@@ -95,24 +97,10 @@ class Remote extends commands.TacoCommandBase {
     public info: commands.ICommandInfo;
 
     /**
-     * specific handling for whether this command can handle the args given, otherwise falls through to Cordova CLI
-     */
-    public canHandleArgs(data: commands.ICommandData): boolean {
-        // remote is a custom command so we should always try and handle it
-        return true;
-    }
-
-    public parseArgs(args: string[]): commands.ICommandData {
-        var parsedOptions = tacoUtility.ArgsHelper.parseArguments(Remote.KnownOptions, Remote.ShortHands, args, 0);
-
-        return parsedOptions;
-    }
-    
-    /**
      * Generates the telemetry properties for the remote operation
      */
     private static generateTelemetryProperties(subCommand: string, platform?: string, isSecure?: boolean): Q.Promise<ICommandTelemetryProperties> {
-        var self = this;
+
         return projectHelper.getCurrentProjectTelemetryProperties().then(function (telemetryProperties: ICommandTelemetryProperties): Q.Promise<ICommandTelemetryProperties> {
             telemetryProperties["subCommand"] = telemetryHelper.telemetryProperty(subCommand);
 
@@ -158,9 +146,9 @@ class Remote extends commands.TacoCommandBase {
             // No settings or the settings were corrupted: start from scratch
             return {};
         }).then(function (settings: Settings.ISettings): void {
-            var platforms = Object.keys(settings.remotePlatforms || {}).map(function (platform: string): INameDescription {
-                    var remote = settings.remotePlatforms && settings.remotePlatforms[platform];
-                    var url = util.format("[%s] %s://%s:%d/%s",
+            var platforms: INameDescription [] = Object.keys(settings.remotePlatforms || {}).map(function (platform: string): INameDescription {
+                    var remote: Settings.IRemoteConnectionInfo = settings.remotePlatforms && settings.remotePlatforms[platform];
+                    var url: string = util.format("[%s] %s://%s:%d/%s",
                         remote.secure ? resources.getString("CommandRemoteListSecured") : resources.getString("CommandRemoteListNotSecured"),
                         remote.secure ? "https" : "http",
                         remote.host,
@@ -168,11 +156,11 @@ class Remote extends commands.TacoCommandBase {
                         remote.mountPoint);
                     return { name: platform, description: url };
             });
-            
+
             if (platforms && platforms.length > 0) {
                 logger.log(resources.getString("CommandRemoteListPrelude"));
                 logger.logLine();
-                var header = { name: resources.getString("CommandRemoteListPlatformHeader"), description: resources.getString("CommandRemoteListDescriptionHeader") };
+                var header: INameDescription = { name: resources.getString("CommandRemoteListPlatformHeader"), description: resources.getString("CommandRemoteListDescriptionHeader") };
                 loggerHelper.logNameDescriptionTableWithHeader(header, platforms, null, null, " ");
             } else {
                 logger.log(resources.getString("CommandRemoteListNoPlatforms"));
@@ -208,23 +196,23 @@ class Remote extends commands.TacoCommandBase {
                     loggerHelper.logList([
                         "HowToUseCommandBuildPlatform",
                         "HowToUseCommandEmulatePlatform",
-                        "HowToUseCommandRunPlatform"].map(msg => resources.getString(msg)));
+                        "HowToUseCommandRunPlatform"].map((msg: string) => resources.getString(msg)));
 
                     ["",
                         "HowToUseCommandHelp",
-                        "HowToUseCommandDocs"].forEach(msg => logger.log(resources.getString(msg)));
+                        "HowToUseCommandDocs"].forEach((msg: string) => logger.log(resources.getString(msg)));
              });
         }).then(function (): Q.Promise<ICommandTelemetryProperties> {
-            return Remote.generateTelemetryProperties("add", platform, remoteInfo.secure);            
+            return Remote.generateTelemetryProperties("add", platform, remoteInfo.secure);
         });
     }
 
     private static queryUserForRemoteConfig(): Q.Promise<{ host: string; port: number; pin: number }> {
-        var hostPromise = Q.defer<{ host: string }>();
-        var portPromise = Q.defer<{ host: string; port: number }>();
-        var pinPromise = Q.defer<{ host: string; port: number; pin: number }>();
+        var hostPromise: Q.Deferred<{ host: string }> = Q.defer<{ host: string }>();
+        var portPromise: Q.Deferred<{ host: string; port: number }> = Q.defer<{ host: string; port: number }>();
+        var pinPromise: Q.Deferred<{ host: string; port: number; pin: number }> = Q.defer<{ host: string; port: number; pin: number }>();
 
-        var cliSession = Remote.CliSession ? Remote.CliSession : readline.createInterface({ input: process.stdin, output: process.stdout });
+        var cliSession: ICliSession = Remote.cliSession ? Remote.cliSession : readline.createInterface({ input: process.stdin, output: process.stdout });
 
         // Query the user for the host, port, and PIN, but don't keep asking questions if they input a known-invalid argument
         cliSession.question(resources.getString("CommandRemoteQueryHost"), function (hostAnswer: string): void {
@@ -232,7 +220,7 @@ class Remote extends commands.TacoCommandBase {
         });
         hostPromise.promise.done(function (host: { host: string }): void {
             cliSession.question(resources.getString("CommandRemoteQueryPort"), function (portAnswer: string): void {
-                var port: number = parseInt(portAnswer);
+                var port: number = parseInt(portAnswer, 10);
                 if (port > 0 && port < 65536) {
                     // Port looks valid
                     portPromise.resolve({ host: host.host, port: port });
@@ -245,7 +233,7 @@ class Remote extends commands.TacoCommandBase {
         });
         portPromise.promise.done(function (hostAndPort: { host: string; port: number }): void {
             cliSession.question(resources.getString("CommandRemoteQueryPin"), function (pinAnswer: string): void {
-                var pin: number = parseInt(pinAnswer);
+                var pin: number = parseInt(pinAnswer, 10);
                 if (pinAnswer && !Remote.pinIsValid(pin)) {
                     // A pin was provided but it is invalid
                     pinPromise.reject(errorHelper.get(TacoErrorCodes.CommandRemoteInvalidPin, pinAnswer));
@@ -269,10 +257,10 @@ class Remote extends commands.TacoCommandBase {
     private static acquireCertificateIfRequired(hostPortAndPin: { host: string; port: number; pin: number }): Q.Promise<{ host: string; port: number; certName?: string; secure: boolean }> {
         if (hostPortAndPin.pin) {
             // Secure connection: try to acquire a cert and store it in the windows cert store
-            var certificateUrl = util.format("https://%s:%d/certs/%d", hostPortAndPin.host, hostPortAndPin.port, hostPortAndPin.pin);
-            var deferred = Q.defer<string>();
+            var certificateUrl: string = util.format("https://%s:%d/certs/%d", hostPortAndPin.host, hostPortAndPin.port, hostPortAndPin.pin);
+            var deferred: Q.Deferred<string> = Q.defer<string>();
             // Note: we set strictSSL to be false here because we don't yet know who the server is. We are vulnerable to a MITM attack in this first instance here
-            request.get({ uri: certificateUrl, strictSSL: false, encoding: null, timeout: Remote.HttpTimeoutMS }, function (error: any, response: any, body: Buffer): void {
+            request.get({ uri: certificateUrl, strictSSL: false, encoding: null, timeout: Remote.HTTP_TIMEOUT_IN_MS }, function (error: any, response: any, body: Buffer): void {
                 if (error) {
                     // Error contacting the build server
                     deferred.reject(Remote.getFriendlyHttpError(error, hostPortAndPin.host, hostPortAndPin.port, certificateUrl, !!hostPortAndPin.pin));
@@ -298,15 +286,16 @@ class Remote extends commands.TacoCommandBase {
     }
 
     private static findRemoteMountPath(hostPortAndCert: { host: string; port: number; certName?: string; secure: boolean }): Q.Promise<string> {
-        var mountDiscoveryUrl = util.format("http%s://%s:%d/modules/%s", hostPortAndCert.certName ? "s" : "", hostPortAndCert.host, hostPortAndCert.port, "taco-remote");
+        var mountDiscoveryUrl: string = util.format("http%s://%s:%d/modules/%s", hostPortAndCert.certName ? "s" : "", hostPortAndCert.host, hostPortAndCert.port, "taco-remote");
         return ConnectionSecurityHelper.getAgent(hostPortAndCert).then(function (agent: https.Agent): Q.Promise<string> {
-            var options: request.Options = {
+            // TODO: Remove the casting once we've get some complete/up-to-date .d.ts files. See https://github.com/Microsoft/TACO/issues/18
+            var options: request.Options = <request.Options> {
                 url: mountDiscoveryUrl,
                 agent: agent,
-                timeout: Remote.HttpTimeoutMS
+                timeout: Remote.HTTP_TIMEOUT_IN_MS
             };
 
-            var deferred = Q.defer<string>();
+            var deferred: Q.Deferred<string> = Q.defer<string>();
             request.get(options, function (error: any, response: any, body: any): void {
                 if (error) {
                     deferred.reject(Remote.getFriendlyHttpError(error, hostPortAndCert.host, hostPortAndCert.port, mountDiscoveryUrl, !!hostPortAndCert.certName));
@@ -330,7 +319,7 @@ class Remote extends commands.TacoCommandBase {
                 settings.remotePlatforms = {};
                 }
 
-            settings.remotePlatforms[platform] = data; 
+            settings.remotePlatforms[platform] = data;
             return Settings.saveSettings(settings);
         });
     }
@@ -352,7 +341,9 @@ class Remote extends commands.TacoCommandBase {
     }
 
     private static getFriendlyHttpError(error: any, host: string, port: number, url: string, secure: boolean): Error {
-        if (error.code === "ECONNREFUSED") {
+        if (error.code.indexOf("CERT_") !== -1) {
+            return errorHelper.get(TacoErrorCodes.InvalidRemoteBuildClientCert);
+        } else if (error.code === "ECONNREFUSED") {
             return errorHelper.get(TacoErrorCodes.CommandRemoteConnectionRefused, util.format("%s://%s:%s", secure ? "https" : "http", host, port));
         } else if (error.code === "ENOTFOUND") {
             return errorHelper.get(TacoErrorCodes.CommandRemoteNotfound, host);
@@ -373,8 +364,22 @@ class Remote extends commands.TacoCommandBase {
         remoteData.original.unshift("remote");
         remoteData.remain.unshift("remote");
         return new HelpModule().run(remoteData).then(function (): Q.Promise<ICommandTelemetryProperties> {
-            return Q(<ICommandTelemetryProperties>{});
+            return Q(<ICommandTelemetryProperties> {});
         });
+    }
+
+    /**
+     * specific handling for whether this command can handle the args given, otherwise falls through to Cordova CLI
+     */
+    public canHandleArgs(data: commands.ICommandData): boolean {
+        // remote is a custom command so we should always try and handle it
+        return true;
+    }
+
+    public parseArgs(args: string[]): commands.ICommandData {
+        var parsedOptions: commands.ICommandData = tacoUtility.ArgsHelper.parseArguments(Remote.KNOWN_OPTIONS, Remote.SHORT_HANDS, args, 0);
+
+        return parsedOptions;
     }
 }
 

@@ -10,8 +10,6 @@
 /// <reference path="../../typings/Q.d.ts" />
 /// <reference path="../../typings/tacoUtils.d.ts" />
 
-/// <disable code="SA1400" justification="protected statements are currently broken in StyleCop" />
-
 "use strict";
 
 import fs = require ("fs");
@@ -31,9 +29,7 @@ import ILogger = installerProtocol.ILogger;
 import TacoErrorCodes = tacoErrorCodes.TacoErrorCode;
 
 class InstallerBase {
-    private id: string;
-
-    protected static InstallerCache: string = path.join(tacoUtils.UtilHelper.tacoHome, "third-party-installers");
+    protected static installerCache: string = path.join(tacoUtils.UtilHelper.tacoHome, "third-party-installers");
 
     protected installerInfo: DependencyInstallerInterfaces.IInstallerData;
     protected steps: DependencyInstallerInterfaces.IStepsDeclaration;
@@ -41,6 +37,8 @@ class InstallerBase {
     protected installDestination: string;
     protected logger: ILogger;
     protected telemetry: tacoUtils.TelemetryGenerator;
+
+    private id: string;
 
     constructor(installerInfo: DependencyInstallerInterfaces.IInstallerData, softwareVersion: string, installTo: string,
         logger: ILogger, steps: DependencyInstallerInterfaces.IStepsDeclaration, id: string) {
@@ -53,9 +51,9 @@ class InstallerBase {
     }
 
     public run(): Q.Promise<any> {
-        var self = this;
+        var self: InstallerBase = this;
         return tacoUtils.TelemetryHelper.generate("Installer:" + this.id,
-            telemetry => {
+            (telemetry: tacoUtils.TelemetryGenerator) => {
                 this.telemetry = telemetry; // So any method can access it
                 return this.download()
                     .then(function (): Q.Promise<any> {
@@ -90,7 +88,8 @@ class InstallerBase {
                     .then(function (): void {
                         // After we download something on Mac OS, we need to change the owner of the cached installer back to the current user, otherwise
                         // they won't be able to delete their taco_home folder without admin privileges
-                        wrench.chownSyncRecursive(InstallerBase.InstallerCache, parseInt(process.env.SUDO_UID), parseInt(process.env.SUDO_GID));
+                        wrench.chownSyncRecursive(InstallerBase.installerCache,
+                            parseInt(process.env.SUDO_UID, 10), parseInt(process.env.SUDO_GID, 10));
                     });
             default:
                 return Q.reject<number>(errorHelper.get(TacoErrorCodes.UnsupportedPlatform, process.platform));
@@ -185,5 +184,3 @@ class InstallerBase {
 }
 
 export = InstallerBase;
-
-/// <enable code="SA1400" />

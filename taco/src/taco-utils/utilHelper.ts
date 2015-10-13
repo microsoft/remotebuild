@@ -27,6 +27,7 @@ import rimraf = require ("rimraf");
 
 import argsHelper = require ("./argsHelper");
 import commands = require ("./commands");
+import logger = require("./logger");
 import logLevel = require ("./logLevel");
 import tacoErrorCodes = require ("./tacoErrorCodes");
 import errorHelper = require ("./tacoErrorHelper");
@@ -35,13 +36,14 @@ import tacoGlobalConfig = require ("./tacoGlobalConfig");
 import ArgsHelper = argsHelper.ArgsHelper;
 import Commands = commands.Commands;
 import ICommandData = Commands.ICommandData;
+import Logger = logger.Logger;
 import LogLevel = logLevel.LogLevel;
 import TacoErrorCodes = tacoErrorCodes.TacoErrorCode;
 import TacoGlobalConfig = tacoGlobalConfig.TacoGlobalConfig;
 
 module TacoUtility {
     export class UtilHelper {
-        private static InvalidAppNameChars: { [key: string]: string } = {
+        private static INVALID_APP_NAME_CHARS: { [key: string]: string } = {
             34: "\"",
             36: "$",
             38: "&",
@@ -74,7 +76,7 @@ module TacoUtility {
          * @return {string} The contents of the file, excluding byte order markers.
          */
         public static readFileContentsSync(filename: string, encoding?: string): string {
-            var contents = fs.readFileSync(filename, (encoding || "utf-8"));
+            var contents: string = fs.readFileSync(filename, (encoding || "utf-8"));
             if (contents) {
                 contents = contents.replace(/^\uFEFF/, ""); // Windows is the BOM
             }
@@ -91,9 +93,9 @@ module TacoUtility {
          * @returns {Q.Promise} A promise which is fulfilled when the file finishes copying, and is rejected on any error condition.
          */
         public static copyFile(from: string, to: string, encoding?: string): Q.Promise<any> {
-            var deferred = Q.defer();
-            var newFile = fs.createWriteStream(to, { encoding: encoding });
-            var oldFile = fs.createReadStream(from, { encoding: encoding });
+            var deferred: Q.Deferred<any> = Q.defer();
+            var newFile: fs.WriteStream = fs.createWriteStream(to, { encoding: encoding });
+            var oldFile: fs.ReadStream = fs.createReadStream(from, { encoding: encoding });
             newFile.on("finish", function (): void {
                 deferred.resolve({});
             });
@@ -115,7 +117,7 @@ module TacoUtility {
          * @returns {Q.Promise} A promise which is fulfilled when the copy completes, and is rejected on error
          */
         public static copyRecursive(source: string, target: string, options?: any): Q.Promise<any> {
-            var deferred = Q.defer();
+            var deferred: Q.Deferred<any> = Q.defer();
 
             options = options ? options : {};
 
@@ -160,9 +162,9 @@ module TacoUtility {
          * @return {boolean} true if the display name is acceptable, false otherwise
          */
         public static isValidCordovaAppName(str: string): boolean {
-            for (var i = 0, n = str.length; i < n; i++) {
-                var code = str.charCodeAt(i);
-                if (code < 32 || UtilHelper.InvalidAppNameChars[code]) {
+            for (var i: number = 0, n: number = str.length; i < n; i++) {
+                var code: number = str.charCodeAt(i);
+                if (code < 32 || UtilHelper.INVALID_APP_NAME_CHARS[code]) {
                     return false;
                 }
             }
@@ -176,8 +178,8 @@ module TacoUtility {
          * @return {string[]} The forbidden characters
          */
         public static invalidAppNameCharacters(): string[] {
-            return Object.keys(UtilHelper.InvalidAppNameChars).map(function (c: string): string {
-                return UtilHelper.InvalidAppNameChars[c];
+            return Object.keys(UtilHelper.INVALID_APP_NAME_CHARS).map(function (c: string): string {
+                return UtilHelper.INVALID_APP_NAME_CHARS[c];
             });
         }
 
@@ -197,9 +199,9 @@ module TacoUtility {
         public static loggedExec(command: string, options: NodeJSChildProcess.IExecOptions, callback: (error: Error, stdout: Buffer, stderr: Buffer) => void): child_process.ChildProcess {
             return child_process.exec(command, options, function (error: Error, stdout: Buffer, stderr: Buffer): void {
                 if (error) {
-                    console.error(command);
-                    console.error(stdout);
-                    console.error(stderr);
+                    Logger.logError(command);
+                    Logger.logError(stdout.toString());
+                    Logger.logError(stderr.toString());
                 }
 
                 callback(error, stdout, stderr);
@@ -282,7 +284,7 @@ module TacoUtility {
             });
 
             // Attempt to delete our test folders, but don't throw if it doesn't work
-            rimraf(currentPath, function (error: Error): void { });
+            rimraf(currentPath, UtilHelper.emptyMethod);
 
             // Return the result
             return !hasInvalidSegments;
@@ -303,9 +305,9 @@ module TacoUtility {
             // if help flag is specified, use that
             // for "taco --help cmd" scenarios, update commandArgs to reflect the next argument or make it [] if it is not present
             // for "taco cmd --help" scenarios, update commandArgs to reflect the first argument instead
-            for (var i = 0; i < args.length; i++) {
+            for (var i: number = 0; i < args.length; i++) {
                 if (/^(-*)(h|help)$/.test(args[i])) {
-                    return <ITacoHelpArgs>{ helpTopic: (i === 0) ? (args[1] ? args[1] : "") : args[0] };
+                    return <ITacoHelpArgs> { helpTopic: (i === 0) ? (args[1] ? args[1] : "") : args[0] };
                 }
             }
 
@@ -313,7 +315,7 @@ module TacoUtility {
         }
 
         /**
-         * Sets the global LogLevel setting for Taco by specifically looking for the "--loglevel" string. If found, and the string after it is a valid loglevel value, the global config's loglevel
+         * Sets the global LogLevel setting for TACO by specifically looking for the "--loglevel" string. If found, and the string after it is a valid loglevel value, the global config's loglevel
          * is set. Finally, the "--loglevel" string (and the following value, if present, whether it is valid or not) are removed from the args so that they are not passed to the command.
          *
          * @param {string[]} args The command line args to parse in order to find the --loglevel parameter
@@ -326,7 +328,7 @@ module TacoUtility {
 
             // Note: Not using nopt to look for "--loglevel", because the autocmplete feature would catch things like "-l", when these may be intended for the command itself (not for taco loglevel).
             var logLevelTag: string = "--loglevel";
-            var logLevelTagIndex = args.indexOf(logLevelTag);
+            var logLevelTagIndex: number = args.indexOf(logLevelTag);
 
             if (logLevelTagIndex === -1) {
                 return args;
@@ -340,7 +342,7 @@ module TacoUtility {
 
                 // If we understand the provided log level value, convert the string value to the actual enum value and save it in the global settings
                 if (LogLevel.hasOwnProperty(logLevelString)) {
-                    TacoGlobalConfig.logLevel = (<any>LogLevel)[logLevelString];
+                    TacoGlobalConfig.logLevel = (<any> LogLevel)[logLevelString];
                 }
             } else {
                 // We don't have a log level value; set its index to -1
@@ -352,6 +354,16 @@ module TacoUtility {
 
             return args;
         }
+
+        /* tslint:disable:no-empty */
+        /**
+         * An explicit helper empty method, which can be used in scenarios like
+         * silent callbacks, catch all exceptions do nothing etc.
+         */
+        public static emptyMethod(...args: any[]): void {
+        }
+        /* tslint:enable:no-empty */
+
     }
 }
 

@@ -12,11 +12,9 @@
 /// <reference path="../../typings/request.d.ts" />
 /// <reference path="../../typings/wrench.d.ts" />
 
-/// <disable code="SA1400" justification="protected statements are currently broken in StyleCop" />
-
 "use strict";
 
-import admZip = require ("adm-zip");
+import AdmZip = require ("adm-zip");
 import childProcess = require ("child_process");
 import fs = require ("fs");
 import os = require ("os");
@@ -36,9 +34,8 @@ import ILogger = installerProtocol.ILogger;
 import utilHelper = tacoUtils.UtilHelper;
 
 class AndroidSdkInstaller extends InstallerBase {
-    private static AndroidHomeName: string = "ANDROID_HOME";
-    private static AndroidCommand = os.platform() === "win32" ? "android.bat" : "android";
-    private static AndroidPackages: string[] = [
+    private static ANDROID_HOME_NAME: string = "ANDROID_HOME";
+    private static ANDROID_PACKAGES: string[] = [
         "tools",
         "platform-tools",
         "extra-android-support",
@@ -51,6 +48,7 @@ class AndroidSdkInstaller extends InstallerBase {
         "android-22"
     ];
 
+    private static androidCommand: string = os.platform() === "win32" ? "android.bat" : "android";
     private installerArchive: string;
     private androidHomeValue: string;
 
@@ -74,7 +72,7 @@ class AndroidSdkInstaller extends InstallerBase {
 
         this.androidHomeValue = androidHomeValue;
 
-        return installerUtilsWin32.setEnvironmentVariableIfNeededWin32(AndroidSdkInstaller.AndroidHomeName, androidHomeValue, this.logger)
+        return installerUtilsWin32.setEnvironmentVariableIfNeededWin32(AndroidSdkInstaller.ANDROID_HOME_NAME, androidHomeValue, this.logger)
             .then(function (): Q.Promise<any> {
                 return installerUtilsWin32.addToPathIfNeededWin32([addToPathTools, addToPathPlatformTools]);
             });
@@ -89,7 +87,7 @@ class AndroidSdkInstaller extends InstallerBase {
     }
 
     protected installDarwin(): Q.Promise<any> {
-        var self = this;
+        var self: AndroidSdkInstaller = this;
 
         // Before we extract Android SDK, we need to save the first directory under the specified install path that doesn't exist. This directory and all those under it will be created
         // with root as the owner, so we will need to change the owner back to the current user after the extraction is complete.
@@ -114,7 +112,7 @@ class AndroidSdkInstaller extends InstallerBase {
                 // If some segments of the path the SDK was extracted to didn't exist before, it means they were created as part of the install. They will have root as the owner, so we 
                 // must change the owner back to the current user.
                 if (firstNonExistentDir) {
-                    wrench.chownSyncRecursive(firstNonExistentDir, parseInt(process.env.SUDO_UID), parseInt(process.env.SUDO_GID));
+                    wrench.chownSyncRecursive(firstNonExistentDir, parseInt(process.env.SUDO_UID, 10), parseInt(process.env.SUDO_GID, 10));
                 }
             });
     }
@@ -124,8 +122,8 @@ class AndroidSdkInstaller extends InstallerBase {
 
         // Initialize values
         var androidHomeValue: string = path.join(this.installDestination, "android-sdk-macosx");
-        var addToPathTools: string = "$" + AndroidSdkInstaller.AndroidHomeName + "/tools/";
-        var addToPathPlatformTools: string = "$" + AndroidSdkInstaller.AndroidHomeName + "/platform-tools/";
+        var addToPathTools: string = "$" + AndroidSdkInstaller.ANDROID_HOME_NAME + "/tools/";
+        var addToPathPlatformTools: string = "$" + AndroidSdkInstaller.ANDROID_HOME_NAME + "/platform-tools/";
         var newPath: string = "\"$PATH:" + addToPathTools + ":" + addToPathPlatformTools + "\"";
         var appendToBashProfile: string = "\n# Android SDK\nexport ANDROID_HOME=" + androidHomeValue + "\nexport PATH=" + newPath;
         var bashProfilePath: string = path.join(process.env.HOME, ".bash_profile");
@@ -134,7 +132,7 @@ class AndroidSdkInstaller extends InstallerBase {
 
         this.androidHomeValue = androidHomeValue;
 
-        childProcess.exec(updateCommand, function (error: Error, stdout: Buffer, stderr: Buffer): void {
+        childProcess.exec(updateCommand, (error: Error, stdout: Buffer, stderr: Buffer) => {
             if (error) {
                 this.telemetry
                     .add("error.description", "ErrorOnChildProcess on updateVariablesDarwin", /*isPii*/ false)
@@ -143,7 +141,7 @@ class AndroidSdkInstaller extends InstallerBase {
             } else {
                 // If .bash_profile didn't exist before, make sure the owner is the current user, not root
                 if (mustChown) {
-                    fs.chownSync(bashProfilePath, parseInt(process.env.SUDO_UID), parseInt(process.env.SUDO_GID));
+                    fs.chownSync(bashProfilePath, parseInt(process.env.SUDO_UID, 10), parseInt(process.env.SUDO_GID, 10));
                 }
 
                 deferred.resolve({});
@@ -154,7 +152,7 @@ class AndroidSdkInstaller extends InstallerBase {
     }
 
     protected postInstallDarwin(): Q.Promise<any> {
-        var self = this;
+        var self: AndroidSdkInstaller = this;
 
         return this.addExecutePermission()
             .then(function (): Q.Promise<any> {
@@ -163,7 +161,7 @@ class AndroidSdkInstaller extends InstallerBase {
     }
 
     private downloadDefault(): Q.Promise<any> {
-        this.installerArchive = path.join(InstallerBase.InstallerCache, "androidSdk", os.platform(), this.softwareVersion, path.basename(this.installerInfo.installSource));
+        this.installerArchive = path.join(InstallerBase.installerCache, "androidSdk", os.platform(), this.softwareVersion, path.basename(this.installerInfo.installSource));
 
         // Prepare expected archive file properties
         var expectedProperties: installerUtils.IFileSignature = {
@@ -174,7 +172,7 @@ class AndroidSdkInstaller extends InstallerBase {
         // Prepare download options
         var options: request.Options = {
             uri: this.installerInfo.installSource,
-            method: "GET",
+            method: "GET"
         };
 
         // Download the archive
@@ -189,7 +187,7 @@ class AndroidSdkInstaller extends InstallerBase {
         }
 
         // Extract the archive
-        var templateZip = new admZip(this.installerArchive);
+        var templateZip: AdmZip = new AdmZip(this.installerArchive);
 
         if (!fs.existsSync(this.installDestination)) {
             wrench.mkdirSyncRecursive(this.installDestination, 511); // 511 decimal is 0777 octal
@@ -204,7 +202,7 @@ class AndroidSdkInstaller extends InstallerBase {
         var deferred: Q.Deferred<any> = Q.defer<any>();
         var command: string = "chmod a+x " + path.join(this.androidHomeValue, "tools", "android");
 
-        childProcess.exec(command, function (error: Error, stdout: Buffer, stderr: Buffer): void {
+        childProcess.exec(command, (error: Error, stdout: Buffer, stderr: Buffer) => {
             if (error) {
                 this.telemetry
                     .add("error.description", "ErrorOnChildProcess on addExecutePermission", /*isPii*/ false)
@@ -218,39 +216,70 @@ class AndroidSdkInstaller extends InstallerBase {
         return deferred.promise;
     }
 
-    private postInstallDefault(): Q.Promise<any> {
+    private killAdb(): Q.Promise<any> {
+        // Kill stray adb processes - this is an important step
+        // as stray adb processes spawned by the android installer
+        // can result in a hang post installation
+        var deferred: Q.Deferred<any> = Q.defer<any>();
+
+        var adbProcess: childProcess.ChildProcess = childProcess.spawn(path.join(this.androidHomeValue, "platform-tools", "adb"), ["kill-server"]);
+        adbProcess.on("error", (error: Error) => {
+            this.telemetry
+                .add("error.description", "ErrorOnKillingAdb in killAdb", /*isPii*/ false)
+                .addError(error);
+            deferred.reject(error);
+        });
+
+        adbProcess.on("exit", function (code: number): void {
+            deferred.resolve({});
+        });
+
+        return deferred.promise;
+    }
+
+    private installAndroidPackages(): Q.Promise<any> {
         // Install Android packages
         var deferred: Q.Deferred<any> = Q.defer<any>();
-        var command = path.join(this.androidHomeValue, "tools", AndroidSdkInstaller.AndroidCommand);
+        var command: string = path.join(this.androidHomeValue, "tools", AndroidSdkInstaller.androidCommand);
         var args: string[] = [
             "update",
             "sdk",
             "-u",
             "-a",
             "--filter",
-            AndroidSdkInstaller.AndroidPackages.join(",")
+            AndroidSdkInstaller.ANDROID_PACKAGES.join(",")
         ];
         var errorOutput: string = "";
-        var cp: childProcess.ChildProcess = os.platform() === "darwin" ? childProcess.spawn(command, args, { uid: parseInt(process.env.SUDO_UID), gid: parseInt(process.env.SUDO_GID) }) : childProcess.spawn(command, args);
+        var cp: childProcess.ChildProcess = null;
+
+        if (os.platform() === "darwin") {
+            cp = childProcess.spawn(command, args, {
+                uid: parseInt(process.env.SUDO_UID, 10),
+                gid: parseInt(process.env.SUDO_GID, 10)
+            });
+        } else {
+            cp = childProcess.spawn(command, args);
+        }
 
         cp.stdout.on("data", function (data: Buffer): void {
-            var stringData = data.toString();
+            var stringData: string = data.toString();
 
             if (/\[y\/n\]:/.test(stringData)) {
                 // Accept license terms
                 cp.stdin.write("y" + os.EOL);
+                cp.stdin.end();
             }
         });
         cp.stderr.on("data", function (data: Buffer): void {
             errorOutput += data.toString();
         });
-        cp.on("error", function (err: Error): void {
+        cp.on("error", (err: Error) => {
             this.telemetry
                 .add("error.description", "ErrorOnChildProcess on postInstallDefault", /*isPii*/ false)
                 .addError(err);
             deferred.reject(err);
         });
-        cp.on("exit", function (code: number): void {
+        cp.on("exit", (code: number) => {
             if (errorOutput) {
                 this.telemetry
                     .add("error.description", "ErrorOnExitOfChildProcess on postInstallDefault", /*isPii*/ false)
@@ -264,8 +293,14 @@ class AndroidSdkInstaller extends InstallerBase {
 
         return deferred.promise;
     }
+
+    private postInstallDefault(): Q.Promise<any> {
+        var self: AndroidSdkInstaller = this;
+        return this.installAndroidPackages()
+        .then(function (): Q.Promise<any> {
+            return self.killAdb();
+        });
+    }
 }
 
 export = AndroidSdkInstaller;
-
-/// <enable code="SA1400" />

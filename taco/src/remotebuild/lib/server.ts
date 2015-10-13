@@ -39,20 +39,20 @@ interface IDictionaryT<T> {
 }
 
 class Server {
-    private static Modules: RemoteBuild.IServerModule[] = [];
+    private static modules: RemoteBuild.IServerModule[] = [];
 
-    private static ServerInstance: { close(callback?: Function): void };
-    private static ServerConf: RemoteBuildConf;
+    private static serverInstance: { close(callback?: Function): void };
+    private static serverConf: RemoteBuildConf;
 
-    private static ErrorShutdown: (e: any) => void;
-    private static Shutdown: () => void;
+    private static errorShutdown: (e: any) => void;
+    private static shutdown: () => void;
 
     public static start(conf: RemoteBuildConf): Q.Promise<any> {
-        var app = express();
+        var app: Express.Express = express();
         app.use(expressLogger("dev"));
         app.use(errorhandler());
 
-        var serverDir = conf.serverDir;
+        var serverDir: string = conf.serverDir;
         UtilHelper.createDirectoryIfNecessary(serverDir);
 
         app.get("/", function (req: express.Request, res: express.Response): void {
@@ -67,12 +67,12 @@ class Server {
         }).then(function (): Q.Promise<any> {
             return Server.startupServer(conf, app);
         }).then(Server.registerShutdownHooks).then(function (): void {
-            console.info(resources.getString("CheckSettingsForInfo", conf.configFileLocation));
+            Logger.log(resources.getString("CheckSettingsForInfo", conf.configFileLocation));
         })
           .fail(function (err: any): void {
-            console.error(resources.getString("ServerStartFailed"), err);
+            Logger.logError(resources.getString("ServerStartFailed", err));
             if (err.stack) {
-                console.error(err.stack);
+                Logger.logError(err.stack);
             }
 
             throw err;
@@ -80,12 +80,12 @@ class Server {
     }
 
     public static stop(callback?: Function): void {
-        process.removeListener("uncaughtException", Server.ErrorShutdown);
-        process.removeListener("SIGTERM", Server.Shutdown);
-        process.removeListener("SIGINT", Server.Shutdown);
-        if (Server.ServerInstance) {
-            var tempInstance = Server.ServerInstance;
-            Server.ServerInstance = null;
+        process.removeListener("uncaughtException", Server.errorShutdown);
+        process.removeListener("SIGTERM", Server.shutdown);
+        process.removeListener("SIGINT", Server.shutdown);
+        if (Server.serverInstance) {
+            var tempInstance: { close(callback?: Function): void } = Server.serverInstance;
+            Server.serverInstance = null;
             tempInstance.close(callback);
         } else if (callback) {
             callback(null);
@@ -99,10 +99,10 @@ class Server {
         return Server.initializeServerTestCapabilities(conf).then(function (serverTestCaps: RemoteBuild.IServerTestCapabilities): Q.Promise<any> {
             return Server.eachServerModule(conf, function (modGen: RemoteBuild.IServerModuleFactory, mod: string, moduleConfig: RemoteBuild.IServerModuleConfiguration): Q.Promise<any> {
                 return modGen.test(conf, moduleConfig, serverTestCaps, cliArguments).then(function (): void {
-                    console.log(resources.getString("TestPassed", mod));
+                    Logger.log(resources.getString("TestPassed", mod));
                 }, function (err: Error): void {
-                    console.error(resources.getString("TestFailed", mod));
-                    console.error(err);
+                    Logger.logError(resources.getString("TestFailed", mod));
+                    Logger.logError(err.message);
                     throw err;
                 });
             });
@@ -123,7 +123,7 @@ class Server {
             return Q({});
         }).then(function (): void {
             conf.save();
-        }); 
+        });
     }
 
     private static initializeServerCapabilities(conf: RemoteBuildConf): Q.Promise<RemoteBuild.IServerCapabilities> {
@@ -161,8 +161,8 @@ class Server {
             Logger.logWarning(resources.getString("NoServerModulesSelected"));
         }
 
-        var onlyAuthorizedClientRequest = function (req: express.Request, res: express.Response, next: Function): void {
-            if (!(<any>req).client.authorized) {
+        var onlyAuthorizedClientRequest: (req: express.Request, res: express.Response, next: Function) => void = function (req: express.Request, res: express.Response, next: Function): void {
+            if (!(<any> req).client.authorized) {
                 res.status(401).send(resources.getStringForLanguage(req, "UnauthorizedClientRequest"));
             } else {
                 next();
@@ -170,26 +170,26 @@ class Server {
         };
         return Server.eachServerModule(conf, function (modGen: RemoteBuild.IServerModuleFactory, mod: string, moduleConfig: RemoteBuild.IServerModuleConfiguration): Q.Promise<any> {
             return modGen.create(conf, moduleConfig, serverCapabilities).then(function (serverMod: RemoteBuild.IServerModule): void {
-                var modRouter = serverMod.getRouter();
+                var modRouter: Express.Router = serverMod.getRouter();
                 // These routes are fully secured through client cert verification:
                 if (conf.secure) {
                     app.all("/" + moduleConfig.mountPath, onlyAuthorizedClientRequest);
                 }
 
                 app.use("/" + moduleConfig.mountPath, modRouter);
-                Server.Modules.push(serverMod);
+                Server.modules.push(serverMod);
             });
         });
     }
 
     private static eachServerModule(conf: RemoteBuildConf, eachFunc: (modGen: RemoteBuild.IServerModuleFactory, mod: string, modConfig: { mountPath: string }) => Q.Promise<any>): Q.Promise<any> {
-        var serverMods = conf.modules;
+        var serverMods: string[] = conf.modules;
         return serverMods.reduce<Q.Promise<any>>(function (promise: Q.Promise<any>, mod: string): Q.Promise<any> {
             try {
-                var requirePath = conf.moduleConfig(mod).requirePath || mod;
+                var requirePath: string = conf.moduleConfig(mod).requirePath || mod;
                 var modGen: RemoteBuild.IServerModuleFactory = require(requirePath);
             } catch (e) {
-                console.error(resources.getString("UnableToLoadModule", mod));
+                Logger.logError(resources.getString("UnableToLoadModule", mod));
                 return Q.reject(e);
             }
 
@@ -206,14 +206,14 @@ class Server {
     private static startupPlainHttpServer(conf: RemoteBuildConf, app: express.Application): Q.Promise<http.Server> {
         return Q(http.createServer(app)).
             then(function (svr: http.Server): Q.Promise<http.Server> {
-                var deferred = Q.defer<http.Server>();
+                var deferred: Q.Deferred<http.Server> = Q.defer<http.Server>();
                 svr.on("error", function (err: any): void {
                     deferred.reject(Server.friendlyServerListenError(err, conf));
                 });
                 svr.listen(conf.port, function (): void {
-                    Server.ServerInstance = svr;
-                    Server.ServerConf = conf;
-                    console.log(resources.getString("InsecureServerStarted"), conf.port);
+                    Server.serverInstance = svr;
+                    Server.serverConf = conf;
+                    Logger.log(resources.getString("InsecureServerStarted", conf.port));
                     Server.writePid();
                     deferred.resolve(svr);
                 });
@@ -222,7 +222,7 @@ class Server {
     }
 
     private static startupHttpsServer(conf: RemoteBuildConf, app: express.Application): Q.Promise<https.Server> {
-        var generatedNewCerts = false;
+        var generatedNewCerts: boolean = false;
         var generatedClientPin: number;
         return HostSpecifics.hostSpecifics.getServerCerts().
             then(function (certStore: HostSpecifics.ICertStore): Q.Promise<HostSpecifics.ICertStore> {
@@ -238,7 +238,7 @@ class Server {
                 return Q(certStore);
             }).
             then(function (certStore: HostSpecifics.ICertStore): https.Server {
-                var sslSettings = {
+                var sslSettings: https.ServerOptions = {
                     key: certStore.getKey(),
                     cert: certStore.getCert(),
                     ca: certStore.getCA(),
@@ -248,7 +248,7 @@ class Server {
                 return https.createServer(sslSettings, app);
             }).
             then(function (svr: https.Server): Q.Promise<https.Server> {
-                var deferred = Q.defer<https.Server>();
+                var deferred: Q.Deferred<https.Server> = Q.defer<https.Server>();
                 svr.on("error", function (err: any): void {
                     if (generatedNewCerts) {
                         HostSpecifics.hostSpecifics.removeAllCertsSync(conf);
@@ -257,9 +257,9 @@ class Server {
                     deferred.reject(Server.friendlyServerListenError(err, conf));
                 });
                 svr.listen(conf.port, function (): void {
-                    Server.ServerInstance = svr;
-                    Server.ServerConf = conf;
-                    console.log(resources.getString("SecureServerStarted"), conf.port);
+                    Server.serverInstance = svr;
+                    Server.serverConf = conf;
+                    Logger.log(resources.getString("SecureServerStarted", conf.port));
                     Server.writePid();
                     deferred.resolve(svr);
                 });
@@ -276,47 +276,49 @@ class Server {
     }
 
     private static writePid(): void {
-        if (utils.ArgsHelper.argToBool(Server.ServerConf.get("writePidToFile"))) {
-            fs.writeFile(path.join(Server.ServerConf.serverDir, "running_process_id"), process.pid);
+        if (utils.ArgsHelper.argToBool(Server.serverConf.get("writePidToFile"))) {
+            fs.writeFile(path.join(Server.serverConf.serverDir, "running_process_id"), process.pid);
         }
     }
 
     private static registerShutdownHooks(): void {
         // It is strongly recommended in a NodeJs server to kill the process off on uncaughtException.
-        Server.ErrorShutdown = function (err: Error): void {
-            console.error(resources.getString("UncaughtErrorShutdown"));
-            console.error(err);
-            console.error((<any>err).stack);
-            console.info(resources.getString("ServerShutdown"));
-            
-            Server.Modules.forEach(function (mod: RemoteBuild.IServerModule): void {
+        Server.errorShutdown = function (err: Error): void {
+            Logger.logError(resources.getString("UncaughtErrorShutdown"));
+            Logger.logError(err.message);
+            var stack: any = (<any> err).stack;
+            if (stack) {
+                Logger.logError(stack);
+            }
+            Logger.log(resources.getString("ServerShutdown"));
+            Server.modules.forEach(function (mod: RemoteBuild.IServerModule): void {
                 mod.shutdown();
             });
 
             process.exit(1);
         };
-        process.on("uncaughtException", Server.ErrorShutdown);
+        process.on("uncaughtException", Server.errorShutdown);
 
         // Opportunity to clean up builds on exit
-        Server.Shutdown = function (): void {
-            console.info(resources.getString("ServerShutdown"));
+        Server.shutdown = function (): void {
+            Logger.log(resources.getString("ServerShutdown"));
             // BUG: Currently if buildManager.shutdown() is called while a build log is being written, rimraf will throw an exception on windows
-            Server.Modules.forEach(function (mod: RemoteBuild.IServerModule): void {
+            Server.modules.forEach(function (mod: RemoteBuild.IServerModule): void {
                 mod.shutdown();
             });
-            Server.ServerInstance.close();
+            Server.serverInstance.close();
             process.exit(0);
         };
-        process.on("SIGTERM", Server.Shutdown);
-        process.on("SIGINT", Server.Shutdown);
+        process.on("SIGTERM", Server.shutdown);
+        process.on("SIGINT", Server.shutdown);
     }
 
     private static getModuleMount(req: express.Request, res: express.Response): void {
         var mod: string = req.params.module;
-        var modConfig = Server.ServerConf.moduleConfig(mod);
+        var modConfig: RemoteBuild.IServerModuleConfiguration = Server.serverConf.moduleConfig(mod);
         if (mod && modConfig && modConfig.mountPath ) {
-            var mountLocation = modConfig.mountPath;
-            var contentLocation = util.format("%s://%s:%d/%s", req.protocol, req.hostname, Server.ServerConf.port, mountLocation);
+            var mountLocation: string = modConfig.mountPath;
+            var contentLocation: string = util.format("%s://%s:%d/%s", req.protocol, req.hostname, Server.serverConf.port, mountLocation);
             res.set({
                 "Content-Location": contentLocation
             });

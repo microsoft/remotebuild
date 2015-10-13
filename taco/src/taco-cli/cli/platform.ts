@@ -44,9 +44,9 @@ class Platform extends commandBase.PlatformPluginCommandBase {
     public checkForKitOverrides(projectInfo: projectHelper.IProjectInfo): Q.Promise<any> {
         var targets: string[] = [];
         var platformInfoToPersist: Cordova.ICordovaPlatformPluginInfo[] = [];
-        var self = this;
+        var self: Platform = this;
 
-        var subCommand = this.cordovaCommandParams.subCommand;
+        var subCommand: string = this.cordovaCommandParams.subCommand;
         if (subCommand !== "add") {
             return Q({});
         }
@@ -61,14 +61,14 @@ class Platform extends commandBase.PlatformPluginCommandBase {
                     // i.e, proceed only if user did not do "taco platform <subcommand> platform@<verion|src>"
                     if (!self.cliParamHasVersionOverride(platformName)) {
                         return self.configXmlHasVersionOverride(platformName, projectInfo)
-                            .then(function (versionOverridden: boolean): void {                           
+                            .then(function (versionOverridden: boolean): void {
                             // Use kit overrides only if platform has not already been overridden in config.xml
                             if (!versionOverridden && platformOverrides && platformOverrides[platformName]) {
                                 platformInfo.spec = platformOverrides[platformName].version ? platformOverrides[platformName].version : platformOverrides[platformName].src;
                                 platformInfoToPersist.push(platformInfo);
                             }
 
-                            var target = platformInfo.spec.length > 0 ? platformName + "@" + platformInfo.spec : platformName;
+                            var target: string = platformInfo.spec.length > 0 ? platformName + "@" + platformInfo.spec : platformName;
                             targets.push(target);
                         });
                     } else {
@@ -78,7 +78,7 @@ class Platform extends commandBase.PlatformPluginCommandBase {
                     return Q.resolve(targets);
                 });
             }, Q({}));
-        }).then(function (): Q.Promise<any> {              
+        }).then(function (): Q.Promise<any> {
             // Set target and print status message
            self.printStatusMessage(targets, self.cordovaCommandParams.subCommand, CommandOperationStatus.InProgress);
            self.cordovaCommandParams.targets = targets;
@@ -90,7 +90,7 @@ class Platform extends commandBase.PlatformPluginCommandBase {
      * Checks if the platform has a version specification in config.xml of the cordova project
      */
     public configXmlHasVersionOverride(platformName: string, projectInfo: projectHelper.IProjectInfo): Q.Promise<boolean> {
-        var deferred = Q.defer<boolean>();
+        var deferred: Q.Deferred<boolean> = Q.defer<boolean>();
         cordovaHelper.getEngineVersionSpec(platformName, projectInfo.configXmlPath, projectInfo.cordovaCliVersion).then(function (versionSpec: string): void {
             deferred.resolve(versionSpec !== "");
         });
@@ -101,7 +101,7 @@ class Platform extends commandBase.PlatformPluginCommandBase {
      * Edits the version override info to config.xml of the cordova project
      */
     public editVersionOverrideInfo(specs: Cordova.ICordovaPlatformPluginInfo[], projectInfo: projectHelper.IProjectInfo, add: boolean): Q.Promise<any> {
-        return cordovaHelper.editConfigXml(specs, projectInfo, add, function (specs: Cordova.ICordovaPlatformPluginInfo[], parser: Cordova.cordova_lib.configparser, add: boolean): void {
+        return cordovaHelper.editConfigXml(projectInfo, function (parser: Cordova.cordova_lib.configparser): void {
             cordovaHelper.editEngineVersionSpecs(specs, parser, add);
         });
     }
@@ -113,15 +113,15 @@ class Platform extends commandBase.PlatformPluginCommandBase {
         // Parse the target string for platform names and print success message
         var platforms: string = "";
 
-        if (!(targets.length === 1 && targets[0].indexOf("@") !== 0 && packageLoader.GitUriRegex.test(targets[0]) && packageLoader.FileUriRegex.test(targets[0]))) {
+        if (!(targets.length === 1 && targets[0].indexOf("@") !== 0 && packageLoader.GIT_URI_REGEX.test(targets[0]) && packageLoader.FILE_URI_REGEX.test(targets[0]))) {
             platforms = targets.join(", ");
         }
 
         switch (status) {
             case CommandOperationStatus.InProgress: {
                 this.printInProgressMessage(platforms, operation);
-                break;
             }
+            break;
 
             case CommandOperationStatus.Success: {
                 this.printSuccessMessage(platforms, operation);
@@ -134,17 +134,16 @@ class Platform extends commandBase.PlatformPluginCommandBase {
      * Prints the platform addition/removal operation progress message
      */
     private printInProgressMessage(platforms: string, operation: string): void {
-       switch (operation) {
+       switch (this.resolveAlias(operation)) {
             case "add": {
                logger.log(resources.getString("CommandPlatformStatusAdding", platforms));
-               break;
             }
+           break;
 
-            case "remove":
-            case "rm": {
+            case "remove": {
                 logger.log(resources.getString("CommandPlatformStatusRemoving", platforms));
-                break;
             }
+            break;
 
             case "update": {
                 logger.log(resources.getString("CommandPlatformStatusUpdating", platforms));
@@ -157,7 +156,7 @@ class Platform extends commandBase.PlatformPluginCommandBase {
      * Prints the platform addition/removal operation success message
      */
     private printSuccessMessage(platforms: string, operation: string): void {
-        switch (operation) {
+        switch (this.resolveAlias(operation)) {
             case "add": {
                 logger.log(resources.getString("CommandPlatformStatusAdded", platforms));
 
@@ -168,19 +167,18 @@ class Platform extends commandBase.PlatformPluginCommandBase {
                     "HowToUseCommandSetupRemote",
                     "HowToUseCommandBuildPlatform",
                     "HowToUseCommandEmulatePlatform",
-                    "HowToUseCommandRunPlatform"].map(msg => resources.getString(msg)));
+                    "HowToUseCommandRunPlatform"].map((msg: string) => resources.getString(msg)));
 
                 ["",
                     "HowToUseCommandHelp",
-                    "HowToUseCommandDocs"].forEach(msg => logger.log(resources.getString(msg)));
-                break;
+                    "HowToUseCommandDocs"].forEach((msg: string) => logger.log(resources.getString(msg)));
             }
+           break;
 
-            case "remove":
-            case "rm": {
+            case "remove": {
                 logger.log(resources.getString("CommandPlatformStatusRemoved", platforms));
-                break;
             }
+            break;
 
             case "update": {
                 logger.log(resources.getString("CommandPlatformStatusUpdated", platforms));

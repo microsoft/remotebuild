@@ -18,10 +18,13 @@ import HostSpecifics = require ("./hostSpecifics");
 import resources = require ("../resources/resourceManager");
 import tacoUtils = require ("taco-utils");
 
+import logger = tacoUtils.Logger;
 import TacoGlobalConfig = tacoUtils.TacoGlobalConfig;
 import UtilHelper = tacoUtils.UtilHelper;
 
 class RemoteBuildConf implements RemoteBuild.IRemoteBuildConfiguration {
+
+    public usingDefaultModulesConfig: boolean = false;
     private remoteBuildConf: {
         lang: string;
         port: number;
@@ -35,14 +38,11 @@ class RemoteBuildConf implements RemoteBuild.IRemoteBuildConfiguration {
 
         [key: string]: any;
     };
-
     private conf: typeof nconf;
-
-    public usingDefaultModulesConfig: boolean = false;
 
     constructor(conf: typeof nconf, isUnitTest?: boolean) {
         this.conf = conf;
-        var defaults: any = {
+        var defaults: { [key: string]: any } = {
             serverDir: path.join(UtilHelper.tacoHome, "remote-builds"),
             port: 3000,
             secure: true,
@@ -58,7 +58,7 @@ class RemoteBuildConf implements RemoteBuild.IRemoteBuildConfiguration {
             // To support the simple case of "my home directory" I'm doing the replacement here
             // We only want to expand if the directory starts with ~/ not in cases such as /foo/~
             // Ideally we would also cope with the case of ~user/ but that is harder to find and probably less common
-            var serverDir = conf.get("serverDir");
+            var serverDir: string = conf.get("serverDir");
             conf.set("serverDir", serverDir.replace(/^~(?=\/|^)/, process.env.HOME));
         }
 
@@ -70,7 +70,7 @@ class RemoteBuildConf implements RemoteBuild.IRemoteBuildConfiguration {
             throw new Error(resources.getString("InvalidPortSpecified", this.port));
         }
 
-        var serverMods = this.remoteBuildConf.modules;
+        var serverMods: RemoteBuildConf.IModulesConf = this.remoteBuildConf.modules;
         if (typeof (serverMods) !== "object" || Object.keys(serverMods).length === 0) {
             this.usingDefaultModulesConfig = true;
             if (isUnitTest) {
@@ -187,7 +187,7 @@ class RemoteBuildConf implements RemoteBuild.IRemoteBuildConfiguration {
 
         this.conf.merge(this.remoteBuildConf);
         this.conf.save(null);
-        console.info(resources.getString("SavedConfig", this.configFileLocation));
+        logger.log(resources.getString("SavedConfig", this.configFileLocation));
     }
 }
 

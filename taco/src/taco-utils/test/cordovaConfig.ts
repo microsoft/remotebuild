@@ -8,6 +8,8 @@
 "use strict";
 /// <reference path="../../typings/should.d.ts"/>
 /// <reference path="../../typings/mocha.d.ts"/>
+/// <reference path="../../typings/cordovaConfig.d.ts"/>
+
 import fs = require ("fs");
 import mocha = require ("mocha");
 import path = require ("path");
@@ -15,9 +17,7 @@ import should = require ("should");
 
 import util = require ("../tacoUtils");
 
-/// <disable code="SA1301" justification="CordovaConfig is a class" /> 
-var CordovaConfig = util.CordovaConfig;
-/// <enable code="SA1301" />
+import CordovaConfig = util.CordovaConfig;
 
 describe("CordovaConfig", function (): void {
     it("should correctly parse config files", function (): void {

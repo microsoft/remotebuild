@@ -22,7 +22,7 @@ import ResourceSet = resourceSet.ResourceSet;
 
 module TacoUtility {
     export class ResourceManager {
-        private static DefaultLocale: string = "en";
+        private static DEFAULT_LOCALE: string = "en";
 
         private resourceDirectory: string = null;
         private resources: { [lang: string]: ResourceSet } = {};
@@ -56,44 +56,12 @@ module TacoUtility {
                 locale = ResourceManager.findMatchingLocale(availableLocales, [process.env.LANG]);
             }
 
-            // Finally fallback to DefaultLocale ("en")
+            // Finally fallback to DEFAULT_LOCALE ("en")
             if (!locale) {
-                locale = ResourceManager.findMatchingLocale(availableLocales, [ResourceManager.DefaultLocale]);
+                locale = ResourceManager.findMatchingLocale(availableLocales, [ResourceManager.DEFAULT_LOCALE]);
             }
 
             return locale;
-        }
-
-        public getString(id: string, ...optionalArgs: any[]): string {
-            var args = ArgsHelper.getOptionalArgsArrayFromFunctionCall(arguments, 1);
-            var result = this.getStringForLocale(this.bestLanguageMatch(this.getCurrentLocale()), id, args);
-
-            if (result && process.env["TACO_UNIT_TEST"]) {
-                // Mock out resources for consistency in unit tests, but only if they exist
-                return id;
-            } else {
-                return result;
-            }
-        }
-
-        public getStringForLanguage(requestOrAcceptLangs: any, id: string, ...optionalArgs: any[]): string {
-            var args = ArgsHelper.getOptionalArgsArrayFromFunctionCall(arguments, 2);
-            var result = this.getStringForLocale(this.bestLanguageMatch(requestOrAcceptLangs), id, args);
-
-            if (result && process.env["TACO_UNIT_TEST"]) {
-                // Mock out resources for consistency in unit tests, but only if they exist
-                return id;
-            } else {
-                return result;
-            }
-        }
-
-        public getStringForLocale(locale: string, id: string, ...optionalArgs: any[]): string {
-            var resourceSet: ResourceSet = this.getOrCreateResourceSet(locale);
-            assert.notEqual(resourceSet, null, "We should get a non-null resource set");
-
-            var args = ArgsHelper.getOptionalArgsArrayFromFunctionCall(arguments, 2);
-            return resourceSet.getString(id, args);
         }
 
         /**
@@ -109,7 +77,7 @@ module TacoUtility {
                     return locale;
                 }
 
-                var parentLocale = locale.split("-")[0];
+                var parentLocale: string = locale.split("-")[0];
                 if (availableLocales.indexOf(parentLocale) !== -1) {
                     // Match on primary language (e.g. it from it-CH). We may find a better match later, so continue looking.
                     bestLocale = parentLocale;
@@ -123,11 +91,43 @@ module TacoUtility {
             return path.join(resourcesDirectory, lang, "resources.json");
         }
 
+        public getString(id: string, ...optionalArgs: any[]): string {
+            var args: string[] = ArgsHelper.getOptionalArgsArrayFromFunctionCall(arguments, 1);
+            var result: string = this.getStringForLocale(this.bestLanguageMatch(this.getCurrentLocale()), id, args);
+
+            if (result && process.env["TACO_UNIT_TEST"]) {
+                // Mock out resources for consistency in unit tests, but only if they exist
+                return id;
+            } else {
+                return result;
+            }
+        }
+
+        public getStringForLanguage(requestOrAcceptLangs: any, id: string, ...optionalArgs: any[]): string {
+            var args: string[] = ArgsHelper.getOptionalArgsArrayFromFunctionCall(arguments, 2);
+            var result: string = this.getStringForLocale(this.bestLanguageMatch(requestOrAcceptLangs), id, args);
+
+            if (result && process.env["TACO_UNIT_TEST"]) {
+                // Mock out resources for consistency in unit tests, but only if they exist
+                return id;
+            } else {
+                return result;
+            }
+        }
+
+        public getStringForLocale(locale: string, id: string, ...optionalArgs: any[]): string {
+            var resourceSet: ResourceSet = this.getOrCreateResourceSet(locale);
+            assert.notEqual(resourceSet, null, "We should get a non-null resource set");
+
+            var args: string[] = ArgsHelper.getOptionalArgsArrayFromFunctionCall(arguments, 2);
+            return resourceSet.getString(id, args);
+        }
+
         /**
          * self explanatory. Use LANG environment variable otherwise fall back to Default ("en")
          */
         private getCurrentLocale(): string {
-            return (this.initialLocale || TacoGlobalConfig.lang || process.env.LANG || ResourceManager.DefaultLocale).toLowerCase();
+            return (this.initialLocale || TacoGlobalConfig.lang || process.env.LANG || ResourceManager.DEFAULT_LOCALE).toLowerCase();
         }
 
         /**
@@ -160,7 +160,7 @@ module TacoUtility {
         private getAvailableLocales(): string[] {
             if (!this.availableLocales) {
                 this.availableLocales = [];
-                var self = this;
+                var self: ResourceManager = this;
                 fs.readdirSync(this.resourceDirectory).forEach(function (filename: string): void {
                     try {
                         if (fs.existsSync(ResourceManager.getResourceFilePath(self.resourceDirectory, filename))) {
@@ -187,12 +187,12 @@ module TacoUtility {
          */
         private bestLanguageMatch(requestOrAcceptLangs: any): string {
             if (Array.isArray(requestOrAcceptLangs)) {
-                return ResourceManager.getBestAvailableLocale(this.getAvailableLocales(), <string[]>requestOrAcceptLangs);
+                return ResourceManager.getBestAvailableLocale(this.getAvailableLocales(), <string[]> requestOrAcceptLangs);
             }
 
             var langString: string;
             if (!requestOrAcceptLangs) {
-                return ResourceManager.DefaultLocale;
+                return ResourceManager.DEFAULT_LOCALE;
             } else if (typeof requestOrAcceptLangs === "string") {
                 langString = requestOrAcceptLangs;
             } else if (requestOrAcceptLangs.headers) {

@@ -22,37 +22,38 @@ import readline = require ("readline");
 import resources = require ("../../resources/resourceManager");
 import tacoUtils = require ("taco-utils");
 
+import Logger = tacoUtils.Logger;
 import UtilHelper = tacoUtils.UtilHelper;
 
 class DarwinDependenciesHelper {
     public static askInstallHomebrew(): Q.Promise<any> {
-        var firstRunPath = path.join(UtilHelper.tacoHome, ".taco-remote");
-        var isFirstRun = !fs.existsSync(firstRunPath);
-        var deferred = Q.defer();
+        var firstRunPath: string = path.join(UtilHelper.tacoHome, ".taco-remote");
+        var isFirstRun: boolean = !fs.existsSync(firstRunPath);
+        var deferred: Q.Deferred<any> = Q.defer();
         if (isFirstRun) {
-            console.info(resources.getString("FirstRunDependencyConfiguration"));
-            var readlineInterface = readline.createInterface({ input: process.stdin, output: process.stdout });
-            var deferred2 = Q.defer<boolean>();
+            Logger.log(resources.getString("FirstRunDependencyConfiguration"));
+            var readlineInterface: readline.ReadLine = readline.createInterface({ input: process.stdin, output: process.stdout });
+            var deferred2: Q.Deferred<boolean> = Q.defer<boolean>();
             readlineInterface.question(resources.getString("HomebrewInstallationQuery"), function (response: string): void {
                 readlineInterface.close();
-                var shouldInstall = response === "" || response.trim().toLowerCase().indexOf(resources.getString("HomebrewInstallationQueryResponse")) === 0;
+                var shouldInstall: boolean = response === "" || response.trim().toLowerCase().indexOf(resources.getString("HomebrewInstallationQueryResponse")) === 0;
 
                 if (shouldInstall) {
                     DarwinDependenciesHelper.tryInstallHomebrew().then(DarwinDependenciesHelper.tryInstallPackages).then(function (): void {
                         DarwinDependenciesHelper.verifyPackagesInstalled()
                             .then(function (): void {
-                            console.info(resources.getString("HomebrewInstallationSuccess"));
+                            Logger.log(resources.getString("HomebrewInstallationSuccess"));
                             deferred2.resolve(true);
                         }, function (error: Error): void {
-                                console.error(resources.getString("HomebrewPackageVerificationFailed", error));
+                                Logger.logError(resources.getString("HomebrewPackageVerificationFailed", error));
                                 process.exit(1);
                             });
                     }, function (error: Error): void {
-                            console.error(resources.getString("HomebrewInstallationFailed", error));
+                            Logger.logError(resources.getString("HomebrewInstallationFailed", error));
                             process.exit(1);
                         });
                 } else {
-                    console.info(resources.getString("HomebrewInstallationDeclined"), firstRunPath);
+                    Logger.log(resources.getString("HomebrewInstallationDeclined", firstRunPath));
                     deferred2.resolve(false);
                 }
             });
@@ -73,10 +74,10 @@ class DarwinDependenciesHelper {
     }
 
     private static tryInstallHomebrew(): Q.Promise<any> {
-        var homebrewInstalled = Q.defer();
+        var homebrewInstalled: Q.Deferred<any> = Q.defer();
         // We use spawn here rather than exec primarily so we can allow for user-interaction
-        var curlInstaller = child_process.spawn("curl", ["-fsSL", "https://raw.githubusercontent.com/Homebrew/install/master/install"]);
-        var installHomebrew = child_process.spawn("ruby", ["-"]);
+        var curlInstaller: child_process.ChildProcess = child_process.spawn("curl", ["-fsSL", "https://raw.githubusercontent.com/Homebrew/install/master/install"]);
+        var installHomebrew: child_process.ChildProcess = child_process.spawn("ruby", ["-"]);
 
         curlInstaller.stdout.on("data", function (data: any): void {
             installHomebrew.stdin.write(data);
@@ -86,16 +87,16 @@ class DarwinDependenciesHelper {
         });
 
         installHomebrew.stdout.on("data", function (data: any): void {
-            console.info("" + data);
+            Logger.log("" + data);
         });
         installHomebrew.stderr.on("data", function (data: any): void {
-            console.error("" + data);
+            Logger.logError("" + data);
         });
         installHomebrew.on("close", function (code: number): void {
             homebrewInstalled.resolve({});
         });
         installHomebrew.on("error", function (arg: any): void {
-            console.error("ERROR: " + JSON.stringify(arg));
+            Logger.logError("ERROR: " + JSON.stringify(arg));
             homebrewInstalled.reject(arg);
         });
 

@@ -22,7 +22,7 @@ import TacoErrorCodes = require ("../tacoErrorCodes");
 import errorHelper = require ("../tacoErrorHelper");
 import tacoUtils = require ("taco-utils");
 
-import logger = tacoUtils.Logger;
+import Logger = tacoUtils.Logger;
 import UtilHelper = tacoUtils.UtilHelper;
 
 class ConnectionSecurityHelper {
@@ -31,13 +31,13 @@ class ConnectionSecurityHelper {
             return Q<https.Agent>(null);
         }
 
-        var bufferDeferred = Q.defer<Buffer>();
+        var bufferDeferred: Q.Deferred<Buffer> = Q.defer<Buffer>();
         switch (os.platform()) {
             case "win32":
-                var certScriptPath = path.resolve(__dirname, "win32", "certificates.ps1");
+                var certScriptPath: string = path.resolve(__dirname, "win32", "certificates.ps1");
                 // Note: On windows 7, powershell -file will still attempt to use input from stdin as commands. If we do not close stdin then the process will not exit
-                var certLoadProcess = child_process.spawn("powershell", ["-executionpolicy", "unrestricted", "-file", certScriptPath, "get", connectionInfo.certName], { stdio: ["ignore", "pipe", "inherit"] });
-                var output = "";
+                var certLoadProcess: NodeJSChildProcess.ChildProcess = child_process.spawn("powershell", ["-executionpolicy", "unrestricted", "-file", certScriptPath, "get", connectionInfo.certName], { stdio: ["ignore", "pipe", "inherit"] });
+                var output: string = "";
                 certLoadProcess.stdout.on("data", function (data: any): void {
                     output += data.toString();
                 });
@@ -49,7 +49,7 @@ class ConnectionSecurityHelper {
                         if (code === 1) {
                             bufferDeferred.reject(errorHelper.get(TacoErrorCodes.NoCertificateFound, connectionInfo.certName));
                         } else {
-                            logger.logError(output);
+                            Logger.logError(output);
                             bufferDeferred.reject(errorHelper.get(TacoErrorCodes.GetCertificateFailed));
                         }
                     } else {
@@ -59,7 +59,7 @@ class ConnectionSecurityHelper {
                 break;
             case "linux":
             case "darwin":
-                var certPath = path.resolve(UtilHelper.tacoHome, "certs", encodeURIComponent(connectionInfo.host), "cert.pfx");
+                var certPath: string = path.resolve(UtilHelper.tacoHome, "certs", encodeURIComponent(connectionInfo.host), "cert.pfx");
                 fs.readFile(certPath, bufferDeferred.makeNodeResolver());
                 break;
             default:
@@ -79,14 +79,14 @@ class ConnectionSecurityHelper {
      * and return a promise for the name of the certificate that can be used to retrieve it later
      */
     public static saveCertificate(certificateData: Buffer, host: string): Q.Promise<string> {
-        var deferred = Q.defer<string>();
+        var deferred: Q.Deferred<string> = Q.defer<string>();
 
         switch (os.platform()) {
             case "win32":
-                var base64Certificate = certificateData.toString("base64");
+                var base64Certificate: string = certificateData.toString("base64");
                 // Save the certificate in the user's certificate store via a powershell script
-                var certScriptPath = path.resolve(__dirname, "win32", "certificates.ps1");
-                var certSaveProcess = child_process.spawn("powershell", ["-executionpolicy", "unrestricted", "-file", certScriptPath, "set"]);
+                var certScriptPath: string = path.resolve(__dirname, "win32", "certificates.ps1");
+                var certSaveProcess: NodeJSChildProcess.ChildProcess = child_process.spawn("powershell", ["-executionpolicy", "unrestricted", "-file", certScriptPath, "set"]);
                 var output: string = "";
 
                 certSaveProcess.stdin.write(base64Certificate);
@@ -96,14 +96,14 @@ class ConnectionSecurityHelper {
                     output += data.toString().replace(/^CN=/, "");
                 });
                 certSaveProcess.stderr.on("data", function (data: any): void {
-                    console.error(data.toString());
+                    Logger.logError(data.toString());
                 });
                 certSaveProcess.on("error", function (err: Error): void {
                     deferred.reject(errorHelper.wrap(TacoErrorCodes.ErrorCertificateSave, err));
                 });
                 certSaveProcess.on("close", function (code: number): void {
                     if (code) {
-                        logger.logError(output);
+                        Logger.logError(output);
                         deferred.reject(errorHelper.get(TacoErrorCodes.ErrorCertificateSaveWithErrorCode, code));
                     } else {
                         deferred.resolve(output);
@@ -112,7 +112,7 @@ class ConnectionSecurityHelper {
                 break;
             case "linux":
             case "darwin":
-                var certPath = path.resolve(UtilHelper.tacoHome, "certs", encodeURIComponent(host));
+                var certPath: string = path.resolve(UtilHelper.tacoHome, "certs", encodeURIComponent(host));
                 UtilHelper.createDirectoryIfNecessary(certPath);
                 // The folder should only be accessible to the specific user
                 fs.chmod(certPath, "0700", function (err: NodeJS.ErrnoException): void {
@@ -121,9 +121,9 @@ class ConnectionSecurityHelper {
                     }
 
                     var certFilePath: string = path.join(certPath, "cert.pfx");
-                    fs.writeFile(certFilePath, certificateData, function (err: NodeJS.ErrnoException): void {
-                        if (err) {
-                            deferred.reject(errorHelper.wrap(TacoErrorCodes.ErrorCertificateSaveToPath, err, certFilePath));
+                    fs.writeFile(certFilePath, certificateData, function (writeError: NodeJS.ErrnoException): void {
+                        if (writeError) {
+                            deferred.reject(errorHelper.wrap(TacoErrorCodes.ErrorCertificateSaveToPath, writeError, certFilePath));
                         }
 
                         deferred.resolve(host);

@@ -14,7 +14,7 @@
 
 declare module TacoUtility {
     class UtilHelper {
-        private static InvalidAppNameChars;
+        private static INVALID_APP_NAME_CHARS;
 
         static tacoHome: string;
         /**
@@ -41,7 +41,7 @@ declare module TacoUtility {
          * @param {string} target Location to copy to
          * @returns {Q.Promise} A promise which is fulfilled when the copy completes, and is rejected on error
          */
-        public static copyRecursive(source: string, target: string, options?: any): Q.Promise<any>;
+        public static copyRecursive(source: string, target: string, options?: ICopyOptions): Q.Promise<any>;
         /**
          * Synchronously create a directory if it does not exist
          *
@@ -107,12 +107,23 @@ declare module TacoUtility {
         public static tryParseHelpArgs(args: string[]): ITacoHelpArgs;
 
         /**
-         * Sets the global LogLevel setting for Taco by specifically looking for the "--loglevel" string. If found, and the string after it is a valid loglevel value, the global config's loglevel
+         * Sets the global LogLevel setting for TACO by specifically looking for the "--loglevel" string. If found, and the string after it is a valid loglevel value, the global config's loglevel
          * is set. Finally, the "--loglevel" string (and the following value, if present, whether it is valid or not) are removed from the args so that they are not passed to the command.
          *
          * @param {string[]} args The command line args to parse in order to find the --loglevel parameter
          * @return {string[]} The args where --loglevel and its value have been removed
          */
         public static initializeLogLevel(args: string[]): string[];
+
+        /**
+         * An explicit helper empty method, which can be used in scenarios like
+         * silent callbacks, catch all exceptions do nothing etc.
+         */
+        public static emptyMethod(args?: any): any;
+    }
+
+    interface ICopyOptions {
+        clobber: boolean;
+        filter: (itemPath: string) => boolean;
     }
 }
