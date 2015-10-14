@@ -33,27 +33,27 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="LocalizableItems\Properties\AssemblyInfo.cs" />
-    <Content Include="..\taco\src\remotebuild\resources\en\resources.json" >
+    <Content Include="..\src\remotebuild\resources\en\resources.json" >
       <Link>packages\node_modules\remotebuild\resources\en\resources.json</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\taco\src\taco-cli\resources\en\resources.json" >
+    <Content Include="..\src\taco-cli\resources\en\resources.json" >
       <Link>packages\node_modules\taco-cli\resources\en\resources.json</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\taco\src\taco-remote\resources\en\resources.json" >
+    <Content Include="..\src\taco-remote\resources\en\resources.json" >
       <Link>packages\node_modules\taco-remote\resources\en\resources.json</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\taco\src\taco-remote-lib\resources\en\resources.json" >
+    <Content Include="..\src\taco-remote-lib\resources\en\resources.json" >
       <Link>packages\node_modules\taco-remote-lib\resources\en\resources.json</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\taco\src\taco-utils\resources\en\resources.json" >
+    <Content Include="..\src\taco-utils\resources\en\resources.json" >
       <Link>packages\node_modules\taco-utils\resources\en\resources.json</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\taco\src\taco-kits\resources\en\resources.json" >
+    <Content Include="..\src\taco-kits\resources\en\resources.json" >
       <Link>packages\node_modules\taco-kits\resources\en\resources.json</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
