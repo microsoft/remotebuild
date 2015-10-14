@@ -16,7 +16,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <GulpRoot>$(MSBuildThisFileDirectory)\..\taco\src\</GulpRoot>
+    <GulpRoot>$(MSBuildThisFileDirectory)\..\src\</GulpRoot>
     <StartupFile/>
   </PropertyGroup>
 
