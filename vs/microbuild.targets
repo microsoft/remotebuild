@@ -3,7 +3,7 @@
 
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup>
-    <GulpRoot>$(MSBuildThisFileDirectory)\..\taco\</GulpRoot>
+    <GulpRoot>$(MSBuildThisFileDirectory)\..\</GulpRoot>
   </PropertyGroup>
   
   <!--Enables Build Project scenario  in VS-->
@@ -15,7 +15,7 @@
     <MakeDir Directories="$(TF_BUILD_DROPLOCATION)\packages\"/>
     <Exec Command="$(GulpRoot)\node_modules\.bin\gulp.cmd build --drop=$(TF_BUILD_DROPLOCATION)\packages\" WorkingDirectory="$(GulpRoot)\src" />
     <ItemGroup>
-      <BuildPackages Include="$(MSBuildThisFileDirectory)\..\taco\build\packages\**\*" />
+      <BuildPackages Include="$(MSBuildThisFileDirectory)\..\build\packages\**\*" />
     </ItemGroup>
     <Message Text="Copying sources to bin folder" />
     <Copy SourceFiles="@(BuildPackages)" DestinationFiles="@(BuildPackages->'$(TF_BUILD_BINARIESDIRECTORY)\packages\%(RecursiveDir)%(Filename)%(Extension)')"/>

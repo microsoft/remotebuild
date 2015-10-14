@@ -1,6 +1,6 @@
 param (
       [string]$DropLocation = $env:TF_BUILD_DROPLOCATION,
-      [string]$SourceRoot = $(Write-Output $env:TF_BUILD_SOURCESDIRECTORY\taco),
+      [string]$SourceRoot = $(Write-Output $env:TF_BUILD_SOURCESDIRECTORY\),
       [string]$LocRoot = $(Write-Output $env:TF_BUILD_BINARIESDIRECTORY\localize)
 )
 $GulpRoot = Write-Output $SourceRoot\src
