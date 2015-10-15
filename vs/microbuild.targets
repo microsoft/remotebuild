@@ -20,6 +20,9 @@
     <Message Text="Copying sources to bin folder" />
     <Copy SourceFiles="@(BuildPackages)" DestinationFiles="@(BuildPackages->'$(TF_BUILD_BINARIESDIRECTORY)\packages\%(RecursiveDir)%(Filename)%(Extension)')"/>
     <Copy SourceFiles="$(MSBuildThisFileDirectory)updateDynamicDependencies.js" DestinationFolder="$(TF_BUILD_BINARIESDIRECTORY)\packages\node_modules"/>
+    
+    <!--Clean up devDependencies to make sure microbuild can delete sources and start fresh-->
+    <Exec Command="$(GulpRoot)\node_modules\.bin\gulp.cmd unprep" WorkingDirectory="$(GulpRoot)\src" />
   </Target>
 
   <!--Enables Clean Project scenario  in VS-->
