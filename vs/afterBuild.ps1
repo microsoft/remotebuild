@@ -4,7 +4,7 @@ param (
       [string]$LocRoot = $(Write-Output $env:TF_BUILD_BINARIESDIRECTORY\localize)
 )
 $GulpRoot = Write-Output $SourceRoot\src
-$GulpCommand = Write-Output $SourceRoot\node_modules\.bin\gulp.cmd
+$GulpCommand = Write-Output node $SourceRoot\node_modules\gulp\bin\gulp.js
 $DropPackages = Write-Output --drop=$DropLocation\packages\
 cd $GulpRoot
 
@@ -46,3 +46,7 @@ gci $LocRoot | where {$langs[$_.BaseName]} | foreach {
 }
 
 & $GulpCommand just-package $DropPackages
+
+# Clean up devDependencies to make sure microbuild can 
+# delete sources and start fresh
+& $GulpCommand unprep
