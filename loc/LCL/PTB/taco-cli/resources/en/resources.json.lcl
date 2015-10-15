@@ -311,20 +311,20 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";CommandCreateNotBothCliAndKit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandCreateNotBothCordovaAndKit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error: Cannot specify both --cli and --kit]]></Val>
+          <Val><![CDATA[Error: Cannot specify both --cordova and --kit]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Erro: não é possível especificar --cli e --kit simultaneamente.]]></Val>
+            <Val><![CDATA[Erro: não é possível especificar --cordova e --kit]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";CommandCreateNotBothTemplateAndCli" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandCreateNotBothTemplateAndCordova" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error: The --template option is not supported with the --cli option; use --kit for templates]]></Val>
+          <Val><![CDATA[Error: The --template option is not supported with the --cordova option; use --kit for templates]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Erro: não há suporte para a opção --template com a opção --cli; use --kit para os modelos]]></Val>
+            <Val><![CDATA[Erro: não há suporte para a opção --template com a opção --cordova; use --kit para modelos]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -347,15 +347,6 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";CommandCreateOptionsCli" ItemType="0" PsrId="306" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Use a version of the Cordova CLI rather than a TACO Dev Kit.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Use uma versão de CLI do Cordova em vez de um Kit de Desenvolvimento do TACO.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
       <Item ItemId=";CommandCreateOptionsCopy" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Use custom www assets instead of using a TACO template.]]></Val>
@@ -365,12 +356,24 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";CommandCreateOptionsCordova" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Use a version of the Cordova CLI rather than a Kit.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Use uma versão da CLI do Cordova em vez de um Kit.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";CommandCreateOptionsKit" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Use the specified Cordova Dev Kit for this project rather than the default.  Use "taco kit list" to see a list of available Kits.]]></Val>
+          <Val><![CDATA[Use the specified Kit for this project rather than the default.  Use "taco kit list" to see a list of available Kits.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Use o Kit de Desenvolvimento do Cordova especificado para este projeto em vez do padrão.  Use "taco kit list" para ver uma lista de Kits disponíveis.]]></Val>
+            <Val><![CDATA[Use o Kit especificado para este projeto em vez do padrão. Use "taco kit list" para ver uma lista de Kits disponíveis.]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Use the specified Cordova Dev Kit for this project rather than the default.  Use "taco kit list" to see a list of available Kits.]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -532,10 +535,13 @@
       </Item>
       <Item ItemId=";CommandEmulateDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Emulate a cordova project]]></Val>
+          <Val><![CDATA[Emulate a Cordova project]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Emule um projeto do Cordova]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Emulate a cordova project]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -568,10 +574,13 @@
       </Item>
       <Item ItemId=";CommandInstallCordovaTooOld" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error: The current project uses Cordova version {0}. 'taco install-reqs' supports projects using Cordova version {1} or higher.<br/><br/>If your project was created using a TACO kit, consider moving to a kit that has a more recent version of Cordova. If your project was created using Cordova directly, consider updating the installation of Cordova. For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
+          <Val><![CDATA[Error: The current project uses Cordova version {0}. 'taco install-reqs' supports projects using Cordova version {1} or higher.<br/><br/>If your project was created using a Kit, consider moving to a kit that has a more recent version of Cordova. If your project was created using Cordova directly, consider updating the installation of Cordova. For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Erro: o projeto atual usa a versão {0} do Cordova. O 'taco install-reqs' dá suporte a projetos que usam a versão {1} ou superior do Cordova.<br/>Se o projeto foi criado com um kit do TACO, considere substituí-lo por um kit que tenha uma versão mais recente do Cordova. Se o projeto foi criado usando diretamente o Cordova, considere atualizar a sua instalação. Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
+            <Val><![CDATA[Erro: o projeto atual usa a versão {0} do Cordova. O 'taco install-reqs' dá suporte a projetos que usam a versão {1} ou superior do Cordova.<br/><br/>Se o projeto foi criado com um Kit, considere movê-lo para um kit que tenha uma versão mais recente do Cordova. Se o projeto foi criado usando diretamente o Cordova, considere atualizar a sua instalação. Para obter mais informações, consulte http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Error: The current project uses Cordova version {0}. 'taco install-reqs' supports projects using Cordova version {1} or higher.<br/><br/>If your project was created using a TACO kit, consider moving to a kit that has a more recent version of Cordova. If your project was created using Cordova directly, consider updating the installation of Cordova. For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -685,19 +694,25 @@
       </Item>
       <Item ItemId=";CommandKitCliOrKitShouldBeSpecified" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error: Kit or CLI needs to be specified. Please run 'taco help kit' for more details.]]></Val>
+          <Val><![CDATA[Error: Kit or Cordova CLI needs to be specified. Please run 'taco help kit' for more details.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Erro: é necessário especificar o Kit ou a CLI. Execute 'taco help kit' para obter mais detalhes.]]></Val>
+            <Val><![CDATA[Erro: é necessário especificar o Kit ou a CLI do Cordova. Execute 'taco help kit' para obter mais detalhes.]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Error: Kit or CLI needs to be specified. Please run 'taco help kit' for more details.]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";CommandKitCliOrKitShouldBeSpecified.comment" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error thrown when no Kit or CLI is specified for the 'taco kit select' command]]></Val>
+          <Val><![CDATA[Error thrown when no Kit or Cordova CLI is specified for the 'taco kit select' command]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Erro gerado quando não há uma CLI ou um Kit especificado para o comando 'taco kit select']]></Val>
+            <Val><![CDATA[Erro gerado quando não há um Kit ou CLI do Cordova especificado para o comando 'taco kit select']]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Error thrown when no Kit or CLI is specified for the 'taco kit select' command]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -739,6 +754,15 @@
           <Val><![CDATA[<bold>Cordova CLI: </bold>{0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[<bold>CLI do Cordova: </bold>{0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandKitListCurrentCordovaCLI" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<bold>Current Cordova CLI</bold>: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<bold>CLI do Cordova atual</bold>: {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -856,12 +880,12 @@
       </Item>
       <Item ItemId=";CommandKitListSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[List available TACO Kits]]></Val>
+          <Val><![CDATA[List available Kits]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Listar os Kits TACO disponíveis]]></Val>
+            <Val><![CDATA[Listar os Kits disponíveis]]></Val>
           </Tgt>
           <Prev Cat="Text">
-            <Val><![CDATA[List available TACO kits]]></Val>
+            <Val><![CDATA[List available TACO Kits]]></Val>
           </Prev>
         </Str>
         <Disp Icon="Str" />
@@ -878,7 +902,7 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";CommandKitProjectUsesSameCli" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandKitProjectUsesSameCordovaCli" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error: TACO project already uses the Cordova CLI {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
@@ -950,7 +974,7 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";CommandKitSelectOptionCliDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";CommandKitSelectOptionCordovaDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Use the specified version of Cordova CLI for the project.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
@@ -961,12 +985,12 @@
       </Item>
       <Item ItemId=";CommandKitSelectOptionKitDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Use the specified TACO Kit for the project. Use "taco kit list" to see a list of available kits.]]></Val>
+          <Val><![CDATA[Use the specified Kit for the project. Use "taco kit list" to see a list of available Kits.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Use o Kit TACO especificado para o projeto. Use "lista de kit taco" para ver uma lista dos kits disponíveis.]]></Val>
+            <Val><![CDATA[Use o Kit especificado para o projeto. Use "taco kit list" para ver uma lista dos Kits disponíveis.]]></Val>
           </Tgt>
           <Prev Cat="Text">
-            <Val><![CDATA[Use the specified TACO kit for the project. Use "taco kit list" to see a list of available kits.]]></Val>
+            <Val><![CDATA[Use the specified TACO Kit for the project. Use "taco kit list" to see a list of available kits.]]></Val>
           </Prev>
         </Str>
         <Disp Icon="Str" />
@@ -1231,10 +1255,13 @@
       </Item>
       <Item ItemId=";CommandPlatformUpdateSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Update the version of cordova used for a specific platform; Update to the latest <VERSION>, if no <VERSION>, path or <URL> is specified.]]></Val>
+          <Val><![CDATA[Update the version of Cordova used for a specific platform; Update to the latest <VERSION>, if no <VERSION>, path or <URL> is specified.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Atualize a versão do Cordova usada para uma plataforma específica; atualize para a <VERSION> mais recente, se nenhuma <VERSION>, caminho ou <URL> for especificado.]]></Val>
+            <Val><![CDATA[Atualize a versão do Cordova usada para uma plataforma específica; atualize para a <VERSÃO> mais recente, se nenhuma <VERSÃO>, caminho ou <URL> for especificado.]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Update the version of cordova used for a specific platform; Update to the latest <VERSION>, if no <VERSION>, path or <URL> is specified.]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -2254,10 +2281,13 @@
       </Item>
       <Item ItemId=";NewerTacoCLIVersionAvailable" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[<br/>------------------------------------]A;<warn>A newer version is available for taco-cli:</warn>]A; * Locally installed version: {0}]A; * Latest version: {1}]A; * <link>http://go.microsoft.com/fwlink/?LinkId=619747</link>]A; * Run <command>npm install -g taco-cli</command> to update]A;------------------------------------]A;]]></Val>
+          <Val><![CDATA[<br/>------------------------------------]A;<warn>A newer version is available for TACO:</warn>]A; * Locally installed version: {0}]A; * Latest version: {1}]A; * <link>http://go.microsoft.com/fwlink/?LinkId=624555</link>]A; * Run <command>npm install -g taco-cli</command> to update]A;------------------------------------]A;]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<br/>------------------------------------]A;<warn>Uma versão mais recente está disponível para taco-cli:</warn>]A; * Versão instalada localmente: {0}]A; * Versão mais recente: {1}]A; * <link>http://go.microsoft.com/fwlink/?LinkId=619747</link>]A; * Execute <command>npm install -g taco-cli</command> para fazer a atualização]A;------------------------------------]A;]]></Val>
+            <Val><![CDATA[<br/>------------------------------------]A;<warn>Uma versão mais recente está disponível para TACO:</warn>]A; * Versão instalada localmente: {0}]A; * Versão mais recente: {1}]A; * <link>http://go.microsoft.com/fwlink/?LinkId=624555</link>]A; * Execute <command>npm install -g taco-cli</command> para fazer a atualização]A;------------------------------------]A;]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[<br/>------------------------------------]A;<warn>A newer version is available for taco-cli:</warn>]A; * Locally installed version: {0}]A; * Latest version: {1}]A; * <link>http://go.microsoft.com/fwlink/?LinkId=619747</link>]A; * Run <command>npm install -g taco-cli</command> to update]A;------------------------------------]A;]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -2275,6 +2305,15 @@
           <Val><![CDATA[Error: No remote build found. Please run '{0}' first]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Erro: nenhuma compilação remota encontrada. Execute '{0}' primeiro]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";NoRemoteConfigurationFoundForPlatform" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Warning: No remote configuration found for {0}. Ignoring...]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Aviso: nenhuma configuração remota foi encontrada para {0}. Ignorando...]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2372,6 +2411,15 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";RemoteBuildQueued" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Your build is in the queue at position {0}.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Sua compilação está na fila na posição {0}.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";RemoteBuildSslConnectionReset" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Secure connection to {0} could not be established. Verify that the build server is running in secure mode.]]></Val>
@@ -2410,10 +2458,13 @@
       </Item>
       <Item ItemId=";RemoteBuildUnsupportedPlatform" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error: Platform '{0}' not supported by current version of cordova.]]></Val>
+          <Val><![CDATA[Error: Platform '{0}' not supported by current version of Cordova.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Erro: não há suporte para a plataforma '{0}' na versão atual do Cordova.]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Error: Platform '{0}' not supported by current version of cordova.]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -2428,19 +2479,25 @@
       </Item>
       <Item ItemId=";TacoCommandPassthrough" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Unknown TACO command, passing it to cordova]]></Val>
+          <Val><![CDATA[Unknown TACO command, passing it to Cordova]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[O comando do TACO transmitido para o Cordova é desconhecido]]></Val>
+            <Val><![CDATA[Comando do TACO desconhecido, transmitindo-o para o Cordova]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Unknown TACO command, passing it to cordova]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";TacoDocumentationLink" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[http://go.microsoft.com/fwlink/?LinkId=619747]]></Val>
+          <Val><![CDATA[http://go.microsoft.com/fwlink/?LinkId=624556]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[http://go.microsoft.com/fwlink/?LinkId=619747]]></Val>
+            <Val><![CDATA[http://go.microsoft.com/fwlink/?LinkId=624556]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[http://go.microsoft.com/fwlink/?LinkId=619747]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>

@@ -117,10 +117,13 @@
       </Item>
       <Item ItemId=";CommandTestDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Run tests against another instance of remotebuild]]></Val>
+          <Val><![CDATA[Run tests against remotebuild]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Başka bir remotebuild örneği için testler çalıştırır]]></Val>
+            <Val><![CDATA[remotebuild için testleri çalıştırır]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Run tests against another instance of remotebuild]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -162,10 +165,13 @@
       </Item>
       <Item ItemId=";InsecureServerStarted" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Remote build server listening on [http]5D; port %d]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Uzak derleme sunucusu [http]5D; bağlantı noktası %d üzerinde dinliyor]]></Val>
+          <Val><![CDATA[Remote build server listening on [http]5D; port {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Uzak derleme sunucusu [http]5D; bağlantı noktası {0} üzerinde dinliyor]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Remote build server listening on [http]5D; port %d]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -279,12 +285,12 @@
       </Item>
       <Item ItemId=";OSXCertSetupInformation[8]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Alternately to use the taco-cli run 'taco remote add <platform>' to configure the taco CLI to use this build server for the chosen platform, specifying]]></Val>
+          <Val><![CDATA[Alternately to use the taco-cli run 'taco remote add <PLATFORM>' to configure the taco CLI to use this build server for the chosen platform, specifying]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Alternatif olarak, taco-cli kullanarak, seçilen platform için bu derleme sunucusunu kullanmak üzere taco CLI'yı yapılandırmak amacıyla 'taco remote add <platform>' komutunu çalıştırın ve şunu belirtin:]]></Val>
+            <Val><![CDATA[Alternatif olarak, taco-cli kullanarak, seçilen platform için bu derleme sunucusunu kullanmak üzere taco CLI'yı yapılandırmak amacıyla 'taco remote add <PLATFORM>' komutunu çalıştırın ve şunu belirtin:]]></Val>
           </Tgt>
           <Prev Cat="Text">
-            <Val><![CDATA[Alternately, use 'taco setup remote <platform>' to configure the taco CLI to use this build server for the chosen platform, specifying]]></Val>
+            <Val><![CDATA[Alternately to use the taco-cli run 'taco remote add <platform>' to configure the taco CLI to use this build server for the chosen platform, specifying]]></Val>
           </Prev>
         </Str>
         <Disp Icon="Str" />
@@ -313,6 +319,12 @@
           <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[Güvenlik PIN'i tek seferlik kullanım içindir ve {0} dakika içinde süresi dolar. Daha fazla PIN oluşturmak için aşağıdaki komutu kullanın:]]></Val>
           </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";OSXNoteAfterResetServerCert" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Note: You need to restart any running remotebuild servers before the new certificates will be used.]]></Val>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -552,10 +564,13 @@
       </Item>
       <Item ItemId=";SecureServerStarted" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Remote build server listening on [https]5D; port %d]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[Uzak derleme sunucusu [https]5D; bağlantı noktası %d üzerinde dinliyor]]></Val>
+          <Val><![CDATA[Remote build server listening on [https]5D; port {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Uzak derleme sunucusu [https]5D; bağlantı noktası {0} üzerinde dinliyor]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Remote build server listening on [https]5D; port %d]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -579,10 +594,13 @@
       </Item>
       <Item ItemId=";ServerStartFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[****** Failed to start server: %s]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[****** Sunucu başlatılamadı: %s]]></Val>
+          <Val><![CDATA[****** Failed to start server: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[****** Sunucu başlatılamadı: {0}]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[****** Failed to start server: %s]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>

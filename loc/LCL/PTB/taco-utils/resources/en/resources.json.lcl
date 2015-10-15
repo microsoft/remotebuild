@@ -267,10 +267,13 @@
       </Item>
       <Item ItemId=";ProcessLogError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error from writing to stream at %s: %s]]></Val>
+          <Val><![CDATA[Error from writing to stream at {0}: {1}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Erro ao gravar no fluxo em %s: %s]]></Val>
+            <Val><![CDATA[Erro ao gravar no fluxo em {0}: {1}]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Error from writing to stream at %s: %s]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -312,10 +315,13 @@
       </Item>
       <Item ItemId=";TelemetryOptInMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[<bold>Do you want to help improve the quality of Microsoft products and services by allowing us to collect your usage data?</bold><br/><br/>You can read our privacy policy that provides information on what data we collect and how we will use it at the following location: <link>https://www.visualstudio.com/en-us/dn948229</link>.]]></Val>
+          <Val><![CDATA[<bold>Help us improve the quality of Microsoft products and services</bold><br/><br/>If you choose to participate, Microsoft will collect usage information on your use of the software and services to identify trends and usage patterns. Microsoft will not collect personal information. You may change your participation option at any time by running "taco feedback". You can read our privacy policy that provides information on what data we collect and how we will use it at <link>https://www.visualstudio.com/en-us/dn948229</link><br/>Your response to this question is automatically collected.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<bold>Você deseja ajudar a melhorar a qualidade dos produtos e serviços da Microsoft, permitindo que façamos a coleta de seus dados de uso?</bold><br/><br/>Você pode ler nossa política de privacidade, que fornece informações sobre os dados que coletamos e como eles serão usados, no seguinte local: <link>https://www.visualstudio.com/pt-br/dn948229</link>.]]></Val>
+            <Val><![CDATA[<bold>Ajude-nos a melhorar a qualidade dos serviços e produtos da Microsoft</bold><br/><br/>Se escolher participar, a Microsoft coletará informações sobre seu uso do software e serviços para identificar tendências e padrões de uso. A Microsoft não coletará informações pessoas. Você pode alterar sua opção de participação a qualquer momento executando "comentários do taco". Você pode ler nossa política de privacidade que fornece informações sobre os dados que coletamos e como eles são usados em <link>https://www.visualstudio.com/en-us/dn948229</link><br/>Sua resposta para essa pergunta é automaticamente coletada.]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[<bold>Do you want to help improve the quality of Microsoft products and services by allowing us to collect your usage data?</bold><br/><br/>You can read our privacy policy that provides information on what data we collect and how we will use it at the following location: <link>https://www.visualstudio.com/en-us/dn948229</link>.]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -328,11 +334,20 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";TelemetryOptInNote" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";TelemetryOptInQuestion" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Note: We will send the result of this question even if you select No. ]]></Val>
+          <Val><![CDATA[Are you willing to participate?]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Nota: enviaremos o resultado desta pergunta, mesmo que você selecione Não.]]></Val>
+            <Val><![CDATA[Está disposto a participar?]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TelemetryOptInQuestion.comment" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The prompt string presented to the user asking to opt in for telemetry.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[A cadeia de caracteres do prompt é apresentada ao usuário que pede para participar de telemetria.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

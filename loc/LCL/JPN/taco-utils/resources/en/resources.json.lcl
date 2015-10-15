@@ -267,10 +267,13 @@
       </Item>
       <Item ItemId=";ProcessLogError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error from writing to stream at %s: %s]]></Val>
+          <Val><![CDATA[Error from writing to stream at {0}: {1}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[%s のストリームへの書き込みでエラーが発生しました: %s]]></Val>
+            <Val><![CDATA[{0} のストリームへの書き込みでエラーが発生しました: {1}]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Error from writing to stream at %s: %s]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -312,10 +315,13 @@
       </Item>
       <Item ItemId=";TelemetryOptInMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[<bold>Do you want to help improve the quality of Microsoft products and services by allowing us to collect your usage data?</bold><br/><br/>You can read our privacy policy that provides information on what data we collect and how we will use it at the following location: <link>https://www.visualstudio.com/en-us/dn948229</link>.]]></Val>
+          <Val><![CDATA[<bold>Help us improve the quality of Microsoft products and services</bold><br/><br/>If you choose to participate, Microsoft will collect usage information on your use of the software and services to identify trends and usage patterns. Microsoft will not collect personal information. You may change your participation option at any time by running "taco feedback". You can read our privacy policy that provides information on what data we collect and how we will use it at <link>https://www.visualstudio.com/en-us/dn948229</link><br/>Your response to this question is automatically collected.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<bold>利用状況データの収集を許可することで、Microsoft の製品やサービスの品質向上にご協力いただけますか?</bold><br/><br/>どのようなデータを収集するのか、およびその用途に関する情報については、次の場所にあるプライバシー ポリシーをお読みください: <link>https://www.visualstudio.com/ja-jp/dn948229</link>。]]></Val>
+            <Val><![CDATA[<bold>Microsoft の製品やサービスの品質向上にご協力ください</bold><br/><br/>参加を選択した場合、Microsoft はソフトウェアとサービスの利用状況情報を収集し、傾向や使用パターンを識別します。Microsoft が個人情報を収集することはありません。"taco feedback" を実行することで、いつでも参加オプションを変更できます。どのようなデータを収集するのか、およびその用途に関する情報については、次のプライバシー ポリシーをお読みください。<link>https://www.visualstudio.com/en-us/dn948229</link><br/>この質問に対する回答は自動的に収集されます。]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[<bold>Do you want to help improve the quality of Microsoft products and services by allowing us to collect your usage data?</bold><br/><br/>You can read our privacy policy that provides information on what data we collect and how we will use it at the following location: <link>https://www.visualstudio.com/en-us/dn948229</link>.]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -328,11 +334,20 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";TelemetryOptInNote" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";TelemetryOptInQuestion" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Note: We will send the result of this question even if you select No. ]]></Val>
+          <Val><![CDATA[Are you willing to participate?]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[注意: [いいえ]5D; を選択した場合でも、この質問の結果を送信いたします。]]></Val>
+            <Val><![CDATA[参加しますか?]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TelemetryOptInQuestion.comment" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The prompt string presented to the user asking to opt in for telemetry.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[ユーザーにテレメトリをオプトインするかを確認するために表示されるプロンプト文字列です。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

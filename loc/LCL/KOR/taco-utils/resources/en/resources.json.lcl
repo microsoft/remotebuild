@@ -267,10 +267,13 @@
       </Item>
       <Item ItemId=";ProcessLogError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error from writing to stream at %s: %s]]></Val>
+          <Val><![CDATA[Error from writing to stream at {0}: {1}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[%s의 스트림에 쓰는 동안 오류가 발생했습니다. %s]]></Val>
+            <Val><![CDATA[{0}의 스트림에 쓰는 동안 오류가 발생했습니다. {1}]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Error from writing to stream at %s: %s]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -312,10 +315,13 @@
       </Item>
       <Item ItemId=";TelemetryOptInMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[<bold>Do you want to help improve the quality of Microsoft products and services by allowing us to collect your usage data?</bold><br/><br/>You can read our privacy policy that provides information on what data we collect and how we will use it at the following location: <link>https://www.visualstudio.com/en-us/dn948229</link>.]]></Val>
+          <Val><![CDATA[<bold>Help us improve the quality of Microsoft products and services</bold><br/><br/>If you choose to participate, Microsoft will collect usage information on your use of the software and services to identify trends and usage patterns. Microsoft will not collect personal information. You may change your participation option at any time by running "taco feedback". You can read our privacy policy that provides information on what data we collect and how we will use it at <link>https://www.visualstudio.com/en-us/dn948229</link><br/>Your response to this question is automatically collected.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<bold>사용 현황 데이터를 수집하도록 허용하여 Microsoft 제품 및 서비스의 품질을 개선하는 데 도움을 주시겠어요?</bold><br/><br/>Microsoft에서 수집하는 데이터와 해당 데이터를 사용하는 방식에 대한 정보를 제공하는 개인 정보 취급 방침을 다음 위치에서 읽을 수 있습니다. <link>https://www.visualstudio.com/ko-kr/dn948229</link>.]]></Val>
+            <Val><![CDATA[<bold>Microsoft 제품 및 서비스의 품질을 개선하는 데 도움을 주세요.</bold><br/><br/>참여하시는 경우 Microsoft는 소프트웨어 및 서비스를 사용하는 방법에 대한 정보를 수집하여 추세 및 사용 패턴을 파악합니다. Microsoft는 개인 정보를 수집하지 않습니다. 언제든 "taco feedback"을 실행하여 참여 옵션을 변경할 수 있습니다. 수집하는 정보와 해당 정보의 사용 방법에 대한 정보를 제공하는 개인 정보 취급 방침은 <link>https://www.visualstudio.com/en-us/dn948229</link>에서 확인할 수 있습니다.<br/>이 질문에 대한 귀하의 응답은 자동으로 수집됩니다.]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[<bold>Do you want to help improve the quality of Microsoft products and services by allowing us to collect your usage data?</bold><br/><br/>You can read our privacy policy that provides information on what data we collect and how we will use it at the following location: <link>https://www.visualstudio.com/en-us/dn948229</link>.]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -328,11 +334,20 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";TelemetryOptInNote" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";TelemetryOptInQuestion" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Note: We will send the result of this question even if you select No. ]]></Val>
+          <Val><![CDATA[Are you willing to participate?]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[참고: [아니요]5D;를 선택하는 경우에도 이 질문의 결과를 보내드리겠습니다.]]></Val>
+            <Val><![CDATA[참여하시나요?]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TelemetryOptInQuestion.comment" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The prompt string presented to the user asking to opt in for telemetry.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[원격 분석에 옵트인할지 묻는 프롬프트 문자열이 사용자에게 표시됩니다.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

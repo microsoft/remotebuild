@@ -23,10 +23,13 @@
       <Disp Icon="Str" Disp="true" LocTbl="false" />
       <Item ItemId=";AcquiringCordova" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Acquiring cordova.]]></Val>
+          <Val><![CDATA[Acquiring Cordova.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Pobieranie programu cordova.]]></Val>
+            <Val><![CDATA[Pobieranie oprogramowania Cordova.]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Acquiring cordova.]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -77,10 +80,13 @@
       </Item>
       <Item ItemId=";BuildRequestMissingCordovaVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[A cordova version must be specified on the build request.]]></Val>
+          <Val><![CDATA[A Cordova version must be specified on the build request.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[W żądaniu kompilacji musi być określona wersja oprogramowania Cordova.]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[A cordova version must be specified on the build request.]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -98,15 +104,6 @@
           <Val><![CDATA[The requested build configuration {0} is not supported by this build manager. Only debug and release are supported.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Żądana konfiguracja kompilacji {0} nie jest obsługiwana przez tego menedżera kompilacji. Obsługiwane jest tylko debugowanie i wydanie.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";BuildRequestUnsupportedCordovaVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[The build request for cordova version {0} is not supported by the iOS build server. The server is installed with cordova version {1}.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Żądanie kompilacji dla wersji oprogramowania Cordova {0} nie jest obsługiwane przez serwer kompilacji z systemem iOS. Serwer został zainstalowany z następującą wersją oprogramowania Cordova: {1}.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -302,10 +299,13 @@
       </Item>
       <Item ItemId=";NoCordovaVersionSpecified" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[No cordova version specified!]]></Val>
+          <Val><![CDATA[No Cordova version specified!]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Nie określono wersji programu cordova.]]></Val>
+            <Val><![CDATA[Nie określono wersji oprogramowania Cordova.]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[No cordova version specified!]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -347,10 +347,13 @@
       </Item>
       <Item ItemId=";RequireCordovaFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error: Failed to acquire cordova version {0}. {1}]]></Val>
+          <Val><![CDATA[Error: Failed to acquire Cordova version {0}. {1}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Błąd: Nie można uzyskać wersji programu cordova {0}. {1}]]></Val>
+            <Val><![CDATA[Błąd: nie można uzyskać wersji oprogramowania Cordova {0}. {1}]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Error: Failed to acquire cordova version {0}. {1}]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>

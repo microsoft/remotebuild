@@ -117,10 +117,13 @@
       </Item>
       <Item ItemId=";CommandTestDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Run tests against another instance of remotebuild]]></Val>
+          <Val><![CDATA[Run tests against remotebuild]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[remotebuild の別のインスタンスに対してテストを実行します]]></Val>
+            <Val><![CDATA[remotebuild に対してテストを実行します]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Run tests against another instance of remotebuild]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -162,10 +165,13 @@
       </Item>
       <Item ItemId=";InsecureServerStarted" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Remote build server listening on [http]5D; port %d]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[リモート ビルド サーバーは [http]5D; ポート %d をリッスンしています]]></Val>
+          <Val><![CDATA[Remote build server listening on [http]5D; port {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[リモート ビルド サーバーは [http]5D; ポート {0} をリッスンしています]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Remote build server listening on [http]5D; port %d]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -279,12 +285,12 @@
       </Item>
       <Item ItemId=";OSXCertSetupInformation[8]" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Alternately to use the taco-cli run 'taco remote add <platform>' to configure the taco CLI to use this build server for the chosen platform, specifying]]></Val>
+          <Val><![CDATA[Alternately to use the taco-cli run 'taco remote add <PLATFORM>' to configure the taco CLI to use this build server for the chosen platform, specifying]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[代わりに taco-cli を使用するには 'taco remote add <platform>' を実行して taco CLI を構成し、選択されたプラットフォームにこのビルド サーバーを使用します。次の情報を指定します:]]></Val>
           </Tgt>
           <Prev Cat="Text">
-            <Val><![CDATA[Alternately, use 'taco setup remote <platform>' to configure the taco CLI to use this build server for the chosen platform, specifying]]></Val>
+            <Val><![CDATA[Alternately to use the taco-cli run 'taco remote add <platform>' to configure the taco CLI to use this build server for the chosen platform, specifying]]></Val>
           </Prev>
         </Str>
         <Disp Icon="Str" />
@@ -312,6 +318,15 @@
           <Val><![CDATA[The security PIN is for one-time use and expires in {0} minutes. To generate additional PINs, use the following command:]]></Val>
           <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
             <Val><![CDATA[セキュリティ PIN は 1 回だけ使用でき、{0} 分で期限切れになります。追加の PIN を生成するには、以下のコマンドを使用します。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";OSXNoteAfterResetServerCert" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Note: You need to restart any running remotebuild servers before the new certificates will be used.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[注意: 新しい証明書を使用する前に、実行しているすべての remotebuild サーバーを再起動する必要があります。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -552,10 +567,13 @@
       </Item>
       <Item ItemId=";SecureServerStarted" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Remote build server listening on [https]5D; port %d]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[リモート ビルド サーバーは [https]5D; ポート %d をリッスンしています]]></Val>
+          <Val><![CDATA[Remote build server listening on [https]5D; port {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[リモート ビルド サーバーは [https]5D; ポート {0} をリッスンしています]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Remote build server listening on [https]5D; port %d]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -579,10 +597,13 @@
       </Item>
       <Item ItemId=";ServerStartFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[****** Failed to start server: %s]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Appr="PreApproved" Orig="New">
-            <Val><![CDATA[****** サーバーの起動に失敗しました: %s]]></Val>
+          <Val><![CDATA[****** Failed to start server: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[****** サーバーの起動に失敗しました: {0}]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[****** Failed to start server: %s]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>

@@ -16,10 +16,13 @@
       <Disp Icon="Str" Disp="true" LocTbl="false" />
       <Item ItemId=";AcquiringCordova" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Acquiring cordova.]]></Val>
+          <Val><![CDATA[Acquiring Cordova.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[cordova를 가져오는 중입니다.]]></Val>
+            <Val><![CDATA[Cordova를 가져오는 중입니다.]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Acquiring cordova.]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -70,10 +73,13 @@
       </Item>
       <Item ItemId=";BuildRequestMissingCordovaVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[A cordova version must be specified on the build request.]]></Val>
+          <Val><![CDATA[A Cordova version must be specified on the build request.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[빌드 요청에서 Cordova 버전을 지정해야 합니다.]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[A cordova version must be specified on the build request.]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -91,15 +97,6 @@
           <Val><![CDATA[The requested build configuration {0} is not supported by this build manager. Only debug and release are supported.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[이 빌드 관리자에서는 요청된 빌드 구성 {0}을(를) 지원하지 않습니다. 디버그 및 릴리스만 지원됩니다.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";BuildRequestUnsupportedCordovaVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[The build request for cordova version {0} is not supported by the iOS build server. The server is installed with cordova version {1}.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[iOS 빌드 서버에서는 Cordova 버전 {0}에 대한 빌드 요청을 지원하지 않습니다. 이 서버는 Cordova 버전 {1}과(와) 함께 설치됩니다.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -295,10 +292,13 @@
       </Item>
       <Item ItemId=";NoCordovaVersionSpecified" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[No cordova version specified!]]></Val>
+          <Val><![CDATA[No Cordova version specified!]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Cordova 버전이 지정되지 않았습니다.]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[No cordova version specified!]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -340,10 +340,13 @@
       </Item>
       <Item ItemId=";RequireCordovaFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error: Failed to acquire cordova version {0}. {1}]]></Val>
+          <Val><![CDATA[Error: Failed to acquire Cordova version {0}. {1}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[오류: Cordova 버전 {0}을(를) 가져오지 못했습니다. {1}]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Error: Failed to acquire cordova version {0}. {1}]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
