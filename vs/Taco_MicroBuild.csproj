@@ -99,15 +99,10 @@
    <Exec Command="$(gulp) just-package --drop=$(DropLocation)" WorkingDirectory="$(TacoSrc)" />
  </Target>
 
- <Target Name="Cleanup">
-   <Exec Command="$(gulp) unprep" WorkingDirectory="$(TacoSrc)" />
- </Target>
-
   <Target Name="Build">
     <CallTarget Targets="TacoBuild"/>
     <CallTarget Targets="Localize"/>
     <CallTarget Targets="CopyResources"/>
     <CallTarget Targets="GeneratePackages"/>
-    <CallTarget Targets="Cleanup"/>
   </Target>
 </Project>
