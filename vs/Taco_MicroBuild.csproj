@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup>
+    <LocRoot>$(TF_BUILD_BINARIESDIRECTORY)\localize</LocRoot>
+    <SourceRoot>$(TF_BUILD_SOURCESDIRECTORY)</SourceRoot>
+    <DropLocation>$(TF_BUILD_DROPLOCATION)\packages\</DropLocation>
+    <GulpRoot>$(SourceRoot)\src</GulpRoot>
+    <GulpPath>$(SourceRoot)\node_modules\gulp\bin\gulp.js</GulpPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <TacoPackages Include="remotebuild" />
+    <TacoPackages Include="taco-utils" /> 
+    <TacoPackages Include="taco-remote" /> 
+    <TacoPackages Include="taco-remote-lib" /> 
+    <TacoPackages Include="taco-kits" />
+    <TacoPackages Include="taco-cli" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SupportedLangs Include="CSY">
+      <TacoLang>cs</TacoLang>
+    </SupportedLangs>
+    <SupportedLangs Include="JPN">
+      <TacoLang>jp</TacoLang>
+    </SupportedLangs>
+    <SupportedLangs Include="RUS">
+      <TacoLang>ru</TacoLang>
+    </SupportedLangs>
+    <SupportedLangs Include="CHT">
+      <TacoLang>zh-tw</TacoLang>
+    </SupportedLangs>
+    <SupportedLangs Include="CHS">
+      <TacoLang>zh-cn</TacoLang>
+    </SupportedLangs>
+    <SupportedLangs Include="TRK">
+      <TacoLang>tr</TacoLang>
+    </SupportedLangs>
+    <SupportedLangs Include="FRA">
+      <TacoLang>fr</TacoLang>
+    </SupportedLangs>
+    <SupportedLangs Include="KOR">
+      <TacoLang>ko</TacoLang>
+    </SupportedLangs>
+    <SupportedLangs Include="PLK">
+      <TacoLang>pl</TacoLang>
+    </SupportedLangs>
+    <SupportedLangs Include="ITA">
+      <TacoLang>it</TacoLang>
+    </SupportedLangs>
+    <SupportedLangs Include="ESN">
+      <TacoLang>es</TacoLang>
+    </SupportedLangs>
+    <SupportedLangs Include="DEU">
+      <TacoLang>de</TacoLang>
+    </SupportedLangs>
+    <SupportedLangs Include="PTB">
+      <TacoLang>pt-br</TacoLang>
+    </SupportedLangs>
+  </ItemGroup>
+
+ <Target Name="TacoBuild">
+    <Message Text="Installing gulp"/>
+    <Exec Command="npm install gulp" WorkingDirectory="$(GulpRoot)" />
+
+    <Message Text="Building project" />
+    <Exec Command="$(GulpRoot)\node_modules\.bin\gulp.cmd prep" WorkingDirectory="$(GulpRoot)\src" />
+
+    <MakeDir Directories="$(TF_BUILD_DROPLOCATION)\packages\"/>
+    <Exec Command="$(GulpRoot)\node_modules\.bin\gulp.cmd build --drop=$(TF_BUILD_DROPLOCATION)\packages\" WorkingDirectory="$(GulpRoot)\src" />
+
+    <ItemGroup>
+      <BuildPackages Include="$(MSBuildThisFileDirectory)\..\build\packages\**\*" />
+    </ItemGroup>
+
+    <Message Text="Copying sources to bin folder" />
+    <Copy SourceFiles="@(BuildPackages)" DestinationFiles="@(BuildPackages->'$(TF_BUILD_BINARIESDIRECTORY)\packages\%(RecursiveDir)%(Filename)%(Extension)')"/>
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)updateDynamicDependencies.js" DestinationFolder="$(TF_BUILD_BINARIESDIRECTORY)\packages\node_modules"/>
+ </Target>
+
+ <Target Name="CopyResources">
+   <CreateItem Include="@(SupportedLangs)" AdditionalMetadata="Package=%(TacoPackages.Identity)">
+      <Output ItemName="Resources" TaskParameter="Include"/>
+   </CreateItem>
+
+   <Copy SourceFiles="$(LocRoot)\%(Resources.Identity)\packages\node_modules\%(Resources.Package)\resources\en\resources.json" 
+         DestinationFiles="$(SourceRoot)\build\packages\node_modules\%(Resources.Package)\resources\%(Resources.TacoLang)\" />
+   <Copy SourceFiles="$(LocRoot)\%(Resources.Identity)\packages\node_modules\%(Resources.Package)\resources\en\resources.json" 
+         DestinationFiles="$(LocRoot)\..\packages\node_modules\%(Resources.Package)\resources\%(Resources.TacoLang)\" />
+ </Target>
+
+ <Target Name="GeneratePackages">
+   <Exec Command="node $(GulpPath) just-package --drop=$(DropLocation)" WorkingDirectory="$(GulpRoot)" />
+ </Target>
+
+ <Target Name="Cleanup">
+   <Exec Command="node $(GulpPath) unprep" WorkingDirectory="$(GulpRoot)" />
+ </Target>
+
+  <Target Name="Build">
+    <CallTarget Targets="TacoBuild"/>
+    <CallTarget Targets="Localize"/>
+    <CallTarget Targets="CopyResources"/>
+    <CallTarget Targets="GeneratePackages"/>
+    <CallTarget Targets="Cleanup"/>
+  </Target>
+</Project>
