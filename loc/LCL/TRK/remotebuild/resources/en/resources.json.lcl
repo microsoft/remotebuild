@@ -325,6 +325,9 @@
       <Item ItemId=";OSXNoteAfterResetServerCert" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Note: You need to restart any running remotebuild servers before the new certificates will be used.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Not: Yeni sertifikaların kullanılması için önce çalışan tüm remotebuild sunucularını yeniden başlatmanız gerekir.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>

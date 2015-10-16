@@ -314,12 +314,18 @@
       <Item ItemId=";CommandCreateNotBothCordovaAndKit" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error: Cannot specify both --cordova and --kit]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Hata: Hem --cordova hem de --kit parametreleri belirtilemez]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";CommandCreateNotBothTemplateAndCordova" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error: The --template option is not supported with the --cordova option; use --kit for templates]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Hata: --template seçeneği, --cordova seçeneğiyle birlikte desteklenmez; şablonlar için --kit kullanın]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -353,6 +359,9 @@
       <Item ItemId=";CommandCreateOptionsCordova" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Use a version of the Cordova CLI rather than a Kit.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Set yerine bir Cordova CLI sürümünü kullanın.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -566,8 +575,8 @@
       <Item ItemId=";CommandInstallCordovaTooOld" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error: The current project uses Cordova version {0}. 'taco install-reqs' supports projects using Cordova version {1} or higher.<br/><br/>If your project was created using a Kit, consider moving to a kit that has a more recent version of Cordova. If your project was created using Cordova directly, consider updating the installation of Cordova. For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
-          <Tgt Cat="Text" Stat="Update" Orig="New">
-            <Val><![CDATA[Hata: Geçerli proje, Cordova sürüm {0} kullanıyor. 'Taco install-reqs' komutu, {1} veya daha sonraki Cordova sürümlerini kullanan projeleri destekler.<br/><br/>Projeniz bir TACO seti kullanılarak oluşturulduysa, projeyi daha güncel bir Cordova sürümüne sahip bir sete taşımayı düşünün. Projeniz doğrudan Cordova kullanılarak oluşturulduysa, Cordova yüklemesini güncelleştirmeyi düşünün. Daha fazla bilgi edinmek için bkz. http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Hata: Geçerli proje, Cordova sürüm {0} kullanıyor. 'Taco install-reqs' komutu, {1} veya daha sonraki Cordova sürümlerini kullanan projeleri destekler.<br/><br/>Projeniz bir Set kullanılarak oluşturulduysa, projeyi daha güncel bir Cordova sürümüne sahip bir sete taşımayı düşünün. Projeniz doğrudan Cordova kullanılarak oluşturulduysa, Cordova yüklemesini güncelleştirmeyi düşünün. Daha fazla bilgi edinmek için bkz. http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Error: The current project uses Cordova version {0}. 'taco install-reqs' supports projects using Cordova version {1} or higher.<br/><br/>If your project was created using a TACO kit, consider moving to a kit that has a more recent version of Cordova. If your project was created using Cordova directly, consider updating the installation of Cordova. For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
@@ -1247,8 +1256,8 @@
       <Item ItemId=";CommandPlatformUpdateSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Update the version of Cordova used for a specific platform; Update to the latest <VERSION>, if no <VERSION>, path or <URL> is specified.]]></Val>
-          <Tgt Cat="Text" Stat="Update" Orig="New">
-            <Val><![CDATA[Belirli bir platform için kullanılan Cordova sürümünü güncelleştir; <VERSION>, yol veya <URL> belirtilmediyse en güncel <VERSION> sürümüne güncelleştir.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Belirli bir platform için kullanılan Cordova sürümünü güncelleştirin; <VERSION>, yol veya <URL> belirtilmediyse en güncel <VERSION> sürümüne güncelleştirin.]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Update the version of cordova used for a specific platform; Update to the latest <VERSION>, if no <VERSION>, path or <URL> is specified.]]></Val>
@@ -2273,8 +2282,8 @@
       <Item ItemId=";NewerTacoCLIVersionAvailable" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[<br/>------------------------------------]A;<warn>A newer version is available for TACO:</warn>]A; * Locally installed version: {0}]A; * Latest version: {1}]A; * <link>http://go.microsoft.com/fwlink/?LinkId=624555</link>]A; * Run <command>npm install -g taco-cli</command> to update]A;------------------------------------]A;]]></Val>
-          <Tgt Cat="Text" Stat="Update" Orig="New">
-            <Val><![CDATA[<br/>------------------------------------]A;<warn>taco-cli için yeni bir sürüm var:</warn>]A; * Yerel olarak yüklenen sürüm: {0}]A; * En güncel sürüm: {1}]A; * <link>http://go.microsoft.com/fwlink/?LinkId=619747</link>]A; * Güncelleştirmek için <command>npm install -g taco-cli</command> komutunu çalıştırın]A;------------------------------------]A;]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<br/>------------------------------------]A;<warn>TACO için yeni bir sürüm var:</warn>]A; * Yerel olarak yüklü sürüm: {0}]A; * En güncel sürüm: {1}]A; * <link>http://go.microsoft.com/fwlink/?LinkId=624555</link>]A; * Güncelleştirmek için <command>npm install -g taco-cli</command> komutunu çalıştırın]A;------------------------------------]A;]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[<br/>------------------------------------]A;<warn>A newer version is available for taco-cli:</warn>]A; * Locally installed version: {0}]A; * Latest version: {1}]A; * <link>http://go.microsoft.com/fwlink/?LinkId=619747</link>]A; * Run <command>npm install -g taco-cli</command> to update]A;------------------------------------]A;]]></Val>
@@ -2303,6 +2312,9 @@
       <Item ItemId=";NoRemoteConfigurationFoundForPlatform" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Warning: No remote configuration found for {0}. Ignoring...]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Uyarı: {0} için uzak yapılandırma bulunamadı. Yoksayılıyor...]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -2402,6 +2414,9 @@
       <Item ItemId=";RemoteBuildQueued" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Your build is in the queue at position {0}.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Derlemeniz kuyrukta {0}. konumda.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
