@@ -5,8 +5,8 @@
     <LocRoot>$(TF_BUILD_BINARIESDIRECTORY)\localize</LocRoot>
     <SourceRoot>$(TF_BUILD_SOURCESDIRECTORY)</SourceRoot>
     <DropLocation>$(TF_BUILD_DROPLOCATION)\packages\</DropLocation>
-    <GulpRoot>$(SourceRoot)\src</GulpRoot>
-    <GulpPath>$(SourceRoot)\node_modules\gulp\bin\gulp.js</GulpPath>
+    <TacoSrc>$(SourceRoot)\src</TacoSrc>
+    <Gulp>node $(SourceRoot)\node_modules\gulp\bin\gulp.js</Gulp>
   </PropertyGroup>
 
   <ItemGroup>
@@ -62,13 +62,13 @@
 
  <Target Name="TacoBuild">
     <Message Text="Installing gulp"/>
-    <Exec Command="npm install gulp" WorkingDirectory="$(GulpRoot)" />
+    <Exec Command="npm install gulp" WorkingDirectory="$(TacoSrc)" />
 
     <Message Text="Building project" />
-    <Exec Command="$(GulpRoot)\node_modules\.bin\gulp.cmd prep" WorkingDirectory="$(GulpRoot)\src" />
+    <Exec Command="$(gulp) prep" WorkingDirectory="$(TacoSrc)" />
 
     <MakeDir Directories="$(TF_BUILD_DROPLOCATION)\packages\"/>
-    <Exec Command="$(GulpRoot)\node_modules\.bin\gulp.cmd build --drop=$(TF_BUILD_DROPLOCATION)\packages\" WorkingDirectory="$(GulpRoot)\src" />
+    <Exec Command="$(gulp) build --drop=$(TF_BUILD_DROPLOCATION)\packages\" WorkingDirectory="$(TacoSrc)" />
 
     <ItemGroup>
       <BuildPackages Include="$(MSBuildThisFileDirectory)\..\build\packages\**\*" />
@@ -91,11 +91,11 @@
  </Target>
 
  <Target Name="GeneratePackages">
-   <Exec Command="node $(GulpPath) just-package --drop=$(DropLocation)" WorkingDirectory="$(GulpRoot)" />
+   <Exec Command="$(gulp) just-package --drop=$(DropLocation)" WorkingDirectory="$(TacoSrc)" />
  </Target>
 
  <Target Name="Cleanup">
-   <Exec Command="node $(GulpPath) unprep" WorkingDirectory="$(GulpRoot)" />
+   <Exec Command="$(gulp) unprep" WorkingDirectory="$(TacoSrc)" />
  </Target>
 
   <Target Name="Build">
