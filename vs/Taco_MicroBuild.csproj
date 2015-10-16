@@ -90,9 +90,9 @@
    </CreateItem>
 
    <Copy SourceFiles="$(LocRoot)\%(Resources.Identity)\packages\node_modules\%(Resources.Package)\resources\en\resources.json" 
-         DestinationFiles="$(SourceRoot)\build\packages\node_modules\%(Resources.Package)\resources\%(Resources.TacoLang)\" />
+         DestinationFolder="$(SourceRoot)\build\packages\node_modules\%(Resources.Package)\resources\%(Resources.TacoLang)\" />
    <Copy SourceFiles="$(LocRoot)\%(Resources.Identity)\packages\node_modules\%(Resources.Package)\resources\en\resources.json" 
-         DestinationFiles="$(LocRoot)\..\packages\node_modules\%(Resources.Package)\resources\%(Resources.TacoLang)\" />
+         DestinationFolder="$(LocRoot)\..\packages\node_modules\%(Resources.Package)\resources\%(Resources.TacoLang)\" />
  </Target>
 
  <Target Name="GeneratePackages">
