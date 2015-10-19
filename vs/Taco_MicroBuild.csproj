@@ -7,11 +7,13 @@
   <Import Project="$(CustomAfterWixTargets)" Condition="Exists('$(CustomAfterWixTargets)')"/>
 
   <PropertyGroup>
-    <LocRoot>$(TF_BUILD_BINARIESDIRECTORY)\localize</LocRoot>
-    <SourceRoot>$(TF_BUILD_SOURCESDIRECTORY)</SourceRoot>
+    <BinRoot>$(TF_BUILD_BINARIESDIRECTORY)\</BinRoot>
+    <LocRoot>$(BinRoot)\localize</LocRoot>
     <DropLocation>$(TF_BUILD_DROPLOCATION)\packages\</DropLocation>
-    <TacoSrc>$(SourceRoot)\src</TacoSrc>
-    <Gulp>node $(SourceRoot)\node_modules\gulp\bin\gulp.js</Gulp>
+    <TacoRoot>$(TF_BUILD_SOURCESDIRECTORY)</TacoRoot>
+    <TacoSrc>$(TacoRoot)\src</TacoSrc>
+    <TacoBuildPackagesRoot>$(TacoRoot)\build\packages\node_modules</TacoBuildPackagesRoot>
+    <Gulp>node $(TacoRoot)\node_modules\gulp\bin\gulp.js</Gulp>
   </PropertyGroup>
 
   <ItemGroup>
@@ -71,17 +73,8 @@
 
     <Message Text="Building project" />
     <Exec Command="$(gulp) prep" WorkingDirectory="$(TacoSrc)" />
+    <Exec Command="$(gulp) build" WorkingDirectory="$(TacoSrc)" />
 
-    <MakeDir Directories="$(TF_BUILD_DROPLOCATION)\packages\"/>
-    <Exec Command="$(gulp) build --drop=$(TF_BUILD_DROPLOCATION)\packages\" WorkingDirectory="$(TacoSrc)" />
-
-    <ItemGroup>
-      <BuildPackages Include="$(MSBuildThisFileDirectory)\..\build\packages\**\*" />
-    </ItemGroup>
-
-    <Message Text="Copying sources to bin folder" />
-    <Copy SourceFiles="@(BuildPackages)" DestinationFiles="@(BuildPackages->'$(TF_BUILD_BINARIESDIRECTORY)\packages\%(RecursiveDir)%(Filename)%(Extension)')"/>
-    <Copy SourceFiles="$(MSBuildThisFileDirectory)updateDynamicDependencies.js" DestinationFolder="$(TF_BUILD_BINARIESDIRECTORY)\packages\node_modules"/>
  </Target>
 
  <Target Name="CopyResources">
@@ -90,13 +83,20 @@
    </CreateItem>
 
    <Copy SourceFiles="$(LocRoot)\%(Resources.Identity)\packages\node_modules\%(Resources.Package)\resources\en\resources.json" 
-         DestinationFolder="$(SourceRoot)\build\packages\node_modules\%(Resources.Package)\resources\%(Resources.TacoLang)\" />
-   <Copy SourceFiles="$(LocRoot)\%(Resources.Identity)\packages\node_modules\%(Resources.Package)\resources\en\resources.json" 
-         DestinationFolder="$(LocRoot)\..\packages\node_modules\%(Resources.Package)\resources\%(Resources.TacoLang)\" />
+         DestinationFolder="$(TacoBuildPackagesRoot)\%(Resources.Package)\resources\%(Resources.TacoLang)\" />
+
  </Target>
 
  <Target Name="GeneratePackages">
    <Exec Command="$(gulp) just-package --drop=$(DropLocation)" WorkingDirectory="$(TacoSrc)" />
+ </Target>
+
+ <Target Name="CopyPayload">
+    <Message Text="Copying taco build to bin folder" />
+    <Copy SourceFiles="$(TacoBuildPackagesRoot)\**\*" 
+          DestinationFolder="$(BinRoot)\packages\node_modules" />
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)updateDynamicDependencies.js" 
+          DestinationFolder="$(BinRoot)\packages\node_modules"/>
  </Target>
 
   <Target Name="Build">
@@ -104,5 +104,6 @@
     <CallTarget Targets="Localize"/>
     <CallTarget Targets="CopyResources"/>
     <CallTarget Targets="GeneratePackages"/>
+    <CallTarget Targets="CopyPayload" />
   </Target>
 </Project>
