@@ -10,9 +10,11 @@
     <BinRoot>$(TF_BUILD_BINARIESDIRECTORY)\</BinRoot>
     <LocRoot>$(BinRoot)\localize</LocRoot>
     <DropLocation>$(TF_BUILD_DROPLOCATION)\packages\</DropLocation>
+
     <TacoRoot>$(TF_BUILD_SOURCESDIRECTORY)</TacoRoot>
     <TacoSrc>$(TacoRoot)\src</TacoSrc>
     <TacoBuildPackagesRoot>$(TacoRoot)\build\packages\node_modules</TacoBuildPackagesRoot>
+
     <Gulp>node $(TacoRoot)\node_modules\gulp\bin\gulp.js</Gulp>
   </PropertyGroup>
 
@@ -77,7 +79,17 @@
 
  </Target>
 
+ <Target Name="LocPrepare">
+    <!-- Microbuild requires localization english resources to be in LocRoot -->
+    <Message Text="BinPlacing taco build bits to bin folder" />
+    <Copy SourceFiles="$(TacoBuildPackagesRoot)\**\*" 
+          DestinationFolder="$(BinRoot)\packages\node_modules" />
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)updateDynamicDependencies.js" 
+          DestinationFolder="$(BinRoot)\packages\node_modules"/>
+ </Target>
+
  <Target Name="CopyResources">
+    <!-- Copy localized strings back to packages --> 
    <CreateItem Include="@(SupportedLangs)" AdditionalMetadata="Package=%(TacoPackages.Identity)">
       <Output ItemName="Resources" TaskParameter="Include"/>
    </CreateItem>
@@ -92,15 +104,14 @@
  </Target>
 
  <Target Name="CopyPayload">
-    <Message Text="Copying taco build to bin folder" />
-    <Copy SourceFiles="$(TacoBuildPackagesRoot)\**\*" 
+    <!-- Copy generated packages to bin folder -->
+    <Copy SourceFiles="$(TacoBuildPackagesRoot)\**\*.tgz" 
           DestinationFolder="$(BinRoot)\packages\node_modules" />
-    <Copy SourceFiles="$(MSBuildThisFileDirectory)updateDynamicDependencies.js" 
-          DestinationFolder="$(BinRoot)\packages\node_modules"/>
  </Target>
 
   <Target Name="Build">
     <CallTarget Targets="TacoBuild"/>
+    <CallTarget Targets="LocPrepare"/>
     <CallTarget Targets="Localize"/>
     <CallTarget Targets="CopyResources"/>
     <CallTarget Targets="GeneratePackages"/>
