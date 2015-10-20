@@ -37,7 +37,7 @@
         "taco-utils": "file:../taco-utils"
     },
     "optionalDependencies": { 
-        "taco-remote": "~1.1.0"
+        "taco-remote": "file:../taco-remote"
     },
     "devDependencies": {
         "typescript": "~1.6.2",

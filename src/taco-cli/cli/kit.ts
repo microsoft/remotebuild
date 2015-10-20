@@ -700,7 +700,7 @@ class Kit extends commands.TacoCommandBase {
         var projectPath: string = projectHelper.getProjectRoot();
 
         logger.logLine();
-        
+
         return projectHelper.getProjectInfo().then(function (info: projectHelper.IProjectInfo): void {
             projectInfo = info;
             if (info.configXmlPath === "") {
