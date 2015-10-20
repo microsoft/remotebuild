@@ -115,10 +115,13 @@
       </Item>
       <Item ItemId=";tacokit@1.0.0" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[5.1.1 Cordova Kit]]></Val>
+          <Val><![CDATA[5.1.1 Kit]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Kit Cordova 5.1.1]]></Val>
+            <Val><![CDATA[Kit 5.1.1]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[5.1.1 Cordova Kit]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -136,10 +139,13 @@
       </Item>
       <Item ItemId=";tacokit@2.0.0" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[5.2.0 Cordova Kit]]></Val>
+          <Val><![CDATA[5.2.0 Kit]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Kit Cordova 5.2.0]]></Val>
+            <Val><![CDATA[Kit 5.2.0]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[5.2.0 Cordova Kit]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>

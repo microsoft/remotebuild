@@ -115,19 +115,25 @@
       </Item>
       <Item ItemId=";BuildRetentionDelete" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Deleting build %d from %s]]></Val>
+          <Val><![CDATA[Deleting build {0} from {1}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Excluindo compilação %d de %s]]></Val>
+            <Val><![CDATA[Excluindo compilação {0} de {1}]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Deleting build %d from %s]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";BuildRetentionPreDelete" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Deleting eligible builds. Will delete %d builds.]]></Val>
+          <Val><![CDATA[Deleting eligible builds. Will delete {0} builds.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Excluindo compilações elegíveis. %d compilações serão excluídas.]]></Val>
+            <Val><![CDATA[Excluindo compilações elegíveis. {0} compilações serão excluídas.]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Deleting eligible builds. Will delete %d builds.]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -142,10 +148,13 @@
       </Item>
       <Item ItemId=";CordovaAcquisitionFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Failed to load cordova {0}: {1}]]></Val>
+          <Val><![CDATA[Failed to load Cordova {0}: {1}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Falha ao carregar o Cordova {0}: {1}]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Failed to load cordova {0}: {1}]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>

@@ -8,27 +8,27 @@
     </FilesToLocalize>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <FilesToLocalize Include="$(OutDir)packages\node_modules\remotebuild\resources\en\resources.json" Condition="'$(MSBuildProjectFile)' == 'LocalizableItems.csproj'">
+    <FilesToLocalize Include="$(OutDir)packages\node_modules\remotebuild\resources\en\resources.json" Condition="'$(MSBuildProjectFile)' == 'Taco_MicroBuild.csproj'">
       <LciCommentFile>$(MSBuildThisFileDirectory)..\loc\LCI\remotebuild\resources\en\resources.json.lci</LciCommentFile>
       <TranslationFile>$(MSBuildThisFileDirectory)..\loc\LCL\{Lang}\remotebuild\resources\en\resources.json.lcl</TranslationFile>
     </FilesToLocalize>
-        <FilesToLocalize Include="$(OutDir)packages\node_modules\taco-remote\resources\en\resources.json" Condition="'$(MSBuildProjectFile)' == 'LocalizableItems.csproj'">
+        <FilesToLocalize Include="$(OutDir)packages\node_modules\taco-remote\resources\en\resources.json" Condition="'$(MSBuildProjectFile)' == 'Taco_MicroBuild.csproj'">
       <LciCommentFile>$(MSBuildThisFileDirectory)..\loc\LCI\taco-remote\resources\en\resources.json.lci</LciCommentFile>
       <TranslationFile>$(MSBuildThisFileDirectory)..\loc\LCL\{Lang}\taco-remote\resources\en\resources.json.lcl</TranslationFile>
     </FilesToLocalize>
-    <FilesToLocalize Include="$(OutDir)packages\node_modules\taco-remote-lib\resources\en\resources.json" Condition="'$(MSBuildProjectFile)' == 'LocalizableItems.csproj'">
+    <FilesToLocalize Include="$(OutDir)packages\node_modules\taco-remote-lib\resources\en\resources.json" Condition="'$(MSBuildProjectFile)' == 'Taco_MicroBuild.csproj'">
       <LciCommentFile>$(MSBuildThisFileDirectory)..\loc\LCI\taco-remote-lib\resources\en\resources.json.lci</LciCommentFile>
       <TranslationFile>$(MSBuildThisFileDirectory)..\loc\LCL\{Lang}\taco-remote-lib\resources\en\resources.json.lcl</TranslationFile>
     </FilesToLocalize>
-    <FilesToLocalize Include="$(OutDir)packages\node_modules\taco-utils\resources\en\resources.json" Condition="'$(MSBuildProjectFile)' == 'LocalizableItems.csproj'">
+    <FilesToLocalize Include="$(OutDir)packages\node_modules\taco-utils\resources\en\resources.json" Condition="'$(MSBuildProjectFile)' == 'Taco_MicroBuild.csproj'">
       <LciCommentFile>$(MSBuildThisFileDirectory)..\loc\LCI\taco-utils\resources\en\resources.json.lci</LciCommentFile>
       <TranslationFile>$(MSBuildThisFileDirectory)..\loc\LCL\{Lang}\taco-utils\resources\en\resources.json.lcl</TranslationFile>
     </FilesToLocalize>
-        <FilesToLocalize Include="$(OutDir)packages\node_modules\taco-cli\resources\en\resources.json" Condition="'$(MSBuildProjectFile)' == 'LocalizableItems.csproj'">
+        <FilesToLocalize Include="$(OutDir)packages\node_modules\taco-cli\resources\en\resources.json" Condition="'$(MSBuildProjectFile)' == 'Taco_MicroBuild.csproj'">
       <LciCommentFile>$(MSBuildThisFileDirectory)..\loc\LCI\taco-cli\resources\en\resources.json.lci</LciCommentFile>
       <TranslationFile>$(MSBuildThisFileDirectory)..\loc\LCL\{Lang}\taco-cli\resources\en\resources.json.lcl</TranslationFile>
     </FilesToLocalize>
-    <FilesToLocalize Include="$(OutDir)packages\node_modules\taco-kits\resources\en\resources.json" Condition="'$(MSBuildProjectFile)' == 'LocalizableItems.csproj'">
+    <FilesToLocalize Include="$(OutDir)packages\node_modules\taco-kits\resources\en\resources.json" Condition="'$(MSBuildProjectFile)' == 'Taco_MicroBuild.csproj'">
       <LciCommentFile>$(MSBuildThisFileDirectory)..\loc\LCI\taco-kits\resources\en\resources.json.lci</LciCommentFile>
       <TranslationFile>$(MSBuildThisFileDirectory)..\loc\LCL\{Lang}\taco-kits\resources\en\resources.json.lcl</TranslationFile>
     </FilesToLocalize>

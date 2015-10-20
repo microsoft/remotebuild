@@ -16,10 +16,13 @@
       <Disp Icon="Str" Disp="true" LocTbl="false" />
       <Item ItemId=";AcquiringCordova" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Acquiring cordova.]]></Val>
+          <Val><![CDATA[Acquiring Cordova.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[cordova alınıyor.]]></Val>
+            <Val><![CDATA[Cordova alınıyor.]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Acquiring cordova.]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -70,10 +73,13 @@
       </Item>
       <Item ItemId=";BuildRequestMissingCordovaVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[A cordova version must be specified on the build request.]]></Val>
+          <Val><![CDATA[A Cordova version must be specified on the build request.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Derleme isteğinde bir Cordova sürümünün belirtilmesi gerekir.]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[A cordova version must be specified on the build request.]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -91,15 +97,6 @@
           <Val><![CDATA[The requested build configuration {0} is not supported by this build manager. Only debug and release are supported.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[İstenen derleme yapılandırması ({0}), bu derleme yöneticisi tarafından desteklenmiyor. Yalnızca hata ayıklama ve yayımlama desteklenir.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";BuildRequestUnsupportedCordovaVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[The build request for cordova version {0} is not supported by the iOS build server. The server is installed with cordova version {1}.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Cordova sürümü {0} için yapılan derleme isteği iOS derleme sunucusu tarafından desteklenmiyor. Sunucu, Cordova sürümü {1} ile yüklendi.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -295,10 +292,13 @@
       </Item>
       <Item ItemId=";NoCordovaVersionSpecified" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[No cordova version specified!]]></Val>
+          <Val><![CDATA[No Cordova version specified!]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Cordova sürümü belirtilmedi!]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[No cordova version specified!]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -340,10 +340,13 @@
       </Item>
       <Item ItemId=";RequireCordovaFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error: Failed to acquire cordova version {0}. {1}]]></Val>
+          <Val><![CDATA[Error: Failed to acquire Cordova version {0}. {1}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Hata: Cordova sürümü {0} alınamadı. {1}]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Error: Failed to acquire cordova version {0}. {1}]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>

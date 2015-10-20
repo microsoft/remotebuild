@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <Import Project="$(CustomBeforeMicrosoftCommonTargets)" Condition="Exists('$(CustomBeforeMicrosoftCommonTargets)')"/>
+  <Import Project="$(CustomBeforeWixTargets)" Condition="Exists('$(CustomBeforeWixTargets)')"/>
+  <Import Project="$(CustomAfterMicrosoftCommonTargets)" Condition="Exists('$(CustomAfterMicrosoftCommonTargets)')"/>
+  <Import Project="$(CustomAfterWixTargets)" Condition="Exists('$(CustomAfterWixTargets)')"/>
+
+  <PropertyGroup>
+    <BinRoot>$(TF_BUILD_BINARIESDIRECTORY)</BinRoot>
+    <LocRoot>$(BinRoot)\localize</LocRoot>
+    <DropLocation>$(TF_BUILD_DROPLOCATION)\packages\node_modules</DropLocation>
+
+    <TacoRoot>$(TF_BUILD_SOURCESDIRECTORY)</TacoRoot>
+    <TacoSrc>$(TacoRoot)\src</TacoSrc>
+    <TacoBuildPackagesRoot>$(TacoRoot)\build\packages\node_modules</TacoBuildPackagesRoot>
+
+    <Gulp>node $(TacoRoot)\node_modules\gulp\bin\gulp.js</Gulp>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <TacoPackages Include="remotebuild" />
+    <TacoPackages Include="taco-utils" /> 
+    <TacoPackages Include="taco-remote" /> 
+    <TacoPackages Include="taco-remote-lib" /> 
+    <TacoPackages Include="taco-kits" />
+    <TacoPackages Include="taco-cli" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SupportedLangs Include="CSY">
+      <TacoLang>cs</TacoLang>
+    </SupportedLangs>
+    <SupportedLangs Include="JPN">
+      <TacoLang>jp</TacoLang>
+    </SupportedLangs>
+    <SupportedLangs Include="RUS">
+      <TacoLang>ru</TacoLang>
+    </SupportedLangs>
+    <SupportedLangs Include="CHT">
+      <TacoLang>zh-tw</TacoLang>
+    </SupportedLangs>
+    <SupportedLangs Include="CHS">
+      <TacoLang>zh-cn</TacoLang>
+    </SupportedLangs>
+    <SupportedLangs Include="TRK">
+      <TacoLang>tr</TacoLang>
+    </SupportedLangs>
+    <SupportedLangs Include="FRA">
+      <TacoLang>fr</TacoLang>
+    </SupportedLangs>
+    <SupportedLangs Include="KOR">
+      <TacoLang>ko</TacoLang>
+    </SupportedLangs>
+    <SupportedLangs Include="PLK">
+      <TacoLang>pl</TacoLang>
+    </SupportedLangs>
+    <SupportedLangs Include="ITA">
+      <TacoLang>it</TacoLang>
+    </SupportedLangs>
+    <SupportedLangs Include="ESN">
+      <TacoLang>es</TacoLang>
+    </SupportedLangs>
+    <SupportedLangs Include="DEU">
+      <TacoLang>de</TacoLang>
+    </SupportedLangs>
+    <SupportedLangs Include="PTB">
+      <TacoLang>pt-br</TacoLang>
+    </SupportedLangs>
+  </ItemGroup>
+
+ <Target Name="TacoBuild">
+    <Message Text="Installing gulp"/>
+    <Exec Command="npm install gulp" WorkingDirectory="$(TacoSrc)" />
+
+    <Message Text="Building project" />
+    <Exec Command="$(gulp) prep" WorkingDirectory="$(TacoSrc)" />
+    <Exec Command="$(gulp) build" WorkingDirectory="$(TacoSrc)" />
+
+ </Target>
+
+ <Target Name="LocPrepare">
+    <!-- Microbuild requires localization english resources to be in LocRoot -->
+    <Message Text="BinPlacing taco build bits to bin folder" />
+    <ItemGroup>
+      <FilesToCopy Include="$(TacoBuildPackagesRoot)\**\*"/>
+    </ItemGroup>
+    <Copy SourceFiles="@(FilesToCopy)" 
+          DestinationFolder="$(BinRoot)\packages\node_modules\%(RecursiveDir)" />
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)updateDynamicDependencies.js" 
+          DestinationFolder="$(BinRoot)\packages\node_modules"/>
+ </Target>
+
+ <Target Name="CopyResources">
+    <!-- Copy localized strings back to packages --> 
+   <CreateItem Include="@(SupportedLangs)" AdditionalMetadata="Package=%(TacoPackages.Identity)">
+      <Output ItemName="Resources" TaskParameter="Include"/>
+   </CreateItem>
+
+   <Copy SourceFiles="$(LocRoot)\%(Resources.Identity)\packages\node_modules\%(Resources.Package)\resources\en\resources.json" 
+         DestinationFolder="$(TacoBuildPackagesRoot)\%(Resources.Package)\resources\%(Resources.TacoLang)\" />
+
+ </Target>
+
+ <Target Name="GeneratePackages">
+   <Exec Command="$(gulp) just-package --drop=$(DropLocation)" WorkingDirectory="$(TacoSrc)" />
+ </Target>
+
+ <Target Name="CopyPayload">
+    <!-- Copy generated packages to bin folder -->
+    <ItemGroup>
+      <FilesToCopy Include="$(TacoBuildPackagesRoot)\**\*.tgz"/>
+    </ItemGroup>
+    <Copy SourceFiles="@(FilesToCopy)" 
+          DestinationFolder="$(BinRoot)\packages\node_modules\%(RecursiveDir)" />
+ </Target>
+
+  <Target Name="Build">
+    <CallTarget Targets="TacoBuild"/>
+    <CallTarget Targets="LocPrepare"/>
+    <CallTarget Targets="Localize"/>
+    <CallTarget Targets="CopyResources"/>
+    <CallTarget Targets="GeneratePackages"/>
+    <CallTarget Targets="CopyPayload" />
+  </Target>
+</Project>

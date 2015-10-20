@@ -256,6 +256,12 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";PackageLoaderRunPackageDoesntHaveRequestedBinary" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: Package {0} does not export binary {1}.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";PackageLoaderUpdateUnableToRecover" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error attempting to recover from failed installation at {0}.]]></Val>
@@ -267,10 +273,13 @@
       </Item>
       <Item ItemId=";ProcessLogError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error from writing to stream at %s: %s]]></Val>
+          <Val><![CDATA[Error from writing to stream at {0}: {1}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[寫入 %s 的資料流時發生錯誤: %s]]></Val>
+            <Val><![CDATA[寫入 {0} 的資料流時發生錯誤: {1}]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Error from writing to stream at %s: %s]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -312,10 +321,13 @@
       </Item>
       <Item ItemId=";TelemetryOptInMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[<bold>Do you want to help improve the quality of Microsoft products and services by allowing us to collect your usage data?</bold><br/><br/>You can read our privacy policy that provides information on what data we collect and how we will use it at the following location: <link>https://www.visualstudio.com/en-us/dn948229</link>.]]></Val>
+          <Val><![CDATA[<bold>Help us improve the quality of Microsoft products and services</bold><br/><br/>If you choose to participate, Microsoft will collect usage information on your use of the software and services to identify trends and usage patterns. Microsoft will not collect personal information. You may change your participation option at any time by running "taco feedback". You can read our privacy policy that provides information on what data we collect and how we will use it at <link>https://www.visualstudio.com/en-us/dn948229</link><br/>Your response to this question is automatically collected.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<bold>允許我們收集您的使用情況，以協助改善 Microsoft 產品與服務的品質嗎?</bold><br/><br/>您可以在下列位置閱讀我們的隱私權政策，其中提供我們會收集的資料以及我們會如何使用這些資料的相關資訊: <link>https://www.visualstudio.com/zh-tw/dn948229</link>。]]></Val>
+            <Val><![CDATA[<bold>協助我們改善 Microsoft 產品與服務的品質</bold><br/><br/>若您選擇參與，Microsoft 將會收集您使用軟體與服務的使用情況資訊，以識別期趨勢及使用方式習慣。Microsoft 並不會收集個人資訊。您可以隨時執行 [taco 意見反應]5D; 以變更參與選項。您可以在下列位置閱讀我們的隱私權政策，其中提供我們會收集的資料以及將會如何使用這些資料的相關資訊: <link>https://www.visualstudio.com/zh-tw/dn948229</link><br/>將會自動收集您對此問題的回覆。]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[<bold>Do you want to help improve the quality of Microsoft products and services by allowing us to collect your usage data?</bold><br/><br/>You can read our privacy policy that provides information on what data we collect and how we will use it at the following location: <link>https://www.visualstudio.com/en-us/dn948229</link>.]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -328,11 +340,20 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";TelemetryOptInNote" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";TelemetryOptInQuestion" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Note: We will send the result of this question even if you select No. ]]></Val>
+          <Val><![CDATA[Are you willing to participate?]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[注意: 即使選取 [否]5D;，我們也會傳送這個問題的結果。]]></Val>
+            <Val><![CDATA[您願意參與嗎?]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TelemetryOptInQuestion.comment" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The prompt string presented to the user asking to opt in for telemetry.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[使用者會看到提示字串詢問是否加入遙測。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

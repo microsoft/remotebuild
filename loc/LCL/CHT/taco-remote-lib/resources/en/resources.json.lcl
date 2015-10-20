@@ -16,10 +16,13 @@
       <Disp Icon="Str" Disp="true" LocTbl="false" />
       <Item ItemId=";AcquiringCordova" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Acquiring cordova.]]></Val>
+          <Val><![CDATA[Acquiring Cordova.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[正在取得 cordova。]]></Val>
+            <Val><![CDATA[正在取得 Cordova。]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Acquiring cordova.]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -70,10 +73,13 @@
       </Item>
       <Item ItemId=";BuildRequestMissingCordovaVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[A cordova version must be specified on the build request.]]></Val>
+          <Val><![CDATA[A Cordova version must be specified on the build request.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[必須在組建要求中指定 Cordova 版本。]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[A cordova version must be specified on the build request.]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -91,15 +97,6 @@
           <Val><![CDATA[The requested build configuration {0} is not supported by this build manager. Only debug and release are supported.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[這個組建管理程式不支援所要求的建置組態 {0}。僅支援偵錯與發行。]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";BuildRequestUnsupportedCordovaVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[The build request for cordova version {0} is not supported by the iOS build server. The server is installed with cordova version {1}.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[iOS 組建伺服器不支援 Cordova 版本 {0} 的組建要求。已使用 Cordova 版本 {1} 安裝該伺服器。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -295,10 +292,13 @@
       </Item>
       <Item ItemId=";NoCordovaVersionSpecified" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[No cordova version specified!]]></Val>
+          <Val><![CDATA[No Cordova version specified!]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[未指定 Cordova 版本!]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[No cordova version specified!]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -340,10 +340,13 @@
       </Item>
       <Item ItemId=";RequireCordovaFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error: Failed to acquire cordova version {0}. {1}]]></Val>
+          <Val><![CDATA[Error: Failed to acquire Cordova version {0}. {1}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[錯誤: 無法取得 Cordova 版本 {0}。{1}]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Error: Failed to acquire cordova version {0}. {1}]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>

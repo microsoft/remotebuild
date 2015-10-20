@@ -1,0 +1,53 @@
+{
+    "name": "taco-remote",
+    "description": "Module for the remotebuild package to build, run, and debug iOS apps created using Apache Cordova.",
+    "version": "1.1.1-dev",
+    "author": {
+        "name": "Microsoft Corporation",
+        "email": "vscordovatools-admin@microsoft.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Microsoft/TACO"
+    },
+    "bugs": {
+        "url" : "https://github.com/Microsoft/TACO/issues", 
+        "email" : "vscordovatools-admin@microsoft.com"
+    },
+    "homepage": "http://taco.tools",
+    "keywords": [
+        "cordova",
+        "osx ",
+        "remote build"
+    ],
+    "main": "./lib/server.js",
+    "preferGlobal": true,
+    "dependencies": {
+        "express": "4.12.2",
+        "serve-index": "1.6.2",
+        "tar": "0.1.20",
+        "q": "1.0.1",
+        "rimraf": "2.2.6",
+        "fstream": "0.1.28",
+        "request": "2.36.0",
+        "taco-utils": "~1.1.0"
+    },
+    "devDependencies": {
+        "typescript": "~1.6.2",
+        "mocha": "2.0.1",
+        "should": "4.3.0",
+        "morgan": "1.5.1",
+        "nconf": "0.6.9"
+    },
+    "scripts": {
+        "test": "mocha"
+    },
+    "directories": {
+        "lib": "lib",
+        "doc": ".",
+        "test": "test",
+        "example": "examples"
+    },
+    "readmeFilename": "README.md",
+    "license": "MIT"
+}

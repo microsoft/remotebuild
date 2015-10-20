@@ -273,6 +273,12 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";PackageLoaderRunPackageDoesntHaveRequestedBinary" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: Package {0} does not export binary {1}.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";PackageLoaderUpdateUnableToRecover" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error attempting to recover from failed installation at {0}.]]></Val>
@@ -284,10 +290,13 @@
       </Item>
       <Item ItemId=";ProcessLogError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Error from writing to stream at %s: %s]]></Val>
+          <Val><![CDATA[Error from writing to stream at {0}: {1}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Erreur durant l'écriture du flux dans %s : %s]]></Val>
+            <Val><![CDATA[Erreur durant l'écriture du flux dans {0} : {1}]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Error from writing to stream at %s: %s]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -329,10 +338,13 @@
       </Item>
       <Item ItemId=";TelemetryOptInMessage" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[<bold>Do you want to help improve the quality of Microsoft products and services by allowing us to collect your usage data?</bold><br/><br/>You can read our privacy policy that provides information on what data we collect and how we will use it at the following location: <link>https://www.visualstudio.com/en-us/dn948229</link>.]]></Val>
+          <Val><![CDATA[<bold>Help us improve the quality of Microsoft products and services</bold><br/><br/>If you choose to participate, Microsoft will collect usage information on your use of the software and services to identify trends and usage patterns. Microsoft will not collect personal information. You may change your participation option at any time by running "taco feedback". You can read our privacy policy that provides information on what data we collect and how we will use it at <link>https://www.visualstudio.com/en-us/dn948229</link><br/>Your response to this question is automatically collected.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<bold>Voulez-vous nous aider à améliorer la qualité des produits et services Microsoft en nous autorisant à collecter vos données d'utilisation ?</bold><br/><br/>Vous pouvez lire notre politique de confidentialité, qui fournit des informations sur les données que nous collectons, ainsi que sur la façon dont nous les utilisons, à l'adresse suivante : <link>https://www.visualstudio.com/fr-fr/dn948229</link>.]]></Val>
+            <Val><![CDATA[<bold>Aidez-nous à améliorer la qualité des produits et services Microsoft</bold><br/><br/>Si vous choisissez de participer, Microsoft collectera des informations sur la manière dont vous utilisez les logiciels et les services, pour identifier des tendances et des modèles d'utilisation. Microsoft ne collectera pas d'informations personnelles. Vous pouvez changer d'avis à tout moment concernant votre participation en exécutant "taco feedback". Vous pouvez lire notre politique de confidentialité, qui fournit des informations sur les données que nous collectons, ainsi que sur la façon dont nous les utilisons, à l'adresse suivante : <link>https://www.visualstudio.com/fr-fr/dn948229</link><br/>Votre réponse à cette question est collectée automatiquement.]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[<bold>Do you want to help improve the quality of Microsoft products and services by allowing us to collect your usage data?</bold><br/><br/>You can read our privacy policy that provides information on what data we collect and how we will use it at the following location: <link>https://www.visualstudio.com/en-us/dn948229</link>.]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -345,11 +357,20 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";TelemetryOptInNote" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";TelemetryOptInQuestion" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Note: We will send the result of this question even if you select No. ]]></Val>
+          <Val><![CDATA[Are you willing to participate?]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Remarque : nous enverrons la réponse à cette question, même si vous sélectionnez Non. ]]></Val>
+            <Val><![CDATA[Souhaitez-vous participer ?]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";TelemetryOptInQuestion.comment" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The prompt string presented to the user asking to opt in for telemetry.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Chaîne d'invite présentée à l'utilisateur afin de lui demander de s'inscrire pour la télémétrie.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
