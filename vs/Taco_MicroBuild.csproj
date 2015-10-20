@@ -7,9 +7,9 @@
   <Import Project="$(CustomAfterWixTargets)" Condition="Exists('$(CustomAfterWixTargets)')"/>
 
   <PropertyGroup>
-    <BinRoot>$(TF_BUILD_BINARIESDIRECTORY)\</BinRoot>
+    <BinRoot>$(TF_BUILD_BINARIESDIRECTORY)</BinRoot>
     <LocRoot>$(BinRoot)\localize</LocRoot>
-    <DropLocation>$(TF_BUILD_DROPLOCATION)\packages\</DropLocation>
+    <DropLocation>$(TF_BUILD_DROPLOCATION)\packages</DropLocation>
 
     <TacoRoot>$(TF_BUILD_SOURCESDIRECTORY)</TacoRoot>
     <TacoSrc>$(TacoRoot)\src</TacoSrc>
