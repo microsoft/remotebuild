@@ -93,7 +93,6 @@ describe("taco create", function (): void {
     // Important paths
     var runFolder: string = path.resolve(os.tmpdir(), "taco_cli_create_test_run");
     var tacoHome: string = path.join(runFolder, "taco_home");
-    var templateCache: string = path.join(tacoHome, "templates");
     var copyFromPath: string = path.resolve(__dirname, "resources", "templates", "testKit", "testTemplate");
     var testTemplateKitSrc: string = path.resolve(__dirname, "resources", "templates", testKitId);
     var testTemplateSrc: string = path.join(testTemplateKitSrc, testTemplateId);
@@ -695,11 +694,11 @@ describe("taco create", function (): void {
 
             var expected: TacoUtility.ICommandTelemetryProperties = {
                         cliVersion: { isPii: false, value: cliVersion },
-                        cordova: { isPii: false, value: "5.2.0" },
-                        "options.cordova": { isPii: false, value: "5.2.0" }
+                        cordova: { isPii: false, value: "4.3.0" },
+                        "options.cordova": { isPii: false, value: "4.3.0" }
             };
 
-            createProjectAndVerifyTelemetryProps([projectPath, "--cordova", "5.2.0"], expected, done);
+            createProjectAndVerifyTelemetryProps([projectPath, "--cordova", "4.3.0"], expected, done);
         });
     });
 });
