@@ -86,7 +86,7 @@
       <FilesToCopy Include="$(TacoBuildPackagesRoot)\**\*"/>
     </ItemGroup>
     <Copy SourceFiles="@(FilesToCopy)" 
-          DestinationFolder="$(BinRoot)\packages\node_modules" />
+          DestinationFolder="$(BinRoot)\packages\node_modules\%(RecursiveDir)" />
     <Copy SourceFiles="$(MSBuildThisFileDirectory)updateDynamicDependencies.js" 
           DestinationFolder="$(BinRoot)\packages\node_modules"/>
  </Target>
@@ -112,7 +112,7 @@
       <FilesToCopy Include="$(TacoBuildPackagesRoot)\**\*.tgz"/>
     </ItemGroup>
     <Copy SourceFiles="@(FilesToCopy)" 
-          DestinationFolder="$(BinRoot)\packages\node_modules" />
+          DestinationFolder="$(BinRoot)\packages\node_modules\%(RecursiveDir)" />
  </Target>
 
   <Target Name="Build">
