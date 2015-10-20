@@ -82,7 +82,10 @@
  <Target Name="LocPrepare">
     <!-- Microbuild requires localization english resources to be in LocRoot -->
     <Message Text="BinPlacing taco build bits to bin folder" />
-    <Copy SourceFiles="$(TacoBuildPackagesRoot)\**\*" 
+    <ItemGroup>
+      <FilesToCopy Include="$(TacoBuildPackagesRoot)\**\*"/>
+    </ItemGroup>
+    <Copy SourceFiles="@(FilesToCopy)" 
           DestinationFolder="$(BinRoot)\packages\node_modules" />
     <Copy SourceFiles="$(MSBuildThisFileDirectory)updateDynamicDependencies.js" 
           DestinationFolder="$(BinRoot)\packages\node_modules"/>
@@ -105,7 +108,10 @@
 
  <Target Name="CopyPayload">
     <!-- Copy generated packages to bin folder -->
-    <Copy SourceFiles="$(TacoBuildPackagesRoot)\**\*.tgz" 
+    <ItemGroup>
+      <FilesToCopy Include="$(TacoBuildPackagesRoot)\**\*.tgz"/>
+    </ItemGroup>
+    <Copy SourceFiles="@(FilesToCopy)" 
           DestinationFolder="$(BinRoot)\packages\node_modules" />
  </Target>
 
