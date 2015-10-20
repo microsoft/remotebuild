@@ -9,7 +9,7 @@
   <PropertyGroup>
     <BinRoot>$(TF_BUILD_BINARIESDIRECTORY)</BinRoot>
     <LocRoot>$(BinRoot)\localize</LocRoot>
-    <DropLocation>$(TF_BUILD_DROPLOCATION)\packages</DropLocation>
+    <DropLocation>$(TF_BUILD_DROPLOCATION)\packages\node_modules</DropLocation>
 
     <TacoRoot>$(TF_BUILD_SOURCESDIRECTORY)</TacoRoot>
     <TacoSrc>$(TacoRoot)\src</TacoSrc>
