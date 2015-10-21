@@ -8,7 +8,7 @@ var packages = fs.readdirSync(__dirname).map(function (entry) {
     return fs.statSync(fullPath).isDirectory();
 });
 
-var pathRegex = /"file:.*[\\\/]([-a-zA-Z]*)"/g;
+var pathRegex = /"file:.*[\\\/]([-a-zA-Z]*)(\.tgz|)"/g;
 
 // Update the local file path dependencies to point to the current location
 packages.forEach(function (fullPath) {
