@@ -259,6 +259,9 @@
       <Item ItemId=";PackageLoaderRunPackageDoesntHaveRequestedBinary" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error: Package {0} does not export binary {1}.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[エラー: パッケージ {0} はバイナリ {1} をエクスポートしません。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
