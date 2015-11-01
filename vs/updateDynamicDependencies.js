@@ -15,22 +15,26 @@ packages.forEach(function (fullPath) {
     var dynamicDepPath = path.join(fullPath, "dynamicDependencies.json");
     var packageJsonPath = path.join(fullPath, "package.json");
     if (fs.existsSync(dynamicDepPath)) {
-	var dynamicDepContents = fs.readFileSync(dynamicDepPath).toString();
-	fs.writeFileSync(
-	    dynamicDepPath,
-	    dynamicDepContents.replace(pathRegex, function (string, name) {
-		return JSON.stringify("file://" + path.join(__dirname, name));
-	    })
-	);
+        var dynamicDepContents = fs.readFileSync(dynamicDepPath).toString();
+        var dynamicDepJson = JSON.parse(dynamicDepContents);
+        Object.keys(dynamicDepJson).forEach(function (key) {
+            if (dynamicDepJson[key].localPath) {
+                dynamicDepJson[key].localPath = "file://" + path.join(__dirname, dynamicDepJson[key].packageName);
+            }
+        });
+        fs.writeFileSync(
+            dynamicDepPath,
+            JSON.stringify(dynamicDepJson)
+        );
     }
 
     if (fs.existsSync(packageJsonPath)) {
-	var packageJsonContents = fs.readFileSync(packageJsonPath).toString();
-	fs.writeFileSync(
-	    packageJsonPath,
-	    packageJsonContents.replace(pathRegex, function (string, name) {
-		return JSON.stringify("file://" + path.join(__dirname, name));
-	    })
-	);
+        var packageJsonContents = fs.readFileSync(packageJsonPath).toString();
+        fs.writeFileSync(
+            packageJsonPath,
+            packageJsonContents.replace(pathRegex, function (string, name) {
+                return JSON.stringify("file://" + path.join(__dirname, name));
+            })
+        );
     }
 });
