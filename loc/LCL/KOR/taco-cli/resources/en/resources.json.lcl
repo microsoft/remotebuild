@@ -659,8 +659,8 @@
       <Item ItemId=";CommandInstallSkipNoReqsSupport" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[The following platforms will be skipped because their currently installed version doesn't support Cordova's requirements checking:<br/>]]></Val>
-          <Tgt Cat="Text" Stat="Update" Orig="New">
-            <Val><![CDATA[Cordova의 요구 사항 확인을 지원하지 않으므로 다음 플랫폼을 건너뜁니다.<br/>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[현재 설치된 버전에서 Cordova의 요구 사항 확인을 지원하지 않으므로 다음 플랫폼을 건너뜁니다.<br/>]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[The following platforms will be skipped because they don't support Cordova's requirements checking:<br/>]]></Val>
@@ -1037,6 +1037,9 @@
       <Item ItemId=";CommandKitSelectStatusUpdatingTacoJson" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Updating taco.json...]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[taco.json을 업데이트하는 중...]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -2531,6 +2534,9 @@
       <Item ItemId=";ThirdPartyDisclaimer" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[<bold>Disclaimer:</bold> TACO uses third-party packages. Each package is licensed to you by its owner. Microsoft is not responsible for, nor does it grant any licenses to, third-party packages. Some packages may include dependencies which are governed by additional licenses. Follow the package source (feed) URL to determine any dependencies.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<bold>고지 사항:</bold> TACO에서는 타사 패키지를 사용합니다. 각 패키지는 해당 소유자에 의해 사용이 허가됩니다. Microsoft는 타사 패키지에 대해 책임지지 않으며 타사 패키지에 대한 라이선스를 부여하지도 않습니다. 일부 패키지에는 추가 라이선스가 적용되는 종속성이 포함되어 있을 수 있습니다. 종속성을 확인하려면 패키지 소스(피드) URL을 따라가세요.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>

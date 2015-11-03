@@ -380,12 +380,18 @@
       <Item ItemId=";UnableToLaunchAppWithReason" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Unable to launch app: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[アプリを起動できません: {0}]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";UnsupportedCordovaAndNodeVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Incompatible configuration: Unable to build using Cordova < 5.3.3 and Node >= 4.0.0, with deployment-target or target-device specified in the config.xml]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[互換性のない構成: config.xml で deployment-target か target-device が指定されると、5.3.3 より前の Cordova と 4.0.0 以降の Node を使用してビルドできません]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -401,6 +407,9 @@
       <Item ItemId=";UpdatingPlatform" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Updating platform.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[プラットフォームを更新しています。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -416,6 +425,9 @@
       <Item ItemId=";_UnableToLaunchAppWithReason" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Message reported when attempting to launch an application and an unexpected failure occurs. {0} is the error encountered]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[アプリケーションの起動中にメッセージが報告され、予期しないエラーが発生しました。{0} が発生したエラーです]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
