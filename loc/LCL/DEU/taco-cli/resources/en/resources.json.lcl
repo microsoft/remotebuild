@@ -659,8 +659,8 @@
       <Item ItemId=";CommandInstallSkipNoReqsSupport" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[The following platforms will be skipped because their currently installed version doesn't support Cordova's requirements checking:<br/>]]></Val>
-          <Tgt Cat="Text" Stat="Update" Orig="New">
-            <Val><![CDATA[Die folgenden Plattformen werden übersprungen, weil sie keine Anforderungsüberprüfung von Cordova unterstützen:<br/>]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Die folgenden Plattformen werden übersprungen, weil ihre zurzeit installierte Version die Anforderungsüberprüfung von Cordova nicht unterstützt:<br/>]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[The following platforms will be skipped because they don't support Cordova's requirements checking:<br/>]]></Val>
@@ -1037,6 +1037,9 @@
       <Item ItemId=";CommandKitSelectStatusUpdatingTacoJson" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Updating taco.json...]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA["taco.json" wird aktualisiert...]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -2531,6 +2534,9 @@
       <Item ItemId=";ThirdPartyDisclaimer" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[<bold>Disclaimer:</bold> TACO uses third-party packages. Each package is licensed to you by its owner. Microsoft is not responsible for, nor does it grant any licenses to, third-party packages. Some packages may include dependencies which are governed by additional licenses. Follow the package source (feed) URL to determine any dependencies.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<bold>Haftungsausschluss:</bold> TACO verwendet Pakete von Drittanbietern. Jedes Paket wird von seinem Besitzer für Sie lizenziert. Microsoft ist nicht verantwortlich für Pakete von Drittanbietern und erteilt keine Lizenzen für diese. Einige Pakete enthalten ggf. Abhängigkeiten, die zusätzlichen Lizenzen unterliegen. Verwenden Sie die URL der Paketquelle (Feed-URL), um eventuelle Abhängigkeiten zu ermitteln.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>

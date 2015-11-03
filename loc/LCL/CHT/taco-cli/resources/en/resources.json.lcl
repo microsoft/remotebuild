@@ -660,7 +660,7 @@
         <Str Cat="Text">
           <Val><![CDATA[The following platforms will be skipped because their currently installed version doesn't support Cordova's requirements checking:<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[因為下列平台目前安裝的版本不支援 Cordova 的需求檢查，所以將會略過:<br/>]]></Val>
+            <Val><![CDATA[因為下列平台目前安裝的版本不支援 Cordova 的需求檢查，所以將會跳過:<br/>]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[The following platforms will be skipped because they don't support Cordova's requirements checking:<br/>]]></Val>
@@ -2535,7 +2535,7 @@
         <Str Cat="Text">
           <Val><![CDATA[<bold>Disclaimer:</bold> TACO uses third-party packages. Each package is licensed to you by its owner. Microsoft is not responsible for, nor does it grant any licenses to, third-party packages. Some packages may include dependencies which are governed by additional licenses. Follow the package source (feed) URL to determine any dependencies.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<bold>免責聲明:</bold> TACO 使用第三方套件。每個套件是由其擁有者授權。Microsoft 不負其責，也不會授予任何授權給第三方套件。部分套件可能包含由其他授權所規範的相依性。請遵循套件來源 (摘要) URL 以決定任何相依性。]]></Val>
+            <Val><![CDATA[<bold>免責聲明:</bold> TACO 使用第三方封裝。每項封裝均由其擁有者授權。Microsoft 不負其責，也不會對第三方封裝授予任何授權。有些封裝可能包含由其他授權所規範的相依性。請遵循封裝來源 (摘要) URL 以決定任何相依性。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

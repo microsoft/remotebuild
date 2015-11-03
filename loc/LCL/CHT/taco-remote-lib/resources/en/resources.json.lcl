@@ -390,7 +390,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Incompatible configuration: Unable to build using Cordova < 5.3.3 and Node >= 4.0.0, with deployment-target or target-device specified in the config.xml]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[不相容的設定: 無法使用 Cordova < 5.3.3 and Node >= 4.0.0 進行建置，且部署目標或目標裝置在 config.xml 中]]></Val>
+            <Val><![CDATA[不相容的組態: 在 config.xml 中指定了部署目標或目標裝置時，無法使用 Cordova < 5.3.3 and Node >= 4.0.0 進行建置]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -426,7 +426,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Message reported when attempting to launch an application and an unexpected failure occurs. {0} is the error encountered]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[嘗試啟動應用程式時報告了訊息，且發生未預期的失敗。遇到的錯誤為 {0}]]></Val>
+            <Val><![CDATA[嘗試啟動應用程式時回報了訊息，且發生未預期的失敗。遇到的錯誤為 {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
