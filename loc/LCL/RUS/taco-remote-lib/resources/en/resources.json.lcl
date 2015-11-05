@@ -384,7 +384,7 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";UnableToLaunchAppWithReason" ItemType="0" PsrId="306" Leaf="true">
+      <Item ItemId=";UnableToLaunchAppWithReason" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Unable to launch app: {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
@@ -393,12 +393,21 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";UnsupportedCordovaAndNode5Version" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Incompatible configuration: Unable to build using Cordova < 5.4.0 and Node >= 5.0.0. Either upgrade to a newer version of Cordova, or revert to an older version of node. See http://go.microsoft.com/fwlink/?LinkID=618471 for more details.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";UnsupportedCordovaAndNodeVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Incompatible configuration: Unable to build using Cordova < 5.3.3 and Node >= 4.0.0, with deployment-target or target-device specified in the config.xml]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
+          <Val><![CDATA[Incompatible configuration: Unable to build iOS using Cordova < 5.3.3 and Node >= 4.0.0, with deployment-target or target-device specified in the config.xml. See http://go.microsoft.com/fwlink/?LinkID=618471 for more details.]]></Val>
+          <Tgt Cat="Text" Stat="Update" Orig="New">
             <Val><![CDATA[Несовместимая конфигурация: не удалось выполнить сборку с помощью Cordova < 5.3.3 и Node >= 4.0.0 с целевым развертыванием (deployment-target) или устройством (target-device), указанным в файле config.xml.]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Incompatible configuration: Unable to build using Cordova < 5.3.3 and Node >= 4.0.0, with deployment-target or target-device specified in the config.xml]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -425,15 +434,6 @@
           <Val><![CDATA[Output file not as expected]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Непредвиденный выходной файл]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";_UnableToLaunchAppWithReason" ItemType="0" PsrId="306" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Message reported when attempting to launch an application and an unexpected failure occurs. {0} is the error encountered]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[При попытке запустить приложение было передано сообщение и произошел непредвиденный сбой. Ошибка: {0}]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
