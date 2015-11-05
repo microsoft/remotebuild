@@ -377,7 +377,7 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";UnableToLaunchAppWithReason" ItemType="0" PsrId="306" Leaf="true">
+      <Item ItemId=";UnableToLaunchAppWithReason" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Unable to launch app: {0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
@@ -386,12 +386,21 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";UnsupportedCordovaAndNode5Version" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Incompatible configuration: Unable to build using Cordova < 5.4.0 and Node >= 5.0.0. Either upgrade to a newer version of Cordova, or revert to an older version of node. See http://go.microsoft.com/fwlink/?LinkID=618471 for more details.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";UnsupportedCordovaAndNodeVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Incompatible configuration: Unable to build using Cordova < 5.3.3 and Node >= 4.0.0, with deployment-target or target-device specified in the config.xml]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
+          <Val><![CDATA[Incompatible configuration: Unable to build iOS using Cordova < 5.3.3 and Node >= 4.0.0, with deployment-target or target-device specified in the config.xml. See http://go.microsoft.com/fwlink/?LinkID=618471 for more details.]]></Val>
+          <Tgt Cat="Text" Stat="Update" Orig="New">
             <Val><![CDATA[不兼容的配置: 无法使用 Cordova < 5.3.3 and Node >= 4.0.0 生成，config.xml 中存在指定的部署目标或目标设备。]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Incompatible configuration: Unable to build using Cordova < 5.3.3 and Node >= 4.0.0, with deployment-target or target-device specified in the config.xml]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -418,15 +427,6 @@
           <Val><![CDATA[Output file not as expected]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[输出文件与预期不符]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";_UnableToLaunchAppWithReason" ItemType="0" PsrId="306" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Message reported when attempting to launch an application and an unexpected failure occurs. {0} is the error encountered]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[尝试启动应用程序出现意外故障时报告的消息。遇到 {0} 错误]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
