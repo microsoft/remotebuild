@@ -402,8 +402,8 @@
       <Item ItemId=";UnsupportedCordovaAndNodeVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Incompatible configuration: Unable to build iOS using Cordova < 5.3.3 and Node >= 4.0.0, with deployment-target or target-device specified in the config.xml. See http://go.microsoft.com/fwlink/?LinkID=618471 for more details.]]></Val>
-          <Tgt Cat="Text" Stat="Update" Orig="New">
-            <Val><![CDATA[Configuración no compatible: no se puede compilar con Cordova < 5.3.3 y Node >= 4.0.0 con el destino de implementación o el dispositivo de destino especificado en el archivo config.xml]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Configuración no compatible: no se puede compilar iOS con Cordova < 5.3.3 y Node >= 4.0.0 con el dispositivo de destino o destino de implementación especificados en config.xml. Consulte http://go.microsoft.com/fwlink/?LinkID=618471 para obtener más información.]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Incompatible configuration: Unable to build using Cordova < 5.3.3 and Node >= 4.0.0, with deployment-target or target-device specified in the config.xml]]></Val>
