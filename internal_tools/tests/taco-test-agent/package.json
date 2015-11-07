@@ -1,0 +1,19 @@
+{
+    "name": "taco-test-agent",
+    "description": "Plugin for remotebuild to enable control over the host machine, intended for testing purposes",
+    "private": "true",
+    "version": "0.0.1",
+    "main": "server.js",
+    "dependencies": {
+        "q": "1.0.1",
+        "express": "4.12.2",
+        "mkdirp": "*",
+        "rimraf": "*"
+    },
+    "devDependencies": {
+        "typescript": "1.5.3"
+    },
+    "scripts": {
+        "prepublish": "tsc -module commonjs server.ts"
+    }
+}

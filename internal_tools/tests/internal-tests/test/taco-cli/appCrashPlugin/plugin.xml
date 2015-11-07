@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="app-crash" version="0.0.1">
+  <name>Crash</name>
+  <description>Crash your app on demand via dereferencing invalid pointers</description>
+  <js-module src="crash.js" name="crash">
+    <clobbers target="navigator.crash" />
+  </js-module>
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="Crash">
+        <param name="ios-package" value="CDVCrash" />
+      </feature>
+    </config-file>
+    <header-file src="src/ios/crash.h"/>
+    <source-file src="src/ios/crash.m"/>
+  </platform>
+</plugin>
+ 
