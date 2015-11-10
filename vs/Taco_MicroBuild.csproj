@@ -99,6 +99,8 @@
 
    <Copy SourceFiles="$(LocRoot)\%(Resources.Identity)\packages\node_modules\%(Resources.Package)\resources\en\resources.json" 
          DestinationFolder="$(TacoBuildPackagesRoot)\%(Resources.Package)\resources\%(Resources.TacoLang)\" />
+   <Copy SourceFiles="$(LocRoot)\%(Resources.Identity)\packages\node_modules\%(Resources.Package)\resources\en\resources.json" 
+         DestinationFolder="$(BinRoot)\packages\node_modules\%(Resources.Package)\resources\%(Resources.TacoLang)\" />
 
  </Target>
 
