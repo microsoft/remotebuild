@@ -1,0 +1,24 @@
+{
+    "name": "internal-tests",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "mocha": "latest",
+        "mocha-teamcity-reporter": "latest",
+        "should": "latest",
+        "q": "latest",
+        "request": "latest",
+        "fstream": "latest",
+        "tar": "latest",
+        "mkdirp": "latest",
+        "rimraf": "latest"
+    },
+    "devDependencies": {
+        "typescript": "1.5.3"
+    },
+    "scripts": {
+        "test": "mocha",
+        "teamCityTest": "mocha --reporter mocha-teamcity-reporter",
+        "prepublish": "tsc -module commonjs test/taco-cli.ts"
+    }
+}

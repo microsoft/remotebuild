@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+    <title>HelloTaco</title>
+</head>
+<body >
+    <!-- Cordova reference, this is added to your app when it's built. -->
+    <p>Hello world</p>
+    <div id="deviceready"></div>
+    <div id="result"></div>
+    <script src="cordova.js"></script>
+    <script>
+        document.addEventListener('deviceready', function() {
+            var testServers = [TEST_SERVER_REPLACE_TOKEN];
+            testServers.forEach(function (testServer) {
+                var request = new XMLHttpRequest();
+                request.open("GET", testServer + "/deviceready");
+                request.send();
+                request.onerror = function (err) {
+                    document.getElementById("result").innerText = err;
+                }
+                request.onload = function (result) {
+                    document.getElementById("result").innerText = result;
+                }
+            });
+            document.getElementById("deviceready").innerText = "Device ready";
+        }, false);
+    </script>
+</body>
+</html>

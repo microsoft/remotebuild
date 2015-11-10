@@ -407,15 +407,6 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";CommandCreateStatusCreatingNewProject" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Creating a new Cordova project.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[正在创建新 Cordova 项目。]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
       <Item ItemId=";CommandCreateStatusTableCordovaCLIVersionDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Cordova]]></Val>
@@ -667,10 +658,13 @@
       </Item>
       <Item ItemId=";CommandInstallSkipNoReqsSupport" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[The following platforms will be skipped because they don't support Cordova's requirements checking:<br/>]]></Val>
+          <Val><![CDATA[The following platforms will be skipped because their currently installed version doesn't support Cordova's requirements checking:<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[将跳过以下平台，因为它们不支持 Cordova 的要求检查:<br />]]></Val>
+            <Val><![CDATA[将跳过以下平台，因为其当前安装的版本不支持 Cordova 的要求检查:<br/>]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[The following platforms will be skipped because they don't support Cordova's requirements checking:<br/>]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1040,6 +1034,15 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";CommandKitSelectStatusUpdatingTacoJson" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Updating taco.json...]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[正在更新 taco.json...]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";CommandKitSelectSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Select a Kit or a Cordova CLI version for the project]]></Val>
@@ -1391,29 +1394,11 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";CommandPluginStatusAdding" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Fetching plugin "<highlight>{0}</highlight>" via npm.<br/>]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[正在通过 NPM 提取插件“<highlight>{0}</highlight>”。<br/>]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
       <Item ItemId=";CommandPluginStatusRemoved" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Plugin <highlight>{0}</highlight> removed<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[<success>成功!</success> 已删除插件 <highlight>{0}</highlight><br/>]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";CommandPluginStatusRemoving" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Removing plugin <highlight>{0}</highlight> from Cordova project...<br/>]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[正在从 Cordova 项目中删除插件 <highlight>{0}</highlight>...<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2243,6 +2228,15 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";InvalidCordovaWithNode5" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Incompatible configuration: Unable to use Cordova < 5.4.0 with Node >= 5.0.0. Either upgrade to a newer version of Cordova, or revert to an older version of node. See http://go.microsoft.com/fwlink/?LinkID=618471 for more details.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[不兼容的配置: 无法使用 Cordova < 5.4.0 with Node >= 5.0.0。升级到较新版本的 Cordova，或还原为较早版本的节点。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=618471。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";InvalidRemoteBuild" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Invalid remote build: {0}]]></Val>
@@ -2542,6 +2536,15 @@
           <Val><![CDATA[Error: Unable to load settings. Please run 'taco remote add' before building remotely]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[错误: 无法加载设置。请在远程生成前运行 "taco remote add"]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ThirdPartyDisclaimer" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<bold>Disclaimer:</bold> TACO uses third-party packages. Each package is licensed to you by its owner. Microsoft is not responsible for, nor does it grant any licenses to, third-party packages. Some packages may include dependencies which are governed by additional licenses. Follow the package source (feed) URL to determine any dependencies.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<bold>免责声明:</bold> TACO 使用第三方包。每个包均由其所有者授权于你。Microsoft 不负责，也不授予任何许可证给第三方包。某些包可能包括由其他许可证管理的依赖项。遵循包源(资源)URL 以确定任何依赖项。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

@@ -377,6 +377,36 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";UnableToLaunchAppWithReason" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to launch app: {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[無法啟動應用程式: {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";UnsupportedCordovaAndNode5Version" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Incompatible configuration: Unable to build using Cordova < 5.4.0 and Node >= 5.0.0. Either upgrade to a newer version of Cordova, or revert to an older version of node. See http://go.microsoft.com/fwlink/?LinkID=618471 for more details.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[組態不相容: 當 Cordova 版本低於 5.4.0，節點版本高於或等於 5.0.0 時無法建置。請升級為較新版的 Cordova，或還原成較舊版的節點。如需詳細資料，請參閱 http://go.microsoft.com/fwlink/?LinkID=618471。]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";UnsupportedCordovaAndNodeVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Incompatible configuration: Unable to build iOS using Cordova < 5.3.3 and Node >= 4.0.0, with deployment-target or target-device specified in the config.xml. See http://go.microsoft.com/fwlink/?LinkID=618471 for more details.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[組態不相容: 當 config.xml 中指定了部署目標或目標裝置，而 Cordova 版本低於 5.3.3，節點版本高於或等於 4.0.0 時無法建置 iOS。如需詳細資料，請參閱 http://go.microsoft.com/fwlink/?LinkID=618471 。]]></Val>
+          </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Incompatible configuration: Unable to build using Cordova < 5.3.3 and Node >= 4.0.0, with deployment-target or target-device specified in the config.xml]]></Val>
+          </Prev>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";UnsupportedPlatform" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Unable to build: requested platform not supported]]></Val>
@@ -386,11 +416,11 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";UpdatingIOSPlatform" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+      <Item ItemId=";UpdatingPlatform" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Updating iOS platform.]]></Val>
+          <Val><![CDATA[Updating platform.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[正在更新 iOS 平台。]]></Val>
+            <Val><![CDATA[正在更新平台。]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

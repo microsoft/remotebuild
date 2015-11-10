@@ -407,15 +407,6 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";CommandCreateStatusCreatingNewProject" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Creating a new Cordova project.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Tworzenie nowego projektu platformy Cordova.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
       <Item ItemId=";CommandCreateStatusTableCordovaCLIVersionDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Cordova]]></Val>
@@ -667,10 +658,13 @@
       </Item>
       <Item ItemId=";CommandInstallSkipNoReqsSupport" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[The following platforms will be skipped because they don't support Cordova's requirements checking:<br/>]]></Val>
+          <Val><![CDATA[The following platforms will be skipped because their currently installed version doesn't support Cordova's requirements checking:<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Następujące platformy zostaną pominięte, ponieważ nie obsługują sprawdzania wymagań platformy Cordova:<br/>]]></Val>
+            <Val><![CDATA[Następujące platformy zostaną pominięte, ponieważ ich obecnie zainstalowane wersje nie obsługują sprawdzania wymagań platformy Cordova:<br/>]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[The following platforms will be skipped because they don't support Cordova's requirements checking:<br/>]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1040,6 +1034,15 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";CommandKitSelectStatusUpdatingTacoJson" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Updating taco.json...]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Trwa aktualizowanie pliku taco.json...]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";CommandKitSelectSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Select a Kit or a Cordova CLI version for the project]]></Val>
@@ -1391,29 +1394,11 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";CommandPluginStatusAdding" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Fetching plugin "<highlight>{0}</highlight>" via npm.<br/>]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Pobieranie wtyczki „<highlight>{0}</highlight>” za pomocą programu npm.<br/>]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
       <Item ItemId=";CommandPluginStatusRemoved" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Plugin <highlight>{0}</highlight> removed<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[<success>Sukces</success> Wtyczka <highlight>{0}</highlight> została usunięta<br/>]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";CommandPluginStatusRemoving" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Removing plugin <highlight>{0}</highlight> from Cordova project...<br/>]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Trwa usuwanie wtyczki <highlight>{0}</highlight> z projektu platformy Cordova...<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2243,6 +2228,12 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";InvalidCordovaWithNode5" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Incompatible configuration: Unable to use Cordova < 5.4.0 with Node >= 5.0.0. Either upgrade to a newer version of Cordova, or revert to an older version of node. See http://go.microsoft.com/fwlink/?LinkID=618471 for more details.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";InvalidRemoteBuild" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Invalid remote build: {0}]]></Val>
@@ -2542,6 +2533,15 @@
           <Val><![CDATA[Error: Unable to load settings. Please run 'taco remote add' before building remotely]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Błąd: Nie można załadować ustawień. Uruchom polecenie „taco remote add” przed kompilacją zdalną.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ThirdPartyDisclaimer" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<bold>Disclaimer:</bold> TACO uses third-party packages. Each package is licensed to you by its owner. Microsoft is not responsible for, nor does it grant any licenses to, third-party packages. Some packages may include dependencies which are governed by additional licenses. Follow the package source (feed) URL to determine any dependencies.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<bold>Zastrzeżenie:</bold> Program TACO korzysta z pakietów podmiotów zewnętrznych. Licencji na każdy pakiet udziela jego właściciel. Firma Microsoft nie jest odpowiedzialna za żadne pakiety podmiotów zewnętrznych ani nie udziela na nie licencji. Niektóre pakiety mogą zawierać zależności zarządzane przez dodatkowe licencje. Odwiedź adres URL źródła pakietu (źródła danych), aby poznać wszelkie zależności.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

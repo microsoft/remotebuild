@@ -21,6 +21,15 @@
     <Disp Icon="Expand" Expand="true" Disp="true" LocTbl="false" />
     <Item ItemId=";Strings" ItemType="0" PsrId="306" Leaf="false">
       <Disp Icon="Str" Disp="true" LocTbl="false" />
+      <Item ItemId=";AttemptedDeleteFileOutsideProject" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Warning: build requested deleting file '{0}']]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Ostrzeżenie: kompilacja zażądała usunięcia pliku „{0}”]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";BuildBuilding" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Building Cordova app.]]></Val>

@@ -37,6 +37,7 @@ class IOSAgent implements ITargetPlatform {
     private webDebugProxyDevicePort: number;
     private webDebugProxyPortMin: number;
     private webDebugProxyPortMax: number;
+    private appLaunchStepTimeout: number;
 
     /**
      * Initialize iOS specific information from the configuration.
@@ -49,8 +50,10 @@ class IOSAgent implements ITargetPlatform {
         this.webDebugProxyPortMin = config.get("webDebugProxyPortMin") || 9222;
         this.webDebugProxyPortMax = config.get("webDebugProxyPortMax") || 9322;
 
+        this.appLaunchStepTimeout = config.get("appLaunchStepTimeout") || 10000;
+
         if (utils.ArgsHelper.argToBool(config.get("allowsEmulate"))) {
-            process.env["PATH"] = path.resolve(__dirname, path.join("..", "node_modules", "ios-sim", "build", "release")) + ":" + process.env["PATH"];
+            process.env["PATH"] = path.resolve(__dirname, path.join("..", "node_modules", ".bin")) + ":" + process.env["PATH"];
             child_process.exec("which ios-sim", function (err: Error, stdout: Buffer, stderr: Buffer): void {
                 if (err) {
                     Logger.logError(resources.getString("IOSSimNotFound"));
@@ -77,17 +80,24 @@ class IOSAgent implements ITargetPlatform {
         }
 
         var proxyPort: number = this.nativeDebugProxyPort;
+        var appLaunchStepTimeout = this.appLaunchStepTimeout;
         var cfg: utils.CordovaConfig = utils.CordovaConfig.getCordovaConfig(buildInfo.appDir);
         iosAppRunner.startDebugProxy(proxyPort)
             .then(function (nativeProxyProcess: child_process.ChildProcess): Q.Promise<net.Socket> {
-            return iosAppRunner.startApp(cfg.id(), proxyPort);
+            return iosAppRunner.startApp(cfg.id(), proxyPort, appLaunchStepTimeout);
         }).then(function (success: net.Socket): void {
             res.status(200).send(buildInfo.localize(req, resources));
         }, function (failure: any): void {
-            if (failure instanceof Error) {
-                res.status(404).send(resources.getStringForLanguage(req, failure.message));
-            } else {
+            if (failure.message) {
+                var response = resources.getStringForLanguage(req, failure.message);
+                if (!response) {
+                    response = resources.getStringForLanguage(req, "UnableToLaunchAppWithReason", failure.message);
+                }
+                res.status(404).send(response);
+            } else if (typeof failure === "string") {
                 res.status(404).send(resources.getStringForLanguage(req, failure));
+            } else {
+                res.status(404).send(resources.getStringForLanguage(req, "UnableToLaunchAppWithReason", failure.toString()));
             }
         });
     }
@@ -152,7 +162,7 @@ class IOSAgent implements ITargetPlatform {
         var emulateProcess: child_process.ChildProcess = child_process.fork(path.join(__dirname, "iosEmulateHelper.js"), [], { silent: true });
         var emulateLogger: ProcessLogger = new ProcessLogger();
         emulateLogger.begin(buildInfo.buildDir, "emulate.log", buildInfo.buildLang, emulateProcess);
-        emulateProcess.send({ appDir: buildInfo.appDir, appName: cfg.id(), target: req.query.target }, null);
+        emulateProcess.send({ appDir: buildInfo.appDir, appName: cfg.id(), target: req.query.target, version: req.query.iOSVersion }, null);
 
         emulateProcess.on("message", function (result: { status: string; messageId: string; messageArgs?: any }): void {
             buildInfo.updateStatus(result.status, result.messageId, result.messageArgs);

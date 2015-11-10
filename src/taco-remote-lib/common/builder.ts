@@ -11,13 +11,15 @@
 /// <reference path="../../typings/tacoUtils.d.ts" />
 /// <reference path="../../typings/rimraf.d.ts" />
 /// <reference path="../../typings/cordovaExtensions.d.ts" />
+/// <reference path="../../typings/semver.d.ts" />
 
 "use strict";
 
-import fs = require("fs");
-import path = require("path");
-import Q = require("q");
-import rimraf = require("rimraf");
+import fs = require ("fs");
+import path = require ("path");
+import Q = require ("q");
+import rimraf = require ("rimraf");
+import semver = require ("semver");
 
 import resources = require("../resources/resourceManager");
 import utils = require("taco-utils");
@@ -63,6 +65,10 @@ class Builder {
     }
 
     public build(): Q.Promise<BuildInfo> {
+        if (semver.lt(this.currentBuild["vcordova"], "5.4.0") && semver.gte(process.versions.node, "5.0.0")) {
+            throw new Error(resources.getString("UnsupportedCordovaAndNode5Version"));
+        }
+
         var isDeviceBuild: boolean = this.currentBuild.options.indexOf("--device") !== -1;
         var self: Builder = this;
 
@@ -139,10 +145,8 @@ class Builder {
         var pluginNameRegex: RegExp = new RegExp("plugins#([^#]*)#plugin.xml$".replace(/#/g, path.sep === "\\" ? "\\\\" : path.sep));
         var deletedPlugins: string[] = [];
         if (this.currentBuild.changeList && this.currentBuild.changeList.deletedFiles) {
-            deletedPlugins = this.currentBuild.changeList.deletedFiles.map(function (file: string): string {
-                // Normalize filenames to use this platform's slashes, when the client may have sent back-slashes
-                return path.normalize(path.join.apply(path, file.split("\\")));
-            }).filter(function (file: string): boolean {
+            deletedPlugins = this.currentBuild.changeList.deletedFiles.filter(function (file: string): boolean {
+                // file paths have been pre-normalised to use this platform's slashes
                 // A plugin is deleted if its plugin.xml is deleted
                 return !!file.match(pluginNameRegex);
             }).map(function (file: string): string {
@@ -171,7 +175,7 @@ class Builder {
         var fetchJsonPath: string = path.join(remotePluginsPath, "fetch.json");
         if (fs.existsSync(fetchJsonPath)) {
             try {
-                fetchJson = JSON.parse(<any> fs.readFileSync(fetchJsonPath));
+                fetchJson = JSON.parse(fs.readFileSync(fetchJsonPath, "utf8"));
             } catch (e) {
                 // fetch.json is malformed; act as though no plugins are installed
                 // If it turns out we do need variables from the fetch.json, then cordova will throw an error

@@ -407,15 +407,6 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";CommandCreateStatusCreatingNewProject" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Creating a new Cordova project.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Ein neues Cordova-Projekt wird erstellt.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
       <Item ItemId=";CommandCreateStatusTableCordovaCLIVersionDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Cordova]]></Val>
@@ -667,10 +658,13 @@
       </Item>
       <Item ItemId=";CommandInstallSkipNoReqsSupport" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[The following platforms will be skipped because they don't support Cordova's requirements checking:<br/>]]></Val>
+          <Val><![CDATA[The following platforms will be skipped because their currently installed version doesn't support Cordova's requirements checking:<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Die folgenden Plattformen werden übersprungen, weil sie keine Anforderungsüberprüfung von Cordova unterstützen:<br/>]]></Val>
+            <Val><![CDATA[Die folgenden Plattformen werden übersprungen, weil ihre zurzeit installierte Version die Anforderungsüberprüfung von Cordova nicht unterstützt:<br/>]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[The following platforms will be skipped because they don't support Cordova's requirements checking:<br/>]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1040,6 +1034,15 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";CommandKitSelectStatusUpdatingTacoJson" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Updating taco.json...]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA["taco.json" wird aktualisiert...]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";CommandKitSelectSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Select a Kit or a Cordova CLI version for the project]]></Val>
@@ -1391,29 +1394,11 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";CommandPluginStatusAdding" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Fetching plugin "<highlight>{0}</highlight>" via npm.<br/>]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Das Plug-In "<highlight>{0}</highlight>" wird über NPM abgerufen.<br/>]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
       <Item ItemId=";CommandPluginStatusRemoved" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Plugin <highlight>{0}</highlight> removed<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[<success>Erfolg!</success> Das Plug-In <highlight>{0}</highlight> wurde entfernt.<br/>]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";CommandPluginStatusRemoving" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Removing plugin <highlight>{0}</highlight> from Cordova project...<br/>]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Das Plug-In <highlight>{0}</highlight> wird aus dem Cordova-Projekt entfernt...<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2243,6 +2228,15 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";InvalidCordovaWithNode5" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Incompatible configuration: Unable to use Cordova < 5.4.0 with Node >= 5.0.0. Either upgrade to a newer version of Cordova, or revert to an older version of node. See http://go.microsoft.com/fwlink/?LinkID=618471 for more details.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Inkompatible Konfiguration: Cordova < 5.4.0 mit Node >= 5.0.0 kann nicht verwendet werden. Führen Sie ein Upgrade auf eine neuere Version von Cordova aus, oder stellen Sie eine ältere Version von Node wieder her. Weitere Informationen finden Sie unter "http://go.microsoft.com/fwlink/?LinkID=618471".]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";InvalidRemoteBuild" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Invalid remote build: {0}]]></Val>
@@ -2542,6 +2536,15 @@
           <Val><![CDATA[Error: Unable to load settings. Please run 'taco remote add' before building remotely]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Fehler: Einstellungen können nicht geladen werden. Bitte führen Sie "taco remote add" aus, bevor Sie den Buildvorgang remote ausführen.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ThirdPartyDisclaimer" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<bold>Disclaimer:</bold> TACO uses third-party packages. Each package is licensed to you by its owner. Microsoft is not responsible for, nor does it grant any licenses to, third-party packages. Some packages may include dependencies which are governed by additional licenses. Follow the package source (feed) URL to determine any dependencies.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<bold>Haftungsausschluss:</bold> TACO verwendet Pakete von Drittanbietern. Jedes Paket wird von seinem Besitzer für Sie lizenziert. Microsoft ist nicht verantwortlich für Pakete von Drittanbietern und erteilt keine Lizenzen für diese. Einige Pakete enthalten ggf. Abhängigkeiten, die zusätzlichen Lizenzen unterliegen. Verwenden Sie die URL der Paketquelle (Feed-URL), um eventuelle Abhängigkeiten zu ermitteln.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

@@ -407,15 +407,6 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";CommandCreateStatusCreatingNewProject" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Creating a new Cordova project.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Vytváří se nový projekt Cordova.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
       <Item ItemId=";CommandCreateStatusTableCordovaCLIVersionDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Cordova]]></Val>
@@ -667,10 +658,13 @@
       </Item>
       <Item ItemId=";CommandInstallSkipNoReqsSupport" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[The following platforms will be skipped because they don't support Cordova's requirements checking:<br/>]]></Val>
+          <Val><![CDATA[The following platforms will be skipped because their currently installed version doesn't support Cordova's requirements checking:<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Následující platformy se přeskočí, protože nepodporují kontrolu požadavků pro Cordovu:<br/>]]></Val>
+            <Val><![CDATA[Následující platformy se přeskočí, protože jejich aktuálně nainstalovaná verze nepodporuje kontrolu požadavků pro Cordovu:<br/>]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[The following platforms will be skipped because they don't support Cordova's requirements checking:<br/>]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1040,6 +1034,15 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";CommandKitSelectStatusUpdatingTacoJson" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Updating taco.json...]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Aktualizuje se taco.json...]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";CommandKitSelectSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Select a Kit or a Cordova CLI version for the project]]></Val>
@@ -1391,29 +1394,11 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";CommandPluginStatusAdding" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Fetching plugin "<highlight>{0}</highlight>" via npm.<br/>]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Načítá se modul plug-in <highlight>{0}</highlight> přes npm.<br/>]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
       <Item ItemId=";CommandPluginStatusRemoved" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Plugin <highlight>{0}</highlight> removed<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[<success>Úspěch!</success> Modul plug-in <highlight>{0}</highlight> se odebral.<br/>]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";CommandPluginStatusRemoving" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Removing plugin <highlight>{0}</highlight> from Cordova project...<br/>]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Modul plug-in <highlight>{0}</highlight> se odebírá z projektu Cordova...<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2243,6 +2228,15 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";InvalidCordovaWithNode5" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Incompatible configuration: Unable to use Cordova < 5.4.0 with Node >= 5.0.0. Either upgrade to a newer version of Cordova, or revert to an older version of node. See http://go.microsoft.com/fwlink/?LinkID=618471 for more details.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Nekompatibilní konfigurace: Cordova verze < 5.4.0 se nedá použít s uzlem verze >= 5.0.0. Buď upgradujte na novější verzi Cordovy, nebo se vraťte na starší verzi uzlu. Další podrobnosti najdete na stránce http://go.microsoft.com/fwlink/?LinkID=618471.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";InvalidRemoteBuild" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Invalid remote build: {0}]]></Val>
@@ -2542,6 +2536,15 @@
           <Val><![CDATA[Error: Unable to load settings. Please run 'taco remote add' before building remotely]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Chyba: Nejde načíst nastavení. Před vzdáleným sestavením prosím spusťte příkaz taco remote add.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ThirdPartyDisclaimer" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<bold>Disclaimer:</bold> TACO uses third-party packages. Each package is licensed to you by its owner. Microsoft is not responsible for, nor does it grant any licenses to, third-party packages. Some packages may include dependencies which are governed by additional licenses. Follow the package source (feed) URL to determine any dependencies.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<bold>Zřeknutí se práv:</ tučné> TACO používá balíčky třetích stran. Jednotlivé balíčky vám licencují jejich vlastníci. Microsoft neodpovídá za žádné licence k balíčkům jiných výrobců, ani je neuděluje. Některé balíčky mohou obsahovat závislosti, na které se vztahují další licence. Určit závislosti vám pomůže adresa URL zdroje balíčku (informační kanál).]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

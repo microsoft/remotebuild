@@ -407,15 +407,6 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";CommandCreateStatusCreatingNewProject" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Creating a new Cordova project.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Yeni bir Cordova projesi oluşturuluyor.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
       <Item ItemId=";CommandCreateStatusTableCordovaCLIVersionDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Cordova]]></Val>
@@ -667,10 +658,13 @@
       </Item>
       <Item ItemId=";CommandInstallSkipNoReqsSupport" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[The following platforms will be skipped because they don't support Cordova's requirements checking:<br/>]]></Val>
+          <Val><![CDATA[The following platforms will be skipped because their currently installed version doesn't support Cordova's requirements checking:<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Cordova'nın gereksinim denetimini desteklemedikleri için şu platformlar atlanacak:<br/>]]></Val>
+            <Val><![CDATA[Şu anda yüklü olan sürümleri Cordova'nın gereksinim denetimlerini desteklemediği için şu platformlar atlanacak:<br/>]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[The following platforms will be skipped because they don't support Cordova's requirements checking:<br/>]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1040,6 +1034,15 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";CommandKitSelectStatusUpdatingTacoJson" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Updating taco.json...]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[taco.json güncelleştiriliyor...]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";CommandKitSelectSubcommandDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Select a Kit or a Cordova CLI version for the project]]></Val>
@@ -1391,29 +1394,11 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";CommandPluginStatusAdding" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Fetching plugin "<highlight>{0}</highlight>" via npm.<br/>]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA["<highlight>{0}</highlight>" eklentisi npm aracılığıyla alınıyor.<br/>]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
       <Item ItemId=";CommandPluginStatusRemoved" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[<success>Success!</success> Plugin <highlight>{0}</highlight> removed<br/>]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[<success>Başarılı!</success> <highlight>{0}</highlight> eklentisi kaldırıldı<br/>]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";CommandPluginStatusRemoving" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Removing plugin <highlight>{0}</highlight> from Cordova project...<br/>]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[<highlight>{0}</highlight> eklentisi Cordova projesinden kaldırılıyor...<br/>]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2243,6 +2228,15 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";InvalidCordovaWithNode5" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Incompatible configuration: Unable to use Cordova < 5.4.0 with Node >= 5.0.0. Either upgrade to a newer version of Cordova, or revert to an older version of node. See http://go.microsoft.com/fwlink/?LinkID=618471 for more details.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Uyumsuz yapılandırma: Cordova < 5.4.0 ile Node >= 5.0.0 kullanılamıyor. Cordova'nın daha yeni bir sürümüne yükseltin veya düğümün eski bir sürümüne dönün. Daha fazla bilgi için http://go.microsoft.com/fwlink/?LinkID=618471 bağlantısına bakın.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";InvalidRemoteBuild" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Invalid remote build: {0}]]></Val>
@@ -2542,6 +2536,15 @@
           <Val><![CDATA[Error: Unable to load settings. Please run 'taco remote add' before building remotely]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Hata: Ayarlar yüklenemedi. Lütfen uzak derleme işleminden önce 'taco remote add' komutunu çalıştırın]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ThirdPartyDisclaimer" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[<bold>Disclaimer:</bold> TACO uses third-party packages. Each package is licensed to you by its owner. Microsoft is not responsible for, nor does it grant any licenses to, third-party packages. Some packages may include dependencies which are governed by additional licenses. Follow the package source (feed) URL to determine any dependencies.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[<bold>Yasal Uyarı:</bold> TACO, üçüncü taraf paketlerini kullanır. Her paket, tarafınıza sahibi tarafından lisanslanmıştır. Microsoft, üçüncü taraf paketlerden sorumlu değildir ve bu paketler için lisans vermez. Bazı paketler, ek lisanslarla yönetilen bağımlılıklar içerebilir. Bağımlılıkları belirlemek için paket kaynağı (besleme) URL'sini izleyin.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
