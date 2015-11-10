@@ -176,78 +176,96 @@ describe("taco-cli E2E", function (): void {
                 });
         });
 
-
-        it("should be able to launch an app on a device using remotebuild", function (): Q.Promise<any> {
+        describe("remotebuild tests", function () {
             var winTestId: number;
-
-            // Configure a windows machine to be the taco-cli client to the remotebuild server
-            var windowsSetup = initializeServerWithContent(remoteTestWinServer).then((testId: number) => {
-                winTestId = testId;
-                return testUtils.runCommandsInSequence(remoteTestWinServer, winTestId, [
-                    "npm install build/packages/taco-cli",
-                    "node_modules/.bin/taco create myProject",
-                    "cd myProject && ../node_modules/.bin/taco plugin add cordova-plugin-transport-security" // Needed for communication with non-HTTPS server, and also tests that plugins work
-                ]).then(() => {
-                    // Extract a list of ip addresses to connect to on the mac
-                    return currentIsolatedTest.promiseExec("ifconfig -au inet | grep -o 'inet [0-9]\\+\\(\\.[0-9]\\+\\)\\{3\\}' | grep -o '[.0-9]\\+'");
-                }).then((result: { stdout: Buffer, stderr: Buffer }): Q.Promise<any> => {
-                    // Replace the index.html page with a page that calls back to the remote server
-                    var appCallback = fs.createReadStream(path.join(__dirname, "taco-cli", "appCallback.html"));
-                    var serverReplaceToken = "TEST_SERVER_REPLACE_TOKEN";
-                    var serverAddress = result.stdout.toString().split("\n").map((address: string): string => {
-                        return util.format("\"http://%s:%d\"", address, appCallbackPort);
-                    }).join(", ");
-
-                    var replaceTransformer = testUtils.streamReplace(serverReplaceToken, serverAddress);
-                    appCallback.pipe(replaceTransformer);
-                    return testUtils.uploadFile(remoteTestWinServer, winTestId, "myProject/www/index.html", replaceTransformer);
-                });
-            });
-
             var remotebuildMacPort = 12346;
             var remotebuildProcess: NodeJSChildProcess.ChildProcess;
+            var remotebuildIsolatedTest: IsolatedTest;
 
-            // install remotebuild and configure for secure connections
-            return currentIsolatedTest.promiseExec(util.format("npm install %s/remotebuild.tgz", sourcesLocation))
-                .then(() => currentIsolatedTest.promiseExec(util.format("node_modules/.bin/remotebuild saveconfig --port=%d --secure=true", remotebuildMacPort)))
-                .then(() => currentIsolatedTest.promiseExec("node_modules/.bin/remotebuild certificates reset"))
-                .then(() => currentIsolatedTest.promiseExec("node_modules/.bin/remotebuild certificates generate"))
-                .then(() => currentIsolatedTest.promiseExec("ln -s $ORIGINALHOME/Library Library"))
-                .then(() => {
-                    // Claim to have accepted homebrew installation already to avoid having to specify sudo password
-                    var sourceStream = fs.createReadStream(path.join(__dirname, "taco-cli", ".taco-remote"));
-                    var destStream = fs.createWriteStream(path.join(currentIsolatedTest.rootFolder, ".taco_home", ".taco-remote"));
-                    return Q.all([
-                        testUtils.promiseFromStream(sourceStream.pipe(destStream)),
-                        windowsSetup
-                    ]);
-                }).then(() => {
-                    // Read the client certificate PIN
-                    var certs = fs.readdirSync(path.join(currentIsolatedTest.rootFolder, ".taco_home", "remote-builds", "certs", "client"));
-                    should(certs).property("length").be.greaterThan(0);
-                    var pin = certs[0];
+            before(function (): Q.Promise<any> {
+                remotebuildIsolatedTest = new IsolatedTest();
+                // No need to disable telemetry here.
 
-                    // Start the remotebuild server
-                    remotebuildProcess = currentIsolatedTest.spawn(path.join(currentIsolatedTest.rootFolder, "node_modules", ".bin", "remotebuild"), [], { stdio: ["inherit", "inherit", "inherit"] });
+                // Configure a windows machine to be the taco-cli client to the remotebuild server
+                var windowsSetup = initializeServerWithContent(remoteTestWinServer).then((testId: number) => {
+                    winTestId = testId;
+                    return testUtils.runCommandsInSequence(remoteTestWinServer, winTestId, [
+                        "npm install build/packages/taco-cli",
+                        "node_modules/.bin/taco create myProject",
+                        "cd myProject && ../node_modules/.bin/taco plugin add cordova-plugin-transport-security" // Needed for communication with non-HTTPS server, and also tests that plugins work
+                    ]).then(() => {
+                        // Extract a list of ip addresses to connect to on the mac
+                        return remotebuildIsolatedTest.promiseExec("ifconfig -au inet | grep -o 'inet [0-9]\\+\\(\\.[0-9]\\+\\)\\{3\\}' | grep -o '[.0-9]\\+'");
+                    }).then((result: { stdout: Buffer, stderr: Buffer }): Q.Promise<any> => {
+                        // Replace the index.html page with a page that calls back to the remote server
+                        var appCallback = fs.createReadStream(path.join(__dirname, "taco-cli", "appCallback.html"));
+                        var serverReplaceToken = "TEST_SERVER_REPLACE_TOKEN";
+                        var serverAddress = result.stdout.toString().split("\n").map((address: string): string => {
+                            return util.format("\"http://%s:%d\"", address, appCallbackPort);
+                        }).join(", ");
 
-                    // Determine this computer's IP address (Prefering ipv4 since ipv6 addresses do not work with security right now)
-                    var networkInterfaces = os.networkInterfaces();
-                    var addresses: { address: string, family: string }[] = networkInterfaces["en0"];
-                    var ipv4Addresses = addresses.filter((addr) => addr.family === "IPv4");
-
-                    // Configure the windows client to talk to this server
-                    var remoteConfigCommand = util.format("node configureRemote.js node_modules/.bin/taco ios %s %d %d", ipv4Addresses[0].address, remotebuildMacPort, pin);
-                    return testUtils.uploadFile(remoteTestWinServer, winTestId, "configureRemote.js", fs.createReadStream(path.join(__dirname, "taco-cli", "configureRemote.js"))).then(() => {
-                        return testUtils.runCommandAndWaitForSuccess(remoteTestWinServer, winTestId, remoteConfigCommand);
-                    }).then(() => {
-                        // Ensure that we successfully configured an iOS remote
-                        return testUtils.runCommandAndWaitForSuccess(remoteTestWinServer, winTestId, "node_modules/.bin/taco remote list").then((commandResult: testUtils.ICommand) => {
-                            if (commandResult.result.indexOf("ios") < 0) {
-                                throw new Error("Failed to set remote iOS server");
-                            }
-                        });
+                        var replaceTransformer = testUtils.streamReplace(serverReplaceToken, serverAddress);
+                        appCallback.pipe(replaceTransformer);
+                        return testUtils.uploadFile(remoteTestWinServer, winTestId, "myProject/www/index.html", replaceTransformer);
                     });
-                }).then(() => {
+                });
+
+                // install remotebuild and configure for secure connections
+                return remotebuildIsolatedTest.promiseExec(util.format("npm install %s/remotebuild.tgz", sourcesLocation))
+                    .then(() => remotebuildIsolatedTest.promiseExec("mkdir .taco_home"))
+                    .then(() => remotebuildIsolatedTest.promiseExec(util.format("node_modules/.bin/remotebuild saveconfig --port=%d --secure=true", remotebuildMacPort)))
+                    .then(() => remotebuildIsolatedTest.promiseExec("node_modules/.bin/remotebuild certificates reset"))
+                    .then(() => remotebuildIsolatedTest.promiseExec("node_modules/.bin/remotebuild certificates generate"))
+                    .then(() => remotebuildIsolatedTest.promiseExec("ln -s $ORIGINALHOME/Library Library"))
+                    .then(() => {
+                        // Claim to have accepted homebrew installation already to avoid having to specify sudo password
+                        var sourceStream = fs.createReadStream(path.join(__dirname, "taco-cli", ".taco-remote"));
+                        var destStream = fs.createWriteStream(path.join(remotebuildIsolatedTest.rootFolder, ".taco_home", ".taco-remote"));
+                        return Q.all([
+                            testUtils.promiseFromStream(sourceStream.pipe(destStream)),
+                            windowsSetup
+                        ]);
+                    }).then(() => {
+                        // Read the client certificate PIN
+                        var certs = fs.readdirSync(path.join(remotebuildIsolatedTest.rootFolder, ".taco_home", "remote-builds", "certs", "client"));
+                        should(certs).property("length").be.greaterThan(0);
+                        var pin = certs[0];
+
+                        // Start the remotebuild server
+                        remotebuildProcess = remotebuildIsolatedTest.spawn(path.join(remotebuildIsolatedTest.rootFolder, "node_modules", ".bin", "remotebuild"), [], { stdio: ["inherit", "inherit", "inherit"] });
+
+                        // Determine this computer's IP address (Prefering ipv4 since ipv6 addresses do not work with security right now)
+                        var networkInterfaces = os.networkInterfaces();
+                        var addresses: { address: string, family: string }[] = networkInterfaces["en0"];
+                        var ipv4Addresses = addresses.filter((addr) => addr.family === "IPv4");
+
+                        // Configure the windows client to talk to this server
+                        var remoteConfigCommand = util.format("node configureRemote.js node_modules/.bin/taco ios %s %d %d", ipv4Addresses[0].address, remotebuildMacPort, pin);
+                        return testUtils.uploadFile(remoteTestWinServer, winTestId, "configureRemote.js", fs.createReadStream(path.join(__dirname, "taco-cli", "configureRemote.js"))).then(() => {
+                            return testUtils.runCommandAndWaitForSuccess(remoteTestWinServer, winTestId, remoteConfigCommand);
+                        }).then(() => {
+                            // Ensure that we successfully configured an iOS remote
+                            return testUtils.runCommandAndWaitForSuccess(remoteTestWinServer, winTestId, "node_modules/.bin/taco remote list").then((commandResult: testUtils.ICommand) => {
+                                if (commandResult.result.indexOf("ios") < 0) {
+                                    throw new Error("Failed to set remote iOS server");
+                                }
+                            });
+                        });
+                    })
+            });
+
+            after(function () {
+                remotebuildProcess.kill();
+                // Clean up idevicedebugserverproxy since starting remotebuild repeatedly can leave old processes around in a bad state sometimes
+                return Q.all<any>([
+                    remotebuildIsolatedTest.promiseExec("killall idevicedebugserverproxy"),
+                    testUtils.requestPostPromise(testUtils.makeRequestOptions(remoteTestWinServer, {}, winTestId, "done"))
+                ]);
+
+            });
+
+            it("should be able to launch an app on a device using remotebuild", function (): Q.Promise<any> {
+                return Q({}).then(() => {
                     // Start listening for the app to callback
                     var deferred = Q.defer();
                     var appCallbackServer = http.createServer(function (req, res) {
@@ -264,22 +282,28 @@ describe("taco-cli E2E", function (): void {
 
                     appCallbackServer.listen(appCallbackPort);
 
-                    // Kick off a "taco run ios" and wait for it to complete
+                    // Kick off a "taco run ios --device" and wait for it to complete
                     return testUtils.runCommandAndWaitForSuccess(remoteTestWinServer, winTestId, "../node_modules/.bin/taco run ios --device", "myProject")
                         .then(() => {
                             Q.delay(180000).then(() => deferred.reject("Timed out"));
                             return deferred.promise;
                         }).finally(() => {
                             appCallbackServer.close();
-                            remotebuildProcess.kill();
-                            // Clean up idevicedebugserverproxy since starting remotebuild repeatedly can leave old processes around in a bad state sometimes
-                            return currentIsolatedTest.promiseExec("killall idevicedebugserverproxy"); 
                         });
-                }).finally(() => {
-                    if (winTestId) {
-                        return testUtils.requestPostPromise(testUtils.makeRequestOptions(remoteTestWinServer, {}, winTestId, "done"));
-                    }
                 });
+            });
+
+
+            it("should report emulation failures appropriately", function (): Q.Promise<any> {
+                return Q({}).then(() => {
+
+                    // Kick off a "taco run ios --emulator --target fakeDevice" and wait for it to complete
+                    return testUtils.runCommandAndWait(remoteTestWinServer, winTestId, "../node_modules/.bin/taco run ios --target fakeDevice", "myProject")
+                        .then((commandResult: testUtils.ICommand) => {
+                            should(commandResult.status).equal("error");
+                        });
+                });
+            });
         });
 
         /*

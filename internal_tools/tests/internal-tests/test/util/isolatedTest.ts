@@ -48,7 +48,7 @@ class IsolatedTest {
     }
 
     public cleanup(cleanFolder: boolean): Q.Promise<any> {
-        this.runCommands.forEach((proc: child_process.ChildProcess) => proc.kill());
+        this.runCommands.forEach((proc: child_process.ChildProcess) => proc && proc.kill());
         if (cleanFolder) {
             return Q.denodeify(rimraf)(this.rootFolder);
         } else {
@@ -68,7 +68,6 @@ class IsolatedTest {
         } else if (!options.cwd) {
             options.cwd = this.rootFolder;
         }
-        console.info(command);
         var proc = child_process.exec(command, options, cb);
         this.runCommands.push(proc);
         return proc;
