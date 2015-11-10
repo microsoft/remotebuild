@@ -389,14 +389,17 @@
       <Item ItemId=";UnsupportedCordovaAndNode5Version" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Incompatible configuration: Unable to build using Cordova < 5.4.0 and Node >= 5.0.0. Either upgrade to a newer version of Cordova, or revert to an older version of node. See http://go.microsoft.com/fwlink/?LinkID=618471 for more details.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Inkompatible Konfiguration: Der Buildvorgang mithilfe von Cordova < 5.4.0 und Node >= 5.0.0 kann nicht erfolgen. Führen Sie ein Upgrade auf eine neuere Version von Cordova aus, oder stellen Sie eine ältere Version von Node wieder her. Weitere Informationen finden Sie unter "http://go.microsoft.com/fwlink/?LinkID=618471".]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";UnsupportedCordovaAndNodeVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Incompatible configuration: Unable to build iOS using Cordova < 5.3.3 and Node >= 4.0.0, with deployment-target or target-device specified in the config.xml. See http://go.microsoft.com/fwlink/?LinkID=618471 for more details.]]></Val>
-          <Tgt Cat="Text" Stat="Update" Orig="New">
-            <Val><![CDATA[Inkompatible Konfiguration: Der Buildvorgang mithilfe von Cordova < 5.3.3 und Knoten >= 4.0.0 mit dem in der Datei "config.xml" angegebenen Bereitstellungsgerät und Zielgerät kann nicht erfolgen.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Inkompatible Konfiguration: Der iOS-Buildvorgang mithilfe von Cordova < 5.3.3 und Node >= 4.0.0 mit dem in der Datei "config.xml" angegebenen Bereitstellungsgerät und Zielgerät kann nicht erfolgen. Weitere Informationen finden Sie unter "http://go.microsoft.com/fwlink/?LinkID=618471".]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Incompatible configuration: Unable to build using Cordova < 5.3.3 and Node >= 4.0.0, with deployment-target or target-device specified in the config.xml]]></Val>

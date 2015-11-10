@@ -389,14 +389,17 @@
       <Item ItemId=";UnsupportedCordovaAndNode5Version" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Incompatible configuration: Unable to build using Cordova < 5.4.0 and Node >= 5.0.0. Either upgrade to a newer version of Cordova, or revert to an older version of node. See http://go.microsoft.com/fwlink/?LinkID=618471 for more details.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[互換性のない構成: 5.4.0 より前の Cordova と 5.0.0 以降の Node を使ってビルドできません。新しいバージョンの Cordova にアップグレードするか、前のバージョンの Node に戻します。詳細については、http://go.microsoft.com/fwlink/?LinkID=618471 をご覧ください。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";UnsupportedCordovaAndNodeVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Incompatible configuration: Unable to build iOS using Cordova < 5.3.3 and Node >= 4.0.0, with deployment-target or target-device specified in the config.xml. See http://go.microsoft.com/fwlink/?LinkID=618471 for more details.]]></Val>
-          <Tgt Cat="Text" Stat="Update" Orig="New">
-            <Val><![CDATA[互換性のない構成: config.xml で deployment-target か target-device が指定されると、5.3.3 より前の Cordova と 4.0.0 以降の Node を使用してビルドできません]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[互換性のない構成: config.xml で deployment-target か target-device が指定されると、5.3.3 より前の Cordova と 4.0.0 以降の Node を使用してビルドできません。詳細については、http://go.microsoft.com/fwlink/?LinkID=618471 をご覧ください。]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Incompatible configuration: Unable to build using Cordova < 5.3.3 and Node >= 4.0.0, with deployment-target or target-device specified in the config.xml]]></Val>

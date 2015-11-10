@@ -396,6 +396,9 @@
       <Item ItemId=";UnsupportedCordovaAndNode5Version" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Incompatible configuration: Unable to build using Cordova < 5.4.0 and Node >= 5.0.0. Either upgrade to a newer version of Cordova, or revert to an older version of node. See http://go.microsoft.com/fwlink/?LinkID=618471 for more details.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Configuración no compatible: no se puede compilar con Cordova < 5.4.0 y Node >= 5.0.0. Actualice a una versión de Cordova más reciente o revierta a una versión anterior del nodo. Vea http://go.microsoft.com/fwlink/?LinkID=618471 para obtener más detalles.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -424,7 +427,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Updating platform.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Plataforma de actualización.]]></Val>
+            <Val><![CDATA[Actualizando plataforma.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

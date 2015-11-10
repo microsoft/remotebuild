@@ -2231,6 +2231,9 @@
       <Item ItemId=";InvalidCordovaWithNode5" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Incompatible configuration: Unable to use Cordova < 5.4.0 with Node >= 5.0.0. Either upgrade to a newer version of Cordova, or revert to an older version of node. See http://go.microsoft.com/fwlink/?LinkID=618471 for more details.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Configuration incompatible : impossible d'utiliser Cordova < 5.4.0 avec nœud >= 5.0.0. Effectuez la mise à jour vers une version plus récente de Cordova ou rétablissez une version antérieure du nœud. Consultez http://go.microsoft.com/fwlink/?LinkID=618471 pour plus d'informations.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>

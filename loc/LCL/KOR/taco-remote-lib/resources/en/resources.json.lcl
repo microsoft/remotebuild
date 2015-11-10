@@ -389,14 +389,17 @@
       <Item ItemId=";UnsupportedCordovaAndNode5Version" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Incompatible configuration: Unable to build using Cordova < 5.4.0 and Node >= 5.0.0. Either upgrade to a newer version of Cordova, or revert to an older version of node. See http://go.microsoft.com/fwlink/?LinkID=618471 for more details.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[호환되지 않는 구성: 5.4.0 미만의 Cordova와 5.0.0 이상의 Node를 사용하여 빌드할 수 없습니다. 최신 버전의 Cordova로 업그레이드하거나 이전 버전의 Node로 되돌리세요. 자세한 내용은 http://go.microsoft.com/fwlink/?LinkID=618471을 참조하세요.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";UnsupportedCordovaAndNodeVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Incompatible configuration: Unable to build iOS using Cordova < 5.3.3 and Node >= 4.0.0, with deployment-target or target-device specified in the config.xml. See http://go.microsoft.com/fwlink/?LinkID=618471 for more details.]]></Val>
-          <Tgt Cat="Text" Stat="Update" Orig="New">
-            <Val><![CDATA[호환되지 않는 구성: config.xml에 지정된 deployment-target 또는 target-device와 Cordova < 5.3.3 and Node >= 4.0.0을 사용하여 빌드할 수 없습니다.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[호환되지 않는 구성: deployment-target 또는 target-device가 config.xml에 지정된 상태에서 5.3.3 미만의 Cordova와 4.0.0 이상의 Node를 사용하여 iOS를 빌드할 수 없습니다. 자세한 내용은 http://go.microsoft.com/fwlink/?LinkID=618471을 참조하세요.]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Incompatible configuration: Unable to build using Cordova < 5.3.3 and Node >= 4.0.0, with deployment-target or target-device specified in the config.xml]]></Val>

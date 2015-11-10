@@ -389,14 +389,17 @@
       <Item ItemId=";UnsupportedCordovaAndNode5Version" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Incompatible configuration: Unable to build using Cordova < 5.4.0 and Node >= 5.0.0. Either upgrade to a newer version of Cordova, or revert to an older version of node. See http://go.microsoft.com/fwlink/?LinkID=618471 for more details.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Configurazione incompatibile: non è possibile compilare con una versione di Cordova inferiore alla 5.4.0 e una versione di Node uguale o superiore alla 5.0.0. Eseguire l'aggiornamento a una versione più recente di Cordova oppure ripristinare una versione meno recente di Node. Per altri dettagli, vedere http://go.microsoft.com/fwlink/?LinkID=618471.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";UnsupportedCordovaAndNodeVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Incompatible configuration: Unable to build iOS using Cordova < 5.3.3 and Node >= 4.0.0, with deployment-target or target-device specified in the config.xml. See http://go.microsoft.com/fwlink/?LinkID=618471 for more details.]]></Val>
-          <Tgt Cat="Text" Stat="Update" Orig="New">
-            <Val><![CDATA[Configurazione incompatibile: con la destinazione di distribuzione o il dispositivo di destinazione specificato in config.xml per la compilazione non è possibile usare una versione di Cordova inferiore alla 5.3.3 e una versione di Node uguale o superiore alla 4.0.0]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Configurazione incompatibile: con la destinazione di distribuzione o il dispositivo di destinazione specificato in config.xml per la compilazione iOS non è possibile usare una versione di Cordova inferiore alla 5.3.3 e una versione di Node uguale o superiore alla 4.0.0. Per altri dettagli, vedere http://go.microsoft.com/fwlink/?LinkID=618471.]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Incompatible configuration: Unable to build using Cordova < 5.3.3 and Node >= 4.0.0, with deployment-target or target-device specified in the config.xml]]></Val>
