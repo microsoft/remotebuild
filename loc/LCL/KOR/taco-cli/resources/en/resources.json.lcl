@@ -2231,6 +2231,9 @@
       <Item ItemId=";InvalidCordovaWithNode5" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Incompatible configuration: Unable to use Cordova < 5.4.0 with Node >= 5.0.0. Either upgrade to a newer version of Cordova, or revert to an older version of node. See http://go.microsoft.com/fwlink/?LinkID=618471 for more details.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[호환되지 않는 구성: 5.0.0 이상의 Node와 함께 Cordova 5.4.0 미만을 사용할 수 없습니다. 최신 버전의 Cordova로 업그레이드하거나 이전 버전의 Node로 되돌리세요. 자세한 내용은 http://go.microsoft.com/fwlink/?LinkID=618471을 참조하세요.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>

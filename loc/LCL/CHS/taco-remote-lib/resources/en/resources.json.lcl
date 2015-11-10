@@ -389,14 +389,17 @@
       <Item ItemId=";UnsupportedCordovaAndNode5Version" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Incompatible configuration: Unable to build using Cordova < 5.4.0 and Node >= 5.0.0. Either upgrade to a newer version of Cordova, or revert to an older version of node. See http://go.microsoft.com/fwlink/?LinkID=618471 for more details.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[不兼容的配置: 无法使用 Cordova < 5.4.0 and Node >= 5.0.0 进行生成。升级到较新版本的 Cordova，或还原为较早版本的节点。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=618471。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";UnsupportedCordovaAndNodeVersion" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Incompatible configuration: Unable to build iOS using Cordova < 5.3.3 and Node >= 4.0.0, with deployment-target or target-device specified in the config.xml. See http://go.microsoft.com/fwlink/?LinkID=618471 for more details.]]></Val>
-          <Tgt Cat="Text" Stat="Update" Orig="New">
-            <Val><![CDATA[不兼容的配置: 无法使用 Cordova < 5.3.3 and Node >= 4.0.0 生成，config.xml 中存在指定的部署目标或目标设备。]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[不兼容的配置: 无法使用 Cordova < 5.3.3 and Node >= 4.0.0 生成 iOS，config.xml 中存在指定的部署目标或目标设备。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=618471。]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Incompatible configuration: Unable to build using Cordova < 5.3.3 and Node >= 4.0.0, with deployment-target or target-device specified in the config.xml]]></Val>
