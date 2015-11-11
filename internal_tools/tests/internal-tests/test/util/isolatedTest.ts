@@ -68,6 +68,7 @@ class IsolatedTest {
         } else if (!options.cwd) {
             options.cwd = this.rootFolder;
         }
+        console.info(command);
         var proc = child_process.exec(command, options, cb);
         this.runCommands.push(proc);
         return proc;
