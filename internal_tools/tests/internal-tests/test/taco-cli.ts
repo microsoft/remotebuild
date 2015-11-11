@@ -25,6 +25,7 @@ import zlib = require("zlib");
 
 import testUtils = require("./util/utils");
 import IsolatedTest = require("./util/isolatedTest");
+import RemoteTest = require("./util/remoteTest");
 
 var remoteTestWinServerName: string = process.env.TACO_REMOTE_TEST_WIN_ADDRESS || "tacotestwin.redmond.corp.microsoft.com";
 var remoteTestWinServerPort: string = process.env.TACO_REMOTE_TEST_WIN_PORT || 12344;
@@ -35,7 +36,7 @@ var sourcesLocation: string = process.env.TACO_COMPILED_FOLDER || path.join(proc
 var appCallbackPort = 12345;
 
 describe("taco-cli E2E", function (): void {
-    this.timeout(10 * 60 * 1000);
+    this.timeout(5 * 60 * 1000);
 
     before(function () {
         // We require that these tests run on a mac
@@ -49,64 +50,33 @@ describe("taco-cli E2E", function (): void {
      * 
      * Returns the test number that was created.
      */
-    function initializeServerWithContent(testServerUrl: string): Q.Promise<number> {
-        var testId: number;
-        return testUtils.requestPostPromise(testUtils.makeRequestOptions(testServerUrl, {})).then((response: testUtils.IRequestResult) => {
-            if (response.response.statusCode != 200) {
-                throw new Error("Failed to instantiate new test");
-            } else {
-                var test = <testUtils.ITest>JSON.parse(response.body);
-                testId = test.id;
-                console.info("Configuring test as #" + test.id);
-            }
-        }).then(() => {
+    function initializeServerWithContent(testServerUrl: string): Q.Promise<RemoteTest.RemoteTest> {
+        var remoteTest = new RemoteTest.RemoteTest(testServerUrl);
+        return remoteTest.ready.then(() => {
             // upload the compiled sources we wish to test
             var fileReader = new fstream.Reader({ path: sourcesLocation, type: "Directory" });
             var gzipStream = fileReader.pipe(tar.Pack()).pipe(zlib.createGzip());
 
             console.info("Transferring files");
-            return testUtils.uploadFile(testServerUrl, testId, "build/packages.tgz", gzipStream)
+            return Q.all([
+                remoteTest.uploadFile(gzipStream, "build/packages.tgz"),
+                remoteTest.uploadFile(fs.createReadStream(path.join(__dirname, "taco-cli", "unzip.js")), "unzip.js")
+            ]);
         }).then(() => {
             // Unzip compiled sources
-            return testUtils.requestPostPromise(testUtils.makeRequestOptions(testServerUrl, { qs: { cmd: "npm install tar" } }, testId, "command"));
-        }).then((response: testUtils.IRequestResult) => {
-            if (response.response.statusCode !== 200) {
-                throw new Error("Error preparing to unzip");
-            }
-            var command = <testUtils.ICommand>JSON.parse(response.body);
-
-            var unzipScriptFile = fs.createReadStream(path.join(__dirname, "taco-cli", "unzip.js"));
-
-            return Q.all<any>([
-                testUtils.pollForCommandFinish(testServerUrl, testId, command.id),
-                testUtils.uploadFile(testServerUrl, testId, "unzip.js", unzipScriptFile)
-            ]);
-        }).spread((command: testUtils.ICommand) => {
-            if (command.status === "error") {
-                throw new Error("Failed to prepare for unzipping\n" + command.result);
-            }
-            return testUtils.runCommandAndWait(testServerUrl, testId, "node unzip.js build/packages.tgz build/packages");
-        }).then((command: testUtils.ICommand) => {
-            if (command.status === "error") {
-                throw new Error("Failed to prepare for unzipping\n" + command.result);
-            }
-
-            // Fix up local package dependencies
-            return testUtils.uploadFile(testServerUrl, testId, "build/packages/updateDynamicDependencies.js", fs.createReadStream(path.join(__dirname, "..", "updateDynamicDependencies.js")));
+            return remoteTest.runCommandsInSequence(["npm install tar", "node unzip.js build/packages.tgz build/packages"]);
         }).then(() => {
-            return testUtils.runCommandAndWait(testServerUrl, testId, "cd build/packages && node updateDynamicDependencies.js");
-        }).then((command: testUtils.ICommand) => {
-            if (command.status === "error") {
-                throw new Error("Failed to update dynamic dependencies\n" + command.result);
-            }
-            
-            // Disable telemetry so we don't get asked
+            // Fix up local package dependencies and disable telemetry
+            var telemetrySettingsStream = fs.createReadStream(path.join(__dirname, "taco-cli", "TelemetrySettings.json"));
             return Q.all([
-                testUtils.uploadFile(testServerUrl, testId, ".taco_home/TelemetrySettings.json", fs.createReadStream(path.join(__dirname, "taco-cli", "TelemetrySettings.json"))),
-                testUtils.uploadFile(testServerUrl, testId, "taco_home/TelemetrySettings.json", fs.createReadStream(path.join(__dirname, "taco-cli", "TelemetrySettings.json")))
+                remoteTest.uploadFile(fs.createReadStream(path.join(__dirname, "..", "updateDynamicDependencies.js")), "build/packages/updateDynamicDependencies.js"),
+                remoteTest.uploadFile(telemetrySettingsStream, ".taco_home/TelemetrySettings.json"),
+                remoteTest.uploadFile(telemetrySettingsStream, "taco_home/TelemetrySettings.json")
             ]);
         }).then(() => {
-            return testId;
+            return remoteTest.runCommandAndWaitForSuccess("node updateDynamicDependencies.js", "build/packages");
+        }).then(() => {
+            return remoteTest;
         });
         // at this point, the sources have been transferred and configured so they may be installed, and telemetry is disabled
     }
@@ -120,7 +90,7 @@ describe("taco-cli E2E", function (): void {
             return util.format("\"http://%s:%d\"", address, appCallbackPort);
         }).join(", ");
 
-        return testUtils.streamReplace(serverReplaceToken, serverAddress);
+        return appCallback.pipe(testUtils.streamReplace(serverReplaceToken, serverAddress));
     }
 
     describe("iOS tests", function () {
@@ -150,7 +120,7 @@ describe("taco-cli E2E", function (): void {
                 util.format("npm install %s/taco-cli.tgz", sourcesLocation),
                 "node_modules/.bin/taco create myProject",
                 "cd myProject && ../node_modules/.bin/taco plugin add cordova-plugin-transport-security",
-                "cd myProject &&../node_modules/.bin/taco platform add ios"])
+                "cd myProject && ../node_modules/.bin/taco platform add ios"])
                 .then(() => {
                     // Replace index.html
                     var destination = fs.createWriteStream(path.join(currentIsolatedTest.rootFolder, "myProject", "www", "index.html"));
@@ -185,7 +155,7 @@ describe("taco-cli E2E", function (): void {
         });
 
         describe("remotebuild tests", function () {
-            var winTestId: number;
+            var remoteWinTest: RemoteTest.RemoteTest;
             var remotebuildMacPort = 12346;
             var remotebuildProcess: NodeJSChildProcess.ChildProcess;
             var remotebuildIsolatedTest: IsolatedTest;
@@ -195,9 +165,9 @@ describe("taco-cli E2E", function (): void {
                 // No need to disable telemetry here.
 
                 // Configure a windows machine to be the taco-cli client to the remotebuild server
-                var windowsSetup = initializeServerWithContent(remoteTestWinServer).then((testId: number) => {
-                    winTestId = testId;
-                    return testUtils.runCommandsInSequence(remoteTestWinServer, winTestId, [
+                var windowsSetup = initializeServerWithContent(remoteTestWinServer).then((test: RemoteTest.RemoteTest) => {
+                    remoteWinTest = test;
+                    return remoteWinTest.runCommandsInSequence([
                         "npm install build/packages/taco-cli",
                         "node_modules/.bin/taco create myProject",
                         "cd myProject && ../node_modules/.bin/taco plugin add cordova-plugin-transport-security" // Needed for communication with non-HTTPS server, and also tests that plugins work
@@ -213,7 +183,7 @@ describe("taco-cli E2E", function (): void {
                         // Replace the index.html page with a page that calls back to the remote server
                         var appCallback = createAppCallbackStream(ipv4Addresses);
 
-                        return testUtils.uploadFile(remoteTestWinServer, winTestId, "myProject/www/index.html", appCallback);
+                        return remoteWinTest.uploadFile(appCallback, "myProject/www/index.html");
                     });
                 });
 
@@ -249,12 +219,12 @@ describe("taco-cli E2E", function (): void {
 
                         // Configure the windows client to talk to this server
                         var remoteConfigCommand = util.format("node configureRemote.js node_modules/.bin/taco ios %s %d %d", ipv4Addresses[0].address, remotebuildMacPort, pin);
-                        return testUtils.uploadFile(remoteTestWinServer, winTestId, "configureRemote.js", fs.createReadStream(path.join(__dirname, "taco-cli", "configureRemote.js"))).then(() => {
-                            return testUtils.runCommandAndWaitForSuccess(remoteTestWinServer, winTestId, remoteConfigCommand);
+                        return remoteWinTest.uploadFile(fs.createReadStream(path.join(__dirname, "taco-cli", "configureRemote.js")), "configureRemote.js").then(() => {
+                            return remoteWinTest.runCommandAndWaitForSuccess(remoteConfigCommand);
                         }).then(() => {
-                            // Ensure that we successfully configured an iOS remote
-                            return testUtils.runCommandAndWaitForSuccess(remoteTestWinServer, winTestId, "node_modules/.bin/taco remote list").then((commandResult: testUtils.ICommand) => {
-                                if (commandResult.result.indexOf("ios") < 0) {
+                                // Ensure that we successfully configured an iOS remote
+                            return remoteWinTest.runCommandAndWaitForSuccess("node_modules/.bin/taco remote list").then((command: RemoteTest.RemoteCommand) => {
+                                if (command.command.result.indexOf("ios") < 0) {
                                     throw new Error("Failed to set remote iOS server");
                                 }
                             });
@@ -267,7 +237,7 @@ describe("taco-cli E2E", function (): void {
                 // Clean up idevicedebugserverproxy since starting remotebuild repeatedly can leave old processes around in a bad state sometimes
                 return Q.all<any>([
                     remotebuildIsolatedTest.promiseExec("killall idevicedebugserverproxy"),
-                    testUtils.requestPostPromise(testUtils.makeRequestOptions(remoteTestWinServer, {}, winTestId, "done"))
+                    remoteWinTest.cleanup()
                 ]);
 
             });
@@ -291,7 +261,7 @@ describe("taco-cli E2E", function (): void {
                     appCallbackServer.listen(appCallbackPort);
 
                     // Kick off a "taco run ios --device" and wait for it to complete
-                    return testUtils.runCommandAndWaitForSuccess(remoteTestWinServer, winTestId, "../node_modules/.bin/taco run ios --device", "myProject")
+                    return remoteWinTest.runCommandAndWaitForSuccess("../node_modules/.bin/taco run ios --device", "myProject")
                         .then(() => {
                             Q.delay(180000).then(() => deferred.reject("Timed out"));
                             return deferred.promise;
@@ -306,9 +276,9 @@ describe("taco-cli E2E", function (): void {
                 return Q({}).then(() => {
 
                     // Kick off a "taco run ios --emulator --target fakeDevice" and wait for it to complete
-                    return testUtils.runCommandAndWait(remoteTestWinServer, winTestId, "../node_modules/.bin/taco run ios --target fakeDevice", "myProject")
-                        .then((commandResult: testUtils.ICommand) => {
-                            should(commandResult.status).equal("error");
+                    return remoteWinTest.runCommandAndWait("../node_modules/.bin/taco run ios --target fakeDevice", "myProject")
+                        .then((command: RemoteTest.RemoteCommand) => {
+                            should(command.command.status).equal("error");
                         });
                 });
             });

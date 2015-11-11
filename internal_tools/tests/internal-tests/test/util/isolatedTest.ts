@@ -88,8 +88,10 @@ class IsolatedTest {
 
     public promiseExecInSequence(commands: string[]): Q.Promise<any> {
         return commands.reduce((soFar: Q.Promise<any>, command: string): Q.Promise<any> => {
-            return soFar.then(() => this.promiseExec(command, {}));
-        }, Q({}));
+            return soFar.then(() => {
+                return this.promiseExec(command);
+            });
+        }, Q(null));
     }
 
     public spawn(command: string, args: string[], options: IsolatedTest.ISpawnOptions): child_process.ChildProcess {
