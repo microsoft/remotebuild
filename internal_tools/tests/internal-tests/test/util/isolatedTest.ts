@@ -63,7 +63,7 @@ class IsolatedTest {
         Object.keys(this.env).forEach((key: string) => {
             options.env[key] = this.env[key];
         });
-        if (options.cwd && options.cwd.charAt(0) !== "/") { // Treat relative paths as relative to the test root
+        if (options.cwd && !path.isAbsolute(options.cwd)) { // Treat relative paths as relative to the test root
             options.cwd = path.join(this.rootFolder, options.cwd);
         } else if (!options.cwd) {
             options.cwd = this.rootFolder;
@@ -84,6 +84,12 @@ class IsolatedTest {
             }
         });
         return deferred.promise;
+    }
+
+    public promiseExecInSequence(commands: string[]): Q.Promise<any> {
+        return commands.reduce((soFar: Q.Promise<any>, command: string): Q.Promise<any> => {
+            return soFar.then(() => this.promiseExec(command, {}));
+        }, Q({}));
     }
 
     public spawn(command: string, args: string[], options: IsolatedTest.ISpawnOptions): child_process.ChildProcess {

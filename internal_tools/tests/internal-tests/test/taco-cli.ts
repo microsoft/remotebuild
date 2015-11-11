@@ -111,6 +111,18 @@ describe("taco-cli E2E", function (): void {
         // at this point, the sources have been transferred and configured so they may be installed, and telemetry is disabled
     }
 
+    function createAppCallbackStream(callbackAddresses: string[]): NodeJS.ReadableStream {
+        // Return a stream to a modified index.html which calls back to the specified addresses,
+        //  so we know that the app started correctly and had the plugin correctly installed
+        var appCallback = fs.createReadStream(path.join(__dirname, "taco-cli", "appCallback.html"));
+        var serverReplaceToken = "TEST_SERVER_REPLACE_TOKEN";
+        var serverAddress = callbackAddresses.map((address: string): string => {
+            return util.format("\"http://%s:%d\"", address, appCallbackPort);
+        }).join(", ");
+
+        return testUtils.streamReplace(serverReplaceToken, serverAddress);
+    }
+
     describe("iOS tests", function () {
         var currentIsolatedTest: IsolatedTest;
 
@@ -134,20 +146,16 @@ describe("taco-cli E2E", function (): void {
         it("should be able to run an app on the iOS simulator", function (): Q.Promise<any> {
             // In this test we want to build and run an app in the iOS simulator
             // First we create a project with a plugin that lets us get non-HTTPS content
-            return currentIsolatedTest.promiseExec(util.format("npm install %s/taco-cli.tgz", sourcesLocation))
-                .then(() => currentIsolatedTest.promiseExec("node_modules/.bin/taco create myProject"))
-                .then(() => currentIsolatedTest.promiseExec("../node_modules/.bin/taco plugin add cordova-plugin-transport-security", { cwd: "myProject" }))
-                .then(() => currentIsolatedTest.promiseExec("../node_modules/.bin/taco platform add ios", { cwd: "myProject" }))
+            return currentIsolatedTest.promiseExecInSequence([
+                util.format("npm install %s/taco-cli.tgz", sourcesLocation),
+                "node_modules/.bin/taco create myProject",
+                "cd myProject && ../node_modules/.bin/taco plugin add cordova-plugin-transport-security",
+                "cd myProject &&../node_modules/.bin/taco platform add ios"])
                 .then(() => {
-                    // Then modify index.html to call back to the host machine, so we know that
-                    // the app started correctly and had the plugin correctly installed
-                    var appCallback = fs.createReadStream(path.join(__dirname, "taco-cli", "appCallback.html"));
+                    // Replace index.html
                     var destination = fs.createWriteStream(path.join(currentIsolatedTest.rootFolder, "myProject", "www", "index.html"));
-                    var serverReplaceToken = "TEST_SERVER_REPLACE_TOKEN";
-                    var serverAddress = util.format("\"http://localhost:%d\"", appCallbackPort);
-
-                    var replaceTransformer = testUtils.streamReplace(serverReplaceToken, serverAddress);
-                    return testUtils.promiseFromStream(appCallback.pipe(replaceTransformer).pipe(destination));
+                    var appCallback = createAppCallbackStream(["localhost"]);
+                    return testUtils.promiseFromStream(appCallback.pipe(destination));
                 }).then(() => currentIsolatedTest.promiseExec("../node_modules/.bin/taco build ios", { cwd: "myProject" }))
                 .then(() => {
                     // Now run the app, and listen for the callback
@@ -195,28 +203,28 @@ describe("taco-cli E2E", function (): void {
                         "cd myProject && ../node_modules/.bin/taco plugin add cordova-plugin-transport-security" // Needed for communication with non-HTTPS server, and also tests that plugins work
                     ]).then(() => {
                         // Extract a list of ip addresses to connect to on the mac
-                        return remotebuildIsolatedTest.promiseExec("ifconfig -au inet | grep -o 'inet [0-9]\\+\\(\\.[0-9]\\+\\)\\{3\\}' | grep -o '[.0-9]\\+'");
-                    }).then((result: { stdout: Buffer, stderr: Buffer }): Q.Promise<any> => {
-                        // Replace the index.html page with a page that calls back to the remote server
-                        var appCallback = fs.createReadStream(path.join(__dirname, "taco-cli", "appCallback.html"));
-                        var serverReplaceToken = "TEST_SERVER_REPLACE_TOKEN";
-                        var serverAddress = result.stdout.toString().split("\n").map((address: string): string => {
-                            return util.format("\"http://%s:%d\"", address, appCallbackPort);
-                        }).join(", ");
+                        var networkInterfaces = os.networkInterfaces();
+                        var ipv4Addresses: string[] = Object.keys(networkInterfaces)
+                            .map((key: string): any[]=> networkInterfaces[key])
+                            .reduce((list: any[], current: any[]): any[]=> (list || []).concat(current))
+                            .filter((element: { address: string, family: string }): boolean => element.family === "IPv4")
+                            .map((element: { address: string, family: string }): string => element.address);
 
-                        var replaceTransformer = testUtils.streamReplace(serverReplaceToken, serverAddress);
-                        appCallback.pipe(replaceTransformer);
-                        return testUtils.uploadFile(remoteTestWinServer, winTestId, "myProject/www/index.html", replaceTransformer);
+                        // Replace the index.html page with a page that calls back to the remote server
+                        var appCallback = createAppCallbackStream(ipv4Addresses);
+
+                        return testUtils.uploadFile(remoteTestWinServer, winTestId, "myProject/www/index.html", appCallback);
                     });
                 });
 
                 // install remotebuild and configure for secure connections
-                return remotebuildIsolatedTest.promiseExec(util.format("npm install %s/remotebuild.tgz", sourcesLocation))
-                    .then(() => remotebuildIsolatedTest.promiseExec("mkdir .taco_home"))
-                    .then(() => remotebuildIsolatedTest.promiseExec(util.format("node_modules/.bin/remotebuild saveconfig --port=%d --secure=true", remotebuildMacPort)))
-                    .then(() => remotebuildIsolatedTest.promiseExec("node_modules/.bin/remotebuild certificates reset"))
-                    .then(() => remotebuildIsolatedTest.promiseExec("node_modules/.bin/remotebuild certificates generate"))
-                    .then(() => remotebuildIsolatedTest.promiseExec("ln -s $ORIGINALHOME/Library Library"))
+                return remotebuildIsolatedTest.promiseExecInSequence([
+                    util.format("npm install %s/remotebuild.tgz", sourcesLocation),
+                    "mkdir .taco_home",
+                    util.format("node_modules/.bin/remotebuild saveconfig --port=%d --secure=true", remotebuildMacPort),
+                    "node_modules/.bin/remotebuild certificates reset",
+                    "node_modules/.bin/remotebuild certificates generate",
+                    "ln -s $ORIGINALHOME/Library Library"])
                     .then(() => {
                         // Claim to have accepted homebrew installation already to avoid having to specify sudo password
                         var sourceStream = fs.createReadStream(path.join(__dirname, "taco-cli", ".taco-remote"));

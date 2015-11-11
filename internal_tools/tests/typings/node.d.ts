@@ -972,6 +972,7 @@ declare module "path" {
     export function dirname(p: string): string;
     export function basename(p: string, ext?: string): string;
     export function extname(p: string): string;
+    export function isAbsolute(p: string): boolean;
     export var sep: string;
 	export var delimiter: string;
 }
