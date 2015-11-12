@@ -1,6 +1,6 @@
 $TacoRoot = "$env:TF_BUILD_SOURCESDIRECTORY\";
 
-echo "Running clean to clean up installed dev depdencies";
+echo "Running clean to clean up installed dev dependencies";
 pushd $TacoRoot
 npm run clean
 popd
