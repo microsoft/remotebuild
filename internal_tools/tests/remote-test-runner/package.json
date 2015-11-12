@@ -1,0 +1,16 @@
+{
+    "name": "remote-test-runner",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "glob": "latest",
+        "q": "latest",
+        "request": "latest"
+    },
+    "devDependencies": {
+        "typescript": "latest"
+    },
+    "scripts": {
+        "prepublish": "tsc -target es5 -module commonjs vmUtils.ts"
+    }
+}
