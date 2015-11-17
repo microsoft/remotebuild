@@ -19,6 +19,6 @@
     "scripts": {
         "test": "mocha",
         "teamCityTest": "mocha --reporter mocha-teamcity-reporter",
-        "prepublish": "tsc -module commonjs test/taco-cli.ts"
+        "prepublish": "tsc -target es5 -module commonjs test/taco-cli.ts"
     }
 }
