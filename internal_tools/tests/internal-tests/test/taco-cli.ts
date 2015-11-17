@@ -50,7 +50,7 @@ describe("taco-cli E2E", function (): void {
      * 
      * Returns the test number that was created.
      */
-    function initializeServerWithContent(testServerUrl: string): Q.Promise<RemoteTest.RemoteTest> {
+    function initializeRemoteServerWithContent(testServerUrl: string): Q.Promise<RemoteTest.RemoteTest> {
         var remoteTest = new RemoteTest.RemoteTest(testServerUrl);
         return remoteTest.ready.then(() => {
             // upload the compiled sources we wish to test
@@ -97,9 +97,10 @@ describe("taco-cli E2E", function (): void {
         var currentIsolatedTest: IsolatedTest;
 
         beforeEach(function (): Q.Promise<any> {
+            // Create a new local test instance on this mac
             currentIsolatedTest = new IsolatedTest();
             
-            // Disable telemetry
+            // Disable telemetry within the local test instance
             var telemetryPath = path.join(__dirname, "taco-cli", "TelemetrySettings.json");
             var telemetryDestinationFolder = path.join(currentIsolatedTest.rootFolder, ".taco_home");
             var telemetryDestinationPath = path.join(telemetryDestinationFolder, "TelemetrySettings.json");
@@ -109,13 +110,17 @@ describe("taco-cli E2E", function (): void {
         });
 
         afterEach(function (): Q.Promise<any> {
-            // Clean up the mac test instance
+            // Clean up the local mac test instance
             return currentIsolatedTest.cleanup(this.currentTest.state !== "failed");
         });
 
         it("should be able to run an app on the iOS simulator", function (): Q.Promise<any> {
             // In this test we want to build and run an app in the iOS simulator
             // First we create a project with a plugin that lets us get non-HTTPS content
+
+            // Note that we don't use initializeRemoteServerWithContent here because that configures
+            // a remote test instance, and not a local instance. We don't need to bundle up and unzip
+            // the test bits for example, they are already on this local machine
             return currentIsolatedTest.promiseExecInSequence([
                 util.format("npm install %s/taco-cli.tgz", sourcesLocation),
                 "node_modules/.bin/taco create myProject",
@@ -165,7 +170,7 @@ describe("taco-cli E2E", function (): void {
                 // No need to disable telemetry here.
 
                 // Configure a windows machine to be the taco-cli client to the remotebuild server
-                var windowsSetup = initializeServerWithContent(remoteTestWinServer).then((test: RemoteTest.RemoteTest) => {
+                var windowsSetup = initializeRemoteServerWithContent(remoteTestWinServer).then((test: RemoteTest.RemoteTest) => {
                     remoteWinTest = test;
                     return remoteWinTest.runCommandsInSequence([
                         "npm install build/packages/taco-cli",
