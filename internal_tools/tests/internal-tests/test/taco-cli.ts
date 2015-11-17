@@ -196,7 +196,7 @@ describe("taco-cli E2E", function (): void {
                 return remotebuildIsolatedTest.promiseExecInSequence([
                     util.format("npm install %s/remotebuild.tgz", sourcesLocation),
                     "mkdir .taco_home",
-                    util.format("node_modules/.bin/remotebuild saveconfig --port=%d --secure=true", remotebuildMacPort),
+                    util.format("node_modules/.bin/remotebuild saveconfig --port=%d --secure=true --deleteBuildsOnShutdown=false", remotebuildMacPort),
                     "node_modules/.bin/remotebuild certificates reset",
                     "node_modules/.bin/remotebuild certificates generate",
                     "ln -s $ORIGINALHOME/Library Library"])
