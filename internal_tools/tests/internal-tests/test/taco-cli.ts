@@ -241,7 +241,7 @@ describe("taco-cli E2E", function (): void {
                 remotebuildProcess.kill();
                 // Clean up idevicedebugserverproxy since starting remotebuild repeatedly can leave old processes around in a bad state sometimes
                 return Q.all<any>([
-                    remotebuildIsolatedTest.promiseExec("killall idevicedebugserverproxy"),
+                    remotebuildIsolatedTest.promiseExec("killall idevicedebugserverproxy || true"),
                     remoteWinTest.cleanup()
                 ]);
 
