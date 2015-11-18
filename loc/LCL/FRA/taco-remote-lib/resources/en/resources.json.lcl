@@ -230,6 +230,9 @@
       <Item ItemId=";IDeviceInstallerNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Unable to launch ideviceinstaller. Please ensure that homebrew is installed and try running "brew install ideviceinstaller".]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Désolé... Nous n'avons pas pu démarrer ideviceinstaller. Vérifiez que homebrew est installé et essayez d'exécuter « brew install ideviceinstaller ».]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>

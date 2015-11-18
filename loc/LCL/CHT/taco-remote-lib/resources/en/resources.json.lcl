@@ -230,6 +230,9 @@
       <Item ItemId=";IDeviceInstallerNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Unable to launch ideviceinstaller. Please ensure that homebrew is installed and try running "brew install ideviceinstaller".]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[無法啟動 ideviceinstaller。請確認已安裝 homebrew，並嘗試執行 "brew install ideviceinstaller"。]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
