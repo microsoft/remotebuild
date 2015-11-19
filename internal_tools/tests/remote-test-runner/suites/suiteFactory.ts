@@ -13,9 +13,8 @@ import glob = require("glob");
 
 import AbstractSuite = require("./abstractSuite");
 import LocalSuite = require("./localSuite");
-import RemotebuildUtils = require("utils/remotebuildUtils");
+import RemotebuildUtils = require("../utils/remotebuildUtils");
 import RemoteSuite = require("./remoteSuite");
-import RemoteTestRunner = require("../remoteTestRunner");
 import VMSuite = require("./vmSuite");
 
 import ISuiteBuildOptions = RemoteTestRunnerInterfaces.ISuiteBuildOptions;

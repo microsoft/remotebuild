@@ -6,10 +6,11 @@
 
 import child_process = require("child_process");
 import fs = require("fs");
-import Q = require("q");
-import request = require("request");
 import stream = require("stream");
 import util = require("util");
+
+import Q = require("q");
+import request = require("request");
 
 class RemotebuildUtils {
     /**

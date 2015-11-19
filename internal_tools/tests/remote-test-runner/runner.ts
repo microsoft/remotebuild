@@ -9,9 +9,8 @@ import util = require("util");
 
 import Q = require("q");
 
-import AbstractSuite = require("suites/abstractSuite");
-import RemoteTestRunner = require("./remoteTestRunner");
-import SuiteFactory = require("suites/suiteFactory");
+import AbstractSuite = require("./suites/abstractSuite");
+import SuiteFactory = require("./suites/suiteFactory");
 
 import IParsedArgs = RemoteTestRunnerInterfaces.IParsedArgs;
 import ITestConfig = RemoteTestRunnerInterfaces.ITestConfig;
