@@ -15,7 +15,7 @@ class RemotebuildUtils {
     /**
      * Helper function to convert a request.get into a promise
      */
-    public static requestGetPromise(options: request.Options): Q.Promise<TestUtils.IRequestResult> {
+    public static requestGetPromise(options: request.Options): Q.Promise<RemotebuildUtils.IRequestResult> {
         var deferred = Q.defer<any>();
 
         request.get(options, (error: any, response: any, body: any): void => {
@@ -31,7 +31,7 @@ class RemotebuildUtils {
     /**
      * Helper function to convert a request.post into a promise
      */
-    public static requestPostPromise(options: request.Options): Q.Promise<TestUtils.IRequestResult> {
+    public static requestPostPromise(options: request.Options): Q.Promise<RemotebuildUtils.IRequestResult> {
         var deferred = Q.defer<any>();
 
         request.post(options, (error: any, response: any, body: any): void => {
@@ -56,7 +56,7 @@ class RemotebuildUtils {
     /**
      * Upload a given ReadableStream to a file on the remote server.
      */
-    public static uploadFile(baseUrl: string, testId: number, destination: string, fileStream: NodeJS.ReadableStream): Q.Promise<TestUtils.IRequestResult> {
+    public static uploadFile(baseUrl: string, testId: number, destination: string, fileStream: NodeJS.ReadableStream): Q.Promise<RemotebuildUtils.IRequestResult> {
         var deferred = Q.defer<any>();
 
         fileStream.pipe(request.post(RemotebuildUtils.makeRequestOptions(baseUrl, { qs: { path: destination } }, testId, "file"), (error: any, response: any, body: any): void => {
@@ -86,10 +86,10 @@ class RemotebuildUtils {
         return deferred.promise;
     }
 
-    public static pollForCommandFinish(baseUrl: string, testId: number, commandId: number): Q.Promise<TestUtils.ICommand> {
-        return RemotebuildUtils.requestGetPromise(RemotebuildUtils.makeRequestOptions(baseUrl, {}, testId, "command/" + commandId)).then((response: TestUtils.IRequestResult): TestUtils.ICommand | Q.Promise<TestUtils.ICommand> => {
+    public static pollForCommandFinish(baseUrl: string, testId: number, commandId: number): Q.Promise<RemotebuildUtils.ICommand> {
+        return RemotebuildUtils.requestGetPromise(RemotebuildUtils.makeRequestOptions(baseUrl, {}, testId, "command/" + commandId)).then((response: RemotebuildUtils.IRequestResult): RemotebuildUtils.ICommand | Q.Promise<RemotebuildUtils.ICommand> => {
             if (response.response.statusCode === 200) {
-                var commandResult = <TestUtils.ICommand>JSON.parse(response.body);
+                var commandResult = <RemotebuildUtils.ICommand>JSON.parse(response.body);
                 if (commandResult.status !== "started") {
                     return commandResult;
                 } else {
@@ -101,7 +101,7 @@ class RemotebuildUtils {
         })
     }
 
-    public static startCommand(baseUrl: string, testId: number, command: string, cwd?: string): Q.Promise<TestUtils.IRequestResult> {
+    public static startCommand(baseUrl: string, testId: number, command: string, cwd?: string): Q.Promise<RemotebuildUtils.IRequestResult> {
         console.info(baseUrl + "\tRunning command: " + command);
         var qs: { cmd: string; cwd?: string } = { cmd: command };
         if (cwd) {
@@ -110,7 +110,7 @@ class RemotebuildUtils {
         return RemotebuildUtils.requestPostPromise(RemotebuildUtils.makeRequestOptions(baseUrl, { qs: qs }, testId, "command"))
     }
 
-    public static killCommand(baseUrl: string, testId: number, commandId: number, signal?: string): Q.Promise<TestUtils.ICommand> {
+    public static killCommand(baseUrl: string, testId: number, commandId: number, signal?: string): Q.Promise<RemotebuildUtils.ICommand> {
         var options: request.Options;
         if (signal) {
             options = {};
@@ -121,7 +121,7 @@ class RemotebuildUtils {
         }
         console.log("Killing command #" + commandId);
         return RemotebuildUtils.requestPostPromise(RemotebuildUtils.makeRequestOptions(baseUrl, options, testId, "command/" + commandId + "/kill"))
-            .then((response: TestUtils.IRequestResult): Q.Promise<TestUtils.ICommand> => {
+            .then((response: RemotebuildUtils.IRequestResult): Q.Promise<RemotebuildUtils.ICommand> => {
                 if (response.response.statusCode === 200) {
                     return RemotebuildUtils.pollForCommandFinish(baseUrl, testId, commandId);
                 } else {
@@ -130,13 +130,13 @@ class RemotebuildUtils {
             });
     }
 
-    public static runCommandAndWait(baseUrl: string, testId: number, command: string, cwd?: string): Q.Promise<TestUtils.ICommand> {
+    public static runCommandAndWait(baseUrl: string, testId: number, command: string, cwd?: string): Q.Promise<RemotebuildUtils.ICommand> {
         return RemotebuildUtils.startCommand(baseUrl, testId, command, cwd)
-            .then((response: TestUtils.IRequestResult): Q.Promise<TestUtils.ICommand> => {
+            .then((response: RemotebuildUtils.IRequestResult): Q.Promise<RemotebuildUtils.ICommand> => {
                 if (response.response.statusCode !== 200) {
                     throw new Error("Error in command " + command);
                 }
-                var cmd = <TestUtils.ICommand>JSON.parse(response.body);
+                var cmd = <RemotebuildUtils.ICommand>JSON.parse(response.body);
                 return RemotebuildUtils.pollForCommandFinish(baseUrl, testId, cmd.id);
             });
     }
@@ -145,8 +145,8 @@ class RemotebuildUtils {
      * Submit a command to run on the remote server, and wait for it to complete.
      * If the command fails, then return a rejected promise, otherwise return a resolved promise.
      */
-    public static runCommandAndWaitForSuccess(baseUrl: string, testId: number, cmd: string, cwd?: string): Q.Promise<TestUtils.ICommand> {
-        return RemotebuildUtils.runCommandAndWait(baseUrl, testId, cmd, cwd).then((command: TestUtils.ICommand): TestUtils.ICommand => {
+    public static runCommandAndWaitForSuccess(baseUrl: string, testId: number, cmd: string, cwd?: string): Q.Promise<RemotebuildUtils.ICommand> {
+        return RemotebuildUtils.runCommandAndWait(baseUrl, testId, cmd, cwd).then((command: RemotebuildUtils.ICommand): RemotebuildUtils.ICommand => {
             if (command.status === "error") {
                 throw new Error(util.format("Command %s failed: %s\n\n%s", cmd, command.result, command.stderr));
             }
@@ -229,7 +229,7 @@ class RemotebuildUtils {
     }
 }
 
-module TestUtils {
+module RemotebuildUtils {
     export interface IResponse {
         statusCode: number
     }

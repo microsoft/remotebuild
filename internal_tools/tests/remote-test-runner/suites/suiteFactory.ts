@@ -73,16 +73,19 @@ class SuiteFactory {
                         throw new Error("The path in the 'setupScript' attribute is a directory (it needs to be a file)");
                     }
 
-                    // Extract the relative path between the  sure the script path is relative to the test folder, not absolute
-                    var relativeSetupScriptPath: string = path.relative(args.testsPath, suiteConfig.setupScript);
-
                     // Make sure the setup script is under the root test folder
                     if (path.resolve(suiteConfig.setupScript).indexOf(path.resolve(args.testsPath)) !== 0) {
                         throw new Error("The path in the 'setupScript' attribute must be under the specified test folder");
                     }
 
-                    // Add the setup script relative path to the build options
-                    buildOptions.setupScript = relativeSetupScriptPath;
+                    // Build the relative path to the script (starting at the root of the test package)
+                    var scriptRelativePath = path.relative(args.testsPath, suiteConfig.setupScript);
+
+                    // Convert the backslashes in the script path to forward slashes (so that we can deal with remote paths in a platform-agnostic way thanks to remotebuild-test-agent)
+                    scriptRelativePath = scriptRelativePath.replace(/\\/g, "/");
+
+                    // Add the setup script path to the build options (add the relative path from the root of the test package)
+                    buildOptions.setupScript = scriptRelativePath;
                 }
 
                 // At this point the common suite attributes appear valid, so build the suite (and validate suite-specific attributes)
@@ -136,7 +139,7 @@ class SuiteFactory {
     }
 
     private static buildVMSuite(config: ISuiteConfig, testFiles: string[], testPath: string, buildOptions: ISuiteBuildOptions): VMSuite {
-        // Make sure the suite defines a "vmTemplate" attribute
+        /*// Make sure the suite defines a "vmTemplate" attribute
         if (!config.vmTemplate) {
             throw new Error("The suite does not have a 'vmTemplate' attribute");
         }
@@ -146,9 +149,9 @@ class SuiteFactory {
             throw new Error("The suite has an invalid 'vmStartupPort' attribute: the value must be the string representation of a number between 1 and 65535");
         }
 
-        // Resolve the files to test
+        return new VMSuite();*/
 
-        return new VMSuite();
+        throw new Error("Not implemented");
     }
 
     private static getSuiteTypeFromString(stringType: string): SuiteType {
@@ -160,11 +163,12 @@ class SuiteFactory {
     }
 
     private static resolveFiles(globs: string[]): string[] {
-        // Each entry is a glob, so resolve each glob individually and save the result
+        // Each element is a glob, which will resolve to an array of files, so we keep each array in an array and will merge them afterwards
         var resolvedGlobs: string[][] = [];
 
         globs.forEach((globPattern: string) => {
-            resolvedGlobs.push(glob.sync(globPattern));
+            // The glob package requires that only forward slashes are used, even on win32, so we need to replace the backslashes if there are any
+            resolvedGlobs.push(glob.sync(globPattern.replace(/\\/g, "/")));
         });
 
         // Merge all resolved globs together with [].concat.apply()

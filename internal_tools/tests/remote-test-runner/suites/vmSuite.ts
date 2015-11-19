@@ -32,6 +32,11 @@ class VMSuite extends RemoteSuite {
     }
 
     protected launch(): Q.Promise<any> {
+        // Launch the tests normally as if this was a remote suite
+
+        // Terminate the test VM based on the test results
+
+
         throw new Error("Not implemented");
     }
 }

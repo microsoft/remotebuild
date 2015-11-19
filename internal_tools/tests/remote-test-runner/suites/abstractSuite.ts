@@ -9,14 +9,14 @@ import Q = require("q");
 import ISuiteBuildOptions = RemoteTestRunnerInterfaces.ISuiteBuildOptions;
 
 abstract class AbstractSuite {
-    protected files: string[];
+    protected testFiles: string[];
     protected testPackage: string;
     protected mochaReporter: string;
     protected setupScript: string;
     protected sourcesPath: string;
 
     public constructor(files: string[], testPath: string, options?: ISuiteBuildOptions) {
-        this.files = files;
+        this.testFiles = files;
         this.testPackage = testPath;
 
         // Check build options
