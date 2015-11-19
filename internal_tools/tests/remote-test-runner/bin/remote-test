@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+
+var remoteTestRunner = require('../remoteTestRunner');
+remoteTestRunner.run();

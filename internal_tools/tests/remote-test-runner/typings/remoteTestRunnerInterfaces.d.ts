@@ -1,6 +1,4 @@
 declare module RemoteTestRunnerInterfaces {
-    export enum SuiteType { LOCAL = 0, REMOTE, VM }
-
     export interface ISuiteConfig {
         remoteIp?: string;
         remotePort?: string;

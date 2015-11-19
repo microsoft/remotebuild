@@ -2,6 +2,10 @@
     "name": "remote-test-runner",
     "version": "0.0.1",
     "private": true,
+    "main": "./remoteTestRunner.js",
+    "bin": {
+        "remote-test": "./bin/remote-test"
+    },
     "dependencies": {
         "fstream": "latest",
         "glob": "latest",

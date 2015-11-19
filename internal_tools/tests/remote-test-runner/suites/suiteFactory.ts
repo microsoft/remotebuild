@@ -21,7 +21,8 @@ import ISuiteBuildOptions = RemoteTestRunnerInterfaces.ISuiteBuildOptions;
 import IParsedArgs = RemoteTestRunnerInterfaces.IParsedArgs;
 import ISuiteConfig = RemoteTestRunnerInterfaces.ISuiteConfig;
 import ITestConfig = RemoteTestRunnerInterfaces.ITestConfig;
-import SuiteType = RemoteTestRunnerInterfaces.SuiteType;
+
+enum SuiteType { LOCAL = 0, REMOTE = 1, VM = 2 }
 
 class SuiteFactory {
     public static buildSuites(testConfig: ITestConfig, args: IParsedArgs): AbstractSuite[] {
