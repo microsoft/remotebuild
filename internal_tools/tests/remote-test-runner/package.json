@@ -14,6 +14,6 @@
         "typescript": "latest"
     },
     "scripts": {
-        "prepublish": "tsc -target es5 -module commonjs vmUtils.ts"
+        "prepublish": "tsc -target es5 -module commonjs remoteTestRunner.ts"
     }
 }
