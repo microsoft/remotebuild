@@ -23,14 +23,12 @@ class VMUtils {
 
     private static vmsFolder: string = path.join(process.env.HOME, "VirtualBox VMs");
     private static vmsRunnerFolder: string = path.join(VMUtils.vmsFolder, "testRuns");
-    private static vmCommunicationServer: NodeJSHttp.Server;
     private static runCounter: number = VMUtils.initializeCounter();
 
     /**
-     * Clones the specified VM template and starts the new VM. Returns an IVMInfo containing info about the new VM. If the remotebuildPort argument is provided, then the created VM will
-     * attempt to use that port when starting its remotebuild process.
+     * Starts the specified VM (or a new clone of it, if the cloneVm flag is true). Returns an IVMInfo containing info about the new VM and its remotebuild process.
      */
-    public static launchNewVMWithRemotebuild(templateName: string, vmStartupPort: string): Q.Promise<VMUtils.IVMInfo> {
+    public static launchNewVMWithRemotebuild(templateName: string, vmStartupPort: string, cloneVm: boolean = true): Q.Promise<VMUtils.IVMInfo> {
         if (!templateName) {
             return Q.reject<VMUtils.IVMInfo>(new Error("Error: launchNewVMWithRemotebuild() invoked with no template"));
         }
@@ -41,96 +39,106 @@ class VMUtils {
 
         var vmInfo: VMUtils.IVMInfo;
         var vmStartupPromise: Q.Deferred<VMUtils.IVMInfo> = Q.defer<VMUtils.IVMInfo>();
+        var vmCommunicationServer: http.Server;
 
-        return VMUtils.cloneVM(templateName)
-            .then((info: VMUtils.IVMInfo) => {
-                // Save the new VM's name
-                vmInfo = info;
+        return Q({}).then(() => {
+            if (cloneVm) {
+                return VMUtils.cloneVM(templateName);
+            } else {
+                return VMUtils.startVM(templateName);
+            }
+        }).then((info: VMUtils.IVMInfo) => {
+            // Save the new VM's name
+            vmInfo = info;
 
-                // Set up a server that will await contact from the new VM
-                var deferred: Q.Deferred<any> = Q.defer<any>();
+            // Set up a server that will await contact from the new VM
+            var deferred: Q.Deferred<any> = Q.defer<any>();
 
-                function handleRequest(request: NodeJSHttp.ServerRequest, response: NodeJSHttp.ServerResponse): void {
-                    // Route request (it's either an error or a notice that the VM is ready and listening)
-                    // Note: this is an extremely simple server, no need for advanced routing module
-                    var parsedRequest = url.parse(request.url);
-                    var query = querystring.parse(parsedRequest.query);
+            function handleRequest(request: http.ServerRequest, response: http.ServerResponse): void {
+                // Route request (it's either an error or a notice that the VM is ready and listening)
+                // Note: this is an extremely simple server, no need for advanced routing module
+                var parsedRequest = url.parse(request.url);
+                var query = querystring.parse(parsedRequest.query);
 
-                    switch (parsedRequest.pathname) {
-                        case "/listening":
-                            // Empty response
-                            response.end();
+                switch (parsedRequest.pathname) {
+                    case "/listening":
+                        // Empty response
+                        response.end();
 
-                            // The request should include a port on which Remotebuild is listening, so validate the received port
-                            if (!remotebuildUtils.isPortValid(query.port)) {
-                                vmStartupPromise.reject(new Error("The test VM reported an invalid port: " + query.port));
-                            }
+                        // The request should include a port on which Remotebuild is listening, so validate the received port
+                        if (!remotebuildUtils.isPortValid(query.port)) {
+                            vmStartupPromise.reject(new Error("The test VM reported an invalid port: " + query.port));
+                        }
 
-                            // Determine the VM's IP address using the request's connection
-                            var ipAddr = request.connection.remoteAddress;
+                        // Determine the VM's IP address using the request's connection
+                        var ipAddr = request.connection.remoteAddress;
 
-                            if (!ipAddr) {
-                                vmStartupPromise.reject(new Error("Could not obtain the VM's IP address from the request"));
-                                break;
-                            }
-
-                            // Save IP and port in the VM info
-                            vmInfo.remotebuildInfo = {
-                                ip: ipAddr,
-                                port: query.port
-                            };
-
-                            // Resolve the VM startup promise
-                            vmStartupPromise.resolve(vmInfo);
+                        if (!ipAddr) {
+                            vmStartupPromise.reject(new Error("Could not obtain the VM's IP address from the request"));
                             break;
+                        }
 
-                        case "/error":
-                            // Empty response
-                            response.end();
+                        // Save IP and port in the VM info
+                        vmInfo.remotebuildInfo = {
+                            ip: ipAddr,
+                            port: query.port
+                        };
 
-                            // Reject the VM startup promise with the error sent by the VM
-                            var errorMessage: string = "The VM reported an error"
+                        // Resolve the VM startup promise
+                        vmStartupPromise.resolve(vmInfo);
+                        break;
 
-                            if (query.error) {
-                                errorMessage = util.format("%s:%s=====%s%s%s=====%s",
-                                    errorMessage,
-                                    os.EOL,
-                                    os.EOL,
-                                    decodeURI(query.error),
-                                    os.EOL,
-                                    os.EOL);
-                            }
+                    case "/error":
+                        // Empty response
+                        response.end();
 
-                            vmStartupPromise.reject(new Error(errorMessage));
-                            break;
-                        default:
-                            // Empty response
-                            response.end();
+                        // Reject the VM startup promise with the error sent by the VM
+                        var errorMessage: string = "The VM reported an error"
 
-                            // Reject the VM startup promise with a generic error
-                            vmStartupPromise.reject(new Error("The test VM sent an invalid message"));
-                    }
+                        if (query.error) {
+                            errorMessage = util.format("%s:%s=====%s%s%s=====%s",
+                                errorMessage,
+                                os.EOL,
+                                os.EOL,
+                                decodeURI(query.error),
+                                os.EOL,
+                                os.EOL);
+                        }
+
+                        vmStartupPromise.reject(new Error(errorMessage));
+                        break;
+                    default:
+                        // Empty response
+                        response.end();
+
+                        // Reject the VM startup promise with a generic error
+                        vmStartupPromise.reject(new Error("The test VM sent an invalid message"));
                 }
+            }
 
-                VMUtils.vmCommunicationServer = http.createServer(handleRequest);
-                VMUtils.vmCommunicationServer.listen(vmStartupPort, () => {
-                    deferred.resolve({});
-                });
-
-                return deferred.promise;
-            })
-            .then(() => {
-                // Start the new VM
-                return VMUtils.startVM(vmInfo.name);
-            })
-            .then(() => {
-                // Start the timeout for the VM's "listening" message
-                return vmStartupPromise.promise.timeout(VMUtils.VM_STARTUP_TIMEOUT);
-            })
-            .then((info: VMUtils.IVMInfo) => {
-                // The VM is ready and it has Remotebuild running, so resolve this promise chain with the VM's info
-                return Q.resolve(info);
+            vmCommunicationServer = http.createServer(handleRequest);
+            vmCommunicationServer.listen(vmStartupPort, () => {
+                deferred.resolve({});
             });
+
+            return deferred.promise;
+        }).then(() => {
+            // Start the new VM
+            return VMUtils.startVM(vmInfo.name);
+        }).then(() => {
+            // Start the timeout for the VM's "listening" message
+            return vmStartupPromise.promise.timeout(VMUtils.VM_STARTUP_TIMEOUT);
+        }).then((info: VMUtils.IVMInfo) => {
+            var deferred: Q.Deferred<VMUtils.IVMInfo> = Q.defer<VMUtils.IVMInfo>();
+
+            // The VM is ready and it has Remotebuild running, so clean up the server
+            vmCommunicationServer.close(() => {
+                // Resolve this promise chain with the VM's info
+                deferred.resolve(info);
+            });
+
+            return deferred.promise;
+        });
     }
 
     /*
@@ -142,10 +150,9 @@ class VMUtils {
             return Q.reject<VMUtils.IVMInfo>(new Error("Error: deleteVm() invoked with no VM name"));
         }
 
-        return VMUtils.hardShutDown(vmName)
-            .then(() => {
-                return VMUtils.unregisterVM(vmName, true);
-            });
+        return VMUtils.hardShutDown(vmName).then(() => {
+            return VMUtils.unregisterVM(vmName, true);
+        });
     }
 
     /*

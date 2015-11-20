@@ -21,6 +21,7 @@ import ISuiteBuildOptions = RemoteTestRunnerInterfaces.ISuiteBuildOptions;
 import IParsedArgs = RemoteTestRunnerInterfaces.IParsedArgs;
 import ISuiteConfig = RemoteTestRunnerInterfaces.ISuiteConfig;
 import ITestConfig = RemoteTestRunnerInterfaces.ITestConfig;
+import IVMSuiteBuildOptions = RemoteTestRunnerInterfaces.IVMSuiteBuildOptions;
 
 enum SuiteType { LOCAL = 0, REMOTE = 1, VM = 2 }
 
@@ -127,17 +128,17 @@ class SuiteFactory {
     }
 
     private static buildRemoteSuite(config: ISuiteConfig, testFiles: string[], testPath: string, buildOptions: ISuiteBuildOptions): RemoteSuite {
-        // Make sure the suite defines a "remoteMachineIp" attribute
+        // Make sure the suite defines a "remoteIp" attribute
         if (!config.remoteIp) {
             throw new Error("The suite does not have a 'remoteIp' attribute");
         }
 
-        // Make sure the suite defines a "remoteMachinePort" attribute
+        // Make sure the suite defines a "remotePort" attribute
         if (!config.remotePort) {
             throw new Error("The suite does not have a 'remotePort' attribute");
         }
 
-        // Make sure the "remoteMachinePort" attribute is a valid port
+        // Make sure the "remotePort" attribute is a valid port
         if (!RemotebuildUtils.isPortValid(config.remotePort)) {
             throw new Error("The suite has an invalid 'remotePort' attribute: the value must be the string representation of a number between 1 and 65535");
         }
@@ -147,19 +148,34 @@ class SuiteFactory {
     }
 
     private static buildVMSuite(config: ISuiteConfig, testFiles: string[], testPath: string, buildOptions: ISuiteBuildOptions): VMSuite {
-        /*// Make sure the suite defines a "vmTemplate" attribute
+        // Make sure the suite defines a "vmTemplate" attribute
         if (!config.vmTemplate) {
             throw new Error("The suite does not have a 'vmTemplate' attribute");
         }
 
-        // If the suite defines a "vmStartupPort" attribute, make sure it is a valid port
+        // Make sure the suite defines a "vmStartupPort" attribute
+        if (!config.vmStartupPort) {
+            throw new Error("The suite does not have a 'vmStartupPort' attribute");
+        }
+
+        // Make sure the "vmStartupPort" attribute is a valid port
         if (config.vmStartupPort && !RemotebuildUtils.isPortValid(config.vmStartupPort)) {
             throw new Error("The suite has an invalid 'vmStartupPort' attribute: the value must be the string representation of a number between 1 and 65535");
         }
 
-        return new VMSuite();*/
+        // Make the VM suite build options
+        var vmBuildOptions: IVMSuiteBuildOptions = <IVMSuiteBuildOptions>buildOptions;
 
-        throw new Error("Not implemented");
+        if (config.hasOwnProperty("cloneVm")) {
+            vmBuildOptions.cloneVm = config.cloneVm;
+        }
+
+        if (config.hasOwnProperty("keepVmOnTestPass")) {
+            vmBuildOptions.keepVmOnTestPass = config.keepVmOnTestPass;
+        }
+
+        // Build the suite
+        return new VMSuite(testFiles, testPath, config.vmTemplate, config.vmStartupPort, vmBuildOptions);
     }
 
     private static getSuiteTypeFromString(stringType: string): SuiteType {
