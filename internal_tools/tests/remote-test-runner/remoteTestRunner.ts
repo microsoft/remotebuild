@@ -78,7 +78,7 @@ class RemoteTestRunner {
         var sourcesPath: string = "";
 
         if (args.length) {
-            sourcesPath = args.splice(0, 1)[0];
+            sourcesPath = path.resolve(args.splice(0, 1)[0]);
         }
 
         // Return the parsed args
