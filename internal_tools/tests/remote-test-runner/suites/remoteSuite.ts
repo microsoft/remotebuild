@@ -65,7 +65,7 @@ class RemoteSuite extends AbstractSuite {
             }
         }).then(() => {
             // Lastly, install "mocha" for the remote test
-            this.remoteTest.runCommandAndWaitForSuccess("npm install mocha");
+            return this.remoteTest.runCommandAndWaitForSuccess("npm install mocha");
         });
     }
 
@@ -81,7 +81,7 @@ class RemoteSuite extends AbstractSuite {
         // Invoke the mocha command remotely and wait for the command to finish
         return this.remoteTest.runCommandAndWaitForSuccess(command).then((remoteCommand: RemoteCommand) => {
             // Print the output of the remote mocha command to stdout to see the mocha report
-            console.log("Output:");
+            console.log("Remote tests output:");
             console.log(remoteCommand.command.result);
         })
     }
@@ -124,37 +124,15 @@ class RemoteSuite extends AbstractSuite {
      */
     private packTestPackage(): Q.Promise<string> {
         var deferred: Q.Deferred<any> = Q.defer<string>();
-        var errorOutput: string = "";
-        var output: string = "";
-        var cp = child_process.spawn("npm", ["pack", this.testPackage], { cwd: os.tmpdir() });
 
-        cp.on("error", (err: Error) => {
-            deferred.reject(new Error(util.format("Error running 'npm pack' on the test package:%s%s", os.EOL, err.message)))
-        });
-
-        cp.on("exit", (code: number) => {
-            if (code) {
-                var reason: string = util.format("Exit code: %d", code);
-
-                if (errorOutput) {
-                    reason += util.format("%sstderr:%s%s", os.EOL, os.EOL, errorOutput);
-                }
-
-                var message: string = util.format("Error running 'npm pack' on the test package:%s%s", os.EOL, reason);
-
-                deferred.reject(new Error(message));
+        child_process.exec(util.format("npm pack %s", this.testPackage), { cwd: os.tmpdir() }, (err: Error, stdout: Buffer, stderr: Buffer) => {
+            if (err) {
+                deferred.reject(new Error(util.format("Error running 'npm pack' on the test package:%s%s", os.EOL, err.message)))
             } else {
-                // NPM outputs the name of the .tgz file that was created as part of 'npm pack' to stdout, so use that as the basename and the temporary dir as the dirname
-                deferred.resolve(path.join(os.tmpdir(), output));
+                // NPM outputs the name of the .tgz file that was created to stdout, so use that as the basename and the temporary dir as the dirname to build the full path to
+                // the packed test package
+                deferred.resolve(path.join(os.tmpdir(), stdout.toString().trim()));
             }
-        });
-
-        cp.stdout.on("data", (data: Buffer) => {
-            output += data.toString();
-        });
-
-        cp.stderr.on("data", (data: Buffer) => {
-            errorOutput += data.toString();
         });
 
         return deferred.promise;

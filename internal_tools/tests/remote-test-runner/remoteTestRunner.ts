@@ -72,7 +72,7 @@ class RemoteTestRunner {
         }
 
         // The first remaining arg is the test folder path
-        var testPath: string = args.splice(0, 1)[0];
+        var testPath: string = path.resolve(args.splice(0, 1)[0]);
 
         // The second (if present) is the sources folder path
         var sourcesPath: string = "";
@@ -149,7 +149,7 @@ class RemoteTestRunner {
         try {
             fileContent = JSON.parse(fs.readFileSync(configFilePath, "utf8"));
         } catch (err) {
-            throw new Error(util.format("Error reading the test configuration file:%s%S", os.EOL, err.message));
+            throw new Error(util.format("Error reading the test configuration file:%s%s", os.EOL, err.message));
         }
 
         // A "suites" object needs to be defined at the root, and it needs to be an Array

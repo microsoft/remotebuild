@@ -17,13 +17,18 @@ import ITestConfig = RemoteTestRunnerInterfaces.ITestConfig;
 
 class Runner {
     public static runTests(config: ITestConfig, args: IParsedArgs): Q.Promise<any> {
-        var suites: AbstractSuite[] = [];
+        var suites: AbstractSuite[];
         var criticalErrorOccurred: boolean = false;
 
         // Build the test suites
         console.log("Building test suites...");
         suites = SuiteFactory.buildSuites(config, args);
-        console.log("Done");
+
+        if (!suites.length) {
+            console.log("No test suites to run.");
+
+            return Q.resolve({});
+        }
 
         // Run test suites
         return suites.reduce((previous: Q.Promise<any>, current: AbstractSuite, index: number) => {

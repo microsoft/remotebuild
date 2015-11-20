@@ -26,7 +26,7 @@ enum SuiteType { LOCAL = 0, REMOTE = 1, VM = 2 }
 
 class SuiteFactory {
     public static buildSuites(testConfig: ITestConfig, args: IParsedArgs): AbstractSuite[] {
-        var suites: AbstractSuite[];
+        var suites: AbstractSuite[] = [];
 
         testConfig.suites.forEach((suiteConfig: ISuiteConfig, index: number) => {
             try {
@@ -41,7 +41,7 @@ class SuiteFactory {
                 }
 
                 // Resolve the test files for this suite
-                var resolvedTestFiles: string[] = SuiteFactory.resolveFiles(suiteConfig.testFiles);
+                var resolvedTestFiles: string[] = SuiteFactory.resolveFiles(suiteConfig.testFiles, args.testsPath);
 
                 // Make sure there is at least one test file
                 if (!resolvedTestFiles.length) {
@@ -121,17 +121,17 @@ class SuiteFactory {
     private static buildRemoteSuite(config: ISuiteConfig, testFiles: string[], testPath: string, buildOptions: ISuiteBuildOptions): RemoteSuite {
         // Make sure the suite defines a "remoteMachineIp" attribute
         if (!config.remoteIp) {
-            throw new Error("The suite does not have a 'remoteMachineIp' attribute");
+            throw new Error("The suite does not have a 'remoteIp' attribute");
         }
 
         // Make sure the suite defines a "remoteMachinePort" attribute
         if (!config.remotePort) {
-            throw new Error("The suite does not have a 'remoteMachinePort' attribute");
+            throw new Error("The suite does not have a 'remotePort' attribute");
         }
 
         // Make sure the "remoteMachinePort" attribute is a valid port
         if (!RemotebuildUtils.isPortValid(config.remotePort)) {
-            throw new Error("The suite has an invalid 'remoteMachinePort' attribute: the value must be the string representation of a number between 1 and 65535");
+            throw new Error("The suite has an invalid 'remotePort' attribute: the value must be the string representation of a number between 1 and 65535");
         }
 
         // At this point the attributes seem valid, so build the suite
@@ -155,20 +155,24 @@ class SuiteFactory {
     }
 
     private static getSuiteTypeFromString(stringType: string): SuiteType {
-        if (!SuiteType[stringType]) {
+        var upperCaseType: string = stringType.toUpperCase();
+
+        if (!SuiteType[upperCaseType]) {
             throw new Error("Invalid suite type: " + stringType);
         }
 
-        return SuiteType[stringType];
+        return SuiteType[upperCaseType];
     }
 
-    private static resolveFiles(globs: string[]): string[] {
+    private static resolveFiles(globs: string[], testPackage: string): string[] {
         // Each element is a glob, which will resolve to an array of files, so we keep each array in an array and will merge them afterwards
         var resolvedGlobs: string[][] = [];
 
         globs.forEach((globPattern: string) => {
             // The glob package requires that only forward slashes are used, even on win32, so we need to replace the backslashes if there are any
-            resolvedGlobs.push(glob.sync(globPattern.replace(/\\/g, "/")));
+            var forwardSlashGlob: string = globPattern.replace(/\\/g, "/");
+
+            resolvedGlobs.push(glob.sync(forwardSlashGlob, { cwd: testPackage }));
         });
 
         // Merge all resolved globs together with [].concat.apply()
