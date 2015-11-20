@@ -7,7 +7,7 @@
 import Q = require("q");
 
 import RemoteSuite = require("./remoteSuite");
-import VMUtils = require("./utils/vmUtils");
+import VMUtils = require("../utils/vmUtils");
 
 import ISuiteBuildOptions = RemoteTestRunnerInterfaces.ISuiteBuildOptions;
 import IVMSuiteBuildOptions = RemoteTestRunnerInterfaces.IVMSuiteBuildOptions;
