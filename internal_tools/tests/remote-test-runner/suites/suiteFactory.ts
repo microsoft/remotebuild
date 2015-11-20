@@ -63,25 +63,33 @@ class SuiteFactory {
 
                 // If the suite has a "setupScript" attribute, validate it
                 if (suiteConfig.setupScript) {
+                    // Build the absolute path of the script if it isn't already
+                    var scriptFullPath: string = suiteConfig.setupScript;
+
+                    if (!path.isAbsolute(scriptFullPath)) {
+                        // The specified path is not absolute, so we must build it by joining the test package path and the specified relative path
+                        scriptFullPath = path.join(args.testsPath, scriptFullPath);
+                    }
+
                     // Make sure it points to a file that exists
-                    if (!fs.existsSync(suiteConfig.setupScript)) {
+                    if (!fs.existsSync(scriptFullPath)) {
                         throw new Error("The path in the 'setupScript' attribute does not exist");
                     }
 
                     // Make sure that it points to a file
-                    if (fs.statSync(suiteConfig.setupScript).isDirectory()) {
+                    if (fs.statSync(scriptFullPath).isDirectory()) {
                         throw new Error("The path in the 'setupScript' attribute is a directory (it needs to be a file)");
                     }
 
                     // Make sure the setup script is under the root test folder
-                    if (path.resolve(suiteConfig.setupScript).indexOf(path.resolve(args.testsPath)) !== 0) {
+                    if (scriptFullPath.indexOf(args.testsPath) !== 0) {
                         throw new Error("The path in the 'setupScript' attribute must be under the specified test folder");
                     }
 
                     // Build the relative path to the script (starting at the root of the test package)
-                    var scriptRelativePath = path.relative(args.testsPath, suiteConfig.setupScript);
+                    var scriptRelativePath = path.relative(args.testsPath, scriptFullPath);
 
-                    // Convert the backslashes in the script path to forward slashes (so that we can deal with remote paths in a platform-agnostic way thanks to remotebuild-test-agent)
+                    // Convert the backslashes in the script path to forward slashes (remotebuild-test-agent requires forward slashes for invoking commands)
                     scriptRelativePath = scriptRelativePath.replace(/\\/g, "/");
 
                     // Add the setup script path to the build options (add the relative path from the root of the test package)

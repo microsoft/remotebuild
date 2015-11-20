@@ -44,7 +44,7 @@ class Runner {
         }, Q.resolve({})).then(() => {
             if (criticalErrorOccurred) {
                 // If we had a critical error in one of the suites, we need to surface an error so that the process exits with a non-zero code
-                return Q.reject(new Error("There was an error in at least one suite, see above for details"));
+                return Q.reject(new Error("There was an error or a test failure in at least one suite, see above for details"));
             } else {
                 console.log("Done running suites");
             }

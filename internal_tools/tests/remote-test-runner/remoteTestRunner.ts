@@ -43,7 +43,7 @@ class RemoteTestRunner {
     }
 
     /**
-     * Parses process.argv by looking for "--reporter" and the corresponding value, and then using the first 2 remaining args as the test folder and the source folder, respectively. Returns an
+     * Parses process.argv by looking for "--reporter" and the corresponding value, and then using the first 2 remaining args as the test package and the source folder, respectively. Returns an
      * IParsedArgs populated with the values of process.argv.
      */
     private static parseArgs(): IParsedArgs {
@@ -71,7 +71,7 @@ class RemoteTestRunner {
             throw new Error(util.format("Invalid command. Usage:%s    %s TEST_PACKAGE_FOLDER [SOURCES_FOLDER] [--reporter MOCHA_REPORTER]", os.EOL, RemoteTestRunner.COMMAND_NAME));
         }
 
-        // The first remaining arg is the test folder path
+        // The first remaining arg is the test package path
         var testPath: string = path.resolve(args.splice(0, 1)[0]);
 
         // The second (if present) is the sources folder path
