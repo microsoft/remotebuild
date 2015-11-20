@@ -45,7 +45,10 @@ class VMUtils {
             if (cloneVm) {
                 return VMUtils.cloneVM(templateName);
             } else {
-                return VMUtils.startVM(templateName);
+                // No need to clone the VM, so just return with the template's name as the VM name
+                return Q.resolve({
+                    name: templateName
+                });
             }
         }).then((info: VMUtils.IVMInfo) => {
             // Save the new VM's name
