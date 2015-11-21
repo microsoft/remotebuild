@@ -79,10 +79,15 @@ class RemoteSuite extends AbstractSuite {
         }
 
         // Invoke the mocha command remotely and wait for the command to finish
-        return this.remoteTest.runCommandAndWaitForSuccess(command).then((remoteCommand: RemoteCommand) => {
+        return this.remoteTest.runCommandAndWait(command).then((remoteCommand: RemoteCommand) => {
             // Print the output of the remote mocha command to stdout to see the mocha report
             console.log("Remote tests output:");
             console.log(remoteCommand.command.result);
+
+            if (remoteCommand.command.status === "error") {
+                // Propagate the test failure as an error to ensure the process exits with a non-zero code
+                return Q.reject(new Error("At least one test failed"));
+            }
         })
     }
 

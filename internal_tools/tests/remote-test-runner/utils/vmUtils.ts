@@ -21,7 +21,7 @@ class VMUtils {
     private static VBOXMANAGE_COMMAND = "vboxmanage";
     private static VM_STARTUP_TIMEOUT = 5 * 60 * 1000; // 5 minutes
 
-    private static vmsFolder: string = path.join(process.env.HOME, "VirtualBox VMs");
+    private static vmsFolder: string = path.join(process.env[(process.platform == 'win32') ? 'USERPROFILE' : 'HOME'], "VirtualBox VMs");
     private static vmsRunnerFolder: string = path.join(VMUtils.vmsFolder, "testRuns");
     private static runCounter: number = VMUtils.initializeCounter();
 
@@ -311,6 +311,10 @@ class VMUtils {
      * Finds the highest number ID currently in use by the runner VMs, and returns one above that.
      */
     private static initializeCounter(): number {
+        if (!fs.existsSync(VMUtils.vmsRunnerFolder)) {
+            return 1;
+        }
+
         var idRegex: RegExp = /-(\d+)$/;
         var highestId: number = 0;
         var vms: string[] = fs.readdirSync(VMUtils.vmsRunnerFolder);

@@ -162,10 +162,11 @@ class RemoteTestRunner {
     }
 
     /**
-     * Prints a generic error message along with the error.
+     * Prints a generic error message along with the error, and exits with code 1.
      */
     private static handleError(err: any): void {
         console.error(util.format("Error:%s%s", os.EOL, err.message));
+        process.exit(1);
     }
 }
 
