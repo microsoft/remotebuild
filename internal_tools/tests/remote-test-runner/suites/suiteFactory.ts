@@ -36,6 +36,8 @@ class SuiteFactory {
                     throw new Error("The suite does not have a 'type' attribute");
                 }
 
+                var suiteType: SuiteType = SuiteFactory.getSuiteTypeFromString(suiteConfig.type);
+
                 // Make sure the suite has a "testFiles" attribute, and that it is an array
                 if (!Array.isArray(suiteConfig.testFiles)) {
                     throw new Error("The suite does not have a 'testFiles' attribute, or has a 'testFiles' attribute that is not an array");
@@ -98,7 +100,6 @@ class SuiteFactory {
                 }
 
                 // At this point the common suite attributes appear valid, so build the suite (and validate suite-specific attributes)
-                var suiteType: SuiteType = SuiteFactory.getSuiteTypeFromString(suiteConfig.type);;
                 var newSuite: AbstractSuite = null;
 
                 switch (suiteType) {
@@ -181,7 +182,7 @@ class SuiteFactory {
     private static getSuiteTypeFromString(stringType: string): SuiteType {
         var upperCaseType: string = stringType.toUpperCase();
 
-        if (!SuiteType[upperCaseType]) {
+        if (!SuiteType.hasOwnProperty(upperCaseType)) {
             throw new Error("Invalid suite type: " + stringType);
         }
 
