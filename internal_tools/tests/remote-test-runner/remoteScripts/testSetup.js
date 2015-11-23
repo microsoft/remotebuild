@@ -1,3 +1,5 @@
+// This script needs to be pre-installed on each VM that is intended to be used for automated tests. It needs to be automatically run when the VM starts.
+
 var child_process = require("child_process");
 var http = require("http");
 var path = require("path");
@@ -5,8 +7,8 @@ var Q = require("q");
 var querystring = require("querystring");
 
 // Constants
-var HOST_IP = "dans-mac-mini";
-var HOST_PORT = "53541";
+var HOST_IP = "dans-mac-mini";  // Modify with the host machine's IP
+var HOST_PORT = "53541";        // Modify if this default port cannot be used (whether this is changed or not, the value still needs to be indicated in the remote-test-runner test config)
 var REMOTEBUILD_PORT = "3000";
 
 // Main promise chain
@@ -42,7 +44,7 @@ Q({})
 		
 		return deferred.promise;
 	})
-	.then(function (ipAddr) {
+	.then(function () {
 		// Contact host test server to let it know we are listening, and give Remotebuild's port
 	    var qs = querystring.stringify({ port: REMOTEBUILD_PORT });
 		var urlPath = "/listening?" + qs;
