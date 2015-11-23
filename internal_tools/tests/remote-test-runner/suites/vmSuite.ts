@@ -47,12 +47,11 @@ class VMSuite extends RemoteSuite {
     protected launch(): Q.Promise<any> {
         // Launch the tests normally as if this was a remote suite
         return super.launch().then(() => {
-            // Tests passed, so delete the VM, UNLESS:
+            // Tests passed, so delete the VM, EXCEPT in one of the following cases, where we just perform a hard shut down instead:
             //     -cloneVm is false (which means we are in the original VM)
-            //         or
             //     -keepVmOnTestPass is true
             if (!this.cloneVm || this.keepVmOnTestPass) {
-                return Q.resolve({});
+                return VMUtils.hardShutDown(this.vmInfo.name);
             }
 
             return VMUtils.deleteVm(this.vmInfo.name);
