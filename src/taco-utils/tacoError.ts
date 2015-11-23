@@ -16,6 +16,11 @@ import TacoGlobalConfig = tacoGlobalConfig.TacoGlobalConfig;
 import ResourceManager = resourceManager.ResourceManager;
 
 module TacoUtility {
+    export enum TacoErrorLevel {
+        Error,
+        Warning
+    }
+
     export class TacoError implements Error {
         private static DEFAULT_ERROR_PREFIX: string = "TACO";
         private static ERROR_CODE_FIXED_WIDTH: string = "0000";
@@ -23,6 +28,7 @@ module TacoUtility {
         public errorCode: number;
         public message: string;
         public name: string;
+        public errorLevel: TacoErrorLevel;
 
         private innerError: Error;
 
@@ -31,31 +37,41 @@ module TacoUtility {
          * @param {number} errorCode  error code for the error say 101
          * @param {string} message user friendly localized error message
          */
-        constructor(errorCode: number, message: string, innerError?: Error) {
+        constructor(errorCode: number, name: string, message: string, innerError?: Error) {
             this.errorCode = errorCode;
             this.message = message;
-            this.name = null;
+            this.name = name;
             this.innerError = innerError;
+            this.errorLevel = TacoErrorLevel.Error;
         }
 
         public get isTacoError(): boolean {
             return true;
         }
 
-        public static getError(errorToken: string, errorCode: number, resources: ResourceManager, ...optionalArgs: any[]): TacoError {
-            var args: string[] = [];
-            if (optionalArgs.length > 0) {
-                args = ArgsHelper.getOptionalArgsArrayFromFunctionCall(arguments, 3);
-            }
+        public static getWarning(errorToken: string, resources: ResourceManager, ...optionalArgs: string[]): TacoError {
+            var message: string = TacoError.getMessageString(errorToken, resources, optionalArgs);
 
-            return TacoError.wrapError(null, errorToken, errorCode, resources, args);
+            // We do not use an error code for Warnings
+            var warning = new TacoError(0, errorToken, message);
+
+            warning.errorLevel = TacoErrorLevel.Warning;
+            return warning;
+        }
+
+        public static getError(errorToken: string, errorCode: number, resources: ResourceManager, ...optionalArgs: string[]): TacoError {
+            return TacoError.wrapError(null, errorToken, errorCode, resources, ...optionalArgs);
         }
 
         public static wrapError(innerError: Error, errorToken: string, errorCode: number, resources: ResourceManager, ...optionalArgs: any[]): TacoError {
+            var message: string = TacoError.getMessageString(errorToken, resources, optionalArgs);
+            return new TacoError(errorCode, errorToken, message, innerError);
+        }
+
+        private static getMessageString(errorToken: string, resources: ResourceManager, args: string[]): string {
             var message: string = null;
-            if (optionalArgs.length > 0) {
+            if (args.length > 0) {
                 assert(errorToken, "We should have an error token if we intend to use args");
-                var args: string[] = ArgsHelper.getOptionalArgsArrayFromFunctionCall(arguments, 4);
                 if (errorToken) {
                     message = resources.getString(errorToken, args);
                 }
@@ -63,7 +79,7 @@ module TacoUtility {
                 message = errorToken;
             }
 
-            return new TacoError(errorCode, message, innerError);
+            return message;
         }
 
         public toString(): string {
