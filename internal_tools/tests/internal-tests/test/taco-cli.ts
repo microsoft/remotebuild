@@ -153,9 +153,8 @@ describe("taco-cli E2E", function (): void {
                         .then((result: { stdout: Buffer, stderr: Buffer }) => {
                             console.info(result.stdout.toString());
                             console.error(result.stderr.toString());
-                            Q.delay(120000).then(() => deferred.reject(new Error("Timed out")));
                             return deferred.promise;
-                        }).finally(() => appCallbackServer.close());
+                        }).timeout(120000).finally(() => appCallbackServer.close());
                 });
         });
 
@@ -227,7 +226,7 @@ describe("taco-cli E2E", function (): void {
                         return remoteWinTest.uploadFile(fs.createReadStream(path.join(__dirname, "taco-cli", "configureRemote.js")), "configureRemote.js").then(() => {
                             return remoteWinTest.runCommandAndWaitForSuccess(remoteConfigCommand);
                         }).then(() => {
-                                // Ensure that we successfully configured an iOS remote
+                            // Ensure that we successfully configured an iOS remote
                             return remoteWinTest.runCommandAndWaitForSuccess("node_modules/.bin/taco remote list").then((command: RemoteTest.RemoteCommand) => {
                                 if (command.command.result.indexOf("ios") < 0) {
                                     throw new Error("Failed to set remote iOS server");
@@ -267,13 +266,45 @@ describe("taco-cli E2E", function (): void {
 
                     // Kick off a "taco run ios --device" and wait for it to complete
                     return remoteWinTest.runCommandAndWaitForSuccess("../node_modules/.bin/taco run ios --device", "myProject")
-                        .then(() => {
-                            Q.delay(180000).then(() => deferred.reject("Timed out"));
-                            return deferred.promise;
-                        }).finally(() => {
+                        .then(() => deferred.promise.timeout(180000)).finally(() => {
                             appCallbackServer.close();
                         });
                 });
+            });
+
+            it("should be able to launch an app on a device using remotebuild with cordova 5.4.0", function (): Q.Promise<any> {
+                var tempTacoJsonFile = path.join(remotebuildIsolatedTest.rootFolder, "taco.json")
+                // TODO 167009: Remove the killall once we fix the issue with multiple idevicedebugserverproxy instances
+                return remotebuildIsolatedTest.promiseExec("killall idevicedebugserverproxy || true").then(() => {
+                    // Switch the project to use cordova 5.4.0
+                    return remoteWinTest.downloadFile("myProject/taco.json", tempTacoJsonFile).then(() => {
+                        return remoteWinTest.uploadFile(testUtils.stringStream(JSON.stringify({ "cordova-cli": "5.4.0" })), "myProject/taco.json");
+                    });
+                }).then(() => {
+                    remoteWinTest.runCommandAndWaitForSuccess("del buildinfo.json", "myProject/remote/ios/debug")
+                }).then(() => {
+                    // Start listening for the app to callback
+                    var deferred = Q.defer();
+                    var appCallbackServer = http.createServer(function (req, res) {
+                        var parsedUrl = url.parse(req.url);
+                        console.info(req.url);
+                        if (req.method === "GET" && parsedUrl.pathname === "/deviceready") {
+                            res.end();
+                            deferred.resolve({});
+                        }
+                        if (parsedUrl.pathname === "/failure") {
+                            deferred.reject(req);
+                        }
+                    });
+
+                    appCallbackServer.listen(appCallbackPort);
+
+                    // Kick off a "taco run ios --device" and wait for it to complete, ensuring that this is non-incremental
+                    return remoteWinTest.runCommandAndWaitForSuccess("../node_modules/.bin/taco run ios --device", "myProject")
+                        .then(() => deferred.promise.timeout(180000)).finally(() => {
+                        appCallbackServer.close();
+                    });
+                }).finally(() => remoteWinTest.uploadFile(fs.createReadStream(tempTacoJsonFile), "myProject/taco.json"));
             });
 
 
