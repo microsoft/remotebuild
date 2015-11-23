@@ -124,8 +124,8 @@ class SuiteFactory {
     }
 
     private static buildLocalSuite(config: ISuiteConfig, testFiles: string[], testPath: string, buildOptions: ISuiteBuildOptions): LocalSuite {
-        // TODO
-        throw new Error("Not implemented");
+        // No additional checks required for the local suite
+        return new LocalSuite(testFiles, testPath, buildOptions);
     }
 
     private static buildRemoteSuite(config: ISuiteConfig, testFiles: string[], testPath: string, buildOptions: ISuiteBuildOptions): RemoteSuite {
@@ -164,7 +164,7 @@ class SuiteFactory {
             throw new Error("The suite has an invalid 'vmStartupPort' attribute: the value must be the string representation of a number between 1 and 65535");
         }
 
-        // Make the VM suite build options
+        // Make the VM suite build options out of the specified build options
         var vmBuildOptions: IVMSuiteBuildOptions = <IVMSuiteBuildOptions>buildOptions;
 
         if (config.hasOwnProperty("cloneVm")) {
