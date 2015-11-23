@@ -9,6 +9,7 @@
     "dependencies": {
         "fstream": "latest",
         "glob": "latest",
+        "mocha": "latest",
         "q": "latest",
         "request": "latest",
         "rimraf": "latest",
