@@ -104,31 +104,31 @@ class SuiteFactory {
 
                 switch (suiteType) {
                     case SuiteType.LOCAL:
-                        newSuite = SuiteFactory.buildLocalSuite(suiteConfig, resolvedTestFiles, args.testsPath, buildOptions);
+                        newSuite = SuiteFactory.buildLocalSuite(index + 1, suiteConfig, resolvedTestFiles, args.testsPath, buildOptions);
                         break;
                     case SuiteType.REMOTE:
-                        newSuite = SuiteFactory.buildRemoteSuite(suiteConfig, resolvedTestFiles, args.testsPath, buildOptions);
+                        newSuite = SuiteFactory.buildRemoteSuite(index + 1, suiteConfig, resolvedTestFiles, args.testsPath, buildOptions);
                         break;
                     case SuiteType.VM:
-                        newSuite = SuiteFactory.buildVMSuite(suiteConfig, resolvedTestFiles, args.testsPath, buildOptions);
+                        newSuite = SuiteFactory.buildVMSuite(index + 1, suiteConfig, resolvedTestFiles, args.testsPath, buildOptions);
                         break;
                 }
 
                 suites.push(newSuite);
             } catch (err) {
-                throw new Error(util.format("Error building suite #%d:%s%s", index, os.EOL, err.message));
+                throw new Error(util.format("Error building suite %s:%s%s", AbstractSuite.getIdentifier(index + 1, suiteConfig.name), os.EOL, err.message));
             }
         });
 
         return suites;
     }
 
-    private static buildLocalSuite(config: ISuiteConfig, testFiles: string[], testPath: string, buildOptions: ISuiteBuildOptions): LocalSuite {
+    private static buildLocalSuite(id: number, config: ISuiteConfig, testFiles: string[], testPath: string, buildOptions: ISuiteBuildOptions): LocalSuite {
         // No additional checks required for the local suite
-        return new LocalSuite(testFiles, testPath, buildOptions);
+        return new LocalSuite(id, testFiles, testPath, buildOptions);
     }
 
-    private static buildRemoteSuite(config: ISuiteConfig, testFiles: string[], testPath: string, buildOptions: ISuiteBuildOptions): RemoteSuite {
+    private static buildRemoteSuite(id: number, config: ISuiteConfig, testFiles: string[], testPath: string, buildOptions: ISuiteBuildOptions): RemoteSuite {
         // Make sure the suite defines a "remoteIp" attribute
         if (!config.remoteIp) {
             throw new Error("The suite does not have a 'remoteIp' attribute");
@@ -145,10 +145,10 @@ class SuiteFactory {
         }
 
         // At this point the attributes seem valid, so build the suite
-        return new RemoteSuite(testFiles, testPath, config.remoteIp, config.remotePort, buildOptions);
+        return new RemoteSuite(id, testFiles, testPath, config.remoteIp, config.remotePort, buildOptions);
     }
 
-    private static buildVMSuite(config: ISuiteConfig, testFiles: string[], testPath: string, buildOptions: ISuiteBuildOptions): VMSuite {
+    private static buildVMSuite(id: number, config: ISuiteConfig, testFiles: string[], testPath: string, buildOptions: ISuiteBuildOptions): VMSuite {
         // Make sure the suite defines a "vmTemplate" attribute
         if (!config.vmTemplate) {
             throw new Error("The suite does not have a 'vmTemplate' attribute");
@@ -176,7 +176,7 @@ class SuiteFactory {
         }
 
         // Build the suite
-        return new VMSuite(testFiles, testPath, config.vmTemplate, config.vmStartupPort, vmBuildOptions);
+        return new VMSuite(id, testFiles, testPath, config.vmTemplate, config.vmStartupPort, vmBuildOptions);
     }
 
     private static getSuiteTypeFromString(stringType: string): SuiteType {

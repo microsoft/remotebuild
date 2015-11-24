@@ -20,9 +20,9 @@ class VMSuite extends RemoteSuite {
     private keepVmOnTestPass: boolean;
     private mustCloneVM: boolean;
 
-    public constructor(files: string[], testPath: string, vmTemplate: string, vmStartupPort: string, buildOptions?: IVMSuiteBuildOptions) {
+    public constructor(id: number, files: string[], testPath: string, vmTemplate: string, vmStartupPort: string, buildOptions?: IVMSuiteBuildOptions) {
         // For the VM suite, we will only know the remote IP and the remotebuild-test-agent port after we launch the VM, so initialize the RemoteSuite base class with empty values
-        super(files, testPath, "", "", buildOptions);
+        super(id, files, testPath, "", "", buildOptions);
 
         this.vmTemplate = vmTemplate;
         this.vmStartupPort = vmStartupPort;
@@ -38,6 +38,9 @@ class VMSuite extends RemoteSuite {
             this.vmInfo = vmInfo;
             this.remoteIp = vmInfo.remotebuildInfo.ip;
             this.remotePort = vmInfo.remotebuildInfo.port;
+
+            // We need to log the name of the VM this suite is running in, because VM clone names are generated dynamically
+            console.log("Running in VM '%s'", this.vmInfo.name);
         }).then(() => {
             // Now that the target VM is running, this suite is just a normal remote suite
             return super.setup();

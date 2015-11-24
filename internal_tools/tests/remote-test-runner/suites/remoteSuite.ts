@@ -40,8 +40,8 @@ class RemoteSuite extends AbstractSuite {
         return util.format("http://[%s]:%s/test", this.remoteIp, this.remotePort);
     }
 
-    public constructor(files: string[], testPath: string, ip: string, port: string, buildOptions?: ISuiteBuildOptions) {
-        super(files, testPath, buildOptions);
+    public constructor(id: number, files: string[], testPath: string, ip: string, port: string, buildOptions?: ISuiteBuildOptions) {
+        super(id, files, testPath, buildOptions);
         this.remoteIp = ip;
         this.remotePort = port;
     }

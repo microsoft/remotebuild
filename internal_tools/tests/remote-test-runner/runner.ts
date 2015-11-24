@@ -31,16 +31,16 @@ class Runner {
         }
 
         // Run test suites
-        return suites.reduce((previous: Q.Promise<any>, current: AbstractSuite, index: number) => {
+        return suites.reduce((previous: Q.Promise<any>, current: AbstractSuite) => {
             return previous.then(() => {
-                console.log(util.format("%sRunning suite #%d...", os.EOL, index));
+                console.log(util.format("%sRunning suite %s...", os.EOL, current.identifier));
 
                 return current.run();
             }).catch((err: any) => {
                 // There was an error or a test failure while running the suite, so wrap that error in a message to indicate the suite number (this error may be an uncaught exception, child process
                 // error, or even a test failure)
                 errorOccurred = true;
-                console.log(util.format("Error running suite #%d:%s%s", index, os.EOL, err.message));
+                console.log(util.format("Error running suite %s:%s%s", current.identifier, os.EOL, err.message));
             });
         }, Q.resolve({})).then(() => {
             if (errorOccurred) {

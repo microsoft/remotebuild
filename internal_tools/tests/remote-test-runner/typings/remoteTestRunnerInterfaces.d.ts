@@ -2,6 +2,7 @@ declare module RemoteTestRunnerInterfaces {
     export interface ISuiteConfig {
         cloneVm?: boolean;
         keepVmOnTestPass?: boolean;
+        name?: string;
         remoteIp?: string;
         remotePort?: string;
         setupScript?: string;
@@ -24,6 +25,7 @@ declare module RemoteTestRunnerInterfaces {
 
     export interface ISuiteBuildOptions {
         mochaReporter?: string;
+        name?: string;
         setupScript?: string;
         sourcesPath?: string;
     }

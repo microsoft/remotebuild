@@ -15,8 +15,8 @@ import AbstractSuite = require("./abstractSuite");
 import ISuiteBuildOptions = RemoteTestRunnerInterfaces.ISuiteBuildOptions;
 
 class LocalSuite extends AbstractSuite {
-    public constructor(files: string[], testPath: string, buildOptions?: ISuiteBuildOptions) {
-        super(files, testPath, buildOptions);
+    public constructor(id: number, files: string[], testPath: string, buildOptions?: ISuiteBuildOptions) {
+        super(id, files, testPath, buildOptions);
     }
 
     protected launch(): Q.Promise<any> {
