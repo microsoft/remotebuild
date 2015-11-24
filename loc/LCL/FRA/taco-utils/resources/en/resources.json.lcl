@@ -48,6 +48,33 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";CommandCreateOnlyLocalCustomWww" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: Only local paths for custom www assets are supported.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Erreur : seuls les chemins d'accès locaux des ressources www personnalisées sont pris en charge.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateTacoJsonFileCreationError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: Creation of taco.json file failed]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Erreur : échec de la création du fichier taco.json]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CommandCreateTacoJsonFileWriteError" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Failed to write to {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Échec de l'écriture dans {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";CommandHelpBadcomand" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[{0} is not a valid command<br/>]]></Val>
@@ -120,6 +147,60 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";CommandInstallCordovaTooOld" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[The current project uses Cordova version {0}. Minimum required Cordova version: {1}]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CordovaCmdNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Cordova not found, please run 'npm install –g cordova' to install Cordova globally]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Cordova introuvable. Exécutez 'npm install –g cordova' pour installer Cordova de manière globale]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CordovaCommandFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA['cordova {1}' failed with exit code {0}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Échec de 'cordova {1}'. Code de sortie : {0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CordovaCommandFailedWithError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA['cordova {0}' failed.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Échec de 'cordova {0}'.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";CordovaCommandUnhandledException" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Cordova threw an unhandled exception, check http://go.microsoft.com/fwlink/?LinkId=623759 for possible details.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Cordova a levé une exception non gérée. Consultez http://go.microsoft.com/fwlink/?LinkId=623759 pour d'éventuels détails.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorUserJsonMalformed" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: {0} is malformed.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";ErrorUserJsonMissing" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Error: {0} is missing.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";FailedFileRead" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Failed to read file from {0}]]></Val>
@@ -152,6 +233,15 @@
           <Val><![CDATA[Inner Error:]A;{0}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Erreur interne :]A;{0}]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";InvalidCordovaWithNode5" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Incompatible configuration: Unable to use Cordova < 5.4.0 with Node >= 5.0.0. Either upgrade to a newer version of Cordova, or revert to an older version of node. See http://go.microsoft.com/fwlink/?LinkID=618471 for more details.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Configuration incompatible : impossible d'utiliser Cordova < 5.4.0 avec nœud >= 5.0.0. Effectuez la mise à jour vers une version plus récente de Cordova ou rétablissez une version antérieure du nœud. Consultez http://go.microsoft.com/fwlink/?LinkID=618471 pour plus d'informations.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -303,6 +393,24 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";PromptResponseYes[0]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[y]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[o]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";PromptResponseYes[1]" ItemType="0" PsrId="306" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[yes]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[oui]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";TacoUtilsExceptionListingfile" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Cannot find command listing file]]></Val>
@@ -323,19 +431,25 @@
       </Item>
       <Item ItemId=";TelemetryCurrentlyOptedInPrompt" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Would you like to continue doing so?]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
+          <Val><![CDATA[Would you like to continue doing so? [y/n]5D;]]></Val>
+          <Tgt Cat="Text" Stat="Update" Orig="New">
             <Val><![CDATA[Voulez-vous continuer ?]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Would you like to continue doing so?]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";TelemetryCurrentlyOptedOutPrompt" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Would you like to allow us to collect your usage data?]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
+          <Val><![CDATA[Would you like to allow us to collect your usage data? [y/n]5D;]]></Val>
+          <Tgt Cat="Text" Stat="Update" Orig="New">
             <Val><![CDATA[Voulez-vous nous autoriser à collecter vos données d'utilisation ?]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Would you like to allow us to collect your usage data?]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -362,10 +476,13 @@
       </Item>
       <Item ItemId=";TelemetryOptInQuestion" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
-          <Val><![CDATA[Are you willing to participate?]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
+          <Val><![CDATA[Are you willing to participate? [y/n]5D;]]></Val>
+          <Tgt Cat="Text" Stat="Update" Orig="New">
             <Val><![CDATA[Souhaitez-vous participer ?]]></Val>
           </Tgt>
+          <Prev Cat="Text">
+            <Val><![CDATA[Are you willing to participate?]]></Val>
+          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>

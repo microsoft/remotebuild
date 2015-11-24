@@ -338,15 +338,6 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";CommandCreateOnlyLocalCustomWww" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Error: Only local paths for custom www assets are supported.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: solo se admiten rutas locales para recursos www personalizados.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
       <Item ItemId=";CommandCreateOptionsCopy" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Use custom www assets instead of using a TACO template.]]></Val>
@@ -479,24 +470,6 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";CommandCreateTacoJsonFileCreationError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Error: Creation of taco.json file failed]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: error al crear el archivo taco.json]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";CommandCreateTacoJsonFileWriteError" ItemType="0" PsrId="306" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Failed to write to {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[No se pudo escribir en {0}]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
       <Item ItemId=";CommandCreateTemplatesUnavailable" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error: Unable to access or download templates]]></Val>
@@ -560,18 +533,6 @@
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Obtener ayuda para un comando de TACO]]></Val>
           </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";CommandInstallCordovaTooOld" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Error: The current project uses Cordova version {0}. 'taco install-reqs' supports projects using Cordova version {1} or higher.<br/><br/>If your project was created using a Kit, consider moving to a kit that has a more recent version of Cordova. If your project was created using Cordova directly, consider updating the installation of Cordova. For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error: el proyecto actual usa la versión de Cordova {0}. "taco install-reqs" admite proyectos que usan la versión de Cordova {1} o superior.<br/><br/>Si el proyecto se creó con un Kit, es buena idea moverlo a un kit que tenga una versión más reciente de Cordova. Si el proyecto se creó directamente con Cordova, se recomienda actualizar la instalación de Cordova. Para obtener más información, visite http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
-          </Tgt>
-          <Prev Cat="Text">
-            <Val><![CDATA[Error: The current project uses Cordova version {0}. 'taco install-reqs' supports projects using Cordova version {1} or higher.<br/><br/>If your project was created using a TACO kit, consider moving to a kit that has a more recent version of Cordova. If your project was created using Cordova directly, consider updating the installation of Cordova. For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
-          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1721,6 +1682,12 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";CommandRunListDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Lists available targets. Will display both device and emulator targets unless overriden by --device or --emulator]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";CommandRunLocalDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Force a local build]]></Val>
@@ -1825,42 +1792,6 @@
           <Val><![CDATA[Display the current TACO version]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Mostrar la versión de TACO actual]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";CordovaCmdNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Cordova not found, please run 'npm install –g cordova' to install Cordova globally]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[No se encontró Cordova. Ejecute "npm install –g cordova" para instalar Cordova de forma global]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";CordovaCommandFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA['cordova {1}' failed with exit code {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error en "cordova {1}" con código de salida {0}]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";CordovaCommandFailedWithError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA['cordova {0}' failed.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Error en "cordova {0}".]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";CordovaCommandUnhandledException" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Cordova threw an unhandled exception, check http://go.microsoft.com/fwlink/?LinkId=623759 for possible details.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Cordova inició una excepción no controlada. Visite http://go.microsoft.com/fwlink/?LinkId=623759 para comprobar si existe información sobre la excepción.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2219,20 +2150,17 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";InstallReqsNotSupported" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Failed Cordova minimum version requirements for 'taco install-reqs'. {0}. If your project was created using a Kit, consider moving to a kit that has a more recent version of Cordova. If your project was created using Cordova directly, consider updating the installation of Cordova. For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";InvalidBuildSubmission400" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[{0}:{1}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[{0}:{1}]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";InvalidCordovaWithNode5" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Incompatible configuration: Unable to use Cordova < 5.4.0 with Node >= 5.0.0. Either upgrade to a newer version of Cordova, or revert to an older version of node. See http://go.microsoft.com/fwlink/?LinkID=618471 for more details.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Configuración no compatible: no se puede usar Cordova < 5.4.0 con Node >= 5.0.0. Actualice a una versión de Cordova más reciente o revierta a una versión anterior del nodo. Vea http://go.microsoft.com/fwlink/?LinkID=618471 para obtener más detalles.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2564,6 +2492,12 @@
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[Error: plataforma {0} no compatible]]></Val>
           </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";WarnProjectUpdateAborted" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Operation cancelled by the user. No changes were made to the project.]]></Val>
         </Str>
         <Disp Icon="Str" />
       </Item>

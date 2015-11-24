@@ -338,15 +338,6 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";CommandCreateOnlyLocalCustomWww" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Error: Only local paths for custom www assets are supported.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[오류: 사용자 지정 www 자산의 로컬 경로만 지원됩니다.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
       <Item ItemId=";CommandCreateOptionsCopy" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Use custom www assets instead of using a TACO template.]]></Val>
@@ -479,24 +470,6 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
-      <Item ItemId=";CommandCreateTacoJsonFileCreationError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Error: Creation of taco.json file failed]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[오류: taco.json 파일을 만들지 못했습니다.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";CommandCreateTacoJsonFileWriteError" ItemType="0" PsrId="306" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Failed to write to {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[{0}에 쓰지 못했습니다.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
       <Item ItemId=";CommandCreateTemplatesUnavailable" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error: Unable to access or download templates]]></Val>
@@ -560,18 +533,6 @@
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[TACO 명령에 대한 도움말을 가져옵니다.]]></Val>
           </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";CommandInstallCordovaTooOld" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Error: The current project uses Cordova version {0}. 'taco install-reqs' supports projects using Cordova version {1} or higher.<br/><br/>If your project was created using a Kit, consider moving to a kit that has a more recent version of Cordova. If your project was created using Cordova directly, consider updating the installation of Cordova. For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[오류: 현재 프로젝트에서 Cordova 버전 {0}을(를) 사용합니다. 'taco install-reqs'는 Cordova 버전 {1} 이상을 사용하는 프로젝트를 지원합니다.<br/><br/>키트를 사용하여 프로젝트를 만든 경우 보다 최근 버전의 Cordova가 있는 키트로 전환하는 것이 좋습니다. Cordova를 직접 사용하여 프로젝트를 만든 경우에는 Cordova 설치를 업데이트하는 것이 좋습니다. 자세한 내용은 http://go.microsoft.com/fwlink/?LinkId=618544를 참조하세요.]]></Val>
-          </Tgt>
-          <Prev Cat="Text">
-            <Val><![CDATA[Error: The current project uses Cordova version {0}. 'taco install-reqs' supports projects using Cordova version {1} or higher.<br/><br/>If your project was created using a TACO kit, consider moving to a kit that has a more recent version of Cordova. If your project was created using Cordova directly, consider updating the installation of Cordova. For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
-          </Prev>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -1721,6 +1682,12 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";CommandRunListDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Lists available targets. Will display both device and emulator targets unless overriden by --device or --emulator]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";CommandRunLocalDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Force a local build]]></Val>
@@ -1825,42 +1792,6 @@
           <Val><![CDATA[Display the current TACO version]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[현재 TACO 버전을 표시합니다.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";CordovaCmdNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Cordova not found, please run 'npm install –g cordova' to install Cordova globally]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Cordova를 찾을 수 없습니다. 'npm install –g cordova'를 실행하여 Cordova를 전역으로 설치하세요.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";CordovaCommandFailed" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA['cordova {1}' failed with exit code {0}]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[cordova {1}'이(가) 실패했습니다. 종료 코드: {0}]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";CordovaCommandFailedWithError" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA['cordova {0}' failed.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[cordova {0}'이(가) 실패했습니다.]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";CordovaCommandUnhandledException" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Cordova threw an unhandled exception, check http://go.microsoft.com/fwlink/?LinkId=623759 for possible details.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Cordova에서 처리되지 않은 예외가 throw되었습니다. 세부 정보가 있는지 알아보려면 http://go.microsoft.com/fwlink/?LinkId=623759를 확인하세요.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2219,20 +2150,17 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";InstallReqsNotSupported" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Failed Cordova minimum version requirements for 'taco install-reqs'. {0}. If your project was created using a Kit, consider moving to a kit that has a more recent version of Cordova. If your project was created using Cordova directly, consider updating the installation of Cordova. For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";InvalidBuildSubmission400" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[{0}:{1}]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[{0}:{1}]]></Val>
-          </Tgt>
-        </Str>
-        <Disp Icon="Str" />
-      </Item>
-      <Item ItemId=";InvalidCordovaWithNode5" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
-        <Str Cat="Text">
-          <Val><![CDATA[Incompatible configuration: Unable to use Cordova < 5.4.0 with Node >= 5.0.0. Either upgrade to a newer version of Cordova, or revert to an older version of node. See http://go.microsoft.com/fwlink/?LinkID=618471 for more details.]]></Val>
-          <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[호환되지 않는 구성: 5.0.0 이상의 Node와 함께 Cordova 5.4.0 미만을 사용할 수 없습니다. 최신 버전의 Cordova로 업그레이드하거나 이전 버전의 Node로 되돌리세요. 자세한 내용은 http://go.microsoft.com/fwlink/?LinkID=618471을 참조하세요.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2564,6 +2492,12 @@
           <Tgt Cat="Text" Stat="Loc" Orig="New">
             <Val><![CDATA[오류: 지원되지 않는 플랫폼 {0}]]></Val>
           </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
+      <Item ItemId=";WarnProjectUpdateAborted" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Operation cancelled by the user. No changes were made to the project.]]></Val>
         </Str>
         <Disp Icon="Str" />
       </Item>
