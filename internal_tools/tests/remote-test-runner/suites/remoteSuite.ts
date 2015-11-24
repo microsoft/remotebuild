@@ -53,6 +53,9 @@ class RemoteSuite extends AbstractSuite {
         return this.remoteTest.ready.then((results: string[]) => {
             // Install the test package remotely
             return this.uploadTestPackage();
+        }, (err: any) => {
+            // There was an error connecting to the Remotebuild test agent, so wrap the error and rethrow it
+            return Q.reject(new Error(util.format("Could not connect to the remote test agent:%s%s", os.EOL, err.message)));
         }).then(() => {
             // Upload the sources folder to the remote test if necessary
             if (this.sourcesPath) {

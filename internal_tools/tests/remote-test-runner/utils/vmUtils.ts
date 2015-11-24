@@ -41,11 +41,18 @@ class VMUtils {
         var vmStartupPromise: Q.Deferred<VMUtils.IVMInfo> = Q.defer<VMUtils.IVMInfo>();
         var vmCommunicationServer: http.Server;
 
-        return Q({}).then(() => {
+        // Start by making sure the specified VM template is in a "powered off" state, otherwise starting it or cloning it will not trigger the startup script
+        return VMUtils.getVMState(templateName).then((state: string) => {
+            if (state !== "powered off") {
+                return Q.reject<VMUtils.IVMInfo>(new Error("Error: launchNewVMWithRemotebuild() invoked with a VM that is not powered off; please shut the VM down in order to use it for tests"));
+            }
+
+            return Q.resolve({});
+        }).then(() => {
             if (cloneVm) {
                 return VMUtils.cloneVM(templateName);
             } else {
-                // No need to clone the VM, so just return with the template's name as the VM name
+                // No need to clone the VM, so just return with the template's name as the IVMInfo's name
                 return Q.resolve({
                     name: templateName
                 });
@@ -204,6 +211,68 @@ class VMUtils {
     }
 
     /*
+     * Shuts the specified VM down. First, it will attempt to simulate a press of the power button on the machine. For this to successfully shut the VM down, the OS inside the VM must be configured
+     * to react appropriately to a power button press. If the VM has not been shut down by the power button press, then a hard shut down is performed (equivalent to pulling the power cable of a
+     * physical machine). To decide whether the machine has successfully shut down, a polling of the VM's state is performed, with a query being executed each {checkInterval} ms for a maximum of
+     * {maxStateChecks} times.
+     */
+    /*public static shutDown(vmName: string, maxStateChecks: number = 10, checkInterval: number = 3000): Q.Promise<any> {
+        if (!vmName) {
+            return Q.reject<VMUtils.IVMInfo>(new Error("Error: shutDown() invoked with no VM name"));
+        }
+
+        // Try the power button first
+        var args: string[] = [
+            "controlvm",
+            vmName,
+            "acpipowerbutton"
+        ];
+
+        // Define the periodic check
+        function isRunning(): Q.Promise<boolean> {
+            return VMUtils.getRunningVMs().then((runningVMs: string[]) => {
+                return Q.resolve(runningVMs.indexOf(vmName) !== -1);
+            });
+        }
+
+        VMUtils.invokeVboxmanageCommand(args).then(() => {
+            var isVMShutDownDeferred: Q.Deferred<any> = Q.defer<any>();
+
+            // Periodically check if the VM is still running
+            var intervalPromise: Q.Promise<boolean> = Q.resolve(false);
+
+            for (var i: number = 0; i < maxStateChecks; ++i) {
+                intervalPromise = intervalPromise.then((result: boolean) => {
+                    // If we have previously detected that the VM is shut down, return immediately
+                    if (result) {
+                        return Q.resolve(true);
+                    }
+
+                    // Delay, then perform a check
+                    return Q.delay(checkInterval).then(() => {
+                        return VMUtils.getRunningVMs().then((runningVMs: string[]) => {
+                            var isStillRunning: boolean = runningVMs.indexOf(vmName) !== -1;
+
+                            return Q.resolve(isStillRunning);
+                        });
+                    });
+                });
+            }
+
+            // Return the check promise chain
+            return isVMShutDownDeferred.promise;
+        }).then((isShutDown: boolean) => {
+            if (isShutDown) {
+                // The VM successfully shut down, so return
+                return Q.resolve({});
+            }
+
+            // The VM is still running, so perform a hard shut down
+            return VMUtils.hardShutDown(vmName);
+        });
+    }*/
+
+    /*
      * Performs a "hard" shutdown of the VM with the specified name. This is equivalent to pulling the power cable from a computer, so all unsaved data inside the VM will be lost.
      */
     public static hardShutDown(vmName: string): Q.Promise<any> {
@@ -259,12 +328,80 @@ class VMUtils {
         return VMUtils.invokeVboxmanageCommand(args);
     }
 
+    /**
+     * Returns a promise resolved with a string indicating the state of the specified VM.
+     */
+    public static getVMState(vmName: string): Q.Promise<string> {
+        if (!vmName) {
+            return Q.reject<string>(new Error("Error: getVMState() invoked with no VM name"));
+        }
+
+        return VMUtils.listVMs(true).then((output: string) => {
+            // Escape the VM name so it can be used as a regex
+            var escapedName: string = vmName.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
+
+            // Build the regex to find the specified VM's state
+            var regex: RegExp = new RegExp(util.format("Name:\W*%s$(?:\n|.)*?State:\W*(.+?)(?: \(.*?\))?$", escapedName), "mg");
+
+            // Run the regex
+            var match: RegExpExecArray = regex.exec(output);
+
+            // If there is no match or no captured group (index 1), return an error
+            if (!match || match.length < 2) {
+                return Q.reject<string>(new Error("Error: getVMState() invoked with a VM name that doesn't exist"));
+            }
+
+            // Resolve the promise with the captured group, which contains the VM's state
+            return Q.resolve(match[1]);
+        });
+    }
+
+    /**
+     * Returns a promise resolved with the output of running the "list vms" command in VirtualBoxManage. If "long" is true, then the "-l" flag is passed to the command.
+     */
+    public static listVMs(long: boolean = false): Q.Promise<string> {
+        var args: string[] = [
+            "list",
+            "vms"
+        ];
+
+        if (long) {
+            args.push("-l");
+        }
+
+        return VMUtils.invokeVboxmanageCommand(args);
+    }
+
+    /**
+     * Returns a promise resolved with an array of strings that represent the names of the VMs that are currently running.
+     */
+    /*public static getRunningVMs(): Q.Promise<string[]> {
+        var args: string[] = [
+            "list",
+            "runningvms"
+        ];
+
+        return VMUtils.invokeVboxmanageCommand(args).then((output: string) => {
+            var regex: RegExp = /"(.*?)" {.*?}$/mg;
+            var match: RegExpMatchArray = regex.exec(output);
+            var runningVMs: string[] = [];
+
+            while (match) {
+                runningVMs.push(match[1]);  // Index 0 is the entire matched line, index 1 is the captured group which is the VM's name
+                match = regex.exec(output);
+            }
+
+            return Q.resolve(runningVMs);
+        });
+    }*/
+
     /*
      * Util method to invoke a VBoxManage command
      */
-    private static invokeVboxmanageCommand(args: string[]): Q.Promise<any> {
+    private static invokeVboxmanageCommand(args: string[]): Q.Promise<string> {
         var deferred: Q.Deferred<any> = Q.defer<any>();
         var errorOutput: string = "";
+        var output: string = "";
         var cp = child_process.spawn(VMUtils.VBOXMANAGE_COMMAND, args);
 
         cp.on("error", (err: Error) => {
@@ -285,12 +422,16 @@ class VMUtils {
 
                 deferred.reject(new Error(message));
             } else {
-                deferred.resolve({});
+                deferred.resolve(output);
             }
         });
 
         cp.stderr.on("data", (data: Buffer) => {
             errorOutput += data.toString();
+        });
+
+        cp.stdout.on("data", (data: Buffer) => {
+            output += data.toString();
         });
 
         return deferred.promise;
