@@ -105,7 +105,7 @@ class RemoteSuite extends AbstractSuite {
             // Pack the test package
             return this.packTestPackage();
         }).then((testPackage: string) => {
-            // Save the full path to the packed test package, and save the first part
+            // Save the full path to the packed test package, and save the name of the created .tgz file
             testPackageTgzFullPath = testPackage;
             testPackageTgz = path.basename(testPackageTgzFullPath);
 
@@ -116,7 +116,7 @@ class RemoteSuite extends AbstractSuite {
             rimraf.sync(testPackageTgzFullPath);
 
             // Install the test package remotely
-            return this.remoteTest.runCommandAndWaitForSuccess("npm install " + testPackageTgz);
+            return this.remoteTest.runCommandAndWaitForSuccess("npm install ./" + testPackageTgz);
         }).then((cmd: RemoteCommand) => {
             // The first line of the "npm install" command's output contains the package's name (in the form of "packageName@a.b.c node_modules\packageName"), which we need to save to eventually
             // navigate to it

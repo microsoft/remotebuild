@@ -7,15 +7,15 @@ var Q = require("q");
 var querystring = require("querystring");
 
 // Constants
-var HOST_IP = "dans-mac-mini";  // Modify with the host machine's IP
-var HOST_PORT = "53541";        // Modify if this default port cannot be used (whether this is changed or not, the value still needs to be indicated in the remote-test-runner test config)
-var REMOTEBUILD_PORT = "3000";
+var HOST_IP = "HOST-IP-GOES-HERE";  // Modify with the host machine's IP (the machine that is creating the VM)
+var HOST_PORT = "53541";            // Modify if this default port cannot be used (whether this is changed or not, the value still needs to be indicated in the remote-test-runner test config)
+var REMOTEBUILD_PORT = "3000";      // Modify if this default port cannot be used (no need to do anything else, the port will be communicated to the host machine automatically)
 
 // Main promise chain
 Q({})
 	.then(function () {
 		// Start remotebuild with the test agent on this VM
-		// Note: This assumes remotebuild and taco-test-agent are installed in the same folder as this script
+		// Note: This assumes remotebuild and taco-test-agent are installed in the same folder as this script, under node_modules/
 		var deferred = Q.defer();
 		var command = path.join(__dirname, "node_modules", ".bin", "remotebuild");
 		var args = [

@@ -45,7 +45,7 @@ class Runner {
         }, Q.resolve({})).then(() => {
             if (errorOccurred) {
                 // If we had an error in one of the suites, we need to surface it so that the process exits with a non-zero code
-                return Q.reject(new Error("There was an error or a test failure in at least one suite, see above for details"));
+                return Q.reject(new Error(os.EOL + "There was an error or a test failure in at least one suite, see above for details"));
             } else {
                 console.log("Done running suites");
             }

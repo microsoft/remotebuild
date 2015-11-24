@@ -71,7 +71,7 @@ class SuiteFactory {
 
                     if (!path.isAbsolute(scriptFullPath)) {
                         // The specified path is not absolute, so we must build it by joining the test package path and the specified relative path
-                        scriptFullPath = path.join(args.testsPath, scriptFullPath);
+                        scriptFullPath = path.resolve(path.join(args.testsPath, scriptFullPath));
                     }
 
                     // Make sure it points to a file that exists
@@ -92,7 +92,7 @@ class SuiteFactory {
                     // Build the relative path to the script (starting at the root of the test package)
                     var scriptRelativePath = path.relative(args.testsPath, scriptFullPath);
 
-                    // Convert the backslashes in the script path to forward slashes (remotebuild-test-agent requires forward slashes for invoking commands)
+                    // Convert the backslashes in the script path, if any, to forward slashes (remotebuild-test-agent requires forward slashes for invoking commands)
                     scriptRelativePath = scriptRelativePath.replace(/\\/g, "/");
 
                     // Add the setup script path to the build options (add the relative path from the root of the test package)

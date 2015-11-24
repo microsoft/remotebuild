@@ -18,10 +18,10 @@ class VMSuite extends RemoteSuite {
     private vmTemplate: string;
     private vmStartupPort: string;
     private keepVmOnTestPass: boolean;
-    private cloneVm: boolean;
+    private mustCloneVM: boolean;
 
     public constructor(files: string[], testPath: string, vmTemplate: string, vmStartupPort: string, buildOptions?: IVMSuiteBuildOptions) {
-        // For the VM suite, we will only know the remote IP and the remotebuild test agent port after we launch the VM, so initialize the RemoteSuite base class with empty values
+        // For the VM suite, we will only know the remote IP and the remotebuild-test-agent port after we launch the VM, so initialize the RemoteSuite base class with empty values
         super(files, testPath, "", "", buildOptions);
 
         this.vmTemplate = vmTemplate;
@@ -29,17 +29,17 @@ class VMSuite extends RemoteSuite {
 
         // Check build options
         this.keepVmOnTestPass = buildOptions.hasOwnProperty("keepVmOnTestPass") ? buildOptions.keepVmOnTestPass : false;
-        this.cloneVm = buildOptions.hasOwnProperty("cloneVm") ? buildOptions.cloneVm : true;
+        this.mustCloneVM = buildOptions.hasOwnProperty("cloneVm") ? buildOptions.cloneVm : true;
     }
 
     protected setup(): Q.Promise<any> {
         // Launch a new VM based on the specified template
-        return VMUtils.launchNewVMWithRemotebuild(this.vmTemplate, this.vmStartupPort, this.cloneVm).then((vmInfo: IVMInfo) => {
+        return VMUtils.launchNewVMWithRemotebuild(this.vmTemplate, this.vmStartupPort, this.mustCloneVM).then((vmInfo: IVMInfo) => {
             this.vmInfo = vmInfo;
             this.remoteIp = vmInfo.remotebuildInfo.ip;
             this.remotePort = vmInfo.remotebuildInfo.port;
         }).then(() => {
-            // Now that a new VM is running, this suite is just a normal remote suite
+            // Now that the target VM is running, this suite is just a normal remote suite
             return super.setup();
         });
     }
@@ -50,7 +50,7 @@ class VMSuite extends RemoteSuite {
             // Tests passed, so delete the VM, EXCEPT in one of the following cases, where we just perform a hard shut down instead:
             //     -cloneVm is false (which means we are in the original VM)
             //     -keepVmOnTestPass is true
-            if (!this.cloneVm || this.keepVmOnTestPass) {
+            if (!this.mustCloneVM || this.keepVmOnTestPass) {
                 return VMUtils.hardShutDown(this.vmInfo.name);
             }
 

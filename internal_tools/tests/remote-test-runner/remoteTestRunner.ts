@@ -50,7 +50,7 @@ class RemoteTestRunner {
         // Clone the process' argv
         var args: string[] = JSON.parse(JSON.stringify(process.argv));  // Using JSON parse/stringify to clone the array
 
-        // Remove the first two elements ("node" and "./vmtests.js")
+        // Remove the first two elements ("node" and "remote-test")
         args.splice(0, 2);
 
         // Look for "--reporter" and the associated value
@@ -125,7 +125,7 @@ class RemoteTestRunner {
             throw new Error(util.format("The specified test package path does not contain a '%s' file: %s", RemoteTestRunner.CONFIG_FILE_NAME, args.testsPath));
         }
 
-        //If the sources path exists, make sure it exists and it is a directory
+        //If the sources path was specified, make sure it exists and it is a directory
         if (args.sourcesPath) {
             if (!fs.existsSync(args.sourcesPath)) {
                 throw new Error("The specified sources folder path does not exist: " + args.sourcesPath);
@@ -138,7 +138,7 @@ class RemoteTestRunner {
     }
 
     /**
-     * Looks for the test config file in the specified test folde. Reads the file, and performs high-level validation. Throws an error if the config file is not found or if it is invalid.
+     * Looks for the test config file in the specified test folder. Reads the file, and performs high-level validation. Throws an error if the config file is not found or if it is invalid.
      */
     private static parseTestConfig(testPath: string): ITestConfig {
         var configFilePath = path.join(testPath, RemoteTestRunner.CONFIG_FILE_NAME);
@@ -152,7 +152,7 @@ class RemoteTestRunner {
             throw new Error(util.format("Error reading the test configuration file:%s%s", os.EOL, err.message));
         }
 
-        // A "suites" object needs to be defined at the root, and it needs to be an Array
+        // A "suites" attribute needs to be defined at the root, and it needs to be an array
         if (!Array.isArray(fileContent.suites)) {
             throw new Error("The test config file is not valid: the root object does not have a 'suites' attribute, or has a 'suites' attribute that is not an array");
         }
