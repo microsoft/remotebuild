@@ -341,7 +341,7 @@ class VMUtils {
             var escapedName: string = vmName.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
 
             // Build the regex to find the specified VM's state
-            var regex: RegExp = new RegExp(util.format("Name:\W*%s$(?:\n|.)*?State:\W*(.+?)(?: \(.*?\))?$", escapedName), "mg");
+            var regex: RegExp = new RegExp(util.format("Name:\\W*%s$(?:\\n|.)*?State:\\W*(.+?)(?: \\(.*?\\))?$", escapedName), "mg");
 
             // Run the regex
             var match: RegExpExecArray = regex.exec(output);
