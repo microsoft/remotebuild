@@ -11,6 +11,8 @@
 declare module Fstream {
     export interface IReaderProps {
         path: string;
+        type?: string | Function;
+        filter?: Function;
     }
     export interface IProps {
         mtime: Date;
