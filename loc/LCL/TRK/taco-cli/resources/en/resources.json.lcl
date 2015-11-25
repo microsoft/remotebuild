@@ -1685,6 +1685,9 @@
       <Item ItemId=";CommandRunListDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Lists available targets. Will display both device and emulator targets unless overriden by --device or --emulator]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Kullanılabilir hedefleri listeler. --device veya --emulator tarafından geçersiz kılınmadıkça hem cihaz hem de öykünücü hedeflerini görüntüler]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -2153,6 +2156,9 @@
       <Item ItemId=";InstallReqsNotSupported" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Failed Cordova minimum version requirements for 'taco install-reqs'. {0}. If your project was created using a Kit, consider moving to a kit that has a more recent version of Cordova. If your project was created using Cordova directly, consider updating the installation of Cordova. For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA['Taco install-reqs' için Cordova'nın en düşük sürüm gereksinimleri başarısız. {0}. Projeniz bir Set kullanılarak oluşturulduysa, Cordova'nın daha yeni sürümünü içeren bir sete geçmeyi düşünün. Projeniz doğrudan Cordova kullanılarak oluşturulduysa, Cordova'nın yükleme dosyalarını güncelleştirin. Daha fazla bilgi için, bkz. http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -2498,6 +2504,9 @@
       <Item ItemId=";WarnProjectUpdateAborted" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Operation cancelled by the user. No changes were made to the project.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[İşlem kullanıcı tarafından iptal edildi. Projede hiçbir değişiklik yapılmadı.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>

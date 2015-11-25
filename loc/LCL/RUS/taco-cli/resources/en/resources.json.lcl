@@ -1686,7 +1686,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Lists available targets. Will display both device and emulator targets unless overriden by --device or --emulator]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Перечисляет доступные целевые объекты. Будет отображать как целевые объекты устройства, так и эмулятора, пока не будет переопределен устройством или эмулятором]]></Val>
+            <Val><![CDATA[Перечисляет доступные целевые объекты. Будет отображать как целевые объекты-устройства, так и эмуляторы, пока не будет переопределен аргументом --device или --emulator]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />
@@ -2157,7 +2157,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Failed Cordova minimum version requirements for 'taco install-reqs'. {0}. If your project was created using a Kit, consider moving to a kit that has a more recent version of Cordova. If your project was created using Cordova directly, consider updating the installation of Cordova. For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Требования минимальной версии Cordova для "taco install-reqs" не выполнены. {0}. Если ваш проект был создан с помощью набора, попробуйте перейти на набор с более новой версией Cordova. Если ваш проект был создан непосредственно с помощью Cordova, попробуйте обновить установку Cordova. Дополнительные сведения см. по ссылке http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
+            <Val><![CDATA[Требования к минимальной версии Cordova для "taco install-reqs" не выполнены. {0}. Если ваш проект был создан с помощью комплекта, попробуйте перейти на комплект с более новой версией Cordova. Если ваш проект был создан непосредственно с помощью Cordova, попробуйте обновить установку Cordova. Дополнительные сведения см. по ссылке http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
           </Tgt>
         </Str>
         <Disp Icon="Str" />

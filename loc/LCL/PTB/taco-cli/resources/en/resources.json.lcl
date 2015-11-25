@@ -1685,6 +1685,9 @@
       <Item ItemId=";CommandRunListDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Lists available targets. Will display both device and emulator targets unless overriden by --device or --emulator]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Lista os destinos disponíveis. Exibirá os destinos do dispositivo e do emulador, a menos que seja substituído por --device ou --emulator]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -2153,6 +2156,9 @@
       <Item ItemId=";InstallReqsNotSupported" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Failed Cordova minimum version requirements for 'taco install-reqs'. {0}. If your project was created using a Kit, consider moving to a kit that has a more recent version of Cordova. If your project was created using Cordova directly, consider updating the installation of Cordova. For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Falha nos requisitos de versão mínimos do Cordova para 'taco install-reqs'. {0}. Se o seu projeto foi criado usando um Kit, considere a mudança para um kit com uma versão mais recente do Cordova. Se o projeto foi criado usando o Cordova diretamente, considere atualizar a instalação do Cordova. Para obter mais informações, veja http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -2498,6 +2504,9 @@
       <Item ItemId=";WarnProjectUpdateAborted" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Operation cancelled by the user. No changes were made to the project.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Operação cancelada pelo usuário. Nenhuma alteração foi feita ao projeto.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>

@@ -1685,6 +1685,9 @@
       <Item ItemId=";CommandRunListDescription" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Lists available targets. Will display both device and emulator targets unless overriden by --device or --emulator]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Répertorie les cibles disponibles. Affiche les cibles d'appareils et d'émulateurs, sauf s'il est remplacé par --appareil ou --émulateur.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -2153,6 +2156,9 @@
       <Item ItemId=";InstallReqsNotSupported" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Failed Cordova minimum version requirements for 'taco install-reqs'. {0}. If your project was created using a Kit, consider moving to a kit that has a more recent version of Cordova. If your project was created using Cordova directly, consider updating the installation of Cordova. For more information, please refer to http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[La configuration minimale requise de Cordova pour 'taco install-reqs' n'est pas respectée. {0}. Si votre projet a été créé à l'aide d'un Kit, vous devez envisager d'utiliser un Kit disposant d'une version plus récente de Cordova. Si votre projet a été créé à l'aide de Cordova directement, envisagez de mettre à jour l'installation de Cordova. Pour plus d'informations, consultez la page http://go.microsoft.com/fwlink/?LinkId=618544.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -2498,6 +2504,9 @@
       <Item ItemId=";WarnProjectUpdateAborted" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Operation cancelled by the user. No changes were made to the project.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Opération annulée par l'utilisateur. Aucune modification n'a été apportée au projet.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
