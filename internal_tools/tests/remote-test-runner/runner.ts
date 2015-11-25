@@ -37,7 +37,7 @@ class Runner {
 
                 return current.run();
             }).catch((err: any) => {
-                // There was an error or a test failure while running the suite, so wrap that error in a message to indicate the suite number (this error may be an uncaught exception, child process
+                // There was an error or a test failure while running the suite, so wrap that error in a message to show the suite identifier (this error may be an uncaught exception, child process
                 // error, or even a test failure)
                 errorOccurred = true;
                 console.log(util.format("Error running suite %s:%s%s", current.identifier, os.EOL, err.message));
