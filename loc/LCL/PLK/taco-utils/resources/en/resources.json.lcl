@@ -140,6 +140,9 @@
       <Item ItemId=";CommandInstallCordovaTooOld" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[The current project uses Cordova version {0}. Minimum required Cordova version: {1}]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Bieżący projekt używa oprogramowania Cordova w wersji {0}. Minimalna wymagana wersja oprogramowania Cordova: {1}]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -182,12 +185,18 @@
       <Item ItemId=";ErrorUserJsonMalformed" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error: {0} is malformed.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Błąd: element {0} jest źle sformułowany.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
       <Item ItemId=";ErrorUserJsonMissing" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Error: {0} is missing.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Błąd: brak elementu {0}.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>
@@ -422,8 +431,8 @@
       <Item ItemId=";TelemetryCurrentlyOptedInPrompt" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Would you like to continue doing so? [y/n]5D;]]></Val>
-          <Tgt Cat="Text" Stat="Update" Orig="New">
-            <Val><![CDATA[Czy chcesz to kontynuować?]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Czy chcesz to kontynuować? [t/n]5D;]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Would you like to continue doing so?]]></Val>
@@ -434,8 +443,8 @@
       <Item ItemId=";TelemetryCurrentlyOptedOutPrompt" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Would you like to allow us to collect your usage data? [y/n]5D;]]></Val>
-          <Tgt Cat="Text" Stat="Update" Orig="New">
-            <Val><![CDATA[Czy chcesz zezwolić nam na zbieranie danych użycia?]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Czy chcesz zezwolić nam na zbieranie danych użycia? [t/n]5D;]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Would you like to allow us to collect your usage data?]]></Val>
@@ -467,8 +476,8 @@
       <Item ItemId=";TelemetryOptInQuestion" ItemType="0" PsrId="306" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Are you willing to participate? [y/n]5D;]]></Val>
-          <Tgt Cat="Text" Stat="Update" Orig="New">
-            <Val><![CDATA[Czy chcesz uczestniczyć w programie?]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Czy chcesz uczestniczyć w programie? [t/n]5D;]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Are you willing to participate?]]></Val>
