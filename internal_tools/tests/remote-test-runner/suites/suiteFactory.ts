@@ -31,16 +31,16 @@ class SuiteFactory {
 
         testConfig.suites.forEach((suiteConfig: ISuiteConfig, index: number) => {
             try {
-                // Validate the "type" attribute
+                // Validate the "type" property
                 if (!suiteConfig.type) {
-                    throw new Error("The suite does not have a 'type' attribute");
+                    throw new Error("The suite does not have a 'type' property");
                 }
 
                 var suiteType: SuiteType = SuiteFactory.getSuiteTypeFromString(suiteConfig.type);
 
-                // Make sure the suite has a "testFiles" attribute, and that it is an array
+                // Make sure the suite has a "testFiles" property, and that it is an array
                 if (!Array.isArray(suiteConfig.testFiles)) {
-                    throw new Error("The suite does not have a 'testFiles' attribute, or has a 'testFiles' attribute that is not an array");
+                    throw new Error("The suite does not have a 'testFiles' property, or has a 'testFiles' property that is not an array");
                 }
 
                 // Resolve the test files for this suite
@@ -48,7 +48,7 @@ class SuiteFactory {
 
                 // Make sure there is at least one test file
                 if (!resolvedTestFiles.length) {
-                    throw new Error("The 'testFiles' attribute is empty, or does not resolve to any file (at least one test file is needed)");
+                    throw new Error("The 'testFiles' property is empty, or does not resolve to any file (at least one test file is needed)");
                 }
 
                 // Construct the suite build options
@@ -64,7 +64,7 @@ class SuiteFactory {
                     buildOptions.sourcesPath = args.sourcesPath;
                 }
 
-                // If the suite has a "setupScript" attribute, validate it
+                // If the suite has a "setupScript" property, validate it
                 if (suiteConfig.setupScript) {
                     // Build the absolute path of the script if it isn't already
                     var scriptFullPath: string = suiteConfig.setupScript;
@@ -76,17 +76,17 @@ class SuiteFactory {
 
                     // Make sure it points to a file that exists
                     if (!fs.existsSync(scriptFullPath)) {
-                        throw new Error("The path in the 'setupScript' attribute does not exist");
+                        throw new Error("The path in the 'setupScript' property does not exist");
                     }
 
                     // Make sure that it points to a file
                     if (fs.statSync(scriptFullPath).isDirectory()) {
-                        throw new Error("The path in the 'setupScript' attribute is a directory (it needs to be a file)");
+                        throw new Error("The path in the 'setupScript' property is a directory (it needs to be a file)");
                     }
 
                     // Make sure the setup script is under the root test folder
                     if (scriptFullPath.indexOf(args.testsPath) !== 0) {
-                        throw new Error("The path in the 'setupScript' attribute must be under the specified test folder");
+                        throw new Error("The path in the 'setupScript' property must be under the specified test folder");
                     }
 
                     // Build the relative path to the script (starting at the root of the test package)
@@ -99,7 +99,7 @@ class SuiteFactory {
                     buildOptions.setupScript = scriptRelativePath;
                 }
 
-                // At this point the common suite attributes appear valid, so build the suite (and validate suite-specific attributes)
+                // At this point the common suite properties appear valid, so build the suite (and validate suite-specific properties)
                 var newSuite: AbstractSuite = null;
 
                 switch (suiteType) {
@@ -129,39 +129,39 @@ class SuiteFactory {
     }
 
     private static buildRemoteSuite(id: number, config: ISuiteConfig, testFiles: string[], testPath: string, buildOptions: ISuiteBuildOptions): RemoteSuite {
-        // Make sure the suite defines a "remoteIp" attribute
+        // Make sure the suite defines a "remoteIp" property
         if (!config.remoteIp) {
-            throw new Error("The suite does not have a 'remoteIp' attribute");
+            throw new Error("The suite does not have a 'remoteIp' property");
         }
 
-        // Make sure the suite defines a "remotePort" attribute
+        // Make sure the suite defines a "remotePort" property
         if (!config.remotePort) {
-            throw new Error("The suite does not have a 'remotePort' attribute");
+            throw new Error("The suite does not have a 'remotePort' property");
         }
 
-        // Make sure the "remotePort" attribute is a valid port
+        // Make sure the "remotePort" property is a valid port
         if (!RemotebuildUtils.isPortValid(config.remotePort)) {
-            throw new Error("The suite has an invalid 'remotePort' attribute: the value must be the string representation of a number between 1 and 65535");
+            throw new Error("The suite has an invalid 'remotePort' property: the value must be the string representation of a number between 1 and 65535");
         }
 
-        // At this point the attributes seem valid, so build the suite
+        // At this point the properties seem valid, so build the suite
         return new RemoteSuite(id, testFiles, testPath, config.remoteIp, config.remotePort, buildOptions);
     }
 
     private static buildVMSuite(id: number, config: ISuiteConfig, testFiles: string[], testPath: string, buildOptions: ISuiteBuildOptions): VMSuite {
-        // Make sure the suite defines a "vmTemplate" attribute
+        // Make sure the suite defines a "vmTemplate" property
         if (!config.vmTemplate) {
-            throw new Error("The suite does not have a 'vmTemplate' attribute");
+            throw new Error("The suite does not have a 'vmTemplate' property");
         }
 
-        // Make sure the suite defines a "vmStartupPort" attribute
+        // Make sure the suite defines a "vmStartupPort" property
         if (!config.vmStartupPort) {
-            throw new Error("The suite does not have a 'vmStartupPort' attribute");
+            throw new Error("The suite does not have a 'vmStartupPort' property");
         }
 
-        // Make sure the "vmStartupPort" attribute is a valid port
+        // Make sure the "vmStartupPort" property is a valid port
         if (config.vmStartupPort && !RemotebuildUtils.isPortValid(config.vmStartupPort)) {
-            throw new Error("The suite has an invalid 'vmStartupPort' attribute: the value must be the string representation of a number between 1 and 65535");
+            throw new Error("The suite has an invalid 'vmStartupPort' property: the value must be the string representation of a number between 1 and 65535");
         }
 
         // Make the VM suite build options out of the specified build options

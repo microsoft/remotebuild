@@ -1,0 +1,6 @@
+#! /usr/bin/env bash
+#node /Users/test/installReqsTests/testSetup.js
+#open -a Terminal.app --args /usr/local/bin/node /Users/test/installReqsTests/testSetup.js
+#open -a /usr/local/bin/node --args /Users/test/installReqsTests/testSetup.js
+#osascript -e 'tell app "Terminal" do script "echo hello" end tell'
+osascript -e 'tell application "Terminal" to do script "node /Users/test/remote-tests/testSetup.js"'

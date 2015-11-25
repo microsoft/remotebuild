@@ -152,9 +152,9 @@ class RemoteTestRunner {
             throw new Error(util.format("Error reading the test configuration file:%s%s", os.EOL, err.message));
         }
 
-        // A "suites" attribute needs to be defined at the root, and it needs to be an array
+        // A "suites" property needs to be defined at the root, and it needs to be an array
         if (!Array.isArray(fileContent.suites)) {
-            throw new Error("The test config file is not valid: the root object does not have a 'suites' attribute, or has a 'suites' attribute that is not an array");
+            throw new Error("The test config file is not valid: the root object does not have a 'suites' property, or has a 'suites' property that is not an array");
         }
 
         // At this point the config file seems valid
