@@ -6,7 +6,7 @@
 ﻿ *******************************************************
 ﻿ */
 
-/// <reference path="../../../typings/node.d.ts"/>
+/// <reference path="../typings/node.d.ts"/>
 
 "use strict";
 
@@ -43,10 +43,6 @@ import ms = require ("./utils/memoryStream");
 */
 
 import stream = require ("stream");
-
-import tacoUtils = require("taco-utils");
-
-import utils = tacoUtils.UtilHelper;
 
 export class MemoryStream extends stream.Writable {
     private stdoutWrite: { (data: any, encoding: string, callback: Function): void };

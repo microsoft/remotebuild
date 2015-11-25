@@ -1,0 +1,12 @@
+{
+    "suites": [
+        {
+            "type": "local",
+            "name": "Remotebuild tests",
+            "reporter": "mocha-teamcity-reporter",
+            "testFiles": [
+                "test/taco-cli.js"
+            ]
+        }
+    ]
+}
