@@ -432,7 +432,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Would you like to continue doing so? [y/n]5D;]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Вы хотите продолжить выполнение? [y/n]5D;]]></Val>
+            <Val><![CDATA[Вы хотите продолжить выполнение? [д/н]5D;]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Would you like to continue doing so?]]></Val>
@@ -444,7 +444,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Would you like to allow us to collect your usage data? [y/n]5D;]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Вы хотите разрешить сбор данных об использовании? [y/n]5D;]]></Val>
+            <Val><![CDATA[Вы хотите разрешить сбор данных об использовании? [д/н]5D;]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Would you like to allow us to collect your usage data?]]></Val>
@@ -477,7 +477,7 @@
         <Str Cat="Text">
           <Val><![CDATA[Are you willing to participate? [y/n]5D;]]></Val>
           <Tgt Cat="Text" Stat="Loc" Orig="New">
-            <Val><![CDATA[Вы хотите принять участие? [y/n]5D;]]></Val>
+            <Val><![CDATA[Вы хотите принять участие? [д/н]5D;]]></Val>
           </Tgt>
           <Prev Cat="Text">
             <Val><![CDATA[Are you willing to participate?]]></Val>
