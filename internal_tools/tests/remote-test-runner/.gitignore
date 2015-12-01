@@ -1,3 +1,4 @@
 *.js
-!remoteScripts/*
+!remoteScripts/*.js
+!vmSetup/*.js
 vmSetup*.tgz
