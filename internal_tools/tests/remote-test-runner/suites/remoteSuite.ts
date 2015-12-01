@@ -72,6 +72,11 @@ class RemoteSuite extends AbstractSuite {
         });
     }
 
+    protected cleanup(): Q.Promise<any> {
+        // Interrupt any command that is still running remotely
+        return this.remoteTest.cleanup();
+    }
+
     protected launch(): Q.Promise<any> {
         // Build the base mocha command
         var command: string = util.format("cd node_modules/%s && node ../mocha/bin/mocha %s", this.testPackageName, this.testFiles.join(" "));

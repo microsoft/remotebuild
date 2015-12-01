@@ -34,6 +34,26 @@ class VMSuite extends RemoteSuite {
         }
     }
 
+    public run(): Q.Promise<any> {
+        // After this suite runs, we need to clean up the VM. Note: We don't do this in the cleanup() function, because we need to do different thing based on whether there was a success or a
+        // failure, and the cleanup() method is invoked inside a finally clause, which does not let us do that
+        return super.run().then(() => {
+            // Tests passed, so delete the VM, EXCEPT in one of the following cases, where we just perform a hard shut down instead:
+            //     -cloneVm is false (which means we are in the original VM)
+            //     -keepVmOnTestPass is true
+            if (!this.mustCloneVM || this.keepVmOnTestPass) {
+                return VMUtils.hardShutDown(this.vmInfo.name);
+            }
+
+            return VMUtils.deleteVm(this.vmInfo.name);
+        }, (err: any) => {
+            // Tests failed, so save the VM's state and then propagate the error
+            return VMUtils.saveState(this.vmInfo.name).then(() => {
+                return Q.reject(err);
+            });
+        });
+    }
+
     protected setup(): Q.Promise<any> {
         // Launch a new VM based on the specified template
         return VMUtils.launchNewVMWithRemotebuild(this.vmTemplate, this.vmStartupPort, this.mustCloneVM).then((vmInfo: IVMInfo) => {
@@ -51,21 +71,7 @@ class VMSuite extends RemoteSuite {
 
     protected launch(): Q.Promise<any> {
         // Launch the tests normally as if this was a remote suite
-        return super.launch().then(() => {
-            // Tests passed, so delete the VM, EXCEPT in one of the following cases, where we just perform a hard shut down instead:
-            //     -cloneVm is false (which means we are in the original VM)
-            //     -keepVmOnTestPass is true
-            if (!this.mustCloneVM || this.keepVmOnTestPass) {
-                return VMUtils.hardShutDown(this.vmInfo.name);
-            }
-
-            return VMUtils.deleteVm(this.vmInfo.name);
-        }, (err: any) => {
-            // Tests failed, so save the VM's state and then propagate the error
-            return VMUtils.saveState(this.vmInfo.name).then(() => {
-                return Q.reject(err);
-            });
-        });
+        return super.launch();
     }
 }
 

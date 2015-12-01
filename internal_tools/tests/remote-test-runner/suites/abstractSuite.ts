@@ -50,12 +50,25 @@ abstract class AbstractSuite {
     }
 
     public run(): Q.Promise<any> {
-        return this.setup().then(() => {
+        var runPromise: Q.Promise<any> = this.setup().then(() => {
             return this.launch();
+        });
+
+        if (this.timeout) {
+            runPromise = runPromise.timeout(this.timeout);
+        }
+
+        return runPromise.finally(() => {
+            return this.cleanup();
         });
     }
 
     protected setup(): Q.Promise<any> {
+        // Default implementation is no-op
+        return Q.resolve({});
+    }
+
+    protected cleanup(): Q.Promise<any> {
         // Default implementation is no-op
         return Q.resolve({});
     }
