@@ -110,6 +110,11 @@ class SuiteFactory {
                     buildOptions.timeout = suiteConfig.timeout;
                 }
 
+                // If the suite has a "name" property, add it to the build options
+                if (suiteConfig.hasOwnProperty("name")) {
+                    buildOptions.name = suiteConfig.name;
+                }
+
                 // At this point the common suite properties appear valid, so build the suite (and validate suite-specific properties)
                 var newSuite: AbstractSuite = null;
 
