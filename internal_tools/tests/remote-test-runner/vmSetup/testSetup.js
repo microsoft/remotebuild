@@ -55,7 +55,7 @@ Q({})
 	    var command = path.join(__dirname, "node_modules", ".bin", "remotebuild");
 	    var args = [
 			"--secure=false",
-			"--port=" + REMOTEBUILD_PORT,
+			"--port=" + remotebuildPort,
 			"--config",
 			path.join(__dirname, "node_modules", "taco-test-agent", "testAgentConfig.conf")
 	    ];
@@ -81,7 +81,7 @@ Q({})
 	})
 	.then(function () {
 	    // Contact host test server to let it know we are listening, and give Remotebuild's port
-	    var qs = querystring.stringify({ port: REMOTEBUILD_PORT });
+	    var qs = querystring.stringify({ port: remotebuildPort });
 	    var urlPath = "/listening?" + qs;
 
 	    sendRequest(urlPath);
@@ -102,7 +102,7 @@ function sendError(err) {
 function sendRequest(urlPath, callback) {
     var options = {
         host: hostIp,
-        port: HOST_PORT,
+        port: hostPort,
         path: urlPath
     };
     var req = !!callback ? http.request(options, callback) : http.request(options);
