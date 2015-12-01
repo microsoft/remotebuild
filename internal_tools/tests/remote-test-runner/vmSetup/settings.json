@@ -1,0 +1,5 @@
+{
+    "hostIp": "TODO: Replace this message with the IP address of the host machine.",
+    "hostPort": "TODO: Replace this message with the port on which the host machine is listening for VM communications. This port must match the one you put in the 'vmStartupPort' property of your test package's testConfig.json for your VM suite.",
+    "remotebuildPort": "3000"
+}

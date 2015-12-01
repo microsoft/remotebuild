@@ -1,0 +1,11 @@
+{
+    "name": "vmSetup",
+    "version": "0.0.1",
+    "dependencies": {
+        "q": "latest",
+        "remotebuild": "latest"
+    },
+    "scripts": {
+        "preinstall": "npm install ./taco-test-agent-0.0.1.tgz"
+    }
+}

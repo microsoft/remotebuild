@@ -1,0 +1,24 @@
+{
+    "name": "remote-test-runner",
+    "version": "0.0.1",
+    "private": true,
+    "main": "./remoteTestRunner.js",
+    "bin": {
+        "remote-test": "./bin/remote-test"
+    },
+    "dependencies": {
+        "fstream": "latest",
+        "glob": "latest",
+        "mocha": "latest",
+        "q": "latest",
+        "request": "latest",
+        "rimraf": "latest",
+        "tar": "latest"
+    },
+    "devDependencies": {
+        "typescript": "latest"
+    },
+    "scripts": {
+        "prepublish": "tsc -target es5 -module commonjs remoteTestRunner.ts && npm pack vmSetup"
+    }
+}
