@@ -1,5 +1,7 @@
 var child_process = require("child_process");
+var fs = require("fs");
 var http = require("http");
+var os = require("os");
 var path = require("path");
 var Q = require("q");
 var querystring = require("querystring");
