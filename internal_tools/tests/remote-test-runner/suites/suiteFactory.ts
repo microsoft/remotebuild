@@ -99,6 +99,17 @@ class SuiteFactory {
                     buildOptions.setupScript = scriptRelativePath;
                 }
 
+                // If the suite has a "timeout" property, validate it
+                if (suiteConfig.hasOwnProperty("timeout")) {
+                    // It needs to be a natural number, so that we can give it to Q.timeout()
+                    if (typeof suiteConfig.timeout !== "number" || suiteConfig.timeout <= 0 || Math.floor(suiteConfig.timeout) !== suiteConfig.timeout) {
+                        throw new Error("The 'timeout' property is not a natural number");
+                    }
+
+                    // The timeout is valid, so add it to the build options
+                    buildOptions.timeout = suiteConfig.timeout;
+                }
+
                 // At this point the common suite properties appear valid, so build the suite (and validate suite-specific properties)
                 var newSuite: AbstractSuite = null;
 

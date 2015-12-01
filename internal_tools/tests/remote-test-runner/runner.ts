@@ -35,7 +35,7 @@ class Runner {
             return previous.then(() => {
                 console.log(util.format("%sRunning suite %s...", os.EOL, current.identifier));
 
-                return current.run();
+                return current.suiteTimeout > 0 ? current.run().timeout(current.suiteTimeout) : current.run();
             }).catch((err: any) => {
                 // There was an error or a test failure while running the suite, so wrap that error in a message to show the suite identifier (this error may be an uncaught exception, child process
                 // error, or even a test failure)

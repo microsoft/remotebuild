@@ -6,6 +6,7 @@ declare module RemoteTestRunnerInterfaces {
         remoteIp?: string;
         remotePort?: string;
         setupScript?: string;
+        timeout?: number;
         testFiles: string[];
         type: string;
         vmTemplate?: string;
@@ -28,6 +29,7 @@ declare module RemoteTestRunnerInterfaces {
         name?: string;
         setupScript?: string;
         sourcesPath?: string;
+        timeout?: number;
     }
 
     export interface IVMSuiteBuildOptions extends ISuiteBuildOptions {

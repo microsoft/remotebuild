@@ -28,8 +28,10 @@ class VMSuite extends RemoteSuite {
         this.vmStartupPort = vmStartupPort;
 
         // Check build options
-        this.keepVmOnTestPass = buildOptions.hasOwnProperty("keepVmOnTestPass") ? buildOptions.keepVmOnTestPass : false;
-        this.mustCloneVM = buildOptions.hasOwnProperty("cloneVm") ? buildOptions.cloneVm : true;
+        if (buildOptions) {
+            this.keepVmOnTestPass = buildOptions.hasOwnProperty("keepVmOnTestPass") ? buildOptions.keepVmOnTestPass : false;
+            this.mustCloneVM = buildOptions.hasOwnProperty("cloneVm") ? buildOptions.cloneVm : true;
+        }
     }
 
     protected setup(): Q.Promise<any> {

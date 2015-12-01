@@ -24,9 +24,14 @@ abstract class AbstractSuite {
     protected setupScript: string;
     protected sourcesPath: string;
     protected name: string;
+    protected timeout: number;
 
     public get identifier(): string {
         return AbstractSuite.getIdentifier(this.id, this.name);
+    }
+
+    public get suiteTimeout(): number {
+        return this.timeout;
     }
 
     public constructor(id: number, files: string[], testPath: string, options?: ISuiteBuildOptions) {
@@ -35,10 +40,13 @@ abstract class AbstractSuite {
         this.testPackage = testPath;
 
         // Check build options
-        this.mochaReporter = options && options.mochaReporter || "";
-        this.name = options && options.name || "";
-        this.setupScript = options && options.setupScript || "";
-        this.sourcesPath = options && options.sourcesPath || "";
+        if (options) {
+            this.mochaReporter = options.mochaReporter || "";
+            this.name = options.name || "";
+            this.setupScript = options.setupScript || "";
+            this.sourcesPath = options.sourcesPath || "";
+            this.timeout = options.timeout || 0;
+        }
     }
 
     public run(): Q.Promise<any> {

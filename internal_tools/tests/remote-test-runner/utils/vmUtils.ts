@@ -138,13 +138,12 @@ class VMUtils {
         }).then(() => {
             // Start the timeout for the VM's "listening" message
             return vmStartupPromise.promise.timeout(VMUtils.VM_STARTUP_TIMEOUT);
-        }).then((info: VMUtils.IVMInfo) => {
-            var deferred: Q.Deferred<VMUtils.IVMInfo> = Q.defer<VMUtils.IVMInfo>();
+        }).finally(() => {
+            var deferred: Q.Deferred<any> = Q.defer<any>();
 
-            // The VM is ready and it has Remotebuild running, so clean up the server
+            // Close the startup server so that future VMs can be launched using the same port
             vmCommunicationServer.close(() => {
-                // Resolve this promise chain with the VM's info
-                deferred.resolve(info);
+                deferred.resolve({});
             });
 
             return deferred.promise;
@@ -279,6 +278,20 @@ class VMUtils {
             var escapedName: string = vmName.replace(/[-\/\\^$*+?.()|[\]{}]/g, "\\$&");
 
             // Build the regex to find the specified VM's state
+            // The output of "vboxmanage list vm" looks like follows. We are trying to capture the value of the first "State:" attribute after seeing the "Name: xxxx" attribute with the name we are
+            // interested in, without caring about the timestamp next to the state value
+            //
+            // Name: nameOfVm
+            // SomeAttribute1: some value
+            // SomeAttribute2: some value
+            // ...
+            // State: powered off (since 2015-11-06 11:32:32)
+            // ...
+            // SomeAttributeN: some value
+            //
+            // Name: nameOfOtherVm
+            // SomeAttribute1: some value
+            // ...
             var regex: RegExp = new RegExp(util.format("Name:\\W*%s$(?:\\n|.)*?State:\\W*(.+?)(?: \\(.*?\\))?$", escapedName), "mg");
 
             // Run the regex
