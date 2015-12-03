@@ -227,6 +227,15 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";IDeviceInstallerNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to launch ideviceinstaller. Please ensure that homebrew is installed and try running "brew install ideviceinstaller".]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[ideviceinstaller başlatılamadı. Lütfen homebrew'in yüklendiğinden emin olun ve "brew install ideviceinstaller"ı çalıştırmayı deneyin.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";IOSSimNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[****** ios-sim is not installed on path. `sudo npm install -g ios-sim` if you want this server to support emulator.]]></Val>
@@ -389,6 +398,9 @@
       <Item ItemId=";UnsupportedCordovaAndNode5Version" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Incompatible configuration: Unable to build using Cordova < 5.4.0 and Node >= 5.0.0. Either upgrade to a newer version of Cordova, or revert to an older version of node. See http://go.microsoft.com/fwlink/?LinkID=618471 for more details.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Uyumsuz yapılandırma: Cordova < 5.4.0 ve Node >= 5.0.0 kullanılarak derlenemiyor. Cordova'nın daha yeni bir sürümüne yükseltin veya düğümün eski bir sürümüne dönün. Daha fazla bilgi için http://go.microsoft.com/fwlink/?LinkID=618471 bağlantısına bakın.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>

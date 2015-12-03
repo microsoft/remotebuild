@@ -12,10 +12,9 @@
     "gulp": "latest",
     "gulp-json-editor": "latest",
     "gulp-sourcemaps": "latest",
-    "gulp-tslint": "latest",
+    "gulp-tslint": "^3.6.0",
     "gulp-typescript": "~2.9.2",
     "jsdoc-parse": "latest",
-    "merge2": "latest",
     "mocha-teamcity-reporter": "latest",
     "ncp": "latest",
     "nopt": "latest",
@@ -24,5 +23,11 @@
     "replace": "latest",
     "run-sequence": "latest",
     "typescript": "~1.6.2"
+  },
+   "scripts" : { 
+    "postinstall" : "node tools/tacoUtil.js",
+    "clean" : "node tools/tacoUtil.js",
+    "rebuild" : "node tools/tacoUtil.js"
   }
 }
+

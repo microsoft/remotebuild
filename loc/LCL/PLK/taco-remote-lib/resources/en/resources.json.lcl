@@ -234,6 +234,15 @@
         </Str>
         <Disp Icon="Str" />
       </Item>
+      <Item ItemId=";IDeviceInstallerNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
+        <Str Cat="Text">
+          <Val><![CDATA[Unable to launch ideviceinstaller. Please ensure that homebrew is installed and try running "brew install ideviceinstaller".]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Nie można uruchomić programu ideviceinstaller. Upewnij się, że jest zainstalowane oprogramowanie Homebrew, i spróbuj uruchomić polecenie „brew install ideviceinstaller”.]]></Val>
+          </Tgt>
+        </Str>
+        <Disp Icon="Str" />
+      </Item>
       <Item ItemId=";IOSSimNotFound" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[****** ios-sim is not installed on path. `sudo npm install -g ios-sim` if you want this server to support emulator.]]></Val>
@@ -396,6 +405,9 @@
       <Item ItemId=";UnsupportedCordovaAndNode5Version" ItemType="0" PsrId="306" InstFlg="true" Leaf="true">
         <Str Cat="Text">
           <Val><![CDATA[Incompatible configuration: Unable to build using Cordova < 5.4.0 and Node >= 5.0.0. Either upgrade to a newer version of Cordova, or revert to an older version of node. See http://go.microsoft.com/fwlink/?LinkID=618471 for more details.]]></Val>
+          <Tgt Cat="Text" Stat="Loc" Orig="New">
+            <Val><![CDATA[Niezgodna konfiguracja: nie można skompilować przy użyciu oprogramowania Cordova w wersji < 5.4.0 i węzła w wersji >= 5.0.0. Wykonaj uaktualnienie do nowszej wersji oprogramowania Cordova lub przywróć starszą wersję węzła. Aby uzyskać więcej informacji, zobacz http://go.microsoft.com/fwlink/?LinkID=618471.]]></Val>
+          </Tgt>
         </Str>
         <Disp Icon="Str" />
       </Item>

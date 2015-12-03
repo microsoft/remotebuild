@@ -16,7 +16,6 @@ import path = require ("path");
 import Q = require ("q");
 
 import buildTelemetryHelper = require ("./utils/buildTelemetryHelper");
-import CordovaWrapper = require ("./utils/cordovaWrapper");
 import errorHelper = require ("./tacoErrorHelper");
 import PlatformHelper = require ("./utils/platformHelper");
 import RemoteBuildClientHelper = require ("./remoteBuild/remoteBuildClientHelper");
@@ -28,6 +27,7 @@ import tacoUtility = require ("taco-utils");
 
 import BuildInfo = tacoUtility.BuildInfo;
 import commands = tacoUtility.Commands;
+import CordovaWrapper = tacoUtility.CordovaWrapper;
 import logger = tacoUtility.Logger;
 
 import ICommandTelemetryProperties = tacoUtility.ICommandTelemetryProperties;
@@ -43,6 +43,7 @@ class Run extends commands.TacoCommandBase {
         remote: Boolean,
         debuginfo: Boolean,
         nobuild: Boolean,
+        list: Boolean,
 
         device: Boolean,
         emulator: Boolean,
@@ -60,6 +61,10 @@ class Run extends commands.TacoCommandBase {
     private static generateTelemetryProperties(telemetryProperties: tacoUtility.ICommandTelemetryProperties,
         commandData: commands.ICommandData): Q.Promise<tacoUtility.ICommandTelemetryProperties> {
         return buildTelemetryHelper.addCommandLineBasedPropertiesForBuildAndRun(telemetryProperties, Run.KNOWN_OPTIONS, commandData);
+    }
+
+    private static targets(commandData: commands.ICommandData): Q.Promise<any> {
+        return CordovaWrapper.targets(commandData);
     }
 
     private static remote(commandData: commands.ICommandData): Q.Promise<tacoUtility.ICommandTelemetryProperties> {
@@ -173,6 +178,14 @@ class Run extends commands.TacoCommandBase {
     /* tslint:disable:member-ordering */
     // tslint doesn't handle this case and considers subcommands as member function
     public subcommands: commands.ICommand[] = [
+        {
+            // --list = targets
+            name: "targets",
+            run: Run.targets,
+            canHandleArgs(commandData: commands.ICommandData): boolean {
+                return !!commandData.options["list"];
+            }
+        },
         {
             // Remote Run
             name: "remote",

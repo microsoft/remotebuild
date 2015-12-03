@@ -77,6 +77,10 @@ describe("Kit command : ", function (): void {
         "cordova-cli": "5.1.1"
     };
 
+    var expectedCliTacoJsonKeyValues3: IKeyValuePair<string> = {
+        "cordova-cli": "5.4.0"
+    };
+
     var expectedKitTacoJsonKeyValues: IKeyValuePair<string> = {
         kit: "5.1.1-Kit", "cordova-cli": "5.1.1"
     };
@@ -273,6 +277,23 @@ describe("Kit command : ", function (): void {
             });
     });
 
+    it("'taco kit list should work for a project UTF16 taco.json", function (): Q.Promise<any> {
+        var kitProjectpath: string = path.join(tacoHome, kitProjectDir);
+        var tacoJsonPath: string = path.resolve(kitProjectpath, "taco.json");
+        // Create a kit project, modify taco.json encoding and run taco kit list
+        return createKitProject("5.1.1-Kit")
+            .then(function(): Q.Promise<any> {
+                // change the encoding to UTF 16
+                var tacoJsonContents: string = fs.readFileSync(tacoJsonPath).toString();
+                fs.writeFileSync(tacoJsonPath, new Buffer(tacoJsonContents, "utf16le"));
+                return kitRun(["list"]);
+            })
+            .then((telemetryParameters: TacoUtility.ICommandTelemetryProperties) => {
+                var expected: TacoUtility.ICommandTelemetryProperties = { subCommand: { isPii: false, value: "list" } };
+                telemetryParameters.should.be.eql(expected);
+            });
+    });
+
     describe("Kit project to a cli project: ", function (): void {
         var kitProjectpath: string = path.join(tacoHome, kitProjectDir);
         var tacoJsonPath: string = path.resolve(kitProjectpath, "taco.json");
@@ -301,13 +322,19 @@ describe("Kit command : ", function (): void {
                 .done(() => done(), done);
         });
 
-        it("'taco kit select --cordova {CLI-VERSION}' on a project with a platform added, should execute with no errors", function (done: MochaDone): void {
+        it("'taco kit select --cordova {CLI-VERSION}' and a negative response to update query should fail with a warning", function (done: MochaDone): void {
             KitMod.yesOrNoHandler = getMockYesOrNoHandler(done, utils.emptyMethod, "PromptResponseNo");
-            runKitCommandSuccessCaseAndVerifyTacoJson(["select", "--cordova", "4.3.1"], tacoJsonPath, expectedKitTacoJsonKeyValues)
+            runKitCommandFailureCaseAndVerifyTacoJson(["select", "--cordova", "4.3.1"], tacoJsonPath, expectedKitTacoJsonKeyValues, 0 /* Command should fail with a warning */)
+                .done(() => done(), done);
+        });
+
+        it("'taco kit select --cordova {CLI-VERSION}' on a project with a platform added, should execute with no errors", function (done: MochaDone): void {
+            KitMod.yesOrNoHandler = getMockYesOrNoHandler(done, utils.emptyMethod, "PromptResponseYes");
+            runKitCommandSuccessCaseAndVerifyTacoJson(["select", "--cordova", "5.4.0"], tacoJsonPath, expectedCliTacoJsonKeyValues3)
                 .then(function(telemetryParameters: TacoUtility.ICommandTelemetryProperties): void {
                     var expected: TacoUtility.ICommandTelemetryProperties = {
                         subCommand: { isPii: false, value: "select" },
-                        "options.cordova": { isPii: false, value: "4.3.1" }
+                        "options.cordova": { isPii: false, value: "5.4.0" }
                     };
                     telemetryParameters.should.be.eql(expected);
                 })
@@ -343,7 +370,7 @@ describe("Kit command : ", function (): void {
                 .done(() => done(), done);
         });
 
-        it("'taco kit select --kit {kit-ID}' followed by a positive response to platform/plugin update query should should execute with no errors", function (done: MochaDone): void {
+        it.skip("'taco kit select --kit {kit-ID}' followed by a positive response to platform/plugin update query should should execute with no errors", function (done: MochaDone): void {
             KitMod.yesOrNoHandler = getMockYesOrNoHandler(done, utils.emptyMethod, "PromptResponseYes");
             return addTestPluginsToProject(cliProjectpath)
             .then(function (): Q.Promise<any> {

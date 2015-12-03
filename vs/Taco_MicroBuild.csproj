@@ -12,7 +12,6 @@
     <DropLocation>$(TF_BUILD_DROPLOCATION)\packages\node_modules</DropLocation>
 
     <TacoRoot>$(TF_BUILD_SOURCESDIRECTORY)</TacoRoot>
-    <TacoSrc>$(TacoRoot)\src</TacoSrc>
     <TacoBuildPackagesRoot>$(TacoRoot)\build\packages\node_modules</TacoBuildPackagesRoot>
 
     <Gulp>node $(TacoRoot)\node_modules\gulp\bin\gulp.js</Gulp>
@@ -70,12 +69,11 @@
   </ItemGroup>
 
  <Target Name="TacoBuild">
-    <Message Text="Installing gulp"/>
-    <Exec Command="npm install gulp" WorkingDirectory="$(TacoSrc)" />
+    <Message Text="Preparing enviorment"/>
+    <Exec Command="npm install" WorkingDirectory="$(TacoRoot)" />
 
     <Message Text="Building project" />
-    <Exec Command="$(gulp) prep" WorkingDirectory="$(TacoSrc)" />
-    <Exec Command="$(gulp) build" WorkingDirectory="$(TacoSrc)" />
+    <Exec Command="$(gulp) build" WorkingDirectory="$(TacoRoot)" />
 
  </Target>
 
@@ -105,7 +103,7 @@
  </Target>
 
  <Target Name="GeneratePackages">
-   <Exec Command="$(gulp) just-package --drop=$(DropLocation)" WorkingDirectory="$(TacoSrc)" />
+   <Exec Command="$(gulp) just-package --drop=$(DropLocation)" WorkingDirectory="$(TacoRoot)" />
  </Target>
 
  <Target Name="CopyPayload">

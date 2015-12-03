@@ -3,22 +3,22 @@
     "version": "0.0.1",
     "private": true,
     "dependencies": {
+        "fstream": "latest",
+        "mkdirp": "latest",
         "mocha": "latest",
         "mocha-teamcity-reporter": "latest",
-        "should": "latest",
         "q": "latest",
         "request": "latest",
-        "fstream": "latest",
-        "tar": "latest",
-        "mkdirp": "latest",
-        "rimraf": "latest"
+        "rimraf": "latest",
+        "should": "latest",
+        "tar": "latest"
     },
     "devDependencies": {
-        "typescript": "1.5.3"
+        "typescript": "latest"
     },
     "scripts": {
-        "test": "mocha",
+        "prepublish": "tsc -target es5 -module commonjs test/taco-cli.ts",
         "teamCityTest": "mocha --reporter mocha-teamcity-reporter",
-        "prepublish": "tsc -module commonjs test/taco-cli.ts"
+        "test": "mocha"
     }
 }

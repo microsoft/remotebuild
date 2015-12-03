@@ -8,8 +8,11 @@
 
 "use strict";
 import nodeFakes = require("./nodeFakes");
-import projectHelper = require("./projectHelper");
+import projectHelper = require("./testProjectHelper");
 import telemetryFakes = require("./telemetryFakes");
+import memoryStream = require("./memoryStream");
+import tacoErrorTestHelper = require("./tacoErrorTestHelper");
+import mockCordova = require("./mockCordova");
 
 module TacoTestsUtils {
     /* tslint:disable:variable-name */
@@ -18,6 +21,9 @@ module TacoTestsUtils {
     export var NodeFakes: typeof nodeFakes.NodeFakes = nodeFakes.NodeFakes;
     export var TelemetryFakes: typeof telemetryFakes.TelemetryFakes = telemetryFakes.TelemetryFakes;
     export var ProjectHelper: typeof projectHelper.ProjectHelper = projectHelper.ProjectHelper;
+    export var MemoryStream: typeof memoryStream.MemoryStream = memoryStream.MemoryStream;
+    export var TacoErrorTestHelper: typeof tacoErrorTestHelper.TacoErrorTestHelper = tacoErrorTestHelper.TacoErrorTestHelper;
+    export var MockCordova: typeof mockCordova.MockCordova = mockCordova.MockCordova;
     /* tslint:enable:variable-name */
 }
 
