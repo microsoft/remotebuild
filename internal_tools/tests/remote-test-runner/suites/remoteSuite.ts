@@ -142,9 +142,12 @@ class RemoteSuite extends AbstractSuite {
             if (err) {
                 deferred.reject(new Error(util.format("Error running 'npm pack' on the test package:%s%s", os.EOL, err.message)))
             } else {
-                // NPM outputs the name of the .tgz file that was created to stdout, so use that as the basename and the temporary dir as the dirname to build the full path to
-                // the packed test package
-                deferred.resolve(path.join(os.tmpdir(), stdout.toString().trim()));
+                // NPM outputs the name of the .tgz file that was created to stdout on the last line, so use that as the basename and the temporary dir as the dirname to build the full path to the
+                // packed test package
+                var lines: string[] = stdout.toString().trim().split(os.EOL);
+                var lastLine: string = lines[lines.length - 1];
+
+                deferred.resolve(path.join(os.tmpdir(), lastLine));
             }
         });
 
