@@ -143,8 +143,9 @@ class RemoteSuite extends AbstractSuite {
                 deferred.reject(new Error(util.format("Error running 'npm pack' on the test package:%s%s", os.EOL, err.message)))
             } else {
                 // NPM outputs the name of the .tgz file that was created to stdout on the last line, so use that as the basename and the temporary dir as the dirname to build the full path to the
-                // packed test package
-                var lines: string[] = stdout.toString().trim().split(os.EOL);
+                // packed test package. Note: npm and/or tsc do not output \r\n for newlines even on Windows, so to do a consistent split() we need to first remove all occurrences of \r
+                var curedStdout: string = stdout.toString().trim().replace(/\r/g, "");
+                var lines: string[] = curedStdout.split("\n");
                 var lastLine: string = lines[lines.length - 1];
 
                 deferred.resolve(path.join(os.tmpdir(), lastLine));
