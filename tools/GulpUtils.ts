@@ -105,52 +105,6 @@ class GulpUtils {
         return Q.denodeify(del)(dirPath, { force: true });
     }
 
-    public static prepareTemplates(templatesSrc: string, templatesDest: string): Q.Promise<any> {
-        var buildTemplatesPath: string = path.resolve(templatesDest);
-        var promises: Q.Promise<any>[] = [];
-
-        GulpUtils.mkdirp(buildTemplatesPath);
-
-        // Read the templates dir to discover the different kits
-        var templatesPath: string = templatesSrc;
-        var kits: string[] = GulpUtils.getChildDirectoriesSync(templatesPath);
-
-        kits.forEach(function(kitValue: string, index: number, array: string[]): void {
-            // Read the kit's dir for all the available templates
-            var kitSrcPath: string = path.join(templatesSrc, kitValue);
-            var kitTargetPath: string = path.join(buildTemplatesPath, kitValue);
-
-            GulpUtils.mkdirp(kitTargetPath);
-
-            var kitTemplates: string[] = GulpUtils.getChildDirectoriesSync(kitSrcPath);
-
-            kitTemplates.forEach(function(templateValue: string): void {
-                // Create the template's archive
-                var templateSrcPath: string = path.resolve(kitSrcPath, templateValue);
-                var templateTargetPath: string = path.join(kitTargetPath, templateValue + ".zip");
-                var archive: any = archiver("zip");
-                var outputStream: NodeJS.WritableStream = fs.createWriteStream(templateTargetPath);
-                var deferred: Q.Deferred<any> = Q.defer<any>();
-
-                archive.on("error", function(err: Error): void {
-                    deferred.reject(err);
-                });
-
-                outputStream.on("close", function(): void {
-                    deferred.resolve({});
-                });
-
-                archive.pipe(outputStream);
-
-                // Note: archiver.bulk() automatically ignores files starting with "."; if this behavior ever changes, or if a different package is used
-                // to archive the templates, some logic to exclude the ".taco-ignore" files found in the templates will need to be added here
-                archive.bulk({ expand: true, cwd: path.join(templatesPath, kitValue, templateValue), src: ["**"] }).finalize();
-                promises.push(deferred.promise);
-            });
-        });
-
-        return Q.all(promises);
-    }
 
     public static streamToPromise(stream: NodeJS.ReadWriteStream | NodeJS.WritableStream): Q.Promise<any> {
         var deferred = Q.defer();

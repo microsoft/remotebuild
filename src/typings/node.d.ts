@@ -280,6 +280,7 @@ declare module NodeJSHttp {
         close(cb?: any): Server;
         address(): { port: number; family: string; address: string; };
         maxHeadersCount: number;
+	setTimeout(msecs: number, callback?: Function): Server;
     }
     export interface ServerRequest extends NodeJSEvents.EventEmitter, NodeJSStream.Readable {
         method: string;

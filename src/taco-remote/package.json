@@ -8,20 +8,19 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/Microsoft/TACO"
+        "url": "https://github.com/microsoft/remotebuild"
     },
     "bugs": {
-        "url" : "https://github.com/Microsoft/TACO/issues", 
+        "url" : "https://github.com/microsoft/remotebuild/issues", 
         "email" : "vscordovatools-admin@microsoft.com"
     },
-    "homepage": "http://taco.tools",
     "keywords": [
         "cordova",
         "osx ",
         "remote build"
     ],
     "main": "./lib/server.js",
-    "preferGlobal": true,
+    "preferGlobal": false,
     "dependencies": {
         "express": "4.12.2",
         "serve-index": "1.6.2",

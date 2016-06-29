@@ -30,19 +30,14 @@ var buildConfig: BuildConfig.IBuildConfig = require("./build_config.json");
 
 var tacoModules: string[] = [
     "taco-utils",
-    "taco-kits",
-    "taco-dependency-installer",
-    "taco-cli",
     "remotebuild",
     "taco-remote",
     "taco-remote-lib",
     "taco-tests-utils",
-    "taco-remote-multiplexer",
-    "taco-livereload"
+    "taco-remote-multiplexer"
 ];
 // list of CLI TACO packages 
 var tacoCliModules: string[] = [
-    "taco-cli",
     "remotebuild",
 ];
 
@@ -88,7 +83,7 @@ gulp.task("compile", function (): Q.Promise<any> {
 });
 
 /* compile + copy */
-gulp.task("build", ["prepare-templates"], function (callback: gulp.TaskCallback): void {
+gulp.task("build", [], function (callback: gulp.TaskCallback): void {
     runSequence("compile", "copy", callback);
 });
 
@@ -133,11 +128,6 @@ gulp.task("clean", function (): Q.Promise<any> {
     });
 });
 
-/* Cleans up only the templates in the build folder */
-gulp.task("clean-templates", function (): Q.Promise<any> {
-    return GulpUtils.deleteDirectoryRecursive(path.resolve(buildConfig.buildTemplates));
-});
-
 /* copy package.json and resources.json files from source to bin */
 gulp.task("copy", function (): Q.Promise<any> {
     // Note: order matters, and later inclusions/exclusions take precedence over earlier ones.
@@ -174,10 +164,6 @@ gulp.task("run-tests", ["install-build", "tslint"], function (): Q.Promise<any> 
     return GulpUtils.runAllTests(tacoModules, buildConfig.buildPackages, options.failTestsAtEnd, options.testsReporter, options.testCordova);
 });
 
-/* Task to archive template folders */
-gulp.task("prepare-templates", ["clean-templates"], function (): Q.Promise<any> {
-    return GulpUtils.prepareTemplates(buildConfig.templates, buildConfig.buildTemplates);
-});
 /* tslint:enable:no-console */
 
 /* Task to coverage tests */
