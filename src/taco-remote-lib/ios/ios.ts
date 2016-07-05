@@ -53,12 +53,18 @@ class IOSAgent implements ITargetPlatform {
         this.emulatorLaunchTimeout = config.get("emulatorLaunchTimeout") || 20000;
 
         if (utils.ArgsHelper.argToBool(config.get("allowsEmulate"))) {
-            process.env["PATH"] = path.resolve(__dirname, path.join("..", "node_modules", ".bin")) + ":" + process.env["PATH"];
-            child_process.exec("which ios-sim", function(err: Error, stdout: Buffer, stderr: Buffer): void {
-                if (err) {
-                    Logger.logError(resources.getString("IOSSimNotFound"));
-                }
-            });
+            try {
+                const iosSimPath = path.dirname(require.resolve("ios-sim"));
+                const iosSimExePath = path.join(iosSimPath, "bin");
+                process.env["PATH"] = iosSimExePath + ":" + process.env["PATH"];
+                child_process.exec("which ios-sim", function (err: Error, stdout: Buffer, stderr: Buffer): void {
+                    if (err) {
+                        Logger.logError(resources.getString("IOSSimNotFound"));
+                    }
+                });
+            } catch (e) {
+                Logger.logError(resources.getString("IOSSimNotFound"));
+            }
         }
     }
 
@@ -83,7 +89,7 @@ class IOSAgent implements ITargetPlatform {
         var appLaunchStepTimeout = this.appLaunchStepTimeout;
         var cfg: utils.CordovaConfig = utils.CordovaConfig.getCordovaConfig(buildInfo.appDir);
         iosAppRunner.startDebugProxy(proxyPort)
-            .then(function(nativeProxyProcess: child_process.ChildProcess): Q.Promise<net.Socket> {
+            .then(function (nativeProxyProcess: child_process.ChildProcess): Q.Promise<net.Socket> {
                 return iosAppRunner.startApp(cfg.id(), proxyPort, appLaunchStepTimeout, (isCrash) => {
                     // The app has terminated
                     if (isCrash) {
@@ -92,9 +98,9 @@ class IOSAgent implements ITargetPlatform {
                         buildInfo.updateStatus(BuildInfo.TERMINATED);
                     }
                 });
-            }).then(function(success: net.Socket): void {
+            }).then(function (success: net.Socket): void {
                 res.status(200).send(buildInfo.localize(req, resources));
-            }, function(failure: any): void {
+            }, function (failure: any): void {
                 if (failure.message) {
                     var response = resources.getStringForLanguage(req, failure.message);
                     if (!response) {
@@ -126,15 +132,15 @@ class IOSAgent implements ITargetPlatform {
         }
 
         Q({})
-            .then(function(): Q.Promise<any> {
+            .then(function (): Q.Promise<any> {
                 var deferred: Q.Deferred<any> = Q.defer();
 
                 var outputStream = fs.createWriteStream(pathToDsymZipFile);
                 var archive: any = archiver("zip");
-                archive.on("error", function(err: Error): void {
+                archive.on("error", function (err: Error): void {
                     return deferred.reject(err);
                 });
-                outputStream.on("finish", function() {
+                outputStream.on("finish", function () {
                     return deferred.resolve({});
                 });
 
@@ -144,15 +150,15 @@ class IOSAgent implements ITargetPlatform {
 
                 return deferred.promise;
             })
-            .then(function(): Q.Promise<any> {
+            .then(function (): Q.Promise<any> {
                 var deferred: Q.Deferred<any> = Q.defer();
 
                 var outputStream: fs.WriteStream = fs.createWriteStream(pathToBuildZipFile);
                 var archive: any = archiver("zip");
-                archive.on("error", function(err: Error): void {
+                archive.on("error", function (err: Error): void {
                     return deferred.reject(err);
                 });
-                outputStream.on("finish", function() {
+                outputStream.on("finish", function () {
                     return deferred.resolve({});
                 });
 
@@ -164,7 +170,7 @@ class IOSAgent implements ITargetPlatform {
 
                 return deferred.promise;
             })
-            .then(function(): void {
+            .then(function (): void {
                 var deferred: Q.Deferred<any> = Q.defer();
                 var inputStream: fs.ReadStream = fs.createReadStream(pathToBuildZipFile);
 
@@ -172,7 +178,7 @@ class IOSAgent implements ITargetPlatform {
                 inputStream.pipe(res);
                 callback(null);
             })
-            .catch(function(err: any): void {
+            .catch(function (err: any): void {
                 Logger.logError(resources.getString("ArchivePackError", err.message));
                 callback(err);
                 res.status(404).send(resources.getStringForLanguage(req, "ArchivePackError", err.message));
@@ -197,7 +203,7 @@ class IOSAgent implements ITargetPlatform {
         emulateLogger.begin(buildInfo.buildDir, "emulate.log", buildInfo.buildLang, emulateProcess);
         emulateProcess.send({ appDir: buildInfo.appDir, appName: cfg.id(), target: req.query.target, version: req.query.iOSVersion, timeout: this.emulatorLaunchTimeout }, null);
 
-        emulateProcess.on("message", function(result: { status: string; messageId: string; messageArgs?: any }): void {
+        emulateProcess.on("message", function (result: { status: string; messageId: string; messageArgs?: any }): void {
             buildInfo.updateStatus(result.status, result.messageId, result.messageArgs);
             if (result.status !== utils.BuildInfo.ERROR) {
                 res.status(200).send(buildInfo.localize(req, resources));
@@ -221,7 +227,7 @@ class IOSAgent implements ITargetPlatform {
         var stdout: string = "";
         var stderr: string = "";
         var errorMessage: string;
-        ideviceinstaller.stdout.on("data", function(data: Buffer): void {
+        ideviceinstaller.stdout.on("data", function (data: Buffer): void {
             var dataStr: String = data.toString();
             if (dataStr.indexOf("ApplicationVerificationFailed") !== -1) {
                 errorMessage = resources.getStringForLanguage(req, "ProvisioningFailed");
@@ -229,7 +235,7 @@ class IOSAgent implements ITargetPlatform {
 
             stdout += dataStr;
         });
-        ideviceinstaller.stderr.on("data", function(data: Buffer): void {
+        ideviceinstaller.stderr.on("data", function (data: Buffer): void {
             var dataStr: string = data.toString();
             if (!errorMessage) {
                 if (dataStr.indexOf("No iOS device found, is it plugged in?") > -1) {
@@ -241,7 +247,7 @@ class IOSAgent implements ITargetPlatform {
 
             stderr += dataStr;
         });
-        ideviceinstaller.on("close", function(code: number): void {
+        ideviceinstaller.on("close", function (code: number): void {
             if (errorMessage) {
                 res.status(404).send(errorMessage);
             } else if (code !== 0) {
@@ -252,7 +258,7 @@ class IOSAgent implements ITargetPlatform {
             }
         });
 
-        ideviceinstaller.on("error", function(err: any): void {
+        ideviceinstaller.on("error", function (err: any): void {
             res.status(500);
             if (err.code === "ENOENT") {
                 res.send(resources.getStringForLanguage(req, "IDeviceInstallerNotFound"));
@@ -275,13 +281,13 @@ class IOSAgent implements ITargetPlatform {
         // we must make sure to the output of ios_webkit_debug_proxy is not buffered.
         // The OSX command "script" provides one way to do that
         sharedState.webProxyInstance = child_process.spawn("script", ["-q", "/dev/null", "ios_webkit_debug_proxy", "-c", portRange], { stdio: "pipe" });
-        sharedState.webProxyInstance.on("error", function(err: Error) {
+        sharedState.webProxyInstance.on("error", function (err: Error) {
             deferred.reject(new Error(resources.getStringForLanguage(req, "UnableToDebug")));
         });
 
         if (buildInfo.options.indexOf("--device") !== -1) {
             // This is enabling debugging for a device build: make sure that a device is attached
-            sharedState.webProxyInstance.stdout.on("data", function(data: Buffer) {
+            sharedState.webProxyInstance.stdout.on("data", function (data: Buffer) {
                 var dataStr = data.toString();
                 if (dataStr.match(/Unable to connect to/)) {
                     var error = new Error(resources.getStringForLanguage(req, "WebInspectorDisabled"));
