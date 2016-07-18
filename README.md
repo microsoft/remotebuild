@@ -1,140 +1,85 @@
-Visit our [home page](http://taco.tools/) & [get started](http://taco.tools/docs/getting-started.html) in minutes!
+# Remote Build
 
-# What is TACO?
+***remotebuild*** sets up a secure build server to remotely build, run and debug apps. It sets up a webserver, and handles secure communication/authentication from the client. It loads other modules such as *taco-remote* to provide actual functionality. It is an extensible server implementation which can support different project types to build mobile apps. By default, it supports *taco-remote* agent which allows to remotely build, run, and debug iOS apps created using Visual Studio Tools for Apache Cordova.
 
-The Tools for Apache Cordova – "TACO" for short – provide a set of command line utilities that make hybrid app development easier, friendlier, and faster. 
+### Requirements for iOS
+To build and run iOS apps on the iOS Simulator or on an iOS device, you must install and configure the remote build, on a Mac computer that meets the following requirements:
 
-For developers new to Cordova, TACO makes it crazy-easy to setup your dev environment so you can begin coding immediately. The install-reqs utility downloads, installs and configures all the build tools you need for each mobile platform. Once you’ve started coding, TACO makes life a little sweeter by providing a gentle nudge toward the most likely “next steps” and best practices. If you’re looking for a safety blanket, TACO has one of those, too. “TACO Kits” provide a set of validated open source components (e.g. platforms, build tools and plugins) so you don’t have to wade through the morass of download stats, star ratings and open issues to know which components are both stable and compatible with your app. Since building for iOS platform requires a Mac, TACO also provides a utility to connect to a [remotebuild](http://taco.tools/docs/remote-build.html) server, so that you can build iOS projects from your Windows machine.  
+1. Mac OS X Mavericks
+1. Xcode 6
+1. Xcode command-line tools, from Terminal app type:
+<pre><code>
+xcode-select  --install
+</code></pre>
+1. Node.js 
+1. Git command line tools, if you are using a CLI from a Git repository. If the CLI version is pointed to a Git location, Git is required to build the app for iOS.
 
-Faster setup. Friendlier command line. Validated quality at run-time. TACO is your friend.
+To test your app on iOS devices, you must also have the following:
 
-## Quick Start
+1. An active iOS [Developer Program account](https://developer.apple.com/programs/enroll/) with Apple
+1. An iOS signing identity configured in Xcode
+1. An associated provisioning profile (download a provisioning profile associated with the signing identity from the Apple developer center, and run the .mobileprovision file). Please read [Maintaining your signing identities and certificates](https://developer.apple.com/library/ios/documentation/IDEs/Conceptual/AppDistributionGuide/MaintainingCertificates/MaintainingCertificates.html) for detailed information.
 
-Using TACO, start building awesome Apache Cordova apps really quickly by following these steps:
 
-**1. Install the tools:**
+#### Download and install the remote build agent
+From the Terminal app on your Mac, type:
+<pre><code>
+sudo npm install -g remotebuild
+</code></pre>
+When you run the command, you will be prompted to enter your password as well.
 
-Make sure you have [Node.js](https://nodejs.org/en/download/) installed. **Note:** Latest version of NodeJS has [issues with iOS build](https://github.com/Microsoft/cordova-docs/blob/master/known-issues/known-issues-ios.md#building-for-ios-hangs-when-nodejs-v40-is-installed)  
+***Note: The global installation (-g) switch is recommended but not required.***
 
-Run the following command to install the latest version of TACO:
+#### Start remotebuild in secure mode (default)
+<pre><code>
+remotebuild [start]
+</code></pre>
 
-```
-npm install -g taco-cli
-```
+#### Start remotebuild in non-secure mode (using simple HTTP based connections)
 
-**Note:** On OSX and Linux, you may need to prefix this command with `sudo` 
+<pre><code>
+remotebuild --secure false
+</code></pre>
 
-**2. Create a new app:**
 
-```
-taco create myAwesomeApp
-```
+#### Saving remotebuild configuration to a settings (json) file
 
-**3. Navigate to the directory of your new project:**
+<pre><code>
+remotebuild saveconfig [--config path/to/config/file.json] [--option value] ...
 
-```
-cd myAwesomeApp
-```
+</code></pre>
 
-**4. Add the Android platform:**
+#### List of all available commands
+<pre><code>
+remotebuild --help
+</code></pre>
 
-```
-taco platform add android
-```
+#### Verify remotebuild configuration
+1. Configure remote build agent to a default location:
+<pre><code> 
+remotebuild [options] saveconfig
+</code></pre>
 
-**5. (Optional) Check for any missing Android dependencies:**
+1. Run:
+<pre><code>
+remotebuild test
+</code></pre>
+This command initiates a test build using the saved configuration parameters. The output from the command should show the build number and other information about the build, such as its progress. Note that if remotebuild is already running, it may fail with an error saying that a port is already in use. Either stop the other instance of remotebuild, or specify a different port to run the test on with the --port parameter.
 
-```
-taco install-reqs android
-```
+1. To verify that your signing identity is set up correctly for device builds, type:
+<pre><code>
+remotebuild test --device
+</code></pre>
 
-**6. Build for Android:**
+**Note:** 
+If you choose to save the config file to a custom location using "--config", then you will have to start the remotebuild by specifying the custom location of the config file in step 2.  
 
-```
-taco build android
-```
-
-**7. Run the app on the Android emulator:**
-
-```
-taco emulate android
-```
-
-After a few moments, your app will be running inside the Android emulator in all its awesomeness. The steps to build for Windows and iOS are very similar, but this should help you get started.
-
-Remember, when in doubt, just type:
-
-```
-taco help
-```
-
-## Community
-
-* Have a question that's not a feature request or bug report? [Discuss on Stack Overflow](https://stackoverflow.com/questions/tagged/taco)
-* Read our [Blog](http://taco.tools/blog/index.html)
-* Have a feature request or find a bug? [Submit an issue](https://github.com/microsoft/taco/issues)
-* [Contribute](https://github.com/Microsoft/TACO/blob/master/CONTRIBUTING.md) to TACO source
- 
-
-## Development
-
-In order to build the TACO packages, ensure that you have [Git](http://git-scm.com/downloads) and [Node.js](http://nodejs.org/) installed.
-
-Clone a copy of the repo:
-```
-git clone https://github.com/Microsoft/TACO.git
-```
-
-Change to TACO directory:
-```
-cd TACO
-```
-Install dev dependencies
-```
-npm install
-```
-
-#### Building TACO
-TACO uses gulp based build system. To build TACO packages, simply run following command from root folder 
-```
-gulp
-```
-Above command will build and install TACO packages.
-It will also create a globally-installed symbolic link (["npm link"](https://docs.npmjs.com/cli/link)) to TACO packages
-
-#### Running TACO
-Once TACO has been built and linked properly, you can use TACO packages from globally-installed symbolic link
-* To run taco-cli run 
-```
-taco
-```
-* Similarly to run remotebuild run
-```
-remotebuild
-```
-#### Running tests
-
-Please run following to make sure all tests are passing
-```
-gulp run-tests
-```
-
-#### Getting tests coverage
-
-To check test coverage, please run following command
-```
-gulp coverage
-```
-
-#### Coding guidelines
-TACO uses tslint rules specified in [tslint.json](https://github.com/Microsoft/TACO/blob/master/tools/tslint.json). Run following command to make sure code is tslint clean
-```
-gulp tslint
-```
+## Configure remote build with VS Tools for Apache Cordova
+Please refer to [User Documentation](http://aka.ms/remotebuilddoc) for instructions on how to configure the remote build with Visual Studio Tools for Apache Cordova.
 
 ## LICENSE
 
-TACO is licensed under the MIT Open Source license.
+remotebuild is licensed under the MIT Open Source license.
 
 ## Code of conduct
 This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
