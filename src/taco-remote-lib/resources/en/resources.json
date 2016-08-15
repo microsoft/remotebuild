@@ -69,6 +69,8 @@
     "_ArchivePackError.comment": "Error reported to console and back to the client when packing a zip file fails. {0} is the error",
     "IDeviceInstallerNotFound": "Unable to launch ideviceinstaller. Please ensure that homebrew is installed and try running \"brew install ideviceinstaller\".",
     "_IDeviceInstallerNotFound.comment": "Error message printed when ideviceinstaller is not installed.",
+    "IDeviceInstallerFailed": "Error installing app to device: {0}",
+    "_IDeviceInstallerFailed.comment": "Error message printed when ideviceinstaller exits with failure error code. {0} is the stderr of the process",
 
     "UnsupportedPlatform": "Unable to build: requested platform not supported",
     "_UnsupportedPlatform.comment": "Message reported to the client when a request for an unsupported platform is made",
@@ -78,6 +80,9 @@
     "_UnsupportedCordovaAndNodeVersion.comment": "Error reported when trying to build cordova < 5.3.3 on node >= 4.0.0 when it would result in a deadlock.",
     "UnsupportedCordovaAndNode5Version": "Incompatible configuration: Unable to build using Cordova < 5.4.0 and Node >= 5.0.0. Either upgrade to a newer version of Cordova, or revert to an older version of node. See http://go.microsoft.com/fwlink/?LinkID=618471 for more details.",
     "_UnsupportedCordovaAndNode5Version.comment": "Error reported when trying to build cordova < 5.4.0 on node >= 5.0.0 which has known problems.",
+
+    "IDeviceDebugServerProxyExitedEarly": "idevicedebugserverproxy terminated early. Please check that the remotebuild configuration specifies a free port for nativeDebugProxyPort.",
+    "_IDeviceDebugServerProxyExitedEarly.comment": "Error message printed when an attempt to run idevicedebugserverproxy terminates early, possibly because it could not bind a port",
 
     "DoneBuilding": "Done building {0}",
     "_DoneBuilding.comment": "Message logged when a build is completed successfully. {0} is the build number",

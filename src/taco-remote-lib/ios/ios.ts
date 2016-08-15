@@ -251,7 +251,7 @@ class IOSAgent implements ITargetPlatform {
             if (errorMessage) {
                 res.status(404).send(errorMessage);
             } else if (code !== 0) {
-                res.status(404).json({ stdout: stdout, stderr: stderr, code: code });
+                res.status(404).json({ stdout: stdout, stderr: stderr, code: code, message: resources.getStringForLanguage(req, "IDeviceInstallerFailed", stderr) });
             } else {
                 buildInfo.updateStatus(utils.BuildInfo.INSTALLED, "InstallSuccess");
                 res.status(200).json(buildInfo.localize(req, resources));
