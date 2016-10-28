@@ -142,4 +142,80 @@ class IOSBuilder extends Builder {
 
         return deferred.promise;
     }
+
+    protected setSupportProperties(): Q.Promise<any> {
+        // Sets properties necessary to support later version of XCode
+        var self: any = this;
+
+        // Get the version of XCode currently installed
+        let execDeferred: Q.Deferred<string> = Q.defer<string>();
+        child_process.exec("xcodebuild -version", function (error, stdout, stderr) {
+            if (error) {
+                execDeferred.reject(new Error(resources.getString("XCode8VersionCheckWarning", error.message)));
+            } else {
+                execDeferred.resolve(stdout.toString());
+            }
+        });
+
+        // If the version of XCode isn't current enough to require DEVELOPMENT_TEAM to
+        // be set, just skip it.
+        return execDeferred.promise.then(function parseXcodeVersion(execOutput: string) {
+            const xcodeVersionRegex = /^Xcode (\d+(\.\d+)?)/;
+            const match = execOutput.match(xcodeVersionRegex);
+            if (match && match[1]) {
+                if (parseInt(match[1], 10) >= 8) {
+                    return self.ensureDevelopmentTeam();
+                } else {
+                    return;
+                }
+            } else {
+                throw(new Error(resources.getString("XCode8VersionCheckWarningCommandOutput", execOutput)));
+            }
+        }).fail(function (err) {
+            Logger.logError(err.message);
+            return;
+        });
+    }
+
+    private ensureDevelopmentTeam(): Q.Promise<any> {
+        // Set Development Team in build.xcconfig.
+        try {
+            var buildJson: IBuildJson = require(path.join(this.currentBuild.appDir, "build.json"));
+        }
+        catch (e) {
+            throw(new Error(resources.getString("XCode8InvalidBuildJson")));
+        }
+
+        if (!buildJson.ios || !buildJson.ios[this.currentBuild.configuration] || !buildJson.ios[this.currentBuild.configuration].developmentTeam)
+        {
+            throw(new Error(resources.getString("XCode8BuildJsonMissingDevelopmentTeam")));
+        }
+        var developmentTeam: string = buildJson.ios[this.currentBuild.configuration].developmentTeam;
+
+        var encoding: string = "utf-8";
+        var filepath: string = path.join("platforms", "ios", "cordova", "build.xcconfig");
+        var xcconfig: string = fs.readFileSync(filepath, encoding);
+
+        if (xcconfig.indexOf("DEVELOPMENT_TEAM") === -1) {
+            var developmentTeamLine: string = "\nDEVELOPMENT_TEAM = " + developmentTeam;
+
+            xcconfig += developmentTeamLine;
+            fs.writeFileSync(filepath, xcconfig, encoding);
+        }
+
+        return Q({});
+    }
+}
+
+interface IBuildJson {
+    ios?: {
+        debug?: IBuildConfigurationOverride;
+        release?: IBuildConfigurationOverride;
+        [key: string]: IBuildConfigurationOverride;
+    };
+}
+
+interface IBuildConfigurationOverride {
+    developmentTeam?: string;
+    codeSignIdentity?: string;
 }

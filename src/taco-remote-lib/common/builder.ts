@@ -60,6 +60,7 @@ class Builder {
             .then(function (): void { self.currentBuild.updateStatus(BuildInfo.BUILDING, "UpdatingPlatform", self.currentBuild.buildPlatform); process.send(self.currentBuild); })
             .then(function (): Q.Promise<any> { return self.beforePrepare(); })
             .then(function (): Q.Promise<any> { return self.addPlatform(); })
+            .then(function (): Q.Promise<any> { return self.setSupportProperties(); })
             .then(function (): Q.Promise<any> { return self.buildPlatform(); })
             .then(function (): Q.Promise<any> { return self.afterCompile(); })
             .then(function (): void { self.currentBuild.updateStatus(BuildInfo.BUILDING, "PackagingNativeApp"); process.send(self.currentBuild); })
@@ -272,6 +273,10 @@ class Builder {
         }
         opts.argv = this.currentBuild.options;
         return this.cordova.raw.build({ platforms: [this.currentBuild.buildPlatform], options: opts });
+    }
+
+    protected setSupportProperties(): Q.Promise<any> {
+        return Q({});
     }
 }
 
