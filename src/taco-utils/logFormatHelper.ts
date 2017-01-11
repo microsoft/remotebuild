@@ -156,11 +156,10 @@ module TacoUtility {
         private static colorize(str: string, styles: string[]): string {
             if (styles.length > 0) {
                 styles.forEach(function (style: string): void {
-                    if (style) {
+                    if (style && colors[style]) {
                         str = colors[style](str);
-                    } else {
-                        assert(false, "unknown logger style " + style);
-                    }
+                    } 
+                    //if no style defined string will not be colorized
                 });
             }
 
