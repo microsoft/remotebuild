@@ -40,7 +40,7 @@ class RemoteBuildConf implements RemoteBuild.IRemoteBuildConfiguration {
         var defaults: { [key: string]: any } = {
             serverDir: path.join(UtilHelper.tacoHome, "remote-builds"),
             port: 3000,
-            secure: true,
+            secure: false,
             pinTimeout: 10,
             hostname: os.hostname()
         };
