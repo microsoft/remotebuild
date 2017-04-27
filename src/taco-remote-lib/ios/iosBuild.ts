@@ -56,7 +56,8 @@ process.on("message", function (buildRequest: { buildInfo: BuildInfo; language: 
 class IOSBuilder extends Builder {
     public static running: boolean = false;
     private cfg: CordovaConfig;
-    private xcodeVersion: number;
+    private xcodeVersionMajor: number;
+    private xcodeVersionMinor: number;
     private cordovaIosVersion: string;
 
     constructor(currentBuild: BuildInfo, cordova: Cordova.ICordova540) {
@@ -80,7 +81,7 @@ class IOSBuilder extends Builder {
 
         // Get the version of cordova-ios and XCode currently installed
         let execDeferred: Q.Deferred<string> = Q.defer<string>();
-        child_process.exec("xcodebuild -version & cordova platforms version ios", { cwd: this.currentBuild.appDir } , function (error, stdout, stderr) {
+        child_process.exec("xcodebuild -version && cordova platforms version ios", { cwd: this.currentBuild.appDir } , function (error, stdout, stderr) {
             if (error) {
                 execDeferred.reject(new Error(resources.getString("XCode83GetIosPlatformVersionWarning")));
             } else {
@@ -92,8 +93,9 @@ class IOSBuilder extends Builder {
             // Parse XCode version from output
             const xcodeVersionRegex = /^Xcode ((\d+)(?:\.)(\d+))?/;
             const xcodeMatch = execOutput.match(xcodeVersionRegex);
-            if (xcodeMatch[1]){
-                self.xcodeVersion = parseFloat(xcodeMatch[1]);
+            if (xcodeMatch && xcodeMatch[2] && xcodeMatch[3]){
+                self.xcodeVersionMajor = parseInt(xcodeMatch[2], 10);
+                self.xcodeVersionMinor = parseInt(xcodeMatch[3], 10);
             }
             else {
                 Logger.logWarning(resources.getString("XCodeVersionNumberFetchFailed"));
@@ -102,15 +104,15 @@ class IOSBuilder extends Builder {
             // Parse cordova-ios version from output
             const iosVersionRegex = /ios ((\d+)(?:\.)(\d+)(?:\.)(\d+))?/;
             const iosMatch = execOutput.match(iosVersionRegex);
-            if (iosMatch[0]) {
+            if (iosMatch && iosMatch[1]) {
                 self.cordovaIosVersion = iosMatch[1];
             }
             else {
                 Logger.logWarning(resources.getString("CordovaIosVersionNumberFetchFailed"));
             }
 
-            if (self.xcodeVersion && self.cordovaIosVersion && 
-                self.xcodeVersion >= 8.3 && 
+            if (self.xcodeVersionMajor && self.xcodeVersionMinor && self.cordovaIosVersion && 
+                (self.xcodeVersionMajor > 8 || (self.xcodeVersionMajor == 8 && self.xcodeVersionMinor >= 3)) &&
                 semver.lt(self.cordovaIosVersion, "4.3.0")) {
                     throw new Error(resources.getString("IncompatibleXCodeCordovaIosVersions"));
             }
