@@ -153,7 +153,7 @@ class IOSBuilder extends Builder {
                 }
             });
 
-        return deferred.promise.then(self.createEnterprisePlist);
+        return deferred.promise.then(self.createEnterprisePlist.bind(self));
     }
 
     private createEnterprisePlist(): Q.Promise<any> {
@@ -209,7 +209,7 @@ class IOSBuilder extends Builder {
         // Sets properties necessary to support later version of XCode
         var self: any = this;
 
-        if (self.xcodeVersion && self.xcodeVersion >= 8.0) {
+        if (self.xcodeVersionMajor && self.xcodeVersionMajor >= 8) {
             return self.ensureDevelopmentTeam();
         }
         else {
