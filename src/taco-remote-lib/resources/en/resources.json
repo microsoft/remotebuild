@@ -79,6 +79,12 @@
     "_XCode8VersionCheckWarning.comment": "Warning message printed when we are unable to determine the version of XCode installed and skip setting development team property. {0} is the error thrown when attempting to get the xcode version",
     "XCode8VersionCheckWarningCommandOutput": "Warning: Unable to determine the version of XCode installed. Expected a number, got: {0}\n Skipping setting development team.",
     "_XCode8VersionCheckWarningCommandOutput.comment": "Warning message printed when the command output of xcodebuild -version isn't what we expected. {0} is the command output.",
+    "XCodeVersionNumberFetchFailed": "Failed to determine the version of XCode currently installed. Your build may fail if the version installed is 8.0 or greater.",
+    "_XCodeVersionNumberFetchFailed.comment": "Warning displayed when we fail to determine the version of XCode installed.",
+    "CordovaIosVersionNumberFetchFailed": "Failed to determine the version of cordova-ios used in the project. Your build may fail if you're using XCode 8.3 with a version of cordova-ios prior to 4.3.0",
+    "_CordovaIosVersionNumberFetchFailed.comment": "Warning displayed when we fail to determine the version of cordova-ios used in the current project.",
+    "IncompatibleXCodeCordovaIosVersions": "Remotebuild requires your projects to use cordova-ios 4.3.0 or greater with XCode 8.3. Please update your cordova-ios version.",
+    "_IncompatibleXCodeCordovaIosVersions.comment": "Error thrown when the user uses an outdated version of cordova-ios with XCode 8.3",
 
     "UnsupportedPlatform": "Unable to build: requested platform not supported",
     "_UnsupportedPlatform.comment": "Message reported to the client when a request for an unsupported platform is made",
