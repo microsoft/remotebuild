@@ -56,6 +56,9 @@ process.on("message", function (buildRequest: { buildInfo: BuildInfo; language: 
 class IOSBuilder extends Builder {
     public static running: boolean = false;
     private cfg: CordovaConfig;
+    private xcodeVersionMajor: number;
+    private xcodeVersionMinor: number;
+    private cordovaIosVersion: string;
 
     constructor(currentBuild: BuildInfo, cordova: Cordova.ICordova540) {
         super(currentBuild, cordova);
@@ -73,6 +76,51 @@ class IOSBuilder extends Builder {
         return Q({});
     }
 
+    protected collectVersionInfo(): Q.Promise<any> {
+        var self: IOSBuilder = this;
+
+        // Get the version of cordova-ios and XCode currently installed
+        let execDeferred: Q.Deferred<string> = Q.defer<string>();
+        child_process.exec("xcodebuild -version && cordova platforms version ios", { cwd: this.currentBuild.appDir } , function (error, stdout, stderr) {
+            if (error) {
+                execDeferred.reject(new Error(resources.getString("XCode83GetIosPlatformVersionWarning")));
+            } else {
+                execDeferred.resolve(stdout.toString());
+            }
+        });
+
+        return execDeferred.promise.then(function parseVersionsFromOutput(execOutput: string) {
+            // Parse XCode version from output
+            const xcodeVersionRegex = /^Xcode ((\d+)(?:\.)(\d+))?/;
+            const xcodeMatch = execOutput.match(xcodeVersionRegex);
+            if (xcodeMatch && xcodeMatch[2] && xcodeMatch[3]){
+                self.xcodeVersionMajor = parseInt(xcodeMatch[2], 10);
+                self.xcodeVersionMinor = parseInt(xcodeMatch[3], 10);
+            }
+            else {
+                Logger.logWarning(resources.getString("XCodeVersionNumberFetchFailed"));
+            }
+
+            // Parse cordova-ios version from output
+            const iosVersionRegex = /ios ((\d+)(?:\.)(\d+)(?:\.)(\d+))?/;
+            const iosMatch = execOutput.match(iosVersionRegex);
+            if (iosMatch && iosMatch[1]) {
+                self.cordovaIosVersion = iosMatch[1];
+            }
+            else {
+                Logger.logWarning(resources.getString("CordovaIosVersionNumberFetchFailed"));
+            }
+
+            if (self.xcodeVersionMajor && self.xcodeVersionMinor && self.cordovaIosVersion && 
+                (self.xcodeVersionMajor > 8 || (self.xcodeVersionMajor == 8 && self.xcodeVersionMinor >= 3)) &&
+                semver.lt(self.cordovaIosVersion, "4.3.0")) {
+                    throw new Error(resources.getString("IncompatibleXCodeCordovaIosVersions"));
+            }
+
+            return Q({});
+        })
+    }
+
     protected afterCompile(): Q.Promise<any> {
         return this.renameApp();
     }
@@ -80,6 +128,13 @@ class IOSBuilder extends Builder {
     protected package(): Q.Promise<any> {
         var deferred: Q.Deferred<any> = Q.defer();
         var self: IOSBuilder = this;
+
+        // If we're on cordova 4.3.0, we want to bail on creating the ipa manually, but we still need the
+        // enterprise plist file.
+        if (self.cordovaIosVersion && semver.gte(self.cordovaIosVersion, "4.3.0"))
+        {
+            return self.createEnterprisePlist();
+        }
 
         // need quotes around ipa paths for xcrun exec to work if spaces in path
         var appDirName: string = this.cfg.id() + ".app";
@@ -94,14 +149,21 @@ class IOSBuilder extends Builder {
                 if (error) {
                     deferred.reject(error);
                 } else {
-                    var plistFileName: string = self.currentBuild["appName"] + ".plist";
-                    var fullPathToPlistFile: string = path.join(process.cwd(), "platforms", "ios", "build", "device", plistFileName);
-                    plist.createEnterprisePlist(self.cfg, fullPathToPlistFile);
                     deferred.resolve({});
                 }
             });
 
-        return deferred.promise;
+        return deferred.promise.then(self.createEnterprisePlist);
+    }
+
+    private createEnterprisePlist(): Q.Promise<any> {
+        var self: IOSBuilder = this;
+
+        var plistFileName: string = self.currentBuild["appName"] + ".plist";
+        var fullPathToPlistFile: string = path.join(process.cwd(), "platforms", "ios", "build", "device", plistFileName);
+        plist.createEnterprisePlist(self.cfg, fullPathToPlistFile);
+
+        return Q({});
     }
 
     private renameApp(): Q.Promise<any> {
@@ -147,34 +209,12 @@ class IOSBuilder extends Builder {
         // Sets properties necessary to support later version of XCode
         var self: any = this;
 
-        // Get the version of XCode currently installed
-        let execDeferred: Q.Deferred<string> = Q.defer<string>();
-        child_process.exec("xcodebuild -version", function (error, stdout, stderr) {
-            if (error) {
-                execDeferred.reject(new Error(resources.getString("XCode8VersionCheckWarning", error.message)));
-            } else {
-                execDeferred.resolve(stdout.toString());
-            }
-        });
-
-        // If the version of XCode isn't current enough to require DEVELOPMENT_TEAM to
-        // be set, just skip it.
-        return execDeferred.promise.then(function parseXcodeVersion(execOutput: string) {
-            const xcodeVersionRegex = /^Xcode (\d+(\.\d+)?)/;
-            const match = execOutput.match(xcodeVersionRegex);
-            if (match && match[1]) {
-                if (parseInt(match[1], 10) >= 8) {
-                    return self.ensureDevelopmentTeam();
-                } else {
-                    return;
-                }
-            } else {
-                throw(new Error(resources.getString("XCode8VersionCheckWarningCommandOutput", execOutput)));
-            }
-        }).fail(function (err) {
-            Logger.logError(err.message);
-            return;
-        });
+        if (self.xcodeVersion && self.xcodeVersion >= 8.0) {
+            return self.ensureDevelopmentTeam();
+        }
+        else {
+            return Q({});
+        }
     }
 
     private ensureDevelopmentTeam(): Q.Promise<any> {

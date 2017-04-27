@@ -60,6 +60,7 @@ class Builder {
             .then(function (): void { self.currentBuild.updateStatus(BuildInfo.BUILDING, "UpdatingPlatform", self.currentBuild.buildPlatform); process.send(self.currentBuild); })
             .then(function (): Q.Promise<any> { return self.beforePrepare(); })
             .then(function (): Q.Promise<any> { return self.addPlatform(); })
+            .then(function (): Q.Promise<any> { return self.collectVersionInfo(); })
             .then(function (): Q.Promise<any> { return self.setSupportProperties(); })
             .then(function (): Q.Promise<any> { return self.buildPlatform(); })
             .then(function (): Q.Promise<any> { return self.afterCompile(); })
@@ -103,6 +104,10 @@ class Builder {
         }
 
         return this.ensurePlatformAdded();
+    }
+
+    protected collectVersionInfo(): Q.Promise<any> {
+        return Q({});
     }
 
     /**
