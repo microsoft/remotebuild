@@ -470,10 +470,10 @@ declare module "applicationinsights" {
     export = ApplicationInsights;
 }
 
-declare module "applicationinsights/Library/Sender" {
+declare module "applicationinsights/out/Library/Sender" {
     export = Sender;
 }
 
-declare module "applicationinsights/Library/Logging" {
+declare module "applicationinsights/out/Library/Logging" {
     export = Logging;
 }

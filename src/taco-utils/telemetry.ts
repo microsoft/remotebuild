@@ -18,8 +18,8 @@ import os = require ("os");
 import path = require ("path");
 import Q = require ("q");
 import readline = require ("readline");
-import sender = require ("applicationinsights/Library/Sender");
-import telemetryLogger = require ("applicationinsights/Library/Logging");
+import sender = require ("applicationinsights/out/Library/Sender");
+import telemetryLogger = require ("applicationinsights/out/Library/Logging");
 import winreg = require("winreg");
 
 import utilHelper = require ("./utilHelper");
