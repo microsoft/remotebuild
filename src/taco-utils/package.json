@@ -20,7 +20,7 @@
         "coverage": "istanbul cover --report json node_modules/mocha/bin/_mocha -- --reporter spec"
     },
     "dependencies": {
-        "applicationinsights": "0.15.5",
+        "applicationinsights": "0.20.0",
         "colors": "^1.0.3",
         "elementtree": "0.1.6",
         "iconv-lite": "^0.4.13",
