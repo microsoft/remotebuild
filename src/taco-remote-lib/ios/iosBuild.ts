@@ -79,11 +79,18 @@ class IOSBuilder extends Builder {
     protected collectVersionInfo(): Q.Promise<any> {
         var self: IOSBuilder = this;
 
+        // Try to get the cordova-ios version
+        try {
+            self.cordovaIosVersion = require(path.join(this.currentBuild.appDir, "platforms", "ios", "cordova", "version")).version;
+        } catch (e) {
+            Logger.log(resources.getString("CordovaIosVersionNumberFetchFailed"));
+        }
+
         // Get the version of cordova-ios and XCode currently installed
         let execDeferred: Q.Deferred<string> = Q.defer<string>();
-        child_process.exec("xcodebuild -version && cordova platforms version ios", { cwd: this.currentBuild.appDir } , function (error, stdout, stderr) {
+        child_process.exec("xcodebuild -version", { cwd: this.currentBuild.appDir } , function (error, stdout, stderr) {
             if (error) {
-                execDeferred.reject(new Error(resources.getString("XCode83GetIosPlatformVersionWarning")));
+                execDeferred.reject(new Error(resources.getString("XCodeBuildCommandFailed")));
             } else {
                 execDeferred.resolve(stdout.toString());
             }
@@ -99,16 +106,6 @@ class IOSBuilder extends Builder {
             }
             else {
                 Logger.logWarning(resources.getString("XCodeVersionNumberFetchFailed"));
-            }
-
-            // Parse cordova-ios version from output
-            const iosVersionRegex = /ios ((\d+)(?:\.)(\d+)(?:\.)(\d+))?/;
-            const iosMatch = execOutput.match(iosVersionRegex);
-            if (iosMatch && iosMatch[1]) {
-                self.cordovaIosVersion = iosMatch[1];
-            }
-            else {
-                Logger.logWarning(resources.getString("CordovaIosVersionNumberFetchFailed"));
             }
 
             if (self.xcodeVersionMajor && self.xcodeVersionMinor && self.cordovaIosVersion && 
