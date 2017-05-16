@@ -81,7 +81,7 @@ class IOSBuilder extends Builder {
 
         // Try to get the cordova-ios version
         try {
-            self.cordovaIosVersion= require(path.join(this.currentBuild.appDir, "platforms", "ios", "cordova", "version")).version;
+            self.cordovaIosVersion = require(path.join(this.currentBuild.appDir, "platforms", "ios", "cordova", "version")).version;
         } catch (e) {
             Logger.log(resources.getString("CordovaIosVersionNumberFetchFailed"));
         }
