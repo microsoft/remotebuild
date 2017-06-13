@@ -262,6 +262,23 @@ class Builder {
             });
     }
 
+    private convertTarget(target: string): string {
+        const tacoToCordovaTargets: {[id: string]: string} =  {
+            "iOSEmulatoriPhone4S": "iPhone-4s",
+            "iOSEmulatoriPhone5": "iPhone-5",
+            "iOSEmulatoriPhone5S": "iPhone-5s",
+            "iOSEmulatoriPhone6": "iPhone-6",
+            "iOSEmulatoriPhone6Plus": "iPhone-6-Plus",
+            "iOSEmulatoriPhone6S": "iPhone-6s",
+            "iOSEmulatoriPhone6SPlus": "iPhone-6s-Plus",
+            "iOSEmulatoriPad2": "iPad-2",
+            "iOSEmulatoriPadAir": "iPad-Air",
+            "iOSEmulatoriPadRetina": "iPad-Retina"
+        };
+
+        return tacoToCordovaTargets[target];
+    }
+
     private buildPlatform(): Q.Promise<any> {
         Logger.log("cordova build " + this.currentBuild.buildPlatform);
         //var opts: string [] = (this.currentBuild.options.length > 0) ? [this.currentBuild.options, configuration] : [configuration];
@@ -276,6 +293,11 @@ class Builder {
         } else {
             opts.emulator = true;
         }
+
+        const convertedTarget = this.convertTarget(this.currentBuild.target);
+        if (convertedTarget)
+            opts.target = convertedTarget;
+
         opts.argv = this.currentBuild.options;
         return this.cordova.raw.build({ platforms: [this.currentBuild.buildPlatform], options: opts });
     }

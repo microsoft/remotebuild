@@ -28,6 +28,7 @@ import TacoRemoteConfig = require ("./tacoRemoteConfig");
 import utils = require ("taco-utils");
 
 import BuildInfo = utils.BuildInfo;
+import BuildInfoConstructorParams = utils.BuildInfoConstructorParams;
 import Logger = utils.Logger;
 
 interface IBuildMetrics {
@@ -140,7 +141,7 @@ class BuildManager {
             Logger.log(resources.getString("BuildManagerDirInit", buildDir));
 
             // Pass the build query to the buildInfo, for package-specific config options
-            var params: any = req.query;
+            var params: BuildInfoConstructorParams = req.query;
             params.status = BuildInfo.UPLOADING;
             params.buildCommand = buildCommand;
             params.buildPlatform = buildPlatform;
@@ -150,6 +151,7 @@ class BuildManager {
             params.buildNumber = buildNumber;
             params.options = options;
             params.logLevel = logLevel;
+            params.target = req.query.target;
 
             // Save the Cordova version that was used for the previous build, if any
             if (self.builds[buildNumber] && self.builds[buildNumber].hasOwnProperty("vcordova")) {
