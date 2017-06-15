@@ -151,7 +151,6 @@ class BuildManager {
             params.buildNumber = buildNumber;
             params.options = options;
             params.logLevel = logLevel;
-            params.target = req.query.target;
 
             // Save the Cordova version that was used for the previous build, if any
             if (self.builds[buildNumber] && self.builds[buildNumber].hasOwnProperty("vcordova")) {
