@@ -8,6 +8,19 @@
 
 /// <reference path="../typings/resourceManager.d.ts" />
 declare module TacoUtility {
+    interface BuildInfoConstructorParams {
+        buildNumber?: number;
+        status?: string;
+        buildCommand?: string;
+        configuration?: string;
+        options?: any;
+        buildDir?: string;
+        buildLang?: string;
+        buildPlatform?: string;
+        logLevel?: string;
+        [index: string]: any,
+        target?: string
+    }
     class BuildInfo {
         static UPLOADING: string;
         static UPLOADED: string;
@@ -54,19 +67,9 @@ declare module TacoUtility {
         tgzFilePath: string;
         appDir: string;
         logLevel: InstallLogLevel;
+        target: string;
 
-        constructor(params: {
-            buildNumber?: number;
-            status?: string;
-            buildCommand?: string;
-            configuration?: string;
-            options?: any;
-            buildDir?: string;
-            buildLang?: string;
-            buildPlatform?: string;
-            logLevel?: string;
-            [index: string]: any;
-        });
+        constructor(params: BuildInfoConstructorParams);
         [index: string]: any;
         /**
          * Create a new BuildInfo object out of a raw JS object.
